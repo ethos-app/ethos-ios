@@ -1,0 +1,8 @@
+version: "Apple Swift version 2.2 (swiftlang-703.0.18.1 clang-703.0.29)"
+options: "827598a22dfc553fe9436b6d95ad9c56"
+build_time: [525941000, 710908000]
+inputs:
+  "/Users/Scott/Documents/Ethos/Ethos/ViewController.swift": [525918591, 0]
+  "/Users/Scott/Documents/Ethos/Ethos/CardStackTableViewController.swift": [525941000, 0]
+  "/Users/Scott/Documents/Ethos/Ethos/AppDelegate.swift": [525919061, 0]
+  "/Users/Scott/Documents/Ethos/Ethos/BizCardTableViewCell.swift": [525937569, 0]

@@ -8,18 +8,50 @@
 
 import UIKit
 
-class CardStackTableViewController: UITableViewController {
+class CardStackTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
+    @IBOutlet var bar: UIView!
+    @IBOutlet var tableView: UITableView!
+    
+    @IBOutlet var cardsButton: UIButton!
+
+    @IBOutlet var netButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        let image = cardsButton.imageView?.image!.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate)
+        cardsButton.imageView?.image = image
+        cardsButton.setImage(image, forState: UIControlState.Normal)
+        cardsButton.imageView?.tintColor = UIColor.hexStringToUIColor("DBE4EE")
+        let image2 = netButton.imageView?.image!.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate)
+        netButton.imageView?.image = image2
+        netButton.setImage(image2, forState: UIControlState.Normal)
+        netButton.imageView?.tintColor = UIColor.hexStringToUIColor("DBE4EE")
+        
+        self.tableView.backgroundColor = UIColor.hexStringToUIColor("e9e9e9")
+        self.tableView.separatorStyle = UITableViewCellSeparatorStyle.None
+        self.tableView.delegate = self
+        self.tableView.dataSource = self
+        self.setNeedsStatusBarAppearanceUpdate()
+        self.navigationController?.navigationBar.barTintColor = UIColor.hexStringToUIColor("090909")
+        self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.hexStringToUIColor("DBE4EE"), NSFontAttributeName : UIFont(name: "Lobster 1.4", size: 34)!]
+            self.navigationController?.navigationBar.setTitleVerticalPositionAdjustment(5, forBarMetrics: UIBarMetrics.Default)
+        bar.backgroundColor = UIColor.hexStringToUIColor("50514f")
+        
+        let standardTextAttributes : [String : AnyObject] = [NSFontAttributeName : UIFont(name: "Raleway-Regular", size: 20)!, NSForegroundColorAttributeName : UIColor.hexStringToUIColor("DBE4EE")]
+    
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        bar.frame = CGRectMake(0, bar.frame.origin.y, self.view.frame.width, 60)
     }
 
+    override func preferredStatusBarStyle() -> UIStatusBarStyle {
+        return UIStatusBarStyle.LightContent
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -27,25 +59,27 @@ class CardStackTableViewController: UITableViewController {
 
     // MARK: - Table view data source
 
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return 4
     }
 
-    /*
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
-
-        // Configure the cell...
-
+    
+     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return 170
+    }
+    
+     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath)
+   //     cell.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
         return cell
     }
-    */
+ 
 
     /*
     // Override to support conditional editing of the table view.
