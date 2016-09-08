@@ -94,6 +94,7 @@ typedef int swift_int4  __attribute__((__ext_vector_type__(4)));
 #if defined(__has_feature) && __has_feature(modules)
 @import UIKit;
 @import CoreGraphics;
+@import ObjectiveC;
 #endif
 
 #pragma clang diagnostic ignored "-Wproperty-attribute-mismatch"
@@ -114,17 +115,43 @@ SWIFT_CLASS("_TtC5Ethos11AppDelegate")
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
-@class UIView;
-@class UILabel;
-@class UIImageView;
+@class UIImage;
 @class NSCoder;
+
+SWIFT_CLASS("_TtC5Ethos9BarButton")
+@interface BarButton : UIView
+@property (nonatomic, strong) UIView * _Nullable bottomLine;
+@property (nonatomic, copy) NSString * _Nullable label;
+@property (nonatomic, strong) UIImage * _Nullable imageFile;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+- (void)drawRect:(CGRect)rect;
+- (void)selectMe;
+- (void)show;
+- (void)deselectMe;
+@end
+
+
+SWIFT_CLASS("_TtC5Ethos7BizCard")
+@interface BizCard : NSObject
+@property (nonatomic, copy) NSString * _Nonnull fullName;
+@property (nonatomic, copy) NSString * _Nonnull jobTitle;
+@property (nonatomic, copy) NSString * _Nonnull bullet1;
+@property (nonatomic, copy) NSString * _Nonnull bullet2;
+@property (nonatomic, copy) NSString * _Nonnull bullet3;
+@property (nonatomic, copy) NSString * _Nonnull profileImageURL;
+@property (nonatomic, copy) NSString * _Nonnull city;
+- (nonnull instancetype)initWithName:(NSString * _Nonnull)name job:(NSString * _Nonnull)job bullet1:(NSString * _Nonnull)bullet1 bullet2:(NSString * _Nonnull)bullet2 bullet3:(NSString * _Nonnull)bullet3 profileImageURL:(NSString * _Nonnull)profileImageURL city:(NSString * _Nonnull)city OBJC_DESIGNATED_INITIALIZER;
+@end
+
+@class UILabel;
 
 SWIFT_CLASS("_TtC5Ethos20BizCardTableViewCell")
 @interface BizCardTableViewCell : UITableViewCell
 @property (nonatomic, strong) IBOutlet UIView * _Null_unspecified cardBack;
 @property (nonatomic, strong) IBOutlet UILabel * _Null_unspecified name;
 @property (nonatomic, strong) IBOutlet UILabel * _Null_unspecified desc;
-@property (nonatomic, strong) IBOutlet UIImageView * _Null_unspecified pic;
+@property (nonatomic, strong) IBOutlet UILabel * _Null_unspecified info;
+@property (nonatomic, strong) IBOutlet UILabel * _Null_unspecified city;
 - (void)awakeFromNib;
 - (void)layoutSubviews;
 - (void)cardSetup;
@@ -133,25 +160,120 @@ SWIFT_CLASS("_TtC5Ethos20BizCardTableViewCell")
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 @end
 
+@class CardView;
+
+SWIFT_PROTOCOL("_TtP5Ethos16CardViewDelegate_")
+@protocol CardViewDelegate
+@optional
+- (void)willBeginSwipeInCard:(CardView * _Nonnull)card;
+- (void)didEndSwipeInCard:(CardView * _Nonnull)card;
+- (void)didCancelSwipeInCard:(CardView * _Nonnull)card;
+- (void)swipedLeftInCard:(CardView * _Nonnull)card;
+- (void)swipedRightInCard:(CardView * _Nonnull)card;
+- (void)swipedUpInCard:(CardView * _Nonnull)card;
+- (void)swipedDownInCard:(CardView * _Nonnull)card;
+- (void)wasTouchedDownInCard:(CardView * _Nonnull)card;
+- (void)didChangeStateInCard:(CardView * _Nonnull)card;
+@required
+- (BOOL)shouldMoveCard:(CardView * _Nonnull)card;
+@end
+
+
+SWIFT_CLASS("_TtC5Ethos17CardContainerView")
+@interface CardContainerView : UIView <CardViewDelegate>
+- (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)init;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+- (void)setupCards;
+- (void)addCard;
+- (BOOL)shouldMoveCard:(CardView * _Nonnull)card;
+@end
+
+@class NSMutableArray;
 @class UITableView;
-@class UIButton;
+@class PostBox;
 @class NSIndexPath;
+@class UITextView;
 @class NSBundle;
 
 SWIFT_CLASS("_TtC5Ethos28CardStackTableViewController")
-@interface CardStackTableViewController : UIViewController <UIScrollViewDelegate, UITableViewDataSource, UITableViewDelegate>
+@interface CardStackTableViewController : UIViewController <UIScrollViewDelegate, UITableViewDataSource, CardViewDelegate, UITextViewDelegate, UITableViewDelegate>
+@property (nonatomic, strong) NSMutableArray * _Nullable cardsToShow;
 @property (nonatomic, strong) IBOutlet UIView * _Null_unspecified bar;
+@property (nonatomic, strong) IBOutlet BarButton * _Null_unspecified cardsButton;
+@property (nonatomic, strong) IBOutlet BarButton * _Null_unspecified netButton;
 @property (nonatomic, strong) IBOutlet UITableView * _Null_unspecified tableView;
-@property (nonatomic, strong) IBOutlet UIButton * _Null_unspecified cardsButton;
-@property (nonatomic, strong) IBOutlet UIButton * _Null_unspecified netButton;
+@property (nonatomic) NSInteger segment;
+@property (nonatomic, strong) CardContainerView * _Nullable cardView;
+@property (nonatomic, strong) IBOutlet PostBox * _Null_unspecified postBox;
 - (void)viewDidLoad;
+- (BOOL)shouldMoveCard:(CardView * _Nonnull)card;
+- (void)createCards;
+- (void)viewDidAppear:(BOOL)animated;
+- (void)sidebar;
+- (void)post;
+- (void)selectCards;
+- (void)selectNet;
 - (UIStatusBarStyle)preferredStatusBarStyle;
 - (void)didReceiveMemoryWarning;
 - (NSInteger)numberOfSectionsInTableView:(UITableView * _Nonnull)tableView;
 - (NSInteger)tableView:(UITableView * _Nonnull)tableView numberOfRowsInSection:(NSInteger)section;
 - (CGFloat)tableView:(UITableView * _Nonnull)tableView heightForRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath;
 - (UITableViewCell * _Nonnull)tableView:(UITableView * _Nonnull)tableView cellForRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath;
+- (void)tableView:(UITableView * _Nonnull)tableView didSelectRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath;
+- (void)textViewDidBeginEditing:(UITextView * _Nonnull)textView;
+- (void)stopWritingPost;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+SWIFT_CLASS("_TtC5Ethos8CardView")
+@interface CardView : UIView
+@property (nonatomic) CGFloat xFromCenter;
+@property (nonatomic) CGFloat yFromCenter;
+@property (nonatomic) CGPoint originalPoint;
+@property (nonatomic, strong) id <CardViewDelegate> _Nonnull delegate;
+- (nonnull instancetype)initWithFrame:(CGRect)frame delegate:(id <CardViewDelegate> _Nonnull)delegate OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+- (void)swipeLeft;
+- (void)swipeRight;
+- (void)swipeUp;
+- (void)swipeDown;
+- (void)cancelSwipe;
+@end
+
+
+
+SWIFT_CLASS("_TtC5Ethos25NotifyTableViewController")
+@interface NotifyTableViewController : UITableViewController <CardViewDelegate, UITextViewDelegate>
+@property (nonatomic, strong) NSMutableArray * _Nullable cardsToShow;
+@property (nonatomic, strong) IBOutlet UIView * _Null_unspecified bar;
+- (void)viewDidLoad;
+- (BOOL)shouldMoveCard:(CardView * _Nonnull)card;
+- (void)createCards;
+- (void)viewDidAppear:(BOOL)animated;
+- (void)sidebar;
+- (void)post;
+- (UIStatusBarStyle)preferredStatusBarStyle;
+- (void)didReceiveMemoryWarning;
+- (NSInteger)numberOfSectionsInTableView:(UITableView * _Nonnull)tableView;
+- (NSInteger)tableView:(UITableView * _Nonnull)tableView numberOfRowsInSection:(NSInteger)section;
+- (CGFloat)tableView:(UITableView * _Nonnull)tableView heightForRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath;
+- (UITableViewCell * _Nonnull)tableView:(UITableView * _Nonnull)tableView cellForRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath;
+- (void)tableView:(UITableView * _Nonnull)tableView didSelectRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath;
+- (nonnull instancetype)initWithStyle:(UITableViewStyle)style OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+SWIFT_CLASS("_TtC5Ethos7PostBox")
+@interface PostBox : UIView
+@property (nonatomic, strong) UITextView * _Nullable textView;
+- (void)drawRect:(CGRect)rect;
+- (void)resetText;
+- (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 @end
 

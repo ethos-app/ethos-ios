@@ -7,16 +7,17 @@
 //
 
 import UIKit
+import Firebase
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         UIApplication.sharedApplication().statusBarStyle = .LightContent
-
+        self.window?.tintColor = UIColor.whiteColor()
+        UITabBar.appearance().tintColor = UIColor.hexStringToUIColor("247BA0")
         // Override point for customization after application launch.
         return true
     }

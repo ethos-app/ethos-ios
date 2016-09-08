@@ -1,14 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-<!--
-   Auth0.plist
-   Ethos
-
-   Created by Scott Fitsimones on 9/1/16.
-   Copyright (c) 2016 Bolt Visual, Inc. All rights reserved.
--->
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
-    <dict>
-    
-    </dict>
+<dict>
+	<key>Domain</key>
+	<string>meetethos.auth0.com</string>
+	<key>ClientId</key>
+	<string>m5C2KdRREqLsnGDhHZWpLjvSyvEBBSqH</string>
+</dict>
 </plist>

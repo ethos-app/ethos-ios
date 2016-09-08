@@ -7,6 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D22419141D7922030093302D /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D22419131D7922030093302D /* WebKit.framework */; };
+		D234EE481D7CCC4C00CDEB3E /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D234EE471D7CCC4C00CDEB3E /* CardView.swift */; };
+		D234EE4A1D7CDB0800CDEB3E /* CardContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D234EE491D7CDB0800CDEB3E /* CardContainerView.swift */; };
+		D2385CE11D77C95C0086FADC /* BizCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2385CE01D77C95C0086FADC /* BizCard.swift */; };
+		D2385CE31D7812610086FADC /* Auth0.plist in Resources */ = {isa = PBXBuildFile; fileRef = D2385CE21D7812610086FADC /* Auth0.plist */; };
+		D275BBA71D808D2E0052152D /* PostBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = D275BBA61D808D2E0052152D /* PostBox.swift */; };
+		D275BBA91D809FA80052152D /* ic_menu.png in Resources */ = {isa = PBXBuildFile; fileRef = D275BBA81D809FA80052152D /* ic_menu.png */; };
+		D275BBAB1D80A2EF0052152D /* ic_home.png in Resources */ = {isa = PBXBuildFile; fileRef = D275BBAA1D80A2EF0052152D /* ic_home.png */; };
+		D275BBAD1D80A38E0052152D /* ic_textsms.png in Resources */ = {isa = PBXBuildFile; fileRef = D275BBAC1D80A38E0052152D /* ic_textsms.png */; };
+		D275BBAF1D80CD540052152D /* Raleway-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D275BBAE1D80CCF60052152D /* Raleway-Italic.ttf */; };
+		D275BBB11D80F84A0052152D /* NotifyTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D275BBB01D80F84A0052152D /* NotifyTableViewController.swift */; };
 		D2983CD31D765CC700D79F54 /* CardStackTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2983CD21D765CC700D79F54 /* CardStackTableViewController.swift */; };
 		D2983CD91D767D6F00D79F54 /* rale_reg.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D2983CD41D767D6000D79F54 /* rale_reg.ttf */; };
 		D2983CDA1D767D6F00D79F54 /* rale_thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D2983CD51D767D6100D79F54 /* rale_thin.ttf */; };
@@ -14,9 +25,9 @@
 		D2983CDC1D767D6F00D79F54 /* rale_light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D2983CD71D767D6100D79F54 /* rale_light.ttf */; };
 		D2983CDD1D767D6F00D79F54 /* lobster.otf in Resources */ = {isa = PBXBuildFile; fileRef = D2983CD81D767D6100D79F54 /* lobster.otf */; };
 		D2983CDF1D768D3200D79F54 /* BizCardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2983CDE1D768D3200D79F54 /* BizCardTableViewCell.swift */; };
-		D2983CE11D7695CF00D79F54 /* 13327509_10202069019962609_1709393844463742476_n.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D2983CE01D7695CF00D79F54 /* 13327509_10202069019962609_1709393844463742476_n.jpg */; };
 		D2983CE31D76A70000D79F54 /* add.png in Resources */ = {isa = PBXBuildFile; fileRef = D2983CE21D76A70000D79F54 /* add.png */; };
 		D2983CE51D76A7C100D79F54 /* book.png in Resources */ = {isa = PBXBuildFile; fileRef = D2983CE41D76A7C100D79F54 /* book.png */; };
+		D2983D231D7791D300D79F54 /* BarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2983D221D7791D300D79F54 /* BarButton.swift */; };
 		D29EEFCB1D7654F6001467C3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D29EEFCA1D7654F6001467C3 /* AppDelegate.swift */; };
 		D29EEFCD1D7654F6001467C3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D29EEFCC1D7654F6001467C3 /* ViewController.swift */; };
 		D29EEFD01D7654F6001467C3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D29EEFCE1D7654F6001467C3 /* Main.storyboard */; };
@@ -24,6 +35,7 @@
 		D29EEFD51D7654F6001467C3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D29EEFD31D7654F6001467C3 /* LaunchScreen.storyboard */; };
 		D29EEFE01D7654F7001467C3 /* EthosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D29EEFDF1D7654F7001467C3 /* EthosTests.swift */; };
 		D29EEFEB1D7654F7001467C3 /* EthosUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D29EEFEA1D7654F7001467C3 /* EthosUITests.swift */; };
+		D2D429121D807DFD00188991 /* BarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2983D221D7791D300D79F54 /* BarButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +56,21 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		445AF566C16ED71FB9A28DC0 /* Pods-EthosTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EthosTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EthosTests/Pods-EthosTests.debug.xcconfig"; sourceTree = "<group>"; };
+		5408AA4EDCFAE0D5E1DCCE72 /* Pods-EthosUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EthosUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EthosUITests/Pods-EthosUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		915EAEE4B8B7C4355B43A99E /* Pods-Ethos.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ethos.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Ethos/Pods-Ethos.debug.xcconfig"; sourceTree = "<group>"; };
+		BED51C939254871AEDA554E7 /* Pods-EthosTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EthosTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-EthosTests/Pods-EthosTests.release.xcconfig"; sourceTree = "<group>"; };
+		D22419131D7922030093302D /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		D234EE471D7CCC4C00CDEB3E /* CardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		D234EE491D7CDB0800CDEB3E /* CardContainerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CardContainerView.swift; path = Ethos/CardContainerView.swift; sourceTree = "<group>"; };
+		D2385CE01D77C95C0086FADC /* BizCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BizCard.swift; sourceTree = "<group>"; };
+		D2385CE21D7812610086FADC /* Auth0.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Auth0.plist; sourceTree = "<group>"; };
+		D275BBA61D808D2E0052152D /* PostBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostBox.swift; sourceTree = "<group>"; };
+		D275BBA81D809FA80052152D /* ic_menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_menu.png; sourceTree = "<group>"; };
+		D275BBAA1D80A2EF0052152D /* ic_home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_home.png; sourceTree = "<group>"; };
+		D275BBAC1D80A38E0052152D /* ic_textsms.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_textsms.png; sourceTree = "<group>"; };
+		D275BBAE1D80CCF60052152D /* Raleway-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-Italic.ttf"; sourceTree = "<group>"; };
+		D275BBB01D80F84A0052152D /* NotifyTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotifyTableViewController.swift; sourceTree = "<group>"; };
 		D2983CD21D765CC700D79F54 /* CardStackTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardStackTableViewController.swift; sourceTree = "<group>"; };
 		D2983CD41D767D6000D79F54 /* rale_reg.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = rale_reg.ttf; sourceTree = "<group>"; };
 		D2983CD51D767D6100D79F54 /* rale_thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = rale_thin.ttf; sourceTree = "<group>"; };
@@ -51,9 +78,9 @@
 		D2983CD71D767D6100D79F54 /* rale_light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = rale_light.ttf; sourceTree = "<group>"; };
 		D2983CD81D767D6100D79F54 /* lobster.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = lobster.otf; sourceTree = "<group>"; };
 		D2983CDE1D768D3200D79F54 /* BizCardTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BizCardTableViewCell.swift; sourceTree = "<group>"; };
-		D2983CE01D7695CF00D79F54 /* 13327509_10202069019962609_1709393844463742476_n.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 13327509_10202069019962609_1709393844463742476_n.jpg; sourceTree = "<group>"; };
 		D2983CE21D76A70000D79F54 /* add.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = add.png; sourceTree = "<group>"; };
 		D2983CE41D76A7C100D79F54 /* book.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = book.png; sourceTree = "<group>"; };
+		D2983D221D7791D300D79F54 /* BarButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarButton.swift; sourceTree = "<group>"; };
 		D29EEFC71D7654F6001467C3 /* Ethos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ethos.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D29EEFCA1D7654F6001467C3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D29EEFCC1D7654F6001467C3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -67,6 +94,8 @@
 		D29EEFE61D7654F7001467C3 /* EthosUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EthosUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D29EEFEA1D7654F7001467C3 /* EthosUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EthosUITests.swift; sourceTree = "<group>"; };
 		D29EEFEC1D7654F7001467C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EBECA746F313E81612116607 /* Pods-Ethos.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ethos.release.xcconfig"; path = "Pods/Target Support Files/Pods-Ethos/Pods-Ethos.release.xcconfig"; sourceTree = "<group>"; };
+		F1E4131FA4F219398830924E /* Pods-EthosUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EthosUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-EthosUITests/Pods-EthosUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +103,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D22419141D7922030093302D /* WebKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -94,13 +124,40 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C69E5665C12378583D1AFECB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D22419131D7922030093302D /* WebKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C94F57B809E23832E23CAA4F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				915EAEE4B8B7C4355B43A99E /* Pods-Ethos.debug.xcconfig */,
+				EBECA746F313E81612116607 /* Pods-Ethos.release.xcconfig */,
+				445AF566C16ED71FB9A28DC0 /* Pods-EthosTests.debug.xcconfig */,
+				BED51C939254871AEDA554E7 /* Pods-EthosTests.release.xcconfig */,
+				5408AA4EDCFAE0D5E1DCCE72 /* Pods-EthosUITests.debug.xcconfig */,
+				F1E4131FA4F219398830924E /* Pods-EthosUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		D29EEFBE1D7654F6001467C3 = {
 			isa = PBXGroup;
 			children = (
+				D275BBA61D808D2E0052152D /* PostBox.swift */,
+				D2983D221D7791D300D79F54 /* BarButton.swift */,
+				D234EE471D7CCC4C00CDEB3E /* CardView.swift */,
+				D234EE491D7CDB0800CDEB3E /* CardContainerView.swift */,
 				D29EEFC91D7654F6001467C3 /* Ethos */,
 				D29EEFDE1D7654F7001467C3 /* EthosTests */,
 				D29EEFE91D7654F7001467C3 /* EthosUITests */,
 				D29EEFC81D7654F6001467C3 /* Products */,
+				C94F57B809E23832E23CAA4F /* Pods */,
+				C69E5665C12378583D1AFECB /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -120,19 +177,25 @@
 				D29EEFCA1D7654F6001467C3 /* AppDelegate.swift */,
 				D29EEFCC1D7654F6001467C3 /* ViewController.swift */,
 				D29EEFCE1D7654F6001467C3 /* Main.storyboard */,
+				D275BBB01D80F84A0052152D /* NotifyTableViewController.swift */,
 				D2983CD21D765CC700D79F54 /* CardStackTableViewController.swift */,
+				D2385CE01D77C95C0086FADC /* BizCard.swift */,
 				D2983CDE1D768D3200D79F54 /* BizCardTableViewCell.swift */,
 				D29EEFD11D7654F6001467C3 /* Assets.xcassets */,
 				D29EEFD31D7654F6001467C3 /* LaunchScreen.storyboard */,
 				D29EEFD61D7654F6001467C3 /* Info.plist */,
+				D2385CE21D7812610086FADC /* Auth0.plist */,
 				D2983CD41D767D6000D79F54 /* rale_reg.ttf */,
 				D2983CD51D767D6100D79F54 /* rale_thin.ttf */,
 				D2983CD61D767D6100D79F54 /* rale_bold.ttf */,
 				D2983CD71D767D6100D79F54 /* rale_light.ttf */,
 				D2983CD81D767D6100D79F54 /* lobster.otf */,
-				D2983CE01D7695CF00D79F54 /* 13327509_10202069019962609_1709393844463742476_n.jpg */,
 				D2983CE21D76A70000D79F54 /* add.png */,
 				D2983CE41D76A7C100D79F54 /* book.png */,
+				D275BBA81D809FA80052152D /* ic_menu.png */,
+				D275BBAA1D80A2EF0052152D /* ic_home.png */,
+				D275BBAC1D80A38E0052152D /* ic_textsms.png */,
+				D275BBAE1D80CCF60052152D /* Raleway-Italic.ttf */,
 			);
 			path = Ethos;
 			sourceTree = "<group>";
@@ -162,9 +225,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D29EEFEF1D7654F7001467C3 /* Build configuration list for PBXNativeTarget "Ethos" */;
 			buildPhases = (
+				00D53A357CC45DB0E549DD27 /* [CP] Check Pods Manifest.lock */,
 				D29EEFC31D7654F6001467C3 /* Sources */,
 				D29EEFC41D7654F6001467C3 /* Frameworks */,
 				D29EEFC51D7654F6001467C3 /* Resources */,
+				A6702C33E9F7C4FDD4CC74AD /* [CP] Embed Pods Frameworks */,
+				314401BB447AF17BD2738CEA /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -179,9 +245,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D29EEFF21D7654F7001467C3 /* Build configuration list for PBXNativeTarget "EthosTests" */;
 			buildPhases = (
+				B7ED44F8BC43F00E925142CC /* [CP] Check Pods Manifest.lock */,
 				D29EEFD71D7654F7001467C3 /* Sources */,
 				D29EEFD81D7654F7001467C3 /* Frameworks */,
 				D29EEFD91D7654F7001467C3 /* Resources */,
+				BD0BFB87D52D8241C8B599B5 /* [CP] Embed Pods Frameworks */,
+				5CD7D2879BD0D5D343B62B89 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -197,9 +266,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D29EEFF51D7654F7001467C3 /* Build configuration list for PBXNativeTarget "EthosUITests" */;
 			buildPhases = (
+				DE5865B2A9045D2A42AB302F /* [CP] Check Pods Manifest.lock */,
 				D29EEFE21D7654F7001467C3 /* Sources */,
 				D29EEFE31D7654F7001467C3 /* Frameworks */,
 				D29EEFE41D7654F7001467C3 /* Resources */,
+				0765F3548FBB260FC9058FAE /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -259,16 +330,20 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D275BBAF1D80CD540052152D /* Raleway-Italic.ttf in Resources */,
 				D2983CD91D767D6F00D79F54 /* rale_reg.ttf in Resources */,
 				D2983CDA1D767D6F00D79F54 /* rale_thin.ttf in Resources */,
+				D275BBAD1D80A38E0052152D /* ic_textsms.png in Resources */,
+				D275BBA91D809FA80052152D /* ic_menu.png in Resources */,
 				D2983CDB1D767D6F00D79F54 /* rale_bold.ttf in Resources */,
 				D2983CE31D76A70000D79F54 /* add.png in Resources */,
 				D2983CDC1D767D6F00D79F54 /* rale_light.ttf in Resources */,
 				D2983CDD1D767D6F00D79F54 /* lobster.otf in Resources */,
 				D29EEFD51D7654F6001467C3 /* LaunchScreen.storyboard in Resources */,
+				D2385CE31D7812610086FADC /* Auth0.plist in Resources */,
 				D29EEFD21D7654F6001467C3 /* Assets.xcassets in Resources */,
+				D275BBAB1D80A2EF0052152D /* ic_home.png in Resources */,
 				D2983CE51D76A7C100D79F54 /* book.png in Resources */,
-				D2983CE11D7695CF00D79F54 /* 13327509_10202069019962609_1709393844463742476_n.jpg in Resources */,
 				D29EEFD01D7654F6001467C3 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -289,15 +364,144 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		00D53A357CC45DB0E549DD27 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		0765F3548FBB260FC9058FAE /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-EthosUITests/Pods-EthosUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		314401BB447AF17BD2738CEA /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Ethos/Pods-Ethos-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5CD7D2879BD0D5D343B62B89 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-EthosTests/Pods-EthosTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A6702C33E9F7C4FDD4CC74AD /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Ethos/Pods-Ethos-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B7ED44F8BC43F00E925142CC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		BD0BFB87D52D8241C8B599B5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-EthosTests/Pods-EthosTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DE5865B2A9045D2A42AB302F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		D29EEFC31D7654F6001467C3 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				D29EEFCD1D7654F6001467C3 /* ViewController.swift in Sources */,
+				D2385CE11D77C95C0086FADC /* BizCard.swift in Sources */,
+				D234EE4A1D7CDB0800CDEB3E /* CardContainerView.swift in Sources */,
 				D2983CD31D765CC700D79F54 /* CardStackTableViewController.swift in Sources */,
+				D275BBB11D80F84A0052152D /* NotifyTableViewController.swift in Sources */,
+				D2983D231D7791D300D79F54 /* BarButton.swift in Sources */,
 				D29EEFCB1D7654F6001467C3 /* AppDelegate.swift in Sources */,
+				D234EE481D7CCC4C00CDEB3E /* CardView.swift in Sources */,
 				D2983CDF1D768D3200D79F54 /* BizCardTableViewCell.swift in Sources */,
+				D275BBA71D808D2E0052152D /* PostBox.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -306,6 +510,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D29EEFE01D7654F7001467C3 /* EthosTests.swift in Sources */,
+				D2D429121D807DFD00188991 /* BarButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -437,28 +642,44 @@
 		};
 		D29EEFF01D7654F7001467C3 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 915EAEE4B8B7C4355B43A99E /* Pods-Ethos.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Ethos",
+				);
 				INFOPLIST_FILE = Ethos/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.boltvisual.ethos.Ethos;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ethos.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Obj-CBridge.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		D29EEFF11D7654F7001467C3 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EBECA746F313E81612116607 /* Pods-Ethos.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Ethos",
+				);
 				INFOPLIST_FILE = Ethos/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.boltvisual.ethos.Ethos;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ethos.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Obj-CBridge.h";
 			};
 			name = Release;
 		};
 		D29EEFF31D7654F7001467C3 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 445AF566C16ED71FB9A28DC0 /* Pods-EthosTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = EthosTests/Info.plist;
@@ -471,6 +692,7 @@
 		};
 		D29EEFF41D7654F7001467C3 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BED51C939254871AEDA554E7 /* Pods-EthosTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = EthosTests/Info.plist;
@@ -483,6 +705,7 @@
 		};
 		D29EEFF61D7654F7001467C3 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5408AA4EDCFAE0D5E1DCCE72 /* Pods-EthosUITests.debug.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = EthosUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -494,6 +717,7 @@
 		};
 		D29EEFF71D7654F7001467C3 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F1E4131FA4F219398830924E /* Pods-EthosUITests.release.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = EthosUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";

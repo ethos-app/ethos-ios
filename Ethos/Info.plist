@@ -2,6 +2,10 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>Auth0ClientId</key>
+	<string>m5C2KdRREqLsnGDhHZWpLjvSyvEBBSqH</string>
+	<key>Auth0Domain</key>
+	<string>meetethos.auth0.com</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleExecutable</key>
@@ -24,11 +28,17 @@
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
 	<key>UIAppFonts</key>
 	<array>
 		<string>lobster.otf</string>
 		<string>rale_reg.ttf</string>
 		<string>rale-light.ttf</string>
+		<string>Raleway-Italic.ttf</string>
 		<string>rale-bold.ttf</string>
 		<string>rale-thin.ttf</string>
 	</array>

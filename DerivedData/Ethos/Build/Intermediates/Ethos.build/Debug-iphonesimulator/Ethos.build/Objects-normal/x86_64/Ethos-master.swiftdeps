@@ -1,8 +1,14 @@
 version: "Apple Swift version 2.2 (swiftlang-703.0.18.1 clang-703.0.29)"
-options: "827598a22dfc553fe9436b6d95ad9c56"
-build_time: [525941000, 710908000]
+options: "6f772a9c0e6b775ca14022d8aa3e1169"
+build_time: [526693450, 328896000]
 inputs:
   "/Users/Scott/Documents/Ethos/Ethos/ViewController.swift": [525918591, 0]
-  "/Users/Scott/Documents/Ethos/Ethos/CardStackTableViewController.swift": [525941000, 0]
-  "/Users/Scott/Documents/Ethos/Ethos/AppDelegate.swift": [525919061, 0]
-  "/Users/Scott/Documents/Ethos/Ethos/BizCardTableViewCell.swift": [525937569, 0]
+  "/Users/Scott/Documents/Ethos/Ethos/BizCard.swift": [526349577, 0]
+  "/Users/Scott/Documents/Ethos/Ethos/CardContainerView.swift": [526346356, 0]
+  "/Users/Scott/Documents/Ethos/Ethos/CardStackTableViewController.swift": [526677513, 0]
+  "/Users/Scott/Documents/Ethos/Ethos/NotifyTableViewController.swift": [526677895, 0]
+  "/Users/Scott/Documents/Ethos/BarButton.swift": [526602314, 0]
+  "/Users/Scott/Documents/Ethos/Ethos/AppDelegate.swift": [526677758, 0]
+  "/Users/Scott/Documents/Ethos/CardView.swift": [526346115, 0]
+  "/Users/Scott/Documents/Ethos/Ethos/BizCardTableViewCell.swift": [526693450, 0]
+  "/Users/Scott/Documents/Ethos/PostBox.swift": [526678279, 0]
