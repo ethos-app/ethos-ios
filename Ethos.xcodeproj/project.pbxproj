@@ -7,17 +7,28 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B1CCCB47CA49AD88C8D9F405 /* Pods_Ethos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46587488D12BA0BDB6BD86EC /* Pods_Ethos.framework */; };
+		BCE430A004D70F33175F7AD1 /* Pods_EthosUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67C2F7A290D59FA73DCB7562 /* Pods_EthosUITests.framework */; };
+		D209B94A1D8280930060F135 /* EmojiSelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D209B9491D8280930060F135 /* EmojiSelectView.swift */; };
+		D209B94C1D829BB10060F135 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D209B94B1D829BB10060F135 /* CFNetwork.framework */; };
 		D22419141D7922030093302D /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D22419131D7922030093302D /* WebKit.framework */; };
 		D234EE481D7CCC4C00CDEB3E /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D234EE471D7CCC4C00CDEB3E /* CardView.swift */; };
 		D234EE4A1D7CDB0800CDEB3E /* CardContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D234EE491D7CDB0800CDEB3E /* CardContainerView.swift */; };
 		D2385CE11D77C95C0086FADC /* BizCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2385CE01D77C95C0086FADC /* BizCard.swift */; };
 		D2385CE31D7812610086FADC /* Auth0.plist in Resources */ = {isa = PBXBuildFile; fileRef = D2385CE21D7812610086FADC /* Auth0.plist */; };
+		D26A175A1D8246C9004933B2 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D26A17591D8246C9004933B2 /* Bolts.framework */; };
 		D275BBA71D808D2E0052152D /* PostBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = D275BBA61D808D2E0052152D /* PostBox.swift */; };
 		D275BBA91D809FA80052152D /* ic_menu.png in Resources */ = {isa = PBXBuildFile; fileRef = D275BBA81D809FA80052152D /* ic_menu.png */; };
 		D275BBAB1D80A2EF0052152D /* ic_home.png in Resources */ = {isa = PBXBuildFile; fileRef = D275BBAA1D80A2EF0052152D /* ic_home.png */; };
 		D275BBAD1D80A38E0052152D /* ic_textsms.png in Resources */ = {isa = PBXBuildFile; fileRef = D275BBAC1D80A38E0052152D /* ic_textsms.png */; };
 		D275BBAF1D80CD540052152D /* Raleway-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D275BBAE1D80CCF60052152D /* Raleway-Italic.ttf */; };
 		D275BBB11D80F84A0052152D /* NotifyTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D275BBB01D80F84A0052152D /* NotifyTableViewController.swift */; };
+		D275BBB31D823BCC0052152D /* ic_favorite.png in Resources */ = {isa = PBXBuildFile; fileRef = D275BBB21D823BCC0052152D /* ic_favorite.png */; };
+		D275BBB51D823C060052152D /* ic_comment.png in Resources */ = {isa = PBXBuildFile; fileRef = D275BBB41D823C060052152D /* ic_comment.png */; };
+		D275BBB71D823C200052152D /* ic_favorite_border.png in Resources */ = {isa = PBXBuildFile; fileRef = D275BBB61D823C200052152D /* ic_favorite_border.png */; };
+		D275BBB91D82425A0052152D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D275BBB81D82425A0052152D /* LoginViewController.swift */; };
+		D275BBBC1D82439D0052152D /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D275BBBA1D82439D0052152D /* FBSDKCoreKit.framework */; };
+		D275BBBD1D82439E0052152D /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D275BBBB1D82439D0052152D /* FBSDKLoginKit.framework */; };
 		D2983CD31D765CC700D79F54 /* CardStackTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2983CD21D765CC700D79F54 /* CardStackTableViewController.swift */; };
 		D2983CD91D767D6F00D79F54 /* rale_reg.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D2983CD41D767D6000D79F54 /* rale_reg.ttf */; };
 		D2983CDA1D767D6F00D79F54 /* rale_thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D2983CD51D767D6100D79F54 /* rale_thin.ttf */; };
@@ -36,6 +47,7 @@
 		D29EEFE01D7654F7001467C3 /* EthosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D29EEFDF1D7654F7001467C3 /* EthosTests.swift */; };
 		D29EEFEB1D7654F7001467C3 /* EthosUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D29EEFEA1D7654F7001467C3 /* EthosUITests.swift */; };
 		D2D429121D807DFD00188991 /* BarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2983D221D7791D300D79F54 /* BarButton.swift */; };
+		E803E7080D19883366BE6917 /* Pods_EthosTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C210F9CE639AC170305AF28D /* Pods_EthosTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,20 +69,32 @@
 
 /* Begin PBXFileReference section */
 		445AF566C16ED71FB9A28DC0 /* Pods-EthosTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EthosTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EthosTests/Pods-EthosTests.debug.xcconfig"; sourceTree = "<group>"; };
+		46587488D12BA0BDB6BD86EC /* Pods_Ethos.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Ethos.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5408AA4EDCFAE0D5E1DCCE72 /* Pods-EthosUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EthosUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EthosUITests/Pods-EthosUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		67C2F7A290D59FA73DCB7562 /* Pods_EthosUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EthosUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		915EAEE4B8B7C4355B43A99E /* Pods-Ethos.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ethos.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Ethos/Pods-Ethos.debug.xcconfig"; sourceTree = "<group>"; };
 		BED51C939254871AEDA554E7 /* Pods-EthosTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EthosTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-EthosTests/Pods-EthosTests.release.xcconfig"; sourceTree = "<group>"; };
+		C210F9CE639AC170305AF28D /* Pods_EthosTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EthosTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D209B9491D8280930060F135 /* EmojiSelectView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmojiSelectView.swift; sourceTree = "<group>"; };
+		D209B94B1D829BB10060F135 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		D22419131D7922030093302D /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		D234EE471D7CCC4C00CDEB3E /* CardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		D234EE491D7CDB0800CDEB3E /* CardContainerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CardContainerView.swift; path = Ethos/CardContainerView.swift; sourceTree = "<group>"; };
 		D2385CE01D77C95C0086FADC /* BizCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BizCard.swift; sourceTree = "<group>"; };
 		D2385CE21D7812610086FADC /* Auth0.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Auth0.plist; sourceTree = "<group>"; };
+		D26A17591D8246C9004933B2 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		D275BBA61D808D2E0052152D /* PostBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostBox.swift; sourceTree = "<group>"; };
 		D275BBA81D809FA80052152D /* ic_menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_menu.png; sourceTree = "<group>"; };
 		D275BBAA1D80A2EF0052152D /* ic_home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_home.png; sourceTree = "<group>"; };
 		D275BBAC1D80A38E0052152D /* ic_textsms.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_textsms.png; sourceTree = "<group>"; };
 		D275BBAE1D80CCF60052152D /* Raleway-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-Italic.ttf"; sourceTree = "<group>"; };
 		D275BBB01D80F84A0052152D /* NotifyTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotifyTableViewController.swift; sourceTree = "<group>"; };
+		D275BBB21D823BCC0052152D /* ic_favorite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_favorite.png; sourceTree = "<group>"; };
+		D275BBB41D823C060052152D /* ic_comment.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_comment.png; sourceTree = "<group>"; };
+		D275BBB61D823C200052152D /* ic_favorite_border.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_favorite_border.png; sourceTree = "<group>"; };
+		D275BBB81D82425A0052152D /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		D275BBBA1D82439D0052152D /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
+		D275BBBB1D82439D0052152D /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		D2983CD21D765CC700D79F54 /* CardStackTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardStackTableViewController.swift; sourceTree = "<group>"; };
 		D2983CD41D767D6000D79F54 /* rale_reg.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = rale_reg.ttf; sourceTree = "<group>"; };
 		D2983CD51D767D6100D79F54 /* rale_thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = rale_thin.ttf; sourceTree = "<group>"; };
@@ -103,7 +127,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D209B94C1D829BB10060F135 /* CFNetwork.framework in Frameworks */,
 				D22419141D7922030093302D /* WebKit.framework in Frameworks */,
+				D275BBBC1D82439D0052152D /* FBSDKCoreKit.framework in Frameworks */,
+				D275BBBD1D82439E0052152D /* FBSDKLoginKit.framework in Frameworks */,
+				D26A175A1D8246C9004933B2 /* Bolts.framework in Frameworks */,
+				B1CCCB47CA49AD88C8D9F405 /* Pods_Ethos.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -111,6 +140,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E803E7080D19883366BE6917 /* Pods_EthosTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -118,6 +148,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BCE430A004D70F33175F7AD1 /* Pods_EthosUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -127,7 +158,11 @@
 		C69E5665C12378583D1AFECB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D209B94B1D829BB10060F135 /* CFNetwork.framework */,
 				D22419131D7922030093302D /* WebKit.framework */,
+				46587488D12BA0BDB6BD86EC /* Pods_Ethos.framework */,
+				C210F9CE639AC170305AF28D /* Pods_EthosTests.framework */,
+				67C2F7A290D59FA73DCB7562 /* Pods_EthosUITests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -148,6 +183,9 @@
 		D29EEFBE1D7654F6001467C3 = {
 			isa = PBXGroup;
 			children = (
+				D26A17591D8246C9004933B2 /* Bolts.framework */,
+				D275BBBA1D82439D0052152D /* FBSDKCoreKit.framework */,
+				D275BBBB1D82439D0052152D /* FBSDKLoginKit.framework */,
 				D275BBA61D808D2E0052152D /* PostBox.swift */,
 				D2983D221D7791D300D79F54 /* BarButton.swift */,
 				D234EE471D7CCC4C00CDEB3E /* CardView.swift */,
@@ -175,6 +213,8 @@
 			isa = PBXGroup;
 			children = (
 				D29EEFCA1D7654F6001467C3 /* AppDelegate.swift */,
+				D275BBB81D82425A0052152D /* LoginViewController.swift */,
+				D209B9491D8280930060F135 /* EmojiSelectView.swift */,
 				D29EEFCC1D7654F6001467C3 /* ViewController.swift */,
 				D29EEFCE1D7654F6001467C3 /* Main.storyboard */,
 				D275BBB01D80F84A0052152D /* NotifyTableViewController.swift */,
@@ -196,6 +236,9 @@
 				D275BBAA1D80A2EF0052152D /* ic_home.png */,
 				D275BBAC1D80A38E0052152D /* ic_textsms.png */,
 				D275BBAE1D80CCF60052152D /* Raleway-Italic.ttf */,
+				D275BBB21D823BCC0052152D /* ic_favorite.png */,
+				D275BBB41D823C060052152D /* ic_comment.png */,
+				D275BBB61D823C200052152D /* ic_favorite_border.png */,
 			);
 			path = Ethos;
 			sourceTree = "<group>";
@@ -331,6 +374,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D275BBAF1D80CD540052152D /* Raleway-Italic.ttf in Resources */,
+				D275BBB71D823C200052152D /* ic_favorite_border.png in Resources */,
 				D2983CD91D767D6F00D79F54 /* rale_reg.ttf in Resources */,
 				D2983CDA1D767D6F00D79F54 /* rale_thin.ttf in Resources */,
 				D275BBAD1D80A38E0052152D /* ic_textsms.png in Resources */,
@@ -343,6 +387,8 @@
 				D2385CE31D7812610086FADC /* Auth0.plist in Resources */,
 				D29EEFD21D7654F6001467C3 /* Assets.xcassets in Resources */,
 				D275BBAB1D80A2EF0052152D /* ic_home.png in Resources */,
+				D275BBB51D823C060052152D /* ic_comment.png in Resources */,
+				D275BBB31D823BCC0052152D /* ic_favorite.png in Resources */,
 				D2983CE51D76A7C100D79F54 /* book.png in Resources */,
 				D29EEFD01D7654F6001467C3 /* Main.storyboard in Resources */,
 			);
@@ -495,6 +541,7 @@
 				D29EEFCD1D7654F6001467C3 /* ViewController.swift in Sources */,
 				D2385CE11D77C95C0086FADC /* BizCard.swift in Sources */,
 				D234EE4A1D7CDB0800CDEB3E /* CardContainerView.swift in Sources */,
+				D209B94A1D8280930060F135 /* EmojiSelectView.swift in Sources */,
 				D2983CD31D765CC700D79F54 /* CardStackTableViewController.swift in Sources */,
 				D275BBB11D80F84A0052152D /* NotifyTableViewController.swift in Sources */,
 				D2983D231D7791D300D79F54 /* BarButton.swift in Sources */,
@@ -502,6 +549,7 @@
 				D234EE481D7CCC4C00CDEB3E /* CardView.swift in Sources */,
 				D2983CDF1D768D3200D79F54 /* BizCardTableViewCell.swift in Sources */,
 				D275BBA71D808D2E0052152D /* PostBox.swift in Sources */,
+				D275BBB91D82425A0052152D /* LoginViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -649,6 +697,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Ethos",
+					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = Ethos/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -668,6 +717,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Ethos",
+					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = Ethos/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

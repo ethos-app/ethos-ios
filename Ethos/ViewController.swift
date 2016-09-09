@@ -7,6 +7,18 @@
 //
 
 import UIKit
+import CFNetwork
+extension UIImageView {
+    public func imageFromUrl(url: NSURL) {
+            let task = NSURLSession.sharedSession().dataTaskWithURL(url, completionHandler: { (data, response, error) in
+                if error == nil {
+                    dispatch_async(dispatch_get_main_queue(), { 
+                        self.image = UIImage(data: data!)
+                    })
+                }
+            }).resume()
+        }
+}
 
 extension UIColor {
     class func hexStringToUIColor (hex:String) -> UIColor {

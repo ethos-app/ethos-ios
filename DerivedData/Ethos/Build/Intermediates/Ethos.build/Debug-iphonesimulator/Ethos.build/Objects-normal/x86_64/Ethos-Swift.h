@@ -95,6 +95,7 @@ typedef int swift_int4  __attribute__((__ext_vector_type__(4)));
 @import UIKit;
 @import CoreGraphics;
 @import ObjectiveC;
+@import FBSDKLoginKit;
 #endif
 
 #pragma clang diagnostic ignored "-Wproperty-attribute-mismatch"
@@ -102,11 +103,13 @@ typedef int swift_int4  __attribute__((__ext_vector_type__(4)));
 @class UIWindow;
 @class UIApplication;
 @class NSObject;
+@class NSURL;
 
 SWIFT_CLASS("_TtC5Ethos11AppDelegate")
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 @property (nonatomic, strong) UIWindow * _Nullable window;
 - (BOOL)application:(UIApplication * _Nonnull)application didFinishLaunchingWithOptions:(NSDictionary * _Nullable)launchOptions;
+- (BOOL)application:(UIApplication * _Nonnull)application openURL:(NSURL * _Nonnull)url sourceApplication:(NSString * _Nullable)sourceApplication annotation:(id _Nonnull)annotation;
 - (void)applicationWillResignActive:(UIApplication * _Nonnull)application;
 - (void)applicationDidEnterBackground:(UIApplication * _Nonnull)application;
 - (void)applicationWillEnterForeground:(UIApplication * _Nonnull)application;
@@ -244,6 +247,37 @@ SWIFT_CLASS("_TtC5Ethos8CardView")
 @end
 
 
+@class UICollectionViewLayout;
+
+SWIFT_CLASS("_TtC5Ethos15EmojiSelectView")
+@interface EmojiSelectView : UICollectionView
+- (nonnull instancetype)initWithFrame:(CGRect)frame collectionViewLayout:(UICollectionViewLayout * _Nonnull)layout OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+@class UICollectionViewCell;
+@class FBSDKLoginButton;
+@class FBSDKLoginManagerLoginResult;
+@class NSError;
+
+SWIFT_CLASS("_TtC5Ethos19LoginViewController")
+@interface LoginViewController : UIViewController <FBSDKLoginButtonDelegate, UIScrollViewDelegate, UICollectionViewDataSource, UICollectionViewDelegate>
+@property (nonatomic) NSInteger myEmoji;
+@property (nonatomic, strong) NSMutableArray * _Nullable emojiList;
+@property (nonatomic, strong) UICollectionView * _Nullable emojiKey;
+@property (nonatomic, strong) UILabel * _Nullable header;
+- (void)viewDidLoad;
+- (void)loadEm;
+- (NSInteger)collectionView:(UICollectionView * _Nonnull)collectionView numberOfItemsInSection:(NSInteger)section;
+- (void)collectionView:(UICollectionView * _Nonnull)collectionView didSelectItemAtIndexPath:(NSIndexPath * _Nonnull)indexPath;
+- (UICollectionViewCell * _Nonnull)collectionView:(UICollectionView * _Nonnull)collectionView cellForItemAtIndexPath:(NSIndexPath * _Nonnull)indexPath;
+- (void)loginButton:(FBSDKLoginButton * _Null_unspecified)loginButton didCompleteWithResult:(FBSDKLoginManagerLoginResult * _Null_unspecified)result error:(NSError * _Null_unspecified)error;
+- (BOOL)loginButtonWillLogin:(FBSDKLoginButton * _Null_unspecified)loginButton;
+- (void)loginButtonDidLogOut:(FBSDKLoginButton * _Null_unspecified)loginButton;
+- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+@end
+
 
 SWIFT_CLASS("_TtC5Ethos25NotifyTableViewController")
 @interface NotifyTableViewController : UITableViewController <CardViewDelegate, UITextViewDelegate>
@@ -280,6 +314,11 @@ SWIFT_CLASS("_TtC5Ethos7PostBox")
 
 @interface UIColor (SWIFT_EXTENSION(Ethos))
 + (UIColor * _Nonnull)hexStringToUIColor:(NSString * _Nonnull)hex;
+@end
+
+
+@interface UIImageView (SWIFT_EXTENSION(Ethos))
+- (void)imageFromUrl:(NSURL * _Nonnull)url;
 @end
 
 

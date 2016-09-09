@@ -38,14 +38,14 @@
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="163" id="qa6-Pb-NWA" customClass="BizCardTableViewCell" customModule="Ethos" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="1" width="463" height="163"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="qa6-Pb-NWA" id="1wb-9V-EH6">
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" tableViewCell="qa6-Pb-NWA" id="1wb-9V-EH6">
                                             <rect key="frame" x="0.0" y="0.0" width="463" height="162.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="11n-hf-oQe">
+                                                <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="11n-hf-oQe">
                                                     <rect key="frame" x="8" y="8" width="584" height="147"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Developer at Apple" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YUT-GU-VXo">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Developer at Apple" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YUT-GU-VXo">
                                                             <rect key="frame" x="105" y="59" width="225" height="30"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="225" id="b44-fH-XiA"/>
@@ -54,7 +54,16 @@
                                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ywH-3W-hQo">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Scotty Fat Stacks" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="11" translatesAutoresizingMaskIntoConstraints="NO" id="tUu-9o-50w">
+                                                            <rect key="frame" x="105" y="8" width="179" height="35"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="179" id="719-oa-c0q"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="18"/>
+                                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ywH-3W-hQo">
                                                             <rect key="frame" x="17" y="74" width="313" height="73"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="313" id="ETk-iH-dm5"/>
@@ -67,21 +76,12 @@ Music Producer</string>
                                                             <nil key="highlightedColor"/>
                                                             <size key="shadowOffset" width="0.0" height="5"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Phoenix" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2SR-c1-gcG">
-                                                            <rect key="frame" x="354" y="20" width="82" height="30"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Phoenix" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2SR-c1-gcG">
+                                                            <rect key="frame" x="353" y="11" width="82" height="30"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="82" id="pc5-RN-b3a"/>
                                                             </constraints>
                                                             <fontDescription key="fontDescription" name="Raleway-Thin" family="Raleway" pointSize="14"/>
-                                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Scotty Fat Stacks" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="11" translatesAutoresizingMaskIntoConstraints="NO" id="tUu-9o-50w">
-                                                            <rect key="frame" x="105" y="17" width="179" height="35"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="width" constant="179" id="719-oa-c0q"/>
-                                                            </constraints>
-                                                            <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="18"/>
                                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -103,8 +103,8 @@ Music Producer</string>
                                                         <constraint firstItem="ywH-3W-hQo" firstAttribute="top" secondItem="tUu-9o-50w" secondAttribute="bottom" constant="31" id="fJd-WR-EWg"/>
                                                         <constraint firstItem="YUT-GU-VXo" firstAttribute="centerY" secondItem="11n-hf-oQe" secondAttribute="centerY" id="gop-SD-9VD"/>
                                                         <constraint firstAttribute="trailing" secondItem="2SR-c1-gcG" secondAttribute="trailing" constant="14" id="jRz-gw-TrY"/>
-                                                        <constraint firstItem="2SR-c1-gcG" firstAttribute="top" secondItem="11n-hf-oQe" secondAttribute="top" constant="27" id="jVG-cS-noQ"/>
-                                                        <constraint firstItem="tUu-9o-50w" firstAttribute="top" secondItem="11n-hf-oQe" secondAttribute="top" constant="24" id="jwS-2u-JON"/>
+                                                        <constraint firstItem="2SR-c1-gcG" firstAttribute="top" secondItem="11n-hf-oQe" secondAttribute="top" constant="15" id="jVG-cS-noQ"/>
+                                                        <constraint firstItem="tUu-9o-50w" firstAttribute="top" secondItem="11n-hf-oQe" secondAttribute="top" constant="15" id="jwS-2u-JON"/>
                                                         <constraint firstItem="2SR-c1-gcG" firstAttribute="leading" secondItem="tUu-9o-50w" secondAttribute="trailing" constant="70" id="k6f-PF-bfn"/>
                                                         <constraint firstItem="YUT-GU-VXo" firstAttribute="top" secondItem="tUu-9o-50w" secondAttribute="bottom" constant="7" id="qoV-K9-Mgw"/>
                                                         <constraint firstItem="2SR-c1-gcG" firstAttribute="top" secondItem="11n-hf-oQe" secondAttribute="top" constant="109" id="vCS-FN-6eu"/>
@@ -204,7 +204,6 @@ Music Producer</string>
         <!--Home-->
         <scene sceneID="xy0-n0-I9p">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="VSE-3P-jxm" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="IUP-s8-2Gs" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Home" image="ic_home.png" id="8zW-vv-RCW"/>
                     <toolbarItems/>
@@ -217,6 +216,7 @@ Music Producer</string>
                         <segue destination="QdM-td-vrm" kind="relationship" relationship="rootViewController" id="2Nj-8f-LmW"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VSE-3P-jxm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1079" y="757"/>
         </scene>

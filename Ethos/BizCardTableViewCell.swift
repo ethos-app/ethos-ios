@@ -38,9 +38,23 @@ class BizCardTableViewCell: UITableViewCell {
         bottomBar.backgroundColor = UIColor.hexStringToUIColor("247BA0")
         bottomBar.clipsToBounds = true
         
+        let firstHalf = CGRectMake(0, -4, self.frame.width/2, bottomBar.frame.height)
         let react = UIButton(frame: firstHalf)
         
+        react.imageEdgeInsets = UIEdgeInsets(top: 12, left: 12, bottom: 12, right: 12)
+        react.imageView?.contentMode = UIViewContentMode.ScaleAspectFit
+        react.setImage(UIImage(named: "ic_favorite_border"), forState: UIControlState.Normal)
+        let secondHalf = CGRectMake(self.frame.width/2, -4, self.frame.width/2, bottomBar.frame.height)
         let comment = UIButton(frame: secondHalf)
+        comment.imageEdgeInsets = UIEdgeInsets(top: 12, left: 12, bottom: 12, right: 12)
+        comment.imageView?.contentMode = UIViewContentMode.ScaleAspectFit
+
+        comment.setImage(UIImage(named: "ic_comment"), forState: UIControlState.Normal)
+
+        
+        bottomBar.addSubview(react)
+        bottomBar.addSubview(comment)
+
         self.cardBack.addSubview(bottomBar)
 
         self.cardBack.layer.masksToBounds = true

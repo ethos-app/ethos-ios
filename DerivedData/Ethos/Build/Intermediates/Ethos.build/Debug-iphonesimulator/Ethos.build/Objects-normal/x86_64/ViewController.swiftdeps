@@ -4,45 +4,64 @@ provides-top-level:
 provides-nominal:
 - "C5Ethos14ViewController"
 provides-member:
+- ["CSo11UIImageView", ""]
 - ["CSo7UIColor", ""]
 - ["C5Ethos14ViewController", ""]
+- ["CSo11UIImageView", "imageFromUrl"]
 - ["CSo7UIColor", "hexStringToUIColor"]
 provides-dynamic-lookup:
-- "didReceiveMemoryWarning"
-- "viewDidLoad"
 - "hexStringToUIColor"
+- "viewDidLoad"
+- "didReceiveMemoryWarning"
+- "imageFromUrl"
 depends-top-level:
-- "String"
-- !private "CGFloat"
-- !private "&"
-- "UIViewController"
+- !private "UIImage"
 - !private "NSCharacterSet"
-- !private "UInt32"
-- !private "NSScanner"
-- !private "!="
 - !private ">>"
+- !private "UnicodeScalarType"
+- !private "!="
+- !private "NSScanner"
+- !private "=="
+- !private "&"
+- !private "NSURLSession"
+- !private "UInt32"
+- "String"
+- "UIImageView"
 - !private "StringLiteralType"
+- !private "dispatch_get_main_queue"
+- "UIViewController"
+- !private "CGFloat"
 - "UIColor"
 - "ViewController"
 - !private "/"
-- !private "UnicodeScalarType"
+- "NSURL"
+- !private "dispatch_async"
 depends-member:
 - !private ["Ps16AbsoluteValuable", "init"]
 - !private ["Ps9AnyObject", "CGFloat"]
 - !private ["Ps9AnyObject", "NSCharacterSet"]
 - !private ["Ps9AnyObject", "NSScanner"]
+- !private ["Ps9AnyObject", "NSURLSession"]
 - !private ["Ps9AnyObject", "UIColor"]
+- !private ["Ps9AnyObject", "UIImage"]
 - !private ["Ps9AnyObject", "barTintColor"]
 - !private ["Ps9AnyObject", "blueColor"]
 - !private ["Ps9AnyObject", "characters"]
+- !private ["Ps9AnyObject", "dataTaskWithURL"]
 - ["Ps9AnyObject", "didReceiveMemoryWarning"]
+- !private ["Ps9AnyObject", "dispatch_async"]
+- !private ["Ps9AnyObject", "dispatch_get_main_queue"]
 - !private ["Ps9AnyObject", "grayColor"]
 - !private ["Ps9AnyObject", "hasPrefix"]
 - ["Ps9AnyObject", "hexStringToUIColor"]
+- !private ["Ps9AnyObject", "image"]
+- ["Ps9AnyObject", "imageFromUrl"]
 - ["Ps9AnyObject", "init"]
 - !private ["Ps9AnyObject", "navigationBar"]
 - !private ["Ps9AnyObject", "navigationController"]
+- !private ["Ps9AnyObject", "resume"]
 - !private ["Ps9AnyObject", "scanHexInt"]
+- !private ["Ps9AnyObject", "sharedSession"]
 - !private ["Ps9AnyObject", "startIndex"]
 - !private ["Ps9AnyObject", "stringByTrimmingCharactersInSet"]
 - !private ["Ps9AnyObject", "substringFromIndex"]
@@ -64,18 +83,27 @@ depends-member:
 - !private ["Ps11CVarArgType", "IntegerLiteralType"]
 - !private ["Ps11CVarArgType", "NSCharacterSet"]
 - !private ["Ps11CVarArgType", "NSScanner"]
+- !private ["Ps11CVarArgType", "NSURLSession"]
 - !private ["Ps11CVarArgType", "UIColor"]
+- !private ["Ps11CVarArgType", "UIImage"]
 - !private ["Ps11CVarArgType", "barTintColor"]
 - !private ["Ps11CVarArgType", "blueColor"]
 - !private ["Ps11CVarArgType", "characters"]
+- !private ["Ps11CVarArgType", "dataTaskWithURL"]
 - ["Ps11CVarArgType", "didReceiveMemoryWarning"]
+- !private ["Ps11CVarArgType", "dispatch_async"]
+- !private ["Ps11CVarArgType", "dispatch_get_main_queue"]
 - !private ["Ps11CVarArgType", "grayColor"]
 - !private ["Ps11CVarArgType", "hasPrefix"]
 - ["Ps11CVarArgType", "hexStringToUIColor"]
+- !private ["Ps11CVarArgType", "image"]
+- ["Ps11CVarArgType", "imageFromUrl"]
 - ["Ps11CVarArgType", "init"]
 - !private ["Ps11CVarArgType", "navigationBar"]
 - !private ["Ps11CVarArgType", "navigationController"]
+- !private ["Ps11CVarArgType", "resume"]
 - !private ["Ps11CVarArgType", "scanHexInt"]
+- !private ["Ps11CVarArgType", "sharedSession"]
 - !private ["Ps11CVarArgType", "startIndex"]
 - !private ["Ps11CVarArgType", "stringByTrimmingCharactersInSet"]
 - !private ["Ps11CVarArgType", "substringFromIndex"]
@@ -105,18 +133,27 @@ depends-member:
 - !private ["Ps28CustomDebugStringConvertible", "CGFloat"]
 - !private ["Ps28CustomDebugStringConvertible", "NSCharacterSet"]
 - !private ["Ps28CustomDebugStringConvertible", "NSScanner"]
+- !private ["Ps28CustomDebugStringConvertible", "NSURLSession"]
 - !private ["Ps28CustomDebugStringConvertible", "UIColor"]
+- !private ["Ps28CustomDebugStringConvertible", "UIImage"]
 - !private ["Ps28CustomDebugStringConvertible", "barTintColor"]
 - !private ["Ps28CustomDebugStringConvertible", "blueColor"]
 - !private ["Ps28CustomDebugStringConvertible", "characters"]
+- !private ["Ps28CustomDebugStringConvertible", "dataTaskWithURL"]
 - ["Ps28CustomDebugStringConvertible", "didReceiveMemoryWarning"]
+- !private ["Ps28CustomDebugStringConvertible", "dispatch_async"]
+- !private ["Ps28CustomDebugStringConvertible", "dispatch_get_main_queue"]
 - !private ["Ps28CustomDebugStringConvertible", "grayColor"]
 - !private ["Ps28CustomDebugStringConvertible", "hasPrefix"]
 - ["Ps28CustomDebugStringConvertible", "hexStringToUIColor"]
+- !private ["Ps28CustomDebugStringConvertible", "image"]
+- ["Ps28CustomDebugStringConvertible", "imageFromUrl"]
 - ["Ps28CustomDebugStringConvertible", "init"]
 - !private ["Ps28CustomDebugStringConvertible", "navigationBar"]
 - !private ["Ps28CustomDebugStringConvertible", "navigationController"]
+- !private ["Ps28CustomDebugStringConvertible", "resume"]
 - !private ["Ps28CustomDebugStringConvertible", "scanHexInt"]
+- !private ["Ps28CustomDebugStringConvertible", "sharedSession"]
 - !private ["Ps28CustomDebugStringConvertible", "startIndex"]
 - !private ["Ps28CustomDebugStringConvertible", "stringByTrimmingCharactersInSet"]
 - !private ["Ps28CustomDebugStringConvertible", "substringFromIndex"]
@@ -129,19 +166,28 @@ depends-member:
 - !private ["Ps23CustomStringConvertible", "IntegerLiteralType"]
 - !private ["Ps23CustomStringConvertible", "NSCharacterSet"]
 - !private ["Ps23CustomStringConvertible", "NSScanner"]
+- !private ["Ps23CustomStringConvertible", "NSURLSession"]
 - !private ["Ps23CustomStringConvertible", "UIColor"]
+- !private ["Ps23CustomStringConvertible", "UIImage"]
 - !private ["Ps23CustomStringConvertible", "_getBuiltinLogicValue"]
 - !private ["Ps23CustomStringConvertible", "barTintColor"]
 - !private ["Ps23CustomStringConvertible", "blueColor"]
 - !private ["Ps23CustomStringConvertible", "characters"]
+- !private ["Ps23CustomStringConvertible", "dataTaskWithURL"]
 - ["Ps23CustomStringConvertible", "didReceiveMemoryWarning"]
+- !private ["Ps23CustomStringConvertible", "dispatch_async"]
+- !private ["Ps23CustomStringConvertible", "dispatch_get_main_queue"]
 - !private ["Ps23CustomStringConvertible", "grayColor"]
 - !private ["Ps23CustomStringConvertible", "hasPrefix"]
 - ["Ps23CustomStringConvertible", "hexStringToUIColor"]
+- !private ["Ps23CustomStringConvertible", "image"]
+- ["Ps23CustomStringConvertible", "imageFromUrl"]
 - ["Ps23CustomStringConvertible", "init"]
 - !private ["Ps23CustomStringConvertible", "navigationBar"]
 - !private ["Ps23CustomStringConvertible", "navigationController"]
+- !private ["Ps23CustomStringConvertible", "resume"]
 - !private ["Ps23CustomStringConvertible", "scanHexInt"]
+- !private ["Ps23CustomStringConvertible", "sharedSession"]
 - !private ["Ps23CustomStringConvertible", "startIndex"]
 - !private ["Ps23CustomStringConvertible", "stringByTrimmingCharactersInSet"]
 - !private ["Ps23CustomStringConvertible", "substringFromIndex"]
@@ -155,20 +201,29 @@ depends-member:
 - !private ["Ps9Equatable", "IntegerLiteralType"]
 - !private ["Ps9Equatable", "NSCharacterSet"]
 - !private ["Ps9Equatable", "NSScanner"]
+- !private ["Ps9Equatable", "NSURLSession"]
 - !private ["Ps9Equatable", "UIColor"]
+- !private ["Ps9Equatable", "UIImage"]
 - !private ["Ps9Equatable", "_getBuiltinLogicValue"]
 - !private ["Ps9Equatable", "advancedBy"]
 - !private ["Ps9Equatable", "barTintColor"]
 - !private ["Ps9Equatable", "blueColor"]
 - !private ["Ps9Equatable", "characters"]
+- !private ["Ps9Equatable", "dataTaskWithURL"]
 - ["Ps9Equatable", "didReceiveMemoryWarning"]
+- !private ["Ps9Equatable", "dispatch_async"]
+- !private ["Ps9Equatable", "dispatch_get_main_queue"]
 - !private ["Ps9Equatable", "grayColor"]
 - !private ["Ps9Equatable", "hasPrefix"]
 - ["Ps9Equatable", "hexStringToUIColor"]
+- !private ["Ps9Equatable", "image"]
+- ["Ps9Equatable", "imageFromUrl"]
 - ["Ps9Equatable", "init"]
 - !private ["Ps9Equatable", "navigationBar"]
 - !private ["Ps9Equatable", "navigationController"]
+- !private ["Ps9Equatable", "resume"]
 - !private ["Ps9Equatable", "scanHexInt"]
+- !private ["Ps9Equatable", "sharedSession"]
 - !private ["Ps9Equatable", "startIndex"]
 - !private ["Ps9Equatable", "stringByTrimmingCharactersInSet"]
 - !private ["Ps9Equatable", "substringFromIndex"]
@@ -192,19 +247,28 @@ depends-member:
 - !private ["Ps8Hashable", "IntegerLiteralType"]
 - !private ["Ps8Hashable", "NSCharacterSet"]
 - !private ["Ps8Hashable", "NSScanner"]
+- !private ["Ps8Hashable", "NSURLSession"]
 - !private ["Ps8Hashable", "UIColor"]
+- !private ["Ps8Hashable", "UIImage"]
 - !private ["Ps8Hashable", "_getBuiltinLogicValue"]
 - !private ["Ps8Hashable", "barTintColor"]
 - !private ["Ps8Hashable", "blueColor"]
 - !private ["Ps8Hashable", "characters"]
+- !private ["Ps8Hashable", "dataTaskWithURL"]
 - ["Ps8Hashable", "didReceiveMemoryWarning"]
+- !private ["Ps8Hashable", "dispatch_async"]
+- !private ["Ps8Hashable", "dispatch_get_main_queue"]
 - !private ["Ps8Hashable", "grayColor"]
 - !private ["Ps8Hashable", "hasPrefix"]
 - ["Ps8Hashable", "hexStringToUIColor"]
+- !private ["Ps8Hashable", "image"]
+- ["Ps8Hashable", "imageFromUrl"]
 - ["Ps8Hashable", "init"]
 - !private ["Ps8Hashable", "navigationBar"]
 - !private ["Ps8Hashable", "navigationController"]
+- !private ["Ps8Hashable", "resume"]
 - !private ["Ps8Hashable", "scanHexInt"]
+- !private ["Ps8Hashable", "sharedSession"]
 - !private ["Ps8Hashable", "startIndex"]
 - !private ["Ps8Hashable", "stringByTrimmingCharactersInSet"]
 - !private ["Ps8Hashable", "substringFromIndex"]
@@ -213,6 +277,7 @@ depends-member:
 - ["Ps8Hashable", "viewDidLoad"]
 - !private ["Ps8Hashable", "whitespaceAndNewlineCharacterSet"]
 - ["Ps8Hashable", ""]
+- !private ["SQ", "deinit"]
 - !private ["VVSS13CharacterView5Index", "Distance"]
 - !private ["VVSS13CharacterView5Index", "advancedBy"]
 - !private ["Ps9Indexable", "Generator"]
@@ -235,13 +300,19 @@ depends-member:
 - !private ["PSo8NSCoding", "CGFloat"]
 - !private ["PSo8NSCoding", "NSCharacterSet"]
 - !private ["PSo8NSCoding", "NSScanner"]
+- !private ["PSo8NSCoding", "NSURLSession"]
 - !private ["PSo8NSCoding", "UIColor"]
+- !private ["PSo8NSCoding", "UIImage"]
 - !private ["PSo8NSCoding", "barTintColor"]
 - !private ["PSo8NSCoding", "blueColor"]
 - !private ["PSo8NSCoding", "characters"]
 - ["PSo8NSCoding", "didReceiveMemoryWarning"]
+- !private ["PSo8NSCoding", "dispatch_async"]
+- !private ["PSo8NSCoding", "dispatch_get_main_queue"]
 - !private ["PSo8NSCoding", "grayColor"]
 - !private ["PSo8NSCoding", "hasPrefix"]
+- !private ["PSo8NSCoding", "image"]
+- ["PSo8NSCoding", "imageFromUrl"]
 - ["PSo8NSCoding", "init"]
 - !private ["PSo8NSCoding", "navigationBar"]
 - !private ["PSo8NSCoding", "navigationController"]
@@ -262,6 +333,7 @@ depends-member:
 - !private ["PSo9NSCopying", "grayColor"]
 - !private ["PSo9NSCopying", "hasPrefix"]
 - !private ["PSo9NSCopying", "init"]
+- !private ["PSo9NSCopying", "resume"]
 - !private ["PSo9NSCopying", "scanHexInt"]
 - !private ["PSo9NSCopying", "startIndex"]
 - !private ["PSo9NSCopying", "stringByTrimmingCharactersInSet"]
@@ -285,20 +357,30 @@ depends-member:
 - !private ["CSo8NSObject", "CGFloat"]
 - !private ["CSo8NSObject", "NSCharacterSet"]
 - !private ["CSo8NSObject", "NSScanner"]
+- ["CSo8NSObject", "NSURL"]
+- !private ["CSo8NSObject", "NSURLSession"]
 - ["CSo8NSObject", "String"]
 - ["CSo8NSObject", "UIColor"]
+- !private ["CSo8NSObject", "UIImage"]
 - !private ["CSo8NSObject", "UInt32"]
 - !private ["CSo8NSObject", "barTintColor"]
 - !private ["CSo8NSObject", "blueColor"]
 - !private ["CSo8NSObject", "characters"]
+- !private ["CSo8NSObject", "dataTaskWithURL"]
 - ["CSo8NSObject", "didReceiveMemoryWarning"]
+- !private ["CSo8NSObject", "dispatch_async"]
+- !private ["CSo8NSObject", "dispatch_get_main_queue"]
 - !private ["CSo8NSObject", "grayColor"]
 - !private ["CSo8NSObject", "hasPrefix"]
 - ["CSo8NSObject", "hexStringToUIColor"]
+- !private ["CSo8NSObject", "image"]
+- ["CSo8NSObject", "imageFromUrl"]
 - ["CSo8NSObject", "init"]
 - !private ["CSo8NSObject", "navigationBar"]
 - !private ["CSo8NSObject", "navigationController"]
+- !private ["CSo8NSObject", "resume"]
 - !private ["CSo8NSObject", "scanHexInt"]
+- !private ["CSo8NSObject", "sharedSession"]
 - !private ["CSo8NSObject", "startIndex"]
 - !private ["CSo8NSObject", "stringByTrimmingCharactersInSet"]
 - !private ["CSo8NSObject", "substringFromIndex"]
@@ -309,18 +391,27 @@ depends-member:
 - !private ["PSo16NSObjectProtocol", "CGFloat"]
 - !private ["PSo16NSObjectProtocol", "NSCharacterSet"]
 - !private ["PSo16NSObjectProtocol", "NSScanner"]
+- !private ["PSo16NSObjectProtocol", "NSURLSession"]
 - !private ["PSo16NSObjectProtocol", "UIColor"]
+- !private ["PSo16NSObjectProtocol", "UIImage"]
 - !private ["PSo16NSObjectProtocol", "barTintColor"]
 - !private ["PSo16NSObjectProtocol", "blueColor"]
 - !private ["PSo16NSObjectProtocol", "characters"]
+- !private ["PSo16NSObjectProtocol", "dataTaskWithURL"]
 - ["PSo16NSObjectProtocol", "didReceiveMemoryWarning"]
+- !private ["PSo16NSObjectProtocol", "dispatch_async"]
+- !private ["PSo16NSObjectProtocol", "dispatch_get_main_queue"]
 - !private ["PSo16NSObjectProtocol", "grayColor"]
 - !private ["PSo16NSObjectProtocol", "hasPrefix"]
 - ["PSo16NSObjectProtocol", "hexStringToUIColor"]
+- !private ["PSo16NSObjectProtocol", "image"]
+- ["PSo16NSObjectProtocol", "imageFromUrl"]
 - ["PSo16NSObjectProtocol", "init"]
 - !private ["PSo16NSObjectProtocol", "navigationBar"]
 - !private ["PSo16NSObjectProtocol", "navigationController"]
+- !private ["PSo16NSObjectProtocol", "resume"]
 - !private ["PSo16NSObjectProtocol", "scanHexInt"]
+- !private ["PSo16NSObjectProtocol", "sharedSession"]
 - !private ["PSo16NSObjectProtocol", "startIndex"]
 - !private ["PSo16NSObjectProtocol", "stringByTrimmingCharactersInSet"]
 - !private ["PSo16NSObjectProtocol", "substringFromIndex"]
@@ -350,6 +441,11 @@ depends-member:
 - !private ["CSo8NSString", "stringByTrimmingCharactersInSet"]
 - !private ["CSo8NSString", "substringFromIndex"]
 - !private ["CSo8NSString", "uppercaseString"]
+- !private ["CSo12NSURLSession", "dataTaskWithURL"]
+- !private ["CSo12NSURLSession", "sharedSession"]
+- !private ["CSo20NSURLSessionDataTask", "resume"]
+- !private ["CSo16NSURLSessionTask", "resume"]
+- !private ["Sq", "deinit"]
 - !private ["Ps16OutputStreamType", "characters"]
 - !private ["Ps16OutputStreamType", "hasPrefix"]
 - !private ["Ps16OutputStreamType", "startIndex"]
@@ -394,13 +490,32 @@ depends-member:
 - !private ["Ps24StringLiteralConvertible", "stringByTrimmingCharactersInSet"]
 - !private ["Ps24StringLiteralConvertible", "substringFromIndex"]
 - !private ["Ps24StringLiteralConvertible", "uppercaseString"]
+- !private ["PSo29UIAccessibilityIdentification", "NSURLSession"]
+- !private ["PSo29UIAccessibilityIdentification", "UIImage"]
 - !private ["PSo29UIAccessibilityIdentification", "barTintColor"]
+- !private ["PSo29UIAccessibilityIdentification", "dispatch_async"]
+- !private ["PSo29UIAccessibilityIdentification", "dispatch_get_main_queue"]
+- !private ["PSo29UIAccessibilityIdentification", "image"]
+- ["PSo29UIAccessibilityIdentification", "imageFromUrl"]
+- !private ["PSo29UIAccessibilityIdentification", "init"]
 - !private ["PSo29UIAccessibilityIdentification", "tintColor"]
+- !private ["PSo12UIAppearance", "NSURLSession"]
+- !private ["PSo12UIAppearance", "UIImage"]
 - !private ["PSo12UIAppearance", "barTintColor"]
+- !private ["PSo12UIAppearance", "dispatch_async"]
+- !private ["PSo12UIAppearance", "dispatch_get_main_queue"]
+- !private ["PSo12UIAppearance", "image"]
+- ["PSo12UIAppearance", "imageFromUrl"]
 - !private ["PSo12UIAppearance", "tintColor"]
+- !private ["PSo21UIAppearanceContainer", "NSURLSession"]
 - !private ["PSo21UIAppearanceContainer", "UIColor"]
+- !private ["PSo21UIAppearanceContainer", "UIImage"]
 - !private ["PSo21UIAppearanceContainer", "barTintColor"]
 - ["PSo21UIAppearanceContainer", "didReceiveMemoryWarning"]
+- !private ["PSo21UIAppearanceContainer", "dispatch_async"]
+- !private ["PSo21UIAppearanceContainer", "dispatch_get_main_queue"]
+- !private ["PSo21UIAppearanceContainer", "image"]
+- ["PSo21UIAppearanceContainer", "imageFromUrl"]
 - ["PSo21UIAppearanceContainer", "init"]
 - !private ["PSo21UIAppearanceContainer", "navigationBar"]
 - !private ["PSo21UIAppearanceContainer", "navigationController"]
@@ -426,25 +541,58 @@ depends-member:
 - !private ["PSo18UIContentContainer", "navigationController"]
 - ["PSo18UIContentContainer", "viewDidLoad"]
 - ["PSo18UIContentContainer", ""]
+- !private ["PSo17UICoordinateSpace", "NSURLSession"]
+- !private ["PSo17UICoordinateSpace", "UIImage"]
 - !private ["PSo17UICoordinateSpace", "barTintColor"]
+- !private ["PSo17UICoordinateSpace", "dispatch_async"]
+- !private ["PSo17UICoordinateSpace", "dispatch_get_main_queue"]
+- !private ["PSo17UICoordinateSpace", "image"]
+- ["PSo17UICoordinateSpace", "imageFromUrl"]
 - !private ["PSo17UICoordinateSpace", "tintColor"]
+- !private ["PSo13UIDynamicItem", "NSURLSession"]
+- !private ["PSo13UIDynamicItem", "UIImage"]
 - !private ["PSo13UIDynamicItem", "barTintColor"]
+- !private ["PSo13UIDynamicItem", "dispatch_async"]
+- !private ["PSo13UIDynamicItem", "dispatch_get_main_queue"]
+- !private ["PSo13UIDynamicItem", "image"]
+- ["PSo13UIDynamicItem", "imageFromUrl"]
 - !private ["PSo13UIDynamicItem", "tintColor"]
+- !private ["PSo18UIFocusEnvironment", "NSURLSession"]
 - !private ["PSo18UIFocusEnvironment", "UIColor"]
+- !private ["PSo18UIFocusEnvironment", "UIImage"]
 - !private ["PSo18UIFocusEnvironment", "barTintColor"]
 - ["PSo18UIFocusEnvironment", "didReceiveMemoryWarning"]
+- !private ["PSo18UIFocusEnvironment", "dispatch_async"]
+- !private ["PSo18UIFocusEnvironment", "dispatch_get_main_queue"]
+- !private ["PSo18UIFocusEnvironment", "image"]
+- ["PSo18UIFocusEnvironment", "imageFromUrl"]
 - ["PSo18UIFocusEnvironment", "init"]
 - !private ["PSo18UIFocusEnvironment", "navigationBar"]
 - !private ["PSo18UIFocusEnvironment", "navigationController"]
 - !private ["PSo18UIFocusEnvironment", "tintColor"]
 - ["PSo18UIFocusEnvironment", "viewDidLoad"]
 - ["PSo18UIFocusEnvironment", ""]
+- !private ["CSo7UIImage", "init"]
+- ["CSo11UIImageView", "NSURL"]
+- !private ["CSo11UIImageView", "NSURLSession"]
+- !private ["CSo11UIImageView", "UIImage"]
+- !private ["CSo11UIImageView", "dispatch_async"]
+- !private ["CSo11UIImageView", "dispatch_get_main_queue"]
+- !private ["CSo11UIImageView", "image"]
+- ["CSo11UIImageView", "imageFromUrl"]
 - !private ["CSo15UINavigationBar", "barTintColor"]
 - !private ["CSo15UINavigationBar", "tintColor"]
 - !private ["CSo22UINavigationController", "navigationBar"]
+- ["CSo11UIResponder", "NSURL"]
+- !private ["CSo11UIResponder", "NSURLSession"]
 - !private ["CSo11UIResponder", "UIColor"]
+- !private ["CSo11UIResponder", "UIImage"]
 - !private ["CSo11UIResponder", "barTintColor"]
 - ["CSo11UIResponder", "didReceiveMemoryWarning"]
+- !private ["CSo11UIResponder", "dispatch_async"]
+- !private ["CSo11UIResponder", "dispatch_get_main_queue"]
+- !private ["CSo11UIResponder", "image"]
+- ["CSo11UIResponder", "imageFromUrl"]
 - ["CSo11UIResponder", "init"]
 - !private ["CSo11UIResponder", "navigationBar"]
 - !private ["CSo11UIResponder", "navigationController"]
@@ -457,16 +605,29 @@ depends-member:
 - !private ["PSo16UIStateRestoring", "navigationController"]
 - ["PSo16UIStateRestoring", "viewDidLoad"]
 - ["PSo16UIStateRestoring", ""]
+- !private ["PSo18UITraitEnvironment", "NSURLSession"]
 - !private ["PSo18UITraitEnvironment", "UIColor"]
+- !private ["PSo18UITraitEnvironment", "UIImage"]
 - !private ["PSo18UITraitEnvironment", "barTintColor"]
 - ["PSo18UITraitEnvironment", "didReceiveMemoryWarning"]
+- !private ["PSo18UITraitEnvironment", "dispatch_async"]
+- !private ["PSo18UITraitEnvironment", "dispatch_get_main_queue"]
+- !private ["PSo18UITraitEnvironment", "image"]
+- ["PSo18UITraitEnvironment", "imageFromUrl"]
 - ["PSo18UITraitEnvironment", "init"]
 - !private ["PSo18UITraitEnvironment", "navigationBar"]
 - !private ["PSo18UITraitEnvironment", "navigationController"]
 - !private ["PSo18UITraitEnvironment", "tintColor"]
 - ["PSo18UITraitEnvironment", "viewDidLoad"]
 - ["PSo18UITraitEnvironment", ""]
+- ["CSo6UIView", "NSURL"]
+- !private ["CSo6UIView", "NSURLSession"]
+- !private ["CSo6UIView", "UIImage"]
 - !private ["CSo6UIView", "barTintColor"]
+- !private ["CSo6UIView", "dispatch_async"]
+- !private ["CSo6UIView", "dispatch_get_main_queue"]
+- !private ["CSo6UIView", "image"]
+- ["CSo6UIView", "imageFromUrl"]
 - !private ["CSo6UIView", "tintColor"]
 - !private ["CSo16UIViewController", "UIColor"]
 - ["CSo16UIViewController", "didReceiveMemoryWarning"]
@@ -475,6 +636,12 @@ depends-member:
 - !private ["CSo16UIViewController", "navigationController"]
 - ["CSo16UIViewController", "viewDidLoad"]
 - ["CSo16UIViewController", ""]
+- !private ["P9Alamofire20URLStringConvertible", "characters"]
+- !private ["P9Alamofire20URLStringConvertible", "hasPrefix"]
+- !private ["P9Alamofire20URLStringConvertible", "startIndex"]
+- !private ["P9Alamofire20URLStringConvertible", "stringByTrimmingCharactersInSet"]
+- !private ["P9Alamofire20URLStringConvertible", "substringFromIndex"]
+- !private ["P9Alamofire20URLStringConvertible", "uppercaseString"]
 - !private ["Ps31UnicodeScalarLiteralConvertible", "characters"]
 - !private ["Ps31UnicodeScalarLiteralConvertible", "hasPrefix"]
 - !private ["Ps31UnicodeScalarLiteralConvertible", "startIndex"]
@@ -522,6 +689,7 @@ depends-member:
 - !private ["Ps24_ColorLiteralConvertible", "blueColor"]
 - !private ["Ps24_ColorLiteralConvertible", "grayColor"]
 - !private ["Ps24_ColorLiteralConvertible", "init"]
+- !private ["Ps24_ImageLiteralConvertible", "init"]
 - !private ["Ps14_Incrementable", "Distance"]
 - !private ["Ps14_Incrementable", "IntegerLiteralType"]
 - !private ["Ps14_Incrementable", "advancedBy"]
@@ -536,14 +704,21 @@ depends-member:
 - !private ["Ps21_ObjectiveCBridgeable", "stringByTrimmingCharactersInSet"]
 - !private ["Ps21_ObjectiveCBridgeable", "substringFromIndex"]
 - !private ["Ps21_ObjectiveCBridgeable", "uppercaseString"]
+- !private ["Vs26_OptionalNilComparisonType", "deinit"]
 - !private ["Ps22_RandomAccessAmbiguity", "IntegerLiteralType"]
 - !private ["Ps12_Reflectable", "Distance"]
 - !private ["Ps12_Reflectable", "IntegerLiteralType"]
+- !private ["Ps12_Reflectable", "NSURLSession"]
+- !private ["Ps12_Reflectable", "UIImage"]
 - !private ["Ps12_Reflectable", "_getBuiltinLogicValue"]
 - !private ["Ps12_Reflectable", "advancedBy"]
 - !private ["Ps12_Reflectable", "barTintColor"]
 - !private ["Ps12_Reflectable", "characters"]
+- !private ["Ps12_Reflectable", "dispatch_async"]
+- !private ["Ps12_Reflectable", "dispatch_get_main_queue"]
 - !private ["Ps12_Reflectable", "hasPrefix"]
+- !private ["Ps12_Reflectable", "image"]
+- ["Ps12_Reflectable", "imageFromUrl"]
 - !private ["Ps12_Reflectable", "init"]
 - !private ["Ps12_Reflectable", "startIndex"]
 - !private ["Ps12_Reflectable", "stringByTrimmingCharactersInSet"]
@@ -572,6 +747,7 @@ depends-nominal:
 - !private "Ps17FloatingPointType"
 - !private "Ps16ForwardIndexType"
 - "Ps8Hashable"
+- !private "SQ"
 - !private "VVSS13CharacterView5Index"
 - !private "Ps9Indexable"
 - !private "Si"
@@ -589,6 +765,10 @@ depends-nominal:
 - !private "CSo9NSScanner"
 - !private "PSo14NSSecureCoding"
 - !private "CSo8NSString"
+- !private "CSo12NSURLSession"
+- !private "CSo20NSURLSessionDataTask"
+- !private "CSo16NSURLSessionTask"
+- !private "Sq"
 - !private "Ps16OutputStreamType"
 - !private "Ps21RandomAccessIndexType"
 - !private "Ps30RangeReplaceableCollectionType"
@@ -600,22 +780,25 @@ depends-nominal:
 - !private "SS"
 - !private "Ps30StringInterpolationConvertible"
 - !private "Ps24StringLiteralConvertible"
-- !private "PSo29UIAccessibilityIdentification"
-- !private "PSo12UIAppearance"
+- "PSo29UIAccessibilityIdentification"
+- "PSo12UIAppearance"
 - "PSo21UIAppearanceContainer"
 - !private "PSo16UIBarPositioning"
 - "CSo7UIColor"
 - "PSo18UIContentContainer"
-- !private "PSo17UICoordinateSpace"
-- !private "PSo13UIDynamicItem"
+- "PSo17UICoordinateSpace"
+- "PSo13UIDynamicItem"
 - "PSo18UIFocusEnvironment"
+- !private "CSo7UIImage"
+- "CSo11UIImageView"
 - !private "CSo15UINavigationBar"
 - !private "CSo22UINavigationController"
 - "CSo11UIResponder"
 - "PSo16UIStateRestoring"
 - "PSo18UITraitEnvironment"
-- !private "CSo6UIView"
+- "CSo6UIView"
 - "CSo16UIViewController"
+- !private "P9Alamofire20URLStringConvertible"
 - !private "Ps31UnicodeScalarLiteralConvertible"
 - "C5Ethos14ViewController"
 - !private "Ps33_BuiltinBooleanLiteralConvertible"
@@ -627,12 +810,14 @@ depends-nominal:
 - !private "Ps19_CVarArgAlignedType"
 - !private "Ps22_CVarArgPassedAsDouble"
 - !private "Ps24_ColorLiteralConvertible"
+- !private "Ps24_ImageLiteralConvertible"
 - !private "Ps14_Incrementable"
 - !private "Ps22_IntegerArithmeticType"
 - !private "Ps12_IntegerType"
 - !private "Ps21_ObjectiveCBridgeable"
+- !private "Vs26_OptionalNilComparisonType"
 - !private "Ps22_RandomAccessAmbiguity"
-- !private "Ps12_Reflectable"
+- "Ps12_Reflectable"
 - !private "Ps18_SignedIntegerType"
 depends-dynamic-lookup:
 depends-external:
@@ -645,20 +830,57 @@ depends-external:
 - "/Applications/Xcode 3.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/ObjectiveC.swiftmodule"
 - "/Applications/Xcode 3.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreGraphics.swiftmodule"
 - "/Applications/Xcode 3.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreImage.swiftmodule"
-- "/Users/Scott/Documents/Ethos/Pods/FirebaseAnalytics/Frameworks/frameworks/FirebaseAnalytics.framework/Headers/FIROptions.h"
-- "/Users/Scott/Documents/Ethos/Pods/FirebaseAnalytics/Frameworks/frameworks/FirebaseAnalytics.framework/Headers/FIRConfiguration.h"
-- "/Users/Scott/Documents/Ethos/Pods/FirebaseAnalytics/Frameworks/frameworks/FirebaseAnalytics.framework/Headers/FIRApp.h"
-- "/Users/Scott/Documents/Ethos/Pods/FirebaseAnalytics/Frameworks/frameworks/FirebaseAnalytics.framework/Headers/FIRAnalyticsConfiguration.h"
-- "/Users/Scott/Documents/Ethos/Pods/FirebaseAnalytics/Frameworks/frameworks/FirebaseAnalytics.framework/Headers/FIRUserPropertyNames.h"
-- "/Users/Scott/Documents/Ethos/Pods/FirebaseAnalytics/Frameworks/frameworks/FirebaseAnalytics.framework/Headers/FIRParameterNames.h"
-- "/Users/Scott/Documents/Ethos/Pods/FirebaseAnalytics/Frameworks/frameworks/FirebaseAnalytics.framework/Headers/FIREventNames.h"
-- "/Users/Scott/Documents/Ethos/Pods/FirebaseAnalytics/Frameworks/frameworks/FirebaseAnalytics.framework/Headers/FIRAnalytics.h"
-- "/Users/Scott/Documents/Ethos/Pods/Firebase/Analytics/Sources/module.modulemap"
-- "/Users/Scott/Documents/Ethos/Pods/FirebaseAnalytics/Frameworks/frameworks/FirebaseAnalytics.framework/Headers/FIRAnalytics+AppDelegate.h"
-- "/Users/Scott/Documents/Ethos/Pods/FirebaseAnalytics/Frameworks/frameworks/FirebaseAnalytics.framework/Headers/FirebaseAnalytics.h"
-- "/Users/Scott/Documents/Ethos/Pods/FirebaseAnalytics/Frameworks/frameworks/FirebaseAnalytics.framework/Modules/module.modulemap"
-- "/Users/Scott/Documents/Ethos/Pods/FirebaseInstanceID/Frameworks/frameworks/FirebaseInstanceID.framework/Headers/FIRInstanceID.h"
-- "/Users/Scott/Documents/Ethos/Pods/FirebaseInstanceID/Frameworks/frameworks/FirebaseInstanceID.framework/Headers/FirebaseInstanceID.h"
-- "/Users/Scott/Documents/Ethos/Pods/FirebaseInstanceID/Frameworks/frameworks/FirebaseInstanceID.framework/Modules/module.modulemap"
-- "/Users/Scott/Documents/Ethos/Pods/Firebase/Analytics/Sources/Firebase.h"
-interface-hash: "f1c3dac410e5419e5f3261871ef352ba"
+- "./Bolts.framework/Headers/BFWebViewAppLinkResolver.h"
+- "./Bolts.framework/Headers/BFURL.h"
+- "./Bolts.framework/Headers/BFMeasurementEvent.h"
+- "./Bolts.framework/Headers/BFAppLinkTarget.h"
+- "./Bolts.framework/Headers/BFAppLinkReturnToRefererView.h"
+- "./Bolts.framework/Headers/BFAppLinkReturnToRefererController.h"
+- "./Bolts.framework/Headers/BFAppLinkResolving.h"
+- "./Bolts.framework/Headers/BFAppLinkNavigation.h"
+- "./Bolts.framework/Headers/BFAppLink.h"
+- "./Bolts.framework/Headers/BFTaskCompletionSource.h"
+- "./Bolts.framework/Headers/BFTask+Exceptions.h"
+- "./Bolts.framework/Headers/BFTask.h"
+- "./Bolts.framework/Headers/BFExecutor.h"
+- "./Bolts.framework/Headers/BFCancellationTokenSource.h"
+- "./Bolts.framework/Headers/BFCancellationTokenRegistration.h"
+- "./Bolts.framework/Headers/BFCancellationToken.h"
+- "./Bolts.framework/Headers/Bolts.h"
+- "./Bolts.framework/Modules/module.modulemap"
+- "./FBSDKCoreKit.framework/Headers/FBSDKProfilePictureView.h"
+- "./FBSDKCoreKit.framework/Headers/FBSDKProfile.h"
+- "./FBSDKCoreKit.framework/Headers/FBSDKMutableCopying.h"
+- "./FBSDKCoreKit.framework/Headers/FBSDKGraphErrorRecoveryProcessor.h"
+- "./FBSDKCoreKit.framework/Headers/FBSDKAppLinkUtility.h"
+- "/Users/Scott/Documents/Ethos/Bolts.framework/Modules/module.modulemap"
+- "./FBSDKCoreKit.framework/Headers/FBSDKAppLinkResolver.h"
+- "./FBSDKCoreKit.framework/Headers/FBSDKUtility.h"
+- "./FBSDKCoreKit.framework/Headers/FBSDKTestUsersManager.h"
+- "./FBSDKCoreKit.framework/Headers/FBSDKSettings.h"
+- "./FBSDKCoreKit.framework/Headers/FBSDKGraphRequestDataAttachment.h"
+- "./FBSDKCoreKit.framework/Headers/FBSDKGraphRequest.h"
+- "./FBSDKCoreKit.framework/Headers/FBSDKConstants.h"
+- "./FBSDKCoreKit.framework/Headers/FBSDKButton.h"
+- "./FBSDKCoreKit.framework/Headers/FBSDKApplicationDelegate.h"
+- "./FBSDKCoreKit.framework/Headers/FBSDKAppEvents.h"
+- "./FBSDKCoreKit.framework/Headers/FBSDKMacros.h"
+- "./FBSDKCoreKit.framework/Headers/FBSDKGraphRequestConnection.h"
+- "./FBSDKCoreKit.framework/Headers/FBSDKCopying.h"
+- "./FBSDKCoreKit.framework/Headers/FBSDKAccessToken.h"
+- "./FBSDKCoreKit.framework/Headers/FBSDKCoreKit.h"
+- "./FBSDKCoreKit.framework/Modules/module.modulemap"
+- "./FBSDKLoginKit.framework/Headers/FBSDKLoginTooltipView.h"
+- "./FBSDKLoginKit.framework/Headers/FBSDKLoginManagerLoginResult.h"
+- "./FBSDKLoginKit.framework/Headers/FBSDKLoginConstants.h"
+- "./FBSDKLoginKit.framework/Headers/FBSDKTooltipView.h"
+- "./FBSDKLoginKit.framework/Headers/FBSDKLoginManager.h"
+- "/Users/Scott/Documents/Ethos/FBSDKCoreKit.framework/Modules/module.modulemap"
+- "./FBSDKLoginKit.framework/Headers/FBSDKLoginButton.h"
+- "./FBSDKLoginKit.framework/Headers/FBSDKLoginKit.h"
+- "./FBSDKLoginKit.framework/Modules/module.modulemap"
+- "/Users/Scott/Documents/Ethos/DerivedData/Ethos/Build/Products/Debug-iphonesimulator/Alamofire/Alamofire.framework/Modules/Alamofire.swiftmodule/x86_64.swiftmodule"
+- "/Users/Scott/Documents/Ethos/DerivedData/Ethos/Build/Products/Debug-iphonesimulator/Alamofire/Alamofire.framework/Headers/Alamofire-Swift.h"
+- "/Users/Scott/Documents/Ethos/DerivedData/Ethos/Build/Products/Debug-iphonesimulator/Alamofire/Alamofire.framework/Headers/Alamofire-umbrella.h"
+- "/Users/Scott/Documents/Ethos/DerivedData/Ethos/Build/Products/Debug-iphonesimulator/Alamofire/Alamofire.framework/Modules/module.modulemap"
+interface-hash: "63c39a0ee4801bbff22476c1a24b1882"

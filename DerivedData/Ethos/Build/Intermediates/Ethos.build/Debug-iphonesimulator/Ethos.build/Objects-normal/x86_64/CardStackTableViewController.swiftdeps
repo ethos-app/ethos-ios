@@ -6,84 +6,86 @@ provides-nominal:
 provides-member:
 - ["C5Ethos28CardStackTableViewController", ""]
 provides-dynamic-lookup:
-- "stopWritingPost"
-- "sidebar"
-- "selectCards"
-- "bar"
-- "tableView"
-- "tableView"
-- "tableView"
-- "tableView"
-- "tableView"
-- "postBox"
-- "textViewDidBeginEditing"
-- "segment"
-- "cardsButton"
-- "preferredStatusBarStyle"
-- "post"
-- "shouldMoveCard"
-- "selectNet"
-- "didReceiveMemoryWarning"
-- "viewDidAppear"
-- "numberOfSectionsInTableView"
-- "viewDidLoad"
-- "netButton"
 - "cardsToShow"
-- "createCards"
+- "netButton"
+- "selectNet"
+- "preferredStatusBarStyle"
+- "viewDidLoad"
+- "sidebar"
+- "segment"
+- "bar"
+- "textViewDidBeginEditing"
+- "selectCards"
+- "didReceiveMemoryWarning"
+- "tableView"
+- "tableView"
+- "tableView"
+- "tableView"
+- "tableView"
+- "viewDidAppear"
+- "shouldMoveCard"
 - "cardView"
+- "numberOfSectionsInTableView"
+- "createCards"
+- "cardsButton"
+- "stopWritingPost"
+- "post"
+- "postBox"
 depends-top-level:
+- !private "UITableViewCellSeparatorStyle"
+- !private "UIColor"
+- !private "-"
+- !private "UIBarButtonItem"
+- "UITableViewCell"
+- "NSMutableArray"
+- "UITextViewDelegate"
 - "PostBox"
-- !private "!="
-- !private "String"
-- "CardStackTableViewController"
+- !private "LoginViewController"
+- !private "Dictionary"
+- !private "BizCardTableViewCell"
+- "UITableViewDataSource"
+- "Bool"
+- "CardView"
+- "UITableViewDelegate"
+- !private "NSForegroundColorAttributeName"
+- "UIStatusBarStyle"
+- !private "UIFont"
 - !private "CGRectOffset"
+- !private "AnyObject"
+- !private "BizCard"
+- !private "!="
+- !private "UnicodeScalarType"
+- !private "NSFontAttributeName"
+- !private "CGRectMake"
+- "UIView"
+- "UITextView"
+- "CardStackTableViewController"
 - "UITableView"
 - !private "StringLiteralType"
-- !private "AnyObject"
-- "Int"
-- !private "UIBarMetrics"
-- "UITextView"
-- !private "UIBarButtonItemStyle"
-- !private "NSFontAttributeName"
-- !private "UIApplication"
-- !private "CGRectMake"
-- !private "Dictionary"
-- !private "print"
-- !private "BooleanLiteralType"
-- "UITextViewDelegate"
-- "CardView"
-- "UITableViewCell"
-- !private "BizCard"
-- "CGFloat"
-- !private "UIColor"
-- "UIViewController"
-- "UITableViewDataSource"
-- "UITableViewDelegate"
-- "BarButton"
-- !private "NSForegroundColorAttributeName"
-- "NSIndexPath"
-- !private "NSURL"
-- "CardViewDelegate"
-- "NSMutableArray"
-- "Bool"
-- !private "-"
+- !private "String"
 - !private "NSData"
+- "NSIndexPath"
 - "CardContainerView"
-- !private "UITableViewCellSeparatorStyle"
-- !private "+"
-- "UIView"
-- !private "UIFont"
-- !private "BizCardTableViewCell"
+- !private "UIBarMetrics"
 - !private "UITableViewCellSelectionStyle"
-- !private "UnicodeScalarType"
-- !private "UIBarButtonItem"
-- "UIStatusBarStyle"
+- "UIViewController"
+- "CardViewDelegate"
+- !private "print"
+- "BarButton"
+- !private "BooleanLiteralType"
+- !private "+"
+- !private "NSURL"
+- "CGFloat"
+- "Int"
+- !private "UIApplication"
+- !private "UIBarButtonItemStyle"
 depends-member:
 - !private ["Ps9AnyObject", "BizCard"]
 - !private ["Ps9AnyObject", "CGRectMake"]
 - !private ["Ps9AnyObject", "CGRectOffset"]
 - !private ["Ps9AnyObject", "CardContainerView"]
 - !private ["Ps9AnyObject", "CardStackTableViewController"]
+- !private ["Ps9AnyObject", "LoginViewController"]
 - !private ["Ps9AnyObject", "NSData"]
 - !private ["Ps9AnyObject", "NSFontAttributeName"]
 - !private ["Ps9AnyObject", "NSForegroundColorAttributeName"]
@@ -146,6 +148,7 @@ depends-member:
 - ["Ps9AnyObject", "post"]
 - ["Ps9AnyObject", "postBox"]
 - ["Ps9AnyObject", "preferredStatusBarStyle"]
+- !private ["Ps9AnyObject", "presentViewController"]
 - !private ["Ps9AnyObject", "print"]
 - !private ["Ps9AnyObject", "profileImageURL"]
 - !private ["Ps9AnyObject", "reloadData"]
@@ -233,6 +236,7 @@ depends-member:
 - !private ["Ps11CVarArgType", "CGRectOffset"]
 - !private ["Ps11CVarArgType", "CardContainerView"]
 - !private ["Ps11CVarArgType", "CardStackTableViewController"]
+- !private ["Ps11CVarArgType", "LoginViewController"]
 - !private ["Ps11CVarArgType", "NSData"]
 - !private ["Ps11CVarArgType", "NSFontAttributeName"]
 - !private ["Ps11CVarArgType", "NSForegroundColorAttributeName"]
@@ -295,6 +299,7 @@ depends-member:
 - ["Ps11CVarArgType", "post"]
 - ["Ps11CVarArgType", "postBox"]
 - ["Ps11CVarArgType", "preferredStatusBarStyle"]
+- !private ["Ps11CVarArgType", "presentViewController"]
 - !private ["Ps11CVarArgType", "print"]
 - !private ["Ps11CVarArgType", "profileImageURL"]
 - !private ["Ps11CVarArgType", "reloadData"]
@@ -365,6 +370,7 @@ depends-member:
 - !private ["C5Ethos28CardStackTableViewController", "CardStackTableViewController"]
 - ["C5Ethos28CardStackTableViewController", "CardView"]
 - ["C5Ethos28CardStackTableViewController", "Int"]
+- !private ["C5Ethos28CardStackTableViewController", "LoginViewController"]
 - !private ["C5Ethos28CardStackTableViewController", "NSData"]
 - !private ["C5Ethos28CardStackTableViewController", "NSFontAttributeName"]
 - !private ["C5Ethos28CardStackTableViewController", "NSForegroundColorAttributeName"]
@@ -405,6 +411,7 @@ depends-member:
 - ["C5Ethos28CardStackTableViewController", "post"]
 - ["C5Ethos28CardStackTableViewController", "postBox"]
 - ["C5Ethos28CardStackTableViewController", "preferredStatusBarStyle"]
+- !private ["C5Ethos28CardStackTableViewController", "presentViewController"]
 - !private ["C5Ethos28CardStackTableViewController", "print"]
 - ["C5Ethos28CardStackTableViewController", "scrollViewDidEndDecelerating"]
 - ["C5Ethos28CardStackTableViewController", "scrollViewDidEndDragging"]
@@ -449,6 +456,7 @@ depends-member:
 - !private ["P5Ethos16CardViewDelegate", "CGRectOffset"]
 - !private ["P5Ethos16CardViewDelegate", "CardContainerView"]
 - !private ["P5Ethos16CardViewDelegate", "CardStackTableViewController"]
+- !private ["P5Ethos16CardViewDelegate", "LoginViewController"]
 - !private ["P5Ethos16CardViewDelegate", "NSData"]
 - !private ["P5Ethos16CardViewDelegate", "NSFontAttributeName"]
 - !private ["P5Ethos16CardViewDelegate", "NSForegroundColorAttributeName"]
@@ -480,6 +488,7 @@ depends-member:
 - ["P5Ethos16CardViewDelegate", "numberOfSectionsInTableView"]
 - !private ["P5Ethos16CardViewDelegate", "post"]
 - !private ["P5Ethos16CardViewDelegate", "postBox"]
+- !private ["P5Ethos16CardViewDelegate", "presentViewController"]
 - !private ["P5Ethos16CardViewDelegate", "print"]
 - ["P5Ethos16CardViewDelegate", "scrollViewDidEndDecelerating"]
 - ["P5Ethos16CardViewDelegate", "scrollViewDidEndDragging"]
@@ -524,6 +533,7 @@ depends-member:
 - !private ["Ps28CustomDebugStringConvertible", "CardContainerView"]
 - !private ["Ps28CustomDebugStringConvertible", "CardStackTableViewController"]
 - !private ["Ps28CustomDebugStringConvertible", "Key"]
+- !private ["Ps28CustomDebugStringConvertible", "LoginViewController"]
 - !private ["Ps28CustomDebugStringConvertible", "NSData"]
 - !private ["Ps28CustomDebugStringConvertible", "NSFontAttributeName"]
 - !private ["Ps28CustomDebugStringConvertible", "NSForegroundColorAttributeName"]
@@ -587,6 +597,7 @@ depends-member:
 - ["Ps28CustomDebugStringConvertible", "post"]
 - ["Ps28CustomDebugStringConvertible", "postBox"]
 - ["Ps28CustomDebugStringConvertible", "preferredStatusBarStyle"]
+- !private ["Ps28CustomDebugStringConvertible", "presentViewController"]
 - !private ["Ps28CustomDebugStringConvertible", "print"]
 - !private ["Ps28CustomDebugStringConvertible", "profileImageURL"]
 - !private ["Ps28CustomDebugStringConvertible", "reloadData"]
@@ -649,6 +660,7 @@ depends-member:
 - !private ["Ps23CustomStringConvertible", "CardContainerView"]
 - !private ["Ps23CustomStringConvertible", "CardStackTableViewController"]
 - !private ["Ps23CustomStringConvertible", "Key"]
+- !private ["Ps23CustomStringConvertible", "LoginViewController"]
 - !private ["Ps23CustomStringConvertible", "NSData"]
 - !private ["Ps23CustomStringConvertible", "NSFontAttributeName"]
 - !private ["Ps23CustomStringConvertible", "NSForegroundColorAttributeName"]
@@ -713,6 +725,7 @@ depends-member:
 - ["Ps23CustomStringConvertible", "post"]
 - ["Ps23CustomStringConvertible", "postBox"]
 - ["Ps23CustomStringConvertible", "preferredStatusBarStyle"]
+- !private ["Ps23CustomStringConvertible", "presentViewController"]
 - !private ["Ps23CustomStringConvertible", "print"]
 - !private ["Ps23CustomStringConvertible", "profileImageURL"]
 - !private ["Ps23CustomStringConvertible", "reloadData"]
@@ -781,6 +794,7 @@ depends-member:
 - !private ["Ps9Equatable", "Default"]
 - !private ["Ps9Equatable", "Done"]
 - !private ["Ps9Equatable", "LightContent"]
+- !private ["Ps9Equatable", "LoginViewController"]
 - !private ["Ps9Equatable", "NSData"]
 - !private ["Ps9Equatable", "NSFontAttributeName"]
 - !private ["Ps9Equatable", "NSForegroundColorAttributeName"]
@@ -846,6 +860,7 @@ depends-member:
 - ["Ps9Equatable", "post"]
 - ["Ps9Equatable", "postBox"]
 - ["Ps9Equatable", "preferredStatusBarStyle"]
+- !private ["Ps9Equatable", "presentViewController"]
 - !private ["Ps9Equatable", "print"]
 - !private ["Ps9Equatable", "profileImageURL"]
 - !private ["Ps9Equatable", "reloadData"]
@@ -904,6 +919,7 @@ depends-member:
 - ["Ps9Equatable", "willBeginSwipeInCard"]
 - ["Ps9Equatable", ""]
 - !private ["Ps41ExtendedGraphemeClusterLiteralConvertible", "isEmpty"]
+- !private ["PSo24FBSDKLoginButtonDelegate", "init"]
 - !private ["Ps8Hashable", "BizCard"]
 - !private ["Ps8Hashable", "CGRectMake"]
 - !private ["Ps8Hashable", "CGRectOffset"]
@@ -912,6 +928,7 @@ depends-member:
 - !private ["Ps8Hashable", "Default"]
 - !private ["Ps8Hashable", "Done"]
 - !private ["Ps8Hashable", "LightContent"]
+- !private ["Ps8Hashable", "LoginViewController"]
 - !private ["Ps8Hashable", "NSData"]
 - !private ["Ps8Hashable", "NSFontAttributeName"]
 - !private ["Ps8Hashable", "NSForegroundColorAttributeName"]
@@ -976,6 +993,7 @@ depends-member:
 - ["Ps8Hashable", "post"]
 - ["Ps8Hashable", "postBox"]
 - ["Ps8Hashable", "preferredStatusBarStyle"]
+- !private ["Ps8Hashable", "presentViewController"]
 - !private ["Ps8Hashable", "print"]
 - !private ["Ps8Hashable", "profileImageURL"]
 - !private ["Ps8Hashable", "reloadData"]
@@ -1035,6 +1053,7 @@ depends-member:
 - !private ["SQ", "deinit"]
 - !private ["Ps9Indexable", "Key"]
 - !private ["Ps9Indexable", "Value"]
+- !private ["C5Ethos19LoginViewController", "init"]
 - !private ["Ps14MirrorPathType", "isEmpty"]
 - !private ["CSo7NSArray", "addObject"]
 - !private ["CSo7NSArray", "count"]
@@ -1045,6 +1064,7 @@ depends-member:
 - !private ["PSo8NSCoding", "CGRectOffset"]
 - !private ["PSo8NSCoding", "CardContainerView"]
 - !private ["PSo8NSCoding", "CardStackTableViewController"]
+- !private ["PSo8NSCoding", "LoginViewController"]
 - !private ["PSo8NSCoding", "NSData"]
 - !private ["PSo8NSCoding", "NSFontAttributeName"]
 - !private ["PSo8NSCoding", "NSForegroundColorAttributeName"]
@@ -1101,6 +1121,7 @@ depends-member:
 - ["PSo8NSCoding", "post"]
 - ["PSo8NSCoding", "postBox"]
 - ["PSo8NSCoding", "preferredStatusBarStyle"]
+- !private ["PSo8NSCoding", "presentViewController"]
 - !private ["PSo8NSCoding", "print"]
 - !private ["PSo8NSCoding", "reloadData"]
 - !private ["PSo8NSCoding", "resetText"]
@@ -1170,6 +1191,7 @@ depends-member:
 - !private ["PSo26NSExtensionRequestHandling", "CGRectOffset"]
 - !private ["PSo26NSExtensionRequestHandling", "CardContainerView"]
 - !private ["PSo26NSExtensionRequestHandling", "CardStackTableViewController"]
+- !private ["PSo26NSExtensionRequestHandling", "LoginViewController"]
 - !private ["PSo26NSExtensionRequestHandling", "NSData"]
 - !private ["PSo26NSExtensionRequestHandling", "NSFontAttributeName"]
 - !private ["PSo26NSExtensionRequestHandling", "NSForegroundColorAttributeName"]
@@ -1204,6 +1226,7 @@ depends-member:
 - ["PSo26NSExtensionRequestHandling", "post"]
 - ["PSo26NSExtensionRequestHandling", "postBox"]
 - ["PSo26NSExtensionRequestHandling", "preferredStatusBarStyle"]
+- !private ["PSo26NSExtensionRequestHandling", "presentViewController"]
 - !private ["PSo26NSExtensionRequestHandling", "print"]
 - ["PSo26NSExtensionRequestHandling", "scrollViewDidEndDecelerating"]
 - ["PSo26NSExtensionRequestHandling", "scrollViewDidEndDragging"]
@@ -1270,6 +1293,7 @@ depends-member:
 - !private ["CSo8NSObject", "CardStackTableViewController"]
 - ["CSo8NSObject", "CardView"]
 - ["CSo8NSObject", "Int"]
+- !private ["CSo8NSObject", "LoginViewController"]
 - !private ["CSo8NSObject", "NSData"]
 - !private ["CSo8NSObject", "NSFontAttributeName"]
 - !private ["CSo8NSObject", "NSForegroundColorAttributeName"]
@@ -1338,6 +1362,7 @@ depends-member:
 - ["CSo8NSObject", "post"]
 - ["CSo8NSObject", "postBox"]
 - ["CSo8NSObject", "preferredStatusBarStyle"]
+- !private ["CSo8NSObject", "presentViewController"]
 - !private ["CSo8NSObject", "print"]
 - !private ["CSo8NSObject", "profileImageURL"]
 - !private ["CSo8NSObject", "reloadData"]
@@ -1398,6 +1423,7 @@ depends-member:
 - !private ["PSo16NSObjectProtocol", "CGRectOffset"]
 - !private ["PSo16NSObjectProtocol", "CardContainerView"]
 - !private ["PSo16NSObjectProtocol", "CardStackTableViewController"]
+- !private ["PSo16NSObjectProtocol", "LoginViewController"]
 - !private ["PSo16NSObjectProtocol", "NSData"]
 - !private ["PSo16NSObjectProtocol", "NSFontAttributeName"]
 - !private ["PSo16NSObjectProtocol", "NSForegroundColorAttributeName"]
@@ -1460,6 +1486,7 @@ depends-member:
 - ["PSo16NSObjectProtocol", "post"]
 - ["PSo16NSObjectProtocol", "postBox"]
 - ["PSo16NSObjectProtocol", "preferredStatusBarStyle"]
+- !private ["PSo16NSObjectProtocol", "presentViewController"]
 - !private ["PSo16NSObjectProtocol", "print"]
 - !private ["PSo16NSObjectProtocol", "profileImageURL"]
 - !private ["PSo16NSObjectProtocol", "reloadData"]
@@ -1608,6 +1635,7 @@ depends-member:
 - !private ["PSo21UIAppearanceContainer", "CGRectOffset"]
 - !private ["PSo21UIAppearanceContainer", "CardContainerView"]
 - !private ["PSo21UIAppearanceContainer", "CardStackTableViewController"]
+- !private ["PSo21UIAppearanceContainer", "LoginViewController"]
 - !private ["PSo21UIAppearanceContainer", "NSData"]
 - !private ["PSo21UIAppearanceContainer", "NSFontAttributeName"]
 - !private ["PSo21UIAppearanceContainer", "NSForegroundColorAttributeName"]
@@ -1659,6 +1687,7 @@ depends-member:
 - ["PSo21UIAppearanceContainer", "post"]
 - ["PSo21UIAppearanceContainer", "postBox"]
 - ["PSo21UIAppearanceContainer", "preferredStatusBarStyle"]
+- !private ["PSo21UIAppearanceContainer", "presentViewController"]
 - !private ["PSo21UIAppearanceContainer", "print"]
 - !private ["PSo21UIAppearanceContainer", "reloadData"]
 - !private ["PSo21UIAppearanceContainer", "resetText"]
@@ -1718,6 +1747,8 @@ depends-member:
 - !private ["PSo16UIBarPositioning", "barTintColor"]
 - !private ["PSo16UIBarPositioning", "setTitleVerticalPositionAdjustment"]
 - !private ["PSo16UIBarPositioning", "titleTextAttributes"]
+- !private ["PSo26UICollectionViewDataSource", "init"]
+- !private ["PSo24UICollectionViewDelegate", "init"]
 - !private ["CSo7UIColor", "blackColor"]
 - !private ["CSo7UIColor", "hexStringToUIColor"]
 - !private ["CSo7UIColor", "whiteColor"]
@@ -1726,6 +1757,7 @@ depends-member:
 - !private ["PSo18UIContentContainer", "CGRectOffset"]
 - !private ["PSo18UIContentContainer", "CardContainerView"]
 - !private ["PSo18UIContentContainer", "CardStackTableViewController"]
+- !private ["PSo18UIContentContainer", "LoginViewController"]
 - !private ["PSo18UIContentContainer", "NSData"]
 - !private ["PSo18UIContentContainer", "NSFontAttributeName"]
 - !private ["PSo18UIContentContainer", "NSForegroundColorAttributeName"]
@@ -1760,6 +1792,7 @@ depends-member:
 - ["PSo18UIContentContainer", "post"]
 - ["PSo18UIContentContainer", "postBox"]
 - ["PSo18UIContentContainer", "preferredStatusBarStyle"]
+- !private ["PSo18UIContentContainer", "presentViewController"]
 - !private ["PSo18UIContentContainer", "print"]
 - ["PSo18UIContentContainer", "scrollViewDidEndDecelerating"]
 - ["PSo18UIContentContainer", "scrollViewDidEndDragging"]
@@ -1863,6 +1896,7 @@ depends-member:
 - !private ["PSo18UIFocusEnvironment", "CGRectOffset"]
 - !private ["PSo18UIFocusEnvironment", "CardContainerView"]
 - !private ["PSo18UIFocusEnvironment", "CardStackTableViewController"]
+- !private ["PSo18UIFocusEnvironment", "LoginViewController"]
 - !private ["PSo18UIFocusEnvironment", "NSData"]
 - !private ["PSo18UIFocusEnvironment", "NSFontAttributeName"]
 - !private ["PSo18UIFocusEnvironment", "NSForegroundColorAttributeName"]
@@ -1914,6 +1948,7 @@ depends-member:
 - ["PSo18UIFocusEnvironment", "post"]
 - ["PSo18UIFocusEnvironment", "postBox"]
 - ["PSo18UIFocusEnvironment", "preferredStatusBarStyle"]
+- !private ["PSo18UIFocusEnvironment", "presentViewController"]
 - !private ["PSo18UIFocusEnvironment", "print"]
 - !private ["PSo18UIFocusEnvironment", "reloadData"]
 - !private ["PSo18UIFocusEnvironment", "resetText"]
@@ -1993,6 +2028,7 @@ depends-member:
 - !private ["CSo11UIResponder", "CardStackTableViewController"]
 - ["CSo11UIResponder", "CardView"]
 - ["CSo11UIResponder", "Int"]
+- !private ["CSo11UIResponder", "LoginViewController"]
 - !private ["CSo11UIResponder", "NSData"]
 - !private ["CSo11UIResponder", "NSFontAttributeName"]
 - !private ["CSo11UIResponder", "NSForegroundColorAttributeName"]
@@ -2051,6 +2087,7 @@ depends-member:
 - ["CSo11UIResponder", "post"]
 - ["CSo11UIResponder", "postBox"]
 - ["CSo11UIResponder", "preferredStatusBarStyle"]
+- !private ["CSo11UIResponder", "presentViewController"]
 - !private ["CSo11UIResponder", "print"]
 - !private ["CSo11UIResponder", "reloadData"]
 - !private ["CSo11UIResponder", "resetText"]
@@ -2118,6 +2155,7 @@ depends-member:
 - !private ["PSo20UIScrollViewDelegate", "CGRectOffset"]
 - !private ["PSo20UIScrollViewDelegate", "CardContainerView"]
 - !private ["PSo20UIScrollViewDelegate", "CardStackTableViewController"]
+- !private ["PSo20UIScrollViewDelegate", "LoginViewController"]
 - !private ["PSo20UIScrollViewDelegate", "NSData"]
 - !private ["PSo20UIScrollViewDelegate", "NSFontAttributeName"]
 - !private ["PSo20UIScrollViewDelegate", "NSForegroundColorAttributeName"]
@@ -2141,12 +2179,14 @@ depends-member:
 - ["PSo20UIScrollViewDelegate", "didChangeStateInCard"]
 - ["PSo20UIScrollViewDelegate", "didEndSwipeInCard"]
 - ["PSo20UIScrollViewDelegate", "indexPathForPreferredFocusedViewInTableView"]
+- !private ["PSo20UIScrollViewDelegate", "init"]
 - !private ["PSo20UIScrollViewDelegate", "navigationController"]
 - !private ["PSo20UIScrollViewDelegate", "navigationItem"]
 - !private ["PSo20UIScrollViewDelegate", "netButton"]
 - ["PSo20UIScrollViewDelegate", "numberOfSectionsInTableView"]
 - !private ["PSo20UIScrollViewDelegate", "post"]
 - !private ["PSo20UIScrollViewDelegate", "postBox"]
+- !private ["PSo20UIScrollViewDelegate", "presentViewController"]
 - !private ["PSo20UIScrollViewDelegate", "print"]
 - ["PSo20UIScrollViewDelegate", "scrollViewDidEndDecelerating"]
 - ["PSo20UIScrollViewDelegate", "scrollViewDidEndDragging"]
@@ -2187,6 +2227,7 @@ depends-member:
 - !private ["PSo16UIStateRestoring", "CGRectOffset"]
 - !private ["PSo16UIStateRestoring", "CardContainerView"]
 - !private ["PSo16UIStateRestoring", "CardStackTableViewController"]
+- !private ["PSo16UIStateRestoring", "LoginViewController"]
 - !private ["PSo16UIStateRestoring", "NSData"]
 - !private ["PSo16UIStateRestoring", "NSFontAttributeName"]
 - !private ["PSo16UIStateRestoring", "NSForegroundColorAttributeName"]
@@ -2221,6 +2262,7 @@ depends-member:
 - ["PSo16UIStateRestoring", "post"]
 - ["PSo16UIStateRestoring", "postBox"]
 - ["PSo16UIStateRestoring", "preferredStatusBarStyle"]
+- !private ["PSo16UIStateRestoring", "presentViewController"]
 - !private ["PSo16UIStateRestoring", "print"]
 - ["PSo16UIStateRestoring", "scrollViewDidEndDecelerating"]
 - ["PSo16UIStateRestoring", "scrollViewDidEndDragging"]
@@ -2283,6 +2325,7 @@ depends-member:
 - !private ["PSo21UITableViewDataSource", "CGRectOffset"]
 - !private ["PSo21UITableViewDataSource", "CardContainerView"]
 - !private ["PSo21UITableViewDataSource", "CardStackTableViewController"]
+- !private ["PSo21UITableViewDataSource", "LoginViewController"]
 - !private ["PSo21UITableViewDataSource", "NSData"]
 - !private ["PSo21UITableViewDataSource", "NSFontAttributeName"]
 - !private ["PSo21UITableViewDataSource", "NSForegroundColorAttributeName"]
@@ -2312,6 +2355,7 @@ depends-member:
 - ["PSo21UITableViewDataSource", "numberOfSectionsInTableView"]
 - !private ["PSo21UITableViewDataSource", "post"]
 - !private ["PSo21UITableViewDataSource", "postBox"]
+- !private ["PSo21UITableViewDataSource", "presentViewController"]
 - !private ["PSo21UITableViewDataSource", "print"]
 - ["PSo21UITableViewDataSource", "scrollViewDidEndDecelerating"]
 - ["PSo21UITableViewDataSource", "scrollViewDidEndDragging"]
@@ -2352,6 +2396,7 @@ depends-member:
 - !private ["PSo19UITableViewDelegate", "CGRectOffset"]
 - !private ["PSo19UITableViewDelegate", "CardContainerView"]
 - !private ["PSo19UITableViewDelegate", "CardStackTableViewController"]
+- !private ["PSo19UITableViewDelegate", "LoginViewController"]
 - !private ["PSo19UITableViewDelegate", "NSData"]
 - !private ["PSo19UITableViewDelegate", "NSFontAttributeName"]
 - !private ["PSo19UITableViewDelegate", "NSForegroundColorAttributeName"]
@@ -2381,6 +2426,7 @@ depends-member:
 - ["PSo19UITableViewDelegate", "numberOfSectionsInTableView"]
 - !private ["PSo19UITableViewDelegate", "post"]
 - !private ["PSo19UITableViewDelegate", "postBox"]
+- !private ["PSo19UITableViewDelegate", "presentViewController"]
 - !private ["PSo19UITableViewDelegate", "print"]
 - ["PSo19UITableViewDelegate", "scrollViewDidEndDecelerating"]
 - ["PSo19UITableViewDelegate", "scrollViewDidEndDragging"]
@@ -2436,6 +2482,7 @@ depends-member:
 - !private ["PSo18UITextViewDelegate", "CGRectOffset"]
 - !private ["PSo18UITextViewDelegate", "CardContainerView"]
 - !private ["PSo18UITextViewDelegate", "CardStackTableViewController"]
+- !private ["PSo18UITextViewDelegate", "LoginViewController"]
 - !private ["PSo18UITextViewDelegate", "NSData"]
 - !private ["PSo18UITextViewDelegate", "NSFontAttributeName"]
 - !private ["PSo18UITextViewDelegate", "NSForegroundColorAttributeName"]
@@ -2465,6 +2512,7 @@ depends-member:
 - ["PSo18UITextViewDelegate", "numberOfSectionsInTableView"]
 - !private ["PSo18UITextViewDelegate", "post"]
 - !private ["PSo18UITextViewDelegate", "postBox"]
+- !private ["PSo18UITextViewDelegate", "presentViewController"]
 - !private ["PSo18UITextViewDelegate", "print"]
 - ["PSo18UITextViewDelegate", "scrollViewDidEndDecelerating"]
 - ["PSo18UITextViewDelegate", "scrollViewDidEndDragging"]
@@ -2505,6 +2553,7 @@ depends-member:
 - !private ["PSo18UITraitEnvironment", "CGRectOffset"]
 - !private ["PSo18UITraitEnvironment", "CardContainerView"]
 - !private ["PSo18UITraitEnvironment", "CardStackTableViewController"]
+- !private ["PSo18UITraitEnvironment", "LoginViewController"]
 - !private ["PSo18UITraitEnvironment", "NSData"]
 - !private ["PSo18UITraitEnvironment", "NSFontAttributeName"]
 - !private ["PSo18UITraitEnvironment", "NSForegroundColorAttributeName"]
@@ -2556,6 +2605,7 @@ depends-member:
 - ["PSo18UITraitEnvironment", "post"]
 - ["PSo18UITraitEnvironment", "postBox"]
 - ["PSo18UITraitEnvironment", "preferredStatusBarStyle"]
+- !private ["PSo18UITraitEnvironment", "presentViewController"]
 - !private ["PSo18UITraitEnvironment", "print"]
 - !private ["PSo18UITraitEnvironment", "reloadData"]
 - !private ["PSo18UITraitEnvironment", "resetText"]
@@ -2647,6 +2697,7 @@ depends-member:
 - !private ["CSo16UIViewController", "CardStackTableViewController"]
 - ["CSo16UIViewController", "CardView"]
 - ["CSo16UIViewController", "Int"]
+- !private ["CSo16UIViewController", "LoginViewController"]
 - !private ["CSo16UIViewController", "NSData"]
 - !private ["CSo16UIViewController", "NSFontAttributeName"]
 - !private ["CSo16UIViewController", "NSForegroundColorAttributeName"]
@@ -2687,6 +2738,7 @@ depends-member:
 - ["CSo16UIViewController", "post"]
 - ["CSo16UIViewController", "postBox"]
 - ["CSo16UIViewController", "preferredStatusBarStyle"]
+- !private ["CSo16UIViewController", "presentViewController"]
 - !private ["CSo16UIViewController", "print"]
 - ["CSo16UIViewController", "scrollViewDidEndDecelerating"]
 - ["CSo16UIViewController", "scrollViewDidEndDragging"]
@@ -2728,6 +2780,8 @@ depends-member:
 - ["CSo16UIViewController", "willBeginSwipeInCard"]
 - ["CSo16UIViewController", ""]
 - !private ["CSo8UIWindow", "addSubview"]
+- !private ["P9Alamofire20URLStringConvertible", "init"]
+- !private ["P9Alamofire20URLStringConvertible", "isEmpty"]
 - !private ["Ps31UnicodeScalarLiteralConvertible", "isEmpty"]
 - !private ["Ps33_BuiltinBooleanLiteralConvertible", "_getBuiltinLogicValue"]
 - !private ["Ps49_BuiltinExtendedGraphemeClusterLiteralConvertible", "isEmpty"]
@@ -2804,9 +2858,11 @@ depends-nominal:
 - !private "Ps28DictionaryLiteralConvertible"
 - "Ps9Equatable"
 - !private "Ps41ExtendedGraphemeClusterLiteralConvertible"
+- !private "PSo24FBSDKLoginButtonDelegate"
 - "Ps8Hashable"
 - !private "SQ"
 - !private "Ps9Indexable"
+- !private "C5Ethos19LoginViewController"
 - !private "Ps14MirrorPathType"
 - !private "CSo7NSArray"
 - "PSo8NSCoding"
@@ -2840,6 +2896,8 @@ depends-nominal:
 - !private "CSo9UIBarItem"
 - !private "OSC12UIBarMetrics"
 - !private "PSo16UIBarPositioning"
+- !private "PSo26UICollectionViewDataSource"
+- !private "PSo24UICollectionViewDelegate"
 - !private "CSo7UIColor"
 - "PSo18UIContentContainer"
 - !private "PSo17UICoordinateSpace"
@@ -2871,6 +2929,7 @@ depends-nominal:
 - !private "CSo6UIView"
 - "CSo16UIViewController"
 - !private "CSo8UIWindow"
+- !private "P9Alamofire20URLStringConvertible"
 - !private "Ps31UnicodeScalarLiteralConvertible"
 - !private "Ps33_BuiltinBooleanLiteralConvertible"
 - !private "Ps49_BuiltinExtendedGraphemeClusterLiteralConvertible"
@@ -2893,20 +2952,57 @@ depends-external:
 - "/Applications/Xcode 3.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/ObjectiveC.swiftmodule"
 - "/Applications/Xcode 3.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreGraphics.swiftmodule"
 - "/Applications/Xcode 3.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreImage.swiftmodule"
-- "/Users/Scott/Documents/Ethos/Pods/FirebaseAnalytics/Frameworks/frameworks/FirebaseAnalytics.framework/Headers/FIROptions.h"
-- "/Users/Scott/Documents/Ethos/Pods/FirebaseAnalytics/Frameworks/frameworks/FirebaseAnalytics.framework/Headers/FIRConfiguration.h"
-- "/Users/Scott/Documents/Ethos/Pods/FirebaseAnalytics/Frameworks/frameworks/FirebaseAnalytics.framework/Headers/FIRApp.h"
-- "/Users/Scott/Documents/Ethos/Pods/FirebaseAnalytics/Frameworks/frameworks/FirebaseAnalytics.framework/Headers/FIRAnalyticsConfiguration.h"
-- "/Users/Scott/Documents/Ethos/Pods/FirebaseAnalytics/Frameworks/frameworks/FirebaseAnalytics.framework/Headers/FIRUserPropertyNames.h"
-- "/Users/Scott/Documents/Ethos/Pods/FirebaseAnalytics/Frameworks/frameworks/FirebaseAnalytics.framework/Headers/FIRParameterNames.h"
-- "/Users/Scott/Documents/Ethos/Pods/FirebaseAnalytics/Frameworks/frameworks/FirebaseAnalytics.framework/Headers/FIREventNames.h"
-- "/Users/Scott/Documents/Ethos/Pods/FirebaseAnalytics/Frameworks/frameworks/FirebaseAnalytics.framework/Headers/FIRAnalytics.h"
-- "/Users/Scott/Documents/Ethos/Pods/Firebase/Analytics/Sources/module.modulemap"
-- "/Users/Scott/Documents/Ethos/Pods/FirebaseAnalytics/Frameworks/frameworks/FirebaseAnalytics.framework/Headers/FIRAnalytics+AppDelegate.h"
-- "/Users/Scott/Documents/Ethos/Pods/FirebaseAnalytics/Frameworks/frameworks/FirebaseAnalytics.framework/Headers/FirebaseAnalytics.h"
-- "/Users/Scott/Documents/Ethos/Pods/FirebaseAnalytics/Frameworks/frameworks/FirebaseAnalytics.framework/Modules/module.modulemap"
-- "/Users/Scott/Documents/Ethos/Pods/FirebaseInstanceID/Frameworks/frameworks/FirebaseInstanceID.framework/Headers/FIRInstanceID.h"
-- "/Users/Scott/Documents/Ethos/Pods/FirebaseInstanceID/Frameworks/frameworks/FirebaseInstanceID.framework/Headers/FirebaseInstanceID.h"
-- "/Users/Scott/Documents/Ethos/Pods/FirebaseInstanceID/Frameworks/frameworks/FirebaseInstanceID.framework/Modules/module.modulemap"
-- "/Users/Scott/Documents/Ethos/Pods/Firebase/Analytics/Sources/Firebase.h"
-interface-hash: "17bd3d14033da65df677872aa0d76a2d"
+- "./Bolts.framework/Headers/BFWebViewAppLinkResolver.h"
+- "./Bolts.framework/Headers/BFURL.h"
+- "./Bolts.framework/Headers/BFMeasurementEvent.h"
+- "./Bolts.framework/Headers/BFAppLinkTarget.h"
+- "./Bolts.framework/Headers/BFAppLinkReturnToRefererView.h"
+- "./Bolts.framework/Headers/BFAppLinkReturnToRefererController.h"
+- "./Bolts.framework/Headers/BFAppLinkResolving.h"
+- "./Bolts.framework/Headers/BFAppLinkNavigation.h"
+- "./Bolts.framework/Headers/BFAppLink.h"
+- "./Bolts.framework/Headers/BFTaskCompletionSource.h"
+- "./Bolts.framework/Headers/BFTask+Exceptions.h"
+- "./Bolts.framework/Headers/BFTask.h"
+- "./Bolts.framework/Headers/BFExecutor.h"
+- "./Bolts.framework/Headers/BFCancellationTokenSource.h"
+- "./Bolts.framework/Headers/BFCancellationTokenRegistration.h"
+- "./Bolts.framework/Headers/BFCancellationToken.h"
+- "./Bolts.framework/Headers/Bolts.h"
+- "./Bolts.framework/Modules/module.modulemap"
+- "./FBSDKCoreKit.framework/Headers/FBSDKProfilePictureView.h"
+- "./FBSDKCoreKit.framework/Headers/FBSDKProfile.h"
+- "./FBSDKCoreKit.framework/Headers/FBSDKMutableCopying.h"
+- "./FBSDKCoreKit.framework/Headers/FBSDKGraphErrorRecoveryProcessor.h"
+- "./FBSDKCoreKit.framework/Headers/FBSDKAppLinkUtility.h"
+- "/Users/Scott/Documents/Ethos/Bolts.framework/Modules/module.modulemap"
+- "./FBSDKCoreKit.framework/Headers/FBSDKAppLinkResolver.h"
+- "./FBSDKCoreKit.framework/Headers/FBSDKUtility.h"
+- "./FBSDKCoreKit.framework/Headers/FBSDKTestUsersManager.h"
+- "./FBSDKCoreKit.framework/Headers/FBSDKSettings.h"
+- "./FBSDKCoreKit.framework/Headers/FBSDKGraphRequestDataAttachment.h"
+- "./FBSDKCoreKit.framework/Headers/FBSDKGraphRequest.h"
+- "./FBSDKCoreKit.framework/Headers/FBSDKConstants.h"
+- "./FBSDKCoreKit.framework/Headers/FBSDKButton.h"
+- "./FBSDKCoreKit.framework/Headers/FBSDKApplicationDelegate.h"
+- "./FBSDKCoreKit.framework/Headers/FBSDKAppEvents.h"
+- "./FBSDKCoreKit.framework/Headers/FBSDKMacros.h"
+- "./FBSDKCoreKit.framework/Headers/FBSDKGraphRequestConnection.h"
+- "./FBSDKCoreKit.framework/Headers/FBSDKCopying.h"
+- "./FBSDKCoreKit.framework/Headers/FBSDKAccessToken.h"
+- "./FBSDKCoreKit.framework/Headers/FBSDKCoreKit.h"
+- "./FBSDKCoreKit.framework/Modules/module.modulemap"
+- "./FBSDKLoginKit.framework/Headers/FBSDKLoginTooltipView.h"
+- "./FBSDKLoginKit.framework/Headers/FBSDKLoginManagerLoginResult.h"
+- "./FBSDKLoginKit.framework/Headers/FBSDKLoginConstants.h"
+- "./FBSDKLoginKit.framework/Headers/FBSDKTooltipView.h"
+- "./FBSDKLoginKit.framework/Headers/FBSDKLoginManager.h"
+- "/Users/Scott/Documents/Ethos/FBSDKCoreKit.framework/Modules/module.modulemap"
+- "./FBSDKLoginKit.framework/Headers/FBSDKLoginButton.h"
+- "./FBSDKLoginKit.framework/Headers/FBSDKLoginKit.h"
+- "./FBSDKLoginKit.framework/Modules/module.modulemap"
+- "/Users/Scott/Documents/Ethos/DerivedData/Ethos/Build/Products/Debug-iphonesimulator/Alamofire/Alamofire.framework/Modules/Alamofire.swiftmodule/x86_64.swiftmodule"
+- "/Users/Scott/Documents/Ethos/DerivedData/Ethos/Build/Products/Debug-iphonesimulator/Alamofire/Alamofire.framework/Headers/Alamofire-Swift.h"
+- "/Users/Scott/Documents/Ethos/DerivedData/Ethos/Build/Products/Debug-iphonesimulator/Alamofire/Alamofire.framework/Headers/Alamofire-umbrella.h"
+- "/Users/Scott/Documents/Ethos/DerivedData/Ethos/Build/Products/Debug-iphonesimulator/Alamofire/Alamofire.framework/Modules/module.modulemap"
+interface-hash: "ce83cea65ac6198b05fe426541fc4a9b"

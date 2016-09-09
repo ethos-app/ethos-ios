@@ -8,6 +8,7 @@
 
 
 import UIKit
+import FBSDKCoreKit
 class CardStackTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, CardViewDelegate, UITextViewDelegate {
 
     var cardsToShow : NSMutableArray?
@@ -30,7 +31,8 @@ class CardStackTableViewController: UIViewController, UITableViewDelegate, UITab
     override func viewDidLoad() {
         super.viewDidLoad()
    
-        
+        let login = LoginViewController()
+        self.presentViewController(login, animated: true, completion: nil)
 //        let url = NSURL(string: "http://meetethos.azurewebsites.net/api/matches/get")
 //        let request = NSMutableURLRequest(URL: url!)
 //        request.addValue("Bearer \(userToken?.idToken)", forHTTPHeaderField: "Authorization")

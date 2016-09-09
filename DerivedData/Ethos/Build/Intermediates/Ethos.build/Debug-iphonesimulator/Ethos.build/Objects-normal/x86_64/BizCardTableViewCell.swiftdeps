@@ -6,32 +6,43 @@ provides-nominal:
 provides-member:
 - ["C5Ethos20BizCardTableViewCell", ""]
 provides-dynamic-lookup:
-- "city"
-- "awakeFromNib"
-- "name"
-- "cardBack"
-- "cardSetup"
 - "desc"
 - "layoutSubviews"
 - "info"
 - "setSelected"
+- "cardBack"
+- "name"
+- "city"
+- "cardSetup"
+- "awakeFromNib"
 depends-top-level:
-- !private "UIColor"
-- "UIView"
 - !private "CGSizeMake"
+- !private "UIControlState"
 - !private "StringLiteralType"
-- "UILabel"
 - !private "CGRectMake"
+- !private "UIEdgeInsets"
+- "UILabel"
 - !private "BooleanLiteralType"
-- "Bool"
-- !private "-"
 - "UITableViewCell"
+- !private "-"
+- !private "/"
+- "Bool"
+- !private "UIImage"
+- !private "UIViewContentMode"
 - "BizCardTableViewCell"
+- !private "UIButton"
+- "UIView"
+- !private "UIColor"
 depends-member:
 - !private ["Ps9AnyObject", "CGRectMake"]
 - !private ["Ps9AnyObject", "CGSizeMake"]
+- !private ["Ps9AnyObject", "UIButton"]
 - !private ["Ps9AnyObject", "UIColor"]
+- !private ["Ps9AnyObject", "UIControlState"]
+- !private ["Ps9AnyObject", "UIEdgeInsets"]
+- !private ["Ps9AnyObject", "UIImage"]
 - !private ["Ps9AnyObject", "UIView"]
+- !private ["Ps9AnyObject", "UIViewContentMode"]
 - !private ["Ps9AnyObject", "addSubview"]
 - ["Ps9AnyObject", "awakeFromNib"]
 - !private ["Ps9AnyObject", "backgroundColor"]
@@ -39,28 +50,37 @@ depends-member:
 - ["Ps9AnyObject", "cardSetup"]
 - ["Ps9AnyObject", "city"]
 - !private ["Ps9AnyObject", "clipsToBounds"]
-- !private ["Ps9AnyObject", "colorWithAlphaComponent"]
+- !private ["Ps9AnyObject", "contentMode"]
 - !private ["Ps9AnyObject", "cornerRadius"]
 - ["Ps9AnyObject", "desc"]
 - !private ["Ps9AnyObject", "frame"]
 - !private ["Ps9AnyObject", "hexStringToUIColor"]
+- !private ["Ps9AnyObject", "imageEdgeInsets"]
+- !private ["Ps9AnyObject", "imageView"]
 - ["Ps9AnyObject", "info"]
 - ["Ps9AnyObject", "init"]
 - !private ["Ps9AnyObject", "layer"]
 - ["Ps9AnyObject", "layoutSubviews"]
 - !private ["Ps9AnyObject", "masksToBounds"]
 - ["Ps9AnyObject", "name"]
+- !private ["Ps9AnyObject", "setImage"]
 - ["Ps9AnyObject", "setSelected"]
 - !private ["Ps9AnyObject", "shadowOffset"]
 - !private ["Ps9AnyObject", "shadowOpacity"]
 - !private ["Ps9AnyObject", "shadowRadius"]
 - ["Ps9AnyObject", ""]
+- !private ["Ps23ArrayLiteralConvertible", "Normal"]
 - ["C5Ethos20BizCardTableViewCell", "Bool"]
 - !private ["C5Ethos20BizCardTableViewCell", "CGRectMake"]
 - !private ["C5Ethos20BizCardTableViewCell", "CGSizeMake"]
+- !private ["C5Ethos20BizCardTableViewCell", "UIButton"]
 - !private ["C5Ethos20BizCardTableViewCell", "UIColor"]
+- !private ["C5Ethos20BizCardTableViewCell", "UIControlState"]
+- !private ["C5Ethos20BizCardTableViewCell", "UIEdgeInsets"]
+- !private ["C5Ethos20BizCardTableViewCell", "UIImage"]
 - ["C5Ethos20BizCardTableViewCell", "UILabel"]
 - ["C5Ethos20BizCardTableViewCell", "UIView"]
+- !private ["C5Ethos20BizCardTableViewCell", "UIViewContentMode"]
 - ["C5Ethos20BizCardTableViewCell", "awakeFromNib"]
 - !private ["C5Ethos20BizCardTableViewCell", "backgroundColor"]
 - ["C5Ethos20BizCardTableViewCell", "cardBack"]
@@ -89,8 +109,13 @@ depends-member:
 - !private ["VSC6CGRect", "width"]
 - !private ["Ps11CVarArgType", "CGRectMake"]
 - !private ["Ps11CVarArgType", "CGSizeMake"]
+- !private ["Ps11CVarArgType", "UIButton"]
 - !private ["Ps11CVarArgType", "UIColor"]
+- !private ["Ps11CVarArgType", "UIControlState"]
+- !private ["Ps11CVarArgType", "UIEdgeInsets"]
+- !private ["Ps11CVarArgType", "UIImage"]
 - !private ["Ps11CVarArgType", "UIView"]
+- !private ["Ps11CVarArgType", "UIViewContentMode"]
 - !private ["Ps11CVarArgType", "addSubview"]
 - ["Ps11CVarArgType", "awakeFromNib"]
 - !private ["Ps11CVarArgType", "backgroundColor"]
@@ -98,17 +123,20 @@ depends-member:
 - ["Ps11CVarArgType", "cardSetup"]
 - ["Ps11CVarArgType", "city"]
 - !private ["Ps11CVarArgType", "clipsToBounds"]
-- !private ["Ps11CVarArgType", "colorWithAlphaComponent"]
+- !private ["Ps11CVarArgType", "contentMode"]
 - !private ["Ps11CVarArgType", "cornerRadius"]
 - ["Ps11CVarArgType", "desc"]
 - !private ["Ps11CVarArgType", "frame"]
 - !private ["Ps11CVarArgType", "hexStringToUIColor"]
+- !private ["Ps11CVarArgType", "imageEdgeInsets"]
+- !private ["Ps11CVarArgType", "imageView"]
 - ["Ps11CVarArgType", "info"]
 - ["Ps11CVarArgType", "init"]
 - !private ["Ps11CVarArgType", "layer"]
 - ["Ps11CVarArgType", "layoutSubviews"]
 - !private ["Ps11CVarArgType", "masksToBounds"]
 - ["Ps11CVarArgType", "name"]
+- !private ["Ps11CVarArgType", "setImage"]
 - ["Ps11CVarArgType", "setSelected"]
 - !private ["Ps11CVarArgType", "shadowOffset"]
 - !private ["Ps11CVarArgType", "shadowOpacity"]
@@ -116,8 +144,13 @@ depends-member:
 - ["Ps11CVarArgType", ""]
 - !private ["Ps28CustomDebugStringConvertible", "CGRectMake"]
 - !private ["Ps28CustomDebugStringConvertible", "CGSizeMake"]
+- !private ["Ps28CustomDebugStringConvertible", "UIButton"]
 - !private ["Ps28CustomDebugStringConvertible", "UIColor"]
+- !private ["Ps28CustomDebugStringConvertible", "UIControlState"]
+- !private ["Ps28CustomDebugStringConvertible", "UIEdgeInsets"]
+- !private ["Ps28CustomDebugStringConvertible", "UIImage"]
 - !private ["Ps28CustomDebugStringConvertible", "UIView"]
+- !private ["Ps28CustomDebugStringConvertible", "UIViewContentMode"]
 - !private ["Ps28CustomDebugStringConvertible", "addSubview"]
 - ["Ps28CustomDebugStringConvertible", "awakeFromNib"]
 - !private ["Ps28CustomDebugStringConvertible", "backgroundColor"]
@@ -125,17 +158,20 @@ depends-member:
 - ["Ps28CustomDebugStringConvertible", "cardSetup"]
 - ["Ps28CustomDebugStringConvertible", "city"]
 - !private ["Ps28CustomDebugStringConvertible", "clipsToBounds"]
-- !private ["Ps28CustomDebugStringConvertible", "colorWithAlphaComponent"]
+- !private ["Ps28CustomDebugStringConvertible", "contentMode"]
 - !private ["Ps28CustomDebugStringConvertible", "cornerRadius"]
 - ["Ps28CustomDebugStringConvertible", "desc"]
 - !private ["Ps28CustomDebugStringConvertible", "frame"]
 - !private ["Ps28CustomDebugStringConvertible", "hexStringToUIColor"]
+- !private ["Ps28CustomDebugStringConvertible", "imageEdgeInsets"]
+- !private ["Ps28CustomDebugStringConvertible", "imageView"]
 - ["Ps28CustomDebugStringConvertible", "info"]
 - ["Ps28CustomDebugStringConvertible", "init"]
 - !private ["Ps28CustomDebugStringConvertible", "layer"]
 - ["Ps28CustomDebugStringConvertible", "layoutSubviews"]
 - !private ["Ps28CustomDebugStringConvertible", "masksToBounds"]
 - ["Ps28CustomDebugStringConvertible", "name"]
+- !private ["Ps28CustomDebugStringConvertible", "setImage"]
 - ["Ps28CustomDebugStringConvertible", "setSelected"]
 - !private ["Ps28CustomDebugStringConvertible", "shadowOffset"]
 - !private ["Ps28CustomDebugStringConvertible", "shadowOpacity"]
@@ -143,8 +179,13 @@ depends-member:
 - ["Ps28CustomDebugStringConvertible", ""]
 - !private ["Ps23CustomStringConvertible", "CGRectMake"]
 - !private ["Ps23CustomStringConvertible", "CGSizeMake"]
+- !private ["Ps23CustomStringConvertible", "UIButton"]
 - !private ["Ps23CustomStringConvertible", "UIColor"]
+- !private ["Ps23CustomStringConvertible", "UIControlState"]
+- !private ["Ps23CustomStringConvertible", "UIEdgeInsets"]
+- !private ["Ps23CustomStringConvertible", "UIImage"]
 - !private ["Ps23CustomStringConvertible", "UIView"]
+- !private ["Ps23CustomStringConvertible", "UIViewContentMode"]
 - !private ["Ps23CustomStringConvertible", "addSubview"]
 - ["Ps23CustomStringConvertible", "awakeFromNib"]
 - !private ["Ps23CustomStringConvertible", "backgroundColor"]
@@ -152,17 +193,20 @@ depends-member:
 - ["Ps23CustomStringConvertible", "cardSetup"]
 - ["Ps23CustomStringConvertible", "city"]
 - !private ["Ps23CustomStringConvertible", "clipsToBounds"]
-- !private ["Ps23CustomStringConvertible", "colorWithAlphaComponent"]
+- !private ["Ps23CustomStringConvertible", "contentMode"]
 - !private ["Ps23CustomStringConvertible", "cornerRadius"]
 - ["Ps23CustomStringConvertible", "desc"]
 - !private ["Ps23CustomStringConvertible", "frame"]
 - !private ["Ps23CustomStringConvertible", "hexStringToUIColor"]
+- !private ["Ps23CustomStringConvertible", "imageEdgeInsets"]
+- !private ["Ps23CustomStringConvertible", "imageView"]
 - ["Ps23CustomStringConvertible", "info"]
 - ["Ps23CustomStringConvertible", "init"]
 - !private ["Ps23CustomStringConvertible", "layer"]
 - ["Ps23CustomStringConvertible", "layoutSubviews"]
 - !private ["Ps23CustomStringConvertible", "masksToBounds"]
 - ["Ps23CustomStringConvertible", "name"]
+- !private ["Ps23CustomStringConvertible", "setImage"]
 - ["Ps23CustomStringConvertible", "setSelected"]
 - !private ["Ps23CustomStringConvertible", "shadowOffset"]
 - !private ["Ps23CustomStringConvertible", "shadowOpacity"]
@@ -170,8 +214,15 @@ depends-member:
 - ["Ps23CustomStringConvertible", ""]
 - !private ["Ps9Equatable", "CGRectMake"]
 - !private ["Ps9Equatable", "CGSizeMake"]
+- !private ["Ps9Equatable", "Normal"]
+- !private ["Ps9Equatable", "ScaleAspectFit"]
+- !private ["Ps9Equatable", "UIButton"]
 - !private ["Ps9Equatable", "UIColor"]
+- !private ["Ps9Equatable", "UIControlState"]
+- !private ["Ps9Equatable", "UIEdgeInsets"]
+- !private ["Ps9Equatable", "UIImage"]
 - !private ["Ps9Equatable", "UIView"]
+- !private ["Ps9Equatable", "UIViewContentMode"]
 - !private ["Ps9Equatable", "addSubview"]
 - ["Ps9Equatable", "awakeFromNib"]
 - !private ["Ps9Equatable", "backgroundColor"]
@@ -179,18 +230,21 @@ depends-member:
 - ["Ps9Equatable", "cardSetup"]
 - ["Ps9Equatable", "city"]
 - !private ["Ps9Equatable", "clipsToBounds"]
-- !private ["Ps9Equatable", "colorWithAlphaComponent"]
+- !private ["Ps9Equatable", "contentMode"]
 - !private ["Ps9Equatable", "cornerRadius"]
 - ["Ps9Equatable", "desc"]
 - !private ["Ps9Equatable", "frame"]
 - !private ["Ps9Equatable", "height"]
 - !private ["Ps9Equatable", "hexStringToUIColor"]
+- !private ["Ps9Equatable", "imageEdgeInsets"]
+- !private ["Ps9Equatable", "imageView"]
 - ["Ps9Equatable", "info"]
 - ["Ps9Equatable", "init"]
 - !private ["Ps9Equatable", "layer"]
 - ["Ps9Equatable", "layoutSubviews"]
 - !private ["Ps9Equatable", "masksToBounds"]
 - ["Ps9Equatable", "name"]
+- !private ["Ps9Equatable", "setImage"]
 - ["Ps9Equatable", "setSelected"]
 - !private ["Ps9Equatable", "shadowOffset"]
 - !private ["Ps9Equatable", "shadowOpacity"]
@@ -199,8 +253,14 @@ depends-member:
 - ["Ps9Equatable", ""]
 - !private ["Ps8Hashable", "CGRectMake"]
 - !private ["Ps8Hashable", "CGSizeMake"]
+- !private ["Ps8Hashable", "ScaleAspectFit"]
+- !private ["Ps8Hashable", "UIButton"]
 - !private ["Ps8Hashable", "UIColor"]
+- !private ["Ps8Hashable", "UIControlState"]
+- !private ["Ps8Hashable", "UIEdgeInsets"]
+- !private ["Ps8Hashable", "UIImage"]
 - !private ["Ps8Hashable", "UIView"]
+- !private ["Ps8Hashable", "UIViewContentMode"]
 - !private ["Ps8Hashable", "addSubview"]
 - ["Ps8Hashable", "awakeFromNib"]
 - !private ["Ps8Hashable", "backgroundColor"]
@@ -208,17 +268,20 @@ depends-member:
 - ["Ps8Hashable", "cardSetup"]
 - ["Ps8Hashable", "city"]
 - !private ["Ps8Hashable", "clipsToBounds"]
-- !private ["Ps8Hashable", "colorWithAlphaComponent"]
+- !private ["Ps8Hashable", "contentMode"]
 - !private ["Ps8Hashable", "cornerRadius"]
 - ["Ps8Hashable", "desc"]
 - !private ["Ps8Hashable", "frame"]
 - !private ["Ps8Hashable", "hexStringToUIColor"]
+- !private ["Ps8Hashable", "imageEdgeInsets"]
+- !private ["Ps8Hashable", "imageView"]
 - ["Ps8Hashable", "info"]
 - ["Ps8Hashable", "init"]
 - !private ["Ps8Hashable", "layer"]
 - ["Ps8Hashable", "layoutSubviews"]
 - !private ["Ps8Hashable", "masksToBounds"]
 - ["Ps8Hashable", "name"]
+- !private ["Ps8Hashable", "setImage"]
 - ["Ps8Hashable", "setSelected"]
 - !private ["Ps8Hashable", "shadowOffset"]
 - !private ["Ps8Hashable", "shadowOpacity"]
@@ -226,8 +289,13 @@ depends-member:
 - ["Ps8Hashable", ""]
 - !private ["PSo8NSCoding", "CGRectMake"]
 - !private ["PSo8NSCoding", "CGSizeMake"]
+- !private ["PSo8NSCoding", "UIButton"]
 - !private ["PSo8NSCoding", "UIColor"]
+- !private ["PSo8NSCoding", "UIControlState"]
+- !private ["PSo8NSCoding", "UIEdgeInsets"]
+- !private ["PSo8NSCoding", "UIImage"]
 - !private ["PSo8NSCoding", "UIView"]
+- !private ["PSo8NSCoding", "UIViewContentMode"]
 - !private ["PSo8NSCoding", "addSubview"]
 - ["PSo8NSCoding", "awakeFromNib"]
 - !private ["PSo8NSCoding", "backgroundColor"]
@@ -235,30 +303,37 @@ depends-member:
 - ["PSo8NSCoding", "cardSetup"]
 - ["PSo8NSCoding", "city"]
 - !private ["PSo8NSCoding", "clipsToBounds"]
-- !private ["PSo8NSCoding", "colorWithAlphaComponent"]
+- !private ["PSo8NSCoding", "contentMode"]
 - !private ["PSo8NSCoding", "cornerRadius"]
 - ["PSo8NSCoding", "desc"]
 - !private ["PSo8NSCoding", "frame"]
 - !private ["PSo8NSCoding", "hexStringToUIColor"]
+- !private ["PSo8NSCoding", "imageEdgeInsets"]
+- !private ["PSo8NSCoding", "imageView"]
 - ["PSo8NSCoding", "info"]
 - ["PSo8NSCoding", "init"]
 - !private ["PSo8NSCoding", "layer"]
 - ["PSo8NSCoding", "layoutSubviews"]
 - !private ["PSo8NSCoding", "masksToBounds"]
 - ["PSo8NSCoding", "name"]
+- !private ["PSo8NSCoding", "setImage"]
 - ["PSo8NSCoding", "setSelected"]
 - !private ["PSo8NSCoding", "shadowOffset"]
 - !private ["PSo8NSCoding", "shadowOpacity"]
 - !private ["PSo8NSCoding", "shadowRadius"]
 - ["PSo8NSCoding", ""]
-- !private ["PSo9NSCopying", "colorWithAlphaComponent"]
 - !private ["PSo9NSCopying", "hexStringToUIColor"]
 - ["CSo8NSObject", "Bool"]
 - !private ["CSo8NSObject", "CGRectMake"]
 - !private ["CSo8NSObject", "CGSizeMake"]
+- !private ["CSo8NSObject", "UIButton"]
 - !private ["CSo8NSObject", "UIColor"]
+- !private ["CSo8NSObject", "UIControlState"]
+- !private ["CSo8NSObject", "UIEdgeInsets"]
+- !private ["CSo8NSObject", "UIImage"]
 - ["CSo8NSObject", "UILabel"]
 - ["CSo8NSObject", "UIView"]
+- !private ["CSo8NSObject", "UIViewContentMode"]
 - !private ["CSo8NSObject", "addSubview"]
 - ["CSo8NSObject", "awakeFromNib"]
 - !private ["CSo8NSObject", "backgroundColor"]
@@ -266,25 +341,33 @@ depends-member:
 - ["CSo8NSObject", "cardSetup"]
 - ["CSo8NSObject", "city"]
 - !private ["CSo8NSObject", "clipsToBounds"]
-- !private ["CSo8NSObject", "colorWithAlphaComponent"]
+- !private ["CSo8NSObject", "contentMode"]
 - !private ["CSo8NSObject", "cornerRadius"]
 - ["CSo8NSObject", "desc"]
 - !private ["CSo8NSObject", "frame"]
 - !private ["CSo8NSObject", "hexStringToUIColor"]
+- !private ["CSo8NSObject", "imageEdgeInsets"]
+- !private ["CSo8NSObject", "imageView"]
 - ["CSo8NSObject", "info"]
 - ["CSo8NSObject", "init"]
 - !private ["CSo8NSObject", "layer"]
 - ["CSo8NSObject", "layoutSubviews"]
 - !private ["CSo8NSObject", "masksToBounds"]
 - ["CSo8NSObject", "name"]
+- !private ["CSo8NSObject", "setImage"]
 - ["CSo8NSObject", "setSelected"]
 - !private ["CSo8NSObject", "shadowOffset"]
 - !private ["CSo8NSObject", "shadowOpacity"]
 - !private ["CSo8NSObject", "shadowRadius"]
 - !private ["PSo16NSObjectProtocol", "CGRectMake"]
 - !private ["PSo16NSObjectProtocol", "CGSizeMake"]
+- !private ["PSo16NSObjectProtocol", "UIButton"]
 - !private ["PSo16NSObjectProtocol", "UIColor"]
+- !private ["PSo16NSObjectProtocol", "UIControlState"]
+- !private ["PSo16NSObjectProtocol", "UIEdgeInsets"]
+- !private ["PSo16NSObjectProtocol", "UIImage"]
 - !private ["PSo16NSObjectProtocol", "UIView"]
+- !private ["PSo16NSObjectProtocol", "UIViewContentMode"]
 - !private ["PSo16NSObjectProtocol", "addSubview"]
 - ["PSo16NSObjectProtocol", "awakeFromNib"]
 - !private ["PSo16NSObjectProtocol", "backgroundColor"]
@@ -292,28 +375,40 @@ depends-member:
 - ["PSo16NSObjectProtocol", "cardSetup"]
 - ["PSo16NSObjectProtocol", "city"]
 - !private ["PSo16NSObjectProtocol", "clipsToBounds"]
-- !private ["PSo16NSObjectProtocol", "colorWithAlphaComponent"]
+- !private ["PSo16NSObjectProtocol", "contentMode"]
 - !private ["PSo16NSObjectProtocol", "cornerRadius"]
 - ["PSo16NSObjectProtocol", "desc"]
 - !private ["PSo16NSObjectProtocol", "frame"]
 - !private ["PSo16NSObjectProtocol", "hexStringToUIColor"]
+- !private ["PSo16NSObjectProtocol", "imageEdgeInsets"]
+- !private ["PSo16NSObjectProtocol", "imageView"]
 - ["PSo16NSObjectProtocol", "info"]
 - ["PSo16NSObjectProtocol", "init"]
 - !private ["PSo16NSObjectProtocol", "layer"]
 - ["PSo16NSObjectProtocol", "layoutSubviews"]
 - !private ["PSo16NSObjectProtocol", "masksToBounds"]
 - ["PSo16NSObjectProtocol", "name"]
+- !private ["PSo16NSObjectProtocol", "setImage"]
 - ["PSo16NSObjectProtocol", "setSelected"]
 - !private ["PSo16NSObjectProtocol", "shadowOffset"]
 - !private ["PSo16NSObjectProtocol", "shadowOpacity"]
 - !private ["PSo16NSObjectProtocol", "shadowRadius"]
 - ["PSo16NSObjectProtocol", ""]
-- !private ["PSo14NSSecureCoding", "colorWithAlphaComponent"]
 - !private ["PSo14NSSecureCoding", "hexStringToUIColor"]
+- !private ["PSo14NSSecureCoding", "init"]
+- !private ["Ps13OptionSetType", "Normal"]
+- !private ["Ps16RawRepresentable", "Normal"]
+- !private ["Ps16RawRepresentable", "ScaleAspectFit"]
+- !private ["Ps14SetAlgebraType", "Normal"]
 - !private ["PSo29UIAccessibilityIdentification", "CGRectMake"]
 - !private ["PSo29UIAccessibilityIdentification", "CGSizeMake"]
+- !private ["PSo29UIAccessibilityIdentification", "UIButton"]
 - !private ["PSo29UIAccessibilityIdentification", "UIColor"]
+- !private ["PSo29UIAccessibilityIdentification", "UIControlState"]
+- !private ["PSo29UIAccessibilityIdentification", "UIEdgeInsets"]
+- !private ["PSo29UIAccessibilityIdentification", "UIImage"]
 - !private ["PSo29UIAccessibilityIdentification", "UIView"]
+- !private ["PSo29UIAccessibilityIdentification", "UIViewContentMode"]
 - !private ["PSo29UIAccessibilityIdentification", "addSubview"]
 - ["PSo29UIAccessibilityIdentification", "awakeFromNib"]
 - !private ["PSo29UIAccessibilityIdentification", "backgroundColor"]
@@ -321,19 +416,28 @@ depends-member:
 - ["PSo29UIAccessibilityIdentification", "cardSetup"]
 - ["PSo29UIAccessibilityIdentification", "city"]
 - !private ["PSo29UIAccessibilityIdentification", "clipsToBounds"]
+- !private ["PSo29UIAccessibilityIdentification", "contentMode"]
 - ["PSo29UIAccessibilityIdentification", "desc"]
 - !private ["PSo29UIAccessibilityIdentification", "frame"]
+- !private ["PSo29UIAccessibilityIdentification", "imageEdgeInsets"]
+- !private ["PSo29UIAccessibilityIdentification", "imageView"]
 - ["PSo29UIAccessibilityIdentification", "info"]
 - ["PSo29UIAccessibilityIdentification", "init"]
 - !private ["PSo29UIAccessibilityIdentification", "layer"]
 - ["PSo29UIAccessibilityIdentification", "layoutSubviews"]
 - ["PSo29UIAccessibilityIdentification", "name"]
+- !private ["PSo29UIAccessibilityIdentification", "setImage"]
 - ["PSo29UIAccessibilityIdentification", "setSelected"]
 - ["PSo29UIAccessibilityIdentification", ""]
 - !private ["PSo12UIAppearance", "CGRectMake"]
 - !private ["PSo12UIAppearance", "CGSizeMake"]
+- !private ["PSo12UIAppearance", "UIButton"]
 - !private ["PSo12UIAppearance", "UIColor"]
+- !private ["PSo12UIAppearance", "UIControlState"]
+- !private ["PSo12UIAppearance", "UIEdgeInsets"]
+- !private ["PSo12UIAppearance", "UIImage"]
 - !private ["PSo12UIAppearance", "UIView"]
+- !private ["PSo12UIAppearance", "UIViewContentMode"]
 - !private ["PSo12UIAppearance", "addSubview"]
 - ["PSo12UIAppearance", "awakeFromNib"]
 - !private ["PSo12UIAppearance", "backgroundColor"]
@@ -341,19 +445,28 @@ depends-member:
 - ["PSo12UIAppearance", "cardSetup"]
 - ["PSo12UIAppearance", "city"]
 - !private ["PSo12UIAppearance", "clipsToBounds"]
+- !private ["PSo12UIAppearance", "contentMode"]
 - ["PSo12UIAppearance", "desc"]
 - !private ["PSo12UIAppearance", "frame"]
+- !private ["PSo12UIAppearance", "imageEdgeInsets"]
+- !private ["PSo12UIAppearance", "imageView"]
 - ["PSo12UIAppearance", "info"]
 - ["PSo12UIAppearance", "init"]
 - !private ["PSo12UIAppearance", "layer"]
 - ["PSo12UIAppearance", "layoutSubviews"]
 - ["PSo12UIAppearance", "name"]
+- !private ["PSo12UIAppearance", "setImage"]
 - ["PSo12UIAppearance", "setSelected"]
 - ["PSo12UIAppearance", ""]
 - !private ["PSo21UIAppearanceContainer", "CGRectMake"]
 - !private ["PSo21UIAppearanceContainer", "CGSizeMake"]
+- !private ["PSo21UIAppearanceContainer", "UIButton"]
 - !private ["PSo21UIAppearanceContainer", "UIColor"]
+- !private ["PSo21UIAppearanceContainer", "UIControlState"]
+- !private ["PSo21UIAppearanceContainer", "UIEdgeInsets"]
+- !private ["PSo21UIAppearanceContainer", "UIImage"]
 - !private ["PSo21UIAppearanceContainer", "UIView"]
+- !private ["PSo21UIAppearanceContainer", "UIViewContentMode"]
 - !private ["PSo21UIAppearanceContainer", "addSubview"]
 - ["PSo21UIAppearanceContainer", "awakeFromNib"]
 - !private ["PSo21UIAppearanceContainer", "backgroundColor"]
@@ -361,21 +474,38 @@ depends-member:
 - ["PSo21UIAppearanceContainer", "cardSetup"]
 - ["PSo21UIAppearanceContainer", "city"]
 - !private ["PSo21UIAppearanceContainer", "clipsToBounds"]
+- !private ["PSo21UIAppearanceContainer", "contentMode"]
 - ["PSo21UIAppearanceContainer", "desc"]
 - !private ["PSo21UIAppearanceContainer", "frame"]
+- !private ["PSo21UIAppearanceContainer", "imageEdgeInsets"]
+- !private ["PSo21UIAppearanceContainer", "imageView"]
 - ["PSo21UIAppearanceContainer", "info"]
 - ["PSo21UIAppearanceContainer", "init"]
 - !private ["PSo21UIAppearanceContainer", "layer"]
 - ["PSo21UIAppearanceContainer", "layoutSubviews"]
 - ["PSo21UIAppearanceContainer", "name"]
+- !private ["PSo21UIAppearanceContainer", "setImage"]
 - ["PSo21UIAppearanceContainer", "setSelected"]
 - ["PSo21UIAppearanceContainer", ""]
-- !private ["CSo7UIColor", "colorWithAlphaComponent"]
+- !private ["CSo8UIButton", "imageEdgeInsets"]
+- !private ["CSo8UIButton", "imageView"]
+- !private ["CSo8UIButton", "init"]
+- !private ["CSo8UIButton", "setImage"]
 - !private ["CSo7UIColor", "hexStringToUIColor"]
+- !private ["CSo9UIControl", "imageEdgeInsets"]
+- !private ["CSo9UIControl", "imageView"]
+- !private ["CSo9UIControl", "init"]
+- !private ["CSo9UIControl", "setImage"]
+- !private ["VSC14UIControlState", "Normal"]
 - !private ["PSo17UICoordinateSpace", "CGRectMake"]
 - !private ["PSo17UICoordinateSpace", "CGSizeMake"]
+- !private ["PSo17UICoordinateSpace", "UIButton"]
 - !private ["PSo17UICoordinateSpace", "UIColor"]
+- !private ["PSo17UICoordinateSpace", "UIControlState"]
+- !private ["PSo17UICoordinateSpace", "UIEdgeInsets"]
+- !private ["PSo17UICoordinateSpace", "UIImage"]
 - !private ["PSo17UICoordinateSpace", "UIView"]
+- !private ["PSo17UICoordinateSpace", "UIViewContentMode"]
 - !private ["PSo17UICoordinateSpace", "addSubview"]
 - ["PSo17UICoordinateSpace", "awakeFromNib"]
 - !private ["PSo17UICoordinateSpace", "backgroundColor"]
@@ -383,19 +513,28 @@ depends-member:
 - ["PSo17UICoordinateSpace", "cardSetup"]
 - ["PSo17UICoordinateSpace", "city"]
 - !private ["PSo17UICoordinateSpace", "clipsToBounds"]
+- !private ["PSo17UICoordinateSpace", "contentMode"]
 - ["PSo17UICoordinateSpace", "desc"]
 - !private ["PSo17UICoordinateSpace", "frame"]
+- !private ["PSo17UICoordinateSpace", "imageEdgeInsets"]
+- !private ["PSo17UICoordinateSpace", "imageView"]
 - ["PSo17UICoordinateSpace", "info"]
 - ["PSo17UICoordinateSpace", "init"]
 - !private ["PSo17UICoordinateSpace", "layer"]
 - ["PSo17UICoordinateSpace", "layoutSubviews"]
 - ["PSo17UICoordinateSpace", "name"]
+- !private ["PSo17UICoordinateSpace", "setImage"]
 - ["PSo17UICoordinateSpace", "setSelected"]
 - ["PSo17UICoordinateSpace", ""]
 - !private ["PSo13UIDynamicItem", "CGRectMake"]
 - !private ["PSo13UIDynamicItem", "CGSizeMake"]
+- !private ["PSo13UIDynamicItem", "UIButton"]
 - !private ["PSo13UIDynamicItem", "UIColor"]
+- !private ["PSo13UIDynamicItem", "UIControlState"]
+- !private ["PSo13UIDynamicItem", "UIEdgeInsets"]
+- !private ["PSo13UIDynamicItem", "UIImage"]
 - !private ["PSo13UIDynamicItem", "UIView"]
+- !private ["PSo13UIDynamicItem", "UIViewContentMode"]
 - !private ["PSo13UIDynamicItem", "addSubview"]
 - ["PSo13UIDynamicItem", "awakeFromNib"]
 - !private ["PSo13UIDynamicItem", "backgroundColor"]
@@ -403,19 +542,29 @@ depends-member:
 - ["PSo13UIDynamicItem", "cardSetup"]
 - ["PSo13UIDynamicItem", "city"]
 - !private ["PSo13UIDynamicItem", "clipsToBounds"]
+- !private ["PSo13UIDynamicItem", "contentMode"]
 - ["PSo13UIDynamicItem", "desc"]
 - !private ["PSo13UIDynamicItem", "frame"]
+- !private ["PSo13UIDynamicItem", "imageEdgeInsets"]
+- !private ["PSo13UIDynamicItem", "imageView"]
 - ["PSo13UIDynamicItem", "info"]
 - ["PSo13UIDynamicItem", "init"]
 - !private ["PSo13UIDynamicItem", "layer"]
 - ["PSo13UIDynamicItem", "layoutSubviews"]
 - ["PSo13UIDynamicItem", "name"]
+- !private ["PSo13UIDynamicItem", "setImage"]
 - ["PSo13UIDynamicItem", "setSelected"]
 - ["PSo13UIDynamicItem", ""]
+- !private ["VSC12UIEdgeInsets", "init"]
 - !private ["PSo18UIFocusEnvironment", "CGRectMake"]
 - !private ["PSo18UIFocusEnvironment", "CGSizeMake"]
+- !private ["PSo18UIFocusEnvironment", "UIButton"]
 - !private ["PSo18UIFocusEnvironment", "UIColor"]
+- !private ["PSo18UIFocusEnvironment", "UIControlState"]
+- !private ["PSo18UIFocusEnvironment", "UIEdgeInsets"]
+- !private ["PSo18UIFocusEnvironment", "UIImage"]
 - !private ["PSo18UIFocusEnvironment", "UIView"]
+- !private ["PSo18UIFocusEnvironment", "UIViewContentMode"]
 - !private ["PSo18UIFocusEnvironment", "addSubview"]
 - ["PSo18UIFocusEnvironment", "awakeFromNib"]
 - !private ["PSo18UIFocusEnvironment", "backgroundColor"]
@@ -423,19 +572,28 @@ depends-member:
 - ["PSo18UIFocusEnvironment", "cardSetup"]
 - ["PSo18UIFocusEnvironment", "city"]
 - !private ["PSo18UIFocusEnvironment", "clipsToBounds"]
+- !private ["PSo18UIFocusEnvironment", "contentMode"]
 - ["PSo18UIFocusEnvironment", "desc"]
 - !private ["PSo18UIFocusEnvironment", "frame"]
+- !private ["PSo18UIFocusEnvironment", "imageEdgeInsets"]
+- !private ["PSo18UIFocusEnvironment", "imageView"]
 - ["PSo18UIFocusEnvironment", "info"]
 - ["PSo18UIFocusEnvironment", "init"]
 - !private ["PSo18UIFocusEnvironment", "layer"]
 - ["PSo18UIFocusEnvironment", "layoutSubviews"]
 - ["PSo18UIFocusEnvironment", "name"]
+- !private ["PSo18UIFocusEnvironment", "setImage"]
 - ["PSo18UIFocusEnvironment", "setSelected"]
 - ["PSo18UIFocusEnvironment", ""]
 - !private ["PSo27UIGestureRecognizerDelegate", "CGRectMake"]
 - !private ["PSo27UIGestureRecognizerDelegate", "CGSizeMake"]
+- !private ["PSo27UIGestureRecognizerDelegate", "UIButton"]
 - !private ["PSo27UIGestureRecognizerDelegate", "UIColor"]
+- !private ["PSo27UIGestureRecognizerDelegate", "UIControlState"]
+- !private ["PSo27UIGestureRecognizerDelegate", "UIEdgeInsets"]
+- !private ["PSo27UIGestureRecognizerDelegate", "UIImage"]
 - !private ["PSo27UIGestureRecognizerDelegate", "UIView"]
+- !private ["PSo27UIGestureRecognizerDelegate", "UIViewContentMode"]
 - ["PSo27UIGestureRecognizerDelegate", "awakeFromNib"]
 - !private ["PSo27UIGestureRecognizerDelegate", "backgroundColor"]
 - ["PSo27UIGestureRecognizerDelegate", "cardBack"]
@@ -449,12 +607,19 @@ depends-member:
 - ["PSo27UIGestureRecognizerDelegate", "name"]
 - ["PSo27UIGestureRecognizerDelegate", "setSelected"]
 - ["PSo27UIGestureRecognizerDelegate", ""]
+- !private ["CSo7UIImage", "init"]
+- !private ["CSo11UIImageView", "contentMode"]
 - ["CSo11UIResponder", "Bool"]
 - !private ["CSo11UIResponder", "CGRectMake"]
 - !private ["CSo11UIResponder", "CGSizeMake"]
+- !private ["CSo11UIResponder", "UIButton"]
 - !private ["CSo11UIResponder", "UIColor"]
+- !private ["CSo11UIResponder", "UIControlState"]
+- !private ["CSo11UIResponder", "UIEdgeInsets"]
+- !private ["CSo11UIResponder", "UIImage"]
 - ["CSo11UIResponder", "UILabel"]
 - ["CSo11UIResponder", "UIView"]
+- !private ["CSo11UIResponder", "UIViewContentMode"]
 - !private ["CSo11UIResponder", "addSubview"]
 - ["CSo11UIResponder", "awakeFromNib"]
 - !private ["CSo11UIResponder", "backgroundColor"]
@@ -462,20 +627,29 @@ depends-member:
 - ["CSo11UIResponder", "cardSetup"]
 - ["CSo11UIResponder", "city"]
 - !private ["CSo11UIResponder", "clipsToBounds"]
+- !private ["CSo11UIResponder", "contentMode"]
 - ["CSo11UIResponder", "desc"]
 - !private ["CSo11UIResponder", "frame"]
+- !private ["CSo11UIResponder", "imageEdgeInsets"]
+- !private ["CSo11UIResponder", "imageView"]
 - ["CSo11UIResponder", "info"]
 - ["CSo11UIResponder", "init"]
 - !private ["CSo11UIResponder", "layer"]
 - ["CSo11UIResponder", "layoutSubviews"]
 - ["CSo11UIResponder", "name"]
+- !private ["CSo11UIResponder", "setImage"]
 - ["CSo11UIResponder", "setSelected"]
 - ["CSo15UITableViewCell", "Bool"]
 - !private ["CSo15UITableViewCell", "CGRectMake"]
 - !private ["CSo15UITableViewCell", "CGSizeMake"]
+- !private ["CSo15UITableViewCell", "UIButton"]
 - !private ["CSo15UITableViewCell", "UIColor"]
+- !private ["CSo15UITableViewCell", "UIControlState"]
+- !private ["CSo15UITableViewCell", "UIEdgeInsets"]
+- !private ["CSo15UITableViewCell", "UIImage"]
 - ["CSo15UITableViewCell", "UILabel"]
 - ["CSo15UITableViewCell", "UIView"]
+- !private ["CSo15UITableViewCell", "UIViewContentMode"]
 - ["CSo15UITableViewCell", "awakeFromNib"]
 - !private ["CSo15UITableViewCell", "backgroundColor"]
 - ["CSo15UITableViewCell", "cardBack"]
@@ -491,8 +665,13 @@ depends-member:
 - ["CSo15UITableViewCell", ""]
 - !private ["PSo18UITraitEnvironment", "CGRectMake"]
 - !private ["PSo18UITraitEnvironment", "CGSizeMake"]
+- !private ["PSo18UITraitEnvironment", "UIButton"]
 - !private ["PSo18UITraitEnvironment", "UIColor"]
+- !private ["PSo18UITraitEnvironment", "UIControlState"]
+- !private ["PSo18UITraitEnvironment", "UIEdgeInsets"]
+- !private ["PSo18UITraitEnvironment", "UIImage"]
 - !private ["PSo18UITraitEnvironment", "UIView"]
+- !private ["PSo18UITraitEnvironment", "UIViewContentMode"]
 - !private ["PSo18UITraitEnvironment", "addSubview"]
 - ["PSo18UITraitEnvironment", "awakeFromNib"]
 - !private ["PSo18UITraitEnvironment", "backgroundColor"]
@@ -500,21 +679,30 @@ depends-member:
 - ["PSo18UITraitEnvironment", "cardSetup"]
 - ["PSo18UITraitEnvironment", "city"]
 - !private ["PSo18UITraitEnvironment", "clipsToBounds"]
+- !private ["PSo18UITraitEnvironment", "contentMode"]
 - ["PSo18UITraitEnvironment", "desc"]
 - !private ["PSo18UITraitEnvironment", "frame"]
+- !private ["PSo18UITraitEnvironment", "imageEdgeInsets"]
+- !private ["PSo18UITraitEnvironment", "imageView"]
 - ["PSo18UITraitEnvironment", "info"]
 - ["PSo18UITraitEnvironment", "init"]
 - !private ["PSo18UITraitEnvironment", "layer"]
 - ["PSo18UITraitEnvironment", "layoutSubviews"]
 - ["PSo18UITraitEnvironment", "name"]
+- !private ["PSo18UITraitEnvironment", "setImage"]
 - ["PSo18UITraitEnvironment", "setSelected"]
 - ["PSo18UITraitEnvironment", ""]
 - ["CSo6UIView", "Bool"]
 - !private ["CSo6UIView", "CGRectMake"]
 - !private ["CSo6UIView", "CGSizeMake"]
+- !private ["CSo6UIView", "UIButton"]
 - !private ["CSo6UIView", "UIColor"]
+- !private ["CSo6UIView", "UIControlState"]
+- !private ["CSo6UIView", "UIEdgeInsets"]
+- !private ["CSo6UIView", "UIImage"]
 - ["CSo6UIView", "UILabel"]
 - ["CSo6UIView", "UIView"]
+- !private ["CSo6UIView", "UIViewContentMode"]
 - !private ["CSo6UIView", "addSubview"]
 - ["CSo6UIView", "awakeFromNib"]
 - !private ["CSo6UIView", "backgroundColor"]
@@ -522,20 +710,30 @@ depends-member:
 - ["CSo6UIView", "cardSetup"]
 - ["CSo6UIView", "city"]
 - !private ["CSo6UIView", "clipsToBounds"]
+- !private ["CSo6UIView", "contentMode"]
 - ["CSo6UIView", "desc"]
 - !private ["CSo6UIView", "frame"]
+- !private ["CSo6UIView", "imageEdgeInsets"]
+- !private ["CSo6UIView", "imageView"]
 - ["CSo6UIView", "info"]
 - ["CSo6UIView", "init"]
 - !private ["CSo6UIView", "layer"]
 - ["CSo6UIView", "layoutSubviews"]
 - ["CSo6UIView", "name"]
+- !private ["CSo6UIView", "setImage"]
 - ["CSo6UIView", "setSelected"]
-- !private ["Ps24_ColorLiteralConvertible", "colorWithAlphaComponent"]
+- !private ["OSC17UIViewContentMode", "ScaleAspectFit"]
 - !private ["Ps24_ColorLiteralConvertible", "hexStringToUIColor"]
+- !private ["Ps24_ImageLiteralConvertible", "init"]
 - !private ["Ps12_Reflectable", "CGRectMake"]
 - !private ["Ps12_Reflectable", "CGSizeMake"]
+- !private ["Ps12_Reflectable", "UIButton"]
 - !private ["Ps12_Reflectable", "UIColor"]
+- !private ["Ps12_Reflectable", "UIControlState"]
+- !private ["Ps12_Reflectable", "UIEdgeInsets"]
+- !private ["Ps12_Reflectable", "UIImage"]
 - !private ["Ps12_Reflectable", "UIView"]
+- !private ["Ps12_Reflectable", "UIViewContentMode"]
 - !private ["Ps12_Reflectable", "addSubview"]
 - ["Ps12_Reflectable", "awakeFromNib"]
 - !private ["Ps12_Reflectable", "backgroundColor"]
@@ -543,19 +741,24 @@ depends-member:
 - ["Ps12_Reflectable", "cardSetup"]
 - ["Ps12_Reflectable", "city"]
 - !private ["Ps12_Reflectable", "clipsToBounds"]
+- !private ["Ps12_Reflectable", "contentMode"]
 - ["Ps12_Reflectable", "desc"]
 - !private ["Ps12_Reflectable", "frame"]
 - !private ["Ps12_Reflectable", "height"]
+- !private ["Ps12_Reflectable", "imageEdgeInsets"]
+- !private ["Ps12_Reflectable", "imageView"]
 - ["Ps12_Reflectable", "info"]
 - ["Ps12_Reflectable", "init"]
 - !private ["Ps12_Reflectable", "layer"]
 - ["Ps12_Reflectable", "layoutSubviews"]
 - ["Ps12_Reflectable", "name"]
+- !private ["Ps12_Reflectable", "setImage"]
 - ["Ps12_Reflectable", "setSelected"]
 - !private ["Ps12_Reflectable", "width"]
 - ["Ps12_Reflectable", ""]
 depends-nominal:
 - "Ps9AnyObject"
+- !private "Ps23ArrayLiteralConvertible"
 - "C5Ethos20BizCardTableViewCell"
 - !private "CSo7CALayer"
 - !private "PSo13CAMediaTiming"
@@ -571,19 +774,30 @@ depends-nominal:
 - "CSo8NSObject"
 - "PSo16NSObjectProtocol"
 - !private "PSo14NSSecureCoding"
+- !private "Ps13OptionSetType"
+- !private "Ps16RawRepresentable"
+- !private "Ps14SetAlgebraType"
 - "PSo29UIAccessibilityIdentification"
 - "PSo12UIAppearance"
 - "PSo21UIAppearanceContainer"
+- !private "CSo8UIButton"
 - !private "CSo7UIColor"
+- !private "CSo9UIControl"
+- !private "VSC14UIControlState"
 - "PSo17UICoordinateSpace"
 - "PSo13UIDynamicItem"
+- !private "VSC12UIEdgeInsets"
 - "PSo18UIFocusEnvironment"
 - "PSo27UIGestureRecognizerDelegate"
+- !private "CSo7UIImage"
+- !private "CSo11UIImageView"
 - "CSo11UIResponder"
 - "CSo15UITableViewCell"
 - "PSo18UITraitEnvironment"
 - "CSo6UIView"
+- !private "OSC17UIViewContentMode"
 - !private "Ps24_ColorLiteralConvertible"
+- !private "Ps24_ImageLiteralConvertible"
 - "Ps12_Reflectable"
 depends-dynamic-lookup:
 depends-external:
@@ -596,20 +810,57 @@ depends-external:
 - "/Applications/Xcode 3.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/ObjectiveC.swiftmodule"
 - "/Applications/Xcode 3.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreGraphics.swiftmodule"
 - "/Applications/Xcode 3.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreImage.swiftmodule"
-- "/Users/Scott/Documents/Ethos/Pods/FirebaseAnalytics/Frameworks/frameworks/FirebaseAnalytics.framework/Headers/FIROptions.h"
-- "/Users/Scott/Documents/Ethos/Pods/FirebaseAnalytics/Frameworks/frameworks/FirebaseAnalytics.framework/Headers/FIRConfiguration.h"
-- "/Users/Scott/Documents/Ethos/Pods/FirebaseAnalytics/Frameworks/frameworks/FirebaseAnalytics.framework/Headers/FIRApp.h"
-- "/Users/Scott/Documents/Ethos/Pods/FirebaseAnalytics/Frameworks/frameworks/FirebaseAnalytics.framework/Headers/FIRAnalyticsConfiguration.h"
-- "/Users/Scott/Documents/Ethos/Pods/FirebaseAnalytics/Frameworks/frameworks/FirebaseAnalytics.framework/Headers/FIRUserPropertyNames.h"
-- "/Users/Scott/Documents/Ethos/Pods/FirebaseAnalytics/Frameworks/frameworks/FirebaseAnalytics.framework/Headers/FIRParameterNames.h"
-- "/Users/Scott/Documents/Ethos/Pods/FirebaseAnalytics/Frameworks/frameworks/FirebaseAnalytics.framework/Headers/FIREventNames.h"
-- "/Users/Scott/Documents/Ethos/Pods/FirebaseAnalytics/Frameworks/frameworks/FirebaseAnalytics.framework/Headers/FIRAnalytics.h"
-- "/Users/Scott/Documents/Ethos/Pods/Firebase/Analytics/Sources/module.modulemap"
-- "/Users/Scott/Documents/Ethos/Pods/FirebaseAnalytics/Frameworks/frameworks/FirebaseAnalytics.framework/Headers/FIRAnalytics+AppDelegate.h"
-- "/Users/Scott/Documents/Ethos/Pods/FirebaseAnalytics/Frameworks/frameworks/FirebaseAnalytics.framework/Headers/FirebaseAnalytics.h"
-- "/Users/Scott/Documents/Ethos/Pods/FirebaseAnalytics/Frameworks/frameworks/FirebaseAnalytics.framework/Modules/module.modulemap"
-- "/Users/Scott/Documents/Ethos/Pods/FirebaseInstanceID/Frameworks/frameworks/FirebaseInstanceID.framework/Headers/FIRInstanceID.h"
-- "/Users/Scott/Documents/Ethos/Pods/FirebaseInstanceID/Frameworks/frameworks/FirebaseInstanceID.framework/Headers/FirebaseInstanceID.h"
-- "/Users/Scott/Documents/Ethos/Pods/FirebaseInstanceID/Frameworks/frameworks/FirebaseInstanceID.framework/Modules/module.modulemap"
-- "/Users/Scott/Documents/Ethos/Pods/Firebase/Analytics/Sources/Firebase.h"
+- "./Bolts.framework/Headers/BFWebViewAppLinkResolver.h"
+- "./Bolts.framework/Headers/BFURL.h"
+- "./Bolts.framework/Headers/BFMeasurementEvent.h"
+- "./Bolts.framework/Headers/BFAppLinkTarget.h"
+- "./Bolts.framework/Headers/BFAppLinkReturnToRefererView.h"
+- "./Bolts.framework/Headers/BFAppLinkReturnToRefererController.h"
+- "./Bolts.framework/Headers/BFAppLinkResolving.h"
+- "./Bolts.framework/Headers/BFAppLinkNavigation.h"
+- "./Bolts.framework/Headers/BFAppLink.h"
+- "./Bolts.framework/Headers/BFTaskCompletionSource.h"
+- "./Bolts.framework/Headers/BFTask+Exceptions.h"
+- "./Bolts.framework/Headers/BFTask.h"
+- "./Bolts.framework/Headers/BFExecutor.h"
+- "./Bolts.framework/Headers/BFCancellationTokenSource.h"
+- "./Bolts.framework/Headers/BFCancellationTokenRegistration.h"
+- "./Bolts.framework/Headers/BFCancellationToken.h"
+- "./Bolts.framework/Headers/Bolts.h"
+- "./Bolts.framework/Modules/module.modulemap"
+- "./FBSDKCoreKit.framework/Headers/FBSDKProfilePictureView.h"
+- "./FBSDKCoreKit.framework/Headers/FBSDKProfile.h"
+- "./FBSDKCoreKit.framework/Headers/FBSDKMutableCopying.h"
+- "./FBSDKCoreKit.framework/Headers/FBSDKGraphErrorRecoveryProcessor.h"
+- "./FBSDKCoreKit.framework/Headers/FBSDKAppLinkUtility.h"
+- "/Users/Scott/Documents/Ethos/Bolts.framework/Modules/module.modulemap"
+- "./FBSDKCoreKit.framework/Headers/FBSDKAppLinkResolver.h"
+- "./FBSDKCoreKit.framework/Headers/FBSDKUtility.h"
+- "./FBSDKCoreKit.framework/Headers/FBSDKTestUsersManager.h"
+- "./FBSDKCoreKit.framework/Headers/FBSDKSettings.h"
+- "./FBSDKCoreKit.framework/Headers/FBSDKGraphRequestDataAttachment.h"
+- "./FBSDKCoreKit.framework/Headers/FBSDKGraphRequest.h"
+- "./FBSDKCoreKit.framework/Headers/FBSDKConstants.h"
+- "./FBSDKCoreKit.framework/Headers/FBSDKButton.h"
+- "./FBSDKCoreKit.framework/Headers/FBSDKApplicationDelegate.h"
+- "./FBSDKCoreKit.framework/Headers/FBSDKAppEvents.h"
+- "./FBSDKCoreKit.framework/Headers/FBSDKMacros.h"
+- "./FBSDKCoreKit.framework/Headers/FBSDKGraphRequestConnection.h"
+- "./FBSDKCoreKit.framework/Headers/FBSDKCopying.h"
+- "./FBSDKCoreKit.framework/Headers/FBSDKAccessToken.h"
+- "./FBSDKCoreKit.framework/Headers/FBSDKCoreKit.h"
+- "./FBSDKCoreKit.framework/Modules/module.modulemap"
+- "./FBSDKLoginKit.framework/Headers/FBSDKLoginTooltipView.h"
+- "./FBSDKLoginKit.framework/Headers/FBSDKLoginManagerLoginResult.h"
+- "./FBSDKLoginKit.framework/Headers/FBSDKLoginConstants.h"
+- "./FBSDKLoginKit.framework/Headers/FBSDKTooltipView.h"
+- "./FBSDKLoginKit.framework/Headers/FBSDKLoginManager.h"
+- "/Users/Scott/Documents/Ethos/FBSDKCoreKit.framework/Modules/module.modulemap"
+- "./FBSDKLoginKit.framework/Headers/FBSDKLoginButton.h"
+- "./FBSDKLoginKit.framework/Headers/FBSDKLoginKit.h"
+- "./FBSDKLoginKit.framework/Modules/module.modulemap"
+- "/Users/Scott/Documents/Ethos/DerivedData/Ethos/Build/Products/Debug-iphonesimulator/Alamofire/Alamofire.framework/Modules/Alamofire.swiftmodule/x86_64.swiftmodule"
+- "/Users/Scott/Documents/Ethos/DerivedData/Ethos/Build/Products/Debug-iphonesimulator/Alamofire/Alamofire.framework/Headers/Alamofire-Swift.h"
+- "/Users/Scott/Documents/Ethos/DerivedData/Ethos/Build/Products/Debug-iphonesimulator/Alamofire/Alamofire.framework/Headers/Alamofire-umbrella.h"
+- "/Users/Scott/Documents/Ethos/DerivedData/Ethos/Build/Products/Debug-iphonesimulator/Alamofire/Alamofire.framework/Modules/module.modulemap"
 interface-hash: "4d58c072cb02ad2b0e99cb9d08ca20d5"
