@@ -94,8 +94,8 @@ typedef int swift_int4  __attribute__((__ext_vector_type__(4)));
 #if defined(__has_feature) && __has_feature(modules)
 @import UIKit;
 @import CoreGraphics;
-@import ObjectiveC;
 @import FBSDKLoginKit;
+@import ObjectiveC;
 #endif
 
 #pragma clang diagnostic ignored "-Wproperty-attribute-mismatch"
@@ -133,31 +133,21 @@ SWIFT_CLASS("_TtC5Ethos9BarButton")
 - (void)deselectMe;
 @end
 
-
-SWIFT_CLASS("_TtC5Ethos7BizCard")
-@interface BizCard : NSObject
-@property (nonatomic, copy) NSString * _Nonnull fullName;
-@property (nonatomic, copy) NSString * _Nonnull jobTitle;
-@property (nonatomic, copy) NSString * _Nonnull bullet1;
-@property (nonatomic, copy) NSString * _Nonnull bullet2;
-@property (nonatomic, copy) NSString * _Nonnull bullet3;
-@property (nonatomic, copy) NSString * _Nonnull profileImageURL;
-@property (nonatomic, copy) NSString * _Nonnull city;
-- (nonnull instancetype)initWithName:(NSString * _Nonnull)name job:(NSString * _Nonnull)job bullet1:(NSString * _Nonnull)bullet1 bullet2:(NSString * _Nonnull)bullet2 bullet3:(NSString * _Nonnull)bullet3 profileImageURL:(NSString * _Nonnull)profileImageURL city:(NSString * _Nonnull)city OBJC_DESIGNATED_INITIALIZER;
-@end
-
 @class UILabel;
+@class UIImageView;
+@class UIButton;
 
 SWIFT_CLASS("_TtC5Ethos20BizCardTableViewCell")
 @interface BizCardTableViewCell : UITableViewCell
 @property (nonatomic, strong) IBOutlet UIView * _Null_unspecified cardBack;
 @property (nonatomic, strong) IBOutlet UILabel * _Null_unspecified name;
 @property (nonatomic, strong) IBOutlet UILabel * _Null_unspecified desc;
-@property (nonatomic, strong) IBOutlet UILabel * _Null_unspecified info;
-@property (nonatomic, strong) IBOutlet UILabel * _Null_unspecified city;
+@property (nonatomic, strong) IBOutlet UIImageView * _Null_unspecified img;
+@property (nonatomic, strong) IBOutlet UIView * _Null_unspecified backMoji;
 - (void)awakeFromNib;
 - (void)layoutSubviews;
 - (void)cardSetup;
+- (void)react:(UIButton * _Nonnull)button;
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated;
 - (nonnull instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString * _Nullable)reuseIdentifier OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
@@ -201,6 +191,8 @@ SWIFT_CLASS("_TtC5Ethos17CardContainerView")
 
 SWIFT_CLASS("_TtC5Ethos28CardStackTableViewController")
 @interface CardStackTableViewController : UIViewController <UIScrollViewDelegate, UITableViewDataSource, CardViewDelegate, UITextViewDelegate, UITableViewDelegate>
+@property (nonatomic, copy) NSString * _Nonnull ethosAuth;
+@property (nonatomic, copy) NSString * _Nonnull id;
 @property (nonatomic, strong) NSMutableArray * _Nullable cardsToShow;
 @property (nonatomic, strong) IBOutlet UIView * _Null_unspecified bar;
 @property (nonatomic, strong) IBOutlet BarButton * _Null_unspecified cardsButton;
@@ -210,10 +202,11 @@ SWIFT_CLASS("_TtC5Ethos28CardStackTableViewController")
 @property (nonatomic, strong) CardContainerView * _Nullable cardView;
 @property (nonatomic, strong) IBOutlet PostBox * _Null_unspecified postBox;
 - (void)viewDidLoad;
+- (void)viewWillAppear:(BOOL)animated;
 - (BOOL)shouldMoveCard:(CardView * _Nonnull)card;
 - (void)createCards;
 - (void)viewDidAppear:(BOOL)animated;
-- (void)sidebar;
+- (void)getPosts;
 - (void)post;
 - (void)selectCards;
 - (void)selectNet;
@@ -221,7 +214,6 @@ SWIFT_CLASS("_TtC5Ethos28CardStackTableViewController")
 - (void)didReceiveMemoryWarning;
 - (NSInteger)numberOfSectionsInTableView:(UITableView * _Nonnull)tableView;
 - (NSInteger)tableView:(UITableView * _Nonnull)tableView numberOfRowsInSection:(NSInteger)section;
-- (CGFloat)tableView:(UITableView * _Nonnull)tableView heightForRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath;
 - (UITableViewCell * _Nonnull)tableView:(UITableView * _Nonnull)tableView cellForRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath;
 - (void)tableView:(UITableView * _Nonnull)tableView didSelectRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath;
 - (void)textViewDidBeginEditing:(UITextView * _Nonnull)textView;
@@ -262,7 +254,7 @@ SWIFT_CLASS("_TtC5Ethos15EmojiSelectView")
 
 SWIFT_CLASS("_TtC5Ethos19LoginViewController")
 @interface LoginViewController : UIViewController <FBSDKLoginButtonDelegate, UIScrollViewDelegate, UICollectionViewDataSource, UICollectionViewDelegate>
-@property (nonatomic) NSInteger myEmoji;
+@property (nonatomic, strong) NSURL * _Nullable myEmoji;
 @property (nonatomic, strong) NSMutableArray * _Nullable emojiList;
 @property (nonatomic, strong) UICollectionView * _Nullable emojiKey;
 @property (nonatomic, strong) UILabel * _Nullable header;
@@ -272,6 +264,8 @@ SWIFT_CLASS("_TtC5Ethos19LoginViewController")
 - (void)collectionView:(UICollectionView * _Nonnull)collectionView didSelectItemAtIndexPath:(NSIndexPath * _Nonnull)indexPath;
 - (UICollectionViewCell * _Nonnull)collectionView:(UICollectionView * _Nonnull)collectionView cellForItemAtIndexPath:(NSIndexPath * _Nonnull)indexPath;
 - (void)loginButton:(FBSDKLoginButton * _Null_unspecified)loginButton didCompleteWithResult:(FBSDKLoginManagerLoginResult * _Null_unspecified)result error:(NSError * _Null_unspecified)error;
+- (void)registerUser:(NSMutableArray * _Nonnull)friends;
+- (void)verifyToken:(NSString * _Nonnull)token;
 - (BOOL)loginButtonWillLogin:(FBSDKLoginButton * _Null_unspecified)loginButton;
 - (void)loginButtonDidLogOut:(FBSDKLoginButton * _Null_unspecified)loginButton;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
@@ -309,6 +303,17 @@ SWIFT_CLASS("_TtC5Ethos7PostBox")
 - (void)resetText;
 - (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+SWIFT_CLASS("_TtC5Ethos8PostCard")
+@interface PostCard : NSObject
+@property (nonatomic, copy) NSString * _Nonnull posterEmoji;
+@property (nonatomic, copy) NSString * _Nonnull userText;
+@property (nonatomic, copy) NSString * _Nonnull content;
+@property (nonatomic) NSInteger type;
+@property (nonatomic) NSInteger groupID;
+- (nonnull instancetype)initWithPosterEmoji:(NSString * _Nonnull)posterEmoji userText:(NSString * _Nonnull)userText content:(NSString * _Nonnull)content type:(NSInteger)type OBJC_DESIGNATED_INITIALIZER;
 @end
 
 

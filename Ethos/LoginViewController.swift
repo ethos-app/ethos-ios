@@ -9,8 +9,10 @@
 import UIKit
 import FBSDKLoginKit
 import Alamofire
+import MBProgressHUD
+
 class LoginViewController: UIViewController, FBSDKLoginButtonDelegate, UICollectionViewDelegate, UICollectionViewDataSource {
-    var myEmoji = 0
+    var myEmoji : NSURL?
     var emojiList : NSMutableArray?
     var emojiKey : UICollectionView?
     var header : UILabel?
@@ -88,7 +90,7 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate, UICollect
     }
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         let cell = collectionView.cellForItemAtIndexPath(indexPath)
-        myEmoji = indexPath.row
+        myEmoji = emojiList?.objectAtIndex(indexPath.row) as! NSURL
         UIView.animateWithDuration(0.3) {
             self.header?.frame = CGRectMake(0, self.view.frame.height-165, self.header!.frame.width, 165)
             self.header?.numberOfLines = 0
@@ -117,19 +119,65 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate, UICollect
     }
     // MARK : Login functions
     func loginButton(loginButton: FBSDKLoginButton!, didCompleteWithResult result: FBSDKLoginManagerLoginResult!, error: NSError!) {
-        let token = result.token
-        let id = FBSDKAccessToken.currentAccessToken().userID
-          let headers = ["Accept":"application/json","Content-Type":"application/json","X-Ethos-Auth":"token", "X-Facebook-Id":"\(id)"]
-        let params : [String : AnyObject] = ["FacebookId" : "\(id)" , "FriendIds" : [], "Emoji" : "1"]
-
-        print("called")
-        Alamofire.request(.POST, "http://meetethos.azurewebsites.net/api/Users/register", parameters: params, encoding: .JSON, headers: headers)
-        .responseString { (response) in
-            print(response)
+        header?.text = "verifying..."
+        let hud = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
+        hud.mode = MBProgressHUDMode.AnnularDeterminate
+        hud.color = UIColor.whiteColor()
+        hud.progress = 0.2
+        loginButton.alpha = 0
+        print(result)
+        let list = NSMutableArray()
+        let friendsRequest = FBSDKGraphRequest(graphPath: "me/friends", parameters: nil)
+        friendsRequest.startWithCompletionHandler { (connection, object, error) in
+        
+          let data = object.objectForKey("data") as! NSArray
+            for object in data {
+                if let id = object.objectForKey("id") as? String {
+                list.addObject(id)
+                }
+            }
+            // Register new user
+            self.registerUser(list)
         }
-        self.dismissViewControllerAnimated(true, completion: nil)
     }
-    
+    func registerUser(friends : NSMutableArray) {
+        let id = FBSDKAccessToken.currentAccessToken().userID
+        let headers = ["Accept":"application/json","Content-Type":"application/json","X-Ethos-Auth":"token", "X-Facebook-Id":"\(id)"]
+        let params : [String : AnyObject] = ["FacebookId" : "\(id)" , "FriendIds" : friends, "Emoji" : "\(myEmoji)"]
+        
+        print("called")
+        
+        Alamofire.request(.POST, "http://meetethos.azurewebsites.net/api/Users/register", parameters: params, encoding: .JSON, headers: headers)
+            .responseJSON { (response) in
+                print(response.result.value)
+                if let repToken = response.result.value?.objectForKey("token") as? String {
+                    self.verifyToken(repToken)
+                }
+        }
+
+    }
+    func verifyToken(token : String) {
+        let id = FBSDKAccessToken.currentAccessToken().userID
+        let headers = ["Accept":"application/json","Content-Type":"application/json","X-Ethos-Auth":token, "X-Facebook-Id":"\(id)"]
+        let params : [String : AnyObject] = [:]
+        
+        Alamofire.request(.GET, "http://meetethos.azurewebsites.net/api/Users/AuthChecker", parameters: nil, encoding: .JSON, headers: headers)
+        
+        .responseJSON { (response) in
+            if let status = response.result.value?.objectForKey("status") as? String {
+                print(status)
+                    if status == "ok" {
+                        NSUserDefaults.standardUserDefaults().setObject(token, forKey: "token")
+                        NSUserDefaults.standardUserDefaults().setObject(id, forKey: "id")
+                        MBProgressHUD.hideAllHUDsForView(self.view, animated: true)
+                        self.dismissViewControllerAnimated(true, completion: nil)
+                    } else {
+                        // failed try again TODO
+                }
+            }
+            
+        }
+    }
     func loginButtonWillLogin(loginButton: FBSDKLoginButton!) -> Bool {
         //
         return true

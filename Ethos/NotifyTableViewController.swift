@@ -75,13 +75,8 @@ class NotifyTableViewController: UITableViewController, CardViewDelegate, UIText
         return true
     }
     func createCards() {
-        let jay = BizCard(name: "😈 shared a link", job: "http://cnn.com/TrumpisCrazy", bullet1: "Photon Medical Lead Engineer", bullet2: "Avvecc Studios", bullet3: "Ethos Inc", profileImageURL: "https://asunow.asu.edu/sites/default/files/styles/panopoly_image_full/public/asu_launch_day_3.jpg", city: "2m")
-        let scott = BizCard(name: "🏈 posted a photo", job: "[photo]", bullet1: "Student at Arizona State University", bullet2: "Flinn Scholar", bullet3: "MobileBytes LLC", profileImageURL: "https://asunow.asu.edu/sites/default/files/styles/panopoly_image_full/public/asu_launch_day_2.jpg", city: "5h")
-        let kyler = BizCard(name: "😎 posted an update", job: "New kanye album some hot shit", bullet1: "Line Server at Cafe Zupa", bullet2: "Adobe Creative Cloud", bullet3: "Dropspot Inc", profileImageURL: "https://asunow.asu.edu/sites/default/files/styles/panopoly_image_full/public/asu_launch_day_2.jpg", city: "1d")
         
-        cardsToShow?.addObject(jay)
-        cardsToShow?.addObject(scott)
-        cardsToShow?.addObject(kyler)
+
         
         self.tableView.reloadData()
     }

@@ -4,8 +4,6 @@
 <dict>
 	<key>UIAppFonts</key>
 	<array>
-		<string>rale_light.ttf</string>
-		<string>rale_thin.ttf</string>
 		<string>rale_reg.ttf</string>
 	</array>
 </dict>

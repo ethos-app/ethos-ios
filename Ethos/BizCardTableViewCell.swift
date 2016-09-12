@@ -16,10 +16,9 @@ class BizCardTableViewCell: UITableViewCell {
     
     @IBOutlet var desc: UILabel!
     
+    @IBOutlet var img: UIImageView!
     
-    @IBOutlet var info: UILabel!
-    
-    @IBOutlet var city: UILabel!
+    @IBOutlet var backMoji: UIView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -35,7 +34,7 @@ class BizCardTableViewCell: UITableViewCell {
         self.backgroundColor =  UIColor.hexStringToUIColor("e9e9e9")
         let bottomFrame = CGRectMake(0, self.frame.height-45, self.frame.width, 45)
         let bottomBar = UIView(frame: bottomFrame)
-        bottomBar.backgroundColor = UIColor.hexStringToUIColor("247BA0")
+        bottomBar.backgroundColor = UIColor.hexStringToUIColor("247BA0").colorWithAlphaComponent(0.8)
         bottomBar.clipsToBounds = true
         
         let firstHalf = CGRectMake(0, -4, self.frame.width/2, bottomBar.frame.height)
@@ -44,6 +43,7 @@ class BizCardTableViewCell: UITableViewCell {
         react.imageEdgeInsets = UIEdgeInsets(top: 12, left: 12, bottom: 12, right: 12)
         react.imageView?.contentMode = UIViewContentMode.ScaleAspectFit
         react.setImage(UIImage(named: "ic_favorite_border"), forState: UIControlState.Normal)
+        react.addTarget(self, action: #selector(BizCardTableViewCell.react), forControlEvents: UIControlEvents.TouchUpInside)
         let secondHalf = CGRectMake(self.frame.width/2, -4, self.frame.width/2, bottomBar.frame.height)
         let comment = UIButton(frame: secondHalf)
         comment.imageEdgeInsets = UIEdgeInsets(top: 12, left: 12, bottom: 12, right: 12)
@@ -56,15 +56,22 @@ class BizCardTableViewCell: UITableViewCell {
         bottomBar.addSubview(comment)
 
         self.cardBack.addSubview(bottomBar)
-
+        self.backMoji.backgroundColor = UIColor.lightGrayColor().colorWithAlphaComponent(0.5)
+        self.backMoji.layer.cornerRadius = 15
         self.cardBack.layer.masksToBounds = true
         self.cardBack.layer.cornerRadius = 6
         self.cardBack.layer.shadowOffset = CGSizeMake(0.8, 0.8)
         self.cardBack.layer.shadowRadius = 0.8
         self.cardBack.layer.shadowOpacity = 0.1
         
+    }
+    func react(button : UIButton) {
+        if button.imageView?.image == UIImage(named: "ic_favorite.png") {
+            button.setImage(UIImage(named: "ic_favorite_border.png"), forState: UIControlState.Normal)
 
-        
+        } else {
+        button.setImage(UIImage(named: "ic_favorite.png"), forState: UIControlState.Normal)
+        }
     }
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
