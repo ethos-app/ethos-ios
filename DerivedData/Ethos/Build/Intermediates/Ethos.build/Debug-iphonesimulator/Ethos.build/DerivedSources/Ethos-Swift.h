@@ -95,6 +95,7 @@ typedef int swift_int4  __attribute__((__ext_vector_type__(4)));
 @import UIKit;
 @import CoreGraphics;
 @import FBSDKLoginKit;
+@import Foundation;
 @import ObjectiveC;
 #endif
 
@@ -144,10 +145,14 @@ SWIFT_CLASS("_TtC5Ethos20BizCardTableViewCell")
 @property (nonatomic, strong) IBOutlet UILabel * _Null_unspecified desc;
 @property (nonatomic, strong) IBOutlet UIImageView * _Null_unspecified img;
 @property (nonatomic, strong) IBOutlet UIView * _Null_unspecified backMoji;
+@property (nonatomic, strong) UIButton * _Nullable react;
+@property (nonatomic, strong) UIButton * _Nullable comment;
+@property (nonatomic, strong) IBOutlet UILabel * _Null_unspecified date;
 - (void)awakeFromNib;
 - (void)layoutSubviews;
 - (void)cardSetup;
-- (void)react:(UIButton * _Nonnull)button;
+- (void)reaction:(UIButton * _Nonnull)button;
+- (void)setCount:(NSInteger)num;
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated;
 - (nonnull instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString * _Nullable)reuseIdentifier OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
@@ -185,6 +190,7 @@ SWIFT_CLASS("_TtC5Ethos17CardContainerView")
 @class NSMutableArray;
 @class UITableView;
 @class PostBox;
+@class NSArray;
 @class NSIndexPath;
 @class UITextView;
 @class NSBundle;
@@ -202,16 +208,19 @@ SWIFT_CLASS("_TtC5Ethos28CardStackTableViewController")
 @property (nonatomic, strong) CardContainerView * _Nullable cardView;
 @property (nonatomic, strong) IBOutlet PostBox * _Null_unspecified postBox;
 - (void)viewDidLoad;
+- (void)postFriends:(NSArray * _Nonnull)string;
+- (void)updateFriends;
 - (void)viewWillAppear:(BOOL)animated;
 - (BOOL)shouldMoveCard:(CardView * _Nonnull)card;
-- (void)createCards;
 - (void)viewDidAppear:(BOOL)animated;
+- (void)updatePosts:(NSArray * _Nonnull)array;
 - (void)getPosts;
 - (void)post;
 - (void)selectCards;
 - (void)selectNet;
 - (UIStatusBarStyle)preferredStatusBarStyle;
 - (void)didReceiveMemoryWarning;
+- (void)like:(UIButton * _Nonnull)sender;
 - (NSInteger)numberOfSectionsInTableView:(UITableView * _Nonnull)tableView;
 - (NSInteger)tableView:(UITableView * _Nonnull)tableView numberOfRowsInSection:(NSInteger)section;
 - (UITableViewCell * _Nonnull)tableView:(UITableView * _Nonnull)tableView cellForRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath;
@@ -273,6 +282,11 @@ SWIFT_CLASS("_TtC5Ethos19LoginViewController")
 @end
 
 
+@interface NSDate (SWIFT_EXTENSION(Ethos))
+- (NSString * _Nonnull)getElapsedInterval;
+@end
+
+
 SWIFT_CLASS("_TtC5Ethos25NotifyTableViewController")
 @interface NotifyTableViewController : UITableViewController <CardViewDelegate, UITextViewDelegate>
 @property (nonatomic, strong) NSMutableArray * _Nullable cardsToShow;
@@ -313,7 +327,13 @@ SWIFT_CLASS("_TtC5Ethos8PostCard")
 @property (nonatomic, copy) NSString * _Nonnull content;
 @property (nonatomic) NSInteger type;
 @property (nonatomic) NSInteger groupID;
-- (nonnull instancetype)initWithPosterEmoji:(NSString * _Nonnull)posterEmoji userText:(NSString * _Nonnull)userText content:(NSString * _Nonnull)content type:(NSInteger)type OBJC_DESIGNATED_INITIALIZER;
+@property (nonatomic) NSInteger postID;
+@property (nonatomic) NSInteger posterID;
+@property (nonatomic) NSInteger likeCount;
+@property (nonatomic) NSInteger commentCount;
+@property (nonatomic) NSInteger userLiked;
+@property (nonatomic, copy) NSString * _Nonnull date;
+- (nonnull instancetype)initWithPosterEmoji:(NSString * _Nonnull)posterEmoji userText:(NSString * _Nonnull)userText type:(NSInteger)type OBJC_DESIGNATED_INITIALIZER;
 @end
 
 

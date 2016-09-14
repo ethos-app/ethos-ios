@@ -20,6 +20,13 @@ class BizCardTableViewCell: UITableViewCell {
     
     @IBOutlet var backMoji: UIView!
     
+    var react : UIButton?
+    
+    var comment : UIButton?
+    
+    
+    
+    @IBOutlet var date: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         
@@ -38,23 +45,21 @@ class BizCardTableViewCell: UITableViewCell {
         bottomBar.clipsToBounds = true
         
         let firstHalf = CGRectMake(0, -4, self.frame.width/2, bottomBar.frame.height)
-        let react = UIButton(frame: firstHalf)
-        
-        react.imageEdgeInsets = UIEdgeInsets(top: 12, left: 12, bottom: 12, right: 12)
-        react.imageView?.contentMode = UIViewContentMode.ScaleAspectFit
-        react.setImage(UIImage(named: "ic_favorite_border"), forState: UIControlState.Normal)
-        react.addTarget(self, action: #selector(BizCardTableViewCell.react), forControlEvents: UIControlEvents.TouchUpInside)
+         react = UIButton(frame: firstHalf)
+        react!.setTitle("0", forState: UIControlState.Normal)
+        react!.imageEdgeInsets = UIEdgeInsets(top: 12, left: 12, bottom: 12, right: 12)
+        react!.imageView?.contentMode = UIViewContentMode.ScaleAspectFit
+        react!.setImage(UIImage(named: "ic_favorite_border"), forState: UIControlState.Normal)
+        react!.addTarget(self, action: #selector(BizCardTableViewCell.reaction(_:)), forControlEvents: UIControlEvents.TouchUpInside)
         let secondHalf = CGRectMake(self.frame.width/2, -4, self.frame.width/2, bottomBar.frame.height)
-        let comment = UIButton(frame: secondHalf)
-        comment.imageEdgeInsets = UIEdgeInsets(top: 12, left: 12, bottom: 12, right: 12)
-        comment.imageView?.contentMode = UIViewContentMode.ScaleAspectFit
+        comment = UIButton(frame: secondHalf)
+        comment!.imageEdgeInsets = UIEdgeInsets(top: 12, left: 12, bottom: 12, right: 12)
+        comment!.imageView?.contentMode = UIViewContentMode.ScaleAspectFit
+        comment?.setTitle(" 0", forState: UIControlState.Normal)
+        comment!.setImage(UIImage(named: "ic_comment"), forState: UIControlState.Normal)
 
-        comment.setImage(UIImage(named: "ic_comment"), forState: UIControlState.Normal)
-
-        
-        bottomBar.addSubview(react)
-        bottomBar.addSubview(comment)
-
+        bottomBar.addSubview(react!)
+        bottomBar.addSubview(comment!)
         self.cardBack.addSubview(bottomBar)
         self.backMoji.backgroundColor = UIColor.lightGrayColor().colorWithAlphaComponent(0.5)
         self.backMoji.layer.cornerRadius = 15
@@ -65,13 +70,18 @@ class BizCardTableViewCell: UITableViewCell {
         self.cardBack.layer.shadowOpacity = 0.1
         
     }
-    func react(button : UIButton) {
+    func reaction(button : UIButton) {
         if button.imageView?.image == UIImage(named: "ic_favorite.png") {
             button.setImage(UIImage(named: "ic_favorite_border.png"), forState: UIControlState.Normal)
-
         } else {
         button.setImage(UIImage(named: "ic_favorite.png"), forState: UIControlState.Normal)
         }
+    }
+    func setCount(num : Int) {
+        print("updated")
+        self.react?.setTitle("\(num)", forState: UIControlState.Normal)
+        self.react?.setNeedsLayout()
+        self.react?.layoutIfNeeded()
     }
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)

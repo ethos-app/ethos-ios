@@ -143,7 +143,7 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate, UICollect
     func registerUser(friends : NSMutableArray) {
         let id = FBSDKAccessToken.currentAccessToken().userID
         let headers = ["Accept":"application/json","Content-Type":"application/json","X-Ethos-Auth":"token", "X-Facebook-Id":"\(id)"]
-        let params : [String : AnyObject] = ["FacebookId" : "\(id)" , "FriendIds" : friends, "Emoji" : "\(myEmoji)"]
+        let params : [String : AnyObject] = ["FacebookId" : "\(id)" , "FriendIds" : friends, "Emoji" : "\(myEmoji!)"]
         
         print("called")
         
@@ -159,8 +159,6 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate, UICollect
     func verifyToken(token : String) {
         let id = FBSDKAccessToken.currentAccessToken().userID
         let headers = ["Accept":"application/json","Content-Type":"application/json","X-Ethos-Auth":token, "X-Facebook-Id":"\(id)"]
-        let params : [String : AnyObject] = [:]
-        
         Alamofire.request(.GET, "http://meetethos.azurewebsites.net/api/Users/AuthChecker", parameters: nil, encoding: .JSON, headers: headers)
         
         .responseJSON { (response) in

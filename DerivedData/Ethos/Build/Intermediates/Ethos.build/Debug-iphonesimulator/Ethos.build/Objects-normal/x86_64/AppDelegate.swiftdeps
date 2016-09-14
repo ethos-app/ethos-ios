@@ -6,35 +6,40 @@ provides-nominal:
 provides-member:
 - ["C5Ethos11AppDelegate", ""]
 provides-dynamic-lookup:
+- "application"
+- "application"
 - "applicationWillEnterForeground"
 - "applicationWillTerminate"
-- "application"
-- "application"
-- "applicationDidEnterBackground"
-- "window"
-- "applicationWillResignActive"
 - "applicationDidBecomeActive"
+- "applicationWillResignActive"
+- "window"
+- "applicationDidEnterBackground"
 depends-top-level:
-- !private "UITabBar"
+- "UIWindow"
+- "String"
+- !private "FBSDKAppEvents"
 - !private "BooleanLiteralType"
 - "NSURL"
-- "AppDelegate"
-- "AnyObject"
-- "String"
 - "Bool"
 - "UIApplication"
-- !private "UIColor"
-- "UIWindow"
-- !private "FBSDKApplicationDelegate"
-- "NSObject"
-- !private "StringLiteralType"
-- "UIApplicationDelegate"
 - "UIResponder"
+- !private "UIColor"
+- "NSObject"
+- !private "UITabBar"
+- "AppDelegate"
+- !private "StringLiteralType"
+- !private "FBSDKApplicationDelegate"
+- !private "FBSDKProfile"
+- "AnyObject"
+- "UIApplicationDelegate"
 depends-member:
+- !private ["Ps9AnyObject", "FBSDKAppEvents"]
 - !private ["Ps9AnyObject", "FBSDKApplicationDelegate"]
+- !private ["Ps9AnyObject", "FBSDKProfile"]
 - !private ["Ps9AnyObject", "UIApplication"]
 - !private ["Ps9AnyObject", "UIColor"]
 - !private ["Ps9AnyObject", "UITabBar"]
+- !private ["Ps9AnyObject", "activateApp"]
 - !private ["Ps9AnyObject", "appearance"]
 - ["Ps9AnyObject", "application"]
 - ["Ps9AnyObject", "applicationDidBecomeActive"]
@@ -48,6 +53,7 @@ depends-member:
 - ["Ps9AnyObject", "applicationWillEnterForeground"]
 - ["Ps9AnyObject", "applicationWillResignActive"]
 - ["Ps9AnyObject", "applicationWillTerminate"]
+- !private ["Ps9AnyObject", "enableUpdatesOnAccessTokenChange"]
 - !private ["Ps9AnyObject", "hexStringToUIColor"]
 - ["Ps9AnyObject", "init"]
 - !private ["Ps9AnyObject", "sharedApplication"]
@@ -59,7 +65,9 @@ depends-member:
 - ["Ps9AnyObject", ""]
 - ["C5Ethos11AppDelegate", "AnyObject"]
 - ["C5Ethos11AppDelegate", "Bool"]
+- !private ["C5Ethos11AppDelegate", "FBSDKAppEvents"]
 - !private ["C5Ethos11AppDelegate", "FBSDKApplicationDelegate"]
+- !private ["C5Ethos11AppDelegate", "FBSDKProfile"]
 - ["C5Ethos11AppDelegate", "NSObject"]
 - ["C5Ethos11AppDelegate", "NSURL"]
 - ["C5Ethos11AppDelegate", "String"]
@@ -82,10 +90,13 @@ depends-member:
 - ["C5Ethos11AppDelegate", "deinit"]
 - ["C5Ethos11AppDelegate", "init"]
 - ["C5Ethos11AppDelegate", "window"]
+- !private ["Ps11CVarArgType", "FBSDKAppEvents"]
 - !private ["Ps11CVarArgType", "FBSDKApplicationDelegate"]
+- !private ["Ps11CVarArgType", "FBSDKProfile"]
 - !private ["Ps11CVarArgType", "UIApplication"]
 - !private ["Ps11CVarArgType", "UIColor"]
 - !private ["Ps11CVarArgType", "UITabBar"]
+- !private ["Ps11CVarArgType", "activateApp"]
 - !private ["Ps11CVarArgType", "appearance"]
 - ["Ps11CVarArgType", "application"]
 - ["Ps11CVarArgType", "applicationDidBecomeActive"]
@@ -99,6 +110,7 @@ depends-member:
 - ["Ps11CVarArgType", "applicationWillEnterForeground"]
 - ["Ps11CVarArgType", "applicationWillResignActive"]
 - ["Ps11CVarArgType", "applicationWillTerminate"]
+- !private ["Ps11CVarArgType", "enableUpdatesOnAccessTokenChange"]
 - !private ["Ps11CVarArgType", "hexStringToUIColor"]
 - ["Ps11CVarArgType", "init"]
 - !private ["Ps11CVarArgType", "sharedApplication"]
@@ -108,10 +120,13 @@ depends-member:
 - !private ["Ps11CVarArgType", "whiteColor"]
 - ["Ps11CVarArgType", "window"]
 - ["Ps11CVarArgType", ""]
+- !private ["Ps28CustomDebugStringConvertible", "FBSDKAppEvents"]
 - !private ["Ps28CustomDebugStringConvertible", "FBSDKApplicationDelegate"]
+- !private ["Ps28CustomDebugStringConvertible", "FBSDKProfile"]
 - !private ["Ps28CustomDebugStringConvertible", "UIApplication"]
 - !private ["Ps28CustomDebugStringConvertible", "UIColor"]
 - !private ["Ps28CustomDebugStringConvertible", "UITabBar"]
+- !private ["Ps28CustomDebugStringConvertible", "activateApp"]
 - !private ["Ps28CustomDebugStringConvertible", "appearance"]
 - ["Ps28CustomDebugStringConvertible", "application"]
 - ["Ps28CustomDebugStringConvertible", "applicationDidBecomeActive"]
@@ -125,6 +140,7 @@ depends-member:
 - ["Ps28CustomDebugStringConvertible", "applicationWillEnterForeground"]
 - ["Ps28CustomDebugStringConvertible", "applicationWillResignActive"]
 - ["Ps28CustomDebugStringConvertible", "applicationWillTerminate"]
+- !private ["Ps28CustomDebugStringConvertible", "enableUpdatesOnAccessTokenChange"]
 - !private ["Ps28CustomDebugStringConvertible", "hexStringToUIColor"]
 - ["Ps28CustomDebugStringConvertible", "init"]
 - !private ["Ps28CustomDebugStringConvertible", "sharedApplication"]
@@ -134,10 +150,13 @@ depends-member:
 - !private ["Ps28CustomDebugStringConvertible", "whiteColor"]
 - ["Ps28CustomDebugStringConvertible", "window"]
 - ["Ps28CustomDebugStringConvertible", ""]
+- !private ["Ps23CustomStringConvertible", "FBSDKAppEvents"]
 - !private ["Ps23CustomStringConvertible", "FBSDKApplicationDelegate"]
+- !private ["Ps23CustomStringConvertible", "FBSDKProfile"]
 - !private ["Ps23CustomStringConvertible", "UIApplication"]
 - !private ["Ps23CustomStringConvertible", "UIColor"]
 - !private ["Ps23CustomStringConvertible", "UITabBar"]
+- !private ["Ps23CustomStringConvertible", "activateApp"]
 - !private ["Ps23CustomStringConvertible", "appearance"]
 - ["Ps23CustomStringConvertible", "application"]
 - ["Ps23CustomStringConvertible", "applicationDidBecomeActive"]
@@ -151,6 +170,7 @@ depends-member:
 - ["Ps23CustomStringConvertible", "applicationWillEnterForeground"]
 - ["Ps23CustomStringConvertible", "applicationWillResignActive"]
 - ["Ps23CustomStringConvertible", "applicationWillTerminate"]
+- !private ["Ps23CustomStringConvertible", "enableUpdatesOnAccessTokenChange"]
 - !private ["Ps23CustomStringConvertible", "hexStringToUIColor"]
 - ["Ps23CustomStringConvertible", "init"]
 - !private ["Ps23CustomStringConvertible", "sharedApplication"]
@@ -160,11 +180,14 @@ depends-member:
 - !private ["Ps23CustomStringConvertible", "whiteColor"]
 - ["Ps23CustomStringConvertible", "window"]
 - ["Ps23CustomStringConvertible", ""]
+- !private ["Ps9Equatable", "FBSDKAppEvents"]
 - !private ["Ps9Equatable", "FBSDKApplicationDelegate"]
+- !private ["Ps9Equatable", "FBSDKProfile"]
 - !private ["Ps9Equatable", "LightContent"]
 - !private ["Ps9Equatable", "UIApplication"]
 - !private ["Ps9Equatable", "UIColor"]
 - !private ["Ps9Equatable", "UITabBar"]
+- !private ["Ps9Equatable", "activateApp"]
 - !private ["Ps9Equatable", "appearance"]
 - ["Ps9Equatable", "application"]
 - ["Ps9Equatable", "applicationDidBecomeActive"]
@@ -178,6 +201,7 @@ depends-member:
 - ["Ps9Equatable", "applicationWillEnterForeground"]
 - ["Ps9Equatable", "applicationWillResignActive"]
 - ["Ps9Equatable", "applicationWillTerminate"]
+- !private ["Ps9Equatable", "enableUpdatesOnAccessTokenChange"]
 - !private ["Ps9Equatable", "hexStringToUIColor"]
 - ["Ps9Equatable", "init"]
 - !private ["Ps9Equatable", "sharedApplication"]
@@ -187,13 +211,18 @@ depends-member:
 - !private ["Ps9Equatable", "whiteColor"]
 - ["Ps9Equatable", "window"]
 - ["Ps9Equatable", ""]
+- !private ["CSo14FBSDKAppEvents", "activateApp"]
 - !private ["CSo24FBSDKApplicationDelegate", "application"]
 - !private ["CSo24FBSDKApplicationDelegate", "sharedInstance"]
+- !private ["CSo12FBSDKProfile", "enableUpdatesOnAccessTokenChange"]
+- !private ["Ps8Hashable", "FBSDKAppEvents"]
 - !private ["Ps8Hashable", "FBSDKApplicationDelegate"]
+- !private ["Ps8Hashable", "FBSDKProfile"]
 - !private ["Ps8Hashable", "LightContent"]
 - !private ["Ps8Hashable", "UIApplication"]
 - !private ["Ps8Hashable", "UIColor"]
 - !private ["Ps8Hashable", "UITabBar"]
+- !private ["Ps8Hashable", "activateApp"]
 - !private ["Ps8Hashable", "appearance"]
 - ["Ps8Hashable", "application"]
 - ["Ps8Hashable", "applicationDidBecomeActive"]
@@ -207,6 +236,7 @@ depends-member:
 - ["Ps8Hashable", "applicationWillEnterForeground"]
 - ["Ps8Hashable", "applicationWillResignActive"]
 - ["Ps8Hashable", "applicationWillTerminate"]
+- !private ["Ps8Hashable", "enableUpdatesOnAccessTokenChange"]
 - !private ["Ps8Hashable", "hexStringToUIColor"]
 - ["Ps8Hashable", "init"]
 - !private ["Ps8Hashable", "sharedApplication"]
@@ -217,14 +247,18 @@ depends-member:
 - ["Ps8Hashable", "window"]
 - ["Ps8Hashable", ""]
 - !private ["PSo8NSCoding", "appearance"]
+- !private ["PSo8NSCoding", "enableUpdatesOnAccessTokenChange"]
 - !private ["PSo8NSCoding", "hexStringToUIColor"]
 - !private ["PSo8NSCoding", "tintColor"]
 - !private ["PSo8NSCoding", "whiteColor"]
+- !private ["PSo9NSCopying", "enableUpdatesOnAccessTokenChange"]
 - !private ["PSo9NSCopying", "hexStringToUIColor"]
 - !private ["PSo9NSCopying", "whiteColor"]
 - ["CSo8NSObject", "AnyObject"]
 - ["CSo8NSObject", "Bool"]
+- !private ["CSo8NSObject", "FBSDKAppEvents"]
 - !private ["CSo8NSObject", "FBSDKApplicationDelegate"]
+- !private ["CSo8NSObject", "FBSDKProfile"]
 - ["CSo8NSObject", "NSObject"]
 - ["CSo8NSObject", "NSURL"]
 - ["CSo8NSObject", "String"]
@@ -232,6 +266,7 @@ depends-member:
 - !private ["CSo8NSObject", "UIColor"]
 - !private ["CSo8NSObject", "UITabBar"]
 - ["CSo8NSObject", "UIWindow"]
+- !private ["CSo8NSObject", "activateApp"]
 - !private ["CSo8NSObject", "appearance"]
 - ["CSo8NSObject", "application"]
 - ["CSo8NSObject", "applicationDidBecomeActive"]
@@ -245,6 +280,7 @@ depends-member:
 - ["CSo8NSObject", "applicationWillEnterForeground"]
 - ["CSo8NSObject", "applicationWillResignActive"]
 - ["CSo8NSObject", "applicationWillTerminate"]
+- !private ["CSo8NSObject", "enableUpdatesOnAccessTokenChange"]
 - !private ["CSo8NSObject", "hexStringToUIColor"]
 - ["CSo8NSObject", "init"]
 - !private ["CSo8NSObject", "sharedApplication"]
@@ -253,10 +289,13 @@ depends-member:
 - !private ["CSo8NSObject", "tintColor"]
 - !private ["CSo8NSObject", "whiteColor"]
 - ["CSo8NSObject", "window"]
+- !private ["PSo16NSObjectProtocol", "FBSDKAppEvents"]
 - !private ["PSo16NSObjectProtocol", "FBSDKApplicationDelegate"]
+- !private ["PSo16NSObjectProtocol", "FBSDKProfile"]
 - !private ["PSo16NSObjectProtocol", "UIApplication"]
 - !private ["PSo16NSObjectProtocol", "UIColor"]
 - !private ["PSo16NSObjectProtocol", "UITabBar"]
+- !private ["PSo16NSObjectProtocol", "activateApp"]
 - !private ["PSo16NSObjectProtocol", "appearance"]
 - ["PSo16NSObjectProtocol", "application"]
 - ["PSo16NSObjectProtocol", "applicationDidBecomeActive"]
@@ -270,6 +309,7 @@ depends-member:
 - ["PSo16NSObjectProtocol", "applicationWillEnterForeground"]
 - ["PSo16NSObjectProtocol", "applicationWillResignActive"]
 - ["PSo16NSObjectProtocol", "applicationWillTerminate"]
+- !private ["PSo16NSObjectProtocol", "enableUpdatesOnAccessTokenChange"]
 - !private ["PSo16NSObjectProtocol", "hexStringToUIColor"]
 - ["PSo16NSObjectProtocol", "init"]
 - !private ["PSo16NSObjectProtocol", "sharedApplication"]
@@ -279,6 +319,7 @@ depends-member:
 - !private ["PSo16NSObjectProtocol", "whiteColor"]
 - ["PSo16NSObjectProtocol", "window"]
 - ["PSo16NSObjectProtocol", ""]
+- !private ["PSo14NSSecureCoding", "enableUpdatesOnAccessTokenChange"]
 - !private ["PSo14NSSecureCoding", "hexStringToUIColor"]
 - !private ["PSo14NSSecureCoding", "whiteColor"]
 - !private ["Ps16RawRepresentable", "LightContent"]
@@ -290,7 +331,9 @@ depends-member:
 - !private ["PSo21UIAppearanceContainer", "tintColor"]
 - !private ["CSo13UIApplication", "sharedApplication"]
 - !private ["CSo13UIApplication", "statusBarStyle"]
+- !private ["PSo21UIApplicationDelegate", "FBSDKAppEvents"]
 - !private ["PSo21UIApplicationDelegate", "FBSDKApplicationDelegate"]
+- !private ["PSo21UIApplicationDelegate", "FBSDKProfile"]
 - !private ["PSo21UIApplicationDelegate", "UIApplication"]
 - !private ["PSo21UIApplicationDelegate", "UIColor"]
 - !private ["PSo21UIApplicationDelegate", "UITabBar"]
@@ -318,7 +361,9 @@ depends-member:
 - !private ["PSo18UIFocusEnvironment", "tintColor"]
 - ["CSo11UIResponder", "AnyObject"]
 - ["CSo11UIResponder", "Bool"]
+- !private ["CSo11UIResponder", "FBSDKAppEvents"]
 - !private ["CSo11UIResponder", "FBSDKApplicationDelegate"]
+- !private ["CSo11UIResponder", "FBSDKProfile"]
 - ["CSo11UIResponder", "NSObject"]
 - ["CSo11UIResponder", "NSURL"]
 - ["CSo11UIResponder", "String"]
@@ -364,7 +409,9 @@ depends-nominal:
 - "Ps28CustomDebugStringConvertible"
 - "Ps23CustomStringConvertible"
 - "Ps9Equatable"
+- !private "CSo14FBSDKAppEvents"
 - !private "CSo24FBSDKApplicationDelegate"
+- !private "CSo12FBSDKProfile"
 - "Ps8Hashable"
 - !private "PSo8NSCoding"
 - !private "PSo9NSCopying"

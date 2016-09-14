@@ -83,43 +83,58 @@ class CardStackTableViewController: UIViewController, UITableViewDelegate, UITab
         let standardTextAttributes : [String : AnyObject] = [NSFontAttributeName : UIFont(name: "Raleway-Regular", size: 20)!, NSForegroundColorAttributeName : UIColor.hexStringToUIColor("DBE4EE")]
         
         
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-        
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
-        //  bar.frame = CGRectMake(0, bar.frame.origin.y, self.view.frame.width, 40)
         self.view.backgroundColor = UIColor.hexStringToUIColor("e9e9e9")
-        createCards()
         
-        //        let blur = UIBlurEffect(style: UIBlurEffectStyle.ExtraLight)
-        //        let effectView = UIVisualEffectView(effect: blur)
-        //        effectView.alpha = 0.65
-        //        effectView.frame = tableView.frame
-        //        self.view.addSubview(effectView)
     }
     
-//    func updateFriends() {
-//        let headers = ["Accept":"application/json","Content-Type":"application/json","X-Ethos-Auth":"\(ethosAuth)", "X-Facebook-Id":"\(id)"]
-//        friends =
-//        Alamofire.request(.PUT, "api/Users/Me/Friends", parameters: params, encoding: .JSON, headers: headers)
-//            .responseJSON { (response) in
-//                print(response)
-//        }
-//        
-//    }
+    func postFriends(string : NSArray) {
+       // let finalDict = ["friendsList" : string]
+        let headers = ["Accept":"application/json","Content-Type":"application/json","X-Ethos-Auth":"\(ethosAuth)", "X-Facebook-Id":"\(id)"]
+        Alamofire.request(.PUT, "http://meetethos.azurewebsites.net/api/Users/Me/Friends", parameters: ["friendsList" : string], encoding: .JSON, headers: headers)
+            .responseJSON { (response) in
+                print(response)
+        }
+    }
+    func updateFriends() {
+        //let friendsRequest = FBSDKGraphRequest(graphPath: "me/friends", parameters: nil, tokenString:ethosAuth, version: nil, HTTPMethod: nil)
+        let friendsRequest = FBSDKGraphRequest(graphPath: "me/friends", parameters: nil)
+        friendsRequest.startWithCompletionHandler { (connection, object, error) in
+            if error == nil {
+            let data = object.objectForKey("data") as! NSArray
+            let list = NSMutableArray()
+            for object in data {
+                if let id = object.objectForKey("id") as? String {
+                    list.addObject(id)
+                }
+            }
+            self.postFriends(list)
+            }  else {
+                print(error)
+            }
+        }
+ 
+        
+    }
+
+    
     override func viewWillAppear(animated: Bool) {
+
+        if FBSDKAccessToken.currentAccessToken() != nil {
         if let token = NSUserDefaults.standardUserDefaults().objectForKey("token") as? String {
             if let id = NSUserDefaults.standardUserDefaults().objectForKey("id") as? String {
                 self.ethosAuth = token
                 self.id = id
-             //   updateFriends()
+                NSUserDefaults.standardUserDefaults().setObject(token, forKey: "token")
+                NSUserDefaults.standardUserDefaults().setObject(id, forKey: "id")
+                self.updateFriends()
+                self.getPosts()
             }
-        } else {
+        }
+    }
+        else {
             let login = LoginViewController()
             self.presentViewController(login, animated: true, completion: nil)
         }
-        getPosts()
         
     }
     
@@ -127,42 +142,61 @@ class CardStackTableViewController: UIViewController, UITableViewDelegate, UITab
     func shouldMoveCard(card: CardView) -> Bool {
         return true
     }
-    func createCards() {
-        let firstCard = PostCard(posterEmoji: "https://meetethos.blob.core.windows.net/emojis/emoji1.png", userText: "Lorem ipsum doler sit amet nigga what geetyy wap", content: "yep", type: 0)
-        
-        let secondCard = PostCard(posterEmoji: "https://meetethos.blob.core.windows.net/emojis/emoji2.png", userText: "Quality content here. Yeah, top notch. This is a long rant. We will see how this table cell expands. Yeah. Keep expanding. That's right, iOS. I am your master. Get used to it. ", content: "yep", type: 0)
-        
-        cardsToShow?.addObject(firstCard)
-        cardsToShow?.addObject(secondCard)
 
-        
-        self.tableView.reloadData()
-    }
     override func viewDidAppear(animated: Bool) {
         postBox.textView?.delegate = self
         //     cardsButton.selectMe()
         //     netButton.deselectMe()
     }
     
+    func updatePosts(array : NSArray) {
+        for cardDictionary in array {
+            let dict = cardDictionary as! NSDictionary
+            let emoji = dict.objectForKey("PosterEmoji") as! String
+            let userText = dict.objectForKey("UserText") as! String
+            let type = dict.objectForKey("Type") as! Int
+            let dataCard = PostCard(posterEmoji: emoji, userText: userText, type: type)
+            dataCard.likeCount = dict.objectForKey("LikeCount") as! Int
+            let dateString = dict.objectForKey("DateCreated") as! String
+            print(dateString)
+            let format = NSDateFormatter()
+            format.dateFormat = "yyyy'-'MM'-'dd'T'HH':'mm':'ss'.'SSS'Z'"
+            let date =  format.dateFromString(dateString)
+            
+            let formatter = NSDateFormatter()
+            formatter.dateFormat = "d MM HH"
+            let dater = formatter.stringFromDate(date!)
+            dataCard.date = date!.getElapsedInterval()
+            
+         //   dataCard.setTitle("", forState: UIControlState.Normal)
+
+            self.cardsToShow?.addObject(dataCard)
+        }
+        self.tableView.reloadData()
+    }
     func getPosts() {
-        
+        self.cardsToShow?.removeAllObjects()
         let headers = ["Accept":"application/json","Content-Type":"application/json","X-Ethos-Auth":"\(ethosAuth)", "X-Facebook-Id":"\(id)"]
-        
         Alamofire.request(.GET, "http://meetethos.azurewebsites.net/api/Posts", parameters: nil, encoding: .JSON, headers: headers)
             .responseJSON { (response) in
-                print(response)
+                let array = response.result.value! as! NSDictionary
+                let posts = array.objectForKey("selectedPosts") as! NSArray
+                print(posts)
+                self.updatePosts(posts)
         }
-        
     }
+    
     func post() {
         let content = postBox.textView?.text.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet())
         let headers = ["Accept":"application/json","Content-Type":"application/json","X-Ethos-Auth":"\(ethosAuth)", "X-Facebook-Id":"\(id)"]
         
         let params : [String : AnyObject] = ["UserText" : content! , "Content" : "NULL", "PostType" : 0, "GroupId":""]
-        Alamofire.request(.POST, "http://meetethos.azurewebsites.net/api/Create", parameters: params, encoding: .JSON, headers: headers)
+        Alamofire.request(.POST, "http://meetethos.azurewebsites.net/api/Posts/Create", parameters: params, encoding: .JSON, headers: headers)
             .responseJSON { (response) in
                 print(response)
                 self.postBox.resetText()
+                self.stopWritingPost()
+                self.getPosts()
         }
     }
     func selectCards() {
@@ -203,6 +237,11 @@ class CardStackTableViewController: UIViewController, UITableViewDelegate, UITab
         // Dispose of any resources that can be recreated.
     }
     
+    
+    func like(sender : UIButton) {
+        print("call")
+        print(sender.tag)
+    }
     // MARK: - Table view data source
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -214,6 +253,7 @@ class CardStackTableViewController: UIViewController, UITableViewDelegate, UITab
         // #warning Incomplete implementation, return the number of rows
         return cardsToShow!.count
     }
+    
     
     
 //    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
@@ -229,6 +269,17 @@ class CardStackTableViewController: UIViewController, UITableViewDelegate, UITab
         cell?.img.image = UIImage(data: data!)
         cell?.img.contentMode = UIViewContentMode.ScaleAspectFit
         cell?.desc.text = currentObject.userText
+        print("yep")
+        cell!.date.text = currentObject.date
+        print(currentObject.likeCount)
+        let like = UITapGestureRecognizer(target: self, action: #selector(CardStackTableViewController.like(_:)))
+        like.numberOfTapsRequired = 1
+        like.numberOfTouchesRequired = 1
+        cell?.react?.tag = indexPath.row
+        cell?.react?.addGestureRecognizer(like)
+        cell?.setCount(currentObject.likeCount)
+        cell?.react?.setTitle("\(currentObject.likeCount)", forState: UIControlState.Normal)
+
         return cell!
     }
     
