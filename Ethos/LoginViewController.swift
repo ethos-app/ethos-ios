@@ -10,49 +10,76 @@ import UIKit
 import FBSDKLoginKit
 import Alamofire
 import MBProgressHUD
+fileprivate func < <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
+  switch (lhs, rhs) {
+  case let (l?, r?):
+    return l < r
+  case (nil, _?):
+    return true
+  default:
+    return false
+  }
+}
+
+fileprivate func > <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
+  switch (lhs, rhs) {
+  case let (l?, r?):
+    return l > r
+  default:
+    return rhs < lhs
+  }
+}
+
 
 class LoginViewController: UIViewController, FBSDKLoginButtonDelegate, UICollectionViewDelegate, UICollectionViewDataSource {
-    var myEmoji : NSURL?
+    /*!
+     @abstract Sent to the delegate when the button was used to login.
+     @param loginButton the sender
+     @param result The results of the login
+     @param error The error (if any) from the login
+     */
+
+    var myEmoji : URL?
     var emojiList : NSMutableArray?
     var emojiKey : UICollectionView?
     var header : UILabel?
     override func viewDidLoad() {
         emojiList = NSMutableArray()
-        let lowerThird = CGRectMake(0, self.view.frame.height-200, self.view.frame.width, 200)
-        let top = CGRectMake(0, self.view.frame.height-250, self.view.frame.width, 50)
+        let lowerThird = CGRect(x: 0, y: self.view.frame.height-200, width: self.view.frame.width, height: 200)
+        let top = CGRect(x: 0, y: self.view.frame.height-250, width: self.view.frame.width, height: 50)
         header = UILabel(frame: top)
         header!.backgroundColor = UIColor.hexStringToUIColor("164E66")
-        header!.textAlignment = NSTextAlignment.Center
+        header!.textAlignment = NSTextAlignment.center
         header!.font = UIFont(name: "Raleway-Regular", size: 20)
         header!.text = "First, pick your Emoji!"
-        header!.textColor = UIColor.whiteColor()
+        header!.textColor = UIColor.white
         self.view.addSubview(header!)
         let flowLayout = UICollectionViewFlowLayout()
-        flowLayout.scrollDirection = UICollectionViewScrollDirection.Vertical
-        flowLayout.itemSize = CGSizeMake(72, 72)
+        flowLayout.scrollDirection = UICollectionViewScrollDirection.vertical
+        flowLayout.itemSize = CGSize(width: 72, height: 72)
         flowLayout.minimumLineSpacing = 3
         flowLayout.minimumInteritemSpacing = 0
         emojiKey = UICollectionView(frame: lowerThird, collectionViewLayout: flowLayout)
         emojiKey?.backgroundColor = UIColor.hexStringToUIColor("164E66")
         emojiKey?.delegate = self
         emojiKey?.dataSource = self
-        emojiKey?.registerClass(UICollectionViewCell.self, forCellWithReuseIdentifier: "cell")
+        emojiKey?.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cell")
         self.view.backgroundColor = UIColor.hexStringToUIColor("247BA0")
-        let topFrame = CGRectMake(0, 60, self.view.frame.width, 40)
+        let topFrame = CGRect(x: 0, y: 60, width: self.view.frame.width, height: 40)
         let welcome = UILabel(frame: topFrame)
-        welcome.textAlignment = NSTextAlignment.Center
+        welcome.textAlignment = NSTextAlignment.center
         welcome.font = UIFont(name: "Raleway-Light", size: 18)
         welcome.text = "welcome to"
-        welcome.textColor = UIColor.whiteColor()
+        welcome.textColor = UIColor.white
         self.view.addSubview(welcome)
-        let nextFrame = CGRectMake(0, 100, self.view.frame.width, 40)
+        let nextFrame = CGRect(x: 0, y: 100, width: self.view.frame.width, height: 40)
         let logo = UILabel(frame: nextFrame)
-        logo.textAlignment = NSTextAlignment.Center
+        logo.textAlignment = NSTextAlignment.center
         logo.font = UIFont(name: "Lobster 1.4", size: 52)
         logo.text = "Ethos"
-        logo.textColor = UIColor.whiteColor()
+        logo.textColor = UIColor.white
         self.view.addSubview(logo)
-        let myFrame = CGRectMake(50, self.view.frame.width-100, self.view.frame.width-100, 50)
+        let myFrame = CGRect(x: 50, y: self.view.frame.width-100, width: self.view.frame.width-100, height: 50)
         let login = FBSDKLoginButton(frame: myFrame)
         login.readPermissions = ["public_profile", "email", "user_friends"]
         login.delegate = self
@@ -63,53 +90,47 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate, UICollect
         loadEm()
     }
     func loadEm() {
-        Alamofire.request(.GET, "http://meetethos.azurewebsites.net/api/Emoji/All")
+        Alamofire.request("http://meetethos.azurewebsites.net/api/Emoji/All")
         .responseJSON { (done) in
             if let response = done.result.value as? NSArray {
-                for (var i = 0; i<response.count;i += 1) {
-                    if let responseURL = response.objectAtIndex(i) as? String {
-                    let url = NSURL(string: responseURL)
-                    self.emojiList?.addObject(url!)
+                    for emString in response {
+                    if let responseURL = emString as? String {
+                    let url = URL(string: responseURL)
+                    self.emojiList?.add(url!)
                     self.emojiKey?.reloadData()
                     }
                 }
             }
 
-            
-        
-//            let objects = response.result
-//            for object in objects {
-//                print(object)
-//            }
         }
 
     }
     // MARK : Emoji keyboard
-    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return emojiList!.count
     }
-    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        let cell = collectionView.cellForItemAtIndexPath(indexPath)
-        myEmoji = emojiList?.objectAtIndex(indexPath.row) as! NSURL
-        UIView.animateWithDuration(0.3) {
-            self.header?.frame = CGRectMake(0, self.view.frame.height-165, self.header!.frame.width, 165)
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let cell = collectionView.cellForItem(at: indexPath)
+        myEmoji = emojiList?.object(at: (indexPath as NSIndexPath).row) as! URL
+        UIView.animate(withDuration: 0.3, animations: {
+            self.header?.frame = CGRect(x: 0, y: self.view.frame.height-165, width: self.header!.frame.width, height: 165)
             self.header?.numberOfLines = 0
             self.header?.text = "Last step! 👇\n\n\n"
-        }
-        UIView.animateWithDuration(0.3) {
-            self.emojiKey?.frame = CGRectMake(0, 700, self.emojiKey!.frame.width, self.emojiKey!.frame.height)
-        }
+        }) 
+        UIView.animate(withDuration: 0.3, animations: {
+            self.emojiKey?.frame = CGRect(x: 0, y: self.view.frame.height, width: self.emojiKey!.frame.width, height: self.emojiKey!.frame.height)
+        }) 
     }
-    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("cell", forIndexPath: indexPath)
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
         let circleCase = UIView(frame: cell.contentView.frame)
         circleCase.backgroundColor = UIColor.hexStringToUIColor("247BA0")
         circleCase.layer.cornerRadius = cell.frame.width/2
-        circleCase.contentMode = UIViewContentMode.ScaleAspectFit
-        let imageFrame = CGRectMake(cell.contentView.frame.origin.x+10, cell.contentView.frame.origin.y+10, cell.contentView.frame.width-20, cell.contentView.frame.height-20)
+        circleCase.contentMode = UIViewContentMode.scaleAspectFit
+        let imageFrame = CGRect(x: cell.contentView.frame.origin.x+10, y: cell.contentView.frame.origin.y+10, width: cell.contentView.frame.width-20, height: cell.contentView.frame.height-20)
         let imageView = UIImageView(frame: imageFrame)
-        if emojiList?.count > indexPath.row {
-        if let url = emojiList!.objectAtIndex(indexPath.row) as? NSURL {
+        if emojiList?.count > (indexPath as NSIndexPath).row {
+        if let url = emojiList!.object(at: (indexPath as NSIndexPath).row) as? URL {
             imageView.imageFromUrl(url)
         }
         }
@@ -118,69 +139,84 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate, UICollect
         return cell
     }
     // MARK : Login functions
-    func loginButton(loginButton: FBSDKLoginButton!, didCompleteWithResult result: FBSDKLoginManagerLoginResult!, error: NSError!) {
+    func loginButton(_ loginButton: FBSDKLoginButton!, didCompleteWith result: FBSDKLoginManagerLoginResult!, error: Error!) {
         header?.text = "verifying..."
-        let hud = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
-        hud.mode = MBProgressHUDMode.AnnularDeterminate
-        hud.color = UIColor.whiteColor()
+        let hud = MBProgressHUD.showAdded(to: self.view, animated: true)
+        hud.mode = MBProgressHUDMode.annularDeterminate
+        hud.color = UIColor.white
         hud.progress = 0.2
         loginButton.alpha = 0
-        print(result)
+      print(result)
         let list = NSMutableArray()
-        let friendsRequest = FBSDKGraphRequest(graphPath: "me/friends", parameters: nil)
-        friendsRequest.startWithCompletionHandler { (connection, object, error) in
         
-          let data = object.objectForKey("data") as! NSArray
-            for object in data {
-                if let id = object.objectForKey("id") as? String {
-                list.addObject(id)
+        let friendsRequest = FBSDKGraphRequest(graphPath: "me/friends", parameters: nil)
+        friendsRequest?.start { (connection, object, error) in
+            print(object)
+            let object = object as! NSDictionary
+          let data = object.object(forKey: "data") as! NSArray
+            for obj in data {
+                let obj = obj as! NSDictionary
+                if let id = obj.object(forKey: "id") as? String {
+                list.add(id)
                 }
             }
             // Register new user
             self.registerUser(list)
         }
     }
-    func registerUser(friends : NSMutableArray) {
-        let id = FBSDKAccessToken.currentAccessToken().userID
-        let headers = ["Accept":"application/json","Content-Type":"application/json","X-Ethos-Auth":"token", "X-Facebook-Id":"\(id)"]
-        let params : [String : AnyObject] = ["FacebookId" : "\(id)" , "FriendIds" : friends, "Emoji" : "\(myEmoji!)"]
-        
-        print("called")
-        
-        Alamofire.request(.POST, "http://meetethos.azurewebsites.net/api/Users/register", parameters: params, encoding: .JSON, headers: headers)
+    func registerUser(_ friends : NSMutableArray) {
+        let id = FBSDKAccessToken.current().userID
+        let headers = ["Accept":"application/json","Content-Type":"application/json","X-Ethos-Auth":"token", "X-Facebook-Id":"\(id!)"]
+        print(id!)
+        let params : [String : Any] = ["FacebookId" : "\(id!)" as Any, "FriendIds"  : friends, "Emoji" : "\(myEmoji!)" as Any]
+        print("test")
+        print(params)
+        Alamofire.request("http://meetethos.azurewebsites.net/api/Users/Register", method: .post, parameters: params, encoding: JSONEncoding.default, headers: headers)
             .responseJSON { (response) in
                 print(response.result.value)
-                if let repToken = response.result.value?.objectForKey("token") as? String {
+                print(response)
+                let rep = response.result.value as! NSDictionary
+                if let repToken = rep.object(forKey: "token") as? String {
+                    UserDefaults.standard.set(repToken, forKey: "token")
+                    UserDefaults.standard.set(id!, forKey: "id")
                     self.verifyToken(repToken)
+                } else {
+                    let alert = UIAlertController(title: "Server Full", message: "We are doing our best to get more servers online. Try again later.", preferredStyle: UIAlertControllerStyle.alert)
+                    let action = UIAlertAction(title: "Okay", style: UIAlertActionStyle.default, handler: { (action) in
+                        //
+                    })
+                    alert.addAction(action)
+                    self.present(alert, animated: true, completion: nil)
                 }
         }
 
     }
-    func verifyToken(token : String) {
-        let id = FBSDKAccessToken.currentAccessToken().userID
-        let headers = ["Accept":"application/json","Content-Type":"application/json","X-Ethos-Auth":token, "X-Facebook-Id":"\(id)"]
-        Alamofire.request(.GET, "http://meetethos.azurewebsites.net/api/Users/AuthChecker", parameters: nil, encoding: .JSON, headers: headers)
+    public func verifyToken(_ token : String) {
+        let id = FBSDKAccessToken.current().userID
+        let headers = ["Accept":"application/json","Content-Type":"application/json","X-Ethos-Auth":token, "X-Facebook-Id":"\(id!)"]
+        
+        Alamofire.request("http://meetethos.azurewebsites.net/api/Users/AuthChecker", method: .get,parameters: nil, encoding: JSONEncoding.default, headers: headers)
         
         .responseJSON { (response) in
-            if let status = response.result.value?.objectForKey("status") as? String {
+            print(response.result.value)
+             let arrayValue = response.result.value as! NSDictionary
+             let status = arrayValue.object(forKey: "status") as! String
                 print(status)
                     if status == "ok" {
-                        NSUserDefaults.standardUserDefaults().setObject(token, forKey: "token")
-                        NSUserDefaults.standardUserDefaults().setObject(id, forKey: "id")
-                        MBProgressHUD.hideAllHUDsForView(self.view, animated: true)
-                        self.dismissViewControllerAnimated(true, completion: nil)
+                  
+                        MBProgressHUD.hideAllHUDs(for: self.view, animated: true)
+                        self.dismiss(animated: true, completion: nil)
                     } else {
-                        // failed try again TODO
+                        // TODO: failed try again
                 }
-            }
-            
+        
         }
     }
-    func loginButtonWillLogin(loginButton: FBSDKLoginButton!) -> Bool {
+    func loginButtonWillLogin(_ loginButton: FBSDKLoginButton!) -> Bool {
         //
         return true
     }
-    func loginButtonDidLogOut(loginButton: FBSDKLoginButton!) {
+    func loginButtonDidLogOut(_ loginButton: FBSDKLoginButton!) {
         //
     }
     

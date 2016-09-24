@@ -9,56 +9,56 @@ import Swift
      * Method called when the view will begin pan gesture
      * @param Card * Card
      */
-    optional func willBeginSwipeInCard(card: CardView)
+    @objc optional func willBeginSwipeInCard(_ card: CardView)
     
     /*!
      * Method called when the view did end pan gesture
      * @param Card * Card
      */
-    optional func didEndSwipeInCard(card: CardView)
+    @objc optional func didEndSwipeInCard(_ card: CardView)
     
     /*!
      * Method called when the view did not reach a detected position
      * @param Card * Card
      */
-    optional func didCancelSwipeInCard(card: CardView)
+    @objc optional func didCancelSwipeInCard(_ card: CardView)
     
     /*!
      * Method called when the view was swiped left
      * @param Card * Card
      */
-    optional func swipedLeftInCard(card: CardView)
+    @objc optional func swipedLeftInCard(_ card: CardView)
     
     /*!
      * Method called when the view was swiped right
      * @param Card * Card
      */
-    optional func swipedRightInCard(card: CardView)
+    @objc optional func swipedRightInCard(_ card: CardView)
     
     /*!
      * Method called when the view was swiped up
      * @param Card * Card
      */
-    optional func swipedUpInCard(card: CardView)
+    @objc optional func swipedUpInCard(_ card: CardView)
     
     /*!
      * Method called when the view was swiped down
      * @param Card * Card
      */
-    optional func swipedDownInCard(card: CardView)
+    @objc optional func swipedDownInCard(_ card: CardView)
     
     /*!
      * Method called when the view button was pressed
      * @param Card * Card;
      */
-    optional func wasTouchedDownInCard(card: CardView)
+    @objc optional func wasTouchedDownInCard(_ card: CardView)
     
     /*!
      *    Method called when the state was changed
      *
      *    @param  Card * Card;
      */
-    optional func didChangeStateInCard(card: CardView)
+    @objc optional func didChangeStateInCard(_ card: CardView)
     
     /*!
      *    Ask the delegate if the card should move
@@ -67,16 +67,16 @@ import Swift
      *
      *    @return YES if the card should move
      */
-    func shouldMoveCard(card: CardView) -> Bool
+    func shouldMoveCard(_ card: CardView) -> Bool
 }
 
 // MARK: CardView Enums
 enum CardState : Int {
-    case Idle = 0, Moving, Gone
+    case idle = 0, moving, gone
 }
 
 enum CardPosition : Int {
-    case Top = 0, Back
+    case top = 0, back
 }
 
 // Constants Declaration
@@ -118,8 +118,8 @@ class CardView: UIView {
     
     
     // MARK: Internal Variables
-    var state : CardState = .Idle
-    var position : CardPosition = .Top
+    var state : CardState = .idle
+    var position : CardPosition = .top
     
     var xFromCenter : CGFloat = 0
     var yFromCenter : CGFloat = 0
@@ -140,44 +140,44 @@ class CardView: UIView {
     }
     
     // MARK: Setup Method
-    private func setup() {
+    fileprivate func setup() {
         // Draw Shadow
         // And round the view
         self.layer.cornerRadius = 10;
         self.layer.shadowRadius = 3;
         self.layer.shadowOpacity = 0.2;
-        self.layer.shadowOffset = CGSizeMake(1,1);
-        self.backgroundColor = UIColor.whiteColor()
+        self.layer.shadowOffset = CGSize(width: 1,height: 1);
+        self.backgroundColor = UIColor.white
         
         //Register Pan Gesture and Delegates
-        let panRecognizer = UIPanGestureRecognizer(target: self, action: "handlePanGesture:")
+        let panRecognizer = UIPanGestureRecognizer(target: self, action: #selector(CardView.handlePanGesture(_:)))
         self.addGestureRecognizer(panRecognizer)
     }
     
     // MARK: Pan Gesture Recognizer Handlers
-    @objc private func handlePanGesture(panRecognizer: UIPanGestureRecognizer) {
+    @objc fileprivate func handlePanGesture(_ panRecognizer: UIPanGestureRecognizer) {
         
-        self.xFromCenter = panRecognizer.translationInView(self).x;
-        self.yFromCenter = panRecognizer.translationInView(self).y;
+        self.xFromCenter = panRecognizer.translation(in: self).x;
+        self.yFromCenter = panRecognizer.translation(in: self).y;
         
         
         let isPossibleMove = self.delegate.shouldMoveCard(self)
         
         switch(panRecognizer.state) {
-        case .Began:
+        case .began:
             self.originalPoint = self.center
             
             if isPossibleMove {
                 self.delegate.willBeginSwipeInCard?(self)
             }
             break;
-        case .Changed:
+        case .changed:
             
             if isPossibleMove {
                 self.animateView()
             }
             break;
-        case .Ended:
+        case .ended:
             if isPossibleMove {
                 self.detectSwipeDirection()
             }
@@ -194,7 +194,7 @@ class CardView: UIView {
      * Rotates the view
      * and changes its scale and position
      */
-    private func animateView() {
+    fileprivate func animateView() {
         // Do some black magic math
         // for rotating and scale
         
@@ -212,10 +212,10 @@ class CardView: UIView {
         self.center = CGPoint(x: self.originalPoint.x + self.xFromCenter, y: self.originalPoint.y + self.yFromCenter)
         
         // rotate by the angle
-        let rotateTransform = CGAffineTransformMakeRotation(rotationAngle)
+        let rotateTransform = CGAffineTransform(rotationAngle: rotationAngle)
         
         // scale depending on the rotation
-        let scaleTransform = CGAffineTransformScale(rotateTransform, scale, scale)
+        let scaleTransform = rotateTransform.scaledBy(x: scale, y: scale)
         
         // apply transformations
         self.transform = scaleTransform
@@ -228,7 +228,7 @@ class CardView: UIView {
      * gets the direction of the swipe
      * when the swipe is done
      */
-    private func detectSwipeDirection(){
+    fileprivate func detectSwipeDirection(){
         if self.xFromCenter > X_ACTION_MARGIN {
             self.performCenterAnimation()
         }
@@ -251,22 +251,22 @@ class CardView: UIView {
         self.delegate.didEndSwipeInCard?(self)
     }
     
-    private func changeStateToIdle() {
+    fileprivate func changeStateToIdle() {
         // Idle state indicates that the card
         // is showing in the view, but not moving.
         
-        self.state = .Idle
+        self.state = .idle
     }
     
-    private func changeStateToGone() {
+    fileprivate func changeStateToGone() {
         // Gone state indicates that the card
         // was removed from the view
         
-        self.state = .Gone
+        self.state = .gone
     }
     
-    private func changeStateToMoving() {
-        self.state = .Moving
+    fileprivate func changeStateToMoving() {
+        self.state = .moving
         
         // Cancel Swipe if Moving but not should
         if self.delegate.shouldMoveCard(self) {
@@ -279,11 +279,11 @@ class CardView: UIView {
     /*!
      * The view will go to the right
      */
-    private func performRightAnimation() {
+    fileprivate func performRightAnimation() {
         
-        UIView.animateWithDuration(0.3,
+        UIView.animate(withDuration: 0.3,
                                    delay: 0,
-                                   options: .BeginFromCurrentState,
+                                   options: .beginFromCurrentState,
                                    animations: { () -> Void in
                                     self.center = self.originalPoint
         }) { (finished) -> Void in
@@ -295,11 +295,11 @@ class CardView: UIView {
     /*!
      * The view will got to the left
      */
-    private func performLeftAnimation() {
+    fileprivate func performLeftAnimation() {
         
-        UIView.animateWithDuration(0.3,
+        UIView.animate(withDuration: 0.3,
                                    delay: 0,
-                                   options: .BeginFromCurrentState,
+                                   options: .beginFromCurrentState,
                                    animations: { () -> Void in
                                     self.center = self.originalPoint
         }) { (finished) -> Void in
@@ -310,15 +310,15 @@ class CardView: UIView {
     }
     
     // Throw out card
-    private func performUpAnimation() {
+    fileprivate func performUpAnimation() {
         let finishPoint = CGPoint(x: 2 *  self.xFromCenter + self.originalPoint.x, y: -200)
         
-        UIView.animateWithDuration(0.3,
+        UIView.animate(withDuration: 0.3,
                                    delay: 0,
-                                   options: .BeginFromCurrentState,
+                                   options: .beginFromCurrentState,
                                    animations: { () -> Void in
                                     self.center = finishPoint
-                                    self.transform = CGAffineTransformMakeRotation(1.2)
+                                    self.transform = CGAffineTransform(rotationAngle: 1.2)
         }) { (finished) -> Void in
             self.removeFromSuperview()
             self.changeStateToGone()
@@ -331,18 +331,18 @@ class CardView: UIView {
      * do not remove from view
      * just perfom some goofy moves
      */
-    private func performDownAnimation() {
+    fileprivate func performDownAnimation() {
         print("called")
         let finishPoint = CGPoint(x: 2 *  self.xFromCenter + self.originalPoint.x, y: self.frame.height+200)
 
-        UIView.animateWithDuration(0.5,
+        UIView.animate(withDuration: 0.5,
                                    delay: 0,
                                    usingSpringWithDamping: 0.56,
                                    initialSpringVelocity: 0.0,
-                                   options: .BeginFromCurrentState,
+                                   options: .beginFromCurrentState,
                                    animations: { () -> Void in
                                     self.center = finishPoint
-                                    self.transform = CGAffineTransformMakeRotation(0)
+                                    self.transform = CGAffineTransform(rotationAngle: 0)
         }) { (finished) -> Void in
             self.removeFromSuperview()
             self.changeStateToGone()
@@ -354,15 +354,15 @@ class CardView: UIView {
      * The view will go to the center
      * (cancel swipe) and reset the values
      */
-    private func performCenterAnimation() {
-        UIView.animateWithDuration(0.7,
+    fileprivate func performCenterAnimation() {
+        UIView.animate(withDuration: 0.7,
                                    delay: 0,
                                    usingSpringWithDamping: 0.56,
                                    initialSpringVelocity: 0.0,
-                                   options: .BeginFromCurrentState,
+                                   options: .beginFromCurrentState,
                                    animations: { () -> Void in
                                     self.center = self.originalPoint
-                                    self.transform = CGAffineTransformMakeRotation(0)
+                                    self.transform = CGAffineTransform(rotationAngle: 0)
         }) { (finished) -> Void in
             self.changeStateToIdle()
             self.delegate.didCancelSwipeInCard?(self)

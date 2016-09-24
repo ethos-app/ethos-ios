@@ -18,11 +18,11 @@ class BarButton: UIView {
         get {
             return self.label
         } set(newString) {
-            let textFrame = CGRectMake(0, 18, 100, 30)
+            let textFrame = CGRect(x: 0, y: 18, width: 100, height: 30)
             let labelView = UILabel(frame: textFrame)
             labelView.text = newString!
             labelView.font = UIFont(name: "Raleway-Regular", size: 13)
-            labelView.textColor = UIColor.darkGrayColor()
+            labelView.textColor = UIColor.darkGray
             self.addSubview(labelView)
             print("added")
         }
@@ -33,14 +33,14 @@ class BarButton: UIView {
             return self.imageFile
         }
         set(newImage) {
-            let whiteImage = newImage?.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate)
+            let whiteImage = newImage?.withRenderingMode(UIImageRenderingMode.alwaysTemplate)
             let imageView = UIImageView(image: whiteImage)
-            imageView.contentMode = UIViewContentMode.ScaleAspectFit
+            imageView.contentMode = UIViewContentMode.scaleAspectFit
             let start = (self.frame.width/2)
-            let imFrame = CGRectMake(start, 6, 40, 20)
+            let imFrame = CGRect(x: start, y: 6, width: 40, height: 20)
             imageView.frame = imFrame
             imageView.tintColor = UIColor.hexStringToUIColor("FF8811")
-            imageView.backgroundColor = UIColor.clearColor()
+            imageView.backgroundColor = UIColor.clear
             self.addSubview(imageView)
         }
     }
@@ -50,17 +50,17 @@ class BarButton: UIView {
     }
     
 
-    override func drawRect(rect: CGRect) {
-        super.drawRect(rect)
+    override func draw(_ rect: CGRect) {
+        super.draw(rect)
         self.clipsToBounds = false
-        bottomLine = UIView(frame: CGRectMake(0, rect.height-2, 65, 2))
+        bottomLine = UIView(frame: CGRect(x: 0, y: rect.height-2, width: 65, height: 2))
         bottomLine?.backgroundColor = UIColor.hexStringToUIColor("0080ff")
         self.addSubview(bottomLine!)
         bottomLine?.alpha = 0
     }
     
     func selectMe() {
-        NSTimer.scheduledTimerWithTimeInterval(0.3, target: self, selector: "show", userInfo: nil, repeats: false)
+        Timer.scheduledTimer(timeInterval: 0.3, target: self, selector: #selector(BarButton.show), userInfo: nil, repeats: false)
     }
     func show() {
       //  bottomLine!.alpha = 1

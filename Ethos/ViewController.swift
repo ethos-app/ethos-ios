@@ -8,49 +8,59 @@
 
 import UIKit
 import CFNetwork
-extension NSDate {
+
+extension UIView {
+    class func loadFromNibNamed(nibNamed: String, bundle : Bundle? = nil) -> UIView? {
+        return UINib(
+            nibName: nibNamed,
+            bundle: bundle
+            ).instantiate(withOwner: nil, options: nil)[0] as? UIView
+    }
+}
+
+extension Date {
     
     func getElapsedInterval() -> String {
         
-        var interval = NSCalendar.currentCalendar().components(.Year, fromDate: self, toDate: NSDate(), options: []).year
+        var interval = (Calendar.current as NSCalendar).components(.year, from: self, to: Date(), options: []).year
         
-        if interval > 0 {
-            return interval == 1 ? "\(interval)" + " " + "year" :
-                "\(interval)" + " " + "years"
+        if interval! > 0 {
+            return interval == 1 ? "\(interval!)" + " " + "year" :
+                "\(interval!)" + " " + "years"
         }
         
-        interval = NSCalendar.currentCalendar().components(.Month, fromDate: self, toDate: NSDate(), options: []).month
-        if interval > 0 {
-            return interval == 1 ? "\(interval)" + " " + "month" :
-                "\(interval)" + " " + "months"
+        interval = (Calendar.current as NSCalendar).components(.month, from: self, to: Date(), options: []).month
+        if interval! > 0 {
+            return interval == 1 ? "\(interval!)" + " " + "month" :
+                "\(interval!)" + " " + "months"
         }
         
-        interval = NSCalendar.currentCalendar().components(.Day, fromDate: self, toDate: NSDate(), options: []).day
-        if interval > 0 {
-            return interval == 1 ? "\(interval)" + " " + "day" :
-                "\(interval)" + " " + "days"
+        interval = (Calendar.current as NSCalendar).components(.day, from: self, to: Date(), options: []).day
+        if interval! > 0 {
+            return interval == 1 ? "\(interval!)" + " " + "day" :
+                "\(interval!)" + " " + "days"
         }
         
-        interval = NSCalendar.currentCalendar().components(.Hour, fromDate: self, toDate: NSDate(), options: []).hour
-        if interval > 0 {
-            return interval == 1 ? "\(interval)" + " " + "hour" :
-                "\(interval)" + " " + "hours"
+        interval = (Calendar.current as NSCalendar).components(.hour, from: self, to: Date(), options: []).hour
+        if interval! > 0 {
+            return interval == 1 ? "\(interval!)" + " " + "hour" :
+                "\(interval!)" + " " + "hours"
         }
         
-        interval = NSCalendar.currentCalendar().components(.Minute, fromDate: self, toDate: NSDate(), options: []).minute
-        if interval > 0 {
-            return interval == 1 ? "\(interval)" + " " + "minute" :
-                "\(interval)" + " " + "minutes"
+        interval = (Calendar.current as NSCalendar).components(.minute, from: self, to: Date(), options: []).minute
+        if interval! > 0 {
+            return interval == 1 ? "\(interval!)" + " " + "minute" :
+                "\(interval!)" + " " + "minutes"
         }
         
         return "just now"
     }
 }
 extension UIImageView {
-    public func imageFromUrl(url: NSURL) {
-            let task = NSURLSession.sharedSession().dataTaskWithURL(url, completionHandler: { (data, response, error) in
+    public func imageFromUrl(_ url: URL) {
+            let task = URLSession.shared.dataTask(with: url, completionHandler: { (data, response, error) in
                 if error == nil {
-                    dispatch_async(dispatch_get_main_queue(), { 
+                    DispatchQueue.main.async(execute: { 
                         self.image = UIImage(data: data!)
                     })
                 }
@@ -59,19 +69,19 @@ extension UIImageView {
 }
 
 extension UIColor {
-    class func hexStringToUIColor (hex:String) -> UIColor {
-        var cString:String = hex.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet() as NSCharacterSet).uppercaseString
+    class func hexStringToUIColor (_ hex:String) -> UIColor {
+        var cString = hex.trimmingCharacters(in: NSCharacterSet.whitespacesAndNewlines)
         
         if (cString.hasPrefix("#")) {
-            cString = cString.substringFromIndex(cString.startIndex.advancedBy(1))
+            cString = cString.substring(from: cString.characters.index(cString.startIndex, offsetBy: 1))
         }
         
         if ((cString.characters.count) != 6) {
-            return UIColor.grayColor()
+            return UIColor.gray
         }
         
         var rgbValue:UInt32 = 0
-        NSScanner(string: cString).scanHexInt(&rgbValue)
+        Scanner(string: cString).scanHexInt32(&rgbValue)
         
         return UIColor(
             red: CGFloat((rgbValue & 0xFF0000) >> 16) / 255.0,
@@ -83,10 +93,11 @@ extension UIColor {
 }
 class ViewController: UIViewController {
 
+
     
     override func viewDidLoad() {
-        self.navigationController?.navigationBar.barTintColor = UIColor.blueColor()
-        self.navigationController?.navigationBar.tintColor = UIColor.blueColor()
+        self.navigationController?.navigationBar.barTintColor = UIColor.blue
+        self.navigationController?.navigationBar.tintColor = UIColor.blue
 
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.

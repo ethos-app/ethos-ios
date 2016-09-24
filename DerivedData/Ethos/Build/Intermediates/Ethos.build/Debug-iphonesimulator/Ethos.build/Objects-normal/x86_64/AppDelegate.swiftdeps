@@ -6,32 +6,32 @@ provides-nominal:
 provides-member:
 - ["C5Ethos11AppDelegate", ""]
 provides-dynamic-lookup:
+- "applicationDidEnterBackground"
 - "application"
 - "application"
-- "applicationWillEnterForeground"
 - "applicationWillTerminate"
 - "applicationDidBecomeActive"
+- "applicationWillEnterForeground"
 - "applicationWillResignActive"
 - "window"
-- "applicationDidEnterBackground"
 depends-top-level:
-- "UIWindow"
-- "String"
-- !private "FBSDKAppEvents"
-- !private "BooleanLiteralType"
-- "NSURL"
-- "Bool"
-- "UIApplication"
-- "UIResponder"
-- !private "UIColor"
-- "NSObject"
-- !private "UITabBar"
-- "AppDelegate"
-- !private "StringLiteralType"
-- !private "FBSDKApplicationDelegate"
 - !private "FBSDKProfile"
-- "AnyObject"
+- !private "UITabBar"
+- !private "BooleanLiteralType"
+- !private "FBSDKAppEvents"
+- "String"
+- "UIWindow"
+- "AppDelegate"
+- "AssignmentPrecedence"
+- "UIApplicationLaunchOptionsKey"
+- !private "UIColor"
+- "Bool"
 - "UIApplicationDelegate"
+- !private "StringLiteralType"
+- "URL"
+- "UIApplication"
+- !private "FBSDKApplicationDelegate"
+- "UIResponder"
 depends-member:
 - !private ["Ps9AnyObject", "FBSDKAppEvents"]
 - !private ["Ps9AnyObject", "FBSDKApplicationDelegate"]
@@ -53,28 +53,27 @@ depends-member:
 - ["Ps9AnyObject", "applicationWillEnterForeground"]
 - ["Ps9AnyObject", "applicationWillResignActive"]
 - ["Ps9AnyObject", "applicationWillTerminate"]
-- !private ["Ps9AnyObject", "enableUpdatesOnAccessTokenChange"]
+- !private ["Ps9AnyObject", "enableUpdates"]
 - !private ["Ps9AnyObject", "hexStringToUIColor"]
-- ["Ps9AnyObject", "init"]
-- !private ["Ps9AnyObject", "sharedApplication"]
+- !private ["Ps9AnyObject", "init"]
+- !private ["Ps9AnyObject", "shared"]
 - !private ["Ps9AnyObject", "sharedInstance"]
 - !private ["Ps9AnyObject", "statusBarStyle"]
 - !private ["Ps9AnyObject", "tintColor"]
-- !private ["Ps9AnyObject", "whiteColor"]
+- !private ["Ps9AnyObject", "white"]
 - ["Ps9AnyObject", "window"]
 - ["Ps9AnyObject", ""]
-- ["C5Ethos11AppDelegate", "AnyObject"]
 - ["C5Ethos11AppDelegate", "Bool"]
 - !private ["C5Ethos11AppDelegate", "FBSDKAppEvents"]
 - !private ["C5Ethos11AppDelegate", "FBSDKApplicationDelegate"]
 - !private ["C5Ethos11AppDelegate", "FBSDKProfile"]
-- ["C5Ethos11AppDelegate", "NSObject"]
-- ["C5Ethos11AppDelegate", "NSURL"]
 - ["C5Ethos11AppDelegate", "String"]
 - ["C5Ethos11AppDelegate", "UIApplication"]
+- ["C5Ethos11AppDelegate", "UIApplicationLaunchOptionsKey"]
 - !private ["C5Ethos11AppDelegate", "UIColor"]
 - !private ["C5Ethos11AppDelegate", "UITabBar"]
 - ["C5Ethos11AppDelegate", "UIWindow"]
+- ["C5Ethos11AppDelegate", "URL"]
 - ["C5Ethos11AppDelegate", "application"]
 - ["C5Ethos11AppDelegate", "applicationDidBecomeActive"]
 - ["C5Ethos11AppDelegate", "applicationDidEnterBackground"]
@@ -90,36 +89,40 @@ depends-member:
 - ["C5Ethos11AppDelegate", "deinit"]
 - ["C5Ethos11AppDelegate", "init"]
 - ["C5Ethos11AppDelegate", "window"]
-- !private ["Ps11CVarArgType", "FBSDKAppEvents"]
-- !private ["Ps11CVarArgType", "FBSDKApplicationDelegate"]
-- !private ["Ps11CVarArgType", "FBSDKProfile"]
-- !private ["Ps11CVarArgType", "UIApplication"]
-- !private ["Ps11CVarArgType", "UIColor"]
-- !private ["Ps11CVarArgType", "UITabBar"]
-- !private ["Ps11CVarArgType", "activateApp"]
-- !private ["Ps11CVarArgType", "appearance"]
-- ["Ps11CVarArgType", "application"]
-- ["Ps11CVarArgType", "applicationDidBecomeActive"]
-- ["Ps11CVarArgType", "applicationDidEnterBackground"]
-- ["Ps11CVarArgType", "applicationDidFinishLaunching"]
-- ["Ps11CVarArgType", "applicationDidReceiveMemoryWarning"]
-- ["Ps11CVarArgType", "applicationProtectedDataDidBecomeAvailable"]
-- ["Ps11CVarArgType", "applicationProtectedDataWillBecomeUnavailable"]
-- ["Ps11CVarArgType", "applicationShouldRequestHealthAuthorization"]
-- ["Ps11CVarArgType", "applicationSignificantTimeChange"]
-- ["Ps11CVarArgType", "applicationWillEnterForeground"]
-- ["Ps11CVarArgType", "applicationWillResignActive"]
-- ["Ps11CVarArgType", "applicationWillTerminate"]
-- !private ["Ps11CVarArgType", "enableUpdatesOnAccessTokenChange"]
-- !private ["Ps11CVarArgType", "hexStringToUIColor"]
-- ["Ps11CVarArgType", "init"]
-- !private ["Ps11CVarArgType", "sharedApplication"]
-- !private ["Ps11CVarArgType", "sharedInstance"]
-- !private ["Ps11CVarArgType", "statusBarStyle"]
-- !private ["Ps11CVarArgType", "tintColor"]
-- !private ["Ps11CVarArgType", "whiteColor"]
-- ["Ps11CVarArgType", "window"]
-- ["Ps11CVarArgType", ""]
+- ["Sb", "deinit"]
+- !private ["PSo15CALayerDelegate", "appearance"]
+- !private ["PSo15CALayerDelegate", "tintColor"]
+- !private ["Ps7CVarArg", "FBSDKAppEvents"]
+- !private ["Ps7CVarArg", "FBSDKApplicationDelegate"]
+- !private ["Ps7CVarArg", "FBSDKProfile"]
+- !private ["Ps7CVarArg", "UIApplication"]
+- !private ["Ps7CVarArg", "UIColor"]
+- !private ["Ps7CVarArg", "UITabBar"]
+- !private ["Ps7CVarArg", "activateApp"]
+- !private ["Ps7CVarArg", "appearance"]
+- ["Ps7CVarArg", "application"]
+- ["Ps7CVarArg", "applicationDidBecomeActive"]
+- ["Ps7CVarArg", "applicationDidEnterBackground"]
+- ["Ps7CVarArg", "applicationDidFinishLaunching"]
+- ["Ps7CVarArg", "applicationDidReceiveMemoryWarning"]
+- ["Ps7CVarArg", "applicationProtectedDataDidBecomeAvailable"]
+- ["Ps7CVarArg", "applicationProtectedDataWillBecomeUnavailable"]
+- ["Ps7CVarArg", "applicationShouldRequestHealthAuthorization"]
+- ["Ps7CVarArg", "applicationSignificantTimeChange"]
+- ["Ps7CVarArg", "applicationWillEnterForeground"]
+- ["Ps7CVarArg", "applicationWillResignActive"]
+- ["Ps7CVarArg", "applicationWillTerminate"]
+- !private ["Ps7CVarArg", "enableUpdates"]
+- !private ["Ps7CVarArg", "hexStringToUIColor"]
+- !private ["Ps7CVarArg", "init"]
+- !private ["Ps7CVarArg", "shared"]
+- !private ["Ps7CVarArg", "sharedInstance"]
+- !private ["Ps7CVarArg", "statusBarStyle"]
+- !private ["Ps7CVarArg", "tintColor"]
+- !private ["Ps7CVarArg", "white"]
+- ["Ps7CVarArg", "window"]
+- ["Ps7CVarArg", ""]
+- !private ["Ps10Comparable", "init"]
 - !private ["Ps28CustomDebugStringConvertible", "FBSDKAppEvents"]
 - !private ["Ps28CustomDebugStringConvertible", "FBSDKApplicationDelegate"]
 - !private ["Ps28CustomDebugStringConvertible", "FBSDKProfile"]
@@ -140,16 +143,18 @@ depends-member:
 - ["Ps28CustomDebugStringConvertible", "applicationWillEnterForeground"]
 - ["Ps28CustomDebugStringConvertible", "applicationWillResignActive"]
 - ["Ps28CustomDebugStringConvertible", "applicationWillTerminate"]
-- !private ["Ps28CustomDebugStringConvertible", "enableUpdatesOnAccessTokenChange"]
+- !private ["Ps28CustomDebugStringConvertible", "enableUpdates"]
 - !private ["Ps28CustomDebugStringConvertible", "hexStringToUIColor"]
-- ["Ps28CustomDebugStringConvertible", "init"]
-- !private ["Ps28CustomDebugStringConvertible", "sharedApplication"]
+- !private ["Ps28CustomDebugStringConvertible", "init"]
+- !private ["Ps28CustomDebugStringConvertible", "shared"]
 - !private ["Ps28CustomDebugStringConvertible", "sharedInstance"]
 - !private ["Ps28CustomDebugStringConvertible", "statusBarStyle"]
 - !private ["Ps28CustomDebugStringConvertible", "tintColor"]
-- !private ["Ps28CustomDebugStringConvertible", "whiteColor"]
+- !private ["Ps28CustomDebugStringConvertible", "white"]
 - ["Ps28CustomDebugStringConvertible", "window"]
 - ["Ps28CustomDebugStringConvertible", ""]
+- !private ["Ps29CustomPlaygroundQuickLookable", "init"]
+- !private ["Ps17CustomReflectable", "init"]
 - !private ["Ps23CustomStringConvertible", "FBSDKAppEvents"]
 - !private ["Ps23CustomStringConvertible", "FBSDKApplicationDelegate"]
 - !private ["Ps23CustomStringConvertible", "FBSDKProfile"]
@@ -170,20 +175,19 @@ depends-member:
 - ["Ps23CustomStringConvertible", "applicationWillEnterForeground"]
 - ["Ps23CustomStringConvertible", "applicationWillResignActive"]
 - ["Ps23CustomStringConvertible", "applicationWillTerminate"]
-- !private ["Ps23CustomStringConvertible", "enableUpdatesOnAccessTokenChange"]
+- !private ["Ps23CustomStringConvertible", "enableUpdates"]
 - !private ["Ps23CustomStringConvertible", "hexStringToUIColor"]
-- ["Ps23CustomStringConvertible", "init"]
-- !private ["Ps23CustomStringConvertible", "sharedApplication"]
+- !private ["Ps23CustomStringConvertible", "init"]
+- !private ["Ps23CustomStringConvertible", "shared"]
 - !private ["Ps23CustomStringConvertible", "sharedInstance"]
 - !private ["Ps23CustomStringConvertible", "statusBarStyle"]
 - !private ["Ps23CustomStringConvertible", "tintColor"]
-- !private ["Ps23CustomStringConvertible", "whiteColor"]
+- !private ["Ps23CustomStringConvertible", "white"]
 - ["Ps23CustomStringConvertible", "window"]
 - ["Ps23CustomStringConvertible", ""]
 - !private ["Ps9Equatable", "FBSDKAppEvents"]
 - !private ["Ps9Equatable", "FBSDKApplicationDelegate"]
 - !private ["Ps9Equatable", "FBSDKProfile"]
-- !private ["Ps9Equatable", "LightContent"]
 - !private ["Ps9Equatable", "UIApplication"]
 - !private ["Ps9Equatable", "UIColor"]
 - !private ["Ps9Equatable", "UITabBar"]
@@ -201,24 +205,28 @@ depends-member:
 - ["Ps9Equatable", "applicationWillEnterForeground"]
 - ["Ps9Equatable", "applicationWillResignActive"]
 - ["Ps9Equatable", "applicationWillTerminate"]
-- !private ["Ps9Equatable", "enableUpdatesOnAccessTokenChange"]
+- !private ["Ps9Equatable", "enableUpdates"]
 - !private ["Ps9Equatable", "hexStringToUIColor"]
-- ["Ps9Equatable", "init"]
-- !private ["Ps9Equatable", "sharedApplication"]
+- !private ["Ps9Equatable", "init"]
+- !private ["Ps9Equatable", "lightContent"]
+- !private ["Ps9Equatable", "shared"]
 - !private ["Ps9Equatable", "sharedInstance"]
 - !private ["Ps9Equatable", "statusBarStyle"]
 - !private ["Ps9Equatable", "tintColor"]
-- !private ["Ps9Equatable", "whiteColor"]
+- !private ["Ps9Equatable", "white"]
 - ["Ps9Equatable", "window"]
 - ["Ps9Equatable", ""]
+- !private ["Ps43ExpressibleByExtendedGraphemeClusterLiteral", "init"]
+- !private ["Ps32ExpressibleByStringInterpolation", "init"]
+- !private ["Ps26ExpressibleByStringLiteral", "init"]
+- !private ["Ps33ExpressibleByUnicodeScalarLiteral", "init"]
 - !private ["CSo14FBSDKAppEvents", "activateApp"]
 - !private ["CSo24FBSDKApplicationDelegate", "application"]
 - !private ["CSo24FBSDKApplicationDelegate", "sharedInstance"]
-- !private ["CSo12FBSDKProfile", "enableUpdatesOnAccessTokenChange"]
+- !private ["CSo12FBSDKProfile", "enableUpdates"]
 - !private ["Ps8Hashable", "FBSDKAppEvents"]
 - !private ["Ps8Hashable", "FBSDKApplicationDelegate"]
 - !private ["Ps8Hashable", "FBSDKProfile"]
-- !private ["Ps8Hashable", "LightContent"]
 - !private ["Ps8Hashable", "UIApplication"]
 - !private ["Ps8Hashable", "UIColor"]
 - !private ["Ps8Hashable", "UITabBar"]
@@ -236,36 +244,42 @@ depends-member:
 - ["Ps8Hashable", "applicationWillEnterForeground"]
 - ["Ps8Hashable", "applicationWillResignActive"]
 - ["Ps8Hashable", "applicationWillTerminate"]
-- !private ["Ps8Hashable", "enableUpdatesOnAccessTokenChange"]
+- !private ["Ps8Hashable", "enableUpdates"]
 - !private ["Ps8Hashable", "hexStringToUIColor"]
-- ["Ps8Hashable", "init"]
-- !private ["Ps8Hashable", "sharedApplication"]
+- !private ["Ps8Hashable", "init"]
+- !private ["Ps8Hashable", "lightContent"]
+- !private ["Ps8Hashable", "shared"]
 - !private ["Ps8Hashable", "sharedInstance"]
 - !private ["Ps8Hashable", "statusBarStyle"]
 - !private ["Ps8Hashable", "tintColor"]
-- !private ["Ps8Hashable", "whiteColor"]
+- !private ["Ps8Hashable", "white"]
 - ["Ps8Hashable", "window"]
 - ["Ps8Hashable", ""]
+- ["SQ", "deinit"]
+- !private ["Ps25LosslessStringConvertible", "init"]
+- !private ["Ps10MirrorPath", "init"]
 - !private ["PSo8NSCoding", "appearance"]
-- !private ["PSo8NSCoding", "enableUpdatesOnAccessTokenChange"]
+- !private ["PSo8NSCoding", "enableUpdates"]
 - !private ["PSo8NSCoding", "hexStringToUIColor"]
+- !private ["PSo8NSCoding", "init"]
 - !private ["PSo8NSCoding", "tintColor"]
-- !private ["PSo8NSCoding", "whiteColor"]
-- !private ["PSo9NSCopying", "enableUpdatesOnAccessTokenChange"]
+- !private ["PSo8NSCoding", "white"]
+- !private ["PSo9NSCopying", "enableUpdates"]
 - !private ["PSo9NSCopying", "hexStringToUIColor"]
-- !private ["PSo9NSCopying", "whiteColor"]
-- ["CSo8NSObject", "AnyObject"]
+- !private ["PSo9NSCopying", "init"]
+- !private ["PSo9NSCopying", "white"]
+- !private ["PSo16NSMutableCopying", "init"]
 - ["CSo8NSObject", "Bool"]
 - !private ["CSo8NSObject", "FBSDKAppEvents"]
 - !private ["CSo8NSObject", "FBSDKApplicationDelegate"]
 - !private ["CSo8NSObject", "FBSDKProfile"]
-- ["CSo8NSObject", "NSObject"]
-- ["CSo8NSObject", "NSURL"]
 - ["CSo8NSObject", "String"]
 - ["CSo8NSObject", "UIApplication"]
+- ["CSo8NSObject", "UIApplicationLaunchOptionsKey"]
 - !private ["CSo8NSObject", "UIColor"]
 - !private ["CSo8NSObject", "UITabBar"]
 - ["CSo8NSObject", "UIWindow"]
+- ["CSo8NSObject", "URL"]
 - !private ["CSo8NSObject", "activateApp"]
 - !private ["CSo8NSObject", "appearance"]
 - ["CSo8NSObject", "application"]
@@ -280,14 +294,14 @@ depends-member:
 - ["CSo8NSObject", "applicationWillEnterForeground"]
 - ["CSo8NSObject", "applicationWillResignActive"]
 - ["CSo8NSObject", "applicationWillTerminate"]
-- !private ["CSo8NSObject", "enableUpdatesOnAccessTokenChange"]
+- !private ["CSo8NSObject", "enableUpdates"]
 - !private ["CSo8NSObject", "hexStringToUIColor"]
 - ["CSo8NSObject", "init"]
-- !private ["CSo8NSObject", "sharedApplication"]
+- !private ["CSo8NSObject", "shared"]
 - !private ["CSo8NSObject", "sharedInstance"]
 - !private ["CSo8NSObject", "statusBarStyle"]
 - !private ["CSo8NSObject", "tintColor"]
-- !private ["CSo8NSObject", "whiteColor"]
+- !private ["CSo8NSObject", "white"]
 - ["CSo8NSObject", "window"]
 - !private ["PSo16NSObjectProtocol", "FBSDKAppEvents"]
 - !private ["PSo16NSObjectProtocol", "FBSDKApplicationDelegate"]
@@ -309,27 +323,35 @@ depends-member:
 - ["PSo16NSObjectProtocol", "applicationWillEnterForeground"]
 - ["PSo16NSObjectProtocol", "applicationWillResignActive"]
 - ["PSo16NSObjectProtocol", "applicationWillTerminate"]
-- !private ["PSo16NSObjectProtocol", "enableUpdatesOnAccessTokenChange"]
+- !private ["PSo16NSObjectProtocol", "enableUpdates"]
 - !private ["PSo16NSObjectProtocol", "hexStringToUIColor"]
-- ["PSo16NSObjectProtocol", "init"]
-- !private ["PSo16NSObjectProtocol", "sharedApplication"]
+- !private ["PSo16NSObjectProtocol", "init"]
+- !private ["PSo16NSObjectProtocol", "shared"]
 - !private ["PSo16NSObjectProtocol", "sharedInstance"]
 - !private ["PSo16NSObjectProtocol", "statusBarStyle"]
 - !private ["PSo16NSObjectProtocol", "tintColor"]
-- !private ["PSo16NSObjectProtocol", "whiteColor"]
+- !private ["PSo16NSObjectProtocol", "white"]
 - ["PSo16NSObjectProtocol", "window"]
 - ["PSo16NSObjectProtocol", ""]
-- !private ["PSo14NSSecureCoding", "enableUpdatesOnAccessTokenChange"]
+- !private ["PSo14NSSecureCoding", "enableUpdates"]
 - !private ["PSo14NSSecureCoding", "hexStringToUIColor"]
-- !private ["PSo14NSSecureCoding", "whiteColor"]
-- !private ["Ps16RawRepresentable", "LightContent"]
+- !private ["PSo14NSSecureCoding", "init"]
+- !private ["PSo14NSSecureCoding", "white"]
+- !private ["CSo8NSString", "init"]
+- ["Sq", "deinit"]
+- !private ["Ps16RawRepresentable", "lightContent"]
+- ["SS", "deinit"]
+- !private ["SS", "init"]
+- !private ["Ps16TextOutputStream", "init"]
+- !private ["Ps20TextOutputStreamable", "init"]
 - !private ["PSo29UIAccessibilityIdentification", "appearance"]
 - !private ["PSo29UIAccessibilityIdentification", "tintColor"]
 - !private ["PSo12UIAppearance", "appearance"]
 - !private ["PSo12UIAppearance", "tintColor"]
 - !private ["PSo21UIAppearanceContainer", "appearance"]
 - !private ["PSo21UIAppearanceContainer", "tintColor"]
-- !private ["CSo13UIApplication", "sharedApplication"]
+- ["CSo13UIApplication", "deinit"]
+- !private ["CSo13UIApplication", "shared"]
 - !private ["CSo13UIApplication", "statusBarStyle"]
 - !private ["PSo21UIApplicationDelegate", "FBSDKAppEvents"]
 - !private ["PSo21UIApplicationDelegate", "FBSDKApplicationDelegate"]
@@ -351,26 +373,28 @@ depends-member:
 - ["PSo21UIApplicationDelegate", "applicationWillTerminate"]
 - ["PSo21UIApplicationDelegate", "window"]
 - ["PSo21UIApplicationDelegate", ""]
+- ["CSo7UIColor", "deinit"]
 - !private ["CSo7UIColor", "hexStringToUIColor"]
-- !private ["CSo7UIColor", "whiteColor"]
+- !private ["CSo7UIColor", "white"]
 - !private ["PSo17UICoordinateSpace", "appearance"]
 - !private ["PSo17UICoordinateSpace", "tintColor"]
 - !private ["PSo13UIDynamicItem", "appearance"]
 - !private ["PSo13UIDynamicItem", "tintColor"]
 - !private ["PSo18UIFocusEnvironment", "appearance"]
 - !private ["PSo18UIFocusEnvironment", "tintColor"]
-- ["CSo11UIResponder", "AnyObject"]
+- !private ["PSo11UIFocusItem", "appearance"]
+- !private ["PSo11UIFocusItem", "tintColor"]
 - ["CSo11UIResponder", "Bool"]
 - !private ["CSo11UIResponder", "FBSDKAppEvents"]
 - !private ["CSo11UIResponder", "FBSDKApplicationDelegate"]
 - !private ["CSo11UIResponder", "FBSDKProfile"]
-- ["CSo11UIResponder", "NSObject"]
-- ["CSo11UIResponder", "NSURL"]
 - ["CSo11UIResponder", "String"]
 - ["CSo11UIResponder", "UIApplication"]
+- ["CSo11UIResponder", "UIApplicationLaunchOptionsKey"]
 - !private ["CSo11UIResponder", "UIColor"]
 - !private ["CSo11UIResponder", "UITabBar"]
 - ["CSo11UIResponder", "UIWindow"]
+- ["CSo11UIResponder", "URL"]
 - !private ["CSo11UIResponder", "appearance"]
 - ["CSo11UIResponder", "application"]
 - ["CSo11UIResponder", "applicationDidBecomeActive"]
@@ -384,123 +408,246 @@ depends-member:
 - ["CSo11UIResponder", "applicationWillEnterForeground"]
 - ["CSo11UIResponder", "applicationWillResignActive"]
 - ["CSo11UIResponder", "applicationWillTerminate"]
+- ["CSo11UIResponder", "deinit"]
 - ["CSo11UIResponder", "init"]
-- !private ["CSo11UIResponder", "sharedApplication"]
+- !private ["CSo11UIResponder", "shared"]
 - !private ["CSo11UIResponder", "statusBarStyle"]
 - !private ["CSo11UIResponder", "tintColor"]
 - ["CSo11UIResponder", "window"]
 - ["CSo11UIResponder", ""]
-- !private ["OSC16UIStatusBarStyle", "LightContent"]
+- !private ["PSo30UIResponderStandardEditActions", "FBSDKAppEvents"]
+- !private ["PSo30UIResponderStandardEditActions", "FBSDKApplicationDelegate"]
+- !private ["PSo30UIResponderStandardEditActions", "FBSDKProfile"]
+- !private ["PSo30UIResponderStandardEditActions", "UIApplication"]
+- !private ["PSo30UIResponderStandardEditActions", "UIColor"]
+- !private ["PSo30UIResponderStandardEditActions", "UITabBar"]
+- !private ["PSo30UIResponderStandardEditActions", "appearance"]
+- ["PSo30UIResponderStandardEditActions", "application"]
+- ["PSo30UIResponderStandardEditActions", "applicationDidBecomeActive"]
+- ["PSo30UIResponderStandardEditActions", "applicationDidEnterBackground"]
+- ["PSo30UIResponderStandardEditActions", "applicationDidFinishLaunching"]
+- ["PSo30UIResponderStandardEditActions", "applicationDidReceiveMemoryWarning"]
+- ["PSo30UIResponderStandardEditActions", "applicationProtectedDataDidBecomeAvailable"]
+- ["PSo30UIResponderStandardEditActions", "applicationProtectedDataWillBecomeUnavailable"]
+- ["PSo30UIResponderStandardEditActions", "applicationShouldRequestHealthAuthorization"]
+- ["PSo30UIResponderStandardEditActions", "applicationSignificantTimeChange"]
+- ["PSo30UIResponderStandardEditActions", "applicationWillEnterForeground"]
+- ["PSo30UIResponderStandardEditActions", "applicationWillResignActive"]
+- ["PSo30UIResponderStandardEditActions", "applicationWillTerminate"]
+- !private ["PSo30UIResponderStandardEditActions", "init"]
+- !private ["PSo30UIResponderStandardEditActions", "shared"]
+- !private ["PSo30UIResponderStandardEditActions", "statusBarStyle"]
+- !private ["PSo30UIResponderStandardEditActions", "tintColor"]
+- ["PSo30UIResponderStandardEditActions", "window"]
+- ["PSo30UIResponderStandardEditActions", ""]
+- ["OSC16UIStatusBarStyle", "deinit"]
+- !private ["OSC16UIStatusBarStyle", "lightContent"]
 - !private ["CSo8UITabBar", "appearance"]
+- ["CSo8UITabBar", "deinit"]
 - !private ["CSo8UITabBar", "tintColor"]
 - !private ["PSo18UITraitEnvironment", "appearance"]
 - !private ["PSo18UITraitEnvironment", "tintColor"]
 - !private ["CSo6UIView", "appearance"]
 - !private ["CSo6UIView", "tintColor"]
 - !private ["CSo8UIWindow", "tintColor"]
-- !private ["Ps24_ColorLiteralConvertible", "hexStringToUIColor"]
-- !private ["Ps24_ColorLiteralConvertible", "whiteColor"]
-- !private ["Ps12_Reflectable", "appearance"]
-- !private ["Ps12_Reflectable", "tintColor"]
+- ["V10Foundation3URL", "deinit"]
+- !private ["P9Alamofire14URLConvertible", "init"]
+- !private ["Ps37_DefaultCustomPlaygroundQuickLookable", "appearance"]
+- !private ["Ps37_DefaultCustomPlaygroundQuickLookable", "tintColor"]
+- !private ["Ps51_ExpressibleByBuiltinExtendedGraphemeClusterLiteral", "init"]
+- !private ["Ps34_ExpressibleByBuiltinStringLiteral", "init"]
+- !private ["Ps39_ExpressibleByBuiltinUTF16StringLiteral", "init"]
+- !private ["Ps41_ExpressibleByBuiltinUnicodeScalarLiteral", "init"]
+- !private ["Ps26_ExpressibleByColorLiteral", "hexStringToUIColor"]
+- !private ["Ps26_ExpressibleByColorLiteral", "white"]
+- !private ["Ps35_HasCustomAnyHashableRepresentation", "init"]
+- !private ["Ps9_Hashable", "FBSDKAppEvents"]
+- !private ["Ps9_Hashable", "FBSDKApplicationDelegate"]
+- !private ["Ps9_Hashable", "FBSDKProfile"]
+- !private ["Ps9_Hashable", "UIApplication"]
+- !private ["Ps9_Hashable", "UIColor"]
+- !private ["Ps9_Hashable", "UITabBar"]
+- !private ["Ps9_Hashable", "activateApp"]
+- !private ["Ps9_Hashable", "appearance"]
+- ["Ps9_Hashable", "application"]
+- ["Ps9_Hashable", "applicationDidBecomeActive"]
+- ["Ps9_Hashable", "applicationDidEnterBackground"]
+- ["Ps9_Hashable", "applicationDidFinishLaunching"]
+- ["Ps9_Hashable", "applicationDidReceiveMemoryWarning"]
+- ["Ps9_Hashable", "applicationProtectedDataDidBecomeAvailable"]
+- ["Ps9_Hashable", "applicationProtectedDataWillBecomeUnavailable"]
+- ["Ps9_Hashable", "applicationShouldRequestHealthAuthorization"]
+- ["Ps9_Hashable", "applicationSignificantTimeChange"]
+- ["Ps9_Hashable", "applicationWillEnterForeground"]
+- ["Ps9_Hashable", "applicationWillResignActive"]
+- ["Ps9_Hashable", "applicationWillTerminate"]
+- !private ["Ps9_Hashable", "enableUpdates"]
+- !private ["Ps9_Hashable", "hexStringToUIColor"]
+- !private ["Ps9_Hashable", "init"]
+- !private ["Ps9_Hashable", "lightContent"]
+- !private ["Ps9_Hashable", "shared"]
+- !private ["Ps9_Hashable", "sharedInstance"]
+- !private ["Ps9_Hashable", "statusBarStyle"]
+- !private ["Ps9_Hashable", "tintColor"]
+- !private ["Ps9_Hashable", "white"]
+- ["Ps9_Hashable", "window"]
+- ["Ps9_Hashable", ""]
+- !private ["Ps21_ObjectiveCBridgeable", "init"]
 depends-nominal:
 - "Ps9AnyObject"
 - "C5Ethos11AppDelegate"
-- "Ps11CVarArgType"
+- "Sb"
+- !private "PSo15CALayerDelegate"
+- "Ps7CVarArg"
+- !private "Ps10Comparable"
 - "Ps28CustomDebugStringConvertible"
+- !private "Ps29CustomPlaygroundQuickLookable"
+- !private "Ps17CustomReflectable"
 - "Ps23CustomStringConvertible"
 - "Ps9Equatable"
+- !private "Ps43ExpressibleByExtendedGraphemeClusterLiteral"
+- !private "Ps32ExpressibleByStringInterpolation"
+- !private "Ps26ExpressibleByStringLiteral"
+- !private "Ps33ExpressibleByUnicodeScalarLiteral"
 - !private "CSo14FBSDKAppEvents"
 - !private "CSo24FBSDKApplicationDelegate"
 - !private "CSo12FBSDKProfile"
 - "Ps8Hashable"
+- "SQ"
+- !private "Ps25LosslessStringConvertible"
+- !private "Ps10MirrorPath"
 - !private "PSo8NSCoding"
 - !private "PSo9NSCopying"
+- !private "PSo16NSMutableCopying"
 - "CSo8NSObject"
 - "PSo16NSObjectProtocol"
 - !private "PSo14NSSecureCoding"
+- !private "CSo8NSString"
+- "Sq"
 - !private "Ps16RawRepresentable"
+- "SS"
+- !private "Ps16TextOutputStream"
+- !private "Ps20TextOutputStreamable"
 - !private "PSo29UIAccessibilityIdentification"
 - !private "PSo12UIAppearance"
 - !private "PSo21UIAppearanceContainer"
-- !private "CSo13UIApplication"
+- "CSo13UIApplication"
 - "PSo21UIApplicationDelegate"
-- !private "CSo7UIColor"
+- "CSo7UIColor"
 - !private "PSo17UICoordinateSpace"
 - !private "PSo13UIDynamicItem"
 - !private "PSo18UIFocusEnvironment"
+- !private "PSo11UIFocusItem"
 - "CSo11UIResponder"
-- !private "OSC16UIStatusBarStyle"
-- !private "CSo8UITabBar"
+- "PSo30UIResponderStandardEditActions"
+- "OSC16UIStatusBarStyle"
+- "CSo8UITabBar"
 - !private "PSo18UITraitEnvironment"
 - !private "CSo6UIView"
 - !private "CSo8UIWindow"
-- !private "Ps24_ColorLiteralConvertible"
-- !private "Ps12_Reflectable"
+- "V10Foundation3URL"
+- !private "P9Alamofire14URLConvertible"
+- !private "Ps37_DefaultCustomPlaygroundQuickLookable"
+- !private "Ps51_ExpressibleByBuiltinExtendedGraphemeClusterLiteral"
+- !private "Ps34_ExpressibleByBuiltinStringLiteral"
+- !private "Ps39_ExpressibleByBuiltinUTF16StringLiteral"
+- !private "Ps41_ExpressibleByBuiltinUnicodeScalarLiteral"
+- !private "Ps26_ExpressibleByColorLiteral"
+- !private "Ps35_HasCustomAnyHashableRepresentation"
+- "Ps9_Hashable"
+- !private "Ps21_ObjectiveCBridgeable"
 depends-dynamic-lookup:
 depends-external:
-- "/Applications/Xcode 3.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Swift.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Swift.swiftmodule"
 - "/Users/Scott/Documents/Ethos/Obj-CBridge.h"
-- "/Applications/Xcode 3.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/UIKit.swiftmodule"
-- "/Applications/Xcode 3.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Foundation.swiftmodule"
-- "/Applications/Xcode 3.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Darwin.swiftmodule"
-- "/Applications/Xcode 3.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Dispatch.swiftmodule"
-- "/Applications/Xcode 3.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/ObjectiveC.swiftmodule"
-- "/Applications/Xcode 3.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreGraphics.swiftmodule"
-- "/Applications/Xcode 3.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreImage.swiftmodule"
-- "./Bolts.framework/Headers/BFWebViewAppLinkResolver.h"
-- "./Bolts.framework/Headers/BFURL.h"
-- "./Bolts.framework/Headers/BFMeasurementEvent.h"
-- "./Bolts.framework/Headers/BFAppLinkTarget.h"
-- "./Bolts.framework/Headers/BFAppLinkReturnToRefererView.h"
-- "./Bolts.framework/Headers/BFAppLinkReturnToRefererController.h"
-- "./Bolts.framework/Headers/BFAppLinkResolving.h"
-- "./Bolts.framework/Headers/BFAppLinkNavigation.h"
-- "./Bolts.framework/Headers/BFAppLink.h"
-- "./Bolts.framework/Headers/BFTaskCompletionSource.h"
-- "./Bolts.framework/Headers/BFTask+Exceptions.h"
-- "./Bolts.framework/Headers/BFTask.h"
-- "./Bolts.framework/Headers/BFExecutor.h"
-- "./Bolts.framework/Headers/BFCancellationTokenSource.h"
-- "./Bolts.framework/Headers/BFCancellationTokenRegistration.h"
-- "./Bolts.framework/Headers/BFCancellationToken.h"
-- "./Bolts.framework/Headers/Bolts.h"
-- "./Bolts.framework/Modules/module.modulemap"
-- "./FBSDKCoreKit.framework/Headers/FBSDKProfilePictureView.h"
-- "./FBSDKCoreKit.framework/Headers/FBSDKProfile.h"
-- "./FBSDKCoreKit.framework/Headers/FBSDKMutableCopying.h"
-- "./FBSDKCoreKit.framework/Headers/FBSDKGraphErrorRecoveryProcessor.h"
-- "./FBSDKCoreKit.framework/Headers/FBSDKAppLinkUtility.h"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/SwiftOnoneSupport.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/UIKit.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Foundation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Darwin.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Dispatch.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/ObjectiveC.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreGraphics.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreImage.swiftmodule"
+- "/Users/Scott/Documents/Ethos/Bolts.framework/Headers/BFWebViewAppLinkResolver.h"
+- "/Users/Scott/Documents/Ethos/Bolts.framework/Headers/BFURL.h"
+- "/Users/Scott/Documents/Ethos/Bolts.framework/Headers/BFMeasurementEvent.h"
+- "/Users/Scott/Documents/Ethos/Bolts.framework/Headers/BFAppLinkTarget.h"
+- "/Users/Scott/Documents/Ethos/Bolts.framework/Headers/BFAppLinkReturnToRefererView.h"
+- "/Users/Scott/Documents/Ethos/Bolts.framework/Headers/BFAppLinkReturnToRefererController.h"
+- "/Users/Scott/Documents/Ethos/Bolts.framework/Headers/BFAppLinkResolving.h"
+- "/Users/Scott/Documents/Ethos/Bolts.framework/Headers/BFAppLinkNavigation.h"
+- "/Users/Scott/Documents/Ethos/Bolts.framework/Headers/BFAppLink.h"
+- "/Users/Scott/Documents/Ethos/Bolts.framework/Headers/BFTaskCompletionSource.h"
+- "/Users/Scott/Documents/Ethos/Bolts.framework/Headers/BFTask+Exceptions.h"
+- "/Users/Scott/Documents/Ethos/Bolts.framework/Headers/BFTask.h"
+- "/Users/Scott/Documents/Ethos/Bolts.framework/Headers/BFExecutor.h"
+- "/Users/Scott/Documents/Ethos/Bolts.framework/Headers/BFCancellationTokenSource.h"
+- "/Users/Scott/Documents/Ethos/Bolts.framework/Headers/BFCancellationTokenRegistration.h"
+- "/Users/Scott/Documents/Ethos/Bolts.framework/Headers/BFCancellationToken.h"
+- "/Users/Scott/Documents/Ethos/Bolts.framework/Headers/Bolts.h"
 - "/Users/Scott/Documents/Ethos/Bolts.framework/Modules/module.modulemap"
-- "./FBSDKCoreKit.framework/Headers/FBSDKAppLinkResolver.h"
-- "./FBSDKCoreKit.framework/Headers/FBSDKUtility.h"
-- "./FBSDKCoreKit.framework/Headers/FBSDKTestUsersManager.h"
-- "./FBSDKCoreKit.framework/Headers/FBSDKSettings.h"
-- "./FBSDKCoreKit.framework/Headers/FBSDKGraphRequestDataAttachment.h"
-- "./FBSDKCoreKit.framework/Headers/FBSDKGraphRequest.h"
-- "./FBSDKCoreKit.framework/Headers/FBSDKConstants.h"
-- "./FBSDKCoreKit.framework/Headers/FBSDKButton.h"
-- "./FBSDKCoreKit.framework/Headers/FBSDKApplicationDelegate.h"
-- "./FBSDKCoreKit.framework/Headers/FBSDKAppEvents.h"
-- "./FBSDKCoreKit.framework/Headers/FBSDKMacros.h"
-- "./FBSDKCoreKit.framework/Headers/FBSDKGraphRequestConnection.h"
-- "./FBSDKCoreKit.framework/Headers/FBSDKCopying.h"
-- "./FBSDKCoreKit.framework/Headers/FBSDKAccessToken.h"
-- "./FBSDKCoreKit.framework/Headers/FBSDKCoreKit.h"
-- "./FBSDKCoreKit.framework/Modules/module.modulemap"
+- "/Users/Scott/Documents/Ethos/FBSDKCoreKit.framework/Headers/FBSDKProfilePictureView.h"
+- "/Users/Scott/Documents/Ethos/FBSDKCoreKit.framework/Headers/FBSDKProfile.h"
+- "/Users/Scott/Documents/Ethos/FBSDKCoreKit.framework/Headers/FBSDKMutableCopying.h"
+- "/Users/Scott/Documents/Ethos/FBSDKCoreKit.framework/Headers/FBSDKGraphErrorRecoveryProcessor.h"
+- "/Users/Scott/Documents/Ethos/FBSDKCoreKit.framework/Headers/FBSDKAppLinkUtility.h"
+- "/Users/Scott/Documents/Ethos/FBSDKCoreKit.framework/Headers/FBSDKAppLinkResolver.h"
+- "/Users/Scott/Documents/Ethos/FBSDKCoreKit.framework/Headers/FBSDKUtility.h"
+- "/Users/Scott/Documents/Ethos/FBSDKCoreKit.framework/Headers/FBSDKTestUsersManager.h"
+- "/Users/Scott/Documents/Ethos/FBSDKCoreKit.framework/Headers/FBSDKSettings.h"
+- "/Users/Scott/Documents/Ethos/FBSDKCoreKit.framework/Headers/FBSDKGraphRequestDataAttachment.h"
+- "/Users/Scott/Documents/Ethos/FBSDKCoreKit.framework/Headers/FBSDKGraphRequest.h"
+- "/Users/Scott/Documents/Ethos/FBSDKCoreKit.framework/Headers/FBSDKConstants.h"
+- "/Users/Scott/Documents/Ethos/FBSDKCoreKit.framework/Headers/FBSDKButton.h"
+- "/Users/Scott/Documents/Ethos/FBSDKCoreKit.framework/Headers/FBSDKApplicationDelegate.h"
+- "/Users/Scott/Documents/Ethos/FBSDKCoreKit.framework/Headers/FBSDKAppEvents.h"
+- "/Users/Scott/Documents/Ethos/FBSDKCoreKit.framework/Headers/FBSDKMacros.h"
+- "/Users/Scott/Documents/Ethos/FBSDKCoreKit.framework/Headers/FBSDKGraphRequestConnection.h"
+- "/Users/Scott/Documents/Ethos/FBSDKCoreKit.framework/Headers/FBSDKCopying.h"
+- "/Users/Scott/Documents/Ethos/FBSDKCoreKit.framework/Headers/FBSDKAccessToken.h"
+- "/Users/Scott/Documents/Ethos/FBSDKCoreKit.framework/Headers/FBSDKCoreKit.h"
+- "/Users/Scott/Documents/Ethos/FBSDKCoreKit.framework/Modules/module.modulemap"
 - "/Users/Scott/Documents/Ethos/DerivedData/Ethos/Build/Products/Debug-iphonesimulator/Alamofire/Alamofire.framework/Modules/Alamofire.swiftmodule/x86_64.swiftmodule"
 - "/Users/Scott/Documents/Ethos/DerivedData/Ethos/Build/Products/Debug-iphonesimulator/Alamofire/Alamofire.framework/Headers/Alamofire-Swift.h"
 - "/Users/Scott/Documents/Ethos/DerivedData/Ethos/Build/Products/Debug-iphonesimulator/Alamofire/Alamofire.framework/Headers/Alamofire-umbrella.h"
 - "/Users/Scott/Documents/Ethos/DerivedData/Ethos/Build/Products/Debug-iphonesimulator/Alamofire/Alamofire.framework/Modules/module.modulemap"
-- "./FBSDKLoginKit.framework/Headers/FBSDKLoginTooltipView.h"
-- "./FBSDKLoginKit.framework/Headers/FBSDKLoginManagerLoginResult.h"
-- "./FBSDKLoginKit.framework/Headers/FBSDKLoginConstants.h"
-- "./FBSDKLoginKit.framework/Headers/FBSDKTooltipView.h"
-- "./FBSDKLoginKit.framework/Headers/FBSDKLoginManager.h"
-- "/Users/Scott/Documents/Ethos/FBSDKCoreKit.framework/Modules/module.modulemap"
-- "./FBSDKLoginKit.framework/Headers/FBSDKLoginButton.h"
-- "./FBSDKLoginKit.framework/Headers/FBSDKLoginKit.h"
-- "./FBSDKLoginKit.framework/Modules/module.modulemap"
+- "/Users/Scott/Documents/Ethos/DerivedData/Ethos/Build/Products/Debug-iphonesimulator/MRProgress/MRProgress.framework/Headers/MRStopButton.h"
+- "/Users/Scott/Documents/Ethos/DerivedData/Ethos/Build/Products/Debug-iphonesimulator/MRProgress/MRProgress.framework/Headers/MRProgressHelper.h"
+- "/Users/Scott/Documents/Ethos/DerivedData/Ethos/Build/Products/Debug-iphonesimulator/MRProgress/MRProgress.framework/Headers/UIImage+MRImageEffects.h"
+- "/Users/Scott/Documents/Ethos/DerivedData/Ethos/Build/Products/Debug-iphonesimulator/MRProgress/MRProgress.framework/Headers/MRBlurView.h"
+- "/Users/Scott/Documents/Ethos/DerivedData/Ethos/Build/Products/Debug-iphonesimulator/MRProgress/MRProgress.framework/Headers/MRProgressOverlayView.h"
+- "/Users/Scott/Documents/Ethos/DerivedData/Ethos/Build/Products/Debug-iphonesimulator/MRProgress/MRProgress.framework/Headers/MRNavigationBarProgressView.h"
+- "/Users/Scott/Documents/Ethos/DerivedData/Ethos/Build/Products/Debug-iphonesimulator/MRProgress/MRProgress.framework/Headers/MRIconView.h"
+- "/Users/Scott/Documents/Ethos/DerivedData/Ethos/Build/Products/Debug-iphonesimulator/MRProgress/MRProgress.framework/Headers/MRProgressView.h"
+- "/Users/Scott/Documents/Ethos/DerivedData/Ethos/Build/Products/Debug-iphonesimulator/MRProgress/MRProgress.framework/Headers/MRCircularProgressView.h"
+- "/Users/Scott/Documents/Ethos/DerivedData/Ethos/Build/Products/Debug-iphonesimulator/MRProgress/MRProgress.framework/Headers/MRStopableView.h"
+- "/Users/Scott/Documents/Ethos/DerivedData/Ethos/Build/Products/Debug-iphonesimulator/MRProgress/MRProgress.framework/Headers/MRActivityIndicatorView.h"
+- "/Users/Scott/Documents/Ethos/DerivedData/Ethos/Build/Products/Debug-iphonesimulator/MRProgress/MRProgress.framework/Headers/MRProgress.h"
+- "/Users/Scott/Documents/Ethos/DerivedData/Ethos/Build/Products/Debug-iphonesimulator/MRProgress/MRProgress.framework/Headers/MRProgress-umbrella.h"
+- "/Users/Scott/Documents/Ethos/DerivedData/Ethos/Build/Products/Debug-iphonesimulator/MRProgress/MRProgress.framework/Modules/module.modulemap"
+- "/Users/Scott/Documents/Ethos/DerivedData/Ethos/Build/Products/Debug-iphonesimulator/DKImagePickerController/DKImagePickerController.framework/Modules/DKImagePickerController.swiftmodule/x86_64.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/AVFoundation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreMedia.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreAudio.swiftmodule"
+- "/Users/Scott/Documents/Ethos/DerivedData/Ethos/Build/Products/Debug-iphonesimulator/DKImagePickerController/DKImagePickerController.framework/Headers/DKImagePickerController-Swift.h"
+- "/Users/Scott/Documents/Ethos/DerivedData/Ethos/Build/Products/Debug-iphonesimulator/DKImagePickerController/DKImagePickerController.framework/Headers/DKImagePickerController.h"
+- "/Users/Scott/Documents/Ethos/DerivedData/Ethos/Build/Products/Debug-iphonesimulator/DKImagePickerController/DKImagePickerController.framework/Headers/DKImagePickerController-umbrella.h"
+- "/Users/Scott/Documents/Ethos/DerivedData/Ethos/Build/Products/Debug-iphonesimulator/DKImagePickerController/DKImagePickerController.framework/Modules/module.modulemap"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Photos.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreLocation.swiftmodule"
+- "/Users/Scott/Documents/Ethos/DerivedData/Ethos/Build/Products/Debug-iphonesimulator/SwiftLinkPreview/SwiftLinkPreview.framework/Modules/SwiftLinkPreview.swiftmodule/x86_64.swiftmodule"
+- "/Users/Scott/Documents/Ethos/DerivedData/Ethos/Build/Products/Debug-iphonesimulator/SwiftLinkPreview/SwiftLinkPreview.framework/Headers/SwiftLinkPreview-Swift.h"
+- "/Users/Scott/Documents/Ethos/DerivedData/Ethos/Build/Products/Debug-iphonesimulator/SwiftLinkPreview/SwiftLinkPreview.framework/Headers/SwiftLinkPreview-umbrella.h"
+- "/Users/Scott/Documents/Ethos/DerivedData/Ethos/Build/Products/Debug-iphonesimulator/SwiftLinkPreview/SwiftLinkPreview.framework/Modules/module.modulemap"
+- "/Users/Scott/Documents/Ethos/FBSDKLoginKit.framework/Headers/FBSDKLoginTooltipView.h"
+- "/Users/Scott/Documents/Ethos/FBSDKLoginKit.framework/Headers/FBSDKLoginManagerLoginResult.h"
+- "/Users/Scott/Documents/Ethos/FBSDKLoginKit.framework/Headers/FBSDKLoginConstants.h"
+- "/Users/Scott/Documents/Ethos/FBSDKLoginKit.framework/Headers/FBSDKTooltipView.h"
+- "/Users/Scott/Documents/Ethos/FBSDKLoginKit.framework/Headers/FBSDKLoginManager.h"
+- "/Users/Scott/Documents/Ethos/FBSDKLoginKit.framework/Headers/FBSDKLoginButton.h"
+- "/Users/Scott/Documents/Ethos/FBSDKLoginKit.framework/Headers/FBSDKLoginKit.h"
+- "/Users/Scott/Documents/Ethos/FBSDKLoginKit.framework/Modules/module.modulemap"
 - "/Users/Scott/Documents/Ethos/DerivedData/Ethos/Build/Products/Debug-iphonesimulator/MBProgressHUD/MBProgressHUD.framework/Headers/MBProgressHUD.h"
 - "/Users/Scott/Documents/Ethos/DerivedData/Ethos/Build/Products/Debug-iphonesimulator/MBProgressHUD/MBProgressHUD.framework/Headers/MBProgressHUD-umbrella.h"
 - "/Users/Scott/Documents/Ethos/DerivedData/Ethos/Build/Products/Debug-iphonesimulator/MBProgressHUD/MBProgressHUD.framework/Modules/module.modulemap"
-interface-hash: "826be0b199552486230efaf22a4348cb"
+interface-hash: "fa2aeddbf363de501e99bc901aa7ff10"

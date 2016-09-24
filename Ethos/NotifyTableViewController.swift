@@ -8,91 +8,110 @@
 
 
 import UIKit
+import MRProgress
+import Alamofire
+import FBSDKCoreKit
+
 class NotifyTableViewController: UITableViewController, CardViewDelegate, UITextViewDelegate {
     
-    var cardsToShow : NSMutableArray?
+    var notifications : NSMutableArray?
     
     @IBOutlet var bar: UIView!
 
+    var ethosAuth = ""
+    var id = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+      
         
         
-        //        let url = NSURL(string: "http://meetethos.azurewebsites.net/api/matches/get")
-        //        let request = NSMutableURLRequest(URL: url!)
-        //        request.addValue("Bearer \(userToken?.idToken)", forHTTPHeaderField: "Authorization")
-        //        NSURLSession.sharedSession().dataTaskWithRequest(request) { (data, response, error) in
-        //            let json = try! NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.AllowFragments)
-        //            print(json)
-        //            print("break")
-        //            print(response)
-        //            print(error)
-        //
-        //        }.resume()
-        
-        let myFrame = CGRectMake(0, 120, self.view.frame.width, self.view.frame.height-120)
-        
-        cardsToShow = NSMutableArray()
-        //        cardsButton.imageFile = UIImage(named: "ic_home")
-        //        cardsButton.label = "News Feed"
-        //        cardsButton.backgroundColor = UIColor.clearColor()
-        //        let gesture = UITapGestureRecognizer(target: self, action: "selectCards")
-        //        cardsButton.addGestureRecognizer(gesture)
-        //
-        //        netButton.imageFile = UIImage(named: "ic_textsms")
-        //        netButton.label = "    Notifications"
-        //        netButton.backgroundColor = UIColor.clearColor()
-        //        let gesture2 = UITapGestureRecognizer(target: self, action: "selectNet")
-        //        netButton.addGestureRecognizer(gesture2)
-        
-        self.tableView.backgroundColor = UIColor.hexStringToUIColor("e9e9e9")
-        self.tableView.separatorStyle = UITableViewCellSeparatorStyle.SingleLine
+        notifications = NSMutableArray()
+        self.tableView.backgroundColor = UIColor.hexStringToUIColor("c9c9c9")
+        self.tableView.separatorStyle = UITableViewCellSeparatorStyle.singleLine
         self.tableView.delegate = self
         self.tableView.dataSource = self
         self.setNeedsStatusBarAppearanceUpdate()
         self.navigationController?.navigationBar.barTintColor = UIColor.hexStringToUIColor("247BA0")
-        self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.whiteColor(), NSFontAttributeName : UIFont(name: "Lobster 1.4", size: 34)!]
-        self.navigationController?.navigationBar.setTitleVerticalPositionAdjustment(5, forBarMetrics: UIBarMetrics.Default)
-        
-
-        
-        // bar.backgroundColor = UIColor.whiteColor()
-        
-        let standardTextAttributes : [String : AnyObject] = [NSFontAttributeName : UIFont(name: "Raleway-Regular", size: 20)!, NSForegroundColorAttributeName : UIColor.hexStringToUIColor("DBE4EE")]
+        self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.white, NSFontAttributeName : UIFont(name: "Lobster 1.4", size: 34)!]
+        self.navigationController?.navigationBar.setTitleVerticalPositionAdjustment(5, for: UIBarMetrics.default)
         
         
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
+            if let token = UserDefaults.standard.object(forKey: "token") as? String {
+            if let id = UserDefaults.standard.object(forKey: "id") as? String {
+                self.ethosAuth = token
+                self.id = id
+            }
+        }
         
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
-        //  bar.frame = CGRectMake(0, bar.frame.origin.y, self.view.frame.width, 40)
-        self.view.backgroundColor = UIColor.hexStringToUIColor("e9e9e9")
-        createCards()
+        self.view.backgroundColor = UIColor.hexStringToUIColor("c9c9c9")
+        self.getNotifications()
     }
     
-    func shouldMoveCard(card: CardView) -> Bool {
+    func shouldMoveCard(_ card: CardView) -> Bool {
         return true
     }
-    func createCards() {
+    func getNotifications() {
         
-
-        
-        self.tableView.reloadData()
+        let view = MRProgressOverlayView.showOverlayAdded(to: self.view, title: "", mode: MRProgressOverlayViewMode.indeterminate, animated: true)
+        view?.setTintColor(UIColor.hexStringToUIColor("247BA0"))
+        self.notifications?.removeAllObjects()
+        print(ethosAuth)
+        print(id)
+        let headers = ["Accept":"application/json","Content-Type":"application/json","X-Ethos-Auth":"\(ethosAuth)", "X-Facebook-Id":"\(id)"]
+        Alamofire.request("http://meetethos.azurewebsites.net/api/Alerts", method: .get, parameters: nil, encoding: JSONEncoding.default, headers: headers)
+            .responseJSON { (response) in
+                print(response)
+                MRProgressOverlayView.dismissAllOverlays(for: self.view, animated: true)
+                let array = response.result.value! as! NSDictionary
+                let post = array.object(forKey: "selectedAlerts")
+                self.updateNotes(notes: post as! NSArray)
+        }
     }
-    override func viewDidAppear(animated: Bool) {
+    
+    override func viewDidAppear(_ animated: Bool) {
         //     cardsButton.selectMe()
         //     netButton.deselectMe()
     }
-    func sidebar() {
+    func updateNotes(notes: NSArray) {
+        for cardDictionary in notes {
+            let dict = cardDictionary as! NSDictionary
+            let emoji = dict.object(forKey: "SenderEmoji") as! String
+            let userText = dict.object(forKey: "Message") as! String
+            let type = dict.object(forKey: "ContentAlert") as! Int
+            let dataCard = PostCard(posterEmoji: emoji, userText: userText, type: type)
+            dataCard.message = userText
+            dataCard.likeCount = 0
+            dataCard.postID = dict.object(forKey: "PostId") as! Int
+            dataCard.userLiked = 0
+            dataCard.userOwned = 0
+            dataCard.commentCount = 0
+            dataCard.groupID = 0
+            dataCard.likeCount = dict.object(forKey: "UserId") as! Int
+            dataCard.posterID = dict.object(forKey: "AlertId") as! Int;
+            if let content = dict.object(forKey: "Content") as? String {
+                dataCard.content = content
+            }
+            let dateString = dict.object(forKey: "DateCreated") as! String
+            print(dateString)
+            let format = DateFormatter()
+            format.timeZone = TimeZone(secondsFromGMT: 0)
+            format.dateFormat = "yyyy'-'MM'-'dd'T'HH':'mm':'ss'.'SSS'Z'"
+            let date =  format.date(from: dateString)
+            
+            let formatter = DateFormatter()
+            formatter.dateFormat = "d MM HH"
+            let dater = formatter.string(from: date!)
+            let result = date!.getElapsedInterval()
+            dataCard.date = result
+            self.notifications?.add(dataCard)
+        }
         
-    }
-    func post() {
-        
+        self.tableView.reloadData()
     }
 
-    override func preferredStatusBarStyle() -> UIStatusBarStyle {
-        return UIStatusBarStyle.LightContent
+    override var preferredStatusBarStyle : UIStatusBarStyle {
+        return UIStatusBarStyle.lightContent
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -101,30 +120,31 @@ class NotifyTableViewController: UITableViewController, CardViewDelegate, UIText
     
     // MARK: - Table view data source
     
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
     }
     
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 5
+        return notifications!.count
     }
     
     
-    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 50
     }
     
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as? UITableViewCell
-        cell?.selectionStyle = UITableViewCellSelectionStyle.None
-       
-        return cell!
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        cell.selectionStyle = UITableViewCellSelectionStyle.none
+        let source = notifications?.object(at: indexPath.row) as! PostCard
+        cell.textLabel?.text = source.message
+        return cell
     }
     
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        self.tableView.deselectRowAtIndexPath(indexPath, animated: true)
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.tableView.deselectRow(at: indexPath, animated: true)
     }
     
 

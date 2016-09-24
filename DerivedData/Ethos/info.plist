@@ -2,7 +2,9 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>LastAccessedDate</key>
+	<date>2016-09-24T18:05:14Z</date>
 	<key>WorkspacePath</key>
-	<string>/Users/Scott/Documents/Ethos/Ethos.xcodeproj</string>
+	<string>/Users/Scott/Documents/Ethos/Ethos.xcworkspace</string>
 </dict>
 </plist>

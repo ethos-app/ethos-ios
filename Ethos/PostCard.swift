@@ -10,6 +10,8 @@ import UIKit
 
 class PostCard: NSObject {
 
+    var comment = false
+    var commentId = 0
     var posterEmoji = ""
     var userText = ""
     var content = ""
@@ -20,7 +22,19 @@ class PostCard: NSObject {
     var likeCount = 0;
     var commentCount = 0;
     var userLiked = 0;
+    var userOwned = 0;
     var date = ""
+    var imageStore : UIImage?
+    var hasImage = false
+    var linkTitle = ""
+    var linkDesc = ""
+    var linkURL = ""
+    var linkImage : UIImage?
+    var hasLinkData = false
+    
+    var message = ""
+    var alertId = ""
+    var contentAlert = ""
     init(posterEmoji : String, userText : String, type : Int) {
         self.posterEmoji = posterEmoji
         self.userText = userText
