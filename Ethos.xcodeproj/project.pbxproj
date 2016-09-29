@@ -10,21 +10,20 @@
 		B1CCCB47CA49AD88C8D9F405 /* Pods_Ethos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46587488D12BA0BDB6BD86EC /* Pods_Ethos.framework */; };
 		BCE430A004D70F33175F7AD1 /* Pods_EthosUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67C2F7A290D59FA73DCB7562 /* Pods_EthosUITests.framework */; };
 		D20315C21D94A47B00BD9786 /* invalid_image.png in Resources */ = {isa = PBXBuildFile; fileRef = D20315C11D94A47B00BD9786 /* invalid_image.png */; };
-		D209B94A1D8280930060F135 /* EmojiSelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D209B9491D8280930060F135 /* EmojiSelectView.swift */; };
 		D209B94C1D829BB10060F135 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D209B94B1D829BB10060F135 /* CFNetwork.framework */; };
 		D210AEB01D8CA86F00EF96B1 /* ic_link_2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D210AEAF1D8CA86F00EF96B1 /* ic_link_2x.png */; };
 		D214F4A21D93518A0059F8CB /* LinkViewBox.xib in Resources */ = {isa = PBXBuildFile; fileRef = D214F4A11D93518A0059F8CB /* LinkViewBox.xib */; };
 		D214F4A41D9355EB0059F8CB /* LnikViewer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D214F4A31D9355EB0059F8CB /* LnikViewer.swift */; };
 		D214F4E21D93A1B80059F8CB /* PostXib.xib in Resources */ = {isa = PBXBuildFile; fileRef = D214F4E11D93A1B80059F8CB /* PostXib.xib */; };
 		D214F4E41D93A3810059F8CB /* OPCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = D214F4E31D93A3810059F8CB /* OPCard.swift */; };
-		D214F4E61D944C440059F8CB /* OneCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D214F4E51D944C440059F8CB /* OneCardViewController.swift */; };
 		D214F4E81D9453B70059F8CB /* ic_keyboard_backspace_white_2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D214F4E71D9453B70059F8CB /* ic_keyboard_backspace_white_2x.png */; };
 		D22419141D7922030093302D /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D22419131D7922030093302D /* WebKit.framework */; };
-		D234EE481D7CCC4C00CDEB3E /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D234EE471D7CCC4C00CDEB3E /* CardView.swift */; };
-		D234EE4A1D7CDB0800CDEB3E /* CardContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D234EE491D7CDB0800CDEB3E /* CardContainerView.swift */; };
 		D2385CE11D77C95C0086FADC /* PostCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2385CE01D77C95C0086FADC /* PostCard.swift */; };
 		D2385CE31D7812610086FADC /* Auth0.plist in Resources */ = {isa = PBXBuildFile; fileRef = D2385CE21D7812610086FADC /* Auth0.plist */; };
+		D25DCF9C1D98A520000A98CF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D25DCF9B1D98A520000A98CF /* GoogleService-Info.plist */; };
+		D25DCF9E1D98BC0B000A98CF /* PushKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D25DCF9D1D98BC0B000A98CF /* PushKit.framework */; };
 		D26A175A1D8246C9004933B2 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D26A17591D8246C9004933B2 /* Bolts.framework */; };
+		D26F93F41D971657004657B9 /* NotifTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26F93F31D971657004657B9 /* NotifTableViewCell.swift */; };
 		D275BBA71D808D2E0052152D /* PostBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = D275BBA61D808D2E0052152D /* PostBox.swift */; };
 		D275BBA91D809FA80052152D /* ic_menu.png in Resources */ = {isa = PBXBuildFile; fileRef = D275BBA81D809FA80052152D /* ic_menu.png */; };
 		D275BBAB1D80A2EF0052152D /* ic_home.png in Resources */ = {isa = PBXBuildFile; fileRef = D275BBAA1D80A2EF0052152D /* ic_home.png */; };
@@ -38,7 +37,6 @@
 		D275BBBC1D82439D0052152D /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D275BBBA1D82439D0052152D /* FBSDKCoreKit.framework */; };
 		D275BBBD1D82439E0052152D /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D275BBBB1D82439D0052152D /* FBSDKLoginKit.framework */; };
 		D28764801D8D3AE80002B01A /* ic_photo_camera_2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D287647F1D8D3AE80002B01A /* ic_photo_camera_2x.png */; };
-		D28764821D8E130C0002B01A /* FullPostTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28764811D8E130C0002B01A /* FullPostTableViewController.swift */; };
 		D28764841D8E24D00002B01A /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = D28764831D8E24D00002B01A /* icon.png */; };
 		D293CD4E1D8A107B00F78828 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D293CD4D1D8A107B00F78828 /* QuartzCore.framework */; };
 		D293CD501D8A108000F78828 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D293CD4F1D8A108000F78828 /* CoreGraphics.framework */; };
@@ -60,7 +58,15 @@
 		D29EEFD51D7654F6001467C3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D29EEFD31D7654F6001467C3 /* LaunchScreen.storyboard */; };
 		D29EEFE01D7654F7001467C3 /* EthosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D29EEFDF1D7654F7001467C3 /* EthosTests.swift */; };
 		D29EEFEB1D7654F7001467C3 /* EthosUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D29EEFEA1D7654F7001467C3 /* EthosUITests.swift */; };
+		D2B559F41D99D83500F8C7C5 /* PostBoxXib.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2B559F31D99D83500F8C7C5 /* PostBoxXib.xib */; };
+		D2CCB5721D9721B200AD0FED /* OneCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2CCB5711D9721B200AD0FED /* OneCardViewController.swift */; };
+		D2CCB5741D9756B500AD0FED /* ic_people.png in Resources */ = {isa = PBXBuildFile; fileRef = D2CCB5731D9756B500AD0FED /* ic_people.png */; };
+		D2CCB5761D97574400AD0FED /* GroupTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2CCB5751D97574400AD0FED /* GroupTableViewCell.swift */; };
+		D2CCB5781D975ABF00AD0FED /* GroupTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2CCB5771D975ABF00AD0FED /* GroupTableViewController.swift */; };
+		D2CCB57A1D97609E00AD0FED /* GroupCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2CCB5791D97609E00AD0FED /* GroupCard.swift */; };
+		D2CCB57C1D984C2900AD0FED /* EthosAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2CCB57B1D984C2900AD0FED /* EthosAPI.swift */; };
 		D2D429121D807DFD00188991 /* BarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2983D221D7791D300D79F54 /* BarButton.swift */; };
+		D2E552131D9B9C4200F4F9B6 /* GroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E552121D9B9C4200F4F9B6 /* GroupViewController.swift */; };
 		E803E7080D19883366BE6917 /* Pods_EthosTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C210F9CE639AC170305AF28D /* Pods_EthosTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -90,22 +96,21 @@
 		BED51C939254871AEDA554E7 /* Pods-EthosTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EthosTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-EthosTests/Pods-EthosTests.release.xcconfig"; sourceTree = "<group>"; };
 		C210F9CE639AC170305AF28D /* Pods_EthosTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EthosTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D20315C11D94A47B00BD9786 /* invalid_image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = invalid_image.png; sourceTree = "<group>"; };
-		D209B9491D8280930060F135 /* EmojiSelectView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmojiSelectView.swift; sourceTree = "<group>"; };
 		D209B94B1D829BB10060F135 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		D210AEAF1D8CA86F00EF96B1 /* ic_link_2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ic_link_2x.png; path = ../../../Downloads/ic_link_black_24dp/ios/ic_link.imageset/ic_link_2x.png; sourceTree = "<group>"; };
 		D214F4A11D93518A0059F8CB /* LinkViewBox.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LinkViewBox.xib; sourceTree = "<group>"; };
 		D214F4A31D9355EB0059F8CB /* LnikViewer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LnikViewer.swift; sourceTree = "<group>"; };
 		D214F4E11D93A1B80059F8CB /* PostXib.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PostXib.xib; sourceTree = "<group>"; };
 		D214F4E31D93A3810059F8CB /* OPCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OPCard.swift; sourceTree = "<group>"; };
-		D214F4E51D944C440059F8CB /* OneCardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OneCardViewController.swift; sourceTree = "<group>"; };
 		D214F4E71D9453B70059F8CB /* ic_keyboard_backspace_white_2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_keyboard_backspace_white_2x.png; sourceTree = "<group>"; };
 		D22419131D7922030093302D /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
-		D234EE471D7CCC4C00CDEB3E /* CardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
-		D234EE491D7CDB0800CDEB3E /* CardContainerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CardContainerView.swift; path = Ethos/CardContainerView.swift; sourceTree = "<group>"; };
 		D2385CE01D77C95C0086FADC /* PostCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostCard.swift; sourceTree = "<group>"; };
 		D2385CE21D7812610086FADC /* Auth0.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Auth0.plist; sourceTree = "<group>"; };
+		D25DCF9B1D98A520000A98CF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		D25DCF9D1D98BC0B000A98CF /* PushKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PushKit.framework; path = System/Library/Frameworks/PushKit.framework; sourceTree = SDKROOT; };
 		D26A17591D8246C9004933B2 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
-		D275BBA61D808D2E0052152D /* PostBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostBox.swift; sourceTree = "<group>"; };
+		D26F93F31D971657004657B9 /* NotifTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotifTableViewCell.swift; sourceTree = "<group>"; };
+		D275BBA61D808D2E0052152D /* PostBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PostBox.swift; path = ../PostBox.swift; sourceTree = "<group>"; };
 		D275BBA81D809FA80052152D /* ic_menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_menu.png; sourceTree = "<group>"; };
 		D275BBAA1D80A2EF0052152D /* ic_home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_home.png; sourceTree = "<group>"; };
 		D275BBAC1D80A38E0052152D /* ic_textsms.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_textsms.png; sourceTree = "<group>"; };
@@ -118,7 +123,6 @@
 		D275BBBA1D82439D0052152D /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		D275BBBB1D82439D0052152D /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		D287647F1D8D3AE80002B01A /* ic_photo_camera_2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_photo_camera_2x.png; sourceTree = "<group>"; };
-		D28764811D8E130C0002B01A /* FullPostTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FullPostTableViewController.swift; sourceTree = "<group>"; };
 		D28764831D8E24D00002B01A /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 		D290329E1D90CDF300DAFD9F /* Ethos.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Ethos.entitlements; sourceTree = "<group>"; };
 		D293CD4D1D8A107B00F78828 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -133,7 +137,7 @@
 		D2983CDE1D768D3200D79F54 /* BizCardTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BizCardTableViewCell.swift; sourceTree = "<group>"; };
 		D2983CE21D76A70000D79F54 /* add.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = add.png; sourceTree = "<group>"; };
 		D2983CE41D76A7C100D79F54 /* book.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = book.png; sourceTree = "<group>"; };
-		D2983D221D7791D300D79F54 /* BarButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarButton.swift; sourceTree = "<group>"; };
+		D2983D221D7791D300D79F54 /* BarButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BarButton.swift; path = ../BarButton.swift; sourceTree = "<group>"; };
 		D29EEFC71D7654F6001467C3 /* Ethos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ethos.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D29EEFCA1D7654F6001467C3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D29EEFCC1D7654F6001467C3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -147,6 +151,14 @@
 		D29EEFE61D7654F7001467C3 /* EthosUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EthosUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D29EEFEA1D7654F7001467C3 /* EthosUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EthosUITests.swift; sourceTree = "<group>"; };
 		D29EEFEC1D7654F7001467C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D2B559F31D99D83500F8C7C5 /* PostBoxXib.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PostBoxXib.xib; sourceTree = "<group>"; };
+		D2CCB5711D9721B200AD0FED /* OneCardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OneCardViewController.swift; sourceTree = "<group>"; };
+		D2CCB5731D9756B500AD0FED /* ic_people.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_people.png; sourceTree = "<group>"; };
+		D2CCB5751D97574400AD0FED /* GroupTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupTableViewCell.swift; sourceTree = "<group>"; };
+		D2CCB5771D975ABF00AD0FED /* GroupTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupTableViewController.swift; sourceTree = "<group>"; };
+		D2CCB5791D97609E00AD0FED /* GroupCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupCard.swift; sourceTree = "<group>"; };
+		D2CCB57B1D984C2900AD0FED /* EthosAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EthosAPI.swift; sourceTree = "<group>"; };
+		D2E552121D9B9C4200F4F9B6 /* GroupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupViewController.swift; sourceTree = "<group>"; };
 		EBECA746F313E81612116607 /* Pods-Ethos.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ethos.release.xcconfig"; path = "Pods/Target Support Files/Pods-Ethos/Pods-Ethos.release.xcconfig"; sourceTree = "<group>"; };
 		F1E4131FA4F219398830924E /* Pods-EthosUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EthosUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-EthosUITests/Pods-EthosUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -156,6 +168,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D25DCF9E1D98BC0B000A98CF /* PushKit.framework in Frameworks */,
 				D293CD521D8A108500F78828 /* Accelerate.framework in Frameworks */,
 				D293CD501D8A108000F78828 /* CoreGraphics.framework in Frameworks */,
 				D293CD4E1D8A107B00F78828 /* QuartzCore.framework in Frameworks */,
@@ -190,6 +203,11 @@
 		C69E5665C12378583D1AFECB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D25DCF9D1D98BC0B000A98CF /* PushKit.framework */,
+				D25DCF9B1D98A520000A98CF /* GoogleService-Info.plist */,
+				D275BBBB1D82439D0052152D /* FBSDKLoginKit.framework */,
+				D275BBBA1D82439D0052152D /* FBSDKCoreKit.framework */,
+				D26A17591D8246C9004933B2 /* Bolts.framework */,
 				D293CD511D8A108500F78828 /* Accelerate.framework */,
 				D293CD4F1D8A108000F78828 /* CoreGraphics.framework */,
 				D293CD4D1D8A107B00F78828 /* QuartzCore.framework */,
@@ -215,17 +233,65 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		D26F93F51D971D45004657B9 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				D275BBA61D808D2E0052152D /* PostBox.swift */,
+				D2983D221D7791D300D79F54 /* BarButton.swift */,
+				D214F4E31D93A3810059F8CB /* OPCard.swift */,
+				D214F4A31D9355EB0059F8CB /* LnikViewer.swift */,
+				D2385CE01D77C95C0086FADC /* PostCard.swift */,
+			);
+			name = Modules;
+			path = Ethos;
+			sourceTree = "<group>";
+		};
+		D26F93F61D971D6D004657B9 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				D290329E1D90CDF300DAFD9F /* Ethos.entitlements */,
+				D29EEFD11D7654F6001467C3 /* Assets.xcassets */,
+				D29EEFD61D7654F6001467C3 /* Info.plist */,
+				D2385CE21D7812610086FADC /* Auth0.plist */,
+			);
+			name = Resources;
+			path = Ethos;
+			sourceTree = "<group>";
+		};
+		D26F93F71D971DB6004657B9 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				D214F4E11D93A1B80059F8CB /* PostXib.xib */,
+				D214F4A11D93518A0059F8CB /* LinkViewBox.xib */,
+				D29EEFD31D7654F6001467C3 /* LaunchScreen.storyboard */,
+			);
+			name = Storyboards;
+			path = Ethos;
+			sourceTree = "<group>";
+		};
+		D26F93F81D971DF3004657B9 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				D275BBAE1D80CCF60052152D /* Raleway-Italic.ttf */,
+				D2983CD61D767D6100D79F54 /* rale_bold.ttf */,
+				D2983CD71D767D6100D79F54 /* rale_light.ttf */,
+				D2983CD81D767D6100D79F54 /* lobster.otf */,
+				D2983CD41D767D6000D79F54 /* rale_reg.ttf */,
+				D2983CD51D767D6100D79F54 /* rale_thin.ttf */,
+			);
+			name = Fonts;
+			path = Ethos;
+			sourceTree = "<group>";
+		};
 		D29EEFBE1D7654F6001467C3 = {
 			isa = PBXGroup;
 			children = (
-				D26A17591D8246C9004933B2 /* Bolts.framework */,
-				D275BBBA1D82439D0052152D /* FBSDKCoreKit.framework */,
-				D275BBBB1D82439D0052152D /* FBSDKLoginKit.framework */,
-				D275BBA61D808D2E0052152D /* PostBox.swift */,
-				D2983D221D7791D300D79F54 /* BarButton.swift */,
-				D234EE471D7CCC4C00CDEB3E /* CardView.swift */,
-				D234EE491D7CDB0800CDEB3E /* CardContainerView.swift */,
 				D29EEFC91D7654F6001467C3 /* Ethos */,
+				D2CCB5701D97208A00AD0FED /* Images */,
+				D26F93F81D971DF3004657B9 /* Fonts */,
+				D26F93F61D971D6D004657B9 /* Resources */,
+				D26F93F71D971DB6004657B9 /* Storyboards */,
+				D26F93F51D971D45004657B9 /* Modules */,
 				D29EEFDE1D7654F7001467C3 /* EthosTests */,
 				D29EEFE91D7654F7001467C3 /* EthosUITests */,
 				D29EEFC81D7654F6001467C3 /* Products */,
@@ -247,45 +313,21 @@
 		D29EEFC91D7654F6001467C3 /* Ethos */ = {
 			isa = PBXGroup;
 			children = (
-				D290329E1D90CDF300DAFD9F /* Ethos.entitlements */,
+				D29EEFCE1D7654F6001467C3 /* Main.storyboard */,
+				D2B559F31D99D83500F8C7C5 /* PostBoxXib.xib */,
 				D29EEFCA1D7654F6001467C3 /* AppDelegate.swift */,
 				D275BBB81D82425A0052152D /* LoginViewController.swift */,
-				D209B9491D8280930060F135 /* EmojiSelectView.swift */,
-				D29EEFCC1D7654F6001467C3 /* ViewController.swift */,
-				D29EEFCE1D7654F6001467C3 /* Main.storyboard */,
-				D214F4E11D93A1B80059F8CB /* PostXib.xib */,
-				D214F4E31D93A3810059F8CB /* OPCard.swift */,
-				D214F4A11D93518A0059F8CB /* LinkViewBox.xib */,
-				D214F4A31D9355EB0059F8CB /* LnikViewer.swift */,
-				D275BBB01D80F84A0052152D /* NotifyTableViewController.swift */,
 				D2983CD21D765CC700D79F54 /* CardStackTableViewController.swift */,
-				D214F4E51D944C440059F8CB /* OneCardViewController.swift */,
-				D28764811D8E130C0002B01A /* FullPostTableViewController.swift */,
-				D2385CE01D77C95C0086FADC /* PostCard.swift */,
+				D2CCB57B1D984C2900AD0FED /* EthosAPI.swift */,
+				D2CCB5771D975ABF00AD0FED /* GroupTableViewController.swift */,
+				D2E552121D9B9C4200F4F9B6 /* GroupViewController.swift */,
+				D2CCB5791D97609E00AD0FED /* GroupCard.swift */,
+				D275BBB01D80F84A0052152D /* NotifyTableViewController.swift */,
 				D2983CDE1D768D3200D79F54 /* BizCardTableViewCell.swift */,
-				D29EEFD11D7654F6001467C3 /* Assets.xcassets */,
-				D20315C11D94A47B00BD9786 /* invalid_image.png */,
-				D29EEFD31D7654F6001467C3 /* LaunchScreen.storyboard */,
-				D29EEFD61D7654F6001467C3 /* Info.plist */,
-				D214F4E71D9453B70059F8CB /* ic_keyboard_backspace_white_2x.png */,
-				D2385CE21D7812610086FADC /* Auth0.plist */,
-				D2983CD41D767D6000D79F54 /* rale_reg.ttf */,
-				D2983CD51D767D6100D79F54 /* rale_thin.ttf */,
-				D2983CD61D767D6100D79F54 /* rale_bold.ttf */,
-				D2983CD71D767D6100D79F54 /* rale_light.ttf */,
-				D2983CD81D767D6100D79F54 /* lobster.otf */,
-				D2983CE21D76A70000D79F54 /* add.png */,
-				D2983CE41D76A7C100D79F54 /* book.png */,
-				D275BBA81D809FA80052152D /* ic_menu.png */,
-				D275BBAA1D80A2EF0052152D /* ic_home.png */,
-				D275BBAC1D80A38E0052152D /* ic_textsms.png */,
-				D28764831D8E24D00002B01A /* icon.png */,
-				D275BBAE1D80CCF60052152D /* Raleway-Italic.ttf */,
-				D275BBB21D823BCC0052152D /* ic_favorite.png */,
-				D275BBB41D823C060052152D /* ic_comment.png */,
-				D275BBB61D823C200052152D /* ic_favorite_border.png */,
-				D210AEAF1D8CA86F00EF96B1 /* ic_link_2x.png */,
-				D287647F1D8D3AE80002B01A /* ic_photo_camera_2x.png */,
+				D2CCB5751D97574400AD0FED /* GroupTableViewCell.swift */,
+				D26F93F31D971657004657B9 /* NotifTableViewCell.swift */,
+				D2CCB5711D9721B200AD0FED /* OneCardViewController.swift */,
+				D29EEFCC1D7654F6001467C3 /* ViewController.swift */,
 			);
 			path = Ethos;
 			sourceTree = "<group>";
@@ -306,6 +348,28 @@
 				D29EEFEC1D7654F7001467C3 /* Info.plist */,
 			);
 			path = EthosUITests;
+			sourceTree = "<group>";
+		};
+		D2CCB5701D97208A00AD0FED /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				D2CCB5731D9756B500AD0FED /* ic_people.png */,
+				D214F4E71D9453B70059F8CB /* ic_keyboard_backspace_white_2x.png */,
+				D20315C11D94A47B00BD9786 /* invalid_image.png */,
+				D2983CE21D76A70000D79F54 /* add.png */,
+				D2983CE41D76A7C100D79F54 /* book.png */,
+				D275BBA81D809FA80052152D /* ic_menu.png */,
+				D275BBAA1D80A2EF0052152D /* ic_home.png */,
+				D275BBAC1D80A38E0052152D /* ic_textsms.png */,
+				D28764831D8E24D00002B01A /* icon.png */,
+				D275BBB21D823BCC0052152D /* ic_favorite.png */,
+				D275BBB41D823C060052152D /* ic_comment.png */,
+				D275BBB61D823C200052152D /* ic_favorite_border.png */,
+				D210AEAF1D8CA86F00EF96B1 /* ic_link_2x.png */,
+				D287647F1D8D3AE80002B01A /* ic_photo_camera_2x.png */,
+			);
+			name = Images;
+			path = Ethos;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -387,8 +451,15 @@
 						CreatedOnToolsVersion = 7.3;
 						DevelopmentTeam = GA54ZS247J;
 						LastSwiftMigration = 0800;
+						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
 							com.apple.Keychain = {
+								enabled = 1;
+							};
+							com.apple.Push = {
 								enabled = 1;
 							};
 						};
@@ -430,6 +501,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D2CCB5741D9756B500AD0FED /* ic_people.png in Resources */,
 				D214F4E21D93A1B80059F8CB /* PostXib.xib in Resources */,
 				D275BBAF1D80CD540052152D /* Raleway-Italic.ttf in Resources */,
 				D275BBB71D823C200052152D /* ic_favorite_border.png in Resources */,
@@ -442,12 +514,14 @@
 				D28764841D8E24D00002B01A /* icon.png in Resources */,
 				D2983CDC1D767D6F00D79F54 /* rale_light.ttf in Resources */,
 				D214F4A21D93518A0059F8CB /* LinkViewBox.xib in Resources */,
+				D2B559F41D99D83500F8C7C5 /* PostBoxXib.xib in Resources */,
 				D2983CDD1D767D6F00D79F54 /* lobster.otf in Resources */,
 				D210AEB01D8CA86F00EF96B1 /* ic_link_2x.png in Resources */,
 				D29EEFD51D7654F6001467C3 /* LaunchScreen.storyboard in Resources */,
 				D2385CE31D7812610086FADC /* Auth0.plist in Resources */,
 				D29EEFD21D7654F6001467C3 /* Assets.xcassets in Resources */,
 				D275BBAB1D80A2EF0052152D /* ic_home.png in Resources */,
+				D25DCF9C1D98A520000A98CF /* GoogleService-Info.plist in Resources */,
 				D28764801D8D3AE80002B01A /* ic_photo_camera_2x.png in Resources */,
 				D275BBB51D823C060052152D /* ic_comment.png in Resources */,
 				D275BBB31D823BCC0052152D /* ic_favorite.png in Resources */,
@@ -617,20 +691,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D28764821D8E130C0002B01A /* FullPostTableViewController.swift in Sources */,
-				D214F4E61D944C440059F8CB /* OneCardViewController.swift in Sources */,
+				D2E552131D9B9C4200F4F9B6 /* GroupViewController.swift in Sources */,
+				D2CCB5721D9721B200AD0FED /* OneCardViewController.swift in Sources */,
+				D2CCB57A1D97609E00AD0FED /* GroupCard.swift in Sources */,
+				D26F93F41D971657004657B9 /* NotifTableViewCell.swift in Sources */,
 				D29EEFCD1D7654F6001467C3 /* ViewController.swift in Sources */,
 				D2385CE11D77C95C0086FADC /* PostCard.swift in Sources */,
-				D234EE4A1D7CDB0800CDEB3E /* CardContainerView.swift in Sources */,
 				D214F4E41D93A3810059F8CB /* OPCard.swift in Sources */,
-				D209B94A1D8280930060F135 /* EmojiSelectView.swift in Sources */,
 				D2983CD31D765CC700D79F54 /* CardStackTableViewController.swift in Sources */,
 				D275BBB11D80F84A0052152D /* NotifyTableViewController.swift in Sources */,
+				D2CCB5761D97574400AD0FED /* GroupTableViewCell.swift in Sources */,
 				D2983D231D7791D300D79F54 /* BarButton.swift in Sources */,
 				D29EEFCB1D7654F6001467C3 /* AppDelegate.swift in Sources */,
-				D234EE481D7CCC4C00CDEB3E /* CardView.swift in Sources */,
 				D2983CDF1D768D3200D79F54 /* BizCardTableViewCell.swift in Sources */,
+				D2CCB5781D975ABF00AD0FED /* GroupTableViewController.swift in Sources */,
 				D214F4A41D9355EB0059F8CB /* LnikViewer.swift in Sources */,
+				D2CCB57C1D984C2900AD0FED /* EthosAPI.swift in Sources */,
 				D275BBA71D808D2E0052152D /* PostBox.swift in Sources */,
 				D275BBB91D82425A0052152D /* LoginViewController.swift in Sources */,
 			);
@@ -778,6 +854,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Ethos/Ethos.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Scott Fitsimones (2GAP3JMT5W)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = GA54ZS247J;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -801,6 +879,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Ethos/Ethos.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Scott Fitsimones (2GAP3JMT5W)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = GA54ZS247J;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",

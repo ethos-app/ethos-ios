@@ -11,8 +11,9 @@ import UIKit
 import MRProgress
 import Alamofire
 import FBSDKCoreKit
+import Haneke
 
-class NotifyTableViewController: UITableViewController, CardViewDelegate, UITextViewDelegate {
+class NotifyTableViewController: UITableViewController, UITextViewDelegate {
     
     var notifications : NSMutableArray?
     
@@ -21,13 +22,14 @@ class NotifyTableViewController: UITableViewController, CardViewDelegate, UIText
     var ethosAuth = ""
     var id = ""
     
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-      
         
         
         notifications = NSMutableArray()
-        self.tableView.backgroundColor = UIColor.hexStringToUIColor("c9c9c9")
+            self.tableView.backgroundColor = UIColor.hexStringToUIColor("e9e9e9")
         self.tableView.separatorStyle = UITableViewCellSeparatorStyle.singleLine
         self.tableView.delegate = self
         self.tableView.dataSource = self
@@ -44,29 +46,40 @@ class NotifyTableViewController: UITableViewController, CardViewDelegate, UIText
             }
         }
         
-        self.view.backgroundColor = UIColor.hexStringToUIColor("c9c9c9")
-        self.getNotifications()
+    self.view.backgroundColor = UIColor.hexStringToUIColor("e9e9e9")
+        
     }
     
-    func shouldMoveCard(_ card: CardView) -> Bool {
-        return true
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.tabBarController?.delegate = nil
+        super.viewWillAppear(animated)
+        self.getNotifications()
     }
+
     func getNotifications() {
-        
-        let view = MRProgressOverlayView.showOverlayAdded(to: self.view, title: "", mode: MRProgressOverlayViewMode.indeterminate, animated: true)
-        view?.setTintColor(UIColor.hexStringToUIColor("247BA0"))
-        self.notifications?.removeAllObjects()
         print(ethosAuth)
         print(id)
         let headers = ["Accept":"application/json","Content-Type":"application/json","X-Ethos-Auth":"\(ethosAuth)", "X-Facebook-Id":"\(id)"]
         Alamofire.request("http://meetethos.azurewebsites.net/api/Alerts", method: .get, parameters: nil, encoding: JSONEncoding.default, headers: headers)
             .responseJSON { (response) in
                 print(response)
-                MRProgressOverlayView.dismissAllOverlays(for: self.view, animated: true)
-                let array = response.result.value! as! NSDictionary
+                self.notifications?.removeAllObjects()
+                if let array = response.result.value as? NSDictionary {
                 let post = array.object(forKey: "selectedAlerts")
                 self.updateNotes(notes: post as! NSArray)
+                self.read()
+                }
         }
+        
+    }
+    func read() {
+        let headers = ["Accept":"application/json","Content-Type":"application/json","X-Ethos-Auth":"\(ethosAuth)", "X-Facebook-Id":"\(id)"]
+        Alamofire.request("http://meetethos.azurewebsites.net/api/Alerts/ReadAlerts", method: .get, parameters: nil, encoding: JSONEncoding.default, headers: headers)
+            .responseJSON { (response) in
+                print(response)
+          
+        }
+
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -81,14 +94,15 @@ class NotifyTableViewController: UITableViewController, CardViewDelegate, UIText
             let type = dict.object(forKey: "ContentAlert") as! Int
             let dataCard = PostCard(posterEmoji: emoji, userText: userText, type: type)
             dataCard.message = userText
-            dataCard.likeCount = 0
+            dataCard.likeCount = ""
             dataCard.postID = dict.object(forKey: "PostId") as! Int
             dataCard.userLiked = 0
             dataCard.userOwned = 0
-            dataCard.commentCount = 0
+            dataCard.commentCount = ""
             dataCard.groupID = 0
-            dataCard.likeCount = dict.object(forKey: "UserId") as! Int
+            dataCard.notifyUserID = dict.object(forKey: "UserId") as! Int
             dataCard.posterID = dict.object(forKey: "AlertId") as! Int;
+            dataCard.userRead = dict.object(forKey: "UserRead")  as! Bool
             if let content = dict.object(forKey: "Content") as? String {
                 dataCard.content = content
             }
@@ -101,7 +115,6 @@ class NotifyTableViewController: UITableViewController, CardViewDelegate, UIText
             
             let formatter = DateFormatter()
             formatter.dateFormat = "d MM HH"
-            let dater = formatter.string(from: date!)
             let result = date!.getElapsedInterval()
             dataCard.date = result
             self.notifications?.add(dataCard)
@@ -132,19 +145,57 @@ class NotifyTableViewController: UITableViewController, CardViewDelegate, UIText
     
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 50
+        return 75
     }
     
+    
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        cell.selectionStyle = UITableViewCellSelectionStyle.none
         let source = notifications?.object(at: indexPath.row) as! PostCard
-        cell.textLabel?.text = source.message
+        var typeString = "cells"
+        
+         if source.content == "" {
+            typeString = "text"
+        }
+        let cell = tableView.dequeueReusableCell(withIdentifier: typeString, for: indexPath) as! NotifTableViewCell
+        cell.accessoryType = UITableViewCellAccessoryType.disclosureIndicator
+        if indexPath.row < notifications!.count {
+     
+   
+        if source.userRead == false {
+        cell.backgroundColor = UIColor.hexStringToUIColor("247BA0").withAlphaComponent(0.14)
+        } else {
+            cell.backgroundColor = UIColor.white
+        }
+        // notification body
+        cell.label.text = source.userText
+        // load emoji
+        let url = URL(string: source.posterEmoji)
+        cell.emoji.hnk_setImageFromURL(url!)
+        // display image next to notification
+            if cell.previewImg != nil {
+        if let previewUrl = URL(string: source.content) {
+        cell.previewImg.hnk_setImageFromURL(previewUrl)
+        } else {
+        }
+        }
+        }
         return cell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.tableView.deselectRow(at: indexPath, animated: true)
+        let source = notifications?.object(at: indexPath.row) as! PostCard
+        let selected = source.postID
+        let postController = self.storyboard?.instantiateViewController(withIdentifier: "single") as! OneCardViewController
+        postController.postID = selected
+        self.navigationController?.pushViewController(postController, animated: true)
+
+        
+        // Present from CardsViewController
+//        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "requestPost"), object: selected)
+//        self.tabBarController?.selectedIndex = 0
+        
     }
     
 

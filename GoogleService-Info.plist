@@ -7,21 +7,21 @@
 	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
 	<string>ca-app-pub-3940256099942544/4411468910</string>
 	<key>CLIENT_ID</key>
-	<string>710356105325-u86gh64bi1em4060df8cugb1mljjbog4.apps.googleusercontent.com</string>
+	<string>504976466181-3rpkt6p3qgpq4g1voqb624s04up3doql.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.710356105325-u86gh64bi1em4060df8cugb1mljjbog4</string>
+	<string>com.googleusercontent.apps.504976466181-3rpkt6p3qgpq4g1voqb624s04up3doql</string>
 	<key>API_KEY</key>
-	<string>AIzaSyD7l3RtPsp5r73NFoXw0AvZmvbvYXWpM9s</string>
+	<string>AIzaSyAIaD1S4KEfRywjrUY7UGdiSbXavSJRJ98</string>
 	<key>GCM_SENDER_ID</key>
-	<string>710356105325</string>
+	<string>504976466181</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
 	<string>com.ethos.app</string>
 	<key>PROJECT_ID</key>
-	<string>ethos-35d3f</string>
+	<string>ethos-d4451</string>
 	<key>STORAGE_BUCKET</key>
-	<string>ethos-35d3f.appspot.com</string>
+	<string>ethos-d4451.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<true/>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -33,8 +33,8 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true/>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:710356105325:ios:0dde689e4c5ebb4e</string>
+	<string>1:504976466181:ios:0dde689e4c5ebb4e</string>
 	<key>DATABASE_URL</key>
-	<string>https://ethos-35d3f.firebaseio.com</string>
+	<string>https://ethos-d4451.firebaseio.com</string>
 </dict>
 </plist>

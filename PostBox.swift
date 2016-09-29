@@ -21,13 +21,13 @@ class PostBox: UIView {
     override func draw(_ rect: CGRect) {
         pickButton?.contentMode = UIViewContentMode.scaleAspectFill
         super.draw(rect)
-        let textFrame = CGRect(x: 8, y: 8, width: self.frame.width-16, height: self.frame.height-12)
+        let textFrame = CGRect(x: 8, y: 8, width: self.frame.width-16, height: self.frame.height-15)
         textView = UITextView(frame: textFrame)
         textView?.textContainerInset = UIEdgeInsetsMake(10, 5, 5, 5)
         textView!.layer.cornerRadius = 5
         textView?.clipsToBounds = true
-        textView!.font = UIFont(name: "Raleway-Regular", size: 20)
-        let boldText = UIFont(name: "Raleway-Italic", size: 18)
+        textView!.font = UIFont(name: "Raleway-Regular", size: 22)
+        let boldText = UIFont(name: "Raleway-Italic", size: 22)
         let onMind = "What's really on your mind?"
         let holderText = NSMutableAttributedString(string: onMind, attributes: [NSFontAttributeName : textView!.font!, NSForegroundColorAttributeName : UIColor.lightGray])
         holderText.addAttribute(NSFontAttributeName, value: boldText!, range: NSMakeRange(7, 6))
@@ -43,19 +43,20 @@ class PostBox: UIView {
         pickButton!.isUserInteractionEnabled = true
         let gesture = UITapGestureRecognizer(target: self, action: #selector(self.showPicker))
         pickButton!.addGestureRecognizer(gesture)
-        pickButton!.frame = CGRect(x: self.frame.width-45, y: self.frame.height-35, width: 30, height: 30)
+        pickButton!.frame = CGRect(x: self.frame.width-45, y: self.frame.height-42, width: 30, height: 30)
         
         textView?.attributedText = holderText
         self.addSubview(textView!)
         self.addSubview(pickButton!)
         self.addSubview(cancelMedia!)
+      //  textView?.inputAccessoryView = self
 
     }
     func restorePicker() {
         delegate?.imageCancelled()
                 let camImage = UIImage(named: "ic_photo_camera_2x")?.withRenderingMode(UIImageRenderingMode.alwaysTemplate)
         pickButton?.image = camImage
-        pickButton!.frame = CGRect(x: self.frame.width-45, y: self.frame.height-35, width: 30, height: 30)
+        pickButton?.frame = CGRect(x: self.frame.width-40, y: self.frame.height-35, width: 30, height: 30)
         cancelMedia?.alpha = 0
         textView?.textContainerInset = UIEdgeInsetsMake(10, 5, 5, 5)
         
@@ -65,8 +66,11 @@ class PostBox: UIView {
         textView?.textContainerInset = UIEdgeInsetsMake(10, 5, 5, 75)
     }
 
+    func prepareWrite() {
+        
+    }
     func resetText() {
-        let boldText = UIFont(name: "Raleway-Italic", size: 18)
+        let boldText = UIFont(name: "Raleway-Italic", size: 22)
         let onMind = "What's really on your mind?"
         let holderText = NSMutableAttributedString(string: onMind, attributes: [NSFontAttributeName : textView!.font!, NSForegroundColorAttributeName : UIColor.lightGray])
         

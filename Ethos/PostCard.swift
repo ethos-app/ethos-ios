@@ -19,8 +19,8 @@ class PostCard: NSObject {
     var groupID = 0
     var postID = 0;
     var posterID = 0
-    var likeCount = 0;
-    var commentCount = 0;
+    var likeCount = "";
+    var commentCount = "";
     var userLiked = 0;
     var userOwned = 0;
     var date = ""
@@ -35,6 +35,12 @@ class PostCard: NSObject {
     var message = ""
     var alertId = ""
     var contentAlert = ""
+    var userRead = true
+    
+    var isEthos = false
+    var notifyUserID = 0
+    
+    var groupString = ""
     init(posterEmoji : String, userText : String, type : Int) {
         self.posterEmoji = posterEmoji
         self.userText = userText

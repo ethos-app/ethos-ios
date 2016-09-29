@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import URLEmbeddedView
 
 class BizCardTableViewCell: UITableViewCell {
     var liked : Int = 0;
@@ -40,16 +41,21 @@ class BizCardTableViewCell: UITableViewCell {
     @IBOutlet var linkImg: UIImageView!
     
     var cellType = 0
+    
+    var linkEmbed : URLEmbeddedView?
+    
+    var groupLabel : UILabel?
+    
+    var reply : UIButton?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         
         // Initialization code
         
-        
-        
         self.backgroundColor =  UIColor.hexStringToUIColor("e9e9e9")
 
-        bottomBar!.backgroundColor = UIColor.hexStringToUIColor("247BA0").withAlphaComponent(0.9)
+        bottomBar!.backgroundColor = UIColor.hexStringToUIColor("247BA0").withAlphaComponent(0.75)
         bottomBar!.clipsToBounds = true
         cardBack.clipsToBounds = true
         react!.imageView?.contentMode = UIViewContentMode.scaleAspectFit
@@ -63,6 +69,7 @@ class BizCardTableViewCell: UITableViewCell {
         react!.imageEdgeInsets = UIEdgeInsets(top: 13, left: 12, bottom: 12, right: 12)
         comment!.imageEdgeInsets = UIEdgeInsets(top: 14, left: 12, bottom: 12, right: 12)
         react.addTarget(self, action: #selector(BizCardTableViewCell.state(gesture:)), for: UIControlEvents.touchUpInside)
+        
         self.backMoji.backgroundColor = UIColor.lightGray.withAlphaComponent(0.5)
         self.backMoji.layer.cornerRadius = 15
         self.cardBack.layer.masksToBounds = true
@@ -73,18 +80,26 @@ class BizCardTableViewCell: UITableViewCell {
         self.cardBack.clipsToBounds = false
         self.cardBack.layer.borderColor = UIColor.lightGray.cgColor
         self.cardBack.layer.borderWidth = 0.4
-       // self.cardBack.addSubview(bottomBar!)
-       // self.cardBack.sendSubview(toBack: bottomBar!)
         
-        let myView = LnikViewer.loadFromNibNamed(nibNamed: "LinkViewBox") as! LnikViewer
-        myView.linkImage.contentMode = UIViewContentMode.scaleAspectFill
-
-
+        let frame = CGRect(x: 50, y: 0, width: self.frame.width-100, height: 60)
+        groupLabel = UILabel(frame: frame)
+        groupLabel?.font = UIFont(name: "Raleway Regular", size: 13)
+        groupLabel?.textColor = UIColor.lightGray
+        groupLabel?.text = ""
+        self.contentView.addSubview(groupLabel!)
         
-        linkStack?.addArrangedSubview(myView)
-    }
+        reply = UIButton()
+        reply?.frame = CGRect(x: self.frame.width-50, y: 32, width: 50, height: 50)
+        reply?.titleLabel?.textAlignment = NSTextAlignment.right
+        reply?.titleLabel?.font = UIFont(name: "Raleway Light", size: 11)
+        reply?.setTitle("Reply", for: UIControlState.normal)
+        reply?.setTitleColor(UIColor.hexStringToUIColor("247BA0"), for: UIControlState.normal)
+        self.contentView.addSubview(reply!)
+
+          }
 
     override func layoutSubviews() {
+        reply?.frame = CGRect(x: self.frame.width-75, y: 30, width: 50, height: 50)
         self.cardSetup()
         react!.imageView?.contentMode = UIViewContentMode.scaleAspectFit
         super.layoutSubviews()
@@ -93,7 +108,6 @@ class BizCardTableViewCell: UITableViewCell {
         // bottom bar view
         let bottomFrame = CGRect(x: 0, y: self.frame.height-45, width: self.frame.width, height: 45)
         bottomBar = UIView(frame: bottomFrame)
-        
         
     }
     func showOptions() {
