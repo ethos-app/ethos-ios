@@ -111,21 +111,41 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 #endif
 #if defined(__has_feature) && __has_feature(modules)
 @import UIKit;
+@import FirebaseMessaging;
+@import UserNotifications;
 @import Foundation;
 @import CoreGraphics;
-@import FBSDKLoginKit;
 @import ObjectiveC;
+@import FBSDKLoginKit;
 #endif
 
 #pragma clang diagnostic ignored "-Wproperty-attribute-mismatch"
 #pragma clang diagnostic ignored "-Wduplicate-method-arg"
 @class UIWindow;
+@class Banner;
+@class UNUserNotificationCenter;
+@class UNNotification;
+@class FIRMessagingRemoteMessage;
 @class UIApplication;
+@class NSNotification;
 
 SWIFT_CLASS("_TtC5Ethos11AppDelegate")
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
+@interface AppDelegate : UIResponder <FIRMessagingDelegate, UIApplicationDelegate, UNUserNotificationCenterDelegate>
+/**
+  The callback to handle data message received via FCM for devices running iOS 10 or above.
+*/
 @property (nonatomic, strong) UIWindow * _Nullable window;
+@property (nonatomic) NSInteger post;
+@property (nonatomic, strong) Banner * _Nonnull banner;
+- (void)userNotificationCenterWithCenter:(UNUserNotificationCenter * _Nonnull)center willPresentNotification:(UNNotification * _Nonnull)notification withCompletionHandler:(void (^ _Nonnull)(UNNotificationPresentationOptions))completionHandler;
+- (void)applicationReceivedRemoteMessage:(FIRMessagingRemoteMessage * _Nonnull)remoteMessage;
+- (void)application:(UIApplication * _Nonnull)application didReceiveRemoteNotification:(NSDictionary * _Nonnull)userInfo;
+- (void)show;
+- (void)showPushInfoWithPostID:(NSInteger)postID;
 - (BOOL)application:(UIApplication * _Nonnull)application didFinishLaunchingWithOptions:(NSDictionary<UIApplicationLaunchOptionsKey, id> * _Nullable)launchOptions;
+- (void)tokenRefreshNotificationWithNotification:(NSNotification * _Nonnull)notification;
+- (void)connectToFcm;
+- (void)application:(UIApplication * _Nonnull)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData * _Nonnull)deviceToken;
 - (BOOL)application:(UIApplication * _Nonnull)application openURL:(NSURL * _Nonnull)url sourceApplication:(NSString * _Nullable)sourceApplication annotation:(id _Nonnull)annotation;
 - (void)applicationWillResignActive:(UIApplication * _Nonnull)application;
 - (void)applicationDidEnterBackground:(UIApplication * _Nonnull)application;
@@ -155,6 +175,8 @@ SWIFT_CLASS("_TtC5Ethos9BarButton")
 @class UIImageView;
 @class UIButton;
 @class UIStackView;
+@class URLEmbeddedView;
+@class EmojiBar;
 @class UIGestureRecognizer;
 
 SWIFT_CLASS("_TtC5Ethos20BizCardTableViewCell")
@@ -175,6 +197,10 @@ SWIFT_CLASS("_TtC5Ethos20BizCardTableViewCell")
 @property (nonatomic, strong) IBOutlet UIStackView * _Null_unspecified linkStack;
 @property (nonatomic, strong) IBOutlet UIImageView * _Null_unspecified linkImg;
 @property (nonatomic) NSInteger cellType;
+@property (nonatomic, strong) URLEmbeddedView * _Nullable linkEmbed;
+@property (nonatomic, strong) UILabel * _Nullable groupLabel;
+@property (nonatomic, strong) EmojiBar * _Nullable emojiList;
+@property (nonatomic, strong) UIButton * _Nullable reply;
 - (void)awakeFromNib;
 - (void)layoutSubviews;
 - (void)cardSetup;
@@ -188,33 +214,13 @@ SWIFT_CLASS("_TtC5Ethos20BizCardTableViewCell")
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 @end
 
-@class CardView;
 
-SWIFT_PROTOCOL("_TtP5Ethos16CardViewDelegate_")
-@protocol CardViewDelegate
+SWIFT_PROTOCOL("_TtP5Ethos17ImageSeekDelegate_")
+@protocol ImageSeekDelegate
+- (void)showImagePicker;
+- (void)imageCancelled;
 @optional
-- (void)willBeginSwipeInCard:(CardView * _Nonnull)card;
-- (void)didEndSwipeInCard:(CardView * _Nonnull)card;
-- (void)didCancelSwipeInCard:(CardView * _Nonnull)card;
-- (void)swipedLeftInCard:(CardView * _Nonnull)card;
-- (void)swipedRightInCard:(CardView * _Nonnull)card;
-- (void)swipedUpInCard:(CardView * _Nonnull)card;
-- (void)swipedDownInCard:(CardView * _Nonnull)card;
-- (void)wasTouchedDownInCard:(CardView * _Nonnull)card;
-- (void)didChangeStateInCard:(CardView * _Nonnull)card;
-@required
-- (BOOL)shouldMoveCard:(CardView * _Nonnull)card;
-@end
-
-
-SWIFT_CLASS("_TtC5Ethos17CardContainerView")
-@interface CardContainerView : UIView <CardViewDelegate>
-- (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
-- (nonnull instancetype)init;
-- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
-- (void)setupCards;
-- (void)addCard;
-- (BOOL)shouldMoveCard:(CardView * _Nonnull)card;
+- (void)postPress;
 @end
 
 @class NSMutableArray;
@@ -223,13 +229,16 @@ SWIFT_CLASS("_TtC5Ethos17CardContainerView")
 @class DKImagePickerController;
 @class NSArray;
 @class UIRefreshControl;
+@class UIScrollView;
 @class UILongPressGestureRecognizer;
 @class UITextView;
 @class UIImagePickerController;
+@class PostCard;
+@class UITabBarController;
 @class NSBundle;
 
 SWIFT_CLASS("_TtC5Ethos28CardStackTableViewController")
-@interface CardStackTableViewController : UIViewController <UIScrollViewDelegate, UITableViewDataSource, CardViewDelegate, UITextViewDelegate, UIGestureRecognizerDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITableViewDelegate>
+@interface CardStackTableViewController : UIViewController <ImageSeekDelegate, UINavigationControllerDelegate, UIScrollViewDelegate, UIImagePickerControllerDelegate, UIGestureRecognizerDelegate, UITabBarControllerDelegate, UITextViewDelegate, UITableViewDataSource, UITableViewDelegate>
 @property (nonatomic, copy) NSString * _Nonnull ethosAuth;
 @property (nonatomic, copy) NSString * _Nonnull id;
 @property (nonatomic, strong) NSMutableArray * _Nullable cardsToShow;
@@ -238,23 +247,27 @@ SWIFT_CLASS("_TtC5Ethos28CardStackTableViewController")
 @property (nonatomic, strong) IBOutlet BarButton * _Null_unspecified netButton;
 @property (nonatomic, strong) IBOutlet UITableView * _Null_unspecified tableView;
 @property (nonatomic) NSInteger segment;
-@property (nonatomic, strong) CardContainerView * _Nullable cardView;
 @property (nonatomic, strong) IBOutlet PostBox * _Null_unspecified postBox;
 @property (nonatomic) BOOL showingImage;
 @property (nonatomic) BOOL writingPost;
 @property (nonatomic, strong) UIImage * _Nullable uplaodImage;
 @property (nonatomic) NSInteger postType;
+@property (nonatomic) BOOL attemptingLoad;
 @property (nonatomic, strong) DKImagePickerController * _Nullable picker;
+@property (nonatomic) NSInteger loadNext;
+@property (nonatomic) BOOL posting;
 - (void)viewDidLoad;
+- (void)showWithPostI:(NSNotification * _Nonnull)postI;
 - (void)postFriends:(NSArray * _Nonnull)string;
 - (void)refreshContent:(UIRefreshControl * _Nonnull)refreshControl;
 - (void)updateFriends;
+- (void)startFirebase;
 - (void)verifyToken;
 - (void)viewWillAppear:(BOOL)animated;
-- (BOOL)shouldMoveCard:(CardView * _Nonnull)card;
 - (void)viewDidAppear:(BOOL)animated;
 - (void)updatePosts:(NSArray * _Nonnull)array;
 - (void)getPosts;
+- (void)nextPostsWithPage:(NSInteger)page;
 - (void)post;
 - (void)selectCards;
 - (void)selectNet;
@@ -263,9 +276,161 @@ SWIFT_CLASS("_TtC5Ethos28CardStackTableViewController")
 - (void)didReceiveMemoryWarning;
 - (void)showPostAt:(NSInteger)at;
 - (void)like:(UIGestureRecognizer * _Nonnull)sender;
+- (void)scrollViewDidScroll:(UIScrollView * _Nonnull)scrollView;
 - (NSInteger)numberOfSectionsInTableView:(UITableView * _Nonnull)tableView;
 - (NSInteger)tableView:(UITableView * _Nonnull)tableView numberOfRowsInSection:(NSInteger)section;
-- (void)showOptions;
+- (void)showOptionsWithSender:(UILabel * _Nonnull)sender;
+- (void)zoomModalPic:(UIGestureRecognizer * _Nonnull)image;
+- (void)dismissModalImage:(UILongPressGestureRecognizer * _Nonnull)recognizer;
+- (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer * _Nonnull)gestureRecognizer;
+- (BOOL)gestureRecognizer:(UIGestureRecognizer * _Nonnull)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer * _Nonnull)otherGestureRecognizer;
+- (void)expand:(UIGestureRecognizer * _Nonnull)sender;
+- (void)commentPressedWithRec:(UIGestureRecognizer * _Nonnull)rec;
+- (void)showLinkWithRec:(UIGestureRecognizer * _Nonnull)rec;
+- (void)openLinkWithUrl:(NSURL * _Nonnull)url;
+- (UITableViewCell * _Nonnull)tableView:(UITableView * _Nonnull)tableView cellForRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath;
+- (void)tableView:(UITableView * _Nonnull)tableView didSelectRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath;
+- (void)textViewDidBeginEditing:(UITextView * _Nonnull)textView;
+- (void)stopWritingPost;
+- (void)imageCancelled;
+- (void)showImagePicker;
+- (BOOL)canOpenURLWithString:(NSString * _Nullable)string;
+- (void)imagePickerController:(UIImagePickerController * _Nonnull)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *, id> * _Nonnull)info;
+- (void)getOptionsWithSender:(UIButton * _Nonnull)sender;
+- (void)deleteWithPost:(NSInteger)post;
+- (void)blockWithUserID:(NSInteger)userID;
+- (void)reportWithPost:(PostCard * _Nonnull)post;
+- (void)shareWithIndex:(NSInteger)index;
+- (void)tabBarController:(UITabBarController * _Nonnull)tabBarController didSelectViewController:(UIViewController * _Nonnull)viewController;
+- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+SWIFT_CLASS("_TtC5Ethos8EmojiBar")
+@interface EmojiBar : UIView
+@property (nonatomic, strong) IBOutlet UIImageView * _Null_unspecified emoji1;
+@property (nonatomic, strong) IBOutlet UIImageView * _Null_unspecified emoji2;
+@property (nonatomic, strong) IBOutlet UIImageView * _Null_unspecified emoji3;
+- (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+SWIFT_CLASS("_TtC5Ethos8EthosAPI")
+@interface EthosAPI : NSObject
+@property (nonatomic, copy) NSDictionary<NSString *, id> * _Nullable headers;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) EthosAPI * _Nonnull shared;)
++ (EthosAPI * _Nonnull)shared;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, copy) NSString * _Nonnull ethosAuth;)
++ (NSString * _Nonnull)ethosAuth;
++ (void)setEthosAuth:(NSString * _Nonnull)value;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, copy) NSString * _Nonnull id;)
++ (NSString * _Nonnull)id;
++ (void)setId:(NSString * _Nonnull)value;
+- (void)registerAPIWithEthosKey:(NSString * _Nonnull)ethosKey id:(NSString * _Nonnull)id;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+SWIFT_CLASS("_TtC5Ethos9GroupCard")
+@interface GroupCard : NSObject
+@property (nonatomic) NSInteger groupID;
+@property (nonatomic, copy) NSString * _Nonnull groupTitle;
+@property (nonatomic, copy) NSString * _Nonnull groupDesc;
+@property (nonatomic, copy) NSString * _Nonnull groupImg;
+@property (nonatomic) NSInteger groupOwner;
+@property (nonatomic) NSInteger groupType;
+@property (nonatomic) BOOL isOwner;
+@property (nonatomic) BOOL isModerator;
+@property (nonatomic) BOOL isFeatured;
+- (nonnull instancetype)initWithId:(NSInteger)id OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
+@end
+
+
+SWIFT_CLASS("_TtC5Ethos18GroupTableViewCell")
+@interface GroupTableViewCell : UITableViewCell
+@property (nonatomic, strong) IBOutlet UIImageView * _Null_unspecified groupImg;
+@property (nonatomic, strong) IBOutlet UILabel * _Null_unspecified groupTitle;
+@property (nonatomic, strong) IBOutlet UILabel * _Null_unspecified groupDesc;
+@property (nonatomic, strong) IBOutlet UIImageView * _Null_unspecified mod;
+@property (nonatomic, strong) IBOutlet UIView * _Null_unspecified cardBack;
+- (void)awakeFromNib;
+- (void)setSelected:(BOOL)selected animated:(BOOL)animated;
+- (nonnull instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString * _Nullable)reuseIdentifier OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+SWIFT_CLASS("_TtC5Ethos24GroupTableViewController")
+@interface GroupTableViewController : UITableViewController
+@property (nonatomic, copy) NSString * _Nonnull ethosAuth;
+@property (nonatomic, copy) NSString * _Nonnull id;
+@property (nonatomic, strong) NSMutableArray * _Nullable groups;
+- (void)viewDidLoad;
+- (void)verifyToken;
+- (void)viewWillAppear:(BOOL)animated;
+- (void)getGroups;
+- (void)updateWithGroups:(NSArray * _Nonnull)groups;
+- (void)didReceiveMemoryWarning;
+- (void)showWithGroup:(NSInteger)group card:(GroupCard * _Nonnull)card;
+- (NSInteger)numberOfSectionsInTableView:(UITableView * _Nonnull)tableView;
+- (NSInteger)tableView:(UITableView * _Nonnull)tableView numberOfRowsInSection:(NSInteger)section;
+- (UITableViewCell * _Nonnull)tableView:(UITableView * _Nonnull)tableView cellForRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath;
+- (CGFloat)tableView:(UITableView * _Nonnull)tableView heightForRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath;
+- (void)tableView:(UITableView * _Nonnull)tableView didSelectRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath;
+- (nonnull instancetype)initWithStyle:(UITableViewStyle)style OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+SWIFT_CLASS("_TtC5Ethos19GroupViewController")
+@interface GroupViewController : UIViewController <ImageSeekDelegate, UINavigationControllerDelegate, UIScrollViewDelegate, UIImagePickerControllerDelegate, UIGestureRecognizerDelegate, UITabBarControllerDelegate, UITextViewDelegate, UITableViewDataSource, UITableViewDelegate>
+@property (nonatomic, copy) NSString * _Nonnull ethosAuth;
+@property (nonatomic, copy) NSString * _Nonnull id;
+@property (nonatomic, strong) NSMutableArray * _Nullable cardsToShow;
+@property (nonatomic, strong) IBOutlet UIView * _Null_unspecified bar;
+@property (nonatomic, strong) IBOutlet BarButton * _Null_unspecified cardsButton;
+@property (nonatomic, strong) IBOutlet BarButton * _Null_unspecified netButton;
+@property (nonatomic, strong) IBOutlet UITableView * _Null_unspecified tableView;
+@property (nonatomic) NSInteger segment;
+@property (nonatomic, strong) IBOutlet PostBox * _Null_unspecified postBox;
+@property (nonatomic) BOOL showingImage;
+@property (nonatomic) BOOL writingPost;
+@property (nonatomic, strong) UIImage * _Nullable uplaodImage;
+@property (nonatomic) NSInteger postType;
+@property (nonatomic) BOOL attemptingLoad;
+@property (nonatomic, strong) DKImagePickerController * _Nullable picker;
+@property (nonatomic) NSInteger loadNext;
+@property (nonatomic) NSInteger showID;
+@property (nonatomic, strong) GroupCard * _Nullable groupCard;
+@property (nonatomic, strong) UIImageView * _Nullable groupImg;
+- (void)viewDidLoad;
+- (void)showWithPostI:(NSNotification * _Nonnull)postI;
+- (void)postFriends:(NSArray * _Nonnull)string;
+- (void)refreshContent:(UIRefreshControl * _Nonnull)refreshControl;
+- (void)updateFriends;
+- (void)startFirebase;
+- (void)verifyToken;
+- (void)viewWillAppear:(BOOL)animated;
+- (void)viewDidAppear:(BOOL)animated;
+- (void)updatePosts:(NSArray * _Nonnull)array;
+- (void)getPosts;
+- (void)nextPostsWithPage:(NSInteger)page;
+- (void)post;
+- (void)selectCards;
+- (void)selectNet;
+@property (nonatomic, readonly) UIStatusBarStyle preferredStatusBarStyle;
+@property (nonatomic, readonly) BOOL prefersStatusBarHidden;
+- (void)didReceiveMemoryWarning;
+- (void)showPostAt:(NSInteger)at;
+- (void)like:(UIGestureRecognizer * _Nonnull)sender;
+- (void)scrollViewDidScroll:(UIScrollView * _Nonnull)scrollView;
+- (NSInteger)numberOfSectionsInTableView:(UITableView * _Nonnull)tableView;
+- (NSInteger)tableView:(UITableView * _Nonnull)tableView numberOfRowsInSection:(NSInteger)section;
+- (void)showOptionsWithSender:(UILabel * _Nonnull)sender;
 - (void)zoomModalPic:(UIGestureRecognizer * _Nonnull)image;
 - (void)dismissModalImage:(UILongPressGestureRecognizer * _Nonnull)recognizer;
 - (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer * _Nonnull)gestureRecognizer;
@@ -280,54 +445,16 @@ SWIFT_CLASS("_TtC5Ethos28CardStackTableViewController")
 - (void)showImagePicker;
 - (BOOL)canOpenURLWithString:(NSString * _Nullable)string;
 - (void)imagePickerController:(UIImagePickerController * _Nonnull)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *, id> * _Nonnull)info;
+- (void)getOptionsWithSender:(UIButton * _Nonnull)sender;
+- (void)deleteWithPost:(NSInteger)post;
+- (void)blockWithUserID:(NSInteger)userID;
+- (void)reportWithPost:(PostCard * _Nonnull)post;
+- (void)shareWithIndex:(NSInteger)index;
+- (void)tabBarController:(UITabBarController * _Nonnull)tabBarController didSelectViewController:(UIViewController * _Nonnull)viewController;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 @end
 
-
-SWIFT_CLASS("_TtC5Ethos8CardView")
-@interface CardView : UIView
-@property (nonatomic) CGFloat xFromCenter;
-@property (nonatomic) CGFloat yFromCenter;
-@property (nonatomic) CGPoint originalPoint;
-@property (nonatomic, strong) id <CardViewDelegate> _Nonnull delegate;
-- (nonnull instancetype)initWithFrame:(CGRect)frame delegate:(id <CardViewDelegate> _Nonnull)delegate OBJC_DESIGNATED_INITIALIZER;
-- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
-- (void)swipeLeft;
-- (void)swipeRight;
-- (void)swipeUp;
-- (void)swipeDown;
-- (void)cancelSwipe;
-- (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
-@end
-
-
-@class UICollectionViewLayout;
-
-SWIFT_CLASS("_TtC5Ethos15EmojiSelectView")
-@interface EmojiSelectView : UICollectionView
-- (nonnull instancetype)initWithFrame:(CGRect)frame collectionViewLayout:(UICollectionViewLayout * _Nonnull)layout OBJC_DESIGNATED_INITIALIZER;
-- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
-@end
-
-@class PostCard;
-
-SWIFT_CLASS("_TtC5Ethos27FullPostTableViewController")
-@interface FullPostTableViewController : UIViewController <UIScrollViewDelegate, UITableViewDataSource, UITableViewDelegate>
-@property (nonatomic, strong) PostCard * _Nullable oPost;
-@property (nonatomic, strong) IBOutlet UITableView * _Null_unspecified commentTable;
-- (void)viewDidLoad;
-- (void)viewDidAppear:(BOOL)animated;
-- (UIView * _Nullable)tableView:(UITableView * _Nonnull)tableView viewForHeaderInSection:(NSInteger)section;
-- (CGFloat)tableView:(UITableView * _Nonnull)tableView heightForHeaderInSection:(NSInteger)section;
-- (void)tableView:(UITableView * _Nonnull)tableView didSelectRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath;
-- (void)tableView:(UITableView * _Nonnull)tableView willDisplayCell:(UITableViewCell * _Nonnull)cell forRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath;
-- (UITableViewCell * _Nonnull)tableView:(UITableView * _Nonnull)tableView cellForRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath;
-- (CGFloat)tableView:(UITableView * _Nonnull)tableView heightForRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath;
-- (NSInteger)tableView:(UITableView * _Nonnull)tableView numberOfRowsInSection:(NSInteger)section;
-- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
-- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
-@end
 
 
 SWIFT_CLASS("_TtC5Ethos10LnikViewer")
@@ -341,6 +468,7 @@ SWIFT_CLASS("_TtC5Ethos10LnikViewer")
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 @end
 
+@class UICollectionView;
 @class UICollectionViewCell;
 @class FBSDKLoginButton;
 @class FBSDKLoginManagerLoginResult;
@@ -366,15 +494,28 @@ SWIFT_CLASS("_TtC5Ethos19LoginViewController")
 @end
 
 
+SWIFT_CLASS("_TtC5Ethos18NotifTableViewCell")
+@interface NotifTableViewCell : UITableViewCell
+@property (nonatomic, strong) IBOutlet UIImageView * _Null_unspecified previewImg;
+@property (nonatomic, strong) IBOutlet UILabel * _Null_unspecified label;
+@property (nonatomic, strong) IBOutlet UIImageView * _Null_unspecified emoji;
+- (void)awakeFromNib;
+- (void)setSelected:(BOOL)selected animated:(BOOL)animated;
+- (nonnull instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString * _Nullable)reuseIdentifier OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
 SWIFT_CLASS("_TtC5Ethos25NotifyTableViewController")
-@interface NotifyTableViewController : UITableViewController <CardViewDelegate, UITextViewDelegate>
+@interface NotifyTableViewController : UITableViewController <UITextViewDelegate>
 @property (nonatomic, strong) NSMutableArray * _Nullable notifications;
 @property (nonatomic, strong) IBOutlet UIView * _Null_unspecified bar;
 @property (nonatomic, copy) NSString * _Nonnull ethosAuth;
 @property (nonatomic, copy) NSString * _Nonnull id;
 - (void)viewDidLoad;
-- (BOOL)shouldMoveCard:(CardView * _Nonnull)card;
+- (void)viewWillAppear:(BOOL)animated;
 - (void)getNotifications;
+- (void)read;
 - (void)viewDidAppear:(BOOL)animated;
 - (void)updateNotesWithNotes:(NSArray * _Nonnull)notes;
 @property (nonatomic, readonly) UIStatusBarStyle preferredStatusBarStyle;
@@ -404,7 +545,8 @@ SWIFT_CLASS("_TtC5Ethos6OPCard")
 
 
 SWIFT_CLASS("_TtC5Ethos21OneCardViewController")
-@interface OneCardViewController : UIViewController <UIScrollViewDelegate, UITableViewDataSource, CardViewDelegate, UITextViewDelegate, UIGestureRecognizerDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITableViewDelegate>
+@interface OneCardViewController : UIViewController <ImageSeekDelegate, UIImagePickerControllerDelegate, UIGestureRecognizerDelegate, UIScrollViewDelegate, UINavigationControllerDelegate, UITextViewDelegate, UITableViewDataSource, UITableViewDelegate>
+@property (nonatomic) BOOL loading;
 @property (nonatomic, copy) NSString * _Nonnull ethosAuth;
 @property (nonatomic, copy) NSString * _Nonnull id;
 @property (nonatomic, strong) NSMutableArray * _Nullable cardsToShow;
@@ -413,7 +555,6 @@ SWIFT_CLASS("_TtC5Ethos21OneCardViewController")
 @property (nonatomic, strong) IBOutlet BarButton * _Null_unspecified netButton;
 @property (nonatomic, strong) IBOutlet UITableView * _Null_unspecified tableView;
 @property (nonatomic) NSInteger segment;
-@property (nonatomic, strong) CardContainerView * _Nullable cardView;
 @property (nonatomic, strong) IBOutlet PostBox * _Null_unspecified postBox;
 @property (nonatomic) BOOL showingImage;
 @property (nonatomic) BOOL writingPost;
@@ -421,14 +562,18 @@ SWIFT_CLASS("_TtC5Ethos21OneCardViewController")
 @property (nonatomic) NSInteger postType;
 @property (nonatomic, strong) DKImagePickerController * _Nullable picker;
 @property (nonatomic, strong) PostCard * _Nullable oPost;
+@property (nonatomic, strong) PostBox * _Nullable box;
 @property (nonatomic, strong) IBOutlet UITableView * _Null_unspecified comments;
+@property (nonatomic, strong) NSMutableArray * _Nonnull replyTo;
+@property (nonatomic, strong) NSMutableArray * _Nonnull replyEmoji;
+@property (nonatomic, strong) EmojiBar * _Nullable emojiBar;
+@property (nonatomic, readonly, strong) UIView * _Nullable inputAccessoryView;
+@property (nonatomic, readonly) BOOL canBecomeFirstResponder;
 - (void)viewDidLoad;
 - (void)postFriends:(NSArray * _Nonnull)string;
 - (void)refreshContent:(UIRefreshControl * _Nonnull)refreshControl;
-- (void)updateFriends;
 - (void)verifyToken;
 - (void)viewWillAppear:(BOOL)animated;
-- (BOOL)shouldMoveCard:(CardView * _Nonnull)card;
 - (void)viewDidAppear:(BOOL)animated;
 - (void)updatePosts:(NSArray * _Nonnull)array;
 - (void)getPosts;
@@ -443,21 +588,33 @@ SWIFT_CLASS("_TtC5Ethos21OneCardViewController")
 - (void)like:(UIGestureRecognizer * _Nonnull)sender;
 - (NSInteger)numberOfSectionsInTableView:(UITableView * _Nonnull)tableView;
 - (NSInteger)tableView:(UITableView * _Nonnull)tableView numberOfRowsInSection:(NSInteger)section;
-- (void)showOptions;
+- (void)showOptionsWithSender:(UILabel * _Nonnull)sender;
 - (void)zoomModalPic:(UIGestureRecognizer * _Nonnull)image;
 - (void)dismissModalImage:(UILongPressGestureRecognizer * _Nonnull)recognizer;
 - (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer * _Nonnull)gestureRecognizer;
 - (BOOL)gestureRecognizer:(UIGestureRecognizer * _Nonnull)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer * _Nonnull)otherGestureRecognizer;
 - (void)expand:(UIGestureRecognizer * _Nonnull)sender;
 - (void)commentPressedWithRec:(UIGestureRecognizer * _Nonnull)rec;
+- (void)showLinkWithRec:(UIGestureRecognizer * _Nonnull)rec;
+- (void)openLinkWithUrl:(NSURL * _Nonnull)url;
 - (UITableViewCell * _Nonnull)tableView:(UITableView * _Nonnull)tableView cellForRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath;
 - (void)tableView:(UITableView * _Nonnull)tableView didSelectRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath;
 - (void)textViewDidBeginEditing:(UITextView * _Nonnull)textView;
+- (void)textViewDidChange:(UITextView * _Nonnull)textView;
+- (void)textViewDidEndEditing:(UITextView * _Nonnull)textView;
+- (void)showEmojiBar;
+- (void)replyWithButton:(UIButton * _Nonnull)button;
 - (void)stopWritingPost;
 - (void)imageCancelled;
 - (void)showImagePicker;
+- (void)postPress;
 - (BOOL)canOpenURLWithString:(NSString * _Nullable)string;
 - (void)imagePickerController:(UIImagePickerController * _Nonnull)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *, id> * _Nonnull)info;
+- (void)share;
+- (void)deleteWithPost:(NSInteger)post;
+- (void)blockWithUserID:(NSInteger)userID;
+- (void)reportWithPost:(PostCard * _Nonnull)post;
+- (void)scrollViewDidScroll:(UIScrollView * _Nonnull)scrollView;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 @end
@@ -465,12 +622,16 @@ SWIFT_CLASS("_TtC5Ethos21OneCardViewController")
 
 SWIFT_CLASS("_TtC5Ethos7PostBox")
 @interface PostBox : UIView
-@property (nonatomic, strong) UIImageView * _Nullable pickButton;
+@property (nonatomic, strong) UIButton * _Nullable pickButton;
+@property (nonatomic, strong) UIButton * _Nullable sendButton;
 @property (nonatomic, strong) UITextView * _Nullable textView;
 @property (nonatomic, strong) UIButton * _Nullable cancelMedia;
+@property (nonatomic, weak) id <ImageSeekDelegate> _Nullable delegate;
 - (void)drawRect:(CGRect)rect;
+- (void)postPressed;
 - (void)restorePicker;
 - (void)showPicker;
+- (void)prepareWrite;
 - (void)resetText;
 - (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
@@ -488,8 +649,8 @@ SWIFT_CLASS("_TtC5Ethos8PostCard")
 @property (nonatomic) NSInteger groupID;
 @property (nonatomic) NSInteger postID;
 @property (nonatomic) NSInteger posterID;
-@property (nonatomic) NSInteger likeCount;
-@property (nonatomic) NSInteger commentCount;
+@property (nonatomic, copy) NSString * _Nonnull likeCount;
+@property (nonatomic, copy) NSString * _Nonnull commentCount;
 @property (nonatomic) NSInteger userLiked;
 @property (nonatomic) NSInteger userOwned;
 @property (nonatomic, copy) NSString * _Nonnull date;
@@ -503,6 +664,12 @@ SWIFT_CLASS("_TtC5Ethos8PostCard")
 @property (nonatomic, copy) NSString * _Nonnull message;
 @property (nonatomic, copy) NSString * _Nonnull alertId;
 @property (nonatomic, copy) NSString * _Nonnull contentAlert;
+@property (nonatomic) BOOL userRead;
+@property (nonatomic) BOOL isEthos;
+@property (nonatomic) NSInteger notifyUserID;
+@property (nonatomic, copy) NSString * _Nonnull groupString;
+@property (nonatomic, strong) NSMutableArray * _Nonnull replyTo;
+@property (nonatomic, strong) NSArray * _Nonnull responseToEmojis;
 - (nonnull instancetype)initWithPosterEmoji:(NSString * _Nonnull)posterEmoji userText:(NSString * _Nonnull)userText type:(NSInteger)type OBJC_DESIGNATED_INITIALIZER;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 @end

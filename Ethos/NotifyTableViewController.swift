@@ -57,12 +57,10 @@ class NotifyTableViewController: UITableViewController, UITextViewDelegate {
     }
 
     func getNotifications() {
-        print(ethosAuth)
-        print(id)
+      
         let headers = ["Accept":"application/json","Content-Type":"application/json","X-Ethos-Auth":"\(ethosAuth)", "X-Facebook-Id":"\(id)"]
         Alamofire.request("http://meetethos.azurewebsites.net/api/Alerts", method: .get, parameters: nil, encoding: JSONEncoding.default, headers: headers)
             .responseJSON { (response) in
-                print(response)
                 self.notifications?.removeAllObjects()
                 if let array = response.result.value as? NSDictionary {
                 let post = array.object(forKey: "selectedAlerts")
@@ -76,7 +74,6 @@ class NotifyTableViewController: UITableViewController, UITextViewDelegate {
         let headers = ["Accept":"application/json","Content-Type":"application/json","X-Ethos-Auth":"\(ethosAuth)", "X-Facebook-Id":"\(id)"]
         Alamofire.request("http://meetethos.azurewebsites.net/api/Alerts/ReadAlerts", method: .get, parameters: nil, encoding: JSONEncoding.default, headers: headers)
             .responseJSON { (response) in
-                print(response)
           
         }
 
@@ -107,7 +104,6 @@ class NotifyTableViewController: UITableViewController, UITextViewDelegate {
                 dataCard.content = content
             }
             let dateString = dict.object(forKey: "DateCreated") as! String
-            print(dateString)
             let format = DateFormatter()
             format.timeZone = TimeZone(secondsFromGMT: 0)
             format.dateFormat = "yyyy'-'MM'-'dd'T'HH':'mm':'ss'.'SSS'Z'"
@@ -190,7 +186,6 @@ class NotifyTableViewController: UITableViewController, UITextViewDelegate {
         let postController = self.storyboard?.instantiateViewController(withIdentifier: "single") as! OneCardViewController
         postController.postID = selected
         self.navigationController?.pushViewController(postController, animated: true)
-
         
         // Present from CardsViewController
 //        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "requestPost"), object: selected)

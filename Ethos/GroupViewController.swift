@@ -89,7 +89,6 @@ class GroupViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     func show(postI : NSNotification) {
-        print("YEAh")
         let num = postI.object!
         let postController = self.storyboard?.instantiateViewController(withIdentifier: "single") as! OneCardViewController
         self.navigationController?.popToRootViewController(animated: true)
@@ -103,7 +102,6 @@ class GroupViewController: UIViewController, UITableViewDelegate, UITableViewDat
         let headers = ["Accept":"application/json","Content-Type":"application/json","X-Ethos-Auth":"\(ethosAuth)", "X-Facebook-Id":"\(id)"]
         Alamofire.request("http://meetethos.azurewebsites.net/api/Users/Me/Friends", method: .put, parameters: ["friendsList" : string], encoding: JSONEncoding.default, headers: headers)
             .responseJSON { (response) in
-                print(response)
         }
     }
     func refreshContent(_ refreshControl : UIRefreshControl) {
@@ -116,8 +114,7 @@ class GroupViewController: UIViewController, UITableViewDelegate, UITableViewDat
         //let friendsRequest = FBSDKGraphRequest(graphPath: "me/friends", parameters: nil, tokenString:ethosAuth, version: nil, HTTPMethod: nil)
         let friendsRequest = FBSDKGraphRequest(graphPath: "me/friends", parameters: nil)
         friendsRequest?.start { (connection, object, error) in
-            print(error)
-            print(object)
+     
             if error == nil {
                 let myObject = object as! NSDictionary
                 let data = myObject.object(forKey: "data") as! NSArray
@@ -139,17 +136,13 @@ class GroupViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     func startFirebase() {
         if let token = FIRInstanceID.instanceID().token() {
-            print("REGISTER")
             let headers = ["Accept":"application/json","Content-Type":"application/json","X-Ethos-Auth":ethosAuth, "X-Facebook-Id":"\(id)"]
             Alamofire.request("http://meetethos.azurewebsites.net/api/Users/Me/FirebaseToken", method: .put,parameters: ["FirebaseToken":token], encoding: JSONEncoding.default, headers: headers)
                 .responseJSON { (response) in
-                    print(response)
-                    print("DONE")
             }
         }
     }
     func verifyToken() {
-        print("VERIFYING")
         if let token = UserDefaults.standard.object(forKey: "token") as? String {
             if let id = UserDefaults.standard.object(forKey: "id") as? String {
                 self.ethosAuth = token
@@ -161,16 +154,11 @@ class GroupViewController: UIViewController, UITableViewDelegate, UITableViewDat
         let headers = ["Accept":"application/json","Content-Type":"application/json","X-Ethos-Auth":ethosAuth, "X-Facebook-Id":"\(id)"]
         Alamofire.request("http://meetethos.azurewebsites.net/api/Users/AuthChecker", method: .get,parameters: nil, encoding: JSONEncoding.default, headers: headers)
             .responseJSON { (response) in
-                print(response)
                 if let status = response.result.value as? NSDictionary {
-                    print(status)
                     let ok = status.object(forKey: "status") as! String
-                    print(ok)
-                    print("YES")
                     if ok == "ok" {
                         self.updateFriends()
                         self.getPosts()
-                        print("GOT POSTS")
                     } else {
                         // Fail
                         FBSDKAccessToken.setCurrent(nil)
@@ -229,7 +217,6 @@ class GroupViewController: UIViewController, UITableViewDelegate, UITableViewDat
                 dataCard.content = content
             }
             let dateString = dict.object(forKey: "DateCreated") as! String
-            print(dateString)
             let format = DateFormatter()
             format.timeZone = TimeZone(secondsFromGMT: 0)
             format.dateFormat = "yyyy'-'MM'-'dd'T'HH':'mm':'ss'.'SSS'Z'"
@@ -247,7 +234,6 @@ class GroupViewController: UIViewController, UITableViewDelegate, UITableViewDat
         self.tableView.reloadData()
     }
     func getPosts() {
-        print("GET POSTS")
         if cardsToShow?.count == 0 {
             let view = MRProgressOverlayView.showOverlayAdded(to: self.view, title: "", mode: MRProgressOverlayViewMode.indeterminate, animated: true)
             view?.backgroundColor = UIColor.hexStringToUIColor("c9c9c9")
@@ -257,14 +243,13 @@ class GroupViewController: UIViewController, UITableViewDelegate, UITableViewDat
         let headers = ["Accept":"application/json","Content-Type":"application/json","X-Ethos-Auth":"\(ethosAuth)", "X-Facebook-Id":"\(id)"]
         Alamofire.request("http://meetethos.azurewebsites.net/api/Posts?groupId=\(showID)&page=\(1)", method: .get, parameters: nil, encoding: JSONEncoding.default, headers: headers)
             .responseJSON { (response) in
-                print(response)
                 self.loadNext = 1
                 self.cardsToShow?.removeAllObjects()
                 
                 MRProgressOverlayView.dismissAllOverlays(for: self.view, animated: true)
                 if let array = response.result.value as? NSDictionary {
                     if let posts = array.object(forKey: "selectedPosts") as? NSArray {
-                        print(posts)
+
                         self.updatePosts(posts)
                     } else {
                         MRProgressOverlayView.dismissAllOverlays(for: self.view, animated: true)
@@ -274,7 +259,6 @@ class GroupViewController: UIViewController, UITableViewDelegate, UITableViewDat
         }
     }
     func nextPosts(page : Int) {
-        print("GET POSTS")
         if cardsToShow?.count == 0 {
             let view = MRProgressOverlayView.showOverlayAdded(to: self.view, title: "", mode: MRProgressOverlayViewMode.indeterminate, animated: true)
             view?.backgroundColor = UIColor.hexStringToUIColor("c9c9c9")
@@ -284,12 +268,10 @@ class GroupViewController: UIViewController, UITableViewDelegate, UITableViewDat
         let headers = ["Accept":"application/json","Content-Type":"application/json","X-Ethos-Auth":"\(ethosAuth)", "X-Facebook-Id":"\(id)"]
         Alamofire.request("http://meetethos.azurewebsites.net/api/Posts?page=\(page)", method: .get, parameters: nil, encoding: JSONEncoding.default, headers: headers)
             .responseJSON { (response) in
-                print(response)
                 
                 MRProgressOverlayView.dismissAllOverlays(for: self.view, animated: true)
                 if let array = response.result.value as? NSDictionary {
                     if let posts = array.object(forKey: "selectedPosts") as? NSArray {
-                        print(posts)
                         self.updatePosts(posts)
                         self.loadNext += 1;
                         self.attemptingLoad = false
@@ -308,14 +290,12 @@ class GroupViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
         // detect if link post |  Type = 1
         if ((content?.lowercased().range(of: "http://")) != nil)  || ((content?.lowercased().range(of: "www.")) != nil) {
-            print("yep")
             content = content?.lowercased()
             let detector = try! NSDataDetector(types: NSTextCheckingResult.CheckingType.link.rawValue)
             let matches = detector.matches(in: content!, options: [], range: NSRange(location: 0, length: content!.utf16.count))
             let linkRange = matches.first
             let contentString = NSString(string: content!)
             let link = contentString.substring(with: linkRange!.range)
-            print(link)
             mediaContent = link
             content = content?.replacingOccurrences(of: link, with: "")
             postType = 1
@@ -331,7 +311,6 @@ class GroupViewController: UIViewController, UITableViewDelegate, UITableViewDat
         let params : [String : AnyObject] = ["UserText" : content! as AnyObject , "Content" : mediaContent as AnyObject, "PostType" : postType as AnyObject, "GroupId":"\(showID)" as AnyObject]
         Alamofire.request("http://meetethos.azurewebsites.net/api/Posts/Create", method: .post,parameters: params, encoding: JSONEncoding.default, headers: headers)
             .responseJSON { (response) in
-                print(response)
                 self.postBox.resetText()
                 self.stopWritingPost()
                 self.getPosts()
@@ -395,7 +374,6 @@ class GroupViewController: UIViewController, UITableViewDelegate, UITableViewDat
             let params : [String : AnyObject] = ["LikeType" : "0" as AnyObject, "PostId" : postID as AnyObject]
             Alamofire.request("http://meetethos.azurewebsites.net/api/Likes/New", method: .post, parameters: params, encoding: JSONEncoding.default, headers: headers)
                 .responseJSON { (response) in
-                    print(response)
             }
         } else {
             // post already liked, unlike post
@@ -403,7 +381,6 @@ class GroupViewController: UIViewController, UITableViewDelegate, UITableViewDat
             
             Alamofire.request("http://meetethos.azurewebsites.net/api/Likes?postId=\(postID)", method: .delete, parameters: nil, encoding: JSONEncoding.default, headers: headers)
                 .responseJSON { (response) in
-                    print(response)
             }
             
         }
@@ -430,7 +407,6 @@ class GroupViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        print(cardsToShow?.count)
         return cardsToShow!.count
     }
     
@@ -475,7 +451,6 @@ class GroupViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
     }
     func dismissModalImage(_ recognizer : UILongPressGestureRecognizer) {
-        print("called")
         if recognizer.state == UIGestureRecognizerState.began {
             if let modalImage = recognizer.view as? UIImageView {
                 UIView.animate(withDuration: 0.4, animations: {
@@ -536,14 +511,15 @@ class GroupViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
         let currentObject = cardsToShow![(indexPath as NSIndexPath).row] as! PostCard
         let type = currentObject.type
-        
+        let comment = currentObject.comment
         var cellType = "cell"
         if type == 1 {
             cellType = "link"
         } else if type == 2 {
             cellType = "image"
         }
-        print(type)
+      
+        
         
         let cell = tableView.dequeueReusableCell(withIdentifier: cellType, for: indexPath) as? BizCardTableViewCell
         cell?.options.tag = indexPath.row
@@ -586,7 +562,9 @@ class GroupViewController: UIViewController, UITableViewDelegate, UITableViewDat
         cell?.setCount(cell!.likesCount)
         cell?.react?.setTitle("\(currentObject.likeCount)", for: UIControlState())
         
-        
+        if currentObject.comment == false {
+        cell?.reply?.alpha = 0
+        }
         cell?.tag = (indexPath as NSIndexPath).row
         if type == 1 {
             cell?.linkStack.spacing = 2
@@ -614,38 +592,7 @@ class GroupViewController: UIViewController, UITableViewDelegate, UITableViewDat
                 cell!.linkStack.addArrangedSubview(linkEmbed)
             }
             
-            
-            //            if currentObject.hasLinkData == true {
-            //                print(currentObject.userText)
-            //                print("HAS")
-            //                myView.linkTitle.text = currentObject.linkTitle
-            //                myView.linkURL.text = currentObject.linkURL
-            //                myView.linkDesc.text = currentObject.linkDesc
-            //                myView.linkImage.image = currentObject.linkImage
-            //
-            //                print(currentObject.linkImage?.size.height)
-            //            } else {
-            //                if self.canOpenURL(string: currentObject.content) {
-            //                    let url = URL(string: currentObject.content)
-            //                    Readability.parse(url: url!, completion: { (data) in
-            //
-            //                        myView.linkTitle.text = data!.title
-            //                        myView.linkDesc.text =  data!.description!
-            //                        myView.linkURL.text = currentObject.content
-            //                        if data!.topImage != nil {
-            //                            let url = URL(string: data!.topImage!)
-            //                            myView.linkImage.hnk_setImageFromURL(url!)
-            //                        }
-            //
-            //                    })
-            //
-            //
-            //
-            //                }
-            
-            
-            
-            //  }
+
         }
         if type == 2 {
             cell?.userImage.image = nil
@@ -659,7 +606,6 @@ class GroupViewController: UIViewController, UITableViewDelegate, UITableViewDat
             cell?.userImage.addGestureRecognizer(tap)
             cell?.userImage.isUserInteractionEnabled = true
             let imageURL = URL(string: currentObject.content)
-            print(imageURL)
             
             if currentObject.hasImage {
                 cell?.userImage.contentMode = UIViewContentMode.scaleAspectFill
@@ -688,7 +634,6 @@ class GroupViewController: UIViewController, UITableViewDelegate, UITableViewDat
         self.tableView.deselectRow(at: indexPath, animated: true)
         if writingPost == true {
             stopWritingPost()
-            print("writing")
         } else {
             self.showPost(at: indexPath.row)
             
@@ -700,7 +645,6 @@ class GroupViewController: UIViewController, UITableViewDelegate, UITableViewDat
     func textViewDidBeginEditing(_ textView: UITextView) {
         
         writingPost = true
-        print("began")
         textView.text = ""
         
         textView.textColor = UIColor.black
@@ -734,16 +678,14 @@ class GroupViewController: UIViewController, UITableViewDelegate, UITableViewDat
         self.uplaodImage = nil
     }
     func showImagePicker() {
-        print("called")
         
         picker = DKImagePickerController()
         picker!.singleSelect = true
         picker!.assetType = DKImagePickerControllerAssetType.allPhotos
         picker!.didSelectAssets = { (assets: [DKAsset]) in
-            print("didSelectAssets")
             let done = false
             assets.first?.fetchOriginalImage(done, completeBlock: { (image, info) in
-                self.postBox.pickButton?.image = image
+                self.postBox.pickButton?.imageView?.image = image
                 self.uplaodImage = image
                 self.postType = 2
                 UIView.animate(withDuration: 0.4, animations: {
@@ -753,7 +695,6 @@ class GroupViewController: UIViewController, UITableViewDelegate, UITableViewDat
                 })
                 
             })
-            print(assets.first)
         }
         self.present(picker!, animated: true)
     }
@@ -770,7 +711,6 @@ class GroupViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-        print(info)
     }
     
     
@@ -784,7 +724,6 @@ class GroupViewController: UIViewController, UITableViewDelegate, UITableViewDat
         let headers = ["Accept":"application/json","Content-Type":"application/json","X-Ethos-Auth":"\(ethosAuth)", "X-Facebook-Id":"\(id)"]
         Alamofire.request("http://meetethos.azurewebsites.net/api/Posts?postId=\(post)", method: .delete, parameters: nil, encoding: JSONEncoding.default, headers: headers)
             .responseJSON { (response) in
-                print(response)
                 self.getPosts()
         }
         
@@ -794,8 +733,7 @@ class GroupViewController: UIViewController, UITableViewDelegate, UITableViewDat
         let headers = ["Accept":"application/json","Content-Type":"application/json","X-Ethos-Auth":"\(ethosAuth)", "X-Facebook-Id":"\(id)"]
         Alamofire.request("http://meetethos.azurewebsites.net/api/Moderation/Block?blockUserId=\(userID)", method: .get, parameters: nil, encoding: JSONEncoding.default, headers: headers)
             .responseJSON { (response) in
-                print("REPP")
-                print(response)
+              
                 self.getPosts()
         }
     }
@@ -820,7 +758,6 @@ class GroupViewController: UIViewController, UITableViewDelegate, UITableViewDat
                         "UserComments": "iOS does not support user comments yet. More important stuff to fix rn."] as [String : Any]
         Alamofire.request("http://meetethos.azurewebsites.net/api/Moderation/Create", method: .post, parameters: params, encoding: JSONEncoding.default, headers: headers)
             .responseJSON { (response) in
-                print(response)
                 self.getPosts()
                 MRProgressOverlayView.dismissAllOverlays(for: self.view, animated: true)
         }
@@ -841,7 +778,6 @@ class GroupViewController: UIViewController, UITableViewDelegate, UITableViewDat
     // MARK - Tab bar delegate
     
     func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
-        print("call")
         if self.navigationController?.tabBarController?.selectedIndex == 0 {
             let index = IndexPath(row: 0, section: 0)
             tableView.scrollToRow(at: index, at: UITableViewScrollPosition.top, animated: true)

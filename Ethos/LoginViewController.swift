@@ -81,6 +81,7 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate, UICollect
         self.view.addSubview(logo)
         let myFrame = CGRect(x: 50, y: self.view.frame.width-100, width: self.view.frame.width-100, height: 50)
         let login = FBSDKLoginButton(frame: myFrame)
+        login.loginBehavior = .native
         login.readPermissions = ["public_profile", "email", "user_friends"]
         login.delegate = self
         login.center.y = self.view.frame.height * 0.9
@@ -146,12 +147,11 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate, UICollect
         hud.color = UIColor.white
         hud.progress = 0.2
         loginButton.alpha = 0
-      print(result)
         let list = NSMutableArray()
         
         let friendsRequest = FBSDKGraphRequest(graphPath: "me/friends", parameters: nil)
         friendsRequest?.start { (connection, object, error) in
-            print(object)
+            // FIX CRASH
             let object = object as! NSDictionary
           let data = object.object(forKey: "data") as! NSArray
             for obj in data {
@@ -167,14 +167,11 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate, UICollect
     func registerUser(_ friends : NSMutableArray) {
         let id = FBSDKAccessToken.current().userID
         let headers = ["Accept":"application/json","Content-Type":"application/json","X-Ethos-Auth":"token", "X-Facebook-Id":"\(id!)"]
-        print(id!)
         let params : [String : Any] = ["FacebookId" : "\(id!)" as Any, "FriendIds"  : friends, "Emoji" : "\(myEmoji!)" as Any]
-        print("test")
-        print(params)
+    
         Alamofire.request("http://meetethos.azurewebsites.net/api/Users/Register", method: .post, parameters: params, encoding: JSONEncoding.default, headers: headers)
             .responseJSON { (response) in
-                print(response.result.value)
-                print(response)
+           
                 let rep = response.result.value as! NSDictionary
                 if let repToken = rep.object(forKey: "token") as? String {
                     UserDefaults.standard.set(repToken, forKey: "token")
@@ -198,10 +195,8 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate, UICollect
         Alamofire.request("http://meetethos.azurewebsites.net/api/Users/AuthChecker", method: .get,parameters: nil, encoding: JSONEncoding.default, headers: headers)
         
         .responseJSON { (response) in
-            print(response.result.value)
              let arrayValue = response.result.value as! NSDictionary
              let status = arrayValue.object(forKey: "status") as! String
-                print(status)
                     if status == "ok" {
                   
                         MBProgressHUD.hideAllHUDs(for: self.view, animated: true)

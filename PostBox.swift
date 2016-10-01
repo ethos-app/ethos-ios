@@ -8,17 +8,29 @@
 
 import UIKit
 
-protocol ImageSeekDelegate : class {
+@objc protocol ImageSeekDelegate : class {
     func showImagePicker()
     func imageCancelled()
+    @objc optional func postPress()
 }
 class PostBox: UIView {
 
-    var pickButton : UIImageView?
+    var pickButton : UIButton?
+    var sendButton : UIButton?
     var textView : UITextView?
     var cancelMedia : UIButton?
     weak var delegate : ImageSeekDelegate?
+    enum BoxType {
+    case header
+    case keyboard
+    }
+    var rightFrame : CGRect?
+    var leftFrame : CGRect?
+    
+    var type = BoxType.header
     override func draw(_ rect: CGRect) {
+        rightFrame = CGRect(x: self.frame.width-40, y: self.frame.height-35, width: 30, height: 30)
+        leftFrame = CGRect(x: self.frame.width-92, y: self.frame.height-43, width: 30, height: 30)
         pickButton?.contentMode = UIViewContentMode.scaleAspectFill
         super.draw(rect)
         let textFrame = CGRect(x: 8, y: 8, width: self.frame.width-16, height: self.frame.height-15)
@@ -38,24 +50,44 @@ class PostBox: UIView {
         cancelMedia?.addTarget(self, action: #selector(self.restorePicker), for: UIControlEvents.touchUpInside)
         cancelMedia!.isUserInteractionEnabled = true
         cancelMedia?.alpha = 0
-        pickButton = UIImageView(image: camImage)
+        pickButton = UIButton()
+        pickButton?.setImage(camImage, for: UIControlState.normal)
         pickButton!.tintColor = UIColor.lightGray
         pickButton!.isUserInteractionEnabled = true
         let gesture = UITapGestureRecognizer(target: self, action: #selector(self.showPicker))
         pickButton!.addGestureRecognizer(gesture)
-        pickButton!.frame = CGRect(x: self.frame.width-45, y: self.frame.height-42, width: 30, height: 30)
-        
+        pickButton!.frame = rightFrame!
+       
         textView?.attributedText = holderText
         self.addSubview(textView!)
         self.addSubview(pickButton!)
         self.addSubview(cancelMedia!)
-      //  textView?.inputAccessoryView = self
-
+        
+        if self.type == .keyboard {
+            textView?.textContainerInset = UIEdgeInsetsMake(10, 5, 5, 75)
+            textView?.text = "Write a comment..."
+            let sendImg = UIImage(named: "ic_send_2x")?.withRenderingMode(UIImageRenderingMode.alwaysTemplate)
+            sendButton = UIButton()
+            sendButton?.setImage(sendImg, for: UIControlState.normal)
+            sendButton?.tintColor = UIColor.lightGray
+            sendButton?.isUserInteractionEnabled = true
+            sendButton?.frame = CGRect(x: self.frame.width-45, y: self.frame.height-43, width: 30, height: 30)
+            pickButton?.frame = leftFrame!
+            self.addSubview(sendButton!)
+            let send = UITapGestureRecognizer(target: self, action: #selector(self.postPressed))
+            send.numberOfTapsRequired = 1
+            self.sendButton?.addGestureRecognizer(send)
+        }
+        
+    }
+    
+    func postPressed() {
+        delegate?.postPress!()
     }
     func restorePicker() {
         delegate?.imageCancelled()
                 let camImage = UIImage(named: "ic_photo_camera_2x")?.withRenderingMode(UIImageRenderingMode.alwaysTemplate)
-        pickButton?.image = camImage
+        pickButton?.imageView?.image = camImage
         pickButton?.frame = CGRect(x: self.frame.width-40, y: self.frame.height-35, width: 30, height: 30)
         cancelMedia?.alpha = 0
         textView?.textContainerInset = UIEdgeInsetsMake(10, 5, 5, 5)
@@ -70,12 +102,17 @@ class PostBox: UIView {
         
     }
     func resetText() {
+        textView?.textContainerInset = UIEdgeInsetsMake(10, 5, 5, 5)
         let boldText = UIFont(name: "Raleway-Italic", size: 22)
         let onMind = "What's really on your mind?"
         let holderText = NSMutableAttributedString(string: onMind, attributes: [NSFontAttributeName : textView!.font!, NSForegroundColorAttributeName : UIColor.lightGray])
         
         holderText.addAttribute(NSFontAttributeName, value: boldText!, range: NSMakeRange(7, 6))
         textView?.attributedText = holderText
+        if self.type == .keyboard {
+            textView?.text = "Write a comment..."
+            
+        }
       ///  self.addSubview(textView!)
         
     }

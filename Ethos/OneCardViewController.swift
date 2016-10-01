@@ -13,40 +13,32 @@ import Alamofire
 import MRProgress
 import DKImagePickerController
 import URLEmbeddedView
+import SafariServices
 
-class OneCardViewController : UIViewController, UITableViewDelegate, UITableViewDataSource, UITextViewDelegate, UIGestureRecognizerDelegate, ImageSeekDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class OneCardViewController : UIViewController, UITableViewDelegate, UITableViewDataSource, UITextViewDelegate, UIGestureRecognizerDelegate, ImageSeekDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIScrollViewDelegate {
     var loading = false
     var ethosAuth = ""
     var id = ""
     var cardsToShow : NSMutableArray?
-    
     @IBOutlet var bar: UIView!
-    
     @IBOutlet var cardsButton: BarButton!
-    
     @IBOutlet var netButton: BarButton!
-    
     @IBOutlet var tableView: UITableView!
-    
     var segment = 0
-    
     var lookingFrame : CGRect?
-    
     @IBOutlet var postBox: PostBox!
     var showingImage = false
     var writingPost = false
     var uplaodImage : UIImage?
     var postType = 0
-    
     var picker : DKImagePickerController?
-    
      var oPost : PostCard?
-    
     var postID : Int?
-    
     var box : PostBox?
     @IBOutlet var comments: UITableView!
-    
+    var replyTo = NSMutableArray()
+    var replyEmoji = NSMutableArray()
+    var emojiBar : EmojiBar?
     override var inputAccessoryView: UIView? {
         return box
     }
@@ -55,9 +47,14 @@ class OneCardViewController : UIViewController, UITableViewDelegate, UITableView
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        box  = PostBox(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: 60))
+        emojiBar = EmojiBar.loadFromNibNamed(nibNamed: "EmojiBar") as! EmojiBar?
+        emojiBar?.frame = CGRect(x: 0, y: -100, width: self.view.frame.width, height: 55)
+        emojiBar?.backgroundColor = UIColor.hexStringToUIColor("F4F4F4").withAlphaComponent(0.96)
+        emojiBar?.layer.borderWidth = 1
+        emojiBar?.layer.borderColor = UIColor.hexStringToUIColor("E4E4E4").cgColor
+        box = PostBox(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: 60))
+        box?.type = .keyboard
         self.box?.backgroundColor = UIColor.hexStringToUIColor("e9e9e9")
-
         box?.textView?.delegate = self
         
         cardsToShow = NSMutableArray()
@@ -80,8 +77,7 @@ class OneCardViewController : UIViewController, UITableViewDelegate, UITableView
         let refreshC = UIRefreshControl()
         refreshC.addTarget(self, action: #selector(self.refreshContent(_:)), for: UIControlEvents.allEvents)
         self.tableView.addSubview(refreshC)
-        
-        
+       
         self.view.backgroundColor = UIColor.hexStringToUIColor("c9c9c9")
         if FBSDKAccessToken.current() != nil {
             verifyToken()
@@ -91,7 +87,7 @@ class OneCardViewController : UIViewController, UITableViewDelegate, UITableView
             //       self.navigationController?.pushViewController(login, animated: true)
             self.present(login, animated: true, completion: nil)
         }
-        
+        self.view.addSubview(emojiBar!)
     }
     
     
@@ -100,11 +96,10 @@ class OneCardViewController : UIViewController, UITableViewDelegate, UITableView
         let headers = ["Accept":"application/json","Content-Type":"application/json","X-Ethos-Auth":"\(ethosAuth)", "X-Facebook-Id":"\(id)"]
         Alamofire.request("http://meetethos.azurewebsites.net/api/Users/Me/Friends", method: .put, parameters: ["friendsList" : string], encoding: JSONEncoding.default, headers: headers)
             .responseJSON { (response) in
-                print(response)
+                 
         }
     }
     func refreshContent(_ refreshControl : UIRefreshControl) {
-        self.cardsToShow?.removeAllObjects()
         if loading == false {
         self.getPosts()
         self.getComments()
@@ -115,7 +110,6 @@ class OneCardViewController : UIViewController, UITableViewDelegate, UITableView
     
     
     func verifyToken() {
-        print("VERIFYING")
         let id = FBSDKAccessToken.current().userID
         if let token = UserDefaults.standard.object(forKey: "token") as? String {
             if let id = UserDefaults.standard.object(forKey: "id") as? String {
@@ -128,15 +122,12 @@ class OneCardViewController : UIViewController, UITableViewDelegate, UITableView
         Alamofire.request("http://meetethos.azurewebsites.net/api/Users/AuthChecker", method: .get,parameters: nil, encoding: JSONEncoding.default, headers: headers)
             .responseJSON { (response) in
                 if let status = response.result.value as? NSDictionary {
-                    print(status)
                     let ok = status.object(forKey: "status") as! String
-                    print(ok)
-                    print("YES")
+                  
                     if ok == "ok" {
                         self.cardsToShow?.removeAllObjects()
                         self.getPosts()
                         self.getComments()
-                        print("GOT POSTS")
                     } else {
                         // Fail
                         FBSDKAccessToken.setCurrent(nil)
@@ -149,6 +140,7 @@ class OneCardViewController : UIViewController, UITableViewDelegate, UITableView
         
     }
     override func viewWillAppear(_ animated: Bool) {
+
         if FBSDKAccessToken.current() != nil {
             if ethosAuth == "" {
                 verifyToken()
@@ -158,7 +150,6 @@ class OneCardViewController : UIViewController, UITableViewDelegate, UITableView
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        print("SET DEL")
         box!.textView?.delegate = self
         box!.delegate = self
     }
@@ -173,6 +164,10 @@ class OneCardViewController : UIViewController, UITableViewDelegate, UITableView
             let dataCard = PostCard(posterEmoji: emoji, userText: userText, type: type)
             if let likeC = dict.object(forKey: "LikeCount") as? String {
             dataCard.likeCount = likeC
+            }
+            if let repEm = dict.object(forKey: "ResponseEmojis") as? NSArray {
+                print(repEm)
+                dataCard.responseToEmojis = repEm
             }
             dataCard.postID = dict.object(forKey: "PostId") as! Int
             if let comID = dict.object(forKey: "CommentId") as? Int {
@@ -202,7 +197,6 @@ class OneCardViewController : UIViewController, UITableViewDelegate, UITableView
                 dataCard.isEthos = true
             }
             let dateString = dict.object(forKey: "DateCreated") as! String
-            print(dateString)
             let format = DateFormatter()
             format.timeZone = TimeZone(secondsFromGMT: 0)
             format.dateFormat = "yyyy'-'MM'-'dd'T'HH':'mm':'ss'.'SSS'Z'"
@@ -213,17 +207,12 @@ class OneCardViewController : UIViewController, UITableViewDelegate, UITableView
             if let result = date?.getElapsedInterval() {
             dataCard.date = result
             }
-            print("CARDE")
-            print(dataCard.userText)
-
-            print(dataCard.comment)
 
             if dataCard.comment == false {
-                print("FIRSTED")
             self.cardsToShow?.insert(dataCard, at: 0)
             } else {
                 self.cardsToShow?.add(dataCard)
-
+                
             }
 
         }
@@ -231,24 +220,14 @@ class OneCardViewController : UIViewController, UITableViewDelegate, UITableView
     }
     func getPosts() {
         loading = true
-        print("GET POSTS")
         
-        
-//        let view = MRProgressOverlayView.showOverlayAdded(to: self.view, title: "", mode: MRProgressOverlayViewMode.indeterminate,
-//                                                          animated: true)
-//        view?.setTintColor(UIColor.hexStringToUIColor("247BA0"))
-        //  view.createBlurView()
-        self.cardsToShow?.removeAllObjects()
-        print("TOKENS")
-        print(ethosAuth)
-        print(id)
         if oPost != nil {
         postID = oPost?.postID
         }
         let headers = ["Accept":"application/json","Content-Type":"application/json","X-Ethos-Auth":"\(ethosAuth)", "X-Facebook-Id":"\(id)"]
         Alamofire.request("http://meetethos.azurewebsites.net/api/Posts/\(postID!)", method: .get, parameters: nil, encoding: JSONEncoding.default, headers: headers)
             .responseJSON { (response) in
-                print(response)
+                self.cardsToShow?.removeAllObjects()
                 MRProgressOverlayView.dismissAllOverlays(for: self.view, animated: true)
                 self.loading = false
                 let array = response.result.value! as! NSDictionary
@@ -260,22 +239,14 @@ class OneCardViewController : UIViewController, UITableViewDelegate, UITableView
     }
     
     func getComments() {
-        print("GET COMMENTS")
-//        let view = MRProgressOverlayView.showOverlayAdded(to: self.view, title: "", mode: MRProgressOverlayViewMode.indeterminate,animated: true)
-//        view?.setTintColor(UIColor.hexStringToUIColor("247BA0"))
-        //  view.createBlurView()
-        self.cardsToShow?.removeAllObjects()
-        print("TOKENS")
-        print(ethosAuth)
-        print(id)
+
         let headers = ["Accept":"application/json","Content-Type":"application/json","X-Ethos-Auth":"\(ethosAuth)", "X-Facebook-Id":"\(id)"]
         Alamofire.request("http://meetethos.azurewebsites.net/api/Comments?postId=\(postID!)", method: .get, parameters: nil, encoding: JSONEncoding.default, headers: headers)
             .responseJSON { (response) in
-                print(response)
+                 
                 MRProgressOverlayView.dismissAllOverlays(for: self.view, animated: true)
                 let array = response.result.value! as! NSDictionary
                 if let posts = array.object(forKey: "selectedComments") as? NSArray {
-                    print(posts)
                     self.updatePosts(posts)
                     
                 } else {
@@ -287,7 +258,8 @@ class OneCardViewController : UIViewController, UITableViewDelegate, UITableView
     
     func post() {
         let content = box!.textView?.text.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
-        
+        self.box!.resetText()
+        self.stopWritingPost()
         let headers = ["Accept":"application/json","Content-Type":"application/json","X-Ethos-Auth":"\(ethosAuth)", "X-Facebook-Id":"\(id)"]
         var mediaContent = "NULL"
         if postType == 1 { // Image Post
@@ -295,14 +267,12 @@ class OneCardViewController : UIViewController, UITableViewDelegate, UITableView
             let base64 = imageData?.base64EncodedString(options: NSData.Base64EncodingOptions.lineLength64Characters)
             mediaContent = base64!
         }
-        print("REPLY SEND")
-        let params = ["UserText" : content!, "Content" : mediaContent, "CommentType" : postType as Int, "PostId": postID!, "ResponseIds" : [] ] as [String : Any]
-        print(params)
+        
+        let params = ["UserText" : content!, "Content" : mediaContent, "CommentType" : postType as Int, "PostId": postID!, "ResponseIds" : replyTo ] as [String : Any]
         Alamofire.request("http://meetethos.azurewebsites.net/api/Comments/Create", method: .post,parameters: params, encoding: JSONEncoding.default, headers: headers)
             .responseJSON { (response) in
-                print(response)
-                self.box!.resetText()
-                self.stopWritingPost()
+                 
+             
                 self.cardsToShow?.removeAllObjects()
                 self.getPosts()
                 self.getComments()
@@ -363,7 +333,7 @@ class OneCardViewController : UIViewController, UITableViewDelegate, UITableView
             let params : [String : AnyObject] = ["LikeType" : "0" as AnyObject, "PostId" : postID as AnyObject]
             Alamofire.request("http://meetethos.azurewebsites.net/api/Likes/New", method: .post, parameters: params, encoding: JSONEncoding.default, headers: headers)
                 .responseJSON { (response) in
-                    print(response)
+                     
             }
         } else {
             // post already liked, unlike post
@@ -371,7 +341,7 @@ class OneCardViewController : UIViewController, UITableViewDelegate, UITableView
             
             Alamofire.request("http://meetethos.azurewebsites.net/api/Likes?postId=\(postID)", method: .delete, parameters: nil, encoding: JSONEncoding.default, headers: headers)
                 .responseJSON { (response) in
-                    print(response)
+                     
             }
             
         }
@@ -388,7 +358,6 @@ class OneCardViewController : UIViewController, UITableViewDelegate, UITableView
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        print(cardsToShow?.count)
         return cardsToShow!.count
     }
     
@@ -434,7 +403,6 @@ class OneCardViewController : UIViewController, UITableViewDelegate, UITableView
         
     }
     func dismissModalImage(_ recognizer : UILongPressGestureRecognizer) {
-        print("called")
         if recognizer.state == UIGestureRecognizerState.began {
             if let modalImage = recognizer.view as? UIImageView {
                 UIView.animate(withDuration: 0.4, animations: {
@@ -491,34 +459,42 @@ class OneCardViewController : UIViewController, UITableViewDelegate, UITableView
     func commentPressed(rec : UIGestureRecognizer) {
         showPost(at: rec.view!.tag)
     }
+    func showLink(rec : UIGestureRecognizer) {
+        let index = rec.view!.tag
+        let obj = cardsToShow?.object(at: index) as! PostCard
+        let url = obj.content
+        openLink(url: URL(string: url)!)
+    }
+    func openLink(url : URL) {
+        let webview = SFSafariViewController(url: url, entersReaderIfAvailable: true)
+        self.present(webview, animated: true, completion: nil)
+    }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let currentObject = cardsToShow![(indexPath as NSIndexPath).row] as! PostCard
         let type = currentObject.type
         
+      
         var cellType = "cell"
+        if currentObject.comment == true {
+            cellType = "cellc"
+        }
         if type == 1 {
             cellType = "link"
             if currentObject.comment == true {
-                cellType = "image"
+                cellType = "imagec"
             }
         } else if type == 2 {
             cellType = "image"
         }
-        print(type)
-        
+
         let cell = tableView.dequeueReusableCell(withIdentifier: cellType, for: indexPath) as? BizCardTableViewCell
-        if currentObject.comment == true {
-        cell?.bottomBar.alpha = 0
-        cell?.bottomBar.frame = CGRect.zero
-        cell?.reply?.alpha = 1
-        } else {
-        cell?.reply?.alpha = 0
+        if currentObject.comment == false {
+            cell?.reply?.alpha = 0
         }
         cell?.selectionStyle = UITableViewCellSelectionStyle.none
         let imageURL = URL(string: currentObject.posterEmoji)
-        let data = try? Data(contentsOf: imageURL!)
-        cell?.img.image = UIImage(data: data!)
+        cell?.img.hnk_setImageFromURL(imageURL!)
         cell?.img.contentMode = UIViewContentMode.scaleAspectFit
         if currentObject.isEthos {
             cell?.backMoji.backgroundColor = UIColor.hexStringToUIColor("247BA0")
@@ -531,20 +507,39 @@ class OneCardViewController : UIViewController, UITableViewDelegate, UITableView
         cell!.options.addTarget(self, action: #selector(OneCardViewController.showOptions), for: UIControlEvents.touchUpInside)
         let commented = currentObject.commentCount
         let comm = UITapGestureRecognizer(target: self, action: #selector(self.commentPressed(rec:)))
+        if currentObject.comment == false {
         cell?.comment.tag = indexPath.row
         comm.cancelsTouchesInView = false
         comm.numberOfTapsRequired = 1
         comm.numberOfTouchesRequired = 1
         cell?.comment.addGestureRecognizer(comm)
+        }
+ 
         let liked = currentObject.userLiked
         if liked == 1 {
             cell?.like()
         }
         let likes = Int(currentObject.likeCount)
         cell?.likesCount = likes ?? -1
-        
+        if currentObject.comment == false {
         cell?.comment.setTitle("\(commented)", for: UIControlState.normal)
-        
+        } else if currentObject.responseToEmojis.count > 0 {
+            let url1 = URL(string:currentObject.responseToEmojis.object(at: 0) as! String)
+            cell?.emojiList?.alpha = 1
+            cell?.emojiList?.emoji1.hnk_setImageFromURL(url1!)
+            if currentObject.responseToEmojis.count > 1 {
+            if let url2 = currentObject.responseToEmojis.object(at: 1) as? String {
+                cell?.emojiList?.emoji2.hnk_setImageFromURL(URL(string : url2)!)
+            }
+            }
+            if currentObject.responseToEmojis.count > 2 {
+
+            if let url3 = currentObject.responseToEmojis.object(at: 2) as? String {
+                cell?.emojiList?.emoji3.hnk_setImageFromURL(URL(string: url3)!)
+            }
+            }
+        }
+            
         let like = UITapGestureRecognizer(target: self, action: #selector(CardStackTableViewController.like(_:)))
         like.cancelsTouchesInView = false
         like.numberOfTapsRequired = 1
@@ -577,13 +572,17 @@ class OneCardViewController : UIViewController, UITableViewDelegate, UITableView
                 subview.removeFromSuperview()
             }
             let linkEmbed = URLEmbeddedView()
+            linkEmbed.tag = indexPath.row
+            let linkTap = UITapGestureRecognizer(target: self, action: #selector(self.showLink(rec:)))
+            linkTap.numberOfTapsRequired = 1
+            linkEmbed.addGestureRecognizer(linkTap)
             linkEmbed.loadURL(currentObject.content)
             if cell!.linkStack.subviews.count < 1 {
                 cell!.linkStack.addArrangedSubview(linkEmbed)
             }
             
             }
-        if cellType == "image" {
+        if cellType == "image" || cellType == "imagec" {
             cell?.userImage.image = nil
             //    cell?.desc.text = "\n\n\n\n\n\n\n\n\n\n\n\n"
             cell?.userImage.contentMode = UIViewContentMode.scaleAspectFill
@@ -596,26 +595,10 @@ class OneCardViewController : UIViewController, UITableViewDelegate, UITableView
             cell?.userImage.addGestureRecognizer(tap)
             cell?.userImage.isUserInteractionEnabled = true
             let imageURL = URL(string: currentObject.content)
-            print(imageURL)
-            
-            if currentObject.hasImage {
-                cell?.userImage.contentMode = UIViewContentMode.scaleAspectFill
-                cell?.userImage.clipsToBounds = true
-                cell?.userImage.image = currentObject.imageStore!
-            } else {
-                let task =   URLSession.shared.dataTask(with: imageURL!, completionHandler: { (myData, response, error) in
-                    DispatchQueue.main.async(execute: {
-                        if (indexPath as NSIndexPath).row == cell?.tag {
-                            let myImage = UIImage(data: myData!)
-                            cell?.userImage.image = myImage
-                            currentObject.imageStore = myImage
-                            currentObject.hasImage =  true
-                        }
-                    })
-                })
-                task.resume()
+            cell?.userImage.hnk_setImageFromURL(imageURL!)
             }
-        }
+        cell?.reply?.tag = indexPath.row
+        cell?.reply?.addTarget(self, action: #selector(self.reply), for: UIControlEvents.touchUpInside)
         cell?.layoutIfNeeded()
         return cell!
     }
@@ -624,7 +607,6 @@ class OneCardViewController : UIViewController, UITableViewDelegate, UITableView
         self.tableView.deselectRow(at: indexPath, animated: true)
         if writingPost == true {
             stopWritingPost()
-            print("writing")
         } else {
             
         }
@@ -632,24 +614,64 @@ class OneCardViewController : UIViewController, UITableViewDelegate, UITableView
     
     // MARK: Text View Delegate methods
     func textViewDidBeginEditing(_ textView: UITextView) {
+     
         textView.delegate = self
-        print("YES")
         writingPost = true
-        print("began")
         self.box?.isUserInteractionEnabled = true
-    textView.text = ""
+        textView.text = ""
         self.box!.textView?.textColor = UIColor.black
-        let postButton = UIBarButtonItem(title: "Reply", style: UIBarButtonItemStyle.done, target: self, action: #selector(CardStackTableViewController.post))
+        let postButton = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.done, target: self, action: #selector(CardStackTableViewController.post))
         self.navigationItem.setRightBarButton(postButton, animated: true)
         
         //self.box!.textView?.becomeFirstResponder()
     }
+    func textViewDidChange(_ textView: UITextView) {
+        if textView.text != "" && "Write a comment..." != textView.text {
+            box?.sendButton?.tintColor = UIColor.hexStringToUIColor("247BA0").withAlphaComponent(0.8)
+        } else {
+             box?.sendButton?.tintColor = UIColor.lightGray
+        }
+    }
     func textViewDidEndEditing(_ textView: UITextView) {
      
     }
+    // MARK: Post composition
+    func showEmojiBar() {
+        box?.textView?.becomeFirstResponder()
+        let point = self.box?.convert(self.box!.frame.origin, to: self.view)
+                print(point)
+        self.emojiBar?.frame = CGRect(x: 0, y: point!.y-40, width: self.view.frame.width, height: 40)
+     
+    }
     
+    func reply(button : UIButton) {
+            let index = button.tag
+            let card = cardsToShow?[index] as! PostCard
+            let id = card.posterID
+            let emoji = card.posterEmoji
+            let url = URL(string: emoji)
+            if replyTo.contains(id) == false {
+                replyTo.add(id)
+                replyEmoji.add(emoji)
+            }
+            showEmojiBar()
+        switch replyEmoji.count {
+        case 1:
+        emojiBar?.emoji1.hnk_setImageFromURL(url!)
+        case 2:
+        emojiBar?.emoji2.hnk_setImageFromURL(url!)
+        case 3:
+        emojiBar?.emoji3.hnk_setImageFromURL(url!)
+        default: break
+        }
+        
+    }
     func stopWritingPost() {
-        print("STOP WRITE")
+        emojiBar?.emoji1.image = nil
+        emojiBar?.emoji2.image = nil
+        emojiBar?.emoji3.image = nil
+        emojiBar?.frame = CGRect(x: 0, y: -100, width: self.view.frame.width, height: 55)
+        box?.sendButton?.tintColor = UIColor.lightGray
       //  box!.resetText()
         box!.textView!.resignFirstResponder()
         self.box!.textView!.delegate = self
@@ -683,10 +705,9 @@ class OneCardViewController : UIViewController, UITableViewDelegate, UITableView
         picker!.singleSelect = true
         picker!.assetType = DKImagePickerControllerAssetType.allPhotos
         picker!.didSelectAssets = { (assets: [DKAsset]) in
-            print("didSelectAssets")
             let done = false
             assets.first?.fetchOriginalImage(done, completeBlock: { (image, info) in
-                self.box!.pickButton?.image = image
+                self.box!.pickButton?.imageView?.image = image
                 self.uplaodImage = image
                 self.postType = 1
                 UIView.animate(withDuration: 0.4, animations: {
@@ -695,9 +716,11 @@ class OneCardViewController : UIViewController, UITableViewDelegate, UITableView
                 })
                 
             })
-            print(assets.first)
         }
         self.present(picker!, animated: true)
+    }
+    func postPress() {
+        self.post()
     }
     
     func canOpenURL(string: String?) -> Bool {
@@ -712,17 +735,14 @@ class OneCardViewController : UIViewController, UITableViewDelegate, UITableView
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-        print(info)
     }
     
     func share() {
-        print(index)
         let bounds : CGRect = self.tableView.rectForRow(at: IndexPath(row: 0, section: 0))
         UIGraphicsBeginImageContextWithOptions(bounds.size, false, UIScreen.main.scale)
         self.tableView.layer.render(in: UIGraphicsGetCurrentContext()!)
         let cellImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
-        print(cellImage?.size)
         
         let image = cellImage!
         let shareVC = UIActivityViewController(activityItems: [image], applicationActivities: nil)
@@ -736,7 +756,7 @@ class OneCardViewController : UIViewController, UITableViewDelegate, UITableView
         let headers = ["Accept":"application/json","Content-Type":"application/json","X-Ethos-Auth":"\(ethosAuth)", "X-Facebook-Id":"\(id)"]
         Alamofire.request("http://meetethos.azurewebsites.net/api/Posts?postId=\(post)", method: .delete, parameters: nil, encoding: JSONEncoding.default, headers: headers)
             .responseJSON { (response) in
-                print(response)
+                 
                 self.getPosts()
         }
         
@@ -746,7 +766,7 @@ class OneCardViewController : UIViewController, UITableViewDelegate, UITableView
         let headers = ["Accept":"application/json","Content-Type":"application/json","X-Ethos-Auth":"\(ethosAuth)", "X-Facebook-Id":"\(id)"]
         Alamofire.request("http://meetethos.azurewebsites.net/api/Moderation/Block?blockUserId=\(userID)", method: .post, parameters: nil, encoding: JSONEncoding.default, headers: headers)
             .responseJSON { (response) in
-                print(response)
+                 
                 self.getPosts()
         }
     }
@@ -759,12 +779,19 @@ class OneCardViewController : UIViewController, UITableViewDelegate, UITableView
                         "ContentType": post.comment,
                         "UserComments": "iOS does not support user comments yet. More important stuff to fix rn."] as [String : Any]
         Alamofire.request("http://meetethos.azurewebsites.net/api/Moderation/Create", method: .post, parameters: params, encoding: JSONEncoding.default, headers: headers)
-            .responseJSON { (response) in
-                print(response)
+             .responseJSON { (response) in
+                 
                 self.getPosts()
                 MRProgressOverlayView.dismissAllOverlays(for: self.view, animated: true)
         }
     }
     
+    // MARK: Scroll View Delegate
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let yVel = scrollView.panGestureRecognizer.velocity(in: scrollView).y
+        if yVel > 400 {
+            stopWritingPost()
+        }
+    }
   
 }

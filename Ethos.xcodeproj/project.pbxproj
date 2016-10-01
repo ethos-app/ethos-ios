@@ -20,6 +20,7 @@
 		D22419141D7922030093302D /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D22419131D7922030093302D /* WebKit.framework */; };
 		D2385CE11D77C95C0086FADC /* PostCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2385CE01D77C95C0086FADC /* PostCard.swift */; };
 		D2385CE31D7812610086FADC /* Auth0.plist in Resources */ = {isa = PBXBuildFile; fileRef = D2385CE21D7812610086FADC /* Auth0.plist */; };
+		D24604081D9CEA6300327386 /* mba.wav in Resources */ = {isa = PBXBuildFile; fileRef = D24604071D9CEA6300327386 /* mba.wav */; };
 		D25DCF9C1D98A520000A98CF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D25DCF9B1D98A520000A98CF /* GoogleService-Info.plist */; };
 		D25DCF9E1D98BC0B000A98CF /* PushKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D25DCF9D1D98BC0B000A98CF /* PushKit.framework */; };
 		D26A175A1D8246C9004933B2 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D26A17591D8246C9004933B2 /* Bolts.framework */; };
@@ -67,6 +68,11 @@
 		D2CCB57C1D984C2900AD0FED /* EthosAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2CCB57B1D984C2900AD0FED /* EthosAPI.swift */; };
 		D2D429121D807DFD00188991 /* BarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2983D221D7791D300D79F54 /* BarButton.swift */; };
 		D2E552131D9B9C4200F4F9B6 /* GroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E552121D9B9C4200F4F9B6 /* GroupViewController.swift */; };
+		D2E880761D9F1CF900C7C83A /* SafariServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2E880751D9F1CF900C7C83A /* SafariServices.framework */; };
+		D2E880781D9F8C0C00C7C83A /* EmojiBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2E880771D9F8C0C00C7C83A /* EmojiBar.xib */; };
+		D2E8807A1D9F8D8200C7C83A /* EmojiBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E880791D9F8D8200C7C83A /* EmojiBar.swift */; };
+		D2FBDE2F1D9E36C300378954 /* ic_send.png in Resources */ = {isa = PBXBuildFile; fileRef = D2FBDE2E1D9E36C300378954 /* ic_send.png */; };
+		D2FBDE311D9E3BFC00378954 /* ic_send_2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D2FBDE301D9E3BFC00378954 /* ic_send_2x.png */; };
 		E803E7080D19883366BE6917 /* Pods_EthosTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C210F9CE639AC170305AF28D /* Pods_EthosTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -106,6 +112,7 @@
 		D22419131D7922030093302D /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		D2385CE01D77C95C0086FADC /* PostCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostCard.swift; sourceTree = "<group>"; };
 		D2385CE21D7812610086FADC /* Auth0.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Auth0.plist; sourceTree = "<group>"; };
+		D24604071D9CEA6300327386 /* mba.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = mba.wav; sourceTree = "<group>"; };
 		D25DCF9B1D98A520000A98CF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D25DCF9D1D98BC0B000A98CF /* PushKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PushKit.framework; path = System/Library/Frameworks/PushKit.framework; sourceTree = SDKROOT; };
 		D26A17591D8246C9004933B2 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
@@ -159,6 +166,11 @@
 		D2CCB5791D97609E00AD0FED /* GroupCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupCard.swift; sourceTree = "<group>"; };
 		D2CCB57B1D984C2900AD0FED /* EthosAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EthosAPI.swift; sourceTree = "<group>"; };
 		D2E552121D9B9C4200F4F9B6 /* GroupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupViewController.swift; sourceTree = "<group>"; };
+		D2E880751D9F1CF900C7C83A /* SafariServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SafariServices.framework; path = System/Library/Frameworks/SafariServices.framework; sourceTree = SDKROOT; };
+		D2E880771D9F8C0C00C7C83A /* EmojiBar.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = EmojiBar.xib; path = ../EmojiBar.xib; sourceTree = "<group>"; };
+		D2E880791D9F8D8200C7C83A /* EmojiBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EmojiBar.swift; path = ../EmojiBar.swift; sourceTree = "<group>"; };
+		D2FBDE2E1D9E36C300378954 /* ic_send.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_send.png; sourceTree = "<group>"; };
+		D2FBDE301D9E3BFC00378954 /* ic_send_2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_send_2x.png; sourceTree = "<group>"; };
 		EBECA746F313E81612116607 /* Pods-Ethos.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ethos.release.xcconfig"; path = "Pods/Target Support Files/Pods-Ethos/Pods-Ethos.release.xcconfig"; sourceTree = "<group>"; };
 		F1E4131FA4F219398830924E /* Pods-EthosUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EthosUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-EthosUITests/Pods-EthosUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -168,6 +180,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D2E880761D9F1CF900C7C83A /* SafariServices.framework in Frameworks */,
 				D25DCF9E1D98BC0B000A98CF /* PushKit.framework in Frameworks */,
 				D293CD521D8A108500F78828 /* Accelerate.framework in Frameworks */,
 				D293CD501D8A108000F78828 /* CoreGraphics.framework in Frameworks */,
@@ -203,6 +216,7 @@
 		C69E5665C12378583D1AFECB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D2E880751D9F1CF900C7C83A /* SafariServices.framework */,
 				D25DCF9D1D98BC0B000A98CF /* PushKit.framework */,
 				D25DCF9B1D98A520000A98CF /* GoogleService-Info.plist */,
 				D275BBBB1D82439D0052152D /* FBSDKLoginKit.framework */,
@@ -241,6 +255,7 @@
 				D214F4E31D93A3810059F8CB /* OPCard.swift */,
 				D214F4A31D9355EB0059F8CB /* LnikViewer.swift */,
 				D2385CE01D77C95C0086FADC /* PostCard.swift */,
+				D2E880771D9F8C0C00C7C83A /* EmojiBar.xib */,
 			);
 			name = Modules;
 			path = Ethos;
@@ -253,6 +268,7 @@
 				D29EEFD11D7654F6001467C3 /* Assets.xcassets */,
 				D29EEFD61D7654F6001467C3 /* Info.plist */,
 				D2385CE21D7812610086FADC /* Auth0.plist */,
+				D24604071D9CEA6300327386 /* mba.wav */,
 			);
 			name = Resources;
 			path = Ethos;
@@ -328,6 +344,7 @@
 				D26F93F31D971657004657B9 /* NotifTableViewCell.swift */,
 				D2CCB5711D9721B200AD0FED /* OneCardViewController.swift */,
 				D29EEFCC1D7654F6001467C3 /* ViewController.swift */,
+				D2E880791D9F8D8200C7C83A /* EmojiBar.swift */,
 			);
 			path = Ethos;
 			sourceTree = "<group>";
@@ -353,6 +370,8 @@
 		D2CCB5701D97208A00AD0FED /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				D2FBDE301D9E3BFC00378954 /* ic_send_2x.png */,
+				D2FBDE2E1D9E36C300378954 /* ic_send.png */,
 				D2CCB5731D9756B500AD0FED /* ic_people.png */,
 				D214F4E71D9453B70059F8CB /* ic_keyboard_backspace_white_2x.png */,
 				D20315C11D94A47B00BD9786 /* invalid_image.png */,
@@ -385,6 +404,7 @@
 				D29EEFC51D7654F6001467C3 /* Resources */,
 				A6702C33E9F7C4FDD4CC74AD /* [CP] Embed Pods Frameworks */,
 				314401BB447AF17BD2738CEA /* [CP] Copy Pods Resources */,
+				D2E880741D9F16EB00C7C83A /* Add Fabric */,
 			);
 			buildRules = (
 			);
@@ -507,11 +527,14 @@
 				D275BBB71D823C200052152D /* ic_favorite_border.png in Resources */,
 				D2983CD91D767D6F00D79F54 /* rale_reg.ttf in Resources */,
 				D2983CDA1D767D6F00D79F54 /* rale_thin.ttf in Resources */,
+				D2E880781D9F8C0C00C7C83A /* EmojiBar.xib in Resources */,
 				D275BBAD1D80A38E0052152D /* ic_textsms.png in Resources */,
+				D2FBDE2F1D9E36C300378954 /* ic_send.png in Resources */,
 				D275BBA91D809FA80052152D /* ic_menu.png in Resources */,
 				D2983CDB1D767D6F00D79F54 /* rale_bold.ttf in Resources */,
 				D2983CE31D76A70000D79F54 /* add.png in Resources */,
 				D28764841D8E24D00002B01A /* icon.png in Resources */,
+				D24604081D9CEA6300327386 /* mba.wav in Resources */,
 				D2983CDC1D767D6F00D79F54 /* rale_light.ttf in Resources */,
 				D214F4A21D93518A0059F8CB /* LinkViewBox.xib in Resources */,
 				D2B559F41D99D83500F8C7C5 /* PostBoxXib.xib in Resources */,
@@ -528,6 +551,7 @@
 				D2983CE51D76A7C100D79F54 /* book.png in Resources */,
 				D20315C21D94A47B00BD9786 /* invalid_image.png in Resources */,
 				D214F4E81D9453B70059F8CB /* ic_keyboard_backspace_white_2x.png in Resources */,
+				D2FBDE311D9E3BFC00378954 /* ic_send_2x.png in Resources */,
 				D29EEFD01D7654F6001467C3 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -669,6 +693,20 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-EthosTests/Pods-EthosTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		D2E880741D9F16EB00C7C83A /* Add Fabric */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Add Fabric";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "${PODS_ROOT}/Fabric/run 0c3937b38896994c6848f1b3df18988a1b15b5d3 0e1275455e036a41ef66c3054fedece66af59607f81e35d09664c490fe2ec606";
+		};
 		DE5865B2A9045D2A42AB302F /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -698,6 +736,7 @@
 				D29EEFCD1D7654F6001467C3 /* ViewController.swift in Sources */,
 				D2385CE11D77C95C0086FADC /* PostCard.swift in Sources */,
 				D214F4E41D93A3810059F8CB /* OPCard.swift in Sources */,
+				D2E8807A1D9F8D8200C7C83A /* EmojiBar.swift in Sources */,
 				D2983CD31D765CC700D79F54 /* CardStackTableViewController.swift in Sources */,
 				D275BBB11D80F84A0052152D /* NotifyTableViewController.swift in Sources */,
 				D2CCB5761D97574400AD0FED /* GroupTableViewCell.swift in Sources */,

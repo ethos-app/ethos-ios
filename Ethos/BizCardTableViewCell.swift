@@ -46,6 +46,7 @@ class BizCardTableViewCell: UITableViewCell {
     
     var groupLabel : UILabel?
     
+    var emojiList : EmojiBar?
     var reply : UIButton?
     
     override func awakeFromNib() {
@@ -54,21 +55,22 @@ class BizCardTableViewCell: UITableViewCell {
         // Initialization code
         
         self.backgroundColor =  UIColor.hexStringToUIColor("e9e9e9")
-
-        bottomBar!.backgroundColor = UIColor.hexStringToUIColor("247BA0").withAlphaComponent(0.75)
-        bottomBar!.clipsToBounds = true
+        
+       
+        bottomBar?.backgroundColor = UIColor.hexStringToUIColor("247BA0").withAlphaComponent(0.75)
+        bottomBar?.clipsToBounds = true
         cardBack.clipsToBounds = true
-        react!.imageView?.contentMode = UIViewContentMode.scaleAspectFit
+        react?.imageView?.contentMode = UIViewContentMode.scaleAspectFit
         let image = UIImage(named: "ic_favorite_border")?.withRenderingMode(UIImageRenderingMode.alwaysTemplate)
-        react!.setImage(image, for: UIControlState())
-        comment!.imageView?.contentMode = UIViewContentMode.scaleAspectFit
+        react?.setImage(image, for: UIControlState())
+        comment?.imageView?.contentMode = UIViewContentMode.scaleAspectFit
         let image2 = UIImage(named: "ic_comment")?.withRenderingMode(UIImageRenderingMode.alwaysTemplate)
-        comment!.setImage(image2, for: UIControlState())
+        comment?.setImage(image2, for: UIControlState())
         comment?.setTitle(" 0", for: UIControlState())
-        comment.tintColor = UIColor.hexStringToUIColor("FFFFFF")
-        react!.imageEdgeInsets = UIEdgeInsets(top: 13, left: 12, bottom: 12, right: 12)
-        comment!.imageEdgeInsets = UIEdgeInsets(top: 14, left: 12, bottom: 12, right: 12)
-        react.addTarget(self, action: #selector(BizCardTableViewCell.state(gesture:)), for: UIControlEvents.touchUpInside)
+        comment?.tintColor = UIColor.hexStringToUIColor("FFFFFF")
+        react?.imageEdgeInsets = UIEdgeInsets(top: 13, left: 12, bottom: 12, right: 12)
+        comment?.imageEdgeInsets = UIEdgeInsets(top: 14, left: 12, bottom: 12, right: 12)
+        react?.addTarget(self, action: #selector(BizCardTableViewCell.state(gesture:)), for: UIControlEvents.touchUpInside)
         
         self.backMoji.backgroundColor = UIColor.lightGray.withAlphaComponent(0.5)
         self.backMoji.layer.cornerRadius = 15
@@ -76,22 +78,30 @@ class BizCardTableViewCell: UITableViewCell {
         self.cardBack.layer.cornerRadius = 6
         self.cardBack.layer.shadowOffset = CGSize(width: 0.8, height: 0.8)
         self.cardBack.layer.shadowRadius = 1.8
-        self.cardBack.layer.shadowOpacity = 0.3
+        self.cardBack.layer.shadowOpacity = 0.15
         self.cardBack.clipsToBounds = false
         self.cardBack.layer.borderColor = UIColor.lightGray.cgColor
         self.cardBack.layer.borderWidth = 0.4
         
-        let frame = CGRect(x: 50, y: 0, width: self.frame.width-100, height: 60)
+        let frame = CGRect(x: 50, y: 15, width: self.frame.width-200, height: 25)
         groupLabel = UILabel(frame: frame)
         groupLabel?.font = UIFont(name: "Raleway Regular", size: 13)
         groupLabel?.textColor = UIColor.lightGray
         groupLabel?.text = ""
         self.contentView.addSubview(groupLabel!)
-        
+       
+        emojiList = EmojiBar.loadFromNibNamed(nibNamed: "EmojiBar") as? EmojiBar
+        emojiList?.translatesAutoresizingMaskIntoConstraints = true
+        emojiList?.alpha = 0
+        emojiList?.backgroundColor = UIColor.clear
+        self.addSubview(emojiList!)
         reply = UIButton()
-        reply?.frame = CGRect(x: self.frame.width-50, y: 32, width: 50, height: 50)
+        reply?.frame = CGRect(x: self.frame.width-35, y: self.frame.height-42, width: 50, height: 50)
+        reply?.setTitleColor(reply?.titleColor(for: UIControlState.normal)?.withAlphaComponent(0.6), for: UIControlState.normal)
+        reply?.alpha = 0.8
         reply?.titleLabel?.textAlignment = NSTextAlignment.right
-        reply?.titleLabel?.font = UIFont(name: "Raleway Light", size: 11)
+        reply?.titleLabel?.font = UIFont.systemFont(ofSize: 13)
+        
         reply?.setTitle("Reply", for: UIControlState.normal)
         reply?.setTitleColor(UIColor.hexStringToUIColor("247BA0"), for: UIControlState.normal)
         self.contentView.addSubview(reply!)
@@ -99,9 +109,11 @@ class BizCardTableViewCell: UITableViewCell {
           }
 
     override func layoutSubviews() {
-        reply?.frame = CGRect(x: self.frame.width-75, y: 30, width: 50, height: 50)
+        reply?.frame = CGRect(x: self.frame.width-55, y: self.frame.height-44, width: 50, height: 50)
+        emojiList?.frame = CGRect(x: 30, y: 10, width: self.frame.width-200, height: 40)
+        groupLabel = UILabel(frame: frame)
         self.cardSetup()
-        react!.imageView?.contentMode = UIViewContentMode.scaleAspectFit
+        react?.imageView?.contentMode = UIViewContentMode.scaleAspectFit
         super.layoutSubviews()
     }
     func cardSetup() {
@@ -116,7 +128,6 @@ class BizCardTableViewCell: UITableViewCell {
     
     func state(gesture : UIGestureRecognizer) {
         if gesture.state == UIGestureRecognizerState.began {
-            print("ONCE")
         (liked == 0) ? like() : unlike()
         }
     }
@@ -128,7 +139,6 @@ class BizCardTableViewCell: UITableViewCell {
                 self.react.transform = CGAffineTransform(scaleX: 1, y: 1)
 
         }
-        print("I was liked!")
         let image = UIImage(named: "ic_favorite")?.withRenderingMode(UIImageRenderingMode.alwaysTemplate)
         react!.setImage(image, for: UIControlState())
             if next != nil {
@@ -143,13 +153,11 @@ class BizCardTableViewCell: UITableViewCell {
     }
     
     func unlike() {
-        print("UNLIKED")
         let image = UIImage(named: "ic_favorite_border")?.withRenderingMode(UIImageRenderingMode.alwaysTemplate)
         react!.setImage(image, for: UIControlState())
         if let count = react.titleLabel?.text {
             var next : Int? = Int(count)
             
-            print(likesCount)
             likesCount -= 1
             
             react.setTitle("\(likesCount)", for: UIControlState())

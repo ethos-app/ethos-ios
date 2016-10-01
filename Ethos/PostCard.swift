@@ -41,6 +41,8 @@ class PostCard: NSObject {
     var notifyUserID = 0
     
     var groupString = ""
+    var replyTo = NSMutableArray()
+    var responseToEmojis = NSArray()
     init(posterEmoji : String, userText : String, type : Int) {
         self.posterEmoji = posterEmoji
         self.userText = userText

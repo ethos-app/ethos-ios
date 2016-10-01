@@ -60,7 +60,10 @@ class GroupTableViewController: UITableViewController {
             group.groupType = g.object(forKey: "GroupType") as! Int
             group.isOwner = g.object(forKey: "IsOwner") as! Bool
             group.isModerator = g.object(forKey: "IsModerator") as! Bool
+            group.isFeatured = g.object(forKey: "IsFeatured") as! Bool
+            if group.isFeatured == false {
             self.groups?.add(group)
+            }
         }
         self.tableView.reloadData()
     }
