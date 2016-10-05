@@ -15,7 +15,6 @@ import DKImagePickerController
 import URLEmbeddedView
 import Firebase
 import MBProgressHUD
-import CWStatusBarNotification
 import SafariServices
 
 class CardStackTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextViewDelegate, UIGestureRecognizerDelegate, ImageSeekDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIScrollViewDelegate, UITabBarControllerDelegate {
@@ -180,15 +179,15 @@ class CardStackTableViewController: UIViewController, UITableViewDelegate, UITab
         print("yes")
 
         self.navigationController?.tabBarController?.delegate = self
-
         self.view.backgroundColor = UIColor.hexStringToUIColor("e9e9e9")
         if FBSDKAccessToken.current() != nil {
+            print(FBSDKAccessToken.current().userID)
+            print("RUNNING")
             verifyToken()
             if UserDefaults.standard.object(forKey: "first1") == nil {
                 // First launch
                 let launch = self.storyboard?.instantiateViewController(withIdentifier: "intro")
                 self.present(launch!, animated: true, completion: nil)
-                UserDefaults.standard.set(true, forKey: "first1")
             }   else {
                 if launched == true {
                     self.updateFriends()
@@ -205,6 +204,10 @@ class CardStackTableViewController: UIViewController, UITableViewDelegate, UITab
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        if UserDefaults.standard.object(forKey: "first1") == nil {
+            let launch = self.storyboard?.instantiateViewController(withIdentifier: "intro")
+            self.present(launch!, animated: true, completion: nil)
+        }
         postBox.textView?.delegate = self
         postBox.delegate = self
         postBox.textView?.returnKeyType = UIReturnKeyType.send
@@ -865,24 +868,29 @@ class CardStackTableViewController: UIViewController, UITableViewDelegate, UITab
         }
         let rep = UIAlertAction(title: "Report", style: UIAlertActionStyle.default) { (action) in
             // reported
+            let view = MRProgressOverlayView.showOverlayAdded(to: self.navigationController?.view!, title: "Reported", mode: MRProgressOverlayViewMode.checkmark, animated: true)
+            view?.setTintColor(UIColor.hexStringToUIColor("247BA0"))
+            
+            let headers = ["Accept":"application/json","Content-Type":"application/json","X-Ethos-Auth":"\(self.ethosAuth)", "X-Facebook-Id":"\(self.id)"]
+            let params = [  "PostId": post.postID,
+                            "Type": 2,
+                            "ContentType": post.comment,
+                            "UserComments": "iOS does not support user comments yet. More important stuff to fix rn."] as [String : Any]
+            Alamofire.request("http://meetethos.azurewebsites.net/api/Moderation/Create", method: .post, parameters: params, encoding: JSONEncoding.default, headers: headers)
+                .responseJSON { (response) in
+                    
+                    self.getPosts()
+                    MRProgressOverlayView.dismissAllOverlays(for: self.navigationController?.view!, animated: true)
+            }
+            
         }
         let cancel = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel, handler: nil)
+        report.view.tintColor = UIColor.hexStringToUIColor("247BA0")
         report.addAction(rep)
         report.addAction(cancel)
+        
         self.present(report, animated: true, completion: nil)
-       MRProgressOverlayView.showOverlayAdded(to: self.view, title: "", mode: MRProgressOverlayViewMode.cross, animated: true)
-        let headers = ["Accept":"application/json","Content-Type":"application/json","X-Ethos-Auth":"\(ethosAuth)", "X-Facebook-Id":"\(id)"]
-        let params = [  "PostId": post.postID,
-                        "Type": 2,
-                        "ContentType": post.comment,
-                        "UserComments": "iOS does not support user comments yet. More important stuff to fix rn."] as [String : Any]
-        Alamofire.request("http://meetethos.azurewebsites.net/api/Moderation/Create", method: .post, parameters: params, encoding: JSONEncoding.default, headers: headers)
-            .responseJSON { (response) in
-                self.getPosts()
-        MRProgressOverlayView.dismissAllOverlays(for: self.view, animated: true)
     }
-    }
-    
     func share(index : Int) {
         
         let postController = self.storyboard?.instantiateViewController(withIdentifier: "single") as! OneCardViewController

@@ -43,6 +43,7 @@ class IntroGroupsTableViewController: UITableViewController, GroupDelegate {
         self.view.addSubview(done)
     }
     func leave() {
+        UserDefaults.standard.set(true, forKey: "first1")
         self.dismiss(animated: true, completion: nil)
     }
     func showGroups() {

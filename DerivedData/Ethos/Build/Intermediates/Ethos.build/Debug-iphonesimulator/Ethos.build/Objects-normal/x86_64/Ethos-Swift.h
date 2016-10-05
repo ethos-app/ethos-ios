@@ -517,6 +517,7 @@ SWIFT_CLASS("_TtC5Ethos30IntroGroupsTableViewController")
 @property (nonatomic, strong, getter=float, setter=setFloat:) UIButton * _Nullable float_;
 @property (nonatomic, strong) GroupRecommend * _Nullable suggestionView;
 - (void)viewDidLoad;
+- (void)leave;
 - (void)showGroups;
 - (void)verifyToken;
 - (void)viewWillAppear:(BOOL)animated;

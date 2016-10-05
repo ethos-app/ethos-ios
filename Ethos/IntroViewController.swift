@@ -13,6 +13,7 @@ class IntroViewController: UIPageViewController, UIPageViewControllerDelegate, U
     var myViews : NSArray?
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view.backgroundColor = UIColor.white
         self.delegate = self
         self.dataSource = self
         UIPageControl.appearance().backgroundColor = UIColor.white

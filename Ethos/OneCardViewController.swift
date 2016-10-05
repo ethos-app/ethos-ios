@@ -853,19 +853,35 @@ class OneCardViewController : UIViewController, UITableViewDelegate, UITableView
     }
     
     func report(post : PostCard) {
-        let view = MRProgressOverlayView.showOverlayAdded(to: self.view, title: "", mode: MRProgressOverlayViewMode.cross, animated: true)
-        let headers = ["Accept":"application/json","Content-Type":"application/json","X-Ethos-Auth":"\(ethosAuth)", "X-Facebook-Id":"\(id)"]
-        let params = [  "PostId": post.postID,
-                        "Type": 2,
-                        "ContentType": post.comment,
-                        "UserComments": "iOS does not support user comments yet. More important stuff to fix rn."] as [String : Any]
-        Alamofire.request("http://meetethos.azurewebsites.net/api/Moderation/Create", method: .post, parameters: params, encoding: JSONEncoding.default, headers: headers)
-             .responseJSON { (response) in
-                 
-                self.getPosts()
-                MRProgressOverlayView.dismissAllOverlays(for: self.view, animated: true)
+        let report = UIAlertController(title: "Report Post", message: "Thanks for helping us create a positive community. Why are you reporting this?", preferredStyle: UIAlertControllerStyle.alert)
+        report.addTextField { (textField) in
+            textField.placeholder = "Comments (optional)"
         }
-    }
+        let rep = UIAlertAction(title: "Report", style: UIAlertActionStyle.default) { (action) in
+            // reported
+            let view = MRProgressOverlayView.showOverlayAdded(to: self.navigationController?.view!, title: "Reported", mode: MRProgressOverlayViewMode.checkmark, animated: true)
+            view?.setTintColor(UIColor.hexStringToUIColor("247BA0"))
+            
+            let headers = ["Accept":"application/json","Content-Type":"application/json","X-Ethos-Auth":"\(self.ethosAuth)", "X-Facebook-Id":"\(self.id)"]
+            let params = [  "PostId": post.postID,
+                            "Type": 2,
+                            "ContentType": post.comment,
+                            "UserComments": "iOS does not support user comments yet. More important stuff to fix rn."] as [String : Any]
+            Alamofire.request("http://meetethos.azurewebsites.net/api/Moderation/Create", method: .post, parameters: params, encoding: JSONEncoding.default, headers: headers)
+                .responseJSON { (response) in
+                    
+                    self.getPosts()
+                    MRProgressOverlayView.dismissAllOverlays(for: self.navigationController?.view!, animated: true)
+            }
+            
+        }
+        let cancel = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel, handler: nil)
+        report.view.tintColor = UIColor.hexStringToUIColor("247BA0")
+        report.addAction(rep)
+        report.addAction(cancel)
+        
+        self.present(report, animated: true, completion: nil)
+          }
     
     // MARK: Scroll View Delegate
     func scrollViewDidScroll(_ scrollView: UIScrollView) {

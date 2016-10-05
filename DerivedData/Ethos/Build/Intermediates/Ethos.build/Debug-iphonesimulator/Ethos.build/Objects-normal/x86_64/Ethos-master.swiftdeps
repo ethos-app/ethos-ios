@@ -1,10 +1,10 @@
 version: "Apple Swift version 3.0 (swiftlang-800.0.46.2 clang-800.0.38)"
-options: "7d4d02993300ade7b3424bd45a8b2fb2"
-build_time: [528971706, 315221000]
+options: "d4669a3d30f298f6edef0d87c642ac67"
+build_time: [529007677, 99720000]
 inputs:
   "/Users/Scott/Documents/Ethos/Ethos/SearchGroupsViewController.swift": [528781302, 0]
   "/Users/Scott/Documents/Ethos/Ethos/JoinBar.swift": [528851837, 0]
-  "/Users/Scott/Documents/Ethos/Ethos/GroupViewController.swift": [528960603, 0]
+  "/Users/Scott/Documents/Ethos/Ethos/GroupViewController.swift": [529003388, 0]
   "/Users/Scott/Documents/Ethos/Ethos/OneCardViewController.swift": [528951519, 0]
   "/Users/Scott/Documents/Ethos/Ethos/GroupCard.swift": [528766103, 0]
   "/Users/Scott/Documents/Ethos/Ethos/NotifTableViewCell.swift": [528444453, 0]
@@ -13,7 +13,7 @@ inputs:
   "/Users/Scott/Documents/Ethos/Ethos/ProfileViewController.swift": [528690099, 0]
   "/Users/Scott/Documents/Ethos/Ethos/OPCard.swift": [527837678, 0]
   "/Users/Scott/Documents/Ethos/EmojiBar.swift": [528618700, 0]
-  "/Users/Scott/Documents/Ethos/Ethos/CardStackTableViewController.swift": [528970977, 0]
+  "/Users/Scott/Documents/Ethos/Ethos/CardStackTableViewController.swift": [529007570, 0]
   "/Users/Scott/Documents/Ethos/Ethos/NotifyTableViewController.swift": [528855833, 0]
   "/Users/Scott/Documents/Ethos/Ethos/GroupTableViewCell.swift": [528780244, 0]
   "/Users/Scott/Documents/Ethos/Ethos/GroupRecommend.swift": [528854939, 0]
@@ -22,8 +22,8 @@ inputs:
   "/Users/Scott/Documents/Ethos/Ethos/BizCardTableViewCell.swift": [528947270, 0]
   "/Users/Scott/Documents/Ethos/Ethos/GroupTableViewController.swift": [528855755, 0]
   "/Users/Scott/Documents/Ethos/Ethos/SearchGroupsTableViewController.swift": [528682496, 0]
-  "/Users/Scott/Documents/Ethos/Ethos/IntroGroupsTableViewController.swift": [528971705, 0]
-  "/Users/Scott/Documents/Ethos/Ethos/IntroViewController.swift": [528969339, 0]
+  "/Users/Scott/Documents/Ethos/Ethos/IntroGroupsTableViewController.swift": [529006495, 0]
+  "/Users/Scott/Documents/Ethos/Ethos/IntroViewController.swift": [528973728, 0]
   "/Users/Scott/Documents/Ethos/Ethos/LnikViewer.swift": [528004921, 0]
   "/Users/Scott/Documents/Ethos/Ethos/EthosAPI.swift": [528709608, 0]
   "/Users/Scott/Documents/Ethos/PostBox.swift": [528946942, 0]

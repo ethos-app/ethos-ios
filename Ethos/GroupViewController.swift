@@ -15,7 +15,6 @@ import DKImagePickerController
 import URLEmbeddedView
 import Firebase
 import MBProgressHUD
-import CWStatusBarNotification
 
 class GroupViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextViewDelegate, UIGestureRecognizerDelegate, ImageSeekDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIScrollViewDelegate, UITabBarControllerDelegate {
     

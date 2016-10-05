@@ -9,206 +9,206 @@ provides-member:
 - ["C5Ethos28CardStackTableViewController", ""]
 - ["OC5Ethos28CardStackTableViewController8ShowType", ""]
 provides-dynamic-lookup:
-- "numberOfSections"
-- "commentPressed"
-- "dismissModalImage"
-- "postBox"
-- "post"
-- "viewWillAppear"
-- "showImagePicker"
-- "mute"
-- "showingImage"
-- "prefersStatusBarHidden"
-- "writingPost"
-- "getPosts"
-- "verifyToken"
-- "selectCards"
-- "updateFriends"
-- "toGroup"
-- "uplaodImage"
-- "canOpenURL"
-- "scrollViewDidScroll"
-- "stopWritingPost"
-- "postType"
-- "startFirebase"
-- "attemptingLoad"
-- "imageCancelled"
-- "preferredStatusBarStyle"
-- "selectNet"
-- "picker"
-- "gestureRecognizerShouldBegin"
-- "textViewDidBeginEditing"
-- "posting"
-- "postFriends"
-- "gestureRecognizer"
-- "bar"
-- "loadNext"
-- "getOptions"
-- "showLink"
-- "showPost"
-- "nextPosts"
-- "show"
-- "show"
-- "viewDidLoad"
-- "cardsButton"
-- "groupWith"
-- "cardsToShow"
-- "block"
-- "share"
-- "netButton"
-- "launched"
-- "delete"
-- "textView"
-- "id"
-- "tableView"
-- "tableView"
-- "tableView"
-- "tableView"
-- "ethosAuth"
-- "tabBarController"
-- "markLaunch"
-- "imagePickerController"
-- "like"
-- "report"
 - "close"
+- "markLaunch"
 - "segment"
-- "showOptions"
-- "refreshContent"
-- "didReceiveMemoryWarning"
-- "expand"
+- "viewWillAppear"
+- "report"
+- "mute"
+- "getPosts"
 - "viewDidAppear"
-- "updatePosts"
-- "zoomModalPic"
+- "showLink"
+- "prefersStatusBarHidden"
+- "updateFriends"
+- "postBox"
 - "openLink"
+- "tabBarController"
+- "stopWritingPost"
+- "cardsButton"
+- "loadNext"
+- "toGroup"
+- "selectCards"
+- "showImagePicker"
+- "imageCancelled"
+- "netButton"
+- "updatePosts"
+- "like"
+- "launched"
+- "gestureRecognizerShouldBegin"
+- "gestureRecognizer"
+- "textViewDidBeginEditing"
+- "didReceiveMemoryWarning"
+- "postFriends"
+- "commentPressed"
+- "selectNet"
+- "tableView"
+- "tableView"
+- "tableView"
+- "tableView"
+- "imagePickerController"
+- "ethosAuth"
+- "postType"
+- "refreshContent"
+- "attemptingLoad"
+- "startFirebase"
+- "numberOfSections"
+- "viewDidLoad"
+- "showPost"
+- "scrollViewDidScroll"
+- "posting"
+- "share"
+- "delete"
+- "nextPosts"
+- "showOptions"
+- "canOpenURL"
+- "picker"
+- "dismissModalImage"
+- "textView"
+- "show"
+- "show"
+- "bar"
+- "getOptions"
+- "showingImage"
+- "cardsToShow"
+- "expand"
+- "writingPost"
+- "post"
+- "groupWith"
+- "zoomModalPic"
+- "verifyToken"
+- "uplaodImage"
+- "id"
+- "block"
+- "preferredStatusBarStyle"
 depends-top-level:
-- !private "Int64"
-- "StringLiteralType"
 - !private "UserDefaults"
+- "StringLiteralType"
 - !private "!="
-- "PostBox"
-- !private "NSEC_PER_SEC"
-- !private "FIRInstanceID"
-- !private "Double"
-- !private "UIControlEvents"
-- "String"
-- !private "UITableViewScrollPosition"
-- !private "*"
-- "UITabBarController"
-- "BooleanLiteralType"
-- !private "NSDataDetector"
-- !private "UITableViewAutomaticDimension"
-- "UIStatusBarStyle"
-- !private ">"
-- !private "URLEmbeddedView"
-- !private "UIVisualEffectView"
-- !private "DispatchQueue"
-- "DKImagePickerController"
-- !private "UIViewContentMode"
+- !private "UITableViewCellSelectionStyle"
 - !private "TimeZone"
-- !private "UIColor"
+- !private "print"
+- !private "&&"
+- "UIImagePickerController"
+- !private "UIBarButtonItemStyle"
+- !private "UIBarMetrics"
+- !private "OneCardViewController"
+- !private "<"
 - !private "GroupViewController"
+- "BooleanLiteralType"
+- !private "FBSDKGraphRequest"
+- !private "%"
+- "Bool"
+- "Int"
+- !private "AnyObject"
+- !private "!"
+- !private "DateFormatter"
+- !private "SFSafariViewController"
 - "=="
 - "AssignmentPrecedence"
-- "UIButton"
 - "CastingPrecedence"
 - "UIRefreshControl"
-- !private "OneCardViewController"
-- !private "Alamofire"
-- "NSNotification"
-- !private "%"
-- !private "UIGestureRecognizerState"
-- "UIScrollView"
-- !private "-"
-- "UILabel"
-- !private "DKImagePickerControllerAssetType"
-- !private "EthosAPI"
-- !private "+"
-- !private "NotificationCenter"
 - !private "NSTextCheckingResult"
-- !private "UIControlState"
-- !private "Dictionary"
-- !private "UIImageView"
-- !private "UITableViewCellSelectionStyle"
-- !private "DispatchTime"
-- !private "&&"
-- "NSArray"
-- "UIGestureRecognizer"
-- "CardStackTableViewController"
-- "URL"
-- !private "NSString"
-- "UITextView"
-- !private "NSForegroundColorAttributeName"
-- !private "Array"
-- !private "||"
-- !private "NSPredicate"
-- !private "UIBlurEffect"
-- !private "NSDictionary"
-- "UIImage"
-- "UITableViewCell"
-- !private "NSFontAttributeName"
-- !private "BizCardTableViewCell"
-- !private "UIFont"
-- "UIView"
-- !private "UIAlertController"
-- !private "+="
-- !private "Void"
-- !private "UIBlurEffectStyle"
-- "BarButton"
-- !private "UIScreen"
-- "NSMutableArray"
-- !private "SFSafariViewController"
-- !private "UIAlertAction"
-- !private "NSData"
-- !private "FBSDKAccessToken"
-- !private "<"
-- !private "!"
-- "IndexPath"
-- !private "UITableViewCellSeparatorStyle"
-- !private "UITapGestureRecognizer"
-- "CGRect"
-- !private "UIImageJPEGRepresentation"
-- !private "UIBarButtonItem"
-- !private "JSONEncoding"
-- !private "UnicodeScalarType"
-- "GroupCard"
-- !private "AnyObject"
-- !private "UIApplication"
-- !private "/"
-- !private "NSIndexPath"
-- !private "UIBarMetrics"
-- !private "DateFormatter"
-- !private "UIBarButtonItemStyle"
-- !private "UIAlertActionStyle"
-- "UITableView"
-- !private "MRProgressOverlayView"
-- "PostCard"
-- "UITabBarControllerDelegate"
 - "UILongPressGestureRecognizer"
-- !private "LoginViewController"
-- "UIScrollViewDelegate"
-- !private "??"
-- !private "CharacterSet"
-- "UINavigationControllerDelegate"
-- !private "DKAsset"
-- "NSRange"
-- "UIImagePickerControllerDelegate"
-- !private "NSURL"
-- "Int"
-- "ImageSeekDelegate"
 - !private "UIProgressView"
-- !private "FBSDKGraphRequest"
-- !private "MRProgressOverlayViewMode"
-- "UIGestureRecognizerDelegate"
-- !private "print"
-- "UITextViewDelegate"
-- "UIImagePickerController"
-- "Bool"
+- !private "Int64"
 - "UIViewController"
-- !private "UIAlertControllerStyle"
-- "UITableViewDataSource"
-- !private "UIReturnKeyType"
-- !private "UIPinchGestureRecognizer"
+- !private "UITapGestureRecognizer"
+- "PostCard"
+- "UITabBarController"
 - "UITableViewDelegate"
+- !private "Double"
+- "UITableViewDataSource"
+- !private "NSEC_PER_SEC"
+- !private "UIBlurEffectStyle"
+- !private "UIPinchGestureRecognizer"
+- !private "UIBlurEffect"
+- "BarButton"
+- !private "||"
+- !private "NSURL"
+- !private "URLEmbeddedView"
+- !private "NSData"
+- "String"
+- "DKImagePickerController"
+- "UIButton"
+- "CardStackTableViewController"
+- !private "*"
+- !private "+="
+- !private "Alamofire"
+- !private "UIColor"
+- !private "UIReturnKeyType"
+- !private "UIImageView"
+- "UITableView"
+- !private "UIViewContentMode"
+- !private "UIScreen"
+- !private "UIGestureRecognizerState"
+- !private "MRProgressOverlayViewMode"
+- !private "UIAlertController"
+- !private "UIAlertControllerStyle"
+- !private "+"
+- !private "DKImagePickerControllerAssetType"
+- "NSArray"
+- "NSMutableArray"
+- "IndexPath"
+- !private "UITableViewAutomaticDimension"
+- "UITabBarControllerDelegate"
+- !private "??"
+- "UIScrollViewDelegate"
+- !private "UIControlState"
+- !private "DispatchTime"
+- !private "UIControlEvents"
+- "UINavigationControllerDelegate"
+- "UIGestureRecognizer"
+- !private "UITableViewCellSeparatorStyle"
+- "UIImagePickerControllerDelegate"
+- !private "Dictionary"
+- !private "NSString"
+- !private "NSForegroundColorAttributeName"
+- "ImageSeekDelegate"
+- !private "DKAsset"
+- "UIGestureRecognizerDelegate"
+- !private "CharacterSet"
+- !private ">"
+- "UITextViewDelegate"
+- !private "UIAlertAction"
+- !private "NSPredicate"
+- !private "JSONEncoding"
+- "UITableViewCell"
+- !private "UIAlertActionStyle"
+- "UILabel"
+- !private "EthosAPI"
+- !private "Array"
+- !private "/"
+- !private "UIApplication"
+- "PostBox"
+- "UIStatusBarStyle"
+- "UIScrollView"
+- !private "FIRInstanceID"
+- !private "UIVisualEffectView"
+- !private "NSDictionary"
+- !private "BizCardTableViewCell"
+- "UIView"
+- !private "UIFont"
+- !private "FBSDKAccessToken"
+- !private "NSFontAttributeName"
+- !private "UIImageJPEGRepresentation"
+- !private "Void"
+- "URL"
+- !private "UITableViewScrollPosition"
+- !private "DispatchQueue"
+- "UITextView"
+- !private "MRProgressOverlayView"
+- !private "NotificationCenter"
+- "CGRect"
+- !private "NSIndexPath"
+- "NSNotification"
+- !private "LoginViewController"
+- "GroupCard"
+- "NSRange"
+- !private "-"
+- !private "UIBarButtonItem"
+- !private "NSDataDetector"
+- "UIImage"
+- !private "UnicodeScalarType"
 depends-member:
 - !private ["Ps16AbsoluteValuable", "Stride"]
 - !private ["Ps16AbsoluteValuable", "init"]
@@ -545,6 +545,7 @@ depends-member:
 - ["Ps9AnyObject", "updateFriends"]
 - ["Ps9AnyObject", "updatePosts"]
 - ["Ps9AnyObject", "uplaodImage"]
+- !private ["Ps9AnyObject", "userID"]
 - !private ["Ps9AnyObject", "userImage"]
 - !private ["Ps9AnyObject", "userLiked"]
 - !private ["Ps9AnyObject", "userOwned"]
@@ -1067,6 +1068,7 @@ depends-member:
 - ["Ps7CVarArg", "updateFriends"]
 - ["Ps7CVarArg", "updatePosts"]
 - ["Ps7CVarArg", "uplaodImage"]
+- !private ["Ps7CVarArg", "userID"]
 - !private ["Ps7CVarArg", "userImage"]
 - !private ["Ps7CVarArg", "userLiked"]
 - !private ["Ps7CVarArg", "userOwned"]
@@ -1662,6 +1664,7 @@ depends-member:
 - ["Ps28CustomDebugStringConvertible", "updateFriends"]
 - ["Ps28CustomDebugStringConvertible", "updatePosts"]
 - ["Ps28CustomDebugStringConvertible", "uplaodImage"]
+- !private ["Ps28CustomDebugStringConvertible", "userID"]
 - !private ["Ps28CustomDebugStringConvertible", "userImage"]
 - !private ["Ps28CustomDebugStringConvertible", "userLiked"]
 - !private ["Ps28CustomDebugStringConvertible", "userOwned"]
@@ -2073,6 +2076,7 @@ depends-member:
 - ["Ps23CustomStringConvertible", "updateFriends"]
 - ["Ps23CustomStringConvertible", "updatePosts"]
 - ["Ps23CustomStringConvertible", "uplaodImage"]
+- !private ["Ps23CustomStringConvertible", "userID"]
 - !private ["Ps23CustomStringConvertible", "userImage"]
 - !private ["Ps23CustomStringConvertible", "userLiked"]
 - !private ["Ps23CustomStringConvertible", "userOwned"]
@@ -2512,6 +2516,7 @@ depends-member:
 - ["Ps9Equatable", "updateFriends"]
 - ["Ps9Equatable", "updatePosts"]
 - ["Ps9Equatable", "uplaodImage"]
+- !private ["Ps9Equatable", "userID"]
 - !private ["Ps9Equatable", "userImage"]
 - !private ["Ps9Equatable", "userLiked"]
 - !private ["Ps9Equatable", "userOwned"]
@@ -2602,8 +2607,10 @@ depends-member:
 - !private ["CSo16FBSDKAccessToken", "current"]
 - !private ["CSo16FBSDKAccessToken", "deinit"]
 - !private ["CSo16FBSDKAccessToken", "setCurrent"]
+- !private ["CSo16FBSDKAccessToken", "userID"]
 - !private ["PSo12FBSDKCopying", "current"]
 - !private ["PSo12FBSDKCopying", "setCurrent"]
+- !private ["PSo12FBSDKCopying", "userID"]
 - ["CSo17FBSDKGraphRequest", "deinit"]
 - !private ["CSo17FBSDKGraphRequest", "init"]
 - !private ["CSo17FBSDKGraphRequest", "start"]
@@ -2995,6 +3002,7 @@ depends-member:
 - ["Ps8Hashable", "updateFriends"]
 - ["Ps8Hashable", "updatePosts"]
 - ["Ps8Hashable", "uplaodImage"]
+- !private ["Ps8Hashable", "userID"]
 - !private ["Ps8Hashable", "userImage"]
 - !private ["Ps8Hashable", "userLiked"]
 - !private ["Ps8Hashable", "userOwned"]
@@ -3586,6 +3594,7 @@ depends-member:
 - ["PSo8NSCoding", "updateFriends"]
 - ["PSo8NSCoding", "updatePosts"]
 - ["PSo8NSCoding", "uplaodImage"]
+- !private ["PSo8NSCoding", "userID"]
 - !private ["PSo8NSCoding", "userImage"]
 - !private ["PSo8NSCoding", "utf16"]
 - ["PSo8NSCoding", "verifyToken"]
@@ -3629,6 +3638,7 @@ depends-member:
 - !private ["PSo9NSCopying", "substring"]
 - !private ["PSo9NSCopying", "timeZone"]
 - !private ["PSo9NSCopying", "trimmingCharacters"]
+- !private ["PSo9NSCopying", "userID"]
 - !private ["PSo9NSCopying", "utf16"]
 - !private ["PSo9NSCopying", "white"]
 - !private ["PSo9NSCopying", "withAlphaComponent"]
@@ -4224,6 +4234,7 @@ depends-member:
 - ["CSo8NSObject", "updateFriends"]
 - ["CSo8NSObject", "updatePosts"]
 - ["CSo8NSObject", "uplaodImage"]
+- !private ["CSo8NSObject", "userID"]
 - !private ["CSo8NSObject", "userImage"]
 - !private ["CSo8NSObject", "userLiked"]
 - !private ["CSo8NSObject", "userOwned"]
@@ -4569,6 +4580,7 @@ depends-member:
 - ["PSo16NSObjectProtocol", "updateFriends"]
 - ["PSo16NSObjectProtocol", "updatePosts"]
 - ["PSo16NSObjectProtocol", "uplaodImage"]
+- !private ["PSo16NSObjectProtocol", "userID"]
 - !private ["PSo16NSObjectProtocol", "userImage"]
 - !private ["PSo16NSObjectProtocol", "userLiked"]
 - !private ["PSo16NSObjectProtocol", "userOwned"]
@@ -4617,6 +4629,7 @@ depends-member:
 - !private ["PSo14NSSecureCoding", "subscript"]
 - !private ["PSo14NSSecureCoding", "substring"]
 - !private ["PSo14NSSecureCoding", "trimmingCharacters"]
+- !private ["PSo14NSSecureCoding", "userID"]
 - !private ["PSo14NSSecureCoding", "utf16"]
 - !private ["PSo14NSSecureCoding", "white"]
 - !private ["PSo14NSSecureCoding", "withAlphaComponent"]
@@ -9512,6 +9525,7 @@ depends-member:
 - ["Ps9_Hashable", "updateFriends"]
 - ["Ps9_Hashable", "updatePosts"]
 - ["Ps9_Hashable", "uplaodImage"]
+- !private ["Ps9_Hashable", "userID"]
 - !private ["Ps9_Hashable", "userImage"]
 - !private ["Ps9_Hashable", "userLiked"]
 - !private ["Ps9_Hashable", "userOwned"]
@@ -9961,9 +9975,6 @@ depends-external:
 - "/Users/Scott/Documents/Ethos/DerivedData/Ethos/Build/Products/Debug-iphonesimulator/MBProgressHUD/MBProgressHUD.framework/Headers/MBProgressHUD.h"
 - "/Users/Scott/Documents/Ethos/DerivedData/Ethos/Build/Products/Debug-iphonesimulator/MBProgressHUD/MBProgressHUD.framework/Headers/MBProgressHUD-umbrella.h"
 - "/Users/Scott/Documents/Ethos/DerivedData/Ethos/Build/Products/Debug-iphonesimulator/MBProgressHUD/MBProgressHUD.framework/Modules/module.modulemap"
-- "/Users/Scott/Documents/Ethos/DerivedData/Ethos/Build/Products/Debug-iphonesimulator/CWStatusBarNotification/CWStatusBarNotification.framework/Headers/CWStatusBarNotification.h"
-- "/Users/Scott/Documents/Ethos/DerivedData/Ethos/Build/Products/Debug-iphonesimulator/CWStatusBarNotification/CWStatusBarNotification.framework/Headers/CWStatusBarNotification-umbrella.h"
-- "/Users/Scott/Documents/Ethos/DerivedData/Ethos/Build/Products/Debug-iphonesimulator/CWStatusBarNotification/CWStatusBarNotification.framework/Modules/module.modulemap"
 - "/Users/Scott/Documents/Ethos/DerivedData/Ethos/Build/Products/Debug-iphonesimulator/HanekeSwift/Haneke.framework/Modules/Haneke.swiftmodule/x86_64.swiftmodule"
 - "/Users/Scott/Documents/Ethos/DerivedData/Ethos/Build/Products/Debug-iphonesimulator/HanekeSwift/Haneke.framework/Headers/Haneke-Swift.h"
 - "/Users/Scott/Documents/Ethos/DerivedData/Ethos/Build/Products/Debug-iphonesimulator/HanekeSwift/Haneke.framework/Headers/HanekeSwift-umbrella.h"
@@ -9991,4 +10002,4 @@ depends-external:
 - "/Users/Scott/Documents/Ethos/FBSDKLoginKit.framework/Headers/FBSDKLoginButton.h"
 - "/Users/Scott/Documents/Ethos/FBSDKLoginKit.framework/Headers/FBSDKLoginKit.h"
 - "/Users/Scott/Documents/Ethos/FBSDKLoginKit.framework/Modules/module.modulemap"
-interface-hash: "9169f3e62efb66a274a59b9f3eb7df15"
+interface-hash: "22267dc6c7515e83478044a3bb80abb1"
