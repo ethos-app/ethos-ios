@@ -20,8 +20,12 @@ class GroupTableViewCell: UITableViewCell {
     
     @IBOutlet var cardBack: UIView!
     
+    @IBOutlet var option: UIButton?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
+        option?.layer.cornerRadius = 3
+        option?.layer.borderColor = UIColor.lightGray.cgColor
         // Initialization code
         self.backgroundColor =  UIColor.hexStringToUIColor("e9e9e9")
         self.cardBack.layer.masksToBounds = true
@@ -43,5 +47,7 @@ class GroupTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    
+
 
 }

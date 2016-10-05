@@ -27,7 +27,8 @@ class NotifyTableViewController: UITableViewController, UITextViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        let profile = UIBarButtonItem(image: UIImage(named: "ic_person"), style: UIBarButtonItemStyle.done, target: self, action: #selector(self.showProfile))
+        self.navigationItem.rightBarButtonItem = profile
         notifications = NSMutableArray()
             self.tableView.backgroundColor = UIColor.hexStringToUIColor("e9e9e9")
         self.tableView.separatorStyle = UITableViewCellSeparatorStyle.singleLine
@@ -35,7 +36,7 @@ class NotifyTableViewController: UITableViewController, UITextViewDelegate {
         self.tableView.dataSource = self
         self.setNeedsStatusBarAppearanceUpdate()
         self.navigationController?.navigationBar.barTintColor = UIColor.hexStringToUIColor("247BA0")
-        self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.white, NSFontAttributeName : UIFont(name: "Lobster 1.4", size: 34)!]
+        self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.white, NSFontAttributeName : UIFont(name: "Lobster 1.4", size: 30)!]
         self.navigationController?.navigationBar.setTitleVerticalPositionAdjustment(5, for: UIBarMetrics.default)
         
         
@@ -56,6 +57,13 @@ class NotifyTableViewController: UITableViewController, UITextViewDelegate {
         self.getNotifications()
     }
 
+    func showProfile() {
+        let profController = self.storyboard?.instantiateViewController(withIdentifier: "prof") as! ProfileViewController
+        
+        profController.id = id
+        profController.ethosAuth = ethosAuth
+        self.present(profController, animated: true, completion: nil)
+    }
     func getNotifications() {
       
         let headers = ["Accept":"application/json","Content-Type":"application/json","X-Ethos-Auth":"\(ethosAuth)", "X-Facebook-Id":"\(id)"]

@@ -38,6 +38,7 @@ class PostBox: UIView {
         textView?.textContainerInset = UIEdgeInsetsMake(10, 5, 5, 5)
         textView!.layer.cornerRadius = 5
         textView?.clipsToBounds = true
+        textView?.tintColor = UIColor.hexStringToUIColor("247BA0")
         textView!.font = UIFont(name: "Raleway-Regular", size: 22)
         let boldText = UIFont(name: "Raleway-Italic", size: 22)
         let onMind = "What's really on your mind?"
@@ -80,14 +81,18 @@ class PostBox: UIView {
         }
         
     }
-    
+    func disable() {
+        print("CALL")
+        textView?.text = "🔒 This is a private group."
+     //   textView?.isEditable = false
+    }
     func postPressed() {
         delegate?.postPress!()
     }
     func restorePicker() {
         delegate?.imageCancelled()
                 let camImage = UIImage(named: "ic_photo_camera_2x")?.withRenderingMode(UIImageRenderingMode.alwaysTemplate)
-        pickButton?.imageView?.image = camImage
+        pickButton?.setImage(camImage, for: UIControlState.normal)
         pickButton?.frame = CGRect(x: self.frame.width-40, y: self.frame.height-35, width: 30, height: 30)
         cancelMedia?.alpha = 0
         textView?.textContainerInset = UIEdgeInsetsMake(10, 5, 5, 5)

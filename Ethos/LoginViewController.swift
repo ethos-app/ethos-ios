@@ -40,9 +40,14 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate, UICollect
      */
 
     var myEmoji : URL?
+    var header : UILabel?
     var emojiList : NSMutableArray?
     var emojiKey : UICollectionView?
-    var header : UILabel?
+    
+    var email = ""
+    var firstName = ""
+    var lastName = ""
+    var city = ""
     override func viewDidLoad() {
         emojiList = NSMutableArray()
         let lowerThird = CGRect(x: 0, y: self.view.frame.height-200, width: self.view.frame.width, height: 200)
@@ -82,7 +87,7 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate, UICollect
         let myFrame = CGRect(x: 50, y: self.view.frame.width-100, width: self.view.frame.width-100, height: 50)
         let login = FBSDKLoginButton(frame: myFrame)
         login.loginBehavior = .native
-        login.readPermissions = ["public_profile", "email", "user_friends"]
+        login.readPermissions = ["public_profile", "email", "user_friends", "user_location"]
         login.delegate = self
         login.center.y = self.view.frame.height * 0.9
         self.view.addSubview(login)
@@ -141,7 +146,7 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate, UICollect
     }
     // MARK : Login functions
     func loginButton(_ loginButton: FBSDKLoginButton!, didCompleteWith result: FBSDKLoginManagerLoginResult!, error: Error!) {
-        header?.text = "verifying..."
+       
         let hud = MBProgressHUD.showAdded(to: self.view, animated: true)
         hud.mode = MBProgressHUDMode.annularDeterminate
         hud.color = UIColor.white
@@ -153,21 +158,45 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate, UICollect
         friendsRequest?.start { (connection, object, error) in
             // FIX CRASH
             let object = object as! NSDictionary
-          let data = object.object(forKey: "data") as! NSArray
+            let data = object.object(forKey: "data") as! NSArray
             for obj in data {
                 let obj = obj as! NSDictionary
                 if let id = obj.object(forKey: "id") as? String {
                 list.add(id)
                 }
             }
-            // Register new user
-            self.registerUser(list)
+            
+            let params = ["fields":"name,email,location"]
+            let infoReq = FBSDKGraphRequest(graphPath: "me", parameters: params)
+            infoReq?.start(completionHandler: { (connection, object, error) in
+                
+                print(object)
+                
+                let object = object as! NSDictionary
+                if let name = object.object(forKey: "name") as? String {
+                var names = name.components(separatedBy: " ")
+                    self.firstName = names[0]
+                    self.lastName = names[1]
+                }
+                if let email = object.object(forKey: "email") as? String {
+                    self.email = email
+                }
+                if let location = object.object(forKey: "location") as? NSDictionary
+                {
+                if let city = object.object(forKey: "name") as? String {
+                    self.city = city
+                }
+                }
+                // Register new user
+                 self.registerUser(list)
+            })
+           
         }
     }
     func registerUser(_ friends : NSMutableArray) {
         let id = FBSDKAccessToken.current().userID
         let headers = ["Accept":"application/json","Content-Type":"application/json","X-Ethos-Auth":"token", "X-Facebook-Id":"\(id!)"]
-        let params : [String : Any] = ["FacebookId" : "\(id!)" as Any, "FriendIds"  : friends, "Emoji" : "\(myEmoji!)" as Any]
+        let params : [String : Any] = ["FacebookId" : "\(id!)" as Any, "FriendIds"  : friends, "Emoji" : "\(myEmoji!)" as Any, "FirstName":"\(firstName)", "LastName":"\(lastName)", "Email":"\(email)","Zipcode":"\(city)"]
     
         Alamofire.request("http://meetethos.azurewebsites.net/api/Users/Register", method: .post, parameters: params, encoding: JSONEncoding.default, headers: headers)
             .responseJSON { (response) in

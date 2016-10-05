@@ -48,6 +48,10 @@ class GroupViewController: UIViewController, UITableViewDelegate, UITableViewDat
     var groupCard : GroupCard?
     
     var groupImg : UIImageView?
+    var casing : UIView?
+    var optionView : UIButton?
+    var join : JoinBar?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -66,7 +70,7 @@ class GroupViewController: UIViewController, UITableViewDelegate, UITableViewDat
         self.tableView.addGestureRecognizer(touch)
         self.setNeedsStatusBarAppearanceUpdate()
         self.navigationController?.navigationBar.barTintColor = UIColor.hexStringToUIColor("247BA0")
-        self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.white, NSFontAttributeName : UIFont(name: "Lobster 1.4", size: 34)!]
+        self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.white, NSFontAttributeName : UIFont(name: "Lobster 1.4", size: 26)!]
         self.navigationController?.navigationBar.setTitleVerticalPositionAdjustment(5, for: UIBarMetrics.default)
         
         let refreshC = UIRefreshControl()
@@ -74,18 +78,94 @@ class GroupViewController: UIViewController, UITableViewDelegate, UITableViewDat
         self.tableView.addSubview(refreshC)
         
         self.navigationItem.title = groupCard?.groupTitle;
+        var myHeight = 65
+        if groupCard?.groupType == 1 && groupCard?.isMember == false {
+            myHeight = 120
+            
+        }
+        casing = UIView(frame: CGRect(x: 0, y: -20, width: Int(self.view.frame.width), height: myHeight))
+        casing!.backgroundColor = UIColor.black
+        groupImg = UIImageView(frame: CGRect(x: 0, y: 0, width: Int(self.view.frame.width), height: myHeight))
+        groupImg?.backgroundColor = UIColor.white
+        groupImg?.alpha = 0.8
+        groupImg?.clipsToBounds = true
+        groupImg?.contentMode = UIViewContentMode.scaleAspectFill
+        groupImg?.hnk_setImageFromURL(URL(string: groupCard!.groupImg)!)
+        casing!.addSubview(groupImg!)
+        groupImg?.isUserInteractionEnabled = true
+        let gest = UITapGestureRecognizer(target: self, action: #selector(self.back))
+        gest.numberOfTapsRequired = 1
+        groupImg?.addGestureRecognizer(gest)
+     //   self.navigationItem.titleView = groupImg
         
-//        let casing = UIView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: 75))
-//        casing.backgroundColor = UIColor.white
-//        groupImg = UIImageView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: 75))
-//        groupImg?.backgroundColor = UIColor.white
-//        groupImg?.alpha = 0.6
-//        groupImg?.clipsToBounds = true
-//        groupImg?.contentMode = UIViewContentMode.scaleAspectFill
-//        groupImg?.hnk_setImageFromURL(URL(string: groupCard!.groupImg)!)
-//        casing.addSubview(groupImg!)
-//        self.navigationController?.navigationBar.addSubview(casing)
-//        self.navigationController?.navigationBar.sendSubview(toBack: casing)
+       self.navigationController?.navigationBar.addSubview(casing!)
+        self.navigationController?.navigationBar.sendSubview(toBack: casing!)
+        
+        let option = UIImage(named: "more")
+        optionView = UIButton(type: UIButtonType.custom)
+        optionView?.setImage(option, for: UIControlState.normal)
+        optionView?.imageView?.contentMode = UIViewContentMode.scaleAspectFit
+        optionView?.imageEdgeInsets = UIEdgeInsetsMake(20, 20, 20, 20)
+        optionView!.frame = CGRect(x: self.view.frame.width-60, y: -8, width: 80, height: 60)
+        let opt = UITapGestureRecognizer(target: self, action: #selector(self.options))
+        optionView?.isUserInteractionEnabled = true
+        opt.numberOfTapsRequired = 1
+        opt.cancelsTouchesInView = true
+        optionView?.addGestureRecognizer(opt)
+        self.navigationController?.navigationBar.addSubview(optionView!)
+        
+        join = JoinBar.loadFromNibNamed(nibNamed: "JoinBar") as? JoinBar
+        join!.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: 55)
+        join!.join.addTarget(self, action: #selector(self.joinThis), for: UIControlEvents.touchUpInside)
+
+        let temp = UIView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: 55))
+        temp.addSubview(join!)
+        if groupCard?.isMember == false {
+        self.tableView.tableHeaderView = temp
+        }
+    }
+    func options() {
+        print("options")
+        let alert = UIAlertController(title: "", message: "", preferredStyle: UIAlertControllerStyle.actionSheet)
+        let share = UIAlertAction(title: "Share", style: UIAlertActionStyle.default) { (action) in
+            EthosAPI.shared.request(url: "Groups/ShareGroup?GroupId=\(self.groupCard!.groupID)", type: .get, body: nil, reply: { (reply) in
+                
+            })
+            
+            //
+        }
+        let leave = UIAlertAction(title: "Leave", style: UIAlertActionStyle.destructive) { (action) in
+            EthosAPI.shared.request(url: "Groups/LeaveGroup?GroupId=\(self.groupCard!.groupID)", type: .delete, body: nil, reply: { (reply) in
+            self.navigationController?.popViewController(animated: true)
+            })
+            
+        }
+        let cancel = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel) { (action) in
+            
+        }
+        alert.addAction(share)
+        alert.addAction(leave)
+        alert.addAction(cancel)
+        alert.view.tintColor = UIColor.hexStringToUIColor("247BA0")
+        self.present(alert, animated: true, completion: nil)
+    }
+    func joinThis() {
+        EthosAPI.shared.request(url: "Groups/JoinGroup?GroupId=\(groupCard!.groupID)", type: .get, body: nil) { (reply) in
+            print(reply!)
+        }
+        join?.join.setTitle("Joined", for: UIControlState.normal)
+        join?.joinText.text = "Welcome!"
+        if groupCard?.groupType == 1 {
+            join?.join.setTitle("Pending", for: UIControlState.normal)
+            join?.join.sizeToFit()
+            join?.joinText.text = "You'll be notified if you're accepted"
+            join?.joinText.sizeToFit()
+        }
+    }
+    func back() {
+        casing?.removeFromSuperview()
+        optionView?.removeFromSuperview()
+        self.navigationController?.popToRootViewController(animated: true)
     }
     
     func show(postI : NSNotification) {
@@ -96,6 +176,11 @@ class GroupViewController: UIViewController, UITableViewDelegate, UITableViewDat
         self.navigationController?.pushViewController(postController, animated: true)
         
     }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        self.back()
+    }
+ 
     
     func postFriends(_ string : NSArray) {
         // let finalDict = ["friendsList" : string]
@@ -170,12 +255,21 @@ class GroupViewController: UIViewController, UITableViewDelegate, UITableViewDat
         }
         
     }
+    
     override func viewWillAppear(_ animated: Bool) {
-        
-        //        let note = CWStatusBarNotification()
-        //        note.notificationLabelBackgroundColor = UIColor.orange.withAlphaComponent(0.6)
-        //        note.display(withMessage: "Jay LOVES dicks!!", forDuration: 5.0)
-        //
+        if groupCard?.groupType == 1 && groupCard?.isMember == false {
+            postBox.alpha = 0
+            postBox.frame = CGRect(x: 0, y: 0, width: 0, height: 0)
+            postBox.setNeedsLayout()
+            postBox.layoutIfNeeded()
+            let secret = UILabel(frame: CGRect(x: 0, y: 115, width: self.view.frame.width, height: 45))
+            secret.backgroundColor = UIColor.white
+            secret.textAlignment = NSTextAlignment.center
+            secret.font = UIFont(name: "Raleway Regular", size: 24)
+            secret.text = "🔒 This group is private"
+            secret.textColor = UIColor.darkGray
+            self.view.addSubview(secret)
+        }
         
         self.navigationController?.tabBarController?.delegate = self
         
@@ -193,7 +287,7 @@ class GroupViewController: UIViewController, UITableViewDelegate, UITableViewDat
     override func viewDidAppear(_ animated: Bool) {
         postBox.textView?.delegate = self
         postBox.delegate = self
-        
+        postBox.textView?.returnKeyType = UIReturnKeyType.send
     }
     
     func updatePosts(_ array : NSArray) {
@@ -234,6 +328,9 @@ class GroupViewController: UIViewController, UITableViewDelegate, UITableViewDat
         self.tableView.reloadData()
     }
     func getPosts() {
+        if groupCard?.groupType == 1 && groupCard?.isMember == false {
+            return
+        }
         if cardsToShow?.count == 0 {
             let view = MRProgressOverlayView.showOverlayAdded(to: self.view, title: "", mode: MRProgressOverlayViewMode.indeterminate, animated: true)
             view?.backgroundColor = UIColor.hexStringToUIColor("c9c9c9")
@@ -390,6 +487,7 @@ class GroupViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     // MARK: - Table view data source
     
+
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         
         if (scrollView.contentOffset.y > scrollView.contentSize.height * 0.7) {
@@ -409,8 +507,7 @@ class GroupViewController: UIViewController, UITableViewDelegate, UITableViewDat
         // #warning Incomplete implementation, return the number of rows
         return cardsToShow!.count
     }
-    
-    
+
     func showOptions(sender : UILabel) {
         let source = cardsToShow?.object(at: sender.tag) as! PostCard
         let alert =  UIAlertController(title: "", message: "Options", preferredStyle: .actionSheet)
@@ -507,18 +604,19 @@ class GroupViewController: UIViewController, UITableViewDelegate, UITableViewDat
     func commentPressed(rec : UIGestureRecognizer) {
         showPost(at: rec.view!.tag)
     }
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let currentObject = cardsToShow![(indexPath as NSIndexPath).row] as! PostCard
         let type = currentObject.type
         let comment = currentObject.comment
+        print(currentObject)
         var cellType = "cell"
         if type == 1 {
             cellType = "link"
         } else if type == 2 {
             cellType = "image"
-        }
-      
+        } 
         
         
         let cell = tableView.dequeueReusableCell(withIdentifier: cellType, for: indexPath) as? BizCardTableViewCell
@@ -626,6 +724,7 @@ class GroupViewController: UIViewController, UITableViewDelegate, UITableViewDat
                 task.resume()
             }
         }
+        
         cell?.layoutIfNeeded()
         return cell!
     }
@@ -640,7 +739,13 @@ class GroupViewController: UIViewController, UITableViewDelegate, UITableViewDat
             
         }
     }
-    
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        if text == "\n" {
+            self.post()
+            return false
+        }
+        return true
+    }
     // MARK: Text View Delegate methods
     func textViewDidBeginEditing(_ textView: UITextView) {
         

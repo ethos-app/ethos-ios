@@ -15,6 +15,7 @@ class PostCard: NSObject {
     var posterEmoji = ""
     var userText = ""
     var content = ""
+    var secondaryContent = ""
     var type = 0
     var groupID = 0
     var postID = 0;

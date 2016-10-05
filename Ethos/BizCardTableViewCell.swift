@@ -18,6 +18,7 @@ class BizCardTableViewCell: UITableViewCell {
     @IBOutlet var desc: UILabel!
     
     @IBOutlet var img: UIImageView!
+    var imageCover : UIView?
     
     @IBOutlet var backMoji: UIView!
     
@@ -37,6 +38,7 @@ class BizCardTableViewCell: UITableViewCell {
     
     @IBOutlet var linkStack: UIStackView!
     
+    @IBOutlet var groupTitle: UILabel!
     
     @IBOutlet var linkImg: UIImageView!
     
@@ -105,11 +107,14 @@ class BizCardTableViewCell: UITableViewCell {
         reply?.setTitle("Reply", for: UIControlState.normal)
         reply?.setTitleColor(UIColor.hexStringToUIColor("247BA0"), for: UIControlState.normal)
         self.contentView.addSubview(reply!)
-
-          }
+        imageCover = UIView()
+        imageCover!.backgroundColor = UIColor.black
+        imageCover!.alpha = 0.6
+        imageCover?.clipsToBounds = true
+        }
 
     override func layoutSubviews() {
-        reply?.frame = CGRect(x: self.frame.width-55, y: self.frame.height-44, width: 50, height: 50)
+             reply?.frame = CGRect(x: self.frame.width-55, y: self.frame.height-44, width: 50, height: 50)
         emojiList?.frame = CGRect(x: 30, y: 10, width: self.frame.width-200, height: 40)
         groupLabel = UILabel(frame: frame)
         self.cardSetup()

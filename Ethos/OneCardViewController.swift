@@ -107,7 +107,9 @@ class OneCardViewController : UIViewController, UITableViewDelegate, UITableView
         refreshControl.endRefreshing()
     }
 
-    
+    func getEmoji() {
+        
+    }
     
     func verifyToken() {
         let id = FBSDKAccessToken.current().userID
@@ -175,6 +177,9 @@ class OneCardViewController : UIViewController, UITableViewDelegate, UITableView
             dataCard.commentId = comID
             } else {
             dataCard.comment = false
+            }
+            if let secondary = dict.object(forKey: "SecondaryContent") as? String {
+                dataCard.secondaryContent = secondary
             }
             if let liked =  dict.object(forKey: "UserLiked") as? Int {
             dataCard.userLiked = liked
@@ -260,6 +265,9 @@ class OneCardViewController : UIViewController, UITableViewDelegate, UITableView
         let content = box!.textView?.text.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
         self.box!.resetText()
         self.stopWritingPost()
+        let tempCard = PostCard(posterEmoji: "", userText: content!, type: postType)
+        cardsToShow?.add(tempCard)
+        
         let headers = ["Accept":"application/json","Content-Type":"application/json","X-Ethos-Auth":"\(ethosAuth)", "X-Facebook-Id":"\(id)"]
         var mediaContent = "NULL"
         if postType == 1 { // Image Post
@@ -469,12 +477,48 @@ class OneCardViewController : UIViewController, UITableViewDelegate, UITableView
         let webview = SFSafariViewController(url: url, entersReaderIfAvailable: true)
         self.present(webview, animated: true, completion: nil)
     }
+    func groupWith(id : Int) {
+        
+        EthosAPI.shared.request(url: "Group?groupId=\(id)", type: .get, body: nil) { (reply) in
+            let reply = reply as! NSDictionary
+            print(reply)
+            if let g = reply.object(forKey: "selectedGroup") as? NSDictionary {
+                let gid = g.object(forKey: "GroupId")
+                let group = GroupCard(id: gid as! Int)
+                
+                group.groupTitle = g.object(forKey: "GroupTitle") as! String
+                group.groupDesc = g.object(forKey: "GroupDescription") as! String
+                group.groupImg = g.object(forKey: "GroupImage") as! String
+                group.groupOwner = g.object(forKey: "GroupOwner") as! Int
+                group.groupType = g.object(forKey: "GroupType") as! Int
+                group.isOwner = g.object(forKey: "IsOwner") as! Bool
+                group.isModerator = g.object(forKey: "IsModerator") as! Bool
+                group.isFeatured = g.object(forKey: "IsFeatured") as! Bool
+                group.isMember = g.object(forKey: "IsMember") as! Bool
+                
+                self.show(group: id, card: group)
+            }
+        }
+        
+    }
+    func show(group : Int, card : GroupCard) {
+        let groupController = self.storyboard?.instantiateViewController(withIdentifier: "group") as! GroupViewController
+        groupController.showID = group
+        groupController.groupCard = card
+        self.navigationController?.pushViewController(groupController, animated: true)
+    }
+    func toGroup(rec : UIGestureRecognizer) {
+        let id = rec.view?.tag
+        let myGroup = cardsToShow?.object(at: id!) as! PostCard
+        let groupID = Int(myGroup.content)
+        groupWith(id: groupID!)
+    }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let currentObject = cardsToShow![(indexPath as NSIndexPath).row] as! PostCard
         let type = currentObject.type
         
-      
+      print("OKAR")
         var cellType = "cell"
         if currentObject.comment == true {
             cellType = "cellc"
@@ -486,8 +530,10 @@ class OneCardViewController : UIViewController, UITableViewDelegate, UITableView
             }
         } else if type == 2 {
             cellType = "image"
+        } else if type == 3 {
+            cellType = "group"
         }
-
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: cellType, for: indexPath) as? BizCardTableViewCell
         if currentObject.comment == false {
             cell?.reply?.alpha = 0
@@ -597,6 +643,39 @@ class OneCardViewController : UIViewController, UITableViewDelegate, UITableView
             let imageURL = URL(string: currentObject.content)
             cell?.userImage.hnk_setImageFromURL(imageURL!)
             }
+        if type == 3 {
+//            cell?.groupLabel?.text = "shared a group"
+            cell?.desc.text = "Check out this group!"
+            cell?.userImage.image = nil
+            cell?.userImage.contentMode = UIViewContentMode.scaleAspectFill
+            cell?.userImage.clipsToBounds = true
+            cell?.userImage.layer.borderWidth = 1
+
+            cell?.userImage.layer.borderColor =
+                UIColor.lightGray.withAlphaComponent(0.6).cgColor
+            cell?.userImage.isUserInteractionEnabled = true
+            cell?.userImage.layer.backgroundColor = UIColor.black.cgColor
+            let shadow = UIBlurEffect(style: UIBlurEffectStyle.dark)
+            let blurView = UIVisualEffectView(effect: shadow)
+            blurView.alpha = 0.6
+            blurView.frame =  CGRect(x: 0, y: 0, width: 1000, height: 1000)
+            if cell!.userImage.subviews.count < 1 {
+                cell?.userImage.addSubview(blurView)
+            }
+            let tap = UITapGestureRecognizer(target: self, action: #selector(self.toGroup(rec:)))
+            cell?.userImage.tag = indexPath.row
+            tap.numberOfTapsRequired = 1
+            tap.numberOfTouchesRequired = 1
+            cell?.userImage.addGestureRecognizer(tap)
+//            
+            cell?.groupTitle.text = currentObject.userText
+            let imageURL = URL(string: currentObject.secondaryContent)
+            print(imageURL)
+            cell?.userImage.hnk_setImageFromURL(imageURL!)
+//
+        }
+
+        
         cell?.reply?.tag = indexPath.row
         cell?.reply?.addTarget(self, action: #selector(self.reply), for: UIControlEvents.touchUpInside)
         cell?.layoutIfNeeded()
@@ -720,7 +799,9 @@ class OneCardViewController : UIViewController, UITableViewDelegate, UITableView
         self.present(picker!, animated: true)
     }
     func postPress() {
+        if box?.textView!.text != "" && box?.textView!.text != "Write a comment..." {
         self.post()
+        }
     }
     
     func canOpenURL(string: String?) -> Bool {

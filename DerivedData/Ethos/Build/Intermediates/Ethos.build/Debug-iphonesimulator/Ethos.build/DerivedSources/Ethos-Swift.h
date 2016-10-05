@@ -186,6 +186,7 @@ SWIFT_CLASS("_TtC5Ethos20BizCardTableViewCell")
 @property (nonatomic, strong) IBOutlet UILabel * _Null_unspecified name;
 @property (nonatomic, strong) IBOutlet UILabel * _Null_unspecified desc;
 @property (nonatomic, strong) IBOutlet UIImageView * _Null_unspecified img;
+@property (nonatomic, strong) UIView * _Nullable imageCover;
 @property (nonatomic, strong) IBOutlet UIView * _Null_unspecified backMoji;
 @property (nonatomic, strong) IBOutlet UIButton * _Null_unspecified react;
 @property (nonatomic, strong) IBOutlet UIButton * _Null_unspecified comment;
@@ -195,6 +196,7 @@ SWIFT_CLASS("_TtC5Ethos20BizCardTableViewCell")
 @property (nonatomic) NSInteger likesCount;
 @property (nonatomic, strong) IBOutlet UIImageView * _Null_unspecified userImage;
 @property (nonatomic, strong) IBOutlet UIStackView * _Null_unspecified linkStack;
+@property (nonatomic, strong) IBOutlet UILabel * _Null_unspecified groupTitle;
 @property (nonatomic, strong) IBOutlet UIImageView * _Null_unspecified linkImg;
 @property (nonatomic) NSInteger cellType;
 @property (nonatomic, strong) URLEmbeddedView * _Nullable linkEmbed;
@@ -231,6 +233,7 @@ SWIFT_PROTOCOL("_TtP5Ethos17ImageSeekDelegate_")
 @class UIRefreshControl;
 @class UIScrollView;
 @class UILongPressGestureRecognizer;
+@class GroupCard;
 @class UITextView;
 @class UIImagePickerController;
 @class PostCard;
@@ -256,6 +259,7 @@ SWIFT_CLASS("_TtC5Ethos28CardStackTableViewController")
 @property (nonatomic, strong) DKImagePickerController * _Nullable picker;
 @property (nonatomic) NSInteger loadNext;
 @property (nonatomic) BOOL posting;
+@property (nonatomic) BOOL launched;
 - (void)viewDidLoad;
 - (void)showWithPostI:(NSNotification * _Nonnull)postI;
 - (void)postFriends:(NSArray * _Nonnull)string;
@@ -263,6 +267,7 @@ SWIFT_CLASS("_TtC5Ethos28CardStackTableViewController")
 - (void)updateFriends;
 - (void)startFirebase;
 - (void)verifyToken;
+- (void)markLaunch;
 - (void)viewWillAppear:(BOOL)animated;
 - (void)viewDidAppear:(BOOL)animated;
 - (void)updatePosts:(NSArray * _Nonnull)array;
@@ -280,6 +285,8 @@ SWIFT_CLASS("_TtC5Ethos28CardStackTableViewController")
 - (NSInteger)numberOfSectionsInTableView:(UITableView * _Nonnull)tableView;
 - (NSInteger)tableView:(UITableView * _Nonnull)tableView numberOfRowsInSection:(NSInteger)section;
 - (void)showOptionsWithSender:(UILabel * _Nonnull)sender;
+- (void)muteWithPost:(NSInteger)post;
+- (void)close;
 - (void)zoomModalPic:(UIGestureRecognizer * _Nonnull)image;
 - (void)dismissModalImage:(UILongPressGestureRecognizer * _Nonnull)recognizer;
 - (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer * _Nonnull)gestureRecognizer;
@@ -288,9 +295,13 @@ SWIFT_CLASS("_TtC5Ethos28CardStackTableViewController")
 - (void)commentPressedWithRec:(UIGestureRecognizer * _Nonnull)rec;
 - (void)showLinkWithRec:(UIGestureRecognizer * _Nonnull)rec;
 - (void)openLinkWithUrl:(NSURL * _Nonnull)url;
+- (void)toGroupWithRec:(UIGestureRecognizer * _Nonnull)rec;
+- (void)groupWithId:(NSInteger)id;
+- (void)showWithGroup:(NSInteger)group card:(GroupCard * _Nonnull)card;
 - (UITableViewCell * _Nonnull)tableView:(UITableView * _Nonnull)tableView cellForRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath;
 - (void)tableView:(UITableView * _Nonnull)tableView didSelectRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath;
 - (void)textViewDidBeginEditing:(UITextView * _Nonnull)textView;
+- (BOOL)textView:(UITextView * _Nonnull)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString * _Nonnull)text;
 - (void)stopWritingPost;
 - (void)imageCancelled;
 - (void)showImagePicker;
@@ -328,7 +339,6 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, copy) NSString * _Nonnull etho
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, copy) NSString * _Nonnull id;)
 + (NSString * _Nonnull)id;
 + (void)setId:(NSString * _Nonnull)value;
-- (void)registerAPIWithEthosKey:(NSString * _Nonnull)ethosKey id:(NSString * _Nonnull)id;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
@@ -344,8 +354,32 @@ SWIFT_CLASS("_TtC5Ethos9GroupCard")
 @property (nonatomic) BOOL isOwner;
 @property (nonatomic) BOOL isModerator;
 @property (nonatomic) BOOL isFeatured;
+@property (nonatomic) BOOL isMember;
+@property (nonatomic) BOOL requestedJoin;
 - (nonnull instancetype)initWithId:(NSInteger)id OBJC_DESIGNATED_INITIALIZER;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
+@end
+
+
+SWIFT_CLASS("_TtC5Ethos14GroupRecommend")
+@interface GroupRecommend : UIView
+@property (nonatomic, strong) IBOutlet UILabel * _Null_unspecified title;
+@property (nonatomic, strong) IBOutlet UIImageView * _Null_unspecified one;
+@property (nonatomic, strong) IBOutlet UIImageView * _Null_unspecified two;
+@property (nonatomic, strong) IBOutlet UIImageView * _Null_unspecified three;
+@property (nonatomic, strong) IBOutlet UIImageView * _Null_unspecified four;
+@property (nonatomic, strong) IBOutlet UILabel * _Null_unspecified oneText;
+@property (nonatomic, strong) IBOutlet UILabel * _Null_unspecified twoText;
+@property (nonatomic, strong) IBOutlet UILabel * _Null_unspecified threeText;
+@property (nonatomic, strong) IBOutlet UILabel * _Null_unspecified fourText;
+@property (nonatomic, copy) NSArray<UIImageView *> * _Nonnull imgs;
+@property (nonatomic, copy) NSArray<UILabel *> * _Nonnull texts;
+- (void)drawRect:(CGRect)rect;
+- (void)format;
+- (void)tapWithRec:(UIGestureRecognizer * _Nonnull)rec;
+- (void)setGroupWithIndex:(NSInteger)index title:(NSString * _Nonnull)title imgURL:(NSString * _Nonnull)imgURL id:(NSInteger)id;
+- (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 @end
 
 
@@ -356,6 +390,7 @@ SWIFT_CLASS("_TtC5Ethos18GroupTableViewCell")
 @property (nonatomic, strong) IBOutlet UILabel * _Null_unspecified groupDesc;
 @property (nonatomic, strong) IBOutlet UIImageView * _Null_unspecified mod;
 @property (nonatomic, strong) IBOutlet UIView * _Null_unspecified cardBack;
+@property (nonatomic, strong) IBOutlet UIButton * _Nullable option;
 - (void)awakeFromNib;
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated;
 - (nonnull instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString * _Nullable)reuseIdentifier OBJC_DESIGNATED_INITIALIZER;
@@ -368,12 +403,19 @@ SWIFT_CLASS("_TtC5Ethos24GroupTableViewController")
 @property (nonatomic, copy) NSString * _Nonnull ethosAuth;
 @property (nonatomic, copy) NSString * _Nonnull id;
 @property (nonatomic, strong) NSMutableArray * _Nullable groups;
+@property (nonatomic, strong) NSMutableArray * _Nonnull suggest;
+@property (nonatomic, strong, getter=float, setter=setFloat:) UIButton * _Nullable float_;
+@property (nonatomic, strong) GroupRecommend * _Nullable suggestionView;
 - (void)viewDidLoad;
+- (void)showGroups;
 - (void)verifyToken;
 - (void)viewWillAppear:(BOOL)animated;
 - (void)getGroups;
+- (void)groupWithId:(NSInteger)id;
 - (void)updateWithGroups:(NSArray * _Nonnull)groups;
 - (void)didReceiveMemoryWarning;
+- (void)showSuggestions;
+- (void)showGroupWithId:(NSInteger)id;
 - (void)showWithGroup:(NSInteger)group card:(GroupCard * _Nonnull)card;
 - (NSInteger)numberOfSectionsInTableView:(UITableView * _Nonnull)tableView;
 - (NSInteger)tableView:(UITableView * _Nonnull)tableView numberOfRowsInSection:(NSInteger)section;
@@ -385,6 +427,7 @@ SWIFT_CLASS("_TtC5Ethos24GroupTableViewController")
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 @end
 
+@class JoinBar;
 
 SWIFT_CLASS("_TtC5Ethos19GroupViewController")
 @interface GroupViewController : UIViewController <ImageSeekDelegate, UINavigationControllerDelegate, UIScrollViewDelegate, UIImagePickerControllerDelegate, UIGestureRecognizerDelegate, UITabBarControllerDelegate, UITextViewDelegate, UITableViewDataSource, UITableViewDelegate>
@@ -407,8 +450,15 @@ SWIFT_CLASS("_TtC5Ethos19GroupViewController")
 @property (nonatomic) NSInteger showID;
 @property (nonatomic, strong) GroupCard * _Nullable groupCard;
 @property (nonatomic, strong) UIImageView * _Nullable groupImg;
+@property (nonatomic, strong) UIView * _Nullable casing;
+@property (nonatomic, strong) UIButton * _Nullable optionView;
+@property (nonatomic, strong) JoinBar * _Nullable join;
 - (void)viewDidLoad;
+- (void)options;
+- (void)joinThis;
+- (void)back;
 - (void)showWithPostI:(NSNotification * _Nonnull)postI;
+- (void)viewWillDisappear:(BOOL)animated;
 - (void)postFriends:(NSArray * _Nonnull)string;
 - (void)refreshContent:(UIRefreshControl * _Nonnull)refreshControl;
 - (void)updateFriends;
@@ -439,6 +489,7 @@ SWIFT_CLASS("_TtC5Ethos19GroupViewController")
 - (void)commentPressedWithRec:(UIGestureRecognizer * _Nonnull)rec;
 - (UITableViewCell * _Nonnull)tableView:(UITableView * _Nonnull)tableView cellForRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath;
 - (void)tableView:(UITableView * _Nonnull)tableView didSelectRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath;
+- (BOOL)textView:(UITextView * _Nonnull)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString * _Nonnull)text;
 - (void)textViewDidBeginEditing:(UITextView * _Nonnull)textView;
 - (void)stopWritingPost;
 - (void)imageCancelled;
@@ -455,6 +506,64 @@ SWIFT_CLASS("_TtC5Ethos19GroupViewController")
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 @end
 
+
+
+SWIFT_CLASS("_TtC5Ethos30IntroGroupsTableViewController")
+@interface IntroGroupsTableViewController : UITableViewController
+@property (nonatomic, copy) NSString * _Nonnull ethosAuth;
+@property (nonatomic, copy) NSString * _Nonnull id;
+@property (nonatomic, strong) NSMutableArray * _Nullable groups;
+@property (nonatomic, strong) NSMutableArray * _Nonnull suggest;
+@property (nonatomic, strong, getter=float, setter=setFloat:) UIButton * _Nullable float_;
+@property (nonatomic, strong) GroupRecommend * _Nullable suggestionView;
+- (void)viewDidLoad;
+- (void)leave;
+- (void)showGroups;
+- (void)verifyToken;
+- (void)viewWillAppear:(BOOL)animated;
+- (void)getGroups;
+- (void)groupWithId:(NSInteger)id;
+- (void)updateWithGroups:(NSArray * _Nonnull)groups;
+- (void)didReceiveMemoryWarning;
+- (void)showGroupWithId:(NSInteger)id;
+- (void)showWithGroup:(NSInteger)group card:(GroupCard * _Nonnull)card;
+- (NSInteger)numberOfSectionsInTableView:(UITableView * _Nonnull)tableView;
+- (NSInteger)tableView:(UITableView * _Nonnull)tableView numberOfRowsInSection:(NSInteger)section;
+- (UITableViewCell * _Nonnull)tableView:(UITableView * _Nonnull)tableView cellForRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath;
+- (CGFloat)tableView:(UITableView * _Nonnull)tableView heightForRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath;
+- (void)tableView:(UITableView * _Nonnull)tableView didSelectRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath;
+- (void)joinWithId:(NSInteger)id;
+- (void)getGroupWithRec:(UIButton * _Nonnull)rec;
+- (nonnull instancetype)initWithStyle:(UITableViewStyle)style OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+SWIFT_CLASS("_TtC5Ethos19IntroViewController")
+@interface IntroViewController : UIPageViewController <UIPageViewControllerDelegate, UIPageViewControllerDataSource>
+@property (nonatomic) NSInteger currentIndex;
+@property (nonatomic, strong) NSArray * _Nullable myViews;
+- (void)viewDidLoad;
+- (UIViewController * _Nullable)pageViewController:(UIPageViewController * _Nonnull)pageViewController viewControllerAfterViewController:(UIViewController * _Nonnull)viewController;
+- (UIViewController * _Nullable)pageViewController:(UIPageViewController * _Nonnull)pageViewController viewControllerBeforeViewController:(UIViewController * _Nonnull)viewController;
+- (void)pageViewController:(UIPageViewController * _Nonnull)pageViewController willTransitionToViewControllers:(NSArray<UIViewController *> * _Nonnull)pendingViewControllers;
+- (NSInteger)presentationCountForPageViewController:(UIPageViewController * _Nonnull)pageViewController;
+- (NSInteger)presentationIndexForPageViewController:(UIPageViewController * _Nonnull)pageViewController;
+- (void)didReceiveMemoryWarning;
+- (nonnull instancetype)initWithTransitionStyle:(UIPageViewControllerTransitionStyle)style navigationOrientation:(UIPageViewControllerNavigationOrientation)navigationOrientation options:(NSDictionary<NSString *, id> * _Nullable)options OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+SWIFT_CLASS("_TtC5Ethos7JoinBar")
+@interface JoinBar : UIView
+@property (nonatomic, strong) IBOutlet UIButton * _Null_unspecified join;
+@property (nonatomic, strong) IBOutlet UILabel * _Null_unspecified joinText;
+- (void)drawRect:(CGRect)rect;
+- (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+@end
 
 
 SWIFT_CLASS("_TtC5Ethos10LnikViewer")
@@ -476,9 +585,13 @@ SWIFT_CLASS("_TtC5Ethos10LnikViewer")
 SWIFT_CLASS("_TtC5Ethos19LoginViewController")
 @interface LoginViewController : UIViewController <FBSDKLoginButtonDelegate, UICollectionViewDataSource, UICollectionViewDelegate, UIScrollViewDelegate>
 @property (nonatomic, copy) NSURL * _Nullable myEmoji;
+@property (nonatomic, strong) UILabel * _Nullable header;
 @property (nonatomic, strong) NSMutableArray * _Nullable emojiList;
 @property (nonatomic, strong) UICollectionView * _Nullable emojiKey;
-@property (nonatomic, strong) UILabel * _Nullable header;
+@property (nonatomic, copy) NSString * _Nonnull email;
+@property (nonatomic, copy) NSString * _Nonnull firstName;
+@property (nonatomic, copy) NSString * _Nonnull lastName;
+@property (nonatomic, copy) NSString * _Nonnull city;
 - (void)viewDidLoad;
 - (void)loadEm;
 - (NSInteger)collectionView:(UICollectionView * _Nonnull)collectionView numberOfItemsInSection:(NSInteger)section;
@@ -514,6 +627,7 @@ SWIFT_CLASS("_TtC5Ethos25NotifyTableViewController")
 @property (nonatomic, copy) NSString * _Nonnull id;
 - (void)viewDidLoad;
 - (void)viewWillAppear:(BOOL)animated;
+- (void)showProfile;
 - (void)getNotifications;
 - (void)read;
 - (void)viewDidAppear:(BOOL)animated;
@@ -572,6 +686,7 @@ SWIFT_CLASS("_TtC5Ethos21OneCardViewController")
 - (void)viewDidLoad;
 - (void)postFriends:(NSArray * _Nonnull)string;
 - (void)refreshContent:(UIRefreshControl * _Nonnull)refreshControl;
+- (void)getEmoji;
 - (void)verifyToken;
 - (void)viewWillAppear:(BOOL)animated;
 - (void)viewDidAppear:(BOOL)animated;
@@ -597,6 +712,9 @@ SWIFT_CLASS("_TtC5Ethos21OneCardViewController")
 - (void)commentPressedWithRec:(UIGestureRecognizer * _Nonnull)rec;
 - (void)showLinkWithRec:(UIGestureRecognizer * _Nonnull)rec;
 - (void)openLinkWithUrl:(NSURL * _Nonnull)url;
+- (void)groupWithId:(NSInteger)id;
+- (void)showWithGroup:(NSInteger)group card:(GroupCard * _Nonnull)card;
+- (void)toGroupWithRec:(UIGestureRecognizer * _Nonnull)rec;
 - (UITableViewCell * _Nonnull)tableView:(UITableView * _Nonnull)tableView cellForRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath;
 - (void)tableView:(UITableView * _Nonnull)tableView didSelectRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath;
 - (void)textViewDidBeginEditing:(UITextView * _Nonnull)textView;
@@ -628,6 +746,7 @@ SWIFT_CLASS("_TtC5Ethos7PostBox")
 @property (nonatomic, strong) UIButton * _Nullable cancelMedia;
 @property (nonatomic, weak) id <ImageSeekDelegate> _Nullable delegate;
 - (void)drawRect:(CGRect)rect;
+- (void)disable;
 - (void)postPressed;
 - (void)restorePicker;
 - (void)showPicker;
@@ -645,6 +764,7 @@ SWIFT_CLASS("_TtC5Ethos8PostCard")
 @property (nonatomic, copy) NSString * _Nonnull posterEmoji;
 @property (nonatomic, copy) NSString * _Nonnull userText;
 @property (nonatomic, copy) NSString * _Nonnull content;
+@property (nonatomic, copy) NSString * _Nonnull secondaryContent;
 @property (nonatomic) NSInteger type;
 @property (nonatomic) NSInteger groupID;
 @property (nonatomic) NSInteger postID;
@@ -672,6 +792,72 @@ SWIFT_CLASS("_TtC5Ethos8PostCard")
 @property (nonatomic, strong) NSArray * _Nonnull responseToEmojis;
 - (nonnull instancetype)initWithPosterEmoji:(NSString * _Nonnull)posterEmoji userText:(NSString * _Nonnull)userText type:(NSInteger)type OBJC_DESIGNATED_INITIALIZER;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
+@end
+
+
+SWIFT_CLASS("_TtC5Ethos21ProfileViewController")
+@interface ProfileViewController : UIViewController <UIScrollViewDelegate, UICollectionViewDataSource, UICollectionViewDelegate>
+@property (nonatomic, strong) IBOutlet UIImageView * _Null_unspecified bigImg;
+@property (nonatomic, strong) IBOutlet UIButton * _Null_unspecified chnage;
+@property (nonatomic, strong) IBOutlet UIButton * _Null_unspecified history;
+@property (nonatomic, strong) IBOutlet UIButton * _Null_unspecified done;
+@property (nonatomic, copy) NSString * _Nonnull id;
+@property (nonatomic, copy) NSString * _Nonnull ethosAuth;
+@property (nonatomic, strong) UICollectionView * _Nullable emojiKey;
+@property (nonatomic, strong) NSMutableArray * _Nullable emojiList;
+@property (nonatomic, copy) NSURL * _Nullable myEmoji;
+@property (nonatomic, strong) UILabel * _Nullable header;
+- (IBAction)done:(id _Nonnull)sender;
+- (IBAction)changeMoji:(id _Nonnull)sender;
+- (IBAction)showHistory:(id _Nonnull)sender;
+- (void)viewDidLoad;
+- (void)close;
+- (void)setEmoji;
+- (void)loadEm;
+- (void)getEmojiURL;
+- (NSInteger)collectionView:(UICollectionView * _Nonnull)collectionView numberOfItemsInSection:(NSInteger)section;
+- (void)collectionView:(UICollectionView * _Nonnull)collectionView didSelectItemAtIndexPath:(NSIndexPath * _Nonnull)indexPath;
+- (UICollectionViewCell * _Nonnull)collectionView:(UICollectionView * _Nonnull)collectionView cellForItemAtIndexPath:(NSIndexPath * _Nonnull)indexPath;
+- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+SWIFT_CLASS("_TtC5Ethos31SearchGroupsTableViewController")
+@interface SearchGroupsTableViewController : UITableViewController
+- (void)viewDidLoad;
+- (void)didReceiveMemoryWarning;
+- (NSInteger)numberOfSectionsInTableView:(UITableView * _Nonnull)tableView;
+- (NSInteger)tableView:(UITableView * _Nonnull)tableView numberOfRowsInSection:(NSInteger)section;
+- (nonnull instancetype)initWithStyle:(UITableViewStyle)style OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+@class UISearchBar;
+
+SWIFT_CLASS("_TtC5Ethos26SearchGroupsViewController")
+@interface SearchGroupsViewController : UIViewController <UIBarPositioningDelegate, UITableViewDataSource, UISearchBarDelegate, UIScrollViewDelegate, UITableViewDelegate>
+@property (nonatomic, strong) IBOutlet UISearchBar * _Null_unspecified search;
+@property (nonatomic, strong) IBOutlet UITableView * _Null_unspecified resultsTable;
+@property (nonatomic, strong) NSMutableArray * _Nonnull groups;
+- (void)viewDidLoad;
+- (void)viewDidAppear:(BOOL)animated;
+- (void)updateGroupsWithResponse:(NSArray * _Nonnull)response;
+- (void)getResults;
+- (void)close;
+- (void)joinWithId:(NSInteger)id;
+- (void)getGroupWithRec:(UIButton * _Nonnull)rec;
+- (void)showWithCard:(GroupCard * _Nonnull)card;
+- (UITableViewCell * _Nonnull)tableView:(UITableView * _Nonnull)tableView cellForRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath;
+- (CGFloat)tableView:(UITableView * _Nonnull)tableView heightForFooterInSection:(NSInteger)section;
+- (CGFloat)tableView:(UITableView * _Nonnull)tableView heightForRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath;
+- (NSInteger)tableView:(UITableView * _Nonnull)tableView numberOfRowsInSection:(NSInteger)section;
+- (NSInteger)numberOfSectionsInTableView:(UITableView * _Nonnull)tableView;
+- (void)tableView:(UITableView * _Nonnull)tableView didSelectRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath;
+- (void)searchBar:(UISearchBar * _Nonnull)searchBar textDidChange:(NSString * _Nonnull)searchText;
+- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 @end
 
 

@@ -4,6 +4,7 @@
 <dict>
 	<key>UIAppFonts</key>
 	<array>
+		<string>lobster.otf</string>
 		<string>rale_reg.ttf</string>
 	</array>
 </dict>

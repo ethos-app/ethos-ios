@@ -96,13 +96,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
             }
         }
     }
+ 
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         UIApplication.shared.statusBarStyle = .lightContent
         self.window?.tintColor = UIColor.white
         UITabBar.appearance().tintColor = UIColor.hexStringToUIColor("247BA0").withAlphaComponent(0.8)
         UITabBar.appearance().barTintColor = UIColor.hexStringToUIColor("F3F3F3")
-
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "launch"), object: nil)
         FIRApp.configure()
                if #available(iOS 10.0, *) {
             let authOptions : UNAuthorizationOptions = [.alert, .badge, .sound]

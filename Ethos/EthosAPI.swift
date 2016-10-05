@@ -15,20 +15,27 @@ class EthosAPI: NSObject {
     static let shared = EthosAPI()
     static var ethosAuth = ""
     static var id = ""
+    fileprivate var full = "http://meetethos.azurewebsites.net/api/"
     
-    func registerAPI(ethosKey : String, id : String) {
-          headers = ["Accept":"application/json","Content-Type":"application/json","X-Ethos-Auth":"\(EthosAPI.ethosAuth)", "X-Facebook-Id":"\(EthosAPI.id)"]
+    public func request(url: String, type: HTTPMethod, body : [String : AnyObject]?, reply : @escaping (Any?) -> Void) {
+     
+        let headers = ["Accept":"application/json","Content-Type":"application/json","X-Ethos-Auth":"\(EthosAPI.ethosAuth)", "X-Facebook-Id":"\(EthosAPI.id)"]
+        let path = full+url
+        let convert = path as URLConvertible
+        if body != nil {
+            Alamofire.request(convert, method: type, parameters: body!, encoding: JSONEncoding.default, headers: headers)
+                .responseJSON { (response) in
+                    print("ENDED")
+                    reply(response.result.value)
+            }
 
-    
+        } else {
+            Alamofire.request(convert, method: type, parameters: nil, encoding: JSONEncoding.default, headers: headers)
+                .responseJSON { (response) in
+                    print("ENDED")
+                    reply(response.result.value)
+            }
+
+        }
     }
-    
-//     func request(url: URLConvertible, type: HTTPMethod, body : [String : AnyObject]) {
-//        
-//        Alamofire.request("http://meetethos.azurewebsites.net/api/Group", method: .get, parameters: ["":""], encoding: JSONEncoding.default, headers: headers!)
-//            .responseJSON { (response) in
-//                
-//        }
-//       
-//        }
-
 }

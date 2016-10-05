@@ -19,6 +19,8 @@ class GroupCard: NSObject {
     var isOwner = false
     var isModerator = false
     var isFeatured = false
+    var isMember = false
+    var requestedJoin = false
     init(id : Int) {
         self.groupID = id
     }
