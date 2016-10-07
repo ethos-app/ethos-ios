@@ -50,7 +50,7 @@ class GroupViewController: UIViewController, UITableViewDelegate, UITableViewDat
     var casing : UIView?
     var optionView : UIButton?
     var join : JoinBar?
-    
+    var pickingImage = false
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -122,6 +122,14 @@ class GroupViewController: UIViewController, UITableViewDelegate, UITableViewDat
         if groupCard?.isMember == false {
         self.tableView.tableHeaderView = temp
         }
+        if groupCard?.requestedJoin == true {
+            join?.join.setTitle("Pending", for: UIControlState.normal)
+            join?.join.sizeToFit()
+        } else if groupCard?.isMember == true {
+            join?.join.setTitle("Go", for: UIControlState.normal)
+        } else {
+            join?.join.setTitle("Join", for: UIControlState.normal)
+        }
     }
     func options() {
         print("options")
@@ -162,9 +170,11 @@ class GroupViewController: UIViewController, UITableViewDelegate, UITableViewDat
         }
     }
     func back() {
+        if pickingImage == false {
         casing?.removeFromSuperview()
         optionView?.removeFromSuperview()
         self.navigationController?.popToRootViewController(animated: true)
+        }
     }
     
     func show(postI : NSNotification) {
@@ -256,6 +266,7 @@ class GroupViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     override func viewWillAppear(_ animated: Bool) {
+
         if groupCard?.groupType == 1 && groupCard?.isMember == false {
             postBox.alpha = 0
             postBox.frame = CGRect(x: 0, y: 0, width: 0, height: 0)
@@ -287,6 +298,8 @@ class GroupViewController: UIViewController, UITableViewDelegate, UITableViewDat
         postBox.textView?.delegate = self
         postBox.delegate = self
         postBox.textView?.returnKeyType = UIReturnKeyType.send
+        postBox.type = .group
+        postBox.resetText()
     }
     
     func updatePosts(_ array : NSArray) {
@@ -782,14 +795,15 @@ class GroupViewController: UIViewController, UITableViewDelegate, UITableViewDat
         self.uplaodImage = nil
     }
     func showImagePicker() {
-        
+        pickingImage = true
         picker = DKImagePickerController()
         picker!.singleSelect = true
         picker!.assetType = DKImagePickerControllerAssetType.allPhotos
         picker!.didSelectAssets = { (assets: [DKAsset]) in
             let done = false
             assets.first?.fetchOriginalImage(done, completeBlock: { (image, info) in
-                self.postBox.pickButton?.imageView?.image = image
+                self.postBox.pickButton?.setImage(image, for: UIControlState.normal)
+                self.pickingImage = false
                 self.uplaodImage = image
                 self.postType = 2
                 UIView.animate(withDuration: 0.4, animations: {

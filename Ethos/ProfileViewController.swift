@@ -9,8 +9,9 @@
 import UIKit
 import Alamofire
 import Haneke
+import MessageUI
 
-class ProfileViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+class ProfileViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, MFMailComposeViewControllerDelegate {
 
     
     @IBOutlet var bigImg: UIImageView!
@@ -30,6 +31,18 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
     
     @IBAction func done(_ sender: AnyObject) {
         self.dismiss(animated: true, completion: nil)
+    }
+    
+    
+    @IBAction func contact(_ sender: AnyObject) {
+        let mail = MFMailComposeViewController()
+        mail.mailComposeDelegate = self
+        mail.setToRecipients(["help@meetethos.com"])
+        mail.setSubject("Ethos app feedback")
+        self.present(mail, animated: true, completion: nil)
+    }
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+        controller.dismiss(animated: true, completion: nil)
     }
     
     @IBAction func changeMoji(_ sender: AnyObject) {

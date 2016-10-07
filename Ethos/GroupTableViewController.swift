@@ -86,6 +86,7 @@ class GroupTableViewController: UITableViewController, GroupDelegate {
                     group.isModerator = g.object(forKey: "IsModerator") as! Bool
                     group.isFeatured = g.object(forKey: "IsFeatured") as! Bool
                     group.isMember = g.object(forKey: "IsMember") as! Bool
+
                     self.show(group: id, card: group)
             }
         }

@@ -117,6 +117,7 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 @import CoreGraphics;
 @import ObjectiveC;
 @import FBSDKLoginKit;
+@import MessageUI;
 #endif
 
 #pragma clang diagnostic ignored "-Wproperty-attribute-mismatch"
@@ -310,9 +311,18 @@ SWIFT_CLASS("_TtC5Ethos28CardStackTableViewController")
 - (void)getOptionsWithSender:(UIButton * _Nonnull)sender;
 - (void)deleteWithPost:(NSInteger)post;
 - (void)blockWithUserID:(NSInteger)userID;
-- (void)reportWithPost:(PostCard * _Nonnull)post;
+- (void)reportWithPost:(PostCard * _Nonnull)post index:(NSInteger)index;
 - (void)shareWithIndex:(NSInteger)index;
 - (void)tabBarController:(UITabBarController * _Nonnull)tabBarController didSelectViewController:(UIViewController * _Nonnull)viewController;
+- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+SWIFT_CLASS("_TtC5Ethos25CreateGroupViewController")
+@interface CreateGroupViewController : UIViewController
+- (void)viewDidLoad;
+- (void)didReceiveMemoryWarning;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 @end
@@ -355,7 +365,9 @@ SWIFT_CLASS("_TtC5Ethos9GroupCard")
 @property (nonatomic) BOOL isModerator;
 @property (nonatomic) BOOL isFeatured;
 @property (nonatomic) BOOL isMember;
+@property (nonatomic) BOOL isPending;
 @property (nonatomic) BOOL requestedJoin;
+@property (nonatomic) BOOL isCreate;
 - (nonnull instancetype)initWithId:(NSInteger)id OBJC_DESIGNATED_INITIALIZER;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 @end
@@ -453,6 +465,7 @@ SWIFT_CLASS("_TtC5Ethos19GroupViewController")
 @property (nonatomic, strong) UIView * _Nullable casing;
 @property (nonatomic, strong) UIButton * _Nullable optionView;
 @property (nonatomic, strong) JoinBar * _Nullable join;
+@property (nonatomic) BOOL pickingImage;
 - (void)viewDidLoad;
 - (void)options;
 - (void)joinThis;
@@ -592,7 +605,10 @@ SWIFT_CLASS("_TtC5Ethos19LoginViewController")
 @property (nonatomic, copy) NSString * _Nonnull firstName;
 @property (nonatomic, copy) NSString * _Nonnull lastName;
 @property (nonatomic, copy) NSString * _Nonnull city;
+@property (nonatomic, strong) UIButton * _Nullable rules;
+@property (nonatomic, strong) UIView * _Nullable rulesWindow;
 - (void)viewDidLoad;
+- (void)showFB;
 - (void)loadEm;
 - (NSInteger)collectionView:(UICollectionView * _Nonnull)collectionView numberOfItemsInSection:(NSInteger)section;
 - (void)collectionView:(UICollectionView * _Nonnull)collectionView didSelectItemAtIndexPath:(NSIndexPath * _Nonnull)indexPath;
@@ -794,9 +810,10 @@ SWIFT_CLASS("_TtC5Ethos8PostCard")
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 @end
 
+@class MFMailComposeViewController;
 
 SWIFT_CLASS("_TtC5Ethos21ProfileViewController")
-@interface ProfileViewController : UIViewController <UIScrollViewDelegate, UICollectionViewDataSource, UICollectionViewDelegate>
+@interface ProfileViewController : UIViewController <UIScrollViewDelegate, UICollectionViewDataSource, MFMailComposeViewControllerDelegate, UICollectionViewDelegate>
 @property (nonatomic, strong) IBOutlet UIImageView * _Null_unspecified bigImg;
 @property (nonatomic, strong) IBOutlet UIButton * _Null_unspecified chnage;
 @property (nonatomic, strong) IBOutlet UIButton * _Null_unspecified history;
@@ -808,6 +825,8 @@ SWIFT_CLASS("_TtC5Ethos21ProfileViewController")
 @property (nonatomic, copy) NSURL * _Nullable myEmoji;
 @property (nonatomic, strong) UILabel * _Nullable header;
 - (IBAction)done:(id _Nonnull)sender;
+- (IBAction)contact:(id _Nonnull)sender;
+- (void)mailComposeController:(MFMailComposeViewController * _Nonnull)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError * _Nullable)error;
 - (IBAction)changeMoji:(id _Nonnull)sender;
 - (IBAction)showHistory:(id _Nonnull)sender;
 - (void)viewDidLoad;
@@ -841,10 +860,13 @@ SWIFT_CLASS("_TtC5Ethos26SearchGroupsViewController")
 @property (nonatomic, strong) IBOutlet UISearchBar * _Null_unspecified search;
 @property (nonatomic, strong) IBOutlet UITableView * _Null_unspecified resultsTable;
 @property (nonatomic, strong) NSMutableArray * _Nonnull groups;
+@property (nonatomic, strong) GroupCard * _Nullable createGroup;
 - (void)viewDidLoad;
 - (void)viewDidAppear:(BOOL)animated;
 - (void)updateGroupsWithResponse:(NSArray * _Nonnull)response;
+- (void)showCreate;
 - (void)getResults;
+- (void)create;
 - (void)close;
 - (void)joinWithId:(NSInteger)id;
 - (void)getGroupWithRec:(UIButton * _Nonnull)rec;

@@ -209,6 +209,7 @@ class CardStackTableViewController: UIViewController, UITableViewDelegate, UITab
             self.present(launch!, animated: true, completion: nil)
         }
         postBox.textView?.delegate = self
+        postBox.resetText()
         postBox.delegate = self
         postBox.textView?.returnKeyType = UIReturnKeyType.send
 
@@ -234,6 +235,8 @@ class CardStackTableViewController: UIViewController, UITableViewDelegate, UITab
                 groupName = "in "+groupName
                 }
                 dataCard.groupString = groupName
+            } else {
+                dataCard.groupString = ""
             }
             if dataCard.posterID == 1 {
                 dataCard.isEthos = true
@@ -267,6 +270,7 @@ class CardStackTableViewController: UIViewController, UITableViewDelegate, UITab
         if showingType == ShowType.my {
             reqURL = "http://meetethos.azurewebsites.net/api/Profile/myPosts"
         }
+        
         if cardsToShow?.count == 0 {
         let view = MRProgressOverlayView.showOverlayAdded(to: self.view, title: "", mode: MRProgressOverlayViewMode.indeterminate, animated: true)
         view?.backgroundColor = UIColor.hexStringToUIColor("c9c9c9")
@@ -305,7 +309,9 @@ class CardStackTableViewController: UIViewController, UITableViewDelegate, UITab
                 MRProgressOverlayView.dismissAllOverlays(for: self.view, animated: true)
                 if let array = response.result.value as? NSDictionary {
                     print(response)
+                    
                     if let posts = array.object(forKey: "selectedPosts") as? NSArray {
+                   
                         self.updatePosts(posts)
                         self.loadNext += 1;
                         self.attemptingLoad = false
@@ -429,7 +435,7 @@ class CardStackTableViewController: UIViewController, UITableViewDelegate, UITab
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
     
         if (scrollView.contentOffset.y > scrollView.contentSize.height * 0.5) {
-            
+            print(cardsToShow?.count)
             if attemptingLoad == false && cardsToShow!.count % 15 == 0 {
             nextPosts(page: loadNext)
             attemptingLoad = true
@@ -470,9 +476,11 @@ class CardStackTableViewController: UIViewController, UITableViewDelegate, UITab
             alert.addAction(block)
 
         } else {
-        let report = UIAlertAction(title: "Report", style: .default) { (report) in
+        let report = UIAlertAction(title: "Report and Hide", style: .default) { (report) in
             ///
-            self.report(post: source)
+            self.getPosts()
+
+            self.report(post: source, index: sender.tag)
         }
         let block = UIAlertAction(title: "Block User", style: .destructive) { (report) in
             self.block(userID: source.posterID)
@@ -624,8 +632,13 @@ class CardStackTableViewController: UIViewController, UITableViewDelegate, UITab
         cell?.img.hnk_setImageFromURL(imageURL!)
         cell?.img.contentMode = UIViewContentMode.scaleAspectFit
         cell?.reply?.alpha = 0
-
+        print(currentObject.groupString)
+        cell?.groupLabel?.text = " "
+        if currentObject.groupString != "" {
+        print("SET")
+        print(currentObject.groupString)
         cell?.groupLabel?.text = currentObject.groupString
+        }
         if currentObject.isEthos {
         cell?.backMoji.backgroundColor = UIColor.hexStringToUIColor("247BA0")
         } else if currentObject.userOwned == 1 {
@@ -749,9 +762,9 @@ class CardStackTableViewController: UIViewController, UITableViewDelegate, UITab
         if writingPost == true {
             stopWritingPost()
         } else {
+            
             self.showPost(at: indexPath.row)
-            
-            
+
         }
     }
     
@@ -861,7 +874,9 @@ class CardStackTableViewController: UIViewController, UITableViewDelegate, UITab
         }
     }
     
-    func report(post : PostCard) {
+    func report(post : PostCard, index: Int) {
+        let ind = IndexPath(row: index, section: 0)
+   
         let report = UIAlertController(title: "Report Post", message: "Thanks for helping us create a positive community. Why are you reporting this?", preferredStyle: UIAlertControllerStyle.alert)
         report.addTextField { (textField) in
             textField.placeholder = "Comments (optional)"
@@ -878,8 +893,9 @@ class CardStackTableViewController: UIViewController, UITableViewDelegate, UITab
                             "UserComments": "iOS does not support user comments yet. More important stuff to fix rn."] as [String : Any]
             Alamofire.request("http://meetethos.azurewebsites.net/api/Moderation/Create", method: .post, parameters: params, encoding: JSONEncoding.default, headers: headers)
                 .responseJSON { (response) in
-                    
-                    self.getPosts()
+                    self.cardsToShow?.removeObject(at: index)
+                    self.tableView.deleteRows(at: [ind], with: UITableViewRowAnimation.middle)
+                 //   self.getPosts()
                     MRProgressOverlayView.dismissAllOverlays(for: self.navigationController?.view!, animated: true)
             }
             

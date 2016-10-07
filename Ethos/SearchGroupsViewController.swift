@@ -19,6 +19,8 @@ class SearchGroupsViewController: UIViewController, UITableViewDelegate, UITable
     
     var groups = NSMutableArray()
     
+    var createGroup : GroupCard?
+
     override func viewDidLoad() {
         super.viewDidLoad()
         self.automaticallyAdjustsScrollViewInsets = false
@@ -34,7 +36,13 @@ class SearchGroupsViewController: UIViewController, UITableViewDelegate, UITable
         self.title = "Search Groups"
         self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.white, NSFontAttributeName : UIFont(name: "Lobster 1.4", size: 30)!]
         self.navigationController?.navigationBar.setTitleVerticalPositionAdjustment(5, for: UIBarMetrics.default)
-        
+        createGroup = GroupCard(id: -1)
+        createGroup?.groupTitle = "Create a Group"
+        createGroup?.groupDesc = "Not finding the group you're looking for?"
+        createGroup?.groupType = 0
+        createGroup?.groupImg = "http://meetethos.blob.core.windows.net/emojis/group_add.png"
+        createGroup?.isCreate = true
+        createGroup?.isMember = false
     }
     
     override func viewDidAppear(_ animated : Bool) {
@@ -56,7 +64,14 @@ class SearchGroupsViewController: UIViewController, UITableViewDelegate, UITable
                 self.groups.add(group)
             }
         }
+      
         self.resultsTable!.reloadData()
+    }
+    func showCreate() {
+        if self.groups.count == 0 {
+        self.groups.add(createGroup!)
+        self.resultsTable!.reloadData()
+        }
     }
     
     func getResults() {
@@ -66,12 +81,17 @@ class SearchGroupsViewController: UIViewController, UITableViewDelegate, UITable
                     self.groups.removeAllObjects()
                     print(returned)
                     self.updateGroups(response: returned)
+                } else {
+                    self.showCreate()
                 }
             }
             // handle response
         }
     }
-    
+    func create() {
+        let create = self.storyboard?.instantiateViewController(withIdentifier: "createGroup") as! CreateGroupViewController
+        self.present(create, animated: true, completion: nil)
+    }
     func close() {
         self.dismiss(animated: true)
     }
@@ -82,9 +102,13 @@ class SearchGroupsViewController: UIViewController, UITableViewDelegate, UITable
     }
     func getGroup(rec : UIButton) {
         let index = rec.tag
-        rec.setTitle("Joined", for: UIControlState.normal)
         let group = groups.object(at: index) as! GroupCard
+        if group.isCreate {
+        create()
+        } else {
+        rec.setTitle("Joined", for: UIControlState.normal)
         join(id : group.groupID)
+        }
     }
     func show(card : GroupCard) {
         let groupController = self.storyboard?.instantiateViewController(withIdentifier: "group") as! GroupViewController
@@ -98,9 +122,25 @@ class SearchGroupsViewController: UIViewController, UITableViewDelegate, UITable
         let groupObj = groups.object(at: indexPath.row) as! GroupCard
         cell.groupTitle.text = groupObj.groupTitle
         cell.groupDesc.text = groupObj.groupDesc
-        let url = URL(string: groupObj.groupImg)
-        cell.groupImg.hnk_setImageFromURL(url!)
+        print("HELLO")
+        print(groupObj.groupImg)
+        if groupObj.groupImg != "" {
+
+        let link = URL(string: groupObj.groupImg)
+        cell.groupImg.hnk_setImageFromURL(link!)
         cell.option?.tag = indexPath.row
+        }
+        if groupObj.requestedJoin {
+              cell.option?.setTitle("Pending", for: UIControlState.normal)
+             cell.option?.sizeToFit()
+        } else if groupObj.isMember {
+             cell.option?.setTitle("Go", for: UIControlState.normal)
+        }  else if  groupObj.isCreate {
+            cell.option?.setTitle("Create", for: UIControlState.normal)
+        } else {
+            cell.option?.setTitle("Join", for: UIControlState.normal)
+        }
+        
         cell.option?.addTarget(self, action: #selector(getGroup(rec:)), for: UIControlEvents.touchUpInside)
         return cell
     }
@@ -120,7 +160,11 @@ class SearchGroupsViewController: UIViewController, UITableViewDelegate, UITable
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.resultsTable.deselectRow(at: indexPath, animated: true)
         let group = groups.object(at: indexPath.row) as! GroupCard
+        if group.isCreate {
+        create()
+        } else if group.isPending == false  {
         show(card: group)
+        }
     }
     
      func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {

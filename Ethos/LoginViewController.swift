@@ -48,6 +48,8 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate, UICollect
     var firstName = ""
     var lastName = ""
     var city = ""
+    var rules : UIButton?
+    var rulesWindow : UIView?
     override func viewDidLoad() {
         emojiList = NSMutableArray()
         let lowerThird = CGRect(x: 0, y: self.view.frame.height-200, width: self.view.frame.width, height: 200)
@@ -83,8 +85,10 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate, UICollect
         logo.font = UIFont(name: "Lobster 1.4", size: 52)
         logo.text = "Ethos"
         logo.textColor = UIColor.white
+        
         self.view.addSubview(logo)
         let myFrame = CGRect(x: 50, y: self.view.frame.width-100, width: self.view.frame.width-100, height: 50)
+        
         let login = FBSDKLoginButton(frame: myFrame)
         login.loginBehavior = .native
         login.readPermissions = ["public_profile", "email", "user_friends", "user_location"]
@@ -92,8 +96,27 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate, UICollect
         login.center.y = self.view.frame.height * 0.9
         self.view.addSubview(login)
         
+        rulesWindow = UIView.loadFromNibNamed(nibNamed: "TermsView")
+        rulesWindow?.frame = CGRect(x: 20, y: 40, width: self.view.frame.width-40, height: self.view.frame.width+60)
+        rules = UIButton(frame: myFrame)
+        rules?.setTitle("Accept Terms", for: UIControlState.normal)
+        rulesWindow?.alpha = 0
+        rules?.setTitleColor(UIColor.hexStringToUIColor("247BA0"), for: UIControlState.normal)
+        rules?.backgroundColor = UIColor.hexStringToUIColor("EEEEEE")
+        rules?.addTarget(self, action: #selector(self.showFB), for: UIControlEvents.touchUpInside)
+        rules?.center.y = self.view.frame.height * 0.9
+        self.view.addSubview(rules!)
+        self.view.addSubview(rulesWindow!)
         self.view.addSubview(emojiKey!)
         loadEm()
+        
+    }
+    func showFB() {
+        self.header?.text = "Last step! 👇 \n\n\n"
+        UIView.animate(withDuration: 0.3) {
+                self.rulesWindow?.alpha = 0
+                self.rules?.frame = CGRect(x: 0, y: 1000, width: (self.rules?.frame.width)!, height: (self.rules?.frame.height)!)
+        }
     }
     func loadEm() {
         Alamofire.request("http://meetethos.azurewebsites.net/api/Emoji/All")
@@ -121,7 +144,8 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate, UICollect
         UIView.animate(withDuration: 0.3, animations: {
             self.header?.frame = CGRect(x: 0, y: self.view.frame.height-165, width: self.header!.frame.width, height: 165)
             self.header?.numberOfLines = 0
-            self.header?.text = "Last step! 👇\n\n\n"
+            self.rulesWindow?.alpha = 1
+            self.header?.text = "Agree to the rules? \n\n\n"
         }) 
         UIView.animate(withDuration: 0.3, animations: {
             self.emojiKey?.frame = CGRect(x: 0, y: self.view.frame.height, width: self.emojiKey!.frame.width, height: self.emojiKey!.frame.height)
@@ -183,7 +207,7 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate, UICollect
                 }
                 if let location = object.object(forKey: "location") as? NSDictionary
                 {
-                if let city = object.object(forKey: "name") as? String {
+                if let city = location.object(forKey: "name") as? String {
                     self.city = city
                 }
                 }

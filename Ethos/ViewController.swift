@@ -26,32 +26,32 @@ extension Date {
         var interval = (Calendar.current as NSCalendar).components(.year, from: self, to: Date(), options: []).year
         
         if interval! > 0 {
-            return interval == 1 ? "\(interval!)" + " " + "year" :
-                "\(interval!)" + " " + "years"
+            return interval == 1 ? "\(interval!)" + " " + "yr" :
+                "\(interval!)" + " " + "yrs"
         }
         
         interval = (Calendar.current as NSCalendar).components(.month, from: self, to: Date(), options: []).month
         if interval! > 0 {
-            return interval == 1 ? "\(interval!)" + " " + "month" :
-                "\(interval!)" + " " + "months"
+            return interval == 1 ? "\(interval!)" + " " + "m" :
+                "\(interval!)" + " " + "m"
         }
         
         interval = (Calendar.current as NSCalendar).components(.day, from: self, to: Date(), options: []).day
         if interval! > 0 {
-            return interval == 1 ? "\(interval!)" + " " + "day" :
-                "\(interval!)" + " " + "days"
+            return interval == 1 ? "\(interval!)" + " " + "d" :
+                "\(interval!)" + " " + "d"
         }
         
         interval = (Calendar.current as NSCalendar).components(.hour, from: self, to: Date(), options: []).hour
         if interval! > 0 {
-            return interval == 1 ? "\(interval!)" + " " + "hour" :
-                "\(interval!)" + " " + "hours"
+            return interval == 1 ? "\(interval!)" + " " + "hr" :
+                "\(interval!)" + " " + "hrs"
         }
         
         interval = (Calendar.current as NSCalendar).components(.minute, from: self, to: Date(), options: []).minute
         if interval! > 0 {
-            return interval == 1 ? "\(interval!)" + " " + "minute" :
-                "\(interval!)" + " " + "minutes"
+            return interval == 1 ? "\(interval!)" + " " + "min" :
+                "\(interval!)" + " " + "min"
         }
         
         return "just now"
@@ -92,6 +92,7 @@ extension UIColor {
         )
     }
 }
+
 class ViewController: UIViewController {
 
 
@@ -108,7 +109,7 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
 
 }
 

@@ -389,7 +389,7 @@ class OneCardViewController : UIViewController, UITableViewDelegate, UITableView
             alert.addAction(block)
             
         } else {
-            let report = UIAlertAction(title: "Report", style: .default) { (report) in
+            let report = UIAlertAction(title: "Report and Hide", style: .default) { (report) in
                 ///
                 self.report(post: source)
             }
@@ -857,7 +857,7 @@ class OneCardViewController : UIViewController, UITableViewDelegate, UITableView
         report.addTextField { (textField) in
             textField.placeholder = "Comments (optional)"
         }
-        let rep = UIAlertAction(title: "Report", style: UIAlertActionStyle.default) { (action) in
+        let rep = UIAlertAction(title: "Report and Hide", style: UIAlertActionStyle.default) { (action) in
             // reported
             let view = MRProgressOverlayView.showOverlayAdded(to: self.navigationController?.view!, title: "Reported", mode: MRProgressOverlayViewMode.checkmark, animated: true)
             view?.setTintColor(UIColor.hexStringToUIColor("247BA0"))
@@ -869,8 +869,7 @@ class OneCardViewController : UIViewController, UITableViewDelegate, UITableView
                             "UserComments": "iOS does not support user comments yet. More important stuff to fix rn."] as [String : Any]
             Alamofire.request("http://meetethos.azurewebsites.net/api/Moderation/Create", method: .post, parameters: params, encoding: JSONEncoding.default, headers: headers)
                 .responseJSON { (response) in
-                    
-                    self.getPosts()
+                    self.navigationController?.popViewController(animated: true)
                     MRProgressOverlayView.dismissAllOverlays(for: self.navigationController?.view!, animated: true)
             }
             

@@ -9,206 +9,207 @@ provides-member:
 - ["C5Ethos28CardStackTableViewController", ""]
 - ["OC5Ethos28CardStackTableViewController8ShowType", ""]
 provides-dynamic-lookup:
-- "close"
-- "markLaunch"
-- "segment"
-- "viewWillAppear"
-- "report"
-- "mute"
-- "getPosts"
-- "viewDidAppear"
-- "showLink"
-- "prefersStatusBarHidden"
-- "updateFriends"
-- "postBox"
-- "openLink"
-- "tabBarController"
-- "stopWritingPost"
-- "cardsButton"
 - "loadNext"
-- "toGroup"
-- "selectCards"
+- "getPosts"
+- "show"
+- "show"
+- "preferredStatusBarStyle"
+- "bar"
+- "showOptions"
+- "showLink"
 - "showImagePicker"
-- "imageCancelled"
-- "netButton"
-- "updatePosts"
-- "like"
-- "launched"
-- "gestureRecognizerShouldBegin"
-- "gestureRecognizer"
-- "textViewDidBeginEditing"
-- "didReceiveMemoryWarning"
-- "postFriends"
-- "commentPressed"
-- "selectNet"
-- "tableView"
-- "tableView"
-- "tableView"
-- "tableView"
-- "imagePickerController"
-- "ethosAuth"
-- "postType"
-- "refreshContent"
-- "attemptingLoad"
-- "startFirebase"
-- "numberOfSections"
-- "viewDidLoad"
-- "showPost"
 - "scrollViewDidScroll"
-- "posting"
+- "close"
+- "zoomModalPic"
+- "viewWillAppear"
+- "commentPressed"
+- "picker"
+- "nextPosts"
+- "report"
+- "updateFriends"
+- "id"
+- "cardsButton"
+- "updatePosts"
 - "share"
 - "delete"
-- "nextPosts"
-- "showOptions"
-- "canOpenURL"
-- "picker"
-- "dismissModalImage"
-- "textView"
-- "show"
-- "show"
-- "bar"
-- "getOptions"
-- "showingImage"
-- "cardsToShow"
-- "expand"
-- "writingPost"
-- "post"
+- "imageCancelled"
+- "prefersStatusBarHidden"
+- "tableView"
+- "tableView"
+- "tableView"
+- "tableView"
+- "refreshContent"
+- "selectNet"
+- "numberOfSections"
+- "netButton"
 - "groupWith"
-- "zoomModalPic"
-- "verifyToken"
-- "uplaodImage"
-- "id"
+- "tabBarController"
+- "mute"
+- "posting"
+- "stopWritingPost"
+- "segment"
+- "viewDidAppear"
+- "viewDidLoad"
+- "didReceiveMemoryWarning"
+- "textView"
+- "postBox"
+- "imagePickerController"
 - "block"
-- "preferredStatusBarStyle"
+- "post"
+- "like"
+- "openLink"
+- "showingImage"
+- "gestureRecognizer"
+- "canOpenURL"
+- "textViewDidBeginEditing"
+- "selectCards"
+- "expand"
+- "ethosAuth"
+- "gestureRecognizerShouldBegin"
+- "verifyToken"
+- "launched"
+- "markLaunch"
+- "uplaodImage"
+- "getOptions"
+- "showPost"
+- "writingPost"
+- "startFirebase"
+- "attemptingLoad"
+- "toGroup"
+- "cardsToShow"
+- "dismissModalImage"
+- "postType"
+- "postFriends"
 depends-top-level:
+- !private "UIBlurEffect"
+- !private "+="
+- !private "Array"
 - !private "UserDefaults"
-- "StringLiteralType"
-- !private "!="
-- !private "UITableViewCellSelectionStyle"
-- !private "TimeZone"
-- !private "print"
-- !private "&&"
-- "UIImagePickerController"
-- !private "UIBarButtonItemStyle"
-- !private "UIBarMetrics"
-- !private "OneCardViewController"
-- !private "<"
-- !private "GroupViewController"
-- "BooleanLiteralType"
-- !private "FBSDKGraphRequest"
-- !private "%"
-- "Bool"
-- "Int"
-- !private "AnyObject"
-- !private "!"
-- !private "DateFormatter"
+- !private "DispatchQueue"
 - !private "SFSafariViewController"
-- "=="
-- "AssignmentPrecedence"
-- "CastingPrecedence"
+- "UIStatusBarStyle"
+- !private "TimeZone"
+- "UITableViewCell"
+- "UIImage"
+- "NSNotification"
+- !private "Double"
+- !private "UIBlurEffectStyle"
+- !private "!"
+- "UITextView"
+- !private "%"
+- !private "OneCardViewController"
+- !private "UIAlertAction"
+- !private "FIRInstanceID"
+- !private "UIBarMetrics"
+- "BarButton"
+- !private "Int64"
+- !private "NSEC_PER_SEC"
+- !private "UIImageJPEGRepresentation"
+- !private "NSPredicate"
+- !private "UIScreen"
+- "IndexPath"
+- !private "UITableViewRowAnimation"
+- !private "UIAlertActionStyle"
+- !private "DateFormatter"
+- "CardStackTableViewController"
+- !private "NSForegroundColorAttributeName"
+- "String"
+- !private "UIReturnKeyType"
+- !private "<"
+- !private "UIControlEvents"
+- !private "NSFontAttributeName"
+- "PostCard"
+- "UILabel"
+- "NSMutableArray"
+- !private "DispatchTime"
+- !private "UIFont"
+- !private "FBSDKGraphRequest"
 - "UIRefreshControl"
 - !private "NSTextCheckingResult"
-- "UILongPressGestureRecognizer"
-- !private "UIProgressView"
-- !private "Int64"
-- "UIViewController"
-- !private "UITapGestureRecognizer"
-- "PostCard"
-- "UITabBarController"
-- "UITableViewDelegate"
-- !private "Double"
-- "UITableViewDataSource"
-- !private "NSEC_PER_SEC"
-- !private "UIBlurEffectStyle"
-- !private "UIPinchGestureRecognizer"
-- !private "UIBlurEffect"
-- "BarButton"
-- !private "||"
-- !private "NSURL"
-- !private "URLEmbeddedView"
-- !private "NSData"
-- "String"
-- "DKImagePickerController"
-- "UIButton"
-- "CardStackTableViewController"
-- !private "*"
-- !private "+="
-- !private "Alamofire"
-- !private "UIColor"
-- !private "UIReturnKeyType"
-- !private "UIImageView"
-- "UITableView"
-- !private "UIViewContentMode"
-- !private "UIScreen"
-- !private "UIGestureRecognizerState"
-- !private "MRProgressOverlayViewMode"
-- !private "UIAlertController"
 - !private "UIAlertControllerStyle"
-- !private "+"
+- !private "UIAlertController"
 - !private "DKImagePickerControllerAssetType"
-- "NSArray"
-- "NSMutableArray"
-- "IndexPath"
-- !private "UITableViewAutomaticDimension"
-- "UITabBarControllerDelegate"
-- !private "??"
-- "UIScrollViewDelegate"
-- !private "UIControlState"
-- !private "DispatchTime"
-- !private "UIControlEvents"
-- "UINavigationControllerDelegate"
-- "UIGestureRecognizer"
-- !private "UITableViewCellSeparatorStyle"
-- "UIImagePickerControllerDelegate"
-- !private "Dictionary"
-- !private "NSString"
-- !private "NSForegroundColorAttributeName"
-- "ImageSeekDelegate"
-- !private "DKAsset"
-- "UIGestureRecognizerDelegate"
-- !private "CharacterSet"
-- !private ">"
-- "UITextViewDelegate"
-- !private "UIAlertAction"
-- !private "NSPredicate"
-- !private "JSONEncoding"
-- "UITableViewCell"
-- !private "UIAlertActionStyle"
-- "UILabel"
-- !private "EthosAPI"
-- !private "Array"
-- !private "/"
 - !private "UIApplication"
-- "PostBox"
-- "UIStatusBarStyle"
-- "UIScrollView"
-- !private "FIRInstanceID"
-- !private "UIVisualEffectView"
-- !private "NSDictionary"
-- !private "BizCardTableViewCell"
-- "UIView"
-- !private "UIFont"
-- !private "FBSDKAccessToken"
-- !private "NSFontAttributeName"
-- !private "UIImageJPEGRepresentation"
-- !private "Void"
-- "URL"
-- !private "UITableViewScrollPosition"
-- !private "DispatchQueue"
-- "UITextView"
-- !private "MRProgressOverlayView"
-- !private "NotificationCenter"
-- "CGRect"
-- !private "NSIndexPath"
-- "NSNotification"
-- !private "LoginViewController"
-- "GroupCard"
-- "NSRange"
-- !private "-"
 - !private "UIBarButtonItem"
-- !private "NSDataDetector"
-- "UIImage"
+- !private "+"
+- !private "UIVisualEffectView"
+- "DKImagePickerController"
+- "CastingPrecedence"
+- "AssignmentPrecedence"
+- "=="
+- "Bool"
+- "GroupCard"
+- !private "MRProgressOverlayView"
+- "UIButton"
+- "UIGestureRecognizer"
+- !private "UITableViewScrollPosition"
+- !private "NSString"
 - !private "UnicodeScalarType"
+- !private "MRProgressOverlayViewMode"
+- !private "Alamofire"
+- !private "UIViewContentMode"
+- "UIScrollView"
+- !private "||"
+- "Int"
+- !private "UIBarButtonItemStyle"
+- !private "NSURL"
+- !private "JSONEncoding"
+- !private "UIColor"
+- "BooleanLiteralType"
+- !private "UITableViewCellSeparatorStyle"
+- !private "UITapGestureRecognizer"
+- !private "/"
+- !private "URLEmbeddedView"
+- !private "UIImageView"
+- !private "??"
+- !private "NSData"
+- "UITabBarController"
+- "StringLiteralType"
+- !private "NSDataDetector"
+- !private "Void"
+- !private "DKAsset"
+- !private "BizCardTableViewCell"
+- !private "AnyObject"
+- !private "UIGestureRecognizerState"
+- "UIGestureRecognizerDelegate"
+- !private "UIPinchGestureRecognizer"
+- "UITextViewDelegate"
+- !private "Dictionary"
+- !private "GroupViewController"
+- "UIImagePickerControllerDelegate"
+- !private "FBSDKAccessToken"
+- "NSRange"
+- "ImageSeekDelegate"
+- !private "NSDictionary"
+- !private "LoginViewController"
+- !private "EthosAPI"
+- !private "!="
+- !private ">"
+- "PostBox"
+- !private "UIControlState"
+- "UITableView"
+- "UILongPressGestureRecognizer"
+- "UIView"
+- "UIImagePickerController"
+- "NSArray"
+- !private "NSIndexPath"
+- !private "NotificationCenter"
+- !private "UIProgressView"
+- "UITabBarControllerDelegate"
+- "UIScrollViewDelegate"
+- "URL"
+- !private "&&"
+- "UINavigationControllerDelegate"
+- !private "-"
+- !private "UITableViewCellSelectionStyle"
+- !private "*"
+- !private "UITableViewAutomaticDimension"
+- "CGRect"
+- !private "CharacterSet"
+- "UITableViewDataSource"
+- !private "print"
+- "UITableViewDelegate"
+- "UIViewController"
 depends-member:
 - !private ["Ps16AbsoluteValuable", "Stride"]
 - !private ["Ps16AbsoluteValuable", "init"]
@@ -285,6 +286,7 @@ depends-member:
 - !private ["Ps9AnyObject", "UITableViewAutomaticDimension"]
 - !private ["Ps9AnyObject", "UITableViewCellSelectionStyle"]
 - !private ["Ps9AnyObject", "UITableViewCellSeparatorStyle"]
+- !private ["Ps9AnyObject", "UITableViewRowAnimation"]
 - !private ["Ps9AnyObject", "UITableViewScrollPosition"]
 - !private ["Ps9AnyObject", "UITapGestureRecognizer"]
 - !private ["Ps9AnyObject", "UIView"]
@@ -346,6 +348,7 @@ depends-member:
 - ["Ps9AnyObject", "deinit"]
 - !private ["Ps9AnyObject", "delegate"]
 - ["Ps9AnyObject", "delete"]
+- !private ["Ps9AnyObject", "deleteRows"]
 - !private ["Ps9AnyObject", "dequeueReusableCell"]
 - !private ["Ps9AnyObject", "desc"]
 - !private ["Ps9AnyObject", "deselectMe"]
@@ -456,6 +459,7 @@ depends-member:
 - !private ["Ps9AnyObject", "reloadData"]
 - !private ["Ps9AnyObject", "removeAllObjects"]
 - !private ["Ps9AnyObject", "removeFromSuperview"]
+- !private ["Ps9AnyObject", "removeObject"]
 - !private ["Ps9AnyObject", "replacingOccurrences"]
 - !private ["Ps9AnyObject", "reply"]
 - ["Ps9AnyObject", "report"]
@@ -657,6 +661,7 @@ depends-member:
 - !private ["PSo15CALayerDelegate", "dataSource"]
 - !private ["PSo15CALayerDelegate", "date"]
 - !private ["PSo15CALayerDelegate", "delegate"]
+- !private ["PSo15CALayerDelegate", "deleteRows"]
 - !private ["PSo15CALayerDelegate", "dequeueReusableCell"]
 - !private ["PSo15CALayerDelegate", "desc"]
 - !private ["PSo15CALayerDelegate", "deselectMe"]
@@ -807,6 +812,7 @@ depends-member:
 - !private ["Ps7CVarArg", "UITableViewAutomaticDimension"]
 - !private ["Ps7CVarArg", "UITableViewCellSelectionStyle"]
 - !private ["Ps7CVarArg", "UITableViewCellSeparatorStyle"]
+- !private ["Ps7CVarArg", "UITableViewRowAnimation"]
 - !private ["Ps7CVarArg", "UITableViewScrollPosition"]
 - !private ["Ps7CVarArg", "UITapGestureRecognizer"]
 - !private ["Ps7CVarArg", "UIView"]
@@ -869,6 +875,7 @@ depends-member:
 - !private ["Ps7CVarArg", "default"]
 - !private ["Ps7CVarArg", "delegate"]
 - ["Ps7CVarArg", "delete"]
+- !private ["Ps7CVarArg", "deleteRows"]
 - !private ["Ps7CVarArg", "dequeueReusableCell"]
 - !private ["Ps7CVarArg", "desc"]
 - !private ["Ps7CVarArg", "deselectMe"]
@@ -980,6 +987,7 @@ depends-member:
 - !private ["Ps7CVarArg", "reloadData"]
 - !private ["Ps7CVarArg", "removeAllObjects"]
 - !private ["Ps7CVarArg", "removeFromSuperview"]
+- !private ["Ps7CVarArg", "removeObject"]
 - !private ["Ps7CVarArg", "replacingOccurrences"]
 - !private ["Ps7CVarArg", "reply"]
 - ["Ps7CVarArg", "report"]
@@ -1173,6 +1181,7 @@ depends-member:
 - ["C5Ethos28CardStackTableViewController", "UITableViewCell"]
 - !private ["C5Ethos28CardStackTableViewController", "UITableViewCellSelectionStyle"]
 - !private ["C5Ethos28CardStackTableViewController", "UITableViewCellSeparatorStyle"]
+- !private ["C5Ethos28CardStackTableViewController", "UITableViewRowAnimation"]
 - !private ["C5Ethos28CardStackTableViewController", "UITableViewScrollPosition"]
 - !private ["C5Ethos28CardStackTableViewController", "UITapGestureRecognizer"]
 - ["C5Ethos28CardStackTableViewController", "UITextView"]
@@ -1397,6 +1406,7 @@ depends-member:
 - !private ["Ps28CustomDebugStringConvertible", "UITableViewAutomaticDimension"]
 - !private ["Ps28CustomDebugStringConvertible", "UITableViewCellSelectionStyle"]
 - !private ["Ps28CustomDebugStringConvertible", "UITableViewCellSeparatorStyle"]
+- !private ["Ps28CustomDebugStringConvertible", "UITableViewRowAnimation"]
 - !private ["Ps28CustomDebugStringConvertible", "UITableViewScrollPosition"]
 - !private ["Ps28CustomDebugStringConvertible", "UITapGestureRecognizer"]
 - !private ["Ps28CustomDebugStringConvertible", "UIView"]
@@ -1460,6 +1470,7 @@ depends-member:
 - !private ["Ps28CustomDebugStringConvertible", "default"]
 - !private ["Ps28CustomDebugStringConvertible", "delegate"]
 - ["Ps28CustomDebugStringConvertible", "delete"]
+- !private ["Ps28CustomDebugStringConvertible", "deleteRows"]
 - !private ["Ps28CustomDebugStringConvertible", "dequeueReusableCell"]
 - !private ["Ps28CustomDebugStringConvertible", "desc"]
 - !private ["Ps28CustomDebugStringConvertible", "deselectMe"]
@@ -1573,6 +1584,7 @@ depends-member:
 - !private ["Ps28CustomDebugStringConvertible", "reloadData"]
 - !private ["Ps28CustomDebugStringConvertible", "removeAllObjects"]
 - !private ["Ps28CustomDebugStringConvertible", "removeFromSuperview"]
+- !private ["Ps28CustomDebugStringConvertible", "removeObject"]
 - !private ["Ps28CustomDebugStringConvertible", "replacingOccurrences"]
 - !private ["Ps28CustomDebugStringConvertible", "reply"]
 - ["Ps28CustomDebugStringConvertible", "report"]
@@ -1726,6 +1738,7 @@ depends-member:
 - !private ["Ps17CustomReflectable", "offsetBy"]
 - !private ["Ps17CustomReflectable", "range"]
 - !private ["Ps17CustomReflectable", "removeAllObjects"]
+- !private ["Ps17CustomReflectable", "removeObject"]
 - !private ["Ps17CustomReflectable", "replacingOccurrences"]
 - !private ["Ps17CustomReflectable", "row"]
 - ["Ps17CustomReflectable", "some"]
@@ -1810,6 +1823,7 @@ depends-member:
 - !private ["Ps23CustomStringConvertible", "UITableViewAutomaticDimension"]
 - !private ["Ps23CustomStringConvertible", "UITableViewCellSelectionStyle"]
 - !private ["Ps23CustomStringConvertible", "UITableViewCellSeparatorStyle"]
+- !private ["Ps23CustomStringConvertible", "UITableViewRowAnimation"]
 - !private ["Ps23CustomStringConvertible", "UITableViewScrollPosition"]
 - !private ["Ps23CustomStringConvertible", "UITapGestureRecognizer"]
 - !private ["Ps23CustomStringConvertible", "UIView"]
@@ -1874,6 +1888,7 @@ depends-member:
 - !private ["Ps23CustomStringConvertible", "default"]
 - !private ["Ps23CustomStringConvertible", "delegate"]
 - ["Ps23CustomStringConvertible", "delete"]
+- !private ["Ps23CustomStringConvertible", "deleteRows"]
 - !private ["Ps23CustomStringConvertible", "dequeueReusableCell"]
 - !private ["Ps23CustomStringConvertible", "desc"]
 - !private ["Ps23CustomStringConvertible", "deselectMe"]
@@ -1986,6 +2001,7 @@ depends-member:
 - !private ["Ps23CustomStringConvertible", "reloadData"]
 - !private ["Ps23CustomStringConvertible", "removeAllObjects"]
 - !private ["Ps23CustomStringConvertible", "removeFromSuperview"]
+- !private ["Ps23CustomStringConvertible", "removeObject"]
 - !private ["Ps23CustomStringConvertible", "replacingOccurrences"]
 - !private ["Ps23CustomStringConvertible", "reply"]
 - ["Ps23CustomStringConvertible", "report"]
@@ -2223,6 +2239,7 @@ depends-member:
 - !private ["Ps9Equatable", "UITableViewAutomaticDimension"]
 - !private ["Ps9Equatable", "UITableViewCellSelectionStyle"]
 - !private ["Ps9Equatable", "UITableViewCellSeparatorStyle"]
+- !private ["Ps9Equatable", "UITableViewRowAnimation"]
 - !private ["Ps9Equatable", "UITableViewScrollPosition"]
 - !private ["Ps9Equatable", "UITapGestureRecognizer"]
 - !private ["Ps9Equatable", "UIView"]
@@ -2273,6 +2290,7 @@ depends-member:
 - ["Ps9Equatable", "cardsButton"]
 - ["Ps9Equatable", "cardsToShow"]
 - !private ["Ps9Equatable", "cgColor"]
+- !private ["Ps9Equatable", "checkmark"]
 - !private ["Ps9Equatable", "clipsToBounds"]
 - ["Ps9Equatable", "close"]
 - !private ["Ps9Equatable", "comment"]
@@ -2285,7 +2303,6 @@ depends-member:
 - !private ["Ps9Equatable", "convert"]
 - !private ["Ps9Equatable", "cornerRadius"]
 - !private ["Ps9Equatable", "count"]
-- !private ["Ps9Equatable", "cross"]
 - !private ["Ps9Equatable", "current"]
 - !private ["Ps9Equatable", "dark"]
 - !private ["Ps9Equatable", "dataSource"]
@@ -2294,6 +2311,7 @@ depends-member:
 - !private ["Ps9Equatable", "default"]
 - !private ["Ps9Equatable", "delegate"]
 - ["Ps9Equatable", "delete"]
+- !private ["Ps9Equatable", "deleteRows"]
 - !private ["Ps9Equatable", "dequeueReusableCell"]
 - !private ["Ps9Equatable", "desc"]
 - !private ["Ps9Equatable", "description"]
@@ -2373,6 +2391,7 @@ depends-member:
 - !private ["Ps9Equatable", "main"]
 - ["Ps9Equatable", "markLaunch"]
 - !private ["Ps9Equatable", "matches"]
+- !private ["Ps9Equatable", "middle"]
 - !private ["Ps9Equatable", "minimumPressDuration"]
 - ["Ps9Equatable", "mute"]
 - !private ["Ps9Equatable", "my"]
@@ -2422,6 +2441,7 @@ depends-member:
 - !private ["Ps9Equatable", "reloadData"]
 - !private ["Ps9Equatable", "removeAllObjects"]
 - !private ["Ps9Equatable", "removeFromSuperview"]
+- !private ["Ps9Equatable", "removeObject"]
 - !private ["Ps9Equatable", "replacingOccurrences"]
 - !private ["Ps9Equatable", "reply"]
 - ["Ps9Equatable", "report"]
@@ -2559,6 +2579,7 @@ depends-member:
 - !private ["Ps25ExpressibleByArrayLiteral", "object"]
 - !private ["Ps25ExpressibleByArrayLiteral", "rawValue"]
 - !private ["Ps25ExpressibleByArrayLiteral", "removeAllObjects"]
+- !private ["Ps25ExpressibleByArrayLiteral", "removeObject"]
 - !private ["Ps25ExpressibleByArrayLiteral", "row"]
 - !private ["Ps25ExpressibleByArrayLiteral", "subscript"]
 - !private ["Ps25ExpressibleByArrayLiteral", "touchUpInside"]
@@ -2718,6 +2739,7 @@ depends-member:
 - !private ["Ps8Hashable", "UITableViewAutomaticDimension"]
 - !private ["Ps8Hashable", "UITableViewCellSelectionStyle"]
 - !private ["Ps8Hashable", "UITableViewCellSeparatorStyle"]
+- !private ["Ps8Hashable", "UITableViewRowAnimation"]
 - !private ["Ps8Hashable", "UITableViewScrollPosition"]
 - !private ["Ps8Hashable", "UITapGestureRecognizer"]
 - !private ["Ps8Hashable", "UIView"]
@@ -2767,6 +2789,7 @@ depends-member:
 - ["Ps8Hashable", "cardsButton"]
 - ["Ps8Hashable", "cardsToShow"]
 - !private ["Ps8Hashable", "cgColor"]
+- !private ["Ps8Hashable", "checkmark"]
 - !private ["Ps8Hashable", "clipsToBounds"]
 - ["Ps8Hashable", "close"]
 - !private ["Ps8Hashable", "comment"]
@@ -2779,7 +2802,6 @@ depends-member:
 - !private ["Ps8Hashable", "convert"]
 - !private ["Ps8Hashable", "cornerRadius"]
 - !private ["Ps8Hashable", "count"]
-- !private ["Ps8Hashable", "cross"]
 - !private ["Ps8Hashable", "current"]
 - !private ["Ps8Hashable", "dark"]
 - !private ["Ps8Hashable", "dataSource"]
@@ -2788,6 +2810,7 @@ depends-member:
 - !private ["Ps8Hashable", "default"]
 - !private ["Ps8Hashable", "delegate"]
 - ["Ps8Hashable", "delete"]
+- !private ["Ps8Hashable", "deleteRows"]
 - !private ["Ps8Hashable", "dequeueReusableCell"]
 - !private ["Ps8Hashable", "desc"]
 - !private ["Ps8Hashable", "description"]
@@ -2864,6 +2887,7 @@ depends-member:
 - !private ["Ps8Hashable", "main"]
 - ["Ps8Hashable", "markLaunch"]
 - !private ["Ps8Hashable", "matches"]
+- !private ["Ps8Hashable", "middle"]
 - !private ["Ps8Hashable", "minimumPressDuration"]
 - ["Ps8Hashable", "mute"]
 - !private ["Ps8Hashable", "my"]
@@ -2909,6 +2933,7 @@ depends-member:
 - !private ["Ps8Hashable", "reloadData"]
 - !private ["Ps8Hashable", "removeAllObjects"]
 - !private ["Ps8Hashable", "removeFromSuperview"]
+- !private ["Ps8Hashable", "removeObject"]
 - !private ["Ps8Hashable", "replacingOccurrences"]
 - !private ["Ps8Hashable", "reply"]
 - ["Ps8Hashable", "report"]
@@ -3089,6 +3114,7 @@ depends-member:
 - !private ["P5Ethos17ImageSeekDelegate", "UITableViewAutomaticDimension"]
 - !private ["P5Ethos17ImageSeekDelegate", "UITableViewCellSelectionStyle"]
 - !private ["P5Ethos17ImageSeekDelegate", "UITableViewCellSeparatorStyle"]
+- !private ["P5Ethos17ImageSeekDelegate", "UITableViewRowAnimation"]
 - !private ["P5Ethos17ImageSeekDelegate", "UITableViewScrollPosition"]
 - !private ["P5Ethos17ImageSeekDelegate", "UITapGestureRecognizer"]
 - !private ["P5Ethos17ImageSeekDelegate", "UIView"]
@@ -3261,7 +3287,7 @@ depends-member:
 - !private ["CSo21MRProgressOverlayView", "dismissAllOverlays"]
 - !private ["CSo21MRProgressOverlayView", "setTintColor"]
 - !private ["CSo21MRProgressOverlayView", "showOverlayAdded"]
-- !private ["OSC25MRProgressOverlayViewMode", "cross"]
+- !private ["OSC25MRProgressOverlayViewMode", "checkmark"]
 - ["OSC25MRProgressOverlayViewMode", "deinit"]
 - !private ["OSC25MRProgressOverlayViewMode", "indeterminate"]
 - !private ["VCSo19NSRegularExpression15MatchingOptions", "Element"]
@@ -3300,6 +3326,7 @@ depends-member:
 - !private ["CSo7NSArray", "init"]
 - !private ["CSo7NSArray", "object"]
 - !private ["CSo7NSArray", "removeAllObjects"]
+- !private ["CSo7NSArray", "removeObject"]
 - !private ["CSo7NSArray", "subscript"]
 - ["CSo7NSCoder", "deinit"]
 - !private ["PSo8NSCoding", "Alamofire"]
@@ -3374,6 +3401,7 @@ depends-member:
 - !private ["PSo8NSCoding", "UITableViewAutomaticDimension"]
 - !private ["PSo8NSCoding", "UITableViewCellSelectionStyle"]
 - !private ["PSo8NSCoding", "UITableViewCellSeparatorStyle"]
+- !private ["PSo8NSCoding", "UITableViewRowAnimation"]
 - !private ["PSo8NSCoding", "UITableViewScrollPosition"]
 - !private ["PSo8NSCoding", "UITapGestureRecognizer"]
 - !private ["PSo8NSCoding", "UIView"]
@@ -3427,6 +3455,7 @@ depends-member:
 - !private ["PSo8NSCoding", "dateFormat"]
 - !private ["PSo8NSCoding", "delegate"]
 - ["PSo8NSCoding", "delete"]
+- !private ["PSo8NSCoding", "deleteRows"]
 - !private ["PSo8NSCoding", "dequeueReusableCell"]
 - !private ["PSo8NSCoding", "desc"]
 - !private ["PSo8NSCoding", "deselectMe"]
@@ -3514,6 +3543,7 @@ depends-member:
 - !private ["PSo8NSCoding", "reloadData"]
 - !private ["PSo8NSCoding", "removeAllObjects"]
 - !private ["PSo8NSCoding", "removeFromSuperview"]
+- !private ["PSo8NSCoding", "removeObject"]
 - !private ["PSo8NSCoding", "replacingOccurrences"]
 - !private ["PSo8NSCoding", "reply"]
 - ["PSo8NSCoding", "report"]
@@ -3631,6 +3661,7 @@ depends-member:
 - !private ["PSo9NSCopying", "object"]
 - !private ["PSo9NSCopying", "range"]
 - !private ["PSo9NSCopying", "removeAllObjects"]
+- !private ["PSo9NSCopying", "removeObject"]
 - !private ["PSo9NSCopying", "replacingOccurrences"]
 - !private ["PSo9NSCopying", "row"]
 - !private ["PSo9NSCopying", "setCurrent"]
@@ -3716,6 +3747,7 @@ depends-member:
 - !private ["PSo26NSExtensionRequestHandling", "UITableViewAutomaticDimension"]
 - !private ["PSo26NSExtensionRequestHandling", "UITableViewCellSelectionStyle"]
 - !private ["PSo26NSExtensionRequestHandling", "UITableViewCellSeparatorStyle"]
+- !private ["PSo26NSExtensionRequestHandling", "UITableViewRowAnimation"]
 - !private ["PSo26NSExtensionRequestHandling", "UITableViewScrollPosition"]
 - !private ["PSo26NSExtensionRequestHandling", "UITapGestureRecognizer"]
 - !private ["PSo26NSExtensionRequestHandling", "UIView"]
@@ -3852,6 +3884,7 @@ depends-member:
 - !private ["PSo17NSFastEnumeration", "init"]
 - !private ["PSo17NSFastEnumeration", "object"]
 - !private ["PSo17NSFastEnumeration", "removeAllObjects"]
+- !private ["PSo17NSFastEnumeration", "removeObject"]
 - !private ["PSo17NSFastEnumeration", "subscript"]
 - !private ["C10Foundation25NSFastEnumerationIterator", "Element"]
 - !private ["PSo20NSFetchRequestResult", "object"]
@@ -3863,6 +3896,7 @@ depends-member:
 - !private ["CSo14NSMutableArray", "init"]
 - !private ["CSo14NSMutableArray", "object"]
 - !private ["CSo14NSMutableArray", "removeAllObjects"]
+- !private ["CSo14NSMutableArray", "removeObject"]
 - !private ["CSo14NSMutableArray", "subscript"]
 - !private ["PSo16NSMutableCopying", "Base64EncodingOptions"]
 - !private ["PSo16NSMutableCopying", "Iterator"]
@@ -3874,6 +3908,7 @@ depends-member:
 - !private ["PSo16NSMutableCopying", "object"]
 - !private ["PSo16NSMutableCopying", "range"]
 - !private ["PSo16NSMutableCopying", "removeAllObjects"]
+- !private ["PSo16NSMutableCopying", "removeObject"]
 - !private ["PSo16NSMutableCopying", "replacingOccurrences"]
 - !private ["PSo16NSMutableCopying", "subscript"]
 - !private ["PSo16NSMutableCopying", "substring"]
@@ -3973,6 +4008,7 @@ depends-member:
 - ["CSo8NSObject", "UITableViewCell"]
 - !private ["CSo8NSObject", "UITableViewCellSelectionStyle"]
 - !private ["CSo8NSObject", "UITableViewCellSeparatorStyle"]
+- !private ["CSo8NSObject", "UITableViewRowAnimation"]
 - !private ["CSo8NSObject", "UITableViewScrollPosition"]
 - !private ["CSo8NSObject", "UITapGestureRecognizer"]
 - ["CSo8NSObject", "UITextView"]
@@ -4037,6 +4073,7 @@ depends-member:
 - !private ["CSo8NSObject", "deinit"]
 - !private ["CSo8NSObject", "delegate"]
 - ["CSo8NSObject", "delete"]
+- !private ["CSo8NSObject", "deleteRows"]
 - !private ["CSo8NSObject", "dequeueReusableCell"]
 - !private ["CSo8NSObject", "desc"]
 - !private ["CSo8NSObject", "deselectMe"]
@@ -4146,6 +4183,7 @@ depends-member:
 - !private ["CSo8NSObject", "reloadData"]
 - !private ["CSo8NSObject", "removeAllObjects"]
 - !private ["CSo8NSObject", "removeFromSuperview"]
+- !private ["CSo8NSObject", "removeObject"]
 - !private ["CSo8NSObject", "replacingOccurrences"]
 - !private ["CSo8NSObject", "reply"]
 - ["CSo8NSObject", "report"]
@@ -4323,6 +4361,7 @@ depends-member:
 - !private ["PSo16NSObjectProtocol", "UITableViewAutomaticDimension"]
 - !private ["PSo16NSObjectProtocol", "UITableViewCellSelectionStyle"]
 - !private ["PSo16NSObjectProtocol", "UITableViewCellSeparatorStyle"]
+- !private ["PSo16NSObjectProtocol", "UITableViewRowAnimation"]
 - !private ["PSo16NSObjectProtocol", "UITableViewScrollPosition"]
 - !private ["PSo16NSObjectProtocol", "UITapGestureRecognizer"]
 - !private ["PSo16NSObjectProtocol", "UIView"]
@@ -4383,6 +4422,7 @@ depends-member:
 - !private ["PSo16NSObjectProtocol", "default"]
 - !private ["PSo16NSObjectProtocol", "delegate"]
 - ["PSo16NSObjectProtocol", "delete"]
+- !private ["PSo16NSObjectProtocol", "deleteRows"]
 - !private ["PSo16NSObjectProtocol", "dequeueReusableCell"]
 - !private ["PSo16NSObjectProtocol", "desc"]
 - !private ["PSo16NSObjectProtocol", "deselectMe"]
@@ -4492,6 +4532,7 @@ depends-member:
 - !private ["PSo16NSObjectProtocol", "reloadData"]
 - !private ["PSo16NSObjectProtocol", "removeAllObjects"]
 - !private ["PSo16NSObjectProtocol", "removeFromSuperview"]
+- !private ["PSo16NSObjectProtocol", "removeObject"]
 - !private ["PSo16NSObjectProtocol", "replacingOccurrences"]
 - !private ["PSo16NSObjectProtocol", "reply"]
 - ["PSo16NSObjectProtocol", "report"]
@@ -4623,6 +4664,7 @@ depends-member:
 - !private ["PSo14NSSecureCoding", "object"]
 - !private ["PSo14NSSecureCoding", "range"]
 - !private ["PSo14NSSecureCoding", "removeAllObjects"]
+- !private ["PSo14NSSecureCoding", "removeObject"]
 - !private ["PSo14NSSecureCoding", "replacingOccurrences"]
 - !private ["PSo14NSSecureCoding", "row"]
 - !private ["PSo14NSSecureCoding", "setCurrent"]
@@ -4735,7 +4777,7 @@ depends-member:
 - !private ["Ps16RawRepresentable", "allPhotos"]
 - !private ["Ps16RawRepresentable", "began"]
 - !private ["Ps16RawRepresentable", "cancel"]
-- !private ["Ps16RawRepresentable", "cross"]
+- !private ["Ps16RawRepresentable", "checkmark"]
 - !private ["Ps16RawRepresentable", "dark"]
 - !private ["Ps16RawRepresentable", "default"]
 - !private ["Ps16RawRepresentable", "delete"]
@@ -4747,6 +4789,7 @@ depends-member:
 - !private ["Ps16RawRepresentable", "lightContent"]
 - !private ["Ps16RawRepresentable", "lineLength64Characters"]
 - !private ["Ps16RawRepresentable", "link"]
+- !private ["Ps16RawRepresentable", "middle"]
 - !private ["Ps16RawRepresentable", "none"]
 - !private ["Ps16RawRepresentable", "normal"]
 - !private ["Ps16RawRepresentable", "plain"]
@@ -4784,6 +4827,7 @@ depends-member:
 - !private ["Ps8Sequence", "init"]
 - !private ["Ps8Sequence", "object"]
 - !private ["Ps8Sequence", "removeAllObjects"]
+- !private ["Ps8Sequence", "removeObject"]
 - !private ["Ps8Sequence", "row"]
 - !private ["Ps8Sequence", "subscript"]
 - !private ["Ps10SetAlgebra", "Element"]
@@ -4860,6 +4904,7 @@ depends-member:
 - !private ["PSo29UIAccessibilityIdentification", "dataSource"]
 - !private ["PSo29UIAccessibilityIdentification", "date"]
 - !private ["PSo29UIAccessibilityIdentification", "delegate"]
+- !private ["PSo29UIAccessibilityIdentification", "deleteRows"]
 - !private ["PSo29UIAccessibilityIdentification", "dequeueReusableCell"]
 - !private ["PSo29UIAccessibilityIdentification", "desc"]
 - !private ["PSo29UIAccessibilityIdentification", "deselectMe"]
@@ -4951,6 +4996,7 @@ depends-member:
 - !private ["PSo12UIAppearance", "dataSource"]
 - !private ["PSo12UIAppearance", "date"]
 - !private ["PSo12UIAppearance", "delegate"]
+- !private ["PSo12UIAppearance", "deleteRows"]
 - !private ["PSo12UIAppearance", "dequeueReusableCell"]
 - !private ["PSo12UIAppearance", "desc"]
 - !private ["PSo12UIAppearance", "deselectMe"]
@@ -5073,6 +5119,7 @@ depends-member:
 - !private ["PSo21UIAppearanceContainer", "UITableViewAutomaticDimension"]
 - !private ["PSo21UIAppearanceContainer", "UITableViewCellSelectionStyle"]
 - !private ["PSo21UIAppearanceContainer", "UITableViewCellSeparatorStyle"]
+- !private ["PSo21UIAppearanceContainer", "UITableViewRowAnimation"]
 - !private ["PSo21UIAppearanceContainer", "UITableViewScrollPosition"]
 - !private ["PSo21UIAppearanceContainer", "UITapGestureRecognizer"]
 - !private ["PSo21UIAppearanceContainer", "UIView"]
@@ -5116,6 +5163,7 @@ depends-member:
 - !private ["PSo21UIAppearanceContainer", "date"]
 - !private ["PSo21UIAppearanceContainer", "delegate"]
 - ["PSo21UIAppearanceContainer", "delete"]
+- !private ["PSo21UIAppearanceContainer", "deleteRows"]
 - !private ["PSo21UIAppearanceContainer", "dequeueReusableCell"]
 - !private ["PSo21UIAppearanceContainer", "desc"]
 - !private ["PSo21UIAppearanceContainer", "deselectMe"]
@@ -5380,6 +5428,7 @@ depends-member:
 - !private ["PSo18UIContentContainer", "UITableViewAutomaticDimension"]
 - !private ["PSo18UIContentContainer", "UITableViewCellSelectionStyle"]
 - !private ["PSo18UIContentContainer", "UITableViewCellSeparatorStyle"]
+- !private ["PSo18UIContentContainer", "UITableViewRowAnimation"]
 - !private ["PSo18UIContentContainer", "UITableViewScrollPosition"]
 - !private ["PSo18UIContentContainer", "UITapGestureRecognizer"]
 - !private ["PSo18UIContentContainer", "UIView"]
@@ -5562,6 +5611,7 @@ depends-member:
 - !private ["PSo17UICoordinateSpace", "dataSource"]
 - !private ["PSo17UICoordinateSpace", "date"]
 - !private ["PSo17UICoordinateSpace", "delegate"]
+- !private ["PSo17UICoordinateSpace", "deleteRows"]
 - !private ["PSo17UICoordinateSpace", "dequeueReusableCell"]
 - !private ["PSo17UICoordinateSpace", "desc"]
 - !private ["PSo17UICoordinateSpace", "deselectMe"]
@@ -5639,6 +5689,7 @@ depends-member:
 - !private ["PSo13UIDynamicItem", "dataSource"]
 - !private ["PSo13UIDynamicItem", "date"]
 - !private ["PSo13UIDynamicItem", "delegate"]
+- !private ["PSo13UIDynamicItem", "deleteRows"]
 - !private ["PSo13UIDynamicItem", "dequeueReusableCell"]
 - !private ["PSo13UIDynamicItem", "desc"]
 - !private ["PSo13UIDynamicItem", "deselectMe"]
@@ -5761,6 +5812,7 @@ depends-member:
 - !private ["PSo18UIFocusEnvironment", "UITableViewAutomaticDimension"]
 - !private ["PSo18UIFocusEnvironment", "UITableViewCellSelectionStyle"]
 - !private ["PSo18UIFocusEnvironment", "UITableViewCellSeparatorStyle"]
+- !private ["PSo18UIFocusEnvironment", "UITableViewRowAnimation"]
 - !private ["PSo18UIFocusEnvironment", "UITableViewScrollPosition"]
 - !private ["PSo18UIFocusEnvironment", "UITapGestureRecognizer"]
 - !private ["PSo18UIFocusEnvironment", "UIView"]
@@ -5804,6 +5856,7 @@ depends-member:
 - !private ["PSo18UIFocusEnvironment", "date"]
 - !private ["PSo18UIFocusEnvironment", "delegate"]
 - ["PSo18UIFocusEnvironment", "delete"]
+- !private ["PSo18UIFocusEnvironment", "deleteRows"]
 - !private ["PSo18UIFocusEnvironment", "dequeueReusableCell"]
 - !private ["PSo18UIFocusEnvironment", "desc"]
 - !private ["PSo18UIFocusEnvironment", "deselectMe"]
@@ -5987,6 +6040,7 @@ depends-member:
 - !private ["PSo11UIFocusItem", "dataSource"]
 - !private ["PSo11UIFocusItem", "date"]
 - !private ["PSo11UIFocusItem", "delegate"]
+- !private ["PSo11UIFocusItem", "deleteRows"]
 - !private ["PSo11UIFocusItem", "dequeueReusableCell"]
 - !private ["PSo11UIFocusItem", "desc"]
 - !private ["PSo11UIFocusItem", "deselectMe"]
@@ -6121,6 +6175,7 @@ depends-member:
 - !private ["PSo27UIGestureRecognizerDelegate", "UITableViewAutomaticDimension"]
 - !private ["PSo27UIGestureRecognizerDelegate", "UITableViewCellSelectionStyle"]
 - !private ["PSo27UIGestureRecognizerDelegate", "UITableViewCellSeparatorStyle"]
+- !private ["PSo27UIGestureRecognizerDelegate", "UITableViewRowAnimation"]
 - !private ["PSo27UIGestureRecognizerDelegate", "UITableViewScrollPosition"]
 - !private ["PSo27UIGestureRecognizerDelegate", "UITapGestureRecognizer"]
 - !private ["PSo27UIGestureRecognizerDelegate", "UIView"]
@@ -6317,6 +6372,7 @@ depends-member:
 - !private ["PSo31UIImagePickerControllerDelegate", "UITableViewAutomaticDimension"]
 - !private ["PSo31UIImagePickerControllerDelegate", "UITableViewCellSelectionStyle"]
 - !private ["PSo31UIImagePickerControllerDelegate", "UITableViewCellSeparatorStyle"]
+- !private ["PSo31UIImagePickerControllerDelegate", "UITableViewRowAnimation"]
 - !private ["PSo31UIImagePickerControllerDelegate", "UITableViewScrollPosition"]
 - !private ["PSo31UIImagePickerControllerDelegate", "UITapGestureRecognizer"]
 - !private ["PSo31UIImagePickerControllerDelegate", "UIView"]
@@ -6471,6 +6527,7 @@ depends-member:
 - !private ["CSo22UINavigationController", "pushViewController"]
 - !private ["CSo22UINavigationController", "singleSelect"]
 - !private ["CSo22UINavigationController", "tabBarController"]
+- !private ["CSo22UINavigationController", "view"]
 - !private ["PSo30UINavigationControllerDelegate", "Alamofire"]
 - !private ["PSo30UINavigationControllerDelegate", "CGRect"]
 - !private ["PSo30UINavigationControllerDelegate", "CardStackTableViewController"]
@@ -6539,6 +6596,7 @@ depends-member:
 - !private ["PSo30UINavigationControllerDelegate", "UITableViewAutomaticDimension"]
 - !private ["PSo30UINavigationControllerDelegate", "UITableViewCellSelectionStyle"]
 - !private ["PSo30UINavigationControllerDelegate", "UITableViewCellSeparatorStyle"]
+- !private ["PSo30UINavigationControllerDelegate", "UITableViewRowAnimation"]
 - !private ["PSo30UINavigationControllerDelegate", "UITableViewScrollPosition"]
 - !private ["PSo30UINavigationControllerDelegate", "UITapGestureRecognizer"]
 - !private ["PSo30UINavigationControllerDelegate", "UIView"]
@@ -6748,6 +6806,7 @@ depends-member:
 - ["CSo11UIResponder", "UITableViewCell"]
 - !private ["CSo11UIResponder", "UITableViewCellSelectionStyle"]
 - !private ["CSo11UIResponder", "UITableViewCellSeparatorStyle"]
+- !private ["CSo11UIResponder", "UITableViewRowAnimation"]
 - !private ["CSo11UIResponder", "UITableViewScrollPosition"]
 - !private ["CSo11UIResponder", "UITapGestureRecognizer"]
 - ["CSo11UIResponder", "UITextView"]
@@ -6794,6 +6853,7 @@ depends-member:
 - !private ["CSo11UIResponder", "date"]
 - !private ["CSo11UIResponder", "delegate"]
 - ["CSo11UIResponder", "delete"]
+- !private ["CSo11UIResponder", "deleteRows"]
 - !private ["CSo11UIResponder", "dequeueReusableCell"]
 - !private ["CSo11UIResponder", "desc"]
 - !private ["CSo11UIResponder", "deselectMe"]
@@ -7023,6 +7083,7 @@ depends-member:
 - !private ["PSo30UIResponderStandardEditActions", "UITableViewAutomaticDimension"]
 - !private ["PSo30UIResponderStandardEditActions", "UITableViewCellSelectionStyle"]
 - !private ["PSo30UIResponderStandardEditActions", "UITableViewCellSeparatorStyle"]
+- !private ["PSo30UIResponderStandardEditActions", "UITableViewRowAnimation"]
 - !private ["PSo30UIResponderStandardEditActions", "UITableViewScrollPosition"]
 - !private ["PSo30UIResponderStandardEditActions", "UITapGestureRecognizer"]
 - !private ["PSo30UIResponderStandardEditActions", "UIView"]
@@ -7066,6 +7127,7 @@ depends-member:
 - !private ["PSo30UIResponderStandardEditActions", "date"]
 - !private ["PSo30UIResponderStandardEditActions", "delegate"]
 - ["PSo30UIResponderStandardEditActions", "delete"]
+- !private ["PSo30UIResponderStandardEditActions", "deleteRows"]
 - !private ["PSo30UIResponderStandardEditActions", "dequeueReusableCell"]
 - !private ["PSo30UIResponderStandardEditActions", "desc"]
 - !private ["PSo30UIResponderStandardEditActions", "deselectMe"]
@@ -7243,6 +7305,7 @@ depends-member:
 - !private ["CSo12UIScrollView", "dataSource"]
 - ["CSo12UIScrollView", "deinit"]
 - !private ["CSo12UIScrollView", "delegate"]
+- !private ["CSo12UIScrollView", "deleteRows"]
 - !private ["CSo12UIScrollView", "dequeueReusableCell"]
 - !private ["CSo12UIScrollView", "deselectRow"]
 - !private ["CSo12UIScrollView", "estimatedRowHeight"]
@@ -7322,6 +7385,7 @@ depends-member:
 - !private ["PSo20UIScrollViewDelegate", "UITableViewAutomaticDimension"]
 - !private ["PSo20UIScrollViewDelegate", "UITableViewCellSelectionStyle"]
 - !private ["PSo20UIScrollViewDelegate", "UITableViewCellSeparatorStyle"]
+- !private ["PSo20UIScrollViewDelegate", "UITableViewRowAnimation"]
 - !private ["PSo20UIScrollViewDelegate", "UITableViewScrollPosition"]
 - !private ["PSo20UIScrollViewDelegate", "UITapGestureRecognizer"]
 - !private ["PSo20UIScrollViewDelegate", "UIView"]
@@ -7503,6 +7567,7 @@ depends-member:
 - !private ["PSo16UIStateRestoring", "UITableViewAutomaticDimension"]
 - !private ["PSo16UIStateRestoring", "UITableViewCellSelectionStyle"]
 - !private ["PSo16UIStateRestoring", "UITableViewCellSeparatorStyle"]
+- !private ["PSo16UIStateRestoring", "UITableViewRowAnimation"]
 - !private ["PSo16UIStateRestoring", "UITableViewScrollPosition"]
 - !private ["PSo16UIStateRestoring", "UITapGestureRecognizer"]
 - !private ["PSo16UIStateRestoring", "UIView"]
@@ -7708,6 +7773,7 @@ depends-member:
 - !private ["PSo26UITabBarControllerDelegate", "UITableViewAutomaticDimension"]
 - !private ["PSo26UITabBarControllerDelegate", "UITableViewCellSelectionStyle"]
 - !private ["PSo26UITabBarControllerDelegate", "UITableViewCellSeparatorStyle"]
+- !private ["PSo26UITabBarControllerDelegate", "UITableViewRowAnimation"]
 - !private ["PSo26UITabBarControllerDelegate", "UITableViewScrollPosition"]
 - !private ["PSo26UITabBarControllerDelegate", "UITapGestureRecognizer"]
 - !private ["PSo26UITabBarControllerDelegate", "UIView"]
@@ -7823,6 +7889,7 @@ depends-member:
 - !private ["CSo11UITableView", "dataSource"]
 - ["CSo11UITableView", "deinit"]
 - !private ["CSo11UITableView", "delegate"]
+- !private ["CSo11UITableView", "deleteRows"]
 - !private ["CSo11UITableView", "dequeueReusableCell"]
 - !private ["CSo11UITableView", "deselectRow"]
 - !private ["CSo11UITableView", "estimatedRowHeight"]
@@ -7921,6 +7988,7 @@ depends-member:
 - !private ["PSo21UITableViewDataSource", "UITableViewAutomaticDimension"]
 - !private ["PSo21UITableViewDataSource", "UITableViewCellSelectionStyle"]
 - !private ["PSo21UITableViewDataSource", "UITableViewCellSeparatorStyle"]
+- !private ["PSo21UITableViewDataSource", "UITableViewRowAnimation"]
 - !private ["PSo21UITableViewDataSource", "UITableViewScrollPosition"]
 - !private ["PSo21UITableViewDataSource", "UITapGestureRecognizer"]
 - !private ["PSo21UITableViewDataSource", "UIView"]
@@ -8097,6 +8165,7 @@ depends-member:
 - !private ["PSo19UITableViewDelegate", "UITableViewAutomaticDimension"]
 - !private ["PSo19UITableViewDelegate", "UITableViewCellSelectionStyle"]
 - !private ["PSo19UITableViewDelegate", "UITableViewCellSeparatorStyle"]
+- !private ["PSo19UITableViewDelegate", "UITableViewRowAnimation"]
 - !private ["PSo19UITableViewDelegate", "UITableViewScrollPosition"]
 - !private ["PSo19UITableViewDelegate", "UITapGestureRecognizer"]
 - !private ["PSo19UITableViewDelegate", "UIView"]
@@ -8205,6 +8274,8 @@ depends-member:
 - !private ["PSo19UITableViewDelegate", "writingPost"]
 - !private ["PSo19UITableViewDelegate", "zoomModalPic"]
 - ["PSo19UITableViewDelegate", ""]
+- !private ["OSC23UITableViewRowAnimation", "deinit"]
+- !private ["OSC23UITableViewRowAnimation", "middle"]
 - ["OSC25UITableViewScrollPosition", "deinit"]
 - !private ["OSC25UITableViewScrollPosition", "top"]
 - !private ["CSo22UITapGestureRecognizer", "cancelsTouchesInView"]
@@ -8303,6 +8374,7 @@ depends-member:
 - !private ["PSo18UITextViewDelegate", "UITableViewAutomaticDimension"]
 - !private ["PSo18UITextViewDelegate", "UITableViewCellSelectionStyle"]
 - !private ["PSo18UITextViewDelegate", "UITableViewCellSeparatorStyle"]
+- !private ["PSo18UITextViewDelegate", "UITableViewRowAnimation"]
 - !private ["PSo18UITextViewDelegate", "UITableViewScrollPosition"]
 - !private ["PSo18UITextViewDelegate", "UITapGestureRecognizer"]
 - !private ["PSo18UITextViewDelegate", "UIView"]
@@ -8479,6 +8551,7 @@ depends-member:
 - !private ["PSo18UITraitEnvironment", "UITableViewAutomaticDimension"]
 - !private ["PSo18UITraitEnvironment", "UITableViewCellSelectionStyle"]
 - !private ["PSo18UITraitEnvironment", "UITableViewCellSeparatorStyle"]
+- !private ["PSo18UITraitEnvironment", "UITableViewRowAnimation"]
 - !private ["PSo18UITraitEnvironment", "UITableViewScrollPosition"]
 - !private ["PSo18UITraitEnvironment", "UITapGestureRecognizer"]
 - !private ["PSo18UITraitEnvironment", "UIView"]
@@ -8522,6 +8595,7 @@ depends-member:
 - !private ["PSo18UITraitEnvironment", "date"]
 - !private ["PSo18UITraitEnvironment", "delegate"]
 - ["PSo18UITraitEnvironment", "delete"]
+- !private ["PSo18UITraitEnvironment", "deleteRows"]
 - !private ["PSo18UITraitEnvironment", "dequeueReusableCell"]
 - !private ["PSo18UITraitEnvironment", "desc"]
 - !private ["PSo18UITraitEnvironment", "deselectMe"]
@@ -8707,6 +8781,7 @@ depends-member:
 - !private ["CSo6UIView", "date"]
 - ["CSo6UIView", "deinit"]
 - !private ["CSo6UIView", "delegate"]
+- !private ["CSo6UIView", "deleteRows"]
 - !private ["CSo6UIView", "dequeueReusableCell"]
 - !private ["CSo6UIView", "desc"]
 - !private ["CSo6UIView", "deselectMe"]
@@ -8852,6 +8927,7 @@ depends-member:
 - ["CSo16UIViewController", "UITableViewCell"]
 - !private ["CSo16UIViewController", "UITableViewCellSelectionStyle"]
 - !private ["CSo16UIViewController", "UITableViewCellSeparatorStyle"]
+- !private ["CSo16UIViewController", "UITableViewRowAnimation"]
 - !private ["CSo16UIViewController", "UITableViewScrollPosition"]
 - !private ["CSo16UIViewController", "UITapGestureRecognizer"]
 - ["CSo16UIViewController", "UITextView"]
@@ -9054,6 +9130,7 @@ depends-member:
 - !private ["Ps37_DefaultCustomPlaygroundQuickLookable", "dataSource"]
 - !private ["Ps37_DefaultCustomPlaygroundQuickLookable", "date"]
 - !private ["Ps37_DefaultCustomPlaygroundQuickLookable", "delegate"]
+- !private ["Ps37_DefaultCustomPlaygroundQuickLookable", "deleteRows"]
 - !private ["Ps37_DefaultCustomPlaygroundQuickLookable", "dequeueReusableCell"]
 - !private ["Ps37_DefaultCustomPlaygroundQuickLookable", "desc"]
 - !private ["Ps37_DefaultCustomPlaygroundQuickLookable", "deselectMe"]
@@ -9241,6 +9318,7 @@ depends-member:
 - !private ["Ps9_Hashable", "UITableViewAutomaticDimension"]
 - !private ["Ps9_Hashable", "UITableViewCellSelectionStyle"]
 - !private ["Ps9_Hashable", "UITableViewCellSeparatorStyle"]
+- !private ["Ps9_Hashable", "UITableViewRowAnimation"]
 - !private ["Ps9_Hashable", "UITableViewScrollPosition"]
 - !private ["Ps9_Hashable", "UITapGestureRecognizer"]
 - !private ["Ps9_Hashable", "UIView"]
@@ -9290,6 +9368,7 @@ depends-member:
 - ["Ps9_Hashable", "cardsButton"]
 - ["Ps9_Hashable", "cardsToShow"]
 - !private ["Ps9_Hashable", "cgColor"]
+- !private ["Ps9_Hashable", "checkmark"]
 - !private ["Ps9_Hashable", "clipsToBounds"]
 - ["Ps9_Hashable", "close"]
 - !private ["Ps9_Hashable", "comment"]
@@ -9302,7 +9381,6 @@ depends-member:
 - !private ["Ps9_Hashable", "convert"]
 - !private ["Ps9_Hashable", "cornerRadius"]
 - !private ["Ps9_Hashable", "count"]
-- !private ["Ps9_Hashable", "cross"]
 - !private ["Ps9_Hashable", "current"]
 - !private ["Ps9_Hashable", "dark"]
 - !private ["Ps9_Hashable", "dataSource"]
@@ -9311,6 +9389,7 @@ depends-member:
 - !private ["Ps9_Hashable", "default"]
 - !private ["Ps9_Hashable", "delegate"]
 - ["Ps9_Hashable", "delete"]
+- !private ["Ps9_Hashable", "deleteRows"]
 - !private ["Ps9_Hashable", "dequeueReusableCell"]
 - !private ["Ps9_Hashable", "desc"]
 - !private ["Ps9_Hashable", "description"]
@@ -9387,6 +9466,7 @@ depends-member:
 - !private ["Ps9_Hashable", "main"]
 - ["Ps9_Hashable", "markLaunch"]
 - !private ["Ps9_Hashable", "matches"]
+- !private ["Ps9_Hashable", "middle"]
 - !private ["Ps9_Hashable", "minimumPressDuration"]
 - ["Ps9_Hashable", "mute"]
 - !private ["Ps9_Hashable", "my"]
@@ -9432,6 +9512,7 @@ depends-member:
 - !private ["Ps9_Hashable", "reloadData"]
 - !private ["Ps9_Hashable", "removeAllObjects"]
 - !private ["Ps9_Hashable", "removeFromSuperview"]
+- !private ["Ps9_Hashable", "removeObject"]
 - !private ["Ps9_Hashable", "replacingOccurrences"]
 - !private ["Ps9_Hashable", "reply"]
 - ["Ps9_Hashable", "report"]
@@ -9805,6 +9886,7 @@ depends-nominal:
 - "OSC29UITableViewCellSeparatorStyle"
 - "PSo21UITableViewDataSource"
 - "PSo19UITableViewDelegate"
+- !private "OSC23UITableViewRowAnimation"
 - "OSC25UITableViewScrollPosition"
 - "CSo22UITapGestureRecognizer"
 - !private "CSo11UITextField"
@@ -10002,4 +10084,4 @@ depends-external:
 - "/Users/Scott/Documents/Ethos/FBSDKLoginKit.framework/Headers/FBSDKLoginButton.h"
 - "/Users/Scott/Documents/Ethos/FBSDKLoginKit.framework/Headers/FBSDKLoginKit.h"
 - "/Users/Scott/Documents/Ethos/FBSDKLoginKit.framework/Modules/module.modulemap"
-interface-hash: "22267dc6c7515e83478044a3bb80abb1"
+interface-hash: "0a46761e8c34852ba057abb68b58252f"

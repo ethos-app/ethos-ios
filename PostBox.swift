@@ -23,7 +23,9 @@ class PostBox: UIView {
     enum BoxType {
     case header
     case keyboard
+    case group
     }
+
     var rightFrame : CGRect?
     var leftFrame : CGRect?
     
@@ -41,9 +43,9 @@ class PostBox: UIView {
         textView?.tintColor = UIColor.hexStringToUIColor("247BA0")
         textView!.font = UIFont(name: "Raleway-Regular", size: 22)
         let boldText = UIFont(name: "Raleway-Italic", size: 22)
-        let onMind = "What's really on your mind?"
-        let holderText = NSMutableAttributedString(string: onMind, attributes: [NSFontAttributeName : textView!.font!, NSForegroundColorAttributeName : UIColor.lightGray])
-        holderText.addAttribute(NSFontAttributeName, value: boldText!, range: NSMakeRange(7, 6))
+//        let onMind = ""
+//        let holderText = NSMutableAttributedString(string: onMind, attributes: [NSFontAttributeName : textView!.font!, NSForegroundColorAttributeName : UIColor.lightGray])
+//        holderText.addAttribute(NSFontAttributeName, value: boldText!, range: NSMakeRange(7, 6))
         let camImage = UIImage(named: "ic_photo_camera_2x")?.withRenderingMode(UIImageRenderingMode.alwaysTemplate)
     
         cancelMedia = UIButton(frame: CGRect(x: self.frame.width-22, y: 7, width: 18, height: 18))
@@ -59,7 +61,7 @@ class PostBox: UIView {
         pickButton!.addGestureRecognizer(gesture)
         pickButton!.frame = rightFrame!
        
-        textView?.attributedText = holderText
+        textView?.text = ""
         self.addSubview(textView!)
         self.addSubview(pickButton!)
         self.addSubview(cancelMedia!)
@@ -106,10 +108,18 @@ class PostBox: UIView {
     func prepareWrite() {
         
     }
+    
     func resetText() {
+        print("I RESET")
+        print(type)
         textView?.textContainerInset = UIEdgeInsetsMake(10, 5, 5, 5)
         let boldText = UIFont(name: "Raleway-Italic", size: 22)
-        let onMind = "What's really on your mind?"
+        var onMind = "Talk openly with your friends..."
+        if type == .group {
+            onMind = "Talk openly with this gorup..."
+        } else if type == .keyboard {
+            onMind = "Add a comment..."
+        }
         let holderText = NSMutableAttributedString(string: onMind, attributes: [NSFontAttributeName : textView!.font!, NSForegroundColorAttributeName : UIColor.lightGray])
         
         holderText.addAttribute(NSFontAttributeName, value: boldText!, range: NSMakeRange(7, 6))
