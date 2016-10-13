@@ -15,8 +15,9 @@ import DKImagePickerController
 import URLEmbeddedView
 import Firebase
 import MBProgressHUD
+import Jukebox
 
-class GroupViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextViewDelegate, UIGestureRecognizerDelegate, ImageSeekDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIScrollViewDelegate, UITabBarControllerDelegate {
+class GroupViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextViewDelegate, UIGestureRecognizerDelegate, ImageSeekDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIScrollViewDelegate, UITabBarControllerDelegate, MusicDelegate, JukeboxDelegate {
     
     var ethosAuth = ""
     var id = ""
@@ -51,6 +52,8 @@ class GroupViewController: UIViewController, UITableViewDelegate, UITableViewDat
     var optionView : UIButton?
     var join : JoinBar?
     var pickingImage = false
+    var pv : MusicView?
+    var jukebox : Jukebox?
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -171,9 +174,10 @@ class GroupViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     func back() {
         if pickingImage == false {
+        print("casio")
         casing?.removeFromSuperview()
         optionView?.removeFromSuperview()
-        self.navigationController?.popToRootViewController(animated: true)
+        self.navigationController?.popViewController(animated: true)
         }
     }
     
@@ -187,7 +191,9 @@ class GroupViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     override func viewWillDisappear(_ animated: Bool) {
-        self.back()
+       // self.back()
+        jukebox?.stop()
+
     }
  
     
@@ -308,6 +314,7 @@ class GroupViewController: UIViewController, UITableViewDelegate, UITableViewDat
             let emoji = dict.object(forKey: "PosterEmoji") as! String
             let userText = dict.object(forKey: "UserText") as! String
             let type = dict.object(forKey: "Type") as! Int
+            
             let dataCard = PostCard(posterEmoji: emoji, userText: userText, type: type)
             dataCard.postID = dict.object(forKey: "PostId") as! Int
             dataCard.userLiked = dict.object(forKey: "UserLiked") as! Int
@@ -315,12 +322,23 @@ class GroupViewController: UIViewController, UITableViewDelegate, UITableViewDat
             dataCard.commentCount = dict.object(forKey: "CommentCount") as! String
             dataCard.groupID = dict.object(forKey: "GroupId") as! Int
             dataCard.likeCount = dict.object(forKey: "LikeCount") as! String
-            dataCard.posterID = dict.object(forKey: "PosterId") as! Int;
+            dataCard.posterID = dict.object(forKey: "PosterId") as! Int
+            if var groupName = dict.object(forKey: "GroupName") as? String {
+                if groupName != "" {
+                    groupName = "in "+groupName
+                }
+                dataCard.groupString = groupName
+            } else {
+                dataCard.groupString = ""
+            }
             if dataCard.posterID == 1 {
                 dataCard.isEthos = true
             }
             if let content = dict.object(forKey: "Content") as? String {
                 dataCard.content = content
+            }
+            if let content2 = dict.object(forKey: "SecondaryContent") as? String {
+                dataCard.secondaryContent = content2
             }
             let dateString = dict.object(forKey: "DateCreated") as! String
             let format = DateFormatter()
@@ -398,10 +416,10 @@ class GroupViewController: UIViewController, UITableViewDelegate, UITableViewDat
         var mediaContent = "NULL"
         
         // detect if link post |  Type = 1
-        if ((content?.lowercased().range(of: "http://")) != nil)  || ((content?.lowercased().range(of: "www.")) != nil) {
-            content = content?.lowercased()
+        if ((content?.lowercased().range(of: "http://")) != nil)  || ((content?.lowercased().range(of: "www.")) != nil) || ((content?.lowercased().range(of: "https://")) != nil) {
+            let lowContent = content?.lowercased()
             let detector = try! NSDataDetector(types: NSTextCheckingResult.CheckingType.link.rawValue)
-            let matches = detector.matches(in: content!, options: [], range: NSRange(location: 0, length: content!.utf16.count))
+            let matches = detector.matches(in: lowContent!, options: [], range: NSRange(location: 0, length: lowContent!.utf16.count))
             let linkRange = matches.first
             let contentString = NSString(string: content!)
             let link = contentString.substring(with: linkRange!.range)
@@ -409,6 +427,7 @@ class GroupViewController: UIViewController, UITableViewDelegate, UITableViewDat
             content = content?.replacingOccurrences(of: link, with: "")
             postType = 1
         }
+
         let headers = ["Accept":"application/json","Content-Type":"application/json","X-Ethos-Auth":"\(ethosAuth)", "X-Facebook-Id":"\(id)"]
         if postType == 2 { // Image Post
             //  let fakeImage = UIImage(cgImage: (self.uplaodImage?.cgImage)!, scale: 1.0, orientation: UIImageOrientation.right)
@@ -467,9 +486,10 @@ class GroupViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     func showPost(at: Int) {
         let postController = self.storyboard?.instantiateViewController(withIdentifier: "single") as! OneCardViewController
-        
         postController.oPost = cardsToShow?.object(at: at) as! PostCard?
         self.navigationController?.pushViewController(postController, animated: true)
+        print("here")
+        
     }
     func like(_ sender : UIGestureRecognizer) {
         let tag = sender.view!.tag
@@ -698,11 +718,46 @@ class GroupViewController: UIViewController, UITableViewDelegate, UITableViewDat
             }
             let linkEmbed = URLEmbeddedView()
             linkEmbed.loadURL(currentObject.content)
-            if cell!.linkStack.subviews.count < 1 {
-                cell!.linkStack.addArrangedSubview(linkEmbed)
+            
+            // Create Music View
+            let musicView = MusicView.loadFromNibNamed(nibNamed: "MusicView") as! MusicView
+            musicView.frame = CGRect(x: 0, y: 0, width: 310, height: 80)
+            var finalURL = currentObject.content
+            
+            // Create Video View
+            let videoView = VideoView.loadFromNibNamed(nibNamed: "VideoView") as! VideoView
+            videoView.frame = CGRect(x: 0, y: 80, width: 320, height: 300)
+            // Link contains spotify URL
+            if currentObject.content.contains("https://open.spotify.com/track/") {
+                finalURL = finalURL.replacingOccurrences(of: "https://open.spotify.com/track/", with: "")
+                musicView.delegate = self
+                musicView.loadSong(id: finalURL)
+                musicView.isUserInteractionEnabled = true
+                if cell!.linkStack.subviews.count < 1 {
+                    cell!.linkStack.addArrangedSubview(musicView)
+                }
+                
+                //  Link contains youtube url
+            } else if (currentObject.content.contains("https://www.youtube.com/watch?")) || (currentObject.content.contains("http://youtu.be/")) || (currentObject.content.contains("https://youtu.be/")) || (currentObject.content.contains("https://www.youtube.com/watch?")) {
+                finalURL = finalURL.replacingOccurrences(of: "https://www.youtube.com/watch?v=", with: "")
+                finalURL = finalURL.replacingOccurrences(of: "http://youtu.be/", with: "")
+                finalURL = finalURL.replacingOccurrences(of: "http://www.youtube.com/watch?v=", with: "")
+                finalURL = finalURL.replacingOccurrences(of: "https://youtu.be/", with: "")
+                videoView.loadVideo(id : finalURL)
+                
+                if cell!.linkStack.subviews.count < 1 {
+                    cell!.linkStack.addArrangedSubview(videoView)
+                    
+                }
+                // Standard link
+            } else {
+                if cell!.linkStack.subviews.count < 1 {
+                    cell!.linkStack.addArrangedSubview(linkEmbed)
+                }
+                
             }
             
-
+            
         }
         if type == 2 {
             cell?.userImage.image = nil
@@ -901,7 +956,51 @@ class GroupViewController: UIViewController, UITableViewDelegate, UITableViewDat
             tableView.scrollToRow(at: index, at: UITableViewScrollPosition.top, animated: true)
         }
     }
+  
     
+    // MARK: Music Delegate
+    func startSong(url : String, musicView : MusicView) {
+        let link = URL(string: url)
+        jukebox?.stop()
+        jukebox = Jukebox(delegate: self, items: [
+            JukeboxItem(URL: link!)
+            ])
+        jukebox?.play()
+        self.pv = musicView
+        let pause = UIBarButtonItem(image: UIImage(named: "pause2"), style: UIBarButtonItemStyle.plain, target: self, action: #selector(self.userStop))
+        self.navigationItem.rightBarButtonItem = pause
+    }
+    // Called from pause on navigation item
+    func userStop() {
+        self.navigationItem.rightBarButtonItem = nil
+        pv?.stopMusic()
+    }
+    // Called by delegate when touched
+    func stopSong() {
+        jukebox?.stop()
+    }
+    // MARK: Jukebox delegate
+    func jukeboxPlaybackProgressDidChange(_ jukebox: Jukebox) {
+        
+        // update current progress view for player
+        let duration = Float(30.00)
+        let current = Float((jukebox.currentItem?.currentTime)!)
+        let percent = current / duration
+        pv?.progress?.progress = percent
+        if percent > 0.98 {
+            pv?.stopMusic()
+        }
+    }
+    
+    func jukeboxStateDidChange(_ state: Jukebox) {
+        //
+    }
+    func jukeboxDidLoadItem(_ jukebox: Jukebox, item: JukeboxItem) {
+        //
+    }
+    func jukeboxDidUpdateMetadata(_ jukebox: Jukebox, forItem: JukeboxItem) {
+        //
+    }
     
     
     

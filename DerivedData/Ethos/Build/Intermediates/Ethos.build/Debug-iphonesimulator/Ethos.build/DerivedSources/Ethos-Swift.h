@@ -204,6 +204,7 @@ SWIFT_CLASS("_TtC5Ethos20BizCardTableViewCell")
 @property (nonatomic, strong) UILabel * _Nullable groupLabel;
 @property (nonatomic, strong) EmojiBar * _Nullable emojiList;
 @property (nonatomic, strong) UIButton * _Nullable reply;
+@property (nonatomic, strong) UIView * _Nullable musicView;
 - (void)awakeFromNib;
 - (void)layoutSubviews;
 - (void)cardSetup;
@@ -228,8 +229,10 @@ SWIFT_PROTOCOL("_TtP5Ethos17ImageSeekDelegate_")
 
 @class NSMutableArray;
 @class UITableView;
+@class Jukebox;
 @class PostBox;
 @class DKImagePickerController;
+@class MusicView;
 @class NSArray;
 @class UIRefreshControl;
 @class UIScrollView;
@@ -239,10 +242,11 @@ SWIFT_PROTOCOL("_TtP5Ethos17ImageSeekDelegate_")
 @class UIImagePickerController;
 @class PostCard;
 @class UITabBarController;
+@class JukeboxItem;
 @class NSBundle;
 
 SWIFT_CLASS("_TtC5Ethos28CardStackTableViewController")
-@interface CardStackTableViewController : UIViewController <ImageSeekDelegate, UINavigationControllerDelegate, UIScrollViewDelegate, UIImagePickerControllerDelegate, UIGestureRecognizerDelegate, UITabBarControllerDelegate, UITextViewDelegate, UITableViewDataSource, UITableViewDelegate>
+@interface CardStackTableViewController : UIViewController <UITableViewDelegate, UIScrollViewDelegate, UITableViewDataSource, UITextViewDelegate, UIGestureRecognizerDelegate, ImageSeekDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITabBarControllerDelegate>
 @property (nonatomic, copy) NSString * _Nonnull ethosAuth;
 @property (nonatomic, copy) NSString * _Nonnull id;
 @property (nonatomic, strong) NSMutableArray * _Nullable cardsToShow;
@@ -251,6 +255,7 @@ SWIFT_CLASS("_TtC5Ethos28CardStackTableViewController")
 @property (nonatomic, strong) IBOutlet BarButton * _Null_unspecified netButton;
 @property (nonatomic, strong) IBOutlet UITableView * _Null_unspecified tableView;
 @property (nonatomic) NSInteger segment;
+@property (nonatomic, strong) Jukebox * _Nullable jukebox;
 @property (nonatomic, strong) IBOutlet PostBox * _Null_unspecified postBox;
 @property (nonatomic) BOOL showingImage;
 @property (nonatomic) BOOL writingPost;
@@ -261,6 +266,7 @@ SWIFT_CLASS("_TtC5Ethos28CardStackTableViewController")
 @property (nonatomic) NSInteger loadNext;
 @property (nonatomic) BOOL posting;
 @property (nonatomic) BOOL launched;
+@property (nonatomic, strong) MusicView * _Nullable pv;
 - (void)viewDidLoad;
 - (void)showWithPostI:(NSNotification * _Nonnull)postI;
 - (void)postFriends:(NSArray * _Nonnull)string;
@@ -314,14 +320,32 @@ SWIFT_CLASS("_TtC5Ethos28CardStackTableViewController")
 - (void)reportWithPost:(PostCard * _Nonnull)post index:(NSInteger)index;
 - (void)shareWithIndex:(NSInteger)index;
 - (void)tabBarController:(UITabBarController * _Nonnull)tabBarController didSelectViewController:(UIViewController * _Nonnull)viewController;
+- (void)viewWillDisappear:(BOOL)animated;
+- (void)startSongWithUrl:(NSString * _Nonnull)url musicView:(MusicView * _Nonnull)musicView;
+- (void)userStop;
+- (void)stopSong;
+- (void)jukeboxPlaybackProgressDidChange:(Jukebox * _Nonnull)jukebox;
+- (void)jukeboxStateDidChange:(Jukebox * _Nonnull)state;
+- (void)jukeboxDidLoadItem:(Jukebox * _Nonnull)jukebox item:(JukeboxItem * _Nonnull)item;
+- (void)jukeboxDidUpdateMetadata:(Jukebox * _Nonnull)jukebox forItem:(JukeboxItem * _Nonnull)forItem;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 @end
 
+@class UITextField;
 
 SWIFT_CLASS("_TtC5Ethos25CreateGroupViewController")
-@interface CreateGroupViewController : UIViewController
+@interface CreateGroupViewController : UIViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
+@property (nonatomic, strong) IBOutlet UIImageView * _Null_unspecified img;
+@property (nonatomic, strong) IBOutlet UITextField * _Null_unspecified name;
+@property (nonatomic, strong) IBOutlet UITextField * _Null_unspecified dec;
+@property (nonatomic, strong) UIImagePickerController * _Nullable picker;
 - (void)viewDidLoad;
+- (void)showImagePicker;
+- (void)imagePickerController:(UIImagePickerController * _Nonnull)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *, id> * _Nonnull)info;
+- (void)imagePickerControllerDidCancel:(UIImagePickerController * _Nonnull)picker;
+- (IBAction)createGroup:(id _Nonnull)sender;
+- (IBAction)dismiss:(id _Nonnull)sender;
 - (void)didReceiveMemoryWarning;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
@@ -442,7 +466,7 @@ SWIFT_CLASS("_TtC5Ethos24GroupTableViewController")
 @class JoinBar;
 
 SWIFT_CLASS("_TtC5Ethos19GroupViewController")
-@interface GroupViewController : UIViewController <ImageSeekDelegate, UINavigationControllerDelegate, UIScrollViewDelegate, UIImagePickerControllerDelegate, UIGestureRecognizerDelegate, UITabBarControllerDelegate, UITextViewDelegate, UITableViewDataSource, UITableViewDelegate>
+@interface GroupViewController : UIViewController <UITableViewDelegate, UIScrollViewDelegate, UITableViewDataSource, UITextViewDelegate, UIGestureRecognizerDelegate, ImageSeekDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITabBarControllerDelegate>
 @property (nonatomic, copy) NSString * _Nonnull ethosAuth;
 @property (nonatomic, copy) NSString * _Nonnull id;
 @property (nonatomic, strong) NSMutableArray * _Nullable cardsToShow;
@@ -466,6 +490,8 @@ SWIFT_CLASS("_TtC5Ethos19GroupViewController")
 @property (nonatomic, strong) UIButton * _Nullable optionView;
 @property (nonatomic, strong) JoinBar * _Nullable join;
 @property (nonatomic) BOOL pickingImage;
+@property (nonatomic, strong) MusicView * _Nullable pv;
+@property (nonatomic, strong) Jukebox * _Nullable jukebox;
 - (void)viewDidLoad;
 - (void)options;
 - (void)joinThis;
@@ -515,6 +541,13 @@ SWIFT_CLASS("_TtC5Ethos19GroupViewController")
 - (void)reportWithPost:(PostCard * _Nonnull)post;
 - (void)shareWithIndex:(NSInteger)index;
 - (void)tabBarController:(UITabBarController * _Nonnull)tabBarController didSelectViewController:(UIViewController * _Nonnull)viewController;
+- (void)startSongWithUrl:(NSString * _Nonnull)url musicView:(MusicView * _Nonnull)musicView;
+- (void)userStop;
+- (void)stopSong;
+- (void)jukeboxPlaybackProgressDidChange:(Jukebox * _Nonnull)jukebox;
+- (void)jukeboxStateDidChange:(Jukebox * _Nonnull)state;
+- (void)jukeboxDidLoadItem:(Jukebox * _Nonnull)jukebox item:(JukeboxItem * _Nonnull)item;
+- (void)jukeboxDidUpdateMetadata:(Jukebox * _Nonnull)jukebox forItem:(JukeboxItem * _Nonnull)forItem;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 @end
@@ -591,6 +624,7 @@ SWIFT_CLASS("_TtC5Ethos10LnikViewer")
 @end
 
 @class UICollectionView;
+@class TermsView;
 @class UICollectionViewCell;
 @class FBSDKLoginButton;
 @class FBSDKLoginManagerLoginResult;
@@ -606,7 +640,7 @@ SWIFT_CLASS("_TtC5Ethos19LoginViewController")
 @property (nonatomic, copy) NSString * _Nonnull lastName;
 @property (nonatomic, copy) NSString * _Nonnull city;
 @property (nonatomic, strong) UIButton * _Nullable rules;
-@property (nonatomic, strong) UIView * _Nullable rulesWindow;
+@property (nonatomic, strong) TermsView * _Nullable rulesWindow;
 - (void)viewDidLoad;
 - (void)showFB;
 - (void)loadEm;
@@ -619,6 +653,30 @@ SWIFT_CLASS("_TtC5Ethos19LoginViewController")
 - (BOOL)loginButtonWillLogin:(FBSDKLoginButton * _Null_unspecified)loginButton;
 - (void)loginButtonDidLogOut:(FBSDKLoginButton * _Null_unspecified)loginButton;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+@class UIProgressView;
+
+SWIFT_CLASS("_TtC5Ethos9MusicView")
+@interface MusicView : UIView
+@property (nonatomic, strong) IBOutlet UILabel * _Null_unspecified title;
+@property (nonatomic, strong) IBOutlet UILabel * _Null_unspecified artist;
+@property (nonatomic, strong) IBOutlet UIProgressView * _Null_unspecified progress;
+@property (nonatomic, strong) IBOutlet UIButton * _Null_unspecified play;
+@property (nonatomic, strong) IBOutlet UIImageView * _Null_unspecified art;
+@property (nonatomic) double prog;
+@property (nonatomic, copy) NSString * _Nonnull playURL;
+@property (nonatomic) BOOL playing;
+@property (nonatomic, copy) NSString * _Nonnull id;
+@property (nonatomic, readonly, strong) UIImage * _Nullable ply;
+@property (nonatomic, readonly, strong) UIImage * _Nullable pause;
+- (void)drawRect:(CGRect)rect;
+- (void)stopMusic;
+- (void)playMusic;
+- (void)loadSongWithId:(NSString * _Nonnull)id;
+- (IBAction)openSpotify:(id _Nonnull)sender;
+- (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 @end
 
@@ -675,7 +733,7 @@ SWIFT_CLASS("_TtC5Ethos6OPCard")
 
 
 SWIFT_CLASS("_TtC5Ethos21OneCardViewController")
-@interface OneCardViewController : UIViewController <ImageSeekDelegate, UIImagePickerControllerDelegate, UIGestureRecognizerDelegate, UIScrollViewDelegate, UINavigationControllerDelegate, UITextViewDelegate, UITableViewDataSource, UITableViewDelegate>
+@interface OneCardViewController : UIViewController <UITableViewDelegate, UIScrollViewDelegate, UITableViewDataSource, UITextViewDelegate, UIGestureRecognizerDelegate, ImageSeekDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITabBarDelegate, UITabBarControllerDelegate>
 @property (nonatomic) BOOL loading;
 @property (nonatomic, copy) NSString * _Nonnull ethosAuth;
 @property (nonatomic, copy) NSString * _Nonnull id;
@@ -697,6 +755,8 @@ SWIFT_CLASS("_TtC5Ethos21OneCardViewController")
 @property (nonatomic, strong) NSMutableArray * _Nonnull replyTo;
 @property (nonatomic, strong) NSMutableArray * _Nonnull replyEmoji;
 @property (nonatomic, strong) EmojiBar * _Nullable emojiBar;
+@property (nonatomic, strong) Jukebox * _Nullable jukebox;
+@property (nonatomic, strong) MusicView * _Nullable pv;
 @property (nonatomic, readonly, strong) UIView * _Nullable inputAccessoryView;
 @property (nonatomic, readonly) BOOL canBecomeFirstResponder;
 - (void)viewDidLoad;
@@ -749,6 +809,14 @@ SWIFT_CLASS("_TtC5Ethos21OneCardViewController")
 - (void)blockWithUserID:(NSInteger)userID;
 - (void)reportWithPost:(PostCard * _Nonnull)post;
 - (void)scrollViewDidScroll:(UIScrollView * _Nonnull)scrollView;
+- (void)tabBarController:(UITabBarController * _Nonnull)tabBarController didSelectViewController:(UIViewController * _Nonnull)viewController;
+- (void)viewWillDisappear:(BOOL)animated;
+- (void)startSongWithUrl:(NSString * _Nonnull)url musicView:(MusicView * _Nonnull)musicView;
+- (void)stopSong;
+- (void)jukeboxPlaybackProgressDidChange:(Jukebox * _Nonnull)jukebox;
+- (void)jukeboxStateDidChange:(Jukebox * _Nonnull)state;
+- (void)jukeboxDidLoadItem:(Jukebox * _Nonnull)jukebox item:(JukeboxItem * _Nonnull)item;
+- (void)jukeboxDidUpdateMetadata:(Jukebox * _Nonnull)jukebox forItem:(JukeboxItem * _Nonnull)forItem;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 @end
@@ -883,6 +951,15 @@ SWIFT_CLASS("_TtC5Ethos26SearchGroupsViewController")
 @end
 
 
+SWIFT_CLASS("_TtC5Ethos9TermsView")
+@interface TermsView : UIView
+@property (nonatomic, strong) IBOutlet UITextView * _Null_unspecified title;
+@property (nonatomic, strong) IBOutlet UITextView * _Null_unspecified terms;
+- (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
 @interface UIColor (SWIFT_EXTENSION(Ethos))
 + (UIColor * _Nonnull)hexStringToUIColor:(NSString * _Nonnull)hex;
 @end
@@ -895,6 +972,18 @@ SWIFT_CLASS("_TtC5Ethos26SearchGroupsViewController")
 
 @interface UIView (SWIFT_EXTENSION(Ethos))
 + (UIView * _Nullable)loadFromNibNamedWithNibNamed:(NSString * _Nonnull)nibNamed bundle:(NSBundle * _Nullable)bundle;
+@end
+
+@class YTPlayerView;
+
+SWIFT_CLASS("_TtC5Ethos9VideoView")
+@interface VideoView : UIView
+@property (nonatomic, readonly, copy) NSDictionary<NSString *, id> * _Nonnull playerVars;
+@property (nonatomic, strong) IBOutlet YTPlayerView * _Null_unspecified vid;
+- (void)drawRect:(CGRect)rect;
+- (void)loadVideoWithId:(NSString * _Nonnull)id;
+- (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 @end
 
 

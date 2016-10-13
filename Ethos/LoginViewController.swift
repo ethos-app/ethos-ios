@@ -49,7 +49,7 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate, UICollect
     var lastName = ""
     var city = ""
     var rules : UIButton?
-    var rulesWindow : UIView?
+    var rulesWindow : TermsView?
     override func viewDidLoad() {
         emojiList = NSMutableArray()
         let lowerThird = CGRect(x: 0, y: self.view.frame.height-200, width: self.view.frame.width, height: 200)
@@ -96,8 +96,8 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate, UICollect
         login.center.y = self.view.frame.height * 0.9
         self.view.addSubview(login)
         
-        rulesWindow = UIView.loadFromNibNamed(nibNamed: "TermsView")
-        rulesWindow?.frame = CGRect(x: 20, y: 40, width: self.view.frame.width-40, height: self.view.frame.width+60)
+        rulesWindow = TermsView.loadFromNibNamed(nibNamed: "TermsView") as! TermsView
+        rulesWindow?.frame = CGRect(x: 20, y: 160, width: self.view.frame.width-40, height: self.view.frame.width-60)
         rules = UIButton(frame: myFrame)
         rules?.setTitle("Accept Terms", for: UIControlState.normal)
         rulesWindow?.alpha = 0
@@ -112,9 +112,10 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate, UICollect
         
     }
     func showFB() {
-        self.header?.text = "Last step! 👇 \n\n\n"
+        self.header?.text = "Last step 👇 \n\n\n"
         UIView.animate(withDuration: 0.3) {
-                self.rulesWindow?.alpha = 0
+                self.rulesWindow?.title.text = "🔒 Privacy"
+                self.rulesWindow?.terms.text = "Other users will never see your Facebook information. We use it for identity verification and to keep this app safe.\n\nReminder, other users only see your Emoji."
                 self.rules?.frame = CGRect(x: 0, y: 1000, width: (self.rules?.frame.width)!, height: (self.rules?.frame.height)!)
         }
     }

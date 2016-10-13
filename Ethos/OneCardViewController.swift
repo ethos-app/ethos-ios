@@ -14,8 +14,10 @@ import MRProgress
 import DKImagePickerController
 import URLEmbeddedView
 import SafariServices
+import Jukebox
+class OneCardViewController : UIViewController, UITableViewDelegate, UITableViewDataSource, UITextViewDelegate, UIGestureRecognizerDelegate, ImageSeekDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIScrollViewDelegate, UITabBarDelegate, UITabBarControllerDelegate, MusicDelegate, JukeboxDelegate {
 
-class OneCardViewController : UIViewController, UITableViewDelegate, UITableViewDataSource, UITextViewDelegate, UIGestureRecognizerDelegate, ImageSeekDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIScrollViewDelegate {
+
     var loading = false
     var ethosAuth = ""
     var id = ""
@@ -39,6 +41,8 @@ class OneCardViewController : UIViewController, UITableViewDelegate, UITableView
     var replyTo = NSMutableArray()
     var replyEmoji = NSMutableArray()
     var emojiBar : EmojiBar?
+    var jukebox : Jukebox?
+    var pv : MusicView?
     override var inputAccessoryView: UIView? {
         return box
     }
@@ -47,6 +51,7 @@ class OneCardViewController : UIViewController, UITableViewDelegate, UITableView
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.tabBarController?.delegate = self
         emojiBar = EmojiBar.loadFromNibNamed(nibNamed: "EmojiBar") as! EmojiBar?
         emojiBar?.frame = CGRect(x: 0, y: -100, width: self.view.frame.width, height: 55)
         emojiBar?.backgroundColor = UIColor.hexStringToUIColor("F4F4F4").withAlphaComponent(0.96)
@@ -56,7 +61,8 @@ class OneCardViewController : UIViewController, UITableViewDelegate, UITableView
         box?.type = .keyboard
         self.box?.backgroundColor = UIColor.hexStringToUIColor("e9e9e9")
         box?.textView?.delegate = self
-        
+        self.view.clipsToBounds = true
+
         cardsToShow = NSMutableArray()
       //  self.postBox.textView?.inputAccessoryView = self.postBox
         
@@ -217,7 +223,6 @@ class OneCardViewController : UIViewController, UITableViewDelegate, UITableView
             self.cardsToShow?.insert(dataCard, at: 0)
             } else {
                 self.cardsToShow?.add(dataCard)
-                
             }
 
         }
@@ -533,13 +538,16 @@ class OneCardViewController : UIViewController, UITableViewDelegate, UITableView
         } else if type == 3 {
             cellType = "group"
         }
-        
+        print("HERE")
         let cell = tableView.dequeueReusableCell(withIdentifier: cellType, for: indexPath) as? BizCardTableViewCell
+        print(cardsToShow?.count)
         if currentObject.comment == false {
             cell?.reply?.alpha = 0
         }
         cell?.selectionStyle = UITableViewCellSelectionStyle.none
+        print(currentObject)
         let imageURL = URL(string: currentObject.posterEmoji)
+        print(imageURL)
         cell?.img.hnk_setImageFromURL(imageURL!)
         cell?.img.contentMode = UIViewContentMode.scaleAspectFit
         if currentObject.isEthos {
@@ -623,9 +631,46 @@ class OneCardViewController : UIViewController, UITableViewDelegate, UITableView
             linkTap.numberOfTapsRequired = 1
             linkEmbed.addGestureRecognizer(linkTap)
             linkEmbed.loadURL(currentObject.content)
-            if cell!.linkStack.subviews.count < 1 {
-                cell!.linkStack.addArrangedSubview(linkEmbed)
+            
+            
+            // Create Music View
+            let musicView = MusicView.loadFromNibNamed(nibNamed: "MusicView") as! MusicView
+            musicView.frame = CGRect(x: 0, y: 0, width: 310, height: 80)
+            var finalURL = currentObject.content
+            
+            // Create Video View
+            let videoView = VideoView.loadFromNibNamed(nibNamed: "VideoView") as! VideoView
+            videoView.frame = CGRect(x: 0, y: 80, width: 320, height: 300)
+            // Link contains spotify URL
+            if currentObject.content.contains("https://open.spotify.com/track/") {
+                finalURL = finalURL.replacingOccurrences(of: "https://open.spotify.com/track/", with: "")
+                musicView.delegate = self
+                musicView.loadSong(id: finalURL)
+                musicView.isUserInteractionEnabled = true
+                if cell!.linkStack.subviews.count < 1 {
+                    cell!.linkStack.addArrangedSubview(musicView)
+                }
+                
+                //  Link contains youtube url
+            } else if (currentObject.content.contains("https://www.youtube.com/watch?")) || (currentObject.content.contains("http://youtu.be/")) || (currentObject.content.contains("https://youtu.be/")) || (currentObject.content.contains("https://www.youtube.com/watch?")) {
+                finalURL = finalURL.replacingOccurrences(of: "https://www.youtube.com/watch?v=", with: "")
+                finalURL = finalURL.replacingOccurrences(of: "http://youtu.be/", with: "")
+                finalURL = finalURL.replacingOccurrences(of: "http://www.youtube.com/watch?v=", with: "")
+                finalURL = finalURL.replacingOccurrences(of: "https://youtu.be/", with: "")
+                videoView.loadVideo(id : finalURL)
+                
+                if cell!.linkStack.subviews.count < 1 {
+                    cell!.linkStack.addArrangedSubview(videoView)
+                    
+                }
+                // Standard link
+            } else {
+                if cell!.linkStack.subviews.count < 1 {
+                    cell!.linkStack.addArrangedSubview(linkEmbed)
+                }
+                
             }
+            
             
             }
         if cellType == "image" || cellType == "imagec" {
@@ -889,5 +934,52 @@ class OneCardViewController : UIViewController, UITableViewDelegate, UITableView
             stopWritingPost()
         }
     }
+    // MARK - Tab bar delegate
+    
+    func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
+        self.navigationController?.popToRootViewController(animated: true)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        jukebox?.stop()
+    }
+    
+    // MARK: Music Delegate
+    public func startSong(url: String, musicView: MusicView) {
+        let link = URL(string: url)
+        jukebox?.stop()
+        jukebox = Jukebox(delegate: self, items: [
+            JukeboxItem(URL: link!)
+            ])
+        jukebox?.play()
+        pv = musicView
+    }
+
+    func stopSong() {
+        jukebox?.stop()
+    }
+    
+    func jukeboxPlaybackProgressDidChange(_ jukebox: Jukebox) {
+        
+        // update current progress view for player
+        let duration = Float(30.00)
+        let current = Float((jukebox.currentItem?.currentTime)!)
+        let percent = current / duration
+        pv?.progress?.progress = percent
+        if percent > 0.98 {
+            pv?.stopMusic()
+        }
+    }
+    
+    func jukeboxStateDidChange(_ state: Jukebox) {
+        //
+    }
+    func jukeboxDidLoadItem(_ jukebox: Jukebox, item: JukeboxItem) {
+        //
+    }
+    func jukeboxDidUpdateMetadata(_ jukebox: Jukebox, forItem: JukeboxItem) {
+        //
+    }
+    
   
 }

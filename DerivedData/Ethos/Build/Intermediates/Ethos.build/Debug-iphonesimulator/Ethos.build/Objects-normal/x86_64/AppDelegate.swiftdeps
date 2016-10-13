@@ -6,80 +6,82 @@ provides-nominal:
 provides-member:
 - ["C5Ethos11AppDelegate", ""]
 provides-dynamic-lookup:
-- "window"
-- "showPushInfo"
-- "application"
-- "application"
-- "application"
-- "application"
-- "post"
-- "applicationWillEnterForeground"
-- "tokenRefreshNotification"
-- "connectToFcm"
-- "userNotificationCenter"
-- "applicationReceivedRemoteMessage"
-- "applicationDidBecomeActive"
-- "applicationWillTerminate"
-- "banner"
-- "show"
-- "applicationDidEnterBackground"
 - "applicationWillResignActive"
+- "connectToFcm"
+- "applicationReceivedRemoteMessage"
+- "banner"
+- "tokenRefreshNotification"
+- "window"
+- "post"
+- "applicationWillTerminate"
+- "applicationWillEnterForeground"
+- "show"
+- "showPushInfo"
+- "userNotificationCenter"
+- "applicationDidEnterBackground"
+- "application"
+- "application"
+- "application"
+- "application"
+- "applicationDidBecomeActive"
 depends-top-level:
-- "NSNotification"
-- "String"
-- !private "OneCardViewController"
-- !private "UIUserNotificationSettings"
-- !private "FIRMessaging"
-- !private "Array"
-- !private "print"
-- !private "UITabBarController"
-- !private "Fabric"
 - !private "FIRApp"
-- !private "Crashlytics"
-- "Bool"
-- "UIApplicationLaunchOptionsKey"
-- !private "NotificationCenter"
-- !private "NSDictionary"
-- "AppDelegate"
-- "UIResponder"
-- "UNNotification"
-- "Data"
-- "UNNotificationPresentationOptions"
-- !private "??"
-- "UNUserNotificationCenter"
-- "UIApplicationDelegate"
-- "UNUserNotificationCenterDelegate"
-- !private "UITabBar"
-- "FIRMessagingDelegate"
-- !private "StringLiteralType"
-- !private "UINavigationController"
-- "AnyHashable"
-- !private "UIStoryboard"
-- !private "FBSDKAppEvents"
-- !private "Answers"
-- "Int"
-- "UIWindow"
-- !private "FIRInstanceID"
-- !private "UIImage"
-- !private "BooleanLiteralType"
-- "URL"
-- !private "FBSDKApplicationDelegate"
-- !private "UIApplicationState"
-- !private "UIColor"
-- "Void"
-- "CastingPrecedence"
-- !private "=="
-- !private "UNAuthorizationOptions"
-- !private "!="
-- "Banner"
-- "AssignmentPrecedence"
 - "FIRMessagingRemoteMessage"
-- !private "UITapGestureRecognizer"
-- "UIApplication"
+- !private "StringLiteralType"
 - !private "FBSDKProfile"
+- !private "print"
+- "Banner"
+- "Int"
+- !private "BooleanLiteralType"
+- !private "UITabBar"
+- !private "FBSDKAppEvents"
+- !private "UITapGestureRecognizer"
+- "Data"
+- "Void"
+- !private "UINavigationController"
+- !private "UITabBarController"
+- "URL"
+- !private "Answers"
+- !private "FBSDKApplicationDelegate"
+- !private "OneCardViewController"
+- "AssignmentPrecedence"
+- !private "UIStoryboard"
+- "CastingPrecedence"
+- !private "NotificationCenter"
+- !private "=="
+- !private "Crashlytics"
+- !private "FIRInstanceID"
+- !private "Fabric"
+- "UNNotification"
+- !private "UIUserNotificationSettings"
+- !private "UIColor"
+- "AppDelegate"
+- "UNNotificationPresentationOptions"
+- !private "UIApplicationState"
+- !private "NSDictionary"
+- "UNUserNotificationCenterDelegate"
+- !private "!="
+- "UIApplicationDelegate"
+- "UIApplication"
+- !private "UIImage"
+- "UNUserNotificationCenter"
+- "String"
+- "Bool"
+- "AnyHashable"
+- !private "FIRMessaging"
+- "FIRMessagingDelegate"
+- !private "??"
+- !private "UNAuthorizationOptions"
+- !private "Array"
+- "UIResponder"
+- "UIApplicationLaunchOptionsKey"
+- "UIWindow"
+- "NSNotification"
+- !private "BFURL"
 depends-member:
 - !private ["Vs11AnyHashable", "deinit"]
 - !private ["Ps9AnyObject", "Answers"]
+- !private ["Ps9AnyObject", "BFURL"]
 - ["Ps9AnyObject", "Banner"]
 - !private ["Ps9AnyObject", "Crashlytics"]
 - !private ["Ps9AnyObject", "FBSDKAppEvents"]
@@ -172,6 +174,7 @@ depends-member:
 - ["Ps9AnyObject", ""]
 - !private ["C5Ethos11AppDelegate", "Answers"]
 - ["C5Ethos11AppDelegate", "AnyHashable"]
+- !private ["C5Ethos11AppDelegate", "BFURL"]
 - ["C5Ethos11AppDelegate", "Banner"]
 - ["C5Ethos11AppDelegate", "Bool"]
 - !private ["C5Ethos11AppDelegate", "Crashlytics"]
@@ -234,6 +237,7 @@ depends-member:
 - ["C5Ethos11AppDelegate", "window"]
 - !private ["Sa", "Element"]
 - ["Sa", "deinit"]
+- !private ["CSo5BFURL", "init"]
 - !private ["C10BRYXBanner6Banner", "addGestureRecognizer"]
 - ["C10BRYXBanner6Banner", "deinit"]
 - !private ["C10BRYXBanner6Banner", "dismiss"]
@@ -261,6 +265,7 @@ depends-member:
 - ["V12CoreGraphics7CGFloat", "deinit"]
 - !private ["P11CryptoSwift11CSArrayType", "Element"]
 - !private ["Ps7CVarArg", "Answers"]
+- !private ["Ps7CVarArg", "BFURL"]
 - ["Ps7CVarArg", "Banner"]
 - !private ["Ps7CVarArg", "Crashlytics"]
 - !private ["Ps7CVarArg", "Element"]
@@ -367,6 +372,7 @@ depends-member:
 - !private ["Ps10Collection", "subscript"]
 - !private ["Ps10Comparable", "init"]
 - !private ["Ps28CustomDebugStringConvertible", "Answers"]
+- !private ["Ps28CustomDebugStringConvertible", "BFURL"]
 - ["Ps28CustomDebugStringConvertible", "Banner"]
 - !private ["Ps28CustomDebugStringConvertible", "Crashlytics"]
 - !private ["Ps28CustomDebugStringConvertible", "Element"]
@@ -477,6 +483,7 @@ depends-member:
 - ["Ps17CustomReflectable", "some"]
 - !private ["Ps17CustomReflectable", "subscript"]
 - !private ["Ps23CustomStringConvertible", "Answers"]
+- !private ["Ps23CustomStringConvertible", "BFURL"]
 - ["Ps23CustomStringConvertible", "Banner"]
 - !private ["Ps23CustomStringConvertible", "Crashlytics"]
 - !private ["Ps23CustomStringConvertible", "Element"]
@@ -586,6 +593,7 @@ depends-member:
 - !private ["Vs15DictionaryIndex", "deinit"]
 - ["Sd", "deinit"]
 - !private ["Ps9Equatable", "Answers"]
+- !private ["Ps9Equatable", "BFURL"]
 - ["Ps9Equatable", "Banner"]
 - !private ["Ps9Equatable", "Crashlytics"]
 - !private ["Ps9Equatable", "Element"]
@@ -718,6 +726,7 @@ depends-member:
 - !private ["CSo12FIRMessaging", "messaging"]
 - !private ["CSo12FIRMessaging", "remoteMessageDelegate"]
 - !private ["PSo20FIRMessagingDelegate", "Answers"]
+- !private ["PSo20FIRMessagingDelegate", "BFURL"]
 - ["PSo20FIRMessagingDelegate", "Banner"]
 - !private ["PSo20FIRMessagingDelegate", "Crashlytics"]
 - !private ["PSo20FIRMessagingDelegate", "FBSDKAppEvents"]
@@ -770,6 +779,7 @@ depends-member:
 - !private ["CSo6Fabric", "with"]
 - !private ["Sf", "deinit"]
 - !private ["Ps8Hashable", "Answers"]
+- !private ["Ps8Hashable", "BFURL"]
 - ["Ps8Hashable", "Banner"]
 - !private ["Ps8Hashable", "Crashlytics"]
 - !private ["Ps8Hashable", "FBSDKAppEvents"]
@@ -892,9 +902,11 @@ depends-member:
 - !private ["Ps7Integer", "init"]
 - !private ["Ps17IntegerArithmetic", "init"]
 - !private ["Ps16IteratorProtocol", "Element"]
+- !private ["P7Jukebox15JukeboxDelegate", "postID"]
 - !private ["Ps25LosslessStringConvertible", "_getBuiltinLogicValue"]
 - !private ["Ps25LosslessStringConvertible", "init"]
 - !private ["Ps10MirrorPath", "init"]
+- !private ["P5Ethos13MusicDelegate", "postID"]
 - !private ["Ps17MutableCollection", "Element"]
 - !private ["Ps16MutableIndexable", "Element"]
 - !private ["PSo8NSCoding", "Name"]
@@ -942,6 +954,7 @@ depends-member:
 - !private ["CSo14NSNotification", "Name"]
 - !private ["CSo8NSObject", "Answers"]
 - ["CSo8NSObject", "AnyHashable"]
+- !private ["CSo8NSObject", "BFURL"]
 - ["CSo8NSObject", "Banner"]
 - ["CSo8NSObject", "Bool"]
 - !private ["CSo8NSObject", "Crashlytics"]
@@ -1047,6 +1060,7 @@ depends-member:
 - !private ["CSo8NSObject", "with"]
 - !private ["CSo8NSObject", "withAlphaComponent"]
 - !private ["PSo16NSObjectProtocol", "Answers"]
+- !private ["PSo16NSObjectProtocol", "BFURL"]
 - ["PSo16NSObjectProtocol", "Banner"]
 - !private ["PSo16NSObjectProtocol", "Crashlytics"]
 - !private ["PSo16NSObjectProtocol", "FBSDKAppEvents"]
@@ -1239,6 +1253,7 @@ depends-member:
 - !private ["CSo13UIApplication", "shared"]
 - !private ["CSo13UIApplication", "statusBarStyle"]
 - !private ["PSo21UIApplicationDelegate", "Answers"]
+- !private ["PSo21UIApplicationDelegate", "BFURL"]
 - ["PSo21UIApplicationDelegate", "Banner"]
 - !private ["PSo21UIApplicationDelegate", "Crashlytics"]
 - !private ["PSo21UIApplicationDelegate", "FBSDKAppEvents"]
@@ -1345,6 +1360,7 @@ depends-member:
 - !private ["PSo30UINavigationControllerDelegate", "postID"]
 - !private ["CSo11UIResponder", "Answers"]
 - ["CSo11UIResponder", "AnyHashable"]
+- !private ["CSo11UIResponder", "BFURL"]
 - ["CSo11UIResponder", "Banner"]
 - ["CSo11UIResponder", "Bool"]
 - !private ["CSo11UIResponder", "Crashlytics"]
@@ -1424,6 +1440,7 @@ depends-member:
 - ["CSo11UIResponder", "window"]
 - ["CSo11UIResponder", ""]
 - !private ["PSo30UIResponderStandardEditActions", "Answers"]
+- !private ["PSo30UIResponderStandardEditActions", "BFURL"]
 - ["PSo30UIResponderStandardEditActions", "Banner"]
 - !private ["PSo30UIResponderStandardEditActions", "Crashlytics"]
 - !private ["PSo30UIResponderStandardEditActions", "FBSDKAppEvents"]
@@ -1501,6 +1518,8 @@ depends-member:
 - !private ["CSo8UITabBar", "tintColor"]
 - ["CSo18UITabBarController", "deinit"]
 - !private ["CSo18UITabBarController", "selectedViewController"]
+- !private ["PSo26UITabBarControllerDelegate", "postID"]
+- !private ["PSo16UITabBarDelegate", "postID"]
 - !private ["PSo16UITabBarDelegate", "selectedViewController"]
 - !private ["PSo21UITableViewDataSource", "postID"]
 - !private ["PSo19UITableViewDelegate", "postID"]
@@ -1563,6 +1582,7 @@ depends-member:
 - !private ["CSo24UNUserNotificationCenter", "delegate"]
 - !private ["CSo24UNUserNotificationCenter", "requestAuthorization"]
 - !private ["PSo32UNUserNotificationCenterDelegate", "Answers"]
+- !private ["PSo32UNUserNotificationCenterDelegate", "BFURL"]
 - ["PSo32UNUserNotificationCenterDelegate", "Banner"]
 - !private ["PSo32UNUserNotificationCenterDelegate", "Crashlytics"]
 - !private ["PSo32UNUserNotificationCenterDelegate", "FBSDKAppEvents"]
@@ -1635,6 +1655,7 @@ depends-member:
 - !private ["Ps35_HasCustomAnyHashableRepresentation", "Name"]
 - !private ["Ps35_HasCustomAnyHashableRepresentation", "init"]
 - !private ["Ps9_Hashable", "Answers"]
+- !private ["Ps9_Hashable", "BFURL"]
 - ["Ps9_Hashable", "Banner"]
 - !private ["Ps9_Hashable", "Crashlytics"]
 - !private ["Ps9_Hashable", "FBSDKAppEvents"]
@@ -1750,6 +1771,7 @@ depends-nominal:
 - "Ps9AnyObject"
 - "C5Ethos11AppDelegate"
 - "Sa"
+- !private "CSo5BFURL"
 - "C10BRYXBanner6Banner"
 - !private "Ps23BidirectionalCollection"
 - !private "Ps22BidirectionalIndexable"
@@ -1810,8 +1832,10 @@ depends-nominal:
 - !private "Ps7Integer"
 - !private "Ps17IntegerArithmetic"
 - !private "Ps16IteratorProtocol"
+- !private "P7Jukebox15JukeboxDelegate"
 - !private "Ps25LosslessStringConvertible"
 - !private "Ps10MirrorPath"
+- !private "P5Ethos13MusicDelegate"
 - !private "Ps17MutableCollection"
 - !private "Ps16MutableIndexable"
 - "PSo8NSCoding"
@@ -1872,6 +1896,7 @@ depends-nominal:
 - "CSo12UIStoryboard"
 - "CSo8UITabBar"
 - "CSo18UITabBarController"
+- !private "PSo26UITabBarControllerDelegate"
 - !private "PSo16UITabBarDelegate"
 - !private "PSo21UITableViewDataSource"
 - !private "PSo19UITableViewDelegate"
@@ -1929,6 +1954,10 @@ depends-external:
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/ObjectiveC.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreGraphics.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreImage.swiftmodule"
+- "/Users/Scott/Documents/Ethos/DerivedData/Ethos/Build/Products/Debug-iphonesimulator/youtube-ios-player-helper/youtube_ios_player_helper.framework/Headers/YTPlayerView.h"
+- "/Users/Scott/Documents/Ethos/Pods/Firebase/Analytics/Sources/module.modulemap"
+- "/Users/Scott/Documents/Ethos/DerivedData/Ethos/Build/Products/Debug-iphonesimulator/youtube-ios-player-helper/youtube_ios_player_helper.framework/Headers/youtube-ios-player-helper-umbrella.h"
+- "/Users/Scott/Documents/Ethos/DerivedData/Ethos/Build/Products/Debug-iphonesimulator/youtube-ios-player-helper/youtube_ios_player_helper.framework/Modules/module.modulemap"
 - "/Users/Scott/Documents/Ethos/Bolts.framework/Headers/BFWebViewAppLinkResolver.h"
 - "/Users/Scott/Documents/Ethos/Bolts.framework/Headers/BFURL.h"
 - "/Users/Scott/Documents/Ethos/Bolts.framework/Headers/BFMeasurementEvent.h"
@@ -1970,7 +1999,6 @@ depends-external:
 - "/Users/Scott/Documents/Ethos/FBSDKCoreKit.framework/Modules/module.modulemap"
 - "/Users/Scott/Documents/Ethos/DerivedData/Ethos/Build/Products/Debug-iphonesimulator/Alamofire/Alamofire.framework/Modules/Alamofire.swiftmodule/x86_64.swiftmodule"
 - "/Users/Scott/Documents/Ethos/DerivedData/Ethos/Build/Products/Debug-iphonesimulator/Alamofire/Alamofire.framework/Headers/Alamofire-Swift.h"
-- "/Users/Scott/Documents/Ethos/Pods/Firebase/Analytics/Sources/module.modulemap"
 - "/Users/Scott/Documents/Ethos/DerivedData/Ethos/Build/Products/Debug-iphonesimulator/Alamofire/Alamofire.framework/Headers/Alamofire-umbrella.h"
 - "/Users/Scott/Documents/Ethos/DerivedData/Ethos/Build/Products/Debug-iphonesimulator/Alamofire/Alamofire.framework/Modules/module.modulemap"
 - "/Users/Scott/Documents/Ethos/DerivedData/Ethos/Build/Products/Debug-iphonesimulator/MRProgress/MRProgress.framework/Headers/MRStopButton.h"
@@ -2036,6 +2064,10 @@ depends-external:
 - "/Users/Scott/Documents/Ethos/DerivedData/Ethos/Build/Products/Debug-iphonesimulator/MBProgressHUD/MBProgressHUD.framework/Headers/MBProgressHUD.h"
 - "/Users/Scott/Documents/Ethos/DerivedData/Ethos/Build/Products/Debug-iphonesimulator/MBProgressHUD/MBProgressHUD.framework/Headers/MBProgressHUD-umbrella.h"
 - "/Users/Scott/Documents/Ethos/DerivedData/Ethos/Build/Products/Debug-iphonesimulator/MBProgressHUD/MBProgressHUD.framework/Modules/module.modulemap"
+- "/Users/Scott/Documents/Ethos/DerivedData/Ethos/Build/Products/Debug-iphonesimulator/Jukebox/Jukebox.framework/Modules/Jukebox.swiftmodule/x86_64.swiftmodule"
+- "/Users/Scott/Documents/Ethos/DerivedData/Ethos/Build/Products/Debug-iphonesimulator/Jukebox/Jukebox.framework/Headers/Jukebox-Swift.h"
+- "/Users/Scott/Documents/Ethos/DerivedData/Ethos/Build/Products/Debug-iphonesimulator/Jukebox/Jukebox.framework/Headers/Jukebox-umbrella.h"
+- "/Users/Scott/Documents/Ethos/DerivedData/Ethos/Build/Products/Debug-iphonesimulator/Jukebox/Jukebox.framework/Modules/module.modulemap"
 - "/Users/Scott/Documents/Ethos/DerivedData/Ethos/Build/Products/Debug-iphonesimulator/HanekeSwift/Haneke.framework/Modules/Haneke.swiftmodule/x86_64.swiftmodule"
 - "/Users/Scott/Documents/Ethos/DerivedData/Ethos/Build/Products/Debug-iphonesimulator/HanekeSwift/Haneke.framework/Headers/Haneke-Swift.h"
 - "/Users/Scott/Documents/Ethos/DerivedData/Ethos/Build/Products/Debug-iphonesimulator/HanekeSwift/Haneke.framework/Headers/HanekeSwift-umbrella.h"

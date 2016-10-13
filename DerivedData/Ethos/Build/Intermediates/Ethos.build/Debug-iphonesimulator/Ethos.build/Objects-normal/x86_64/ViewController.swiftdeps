@@ -1,9 +1,12 @@
 ### Swift dependencies file v0 ###
 provides-top-level:
+- "Colors"
 - "ViewController"
 provides-nominal:
+- "V5Ethos6Colors"
 - "C5Ethos14ViewController"
 provides-member:
+- ["V5Ethos6Colors", ""]
 - ["CSo6UIView", ""]
 - ["V10Foundation4Date", ""]
 - ["CSo11UIImageView", ""]
@@ -14,44 +17,45 @@ provides-member:
 - ["CSo11UIImageView", "imageFromUrl"]
 - ["CSo7UIColor", "hexStringToUIColor"]
 provides-dynamic-lookup:
-- "viewDidLoad"
+- "imageFromUrl"
 - "hexStringToUIColor"
 - "loadFromNibNamed"
+- "viewDidLoad"
 - "didReceiveMemoryWarning"
-- "imageFromUrl"
 depends-top-level:
-- !private ">"
-- !private "UnicodeScalarType"
-- !private "+"
-- !private "/"
-- !private "CGFloat"
-- !private "&"
-- !private "UInt32"
-- "TernaryPrecedence"
-- "String"
-- "URL"
-- "UIColor"
-- !private "UINib"
-- "UIImageView"
-- "AssignmentPrecedence"
-- "CastingPrecedence"
-- !private "!="
-- !private "NSCalendar"
-- !private "Scanner"
-- !private ">>"
-- !private "=="
-- !private "URLSession"
-- "UIView"
-- !private "StringLiteralType"
-- "Bundle"
-- !private "DispatchQueue"
-- !private "UIImage"
-- "Date"
-- !private "Array"
 - "ViewController"
-- !private "NSCharacterSet"
+- "Bundle"
+- "TernaryPrecedence"
+- !private "CGFloat"
 - "UIViewController"
+- !private "URLSession"
+- !private "DispatchQueue"
+- "Date"
+- "UIColor"
+- !private "NSCharacterSet"
+- "String"
+- "CastingPrecedence"
+- !private "NSCalendar"
+- !private ">"
+- !private "=="
+- !private "Array"
+- !private "/"
+- "UIView"
+- "AssignmentPrecedence"
+- !private "!="
+- !private "&"
+- "URL"
+- !private "+"
+- "StringLiteralType"
+- !private "UINib"
+- !private "UInt32"
+- "UIImageView"
+- !private "UnicodeScalarType"
 - !private "Calendar"
+- !private "Scanner"
+- !private "UIImage"
+- !private ">>"
+- "Colors"
 depends-member:
 - !private ["Ps16AbsoluteValuable", "init"]
 - !private ["Ps9AnyObject", "CGFloat"]
@@ -74,7 +78,7 @@ depends-member:
 - ["Ps9AnyObject", "hexStringToUIColor"]
 - !private ["Ps9AnyObject", "image"]
 - ["Ps9AnyObject", "imageFromUrl"]
-- !private ["Ps9AnyObject", "init"]
+- ["Ps9AnyObject", "init"]
 - !private ["Ps9AnyObject", "instantiate"]
 - ["Ps9AnyObject", "loadFromNibNamed"]
 - !private ["Ps9AnyObject", "main"]
@@ -168,7 +172,7 @@ depends-member:
 - ["Ps7CVarArg", "hexStringToUIColor"]
 - !private ["Ps7CVarArg", "image"]
 - ["Ps7CVarArg", "imageFromUrl"]
-- !private ["Ps7CVarArg", "init"]
+- ["Ps7CVarArg", "init"]
 - !private ["Ps7CVarArg", "instantiate"]
 - ["Ps7CVarArg", "loadFromNibNamed"]
 - !private ["Ps7CVarArg", "main"]
@@ -202,6 +206,9 @@ depends-member:
 - !private ["Ps10Collection", "count"]
 - !private ["Ps10Collection", "index"]
 - !private ["Ps10Collection", "subscript"]
+- ["V5Ethos6Colors", "UIColor"]
+- ["V5Ethos6Colors", "init"]
+- ["V5Ethos6Colors", "primary"]
 - !private ["Ps10Comparable", "Calendar"]
 - !private ["Ps10Comparable", "Date"]
 - !private ["Ps10Comparable", "IntegerLiteralType"]
@@ -209,7 +216,7 @@ depends-member:
 - !private ["Ps10Comparable", "_DisabledRangeIndex"]
 - !private ["Ps10Comparable", "characters"]
 - !private ["Ps10Comparable", "hasPrefix"]
-- !private ["Ps10Comparable", "init"]
+- ["Ps10Comparable", "init"]
 - !private ["Ps10Comparable", "startIndex"]
 - !private ["Ps10Comparable", "substring"]
 - !private ["Ps10Comparable", "trimmingCharacters"]
@@ -240,7 +247,7 @@ depends-member:
 - !private ["Ps28CustomDebugStringConvertible", "hour"]
 - !private ["Ps28CustomDebugStringConvertible", "image"]
 - ["Ps28CustomDebugStringConvertible", "imageFromUrl"]
-- !private ["Ps28CustomDebugStringConvertible", "init"]
+- ["Ps28CustomDebugStringConvertible", "init"]
 - !private ["Ps28CustomDebugStringConvertible", "instantiate"]
 - ["Ps28CustomDebugStringConvertible", "loadFromNibNamed"]
 - !private ["Ps28CustomDebugStringConvertible", "main"]
@@ -268,7 +275,7 @@ depends-member:
 - !private ["Ps29CustomPlaygroundQuickLookable", "_getBuiltinLogicValue"]
 - !private ["Ps29CustomPlaygroundQuickLookable", "characters"]
 - !private ["Ps29CustomPlaygroundQuickLookable", "hasPrefix"]
-- !private ["Ps29CustomPlaygroundQuickLookable", "init"]
+- ["Ps29CustomPlaygroundQuickLookable", "init"]
 - !private ["Ps29CustomPlaygroundQuickLookable", "startIndex"]
 - !private ["Ps29CustomPlaygroundQuickLookable", "substring"]
 - !private ["Ps29CustomPlaygroundQuickLookable", "trimmingCharacters"]
@@ -285,7 +292,7 @@ depends-member:
 - !private ["Ps17CustomReflectable", "day"]
 - !private ["Ps17CustomReflectable", "hasPrefix"]
 - !private ["Ps17CustomReflectable", "hour"]
-- !private ["Ps17CustomReflectable", "init"]
+- ["Ps17CustomReflectable", "init"]
 - !private ["Ps17CustomReflectable", "minute"]
 - !private ["Ps17CustomReflectable", "month"]
 - !private ["Ps17CustomReflectable", "startIndex"]
@@ -324,7 +331,7 @@ depends-member:
 - !private ["Ps23CustomStringConvertible", "hour"]
 - !private ["Ps23CustomStringConvertible", "image"]
 - ["Ps23CustomStringConvertible", "imageFromUrl"]
-- !private ["Ps23CustomStringConvertible", "init"]
+- ["Ps23CustomStringConvertible", "init"]
 - !private ["Ps23CustomStringConvertible", "instantiate"]
 - ["Ps23CustomStringConvertible", "loadFromNibNamed"]
 - !private ["Ps23CustomStringConvertible", "main"]
@@ -347,13 +354,13 @@ depends-member:
 - !private ["V10Foundation4Data", "deinit"]
 - !private ["P6Haneke15DataConvertible", "characters"]
 - !private ["P6Haneke15DataConvertible", "hasPrefix"]
-- !private ["P6Haneke15DataConvertible", "init"]
+- ["P6Haneke15DataConvertible", "init"]
 - !private ["P6Haneke15DataConvertible", "startIndex"]
 - !private ["P6Haneke15DataConvertible", "substring"]
 - !private ["P6Haneke15DataConvertible", "trimmingCharacters"]
 - !private ["P6Haneke17DataRepresentable", "characters"]
 - !private ["P6Haneke17DataRepresentable", "hasPrefix"]
-- !private ["P6Haneke17DataRepresentable", "init"]
+- ["P6Haneke17DataRepresentable", "init"]
 - !private ["P6Haneke17DataRepresentable", "startIndex"]
 - !private ["P6Haneke17DataRepresentable", "substring"]
 - !private ["P6Haneke17DataRepresentable", "trimmingCharacters"]
@@ -416,7 +423,7 @@ depends-member:
 - !private ["Ps9Equatable", "hour"]
 - !private ["Ps9Equatable", "image"]
 - ["Ps9Equatable", "imageFromUrl"]
-- !private ["Ps9Equatable", "init"]
+- ["Ps9Equatable", "init"]
 - !private ["Ps9Equatable", "instantiate"]
 - ["Ps9Equatable", "loadFromNibNamed"]
 - !private ["Ps9Equatable", "main"]
@@ -448,7 +455,7 @@ depends-member:
 - !private ["Ps27ExpressibleByBooleanLiteral", "_getBuiltinLogicValue"]
 - !private ["Ps43ExpressibleByExtendedGraphemeClusterLiteral", "characters"]
 - !private ["Ps43ExpressibleByExtendedGraphemeClusterLiteral", "hasPrefix"]
-- !private ["Ps43ExpressibleByExtendedGraphemeClusterLiteral", "init"]
+- ["Ps43ExpressibleByExtendedGraphemeClusterLiteral", "init"]
 - !private ["Ps43ExpressibleByExtendedGraphemeClusterLiteral", "startIndex"]
 - !private ["Ps43ExpressibleByExtendedGraphemeClusterLiteral", "substring"]
 - !private ["Ps43ExpressibleByExtendedGraphemeClusterLiteral", "trimmingCharacters"]
@@ -459,19 +466,19 @@ depends-member:
 - !private ["Ps27ExpressibleByIntegerLiteral", "init"]
 - !private ["Ps32ExpressibleByStringInterpolation", "characters"]
 - !private ["Ps32ExpressibleByStringInterpolation", "hasPrefix"]
-- !private ["Ps32ExpressibleByStringInterpolation", "init"]
+- ["Ps32ExpressibleByStringInterpolation", "init"]
 - !private ["Ps32ExpressibleByStringInterpolation", "startIndex"]
 - !private ["Ps32ExpressibleByStringInterpolation", "substring"]
 - !private ["Ps32ExpressibleByStringInterpolation", "trimmingCharacters"]
 - !private ["Ps26ExpressibleByStringLiteral", "characters"]
 - !private ["Ps26ExpressibleByStringLiteral", "hasPrefix"]
-- !private ["Ps26ExpressibleByStringLiteral", "init"]
+- ["Ps26ExpressibleByStringLiteral", "init"]
 - !private ["Ps26ExpressibleByStringLiteral", "startIndex"]
 - !private ["Ps26ExpressibleByStringLiteral", "substring"]
 - !private ["Ps26ExpressibleByStringLiteral", "trimmingCharacters"]
 - !private ["Ps33ExpressibleByUnicodeScalarLiteral", "characters"]
 - !private ["Ps33ExpressibleByUnicodeScalarLiteral", "hasPrefix"]
-- !private ["Ps33ExpressibleByUnicodeScalarLiteral", "init"]
+- ["Ps33ExpressibleByUnicodeScalarLiteral", "init"]
 - !private ["Ps33ExpressibleByUnicodeScalarLiteral", "startIndex"]
 - !private ["Ps33ExpressibleByUnicodeScalarLiteral", "substring"]
 - !private ["Ps33ExpressibleByUnicodeScalarLiteral", "trimmingCharacters"]
@@ -506,7 +513,7 @@ depends-member:
 - !private ["Ps8Hashable", "hour"]
 - !private ["Ps8Hashable", "image"]
 - ["Ps8Hashable", "imageFromUrl"]
-- !private ["Ps8Hashable", "init"]
+- ["Ps8Hashable", "init"]
 - !private ["Ps8Hashable", "instantiate"]
 - ["Ps8Hashable", "loadFromNibNamed"]
 - !private ["Ps8Hashable", "main"]
@@ -566,7 +573,7 @@ depends-member:
 - !private ["Ps25LosslessStringConvertible", "_getBuiltinLogicValue"]
 - !private ["Ps25LosslessStringConvertible", "characters"]
 - !private ["Ps25LosslessStringConvertible", "hasPrefix"]
-- !private ["Ps25LosslessStringConvertible", "init"]
+- ["Ps25LosslessStringConvertible", "init"]
 - !private ["Ps25LosslessStringConvertible", "startIndex"]
 - !private ["Ps25LosslessStringConvertible", "substring"]
 - !private ["Ps25LosslessStringConvertible", "trimmingCharacters"]
@@ -575,7 +582,7 @@ depends-member:
 - !private ["Ps10MirrorPath", "_DisabledRangeIndex"]
 - !private ["Ps10MirrorPath", "characters"]
 - !private ["Ps10MirrorPath", "hasPrefix"]
-- !private ["Ps10MirrorPath", "init"]
+- ["Ps10MirrorPath", "init"]
 - !private ["Ps10MirrorPath", "startIndex"]
 - !private ["Ps10MirrorPath", "substring"]
 - !private ["Ps10MirrorPath", "trimmingCharacters"]
@@ -604,9 +611,10 @@ depends-member:
 - ["PSo8NSCoding", "didReceiveMemoryWarning"]
 - !private ["PSo8NSCoding", "gray"]
 - !private ["PSo8NSCoding", "hasPrefix"]
+- ["PSo8NSCoding", "hexStringToUIColor"]
 - !private ["PSo8NSCoding", "image"]
 - ["PSo8NSCoding", "imageFromUrl"]
-- !private ["PSo8NSCoding", "init"]
+- ["PSo8NSCoding", "init"]
 - !private ["PSo8NSCoding", "navigationBar"]
 - !private ["PSo8NSCoding", "navigationController"]
 - !private ["PSo8NSCoding", "startIndex"]
@@ -625,7 +633,8 @@ depends-member:
 - !private ["PSo9NSCopying", "components"]
 - !private ["PSo9NSCopying", "gray"]
 - !private ["PSo9NSCopying", "hasPrefix"]
-- !private ["PSo9NSCopying", "init"]
+- ["PSo9NSCopying", "hexStringToUIColor"]
+- ["PSo9NSCopying", "init"]
 - !private ["PSo9NSCopying", "resume"]
 - !private ["PSo9NSCopying", "scanHexInt32"]
 - !private ["PSo9NSCopying", "startIndex"]
@@ -641,7 +650,7 @@ depends-member:
 - ["PSo26NSExtensionRequestHandling", ""]
 - !private ["PSo16NSMutableCopying", "characters"]
 - !private ["PSo16NSMutableCopying", "hasPrefix"]
-- !private ["PSo16NSMutableCopying", "init"]
+- ["PSo16NSMutableCopying", "init"]
 - !private ["PSo16NSMutableCopying", "startIndex"]
 - !private ["PSo16NSMutableCopying", "substring"]
 - !private ["PSo16NSMutableCopying", "trimmingCharacters"]
@@ -706,7 +715,7 @@ depends-member:
 - ["PSo16NSObjectProtocol", "hexStringToUIColor"]
 - !private ["PSo16NSObjectProtocol", "image"]
 - ["PSo16NSObjectProtocol", "imageFromUrl"]
-- !private ["PSo16NSObjectProtocol", "init"]
+- ["PSo16NSObjectProtocol", "init"]
 - !private ["PSo16NSObjectProtocol", "instantiate"]
 - ["PSo16NSObjectProtocol", "loadFromNibNamed"]
 - !private ["PSo16NSObjectProtocol", "main"]
@@ -731,14 +740,15 @@ depends-member:
 - !private ["PSo14NSSecureCoding", "components"]
 - !private ["PSo14NSSecureCoding", "gray"]
 - !private ["PSo14NSSecureCoding", "hasPrefix"]
-- !private ["PSo14NSSecureCoding", "init"]
+- ["PSo14NSSecureCoding", "hexStringToUIColor"]
+- ["PSo14NSSecureCoding", "init"]
 - !private ["PSo14NSSecureCoding", "startIndex"]
 - !private ["PSo14NSSecureCoding", "substring"]
 - !private ["PSo14NSSecureCoding", "trimmingCharacters"]
 - !private ["PSo14NSSecureCoding", "whitespacesAndNewlines"]
 - !private ["CSo8NSString", "characters"]
 - !private ["CSo8NSString", "hasPrefix"]
-- !private ["CSo8NSString", "init"]
+- ["CSo8NSString", "init"]
 - !private ["CSo8NSString", "startIndex"]
 - !private ["CSo8NSString", "substring"]
 - !private ["CSo8NSString", "trimmingCharacters"]
@@ -837,19 +847,19 @@ depends-member:
 - !private ["SS", "characters"]
 - ["SS", "deinit"]
 - !private ["SS", "hasPrefix"]
-- !private ["SS", "init"]
+- ["SS", "init"]
 - !private ["SS", "startIndex"]
 - !private ["SS", "substring"]
 - !private ["SS", "trimmingCharacters"]
 - !private ["Ps16TextOutputStream", "characters"]
 - !private ["Ps16TextOutputStream", "hasPrefix"]
-- !private ["Ps16TextOutputStream", "init"]
+- ["Ps16TextOutputStream", "init"]
 - !private ["Ps16TextOutputStream", "startIndex"]
 - !private ["Ps16TextOutputStream", "substring"]
 - !private ["Ps16TextOutputStream", "trimmingCharacters"]
 - !private ["Ps20TextOutputStreamable", "characters"]
 - !private ["Ps20TextOutputStreamable", "hasPrefix"]
-- !private ["Ps20TextOutputStreamable", "init"]
+- ["Ps20TextOutputStreamable", "init"]
 - !private ["Ps20TextOutputStreamable", "startIndex"]
 - !private ["Ps20TextOutputStreamable", "substring"]
 - !private ["Ps20TextOutputStreamable", "trimmingCharacters"]
@@ -1047,7 +1057,7 @@ depends-member:
 - ["V10Foundation3URL", "deinit"]
 - !private ["P9Alamofire14URLConvertible", "characters"]
 - !private ["P9Alamofire14URLConvertible", "hasPrefix"]
-- !private ["P9Alamofire14URLConvertible", "init"]
+- ["P9Alamofire14URLConvertible", "init"]
 - !private ["P9Alamofire14URLConvertible", "startIndex"]
 - !private ["P9Alamofire14URLConvertible", "substring"]
 - !private ["P9Alamofire14URLConvertible", "trimmingCharacters"]
@@ -1089,7 +1099,7 @@ depends-member:
 - !private ["Ps35_ExpressibleByBuiltinBooleanLiteral", "_getBuiltinLogicValue"]
 - !private ["Ps51_ExpressibleByBuiltinExtendedGraphemeClusterLiteral", "characters"]
 - !private ["Ps51_ExpressibleByBuiltinExtendedGraphemeClusterLiteral", "hasPrefix"]
-- !private ["Ps51_ExpressibleByBuiltinExtendedGraphemeClusterLiteral", "init"]
+- ["Ps51_ExpressibleByBuiltinExtendedGraphemeClusterLiteral", "init"]
 - !private ["Ps51_ExpressibleByBuiltinExtendedGraphemeClusterLiteral", "startIndex"]
 - !private ["Ps51_ExpressibleByBuiltinExtendedGraphemeClusterLiteral", "substring"]
 - !private ["Ps51_ExpressibleByBuiltinExtendedGraphemeClusterLiteral", "trimmingCharacters"]
@@ -1098,19 +1108,19 @@ depends-member:
 - !private ["Ps35_ExpressibleByBuiltinIntegerLiteral", "_DisabledRangeIndex"]
 - !private ["Ps34_ExpressibleByBuiltinStringLiteral", "characters"]
 - !private ["Ps34_ExpressibleByBuiltinStringLiteral", "hasPrefix"]
-- !private ["Ps34_ExpressibleByBuiltinStringLiteral", "init"]
+- ["Ps34_ExpressibleByBuiltinStringLiteral", "init"]
 - !private ["Ps34_ExpressibleByBuiltinStringLiteral", "startIndex"]
 - !private ["Ps34_ExpressibleByBuiltinStringLiteral", "substring"]
 - !private ["Ps34_ExpressibleByBuiltinStringLiteral", "trimmingCharacters"]
 - !private ["Ps39_ExpressibleByBuiltinUTF16StringLiteral", "characters"]
 - !private ["Ps39_ExpressibleByBuiltinUTF16StringLiteral", "hasPrefix"]
-- !private ["Ps39_ExpressibleByBuiltinUTF16StringLiteral", "init"]
+- ["Ps39_ExpressibleByBuiltinUTF16StringLiteral", "init"]
 - !private ["Ps39_ExpressibleByBuiltinUTF16StringLiteral", "startIndex"]
 - !private ["Ps39_ExpressibleByBuiltinUTF16StringLiteral", "substring"]
 - !private ["Ps39_ExpressibleByBuiltinUTF16StringLiteral", "trimmingCharacters"]
 - !private ["Ps41_ExpressibleByBuiltinUnicodeScalarLiteral", "characters"]
 - !private ["Ps41_ExpressibleByBuiltinUnicodeScalarLiteral", "hasPrefix"]
-- !private ["Ps41_ExpressibleByBuiltinUnicodeScalarLiteral", "init"]
+- ["Ps41_ExpressibleByBuiltinUnicodeScalarLiteral", "init"]
 - !private ["Ps41_ExpressibleByBuiltinUnicodeScalarLiteral", "startIndex"]
 - !private ["Ps41_ExpressibleByBuiltinUnicodeScalarLiteral", "substring"]
 - !private ["Ps41_ExpressibleByBuiltinUnicodeScalarLiteral", "trimmingCharacters"]
@@ -1120,12 +1130,13 @@ depends-member:
 - !private ["Ps26_ExpressibleByColorLiteral", "UIColor"]
 - !private ["Ps26_ExpressibleByColorLiteral", "blue"]
 - !private ["Ps26_ExpressibleByColorLiteral", "gray"]
+- ["Ps26_ExpressibleByColorLiteral", "hexStringToUIColor"]
 - !private ["Ps26_ExpressibleByColorLiteral", "init"]
 - !private ["Ps26_ExpressibleByImageLiteral", "init"]
 - !private ["Ps35_HasCustomAnyHashableRepresentation", "characters"]
 - !private ["Ps35_HasCustomAnyHashableRepresentation", "components"]
 - !private ["Ps35_HasCustomAnyHashableRepresentation", "hasPrefix"]
-- !private ["Ps35_HasCustomAnyHashableRepresentation", "init"]
+- ["Ps35_HasCustomAnyHashableRepresentation", "init"]
 - !private ["Ps35_HasCustomAnyHashableRepresentation", "startIndex"]
 - !private ["Ps35_HasCustomAnyHashableRepresentation", "substring"]
 - !private ["Ps35_HasCustomAnyHashableRepresentation", "trimmingCharacters"]
@@ -1159,7 +1170,7 @@ depends-member:
 - !private ["Ps9_Hashable", "hour"]
 - !private ["Ps9_Hashable", "image"]
 - ["Ps9_Hashable", "imageFromUrl"]
-- !private ["Ps9_Hashable", "init"]
+- ["Ps9_Hashable", "init"]
 - !private ["Ps9_Hashable", "instantiate"]
 - ["Ps9_Hashable", "loadFromNibNamed"]
 - !private ["Ps9_Hashable", "main"]
@@ -1206,7 +1217,7 @@ depends-member:
 - !private ["Ps21_ObjectiveCBridgeable", "day"]
 - !private ["Ps21_ObjectiveCBridgeable", "hasPrefix"]
 - !private ["Ps21_ObjectiveCBridgeable", "hour"]
-- !private ["Ps21_ObjectiveCBridgeable", "init"]
+- ["Ps21_ObjectiveCBridgeable", "init"]
 - !private ["Ps21_ObjectiveCBridgeable", "minute"]
 - !private ["Ps21_ObjectiveCBridgeable", "month"]
 - !private ["Ps21_ObjectiveCBridgeable", "startIndex"]
@@ -1243,14 +1254,15 @@ depends-nominal:
 - "V10Foundation12CharacterSet"
 - !private "VSS13CharacterView"
 - !private "Ps10Collection"
-- !private "Ps10Comparable"
+- "V5Ethos6Colors"
+- "Ps10Comparable"
 - "Ps28CustomDebugStringConvertible"
-- !private "Ps29CustomPlaygroundQuickLookable"
-- !private "Ps17CustomReflectable"
+- "Ps29CustomPlaygroundQuickLookable"
+- "Ps17CustomReflectable"
 - "Ps23CustomStringConvertible"
 - !private "V10Foundation4Data"
-- !private "P6Haneke15DataConvertible"
-- !private "P6Haneke17DataRepresentable"
+- "P6Haneke15DataConvertible"
+- "P6Haneke17DataRepresentable"
 - "V10Foundation4Date"
 - "V10Foundation14DateComponents"
 - !private "Vs27DefaultBidirectionalIndices"
@@ -1262,12 +1274,12 @@ depends-nominal:
 - !private "Ps5Error"
 - !private "Ps25ExpressibleByArrayLiteral"
 - !private "Ps27ExpressibleByBooleanLiteral"
-- !private "Ps43ExpressibleByExtendedGraphemeClusterLiteral"
+- "Ps43ExpressibleByExtendedGraphemeClusterLiteral"
 - !private "Ps25ExpressibleByFloatLiteral"
 - !private "Ps27ExpressibleByIntegerLiteral"
-- !private "Ps32ExpressibleByStringInterpolation"
-- !private "Ps26ExpressibleByStringLiteral"
-- !private "Ps33ExpressibleByUnicodeScalarLiteral"
+- "Ps32ExpressibleByStringInterpolation"
+- "Ps26ExpressibleByStringLiteral"
+- "Ps33ExpressibleByUnicodeScalarLiteral"
 - !private "Sf"
 - !private "Ps13FloatingPoint"
 - "Ps8Hashable"
@@ -1284,21 +1296,21 @@ depends-nominal:
 - !private "Ps7Integer"
 - !private "Ps17IntegerArithmetic"
 - !private "Ps16IteratorProtocol"
-- !private "Ps25LosslessStringConvertible"
-- !private "Ps10MirrorPath"
+- "Ps25LosslessStringConvertible"
+- "Ps10MirrorPath"
 - !private "Ps17MutableCollection"
 - !private "Ps16MutableIndexable"
 - "CSo10NSCalendar"
 - !private "CSo14NSCharacterSet"
 - "CSo7NSCoder"
 - "PSo8NSCoding"
-- !private "PSo9NSCopying"
+- "PSo9NSCopying"
 - "PSo26NSExtensionRequestHandling"
-- !private "PSo16NSMutableCopying"
+- "PSo16NSMutableCopying"
 - "CSo8NSObject"
 - "PSo16NSObjectProtocol"
-- !private "PSo14NSSecureCoding"
-- !private "CSo8NSString"
+- "PSo14NSSecureCoding"
+- "CSo8NSString"
 - !private "CSo9OS_object"
 - !private "Ps9OptionSet"
 - "Sq"
@@ -1318,8 +1330,8 @@ depends-nominal:
 - !private "Vs5Slice"
 - !private "Ps10Strideable"
 - "SS"
-- !private "Ps16TextOutputStream"
-- !private "Ps20TextOutputStreamable"
+- "Ps16TextOutputStream"
+- "Ps20TextOutputStreamable"
 - "PSo29UIAccessibilityIdentification"
 - "PSo12UIAppearance"
 - "PSo21UIAppearanceContainer"
@@ -1347,7 +1359,7 @@ depends-nominal:
 - !private "Vs6UInt64"
 - !private "Vs5UInt8"
 - "V10Foundation3URL"
-- !private "P9Alamofire14URLConvertible"
+- "P9Alamofire14URLConvertible"
 - "CSo10URLSession"
 - "CSo18URLSessionDataTask"
 - !private "CSo14URLSessionTask"
@@ -1360,20 +1372,20 @@ depends-nominal:
 - "Ps37_DefaultCustomPlaygroundQuickLookable"
 - !private "Ps24_DestructorSafeContainer"
 - !private "Ps35_ExpressibleByBuiltinBooleanLiteral"
-- !private "Ps51_ExpressibleByBuiltinExtendedGraphemeClusterLiteral"
+- "Ps51_ExpressibleByBuiltinExtendedGraphemeClusterLiteral"
 - !private "Ps35_ExpressibleByBuiltinIntegerLiteral"
-- !private "Ps34_ExpressibleByBuiltinStringLiteral"
-- !private "Ps39_ExpressibleByBuiltinUTF16StringLiteral"
-- !private "Ps41_ExpressibleByBuiltinUnicodeScalarLiteral"
-- !private "Ps26_ExpressibleByColorLiteral"
+- "Ps34_ExpressibleByBuiltinStringLiteral"
+- "Ps39_ExpressibleByBuiltinUTF16StringLiteral"
+- "Ps41_ExpressibleByBuiltinUnicodeScalarLiteral"
+- "Ps26_ExpressibleByColorLiteral"
 - !private "Ps26_ExpressibleByImageLiteral"
-- !private "Ps35_HasCustomAnyHashableRepresentation"
+- "Ps35_HasCustomAnyHashableRepresentation"
 - "Ps9_Hashable"
 - !private "Ps14_Incrementable"
 - !private "Ps8_Integer"
 - !private "Ps18_IntegerArithmetic"
 - !private "P10Foundation14_MutableBoxing"
-- !private "Ps21_ObjectiveCBridgeable"
+- "Ps21_ObjectiveCBridgeable"
 - !private "Vs26_OptionalNilComparisonType"
 - !private "Ps14_SignedInteger"
 - !private "Ps11_Strideable"
@@ -1389,6 +1401,10 @@ depends-external:
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/ObjectiveC.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreGraphics.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreImage.swiftmodule"
+- "/Users/Scott/Documents/Ethos/DerivedData/Ethos/Build/Products/Debug-iphonesimulator/youtube-ios-player-helper/youtube_ios_player_helper.framework/Headers/YTPlayerView.h"
+- "/Users/Scott/Documents/Ethos/Pods/Firebase/Analytics/Sources/module.modulemap"
+- "/Users/Scott/Documents/Ethos/DerivedData/Ethos/Build/Products/Debug-iphonesimulator/youtube-ios-player-helper/youtube_ios_player_helper.framework/Headers/youtube-ios-player-helper-umbrella.h"
+- "/Users/Scott/Documents/Ethos/DerivedData/Ethos/Build/Products/Debug-iphonesimulator/youtube-ios-player-helper/youtube_ios_player_helper.framework/Modules/module.modulemap"
 - "/Users/Scott/Documents/Ethos/Bolts.framework/Headers/BFWebViewAppLinkResolver.h"
 - "/Users/Scott/Documents/Ethos/Bolts.framework/Headers/BFURL.h"
 - "/Users/Scott/Documents/Ethos/Bolts.framework/Headers/BFMeasurementEvent.h"
@@ -1430,7 +1446,6 @@ depends-external:
 - "/Users/Scott/Documents/Ethos/FBSDKCoreKit.framework/Modules/module.modulemap"
 - "/Users/Scott/Documents/Ethos/DerivedData/Ethos/Build/Products/Debug-iphonesimulator/Alamofire/Alamofire.framework/Modules/Alamofire.swiftmodule/x86_64.swiftmodule"
 - "/Users/Scott/Documents/Ethos/DerivedData/Ethos/Build/Products/Debug-iphonesimulator/Alamofire/Alamofire.framework/Headers/Alamofire-Swift.h"
-- "/Users/Scott/Documents/Ethos/Pods/Firebase/Analytics/Sources/module.modulemap"
 - "/Users/Scott/Documents/Ethos/DerivedData/Ethos/Build/Products/Debug-iphonesimulator/Alamofire/Alamofire.framework/Headers/Alamofire-umbrella.h"
 - "/Users/Scott/Documents/Ethos/DerivedData/Ethos/Build/Products/Debug-iphonesimulator/Alamofire/Alamofire.framework/Modules/module.modulemap"
 - "/Users/Scott/Documents/Ethos/DerivedData/Ethos/Build/Products/Debug-iphonesimulator/MRProgress/MRProgress.framework/Headers/MRStopButton.h"
@@ -1496,6 +1511,10 @@ depends-external:
 - "/Users/Scott/Documents/Ethos/DerivedData/Ethos/Build/Products/Debug-iphonesimulator/MBProgressHUD/MBProgressHUD.framework/Headers/MBProgressHUD.h"
 - "/Users/Scott/Documents/Ethos/DerivedData/Ethos/Build/Products/Debug-iphonesimulator/MBProgressHUD/MBProgressHUD.framework/Headers/MBProgressHUD-umbrella.h"
 - "/Users/Scott/Documents/Ethos/DerivedData/Ethos/Build/Products/Debug-iphonesimulator/MBProgressHUD/MBProgressHUD.framework/Modules/module.modulemap"
+- "/Users/Scott/Documents/Ethos/DerivedData/Ethos/Build/Products/Debug-iphonesimulator/Jukebox/Jukebox.framework/Modules/Jukebox.swiftmodule/x86_64.swiftmodule"
+- "/Users/Scott/Documents/Ethos/DerivedData/Ethos/Build/Products/Debug-iphonesimulator/Jukebox/Jukebox.framework/Headers/Jukebox-Swift.h"
+- "/Users/Scott/Documents/Ethos/DerivedData/Ethos/Build/Products/Debug-iphonesimulator/Jukebox/Jukebox.framework/Headers/Jukebox-umbrella.h"
+- "/Users/Scott/Documents/Ethos/DerivedData/Ethos/Build/Products/Debug-iphonesimulator/Jukebox/Jukebox.framework/Modules/module.modulemap"
 - "/Users/Scott/Documents/Ethos/DerivedData/Ethos/Build/Products/Debug-iphonesimulator/HanekeSwift/Haneke.framework/Modules/Haneke.swiftmodule/x86_64.swiftmodule"
 - "/Users/Scott/Documents/Ethos/DerivedData/Ethos/Build/Products/Debug-iphonesimulator/HanekeSwift/Haneke.framework/Headers/Haneke-Swift.h"
 - "/Users/Scott/Documents/Ethos/DerivedData/Ethos/Build/Products/Debug-iphonesimulator/HanekeSwift/Haneke.framework/Headers/HanekeSwift-umbrella.h"
@@ -1523,4 +1542,4 @@ depends-external:
 - "/Users/Scott/Documents/Ethos/FBSDKLoginKit.framework/Headers/FBSDKLoginButton.h"
 - "/Users/Scott/Documents/Ethos/FBSDKLoginKit.framework/Headers/FBSDKLoginKit.h"
 - "/Users/Scott/Documents/Ethos/FBSDKLoginKit.framework/Modules/module.modulemap"
-interface-hash: "d0bbc81777c09ab295a5727f2fcbdc16"
+interface-hash: "eb60d47f12e02985237b56f772f57229"

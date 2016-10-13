@@ -13,12 +13,12 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="iN0-l3-epB">
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="TermsView" customModule="Ethos" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="346" height="292"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YIB-oo-Cqj">
-                    <frame key="frameInset" minX="20" minY="44" width="305" height="16829"/>
+                    <frame key="frameInset" minX="20" minY="44" width="305" height="10000"/>
                     <color key="backgroundColor" red="0.14117647058823529" green="0.4823529411764706" blue="0.62745098039215685" alpha="1" colorSpace="calibratedRGB"/>
                     <mutableString key="text">1. This is a positive community for discussion and conversation. Abusive users will be banned.  2. Do not post illegal content or pictures that contain depictions of nudity or violence.  3. Do not post your contact information or other sensitive data.  3. Read the full terms below:  ETHOS STUDIOS, LLC SOFTWARE (THE "SOFTWARE")
 ACKNOWLEDGEMENT 
@@ -118,6 +118,10 @@ The Company cares deeply about online privacy. For any questions, comments and r
                 <constraint firstItem="YIB-oo-Cqj" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="t2Q-Sh-qW1"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="terms" destination="YIB-oo-Cqj" id="p3L-jD-Ath"/>
+                <outlet property="title" destination="pds-gt-1Gt" id="exT-vG-cbf"/>
+            </connections>
             <point key="canvasLocation" x="52" y="-393"/>
         </view>
     </objects>

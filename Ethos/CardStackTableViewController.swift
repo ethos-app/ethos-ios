@@ -16,8 +16,10 @@ import URLEmbeddedView
 import Firebase
 import MBProgressHUD
 import SafariServices
+import Jukebox
+import youtube_ios_player_helper
 
-class CardStackTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextViewDelegate, UIGestureRecognizerDelegate, ImageSeekDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIScrollViewDelegate, UITabBarControllerDelegate {
+class CardStackTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextViewDelegate, UIGestureRecognizerDelegate, ImageSeekDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIScrollViewDelegate, UITabBarControllerDelegate, MusicDelegate, JukeboxDelegate {
     
     var ethosAuth = ""
     var id = ""
@@ -34,7 +36,8 @@ class CardStackTableViewController: UIViewController, UITableViewDelegate, UITab
     var segment = 0
     
     var lookingFrame : CGRect?
-    
+    var jukebox : Jukebox?
+
     @IBOutlet var postBox: PostBox!
     var showingImage = false
     var writingPost = false
@@ -52,6 +55,7 @@ class CardStackTableViewController: UIViewController, UITableViewDelegate, UITab
     }
     var launched = false
     var showingType : ShowType?
+    var pv : MusicView?
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -59,6 +63,7 @@ class CardStackTableViewController: UIViewController, UITableViewDelegate, UITab
             let done = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.done, target: self, action: #selector(self.close))
             self.navigationItem.leftBarButtonItem = done
         }
+    
         NotificationCenter.default.addObserver(self, selector: #selector(self.show(postI:)), name: NSNotification.Name(rawValue: "requestPost"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(self.markLaunch), name: NSNotification.Name(rawValue: "launch"), object: nil)
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "Back", style: UIBarButtonItemStyle.plain, target: self, action: nil)
@@ -85,8 +90,11 @@ class CardStackTableViewController: UIViewController, UITableViewDelegate, UITab
         let progress = UIProgressView()
         progress.frame = CGRect(x: 0, y: self.view.frame.height, width: self.view.frame.width, height: 50)
         self.view.addSubview(progress)
+        
+        
 
     }
+
     func show(postI : NSNotification) {
         let num = postI.object!
         let postController = self.storyboard?.instantiateViewController(withIdentifier: "single") as! OneCardViewController
@@ -331,10 +339,10 @@ class CardStackTableViewController: UIViewController, UITableViewDelegate, UITab
         var mediaContent = "NULL"
         
         // detect if link post |  Type = 1
-        if ((content?.lowercased().range(of: "http://")) != nil)  || ((content?.lowercased().range(of: "www.")) != nil) {
-            content = content?.lowercased()
+        if ((content?.lowercased().range(of: "http://")) != nil)  || ((content?.lowercased().range(of: "www.")) != nil) || ((content?.lowercased().range(of: "https://")) != nil) {
+            let lowContent = content?.lowercased()
             let detector = try! NSDataDetector(types: NSTextCheckingResult.CheckingType.link.rawValue)
-            let matches = detector.matches(in: content!, options: [], range: NSRange(location: 0, length: content!.utf16.count))
+            let matches = detector.matches(in: lowContent!, options: [], range: NSRange(location: 0, length: lowContent!.utf16.count))
             let linkRange = matches.first
             let contentString = NSString(string: content!)
             let link = contentString.substring(with: linkRange!.range)
@@ -662,7 +670,7 @@ class CardStackTableViewController: UIViewController, UITableViewDelegate, UITab
         let likes = Int(currentObject.likeCount)
         cell?.likesCount = likes ?? -1
         
-        cell?.comment.setTitle("\(commented)", for: UIControlState.normal)
+        cell?.comment.setTitle(" \(commented)", for: UIControlState.normal)
         
         let like = UITapGestureRecognizer(target: self, action: #selector(CardStackTableViewController.like(_:)))
         like.cancelsTouchesInView = false
@@ -671,7 +679,7 @@ class CardStackTableViewController: UIViewController, UITableViewDelegate, UITab
         cell?.react?.tag = (indexPath as NSIndexPath).row
         cell?.react?.addGestureRecognizer(like)
         cell?.setCount(cell!.likesCount)
-        cell?.react?.setTitle("\(currentObject.likeCount)", for: UIControlState())
+        cell?.react?.setTitle(" \(currentObject.likeCount)", for: UIControlState())
         
         
         cell?.tag = (indexPath as NSIndexPath).row
@@ -704,8 +712,43 @@ class CardStackTableViewController: UIViewController, UITableViewDelegate, UITab
             linkEmbed.addGestureRecognizer(linkTap)
             linkEmbed.isUserInteractionEnabled = true
             linkEmbed.loadURL(currentObject.content)
-            if cell!.linkStack.subviews.count < 1 {
-            cell!.linkStack.addArrangedSubview(linkEmbed)
+            
+            // Create Music View
+            let musicView = MusicView.loadFromNibNamed(nibNamed: "MusicView") as! MusicView
+            musicView.frame = CGRect(x: 0, y: 0, width: 310, height: 80)
+            var finalURL = currentObject.content
+            
+            // Create Video View
+            let videoView = VideoView.loadFromNibNamed(nibNamed: "VideoView") as! VideoView
+            videoView.frame = CGRect(x: 0, y: 80, width: 320, height: 300)
+            // Link contains spotify URL
+            if currentObject.content.contains("https://open.spotify.com/track/") {
+                finalURL = finalURL.replacingOccurrences(of: "https://open.spotify.com/track/", with: "")
+            musicView.delegate = self
+            musicView.loadSong(id: finalURL)
+            musicView.isUserInteractionEnabled = true
+                if cell!.linkStack.subviews.count < 1 {
+                cell!.linkStack.addArrangedSubview(musicView)
+                }
+                
+            //  Link contains youtube url
+            } else if (currentObject.content.contains("https://www.youtube.com/watch?")) || (currentObject.content.contains("http://youtu.be/")) || (currentObject.content.contains("https://youtu.be/")) || (currentObject.content.contains("https://www.youtube.com/watch?")) {
+                finalURL = finalURL.replacingOccurrences(of: "https://www.youtube.com/watch?v=", with: "")
+                finalURL = finalURL.replacingOccurrences(of: "http://youtu.be/", with: "")
+                finalURL = finalURL.replacingOccurrences(of: "http://www.youtube.com/watch?v=", with: "")
+                finalURL = finalURL.replacingOccurrences(of: "https://youtu.be/", with: "")
+                videoView.loadVideo(id : finalURL)
+      
+                if cell!.linkStack.subviews.count < 1 {
+                    cell!.linkStack.addArrangedSubview(videoView)
+
+                }
+             // Standard link
+            } else {
+                if cell!.linkStack.subviews.count < 1 {
+                    cell!.linkStack.addArrangedSubview(linkEmbed)
+                }
+                
             }
             
         }
@@ -749,6 +792,7 @@ class CardStackTableViewController: UIViewController, UITableViewDelegate, UITab
             cell?.userImage.addGestureRecognizer(tap)
             
             cell?.groupTitle.text = currentObject.userText
+            cell?.groupLabel?.text = currentObject.userText
             let imageURL = URL(string: currentObject.secondaryContent)
             cell?.userImage.hnk_setImageFromURL(imageURL!)
 
@@ -925,11 +969,56 @@ class CardStackTableViewController: UIViewController, UITableViewDelegate, UITab
 
         if self.navigationController?.tabBarController?.selectedIndex == 0 {
             let index = IndexPath(row: 0, section: 0)
+            if cardsToShow!.count > index.row {
             tableView.scrollToRow(at: index, at: UITableViewScrollPosition.top, animated: true)
+            }
         }
     }
   
+    override func viewWillDisappear(_ animated: Bool) {
+        jukebox?.stop()
+    }
     
-    
-    
+    // MARK: Music Delegate
+    func startSong(url : String, musicView : MusicView) {
+        let link = URL(string: url)
+        jukebox?.stop()
+        jukebox = Jukebox(delegate: self, items: [
+            JukeboxItem(URL: link!)
+            ])
+        jukebox?.play()
+        self.pv = musicView
+        let pause = UIBarButtonItem(image: UIImage(named: "pause2"), style: UIBarButtonItemStyle.plain, target: self, action: #selector(self.userStop))
+        self.navigationItem.rightBarButtonItem = pause
+    }
+    // Called from pause on navigation item
+    func userStop() {
+        self.navigationItem.rightBarButtonItem = nil
+        pv?.stopMusic()
+    }
+    // Called by delegate when touched
+    func stopSong() {
+        jukebox?.stop()
+    }
+    // MARK: Jukebox delegate
+    func jukeboxPlaybackProgressDidChange(_ jukebox: Jukebox) {
+        
+        // update current progress view for player
+        let duration = Float(30.00)
+        let current = Float((jukebox.currentItem?.currentTime)!)
+        let percent = current / duration
+        pv?.progress?.progress = percent
+        if percent > 0.98 {
+            pv?.stopMusic()
+        }
+    }
+    func jukeboxStateDidChange(_ state: Jukebox) {
+        //
+    }
+    func jukeboxDidLoadItem(_ jukebox: Jukebox, item: JukeboxItem) {
+        //
+    }
+    func jukeboxDidUpdateMetadata(_ jukebox: Jukebox, forItem: JukeboxItem) {
+        //
+    }
 }

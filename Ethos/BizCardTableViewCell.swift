@@ -51,6 +51,7 @@ class BizCardTableViewCell: UITableViewCell {
     var emojiList : EmojiBar?
     var reply : UIButton?
     
+    var musicView : UIView?
     override func awakeFromNib() {
         super.awakeFromNib()
         
@@ -72,12 +73,17 @@ class BizCardTableViewCell: UITableViewCell {
         comment?.tintColor = UIColor.hexStringToUIColor("FFFFFF")
         react?.imageEdgeInsets = UIEdgeInsets(top: 13, left: 12, bottom: 12, right: 12)
         comment?.imageEdgeInsets = UIEdgeInsets(top: 14, left: 12, bottom: 12, right: 12)
+        comment?.titleLabel?.font = UIFont.systemFont(ofSize: 17)
+        react?.titleLabel?.font = UIFont.systemFont(ofSize: 17)
         react?.addTarget(self, action: #selector(BizCardTableViewCell.state(gesture:)), for: UIControlEvents.touchUpInside)
         
         self.backMoji.backgroundColor = UIColor.lightGray.withAlphaComponent(0.5)
         self.backMoji.layer.cornerRadius = 15
         self.cardBack.layer.masksToBounds = true
-        self.cardBack.layer.cornerRadius = 6
+        self.cardBack.layer.cornerRadius = 9
+        if bottomBar != nil {
+        self.bottomBar.layer.cornerRadius = 5
+        }
         self.cardBack.layer.shadowOffset = CGSize(width: 0.8, height: 0.8)
         self.cardBack.layer.shadowRadius = 1.8
         self.cardBack.layer.shadowOpacity = 0.15
@@ -86,11 +92,7 @@ class BizCardTableViewCell: UITableViewCell {
         self.cardBack.layer.borderWidth = 0.4
         
         let frame = CGRect(x: 50, y: 15, width: self.frame.width-200, height: 25)
-        groupLabel = UILabel(frame: frame)
-        groupLabel?.font = UIFont(name: "Raleway Regular", size: 13)
-        groupLabel?.textColor = UIColor.lightGray
-        groupLabel?.text = ""
-        self.contentView.addSubview(groupLabel!)
+      
        
         emojiList = EmojiBar.loadFromNibNamed(nibNamed: "EmojiBar") as? EmojiBar
         emojiList?.translatesAutoresizingMaskIntoConstraints = true
@@ -111,17 +113,21 @@ class BizCardTableViewCell: UITableViewCell {
         imageCover!.backgroundColor = UIColor.black
         imageCover!.alpha = 0.6
         imageCover?.clipsToBounds = true
+        
+        musicView = MusicView.loadFromNibNamed(nibNamed: "MusicView")
+        musicView?.frame = CGRect(x: 0, y: 70, width: 310, height: 0)
+      //  self.contentView.addSubview(musicView!)
         }
 
     override func layoutSubviews() {
              reply?.frame = CGRect(x: self.frame.width-55, y: self.frame.height-44, width: 50, height: 50)
         emojiList?.frame = CGRect(x: 30, y: 10, width: self.frame.width-200, height: 40)
-        groupLabel = UILabel(frame: frame)
         self.cardSetup()
         react?.imageView?.contentMode = UIViewContentMode.scaleAspectFit
         super.layoutSubviews()
     }
     func cardSetup() {
+     
         // bottom bar view
         let bottomFrame = CGRect(x: 0, y: self.frame.height-45, width: self.frame.width, height: 45)
         bottomBar = UIView(frame: bottomFrame)

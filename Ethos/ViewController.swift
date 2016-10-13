@@ -8,6 +8,9 @@
 
 import UIKit
 import CFNetwork
+struct Colors {
+    static let primary = UIColor.hexStringToUIColor("247BA0")
+}
 
 extension UIView {
     class func loadFromNibNamed(nibNamed: String, bundle : Bundle? = nil) -> UIView? {

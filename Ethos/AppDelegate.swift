@@ -163,6 +163,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         FIRInstanceID.instanceID().setAPNSToken(deviceToken, type: .sandbox)
     }
     func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
+        let parse = BFURL(inboundURL: url, sourceApplication: sourceApplication)
+      
         FBSDKProfile.enableUpdates(onAccessTokenChange: true)
         return FBSDKApplicationDelegate.sharedInstance().application(application, open: url, sourceApplication: sourceApplication, annotation: annotation)
     }
