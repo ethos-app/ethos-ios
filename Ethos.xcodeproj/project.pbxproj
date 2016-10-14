@@ -40,6 +40,10 @@
 		D275BBB91D82425A0052152D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D275BBB81D82425A0052152D /* LoginViewController.swift */; };
 		D275BBBC1D82439D0052152D /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D275BBBA1D82439D0052152D /* FBSDKCoreKit.framework */; };
 		D275BBBD1D82439E0052152D /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D275BBBB1D82439D0052152D /* FBSDKLoginKit.framework */; };
+		D27A707E1DB06C4F00B4BBF9 /* SoundCloud.xib in Resources */ = {isa = PBXBuildFile; fileRef = D27A707D1DB06C4F00B4BBF9 /* SoundCloud.xib */; };
+		D27A70821DB0717D00B4BBF9 /* SoundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D27A70811DB0717D00B4BBF9 /* SoundView.swift */; };
+		D27A70841DB0788E00B4BBF9 /* TweetView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D27A70831DB0788E00B4BBF9 /* TweetView.xib */; };
+		D27A70861DB0789A00B4BBF9 /* TweetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D27A70851DB0789A00B4BBF9 /* TweetView.swift */; };
 		D28764801D8D3AE80002B01A /* ic_photo_camera_2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D287647F1D8D3AE80002B01A /* ic_photo_camera_2x.png */; };
 		D28764841D8E24D00002B01A /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = D28764831D8E24D00002B01A /* icon.png */; };
 		D293CD4E1D8A107B00F78828 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D293CD4D1D8A107B00F78828 /* QuartzCore.framework */; };
@@ -163,6 +167,10 @@
 		D275BBB81D82425A0052152D /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		D275BBBA1D82439D0052152D /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		D275BBBB1D82439D0052152D /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		D27A707D1DB06C4F00B4BBF9 /* SoundCloud.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SoundCloud.xib; sourceTree = "<group>"; };
+		D27A70811DB0717D00B4BBF9 /* SoundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundView.swift; sourceTree = "<group>"; };
+		D27A70831DB0788E00B4BBF9 /* TweetView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TweetView.xib; sourceTree = "<group>"; };
+		D27A70851DB0789A00B4BBF9 /* TweetView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetView.swift; sourceTree = "<group>"; };
 		D287647F1D8D3AE80002B01A /* ic_photo_camera_2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_photo_camera_2x.png; sourceTree = "<group>"; };
 		D28764831D8E24D00002B01A /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 		D290329E1D90CDF300DAFD9F /* Ethos.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Ethos.entitlements; sourceTree = "<group>"; };
@@ -356,6 +364,10 @@
 				D2EBC6911DADDEB4005E84C1 /* MusicView.swift */,
 				D2AE89831DAEED300031ACC6 /* VideoView.xib */,
 				D2AE89851DAEED880031ACC6 /* VideoView.swift */,
+				D27A707D1DB06C4F00B4BBF9 /* SoundCloud.xib */,
+				D27A70811DB0717D00B4BBF9 /* SoundView.swift */,
+				D27A70831DB0788E00B4BBF9 /* TweetView.xib */,
+				D27A70851DB0789A00B4BBF9 /* TweetView.swift */,
 			);
 			name = Storyboards;
 			path = Ethos;
@@ -629,6 +641,7 @@
 				D2E8807C1DA0724500C7C83A /* ic_plus.png in Resources */,
 				D214F4E21D93A1B80059F8CB /* PostXib.xib in Resources */,
 				D275BBAF1D80CD540052152D /* Raleway-Italic.ttf in Resources */,
+				D27A70841DB0788E00B4BBF9 /* TweetView.xib in Resources */,
 				D275BBB71D823C200052152D /* ic_favorite_border.png in Resources */,
 				D2983CD91D767D6F00D79F54 /* rale_reg.ttf in Resources */,
 				D2D6541B1DA6FC3500B73859 /* TermsView.xib in Resources */,
@@ -642,6 +655,7 @@
 				D2C2B1C81DA4B81700356F4B /* more.png in Resources */,
 				D2983CDB1D767D6F00D79F54 /* rale_bold.ttf in Resources */,
 				D2983CE31D76A70000D79F54 /* add.png in Resources */,
+				D27A707E1DB06C4F00B4BBF9 /* SoundCloud.xib in Resources */,
 				D28764841D8E24D00002B01A /* icon.png in Resources */,
 				D24604081D9CEA6300327386 /* mba.wav in Resources */,
 				D2983CDC1D767D6F00D79F54 /* rale_light.ttf in Resources */,
@@ -864,6 +878,8 @@
 				D214F4E41D93A3810059F8CB /* OPCard.swift in Sources */,
 				D2E8807A1D9F8D8200C7C83A /* EmojiBar.swift in Sources */,
 				D2983CD31D765CC700D79F54 /* CardStackTableViewController.swift in Sources */,
+				D27A70821DB0717D00B4BBF9 /* SoundView.swift in Sources */,
+				D27A70861DB0789A00B4BBF9 /* TweetView.swift in Sources */,
 				D275BBB11D80F84A0052152D /* NotifyTableViewController.swift in Sources */,
 				D2CCB5761D97574400AD0FED /* GroupTableViewCell.swift in Sources */,
 				D24DB4C71DA1F42A0040D079 /* GroupRecommend.swift in Sources */,

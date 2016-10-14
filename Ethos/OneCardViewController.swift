@@ -626,13 +626,22 @@ class OneCardViewController : UIViewController, UITableViewDelegate, UITableView
                 subview.removeFromSuperview()
             }
             let linkEmbed = URLEmbeddedView()
+            linkEmbed.frame = CGRect(x: 0, y: 0, width: 310, height: 80)
+            linkEmbed.translatesAutoresizingMaskIntoConstraints = true
+            linkEmbed.textProvider[.description].numberOfLines = 2
             linkEmbed.tag = indexPath.row
             let linkTap = UITapGestureRecognizer(target: self, action: #selector(self.showLink(rec:)))
             linkTap.numberOfTapsRequired = 1
             linkEmbed.addGestureRecognizer(linkTap)
+            linkEmbed.isUserInteractionEnabled = true
             linkEmbed.loadURL(currentObject.content)
+            let height = NSLayoutConstraint(item: linkEmbed, attribute: NSLayoutAttribute.height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 0, constant: 80)
+            linkEmbed.addConstraint(height)
             
-            
+            // Create SoundCloud View
+            let soundView = SoundView.loadFromNibNamed(nibNamed: "SoundCloud") as! SoundView
+            // Create Tweet View
+            let tweetView = TweetView.loadFromNibNamed(nibNamed: "TweetView") as! TweetView
             // Create Music View
             let musicView = MusicView.loadFromNibNamed(nibNamed: "MusicView") as! MusicView
             musicView.frame = CGRect(x: 0, y: 0, width: 310, height: 80)
@@ -663,16 +672,31 @@ class OneCardViewController : UIViewController, UITableViewDelegate, UITableView
                     cell!.linkStack.addArrangedSubview(videoView)
                     
                 }
+                // Soundcloud link
+            } else if (currentObject.content.contains("soundcloud.com")) {
+                var scURL = "https://w.soundcloud.com/player/?url="
+                scURL.append(currentObject.content)
+                soundView.load(url: scURL)
+                if cell!.linkStack.subviews.count < 1 {
+                    cell!.linkStack.addArrangedSubview(soundView)
+                }
+                // Tweet link
+            }  else if (currentObject.content.contains("twitter.com")) {
+                
+                tweetView.loadTweet(url : currentObject.content)
+                if cell!.linkStack.subviews.count < 1 {
+                    cell!.linkStack.addArrangedSubview(tweetView)
+                }
                 // Standard link
-            } else {
+            }
+            else {
                 if cell!.linkStack.subviews.count < 1 {
                     cell!.linkStack.addArrangedSubview(linkEmbed)
                 }
                 
             }
             
-            
-            }
+        }
         if cellType == "image" || cellType == "imagec" {
             cell?.userImage.image = nil
             //    cell?.desc.text = "\n\n\n\n\n\n\n\n\n\n\n\n"

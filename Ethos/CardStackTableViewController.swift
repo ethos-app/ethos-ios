@@ -198,8 +198,8 @@ class CardStackTableViewController: UIViewController, UITableViewDelegate, UITab
                 self.present(launch!, animated: true, completion: nil)
             }   else {
                 if launched == true {
-                    self.updateFriends()
-                    self.getPosts()
+//                    self.updateFriends()
+//                    self.getPosts()
                     launched = false
                 }
                     }
@@ -705,6 +705,8 @@ class CardStackTableViewController: UIViewController, UITableViewDelegate, UITab
             }
             
             let linkEmbed = URLEmbeddedView()
+            linkEmbed.frame = CGRect(x: 0, y: 0, width: 310, height: 80)
+            linkEmbed.translatesAutoresizingMaskIntoConstraints = true
             linkEmbed.textProvider[.description].numberOfLines = 2
             linkEmbed.tag = indexPath.row
             let linkTap = UITapGestureRecognizer(target: self, action: #selector(self.showLink(rec:)))
@@ -712,7 +714,13 @@ class CardStackTableViewController: UIViewController, UITableViewDelegate, UITab
             linkEmbed.addGestureRecognizer(linkTap)
             linkEmbed.isUserInteractionEnabled = true
             linkEmbed.loadURL(currentObject.content)
+            let height = NSLayoutConstraint(item: linkEmbed, attribute: NSLayoutAttribute.height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 0, constant: 80)
+            linkEmbed.addConstraint(height)
             
+            // Create SoundCloud View
+            let soundView = SoundView.loadFromNibNamed(nibNamed: "SoundCloud") as! SoundView
+            // Create Tweet View
+            let tweetView = TweetView.loadFromNibNamed(nibNamed: "TweetView") as! TweetView
             // Create Music View
             let musicView = MusicView.loadFromNibNamed(nibNamed: "MusicView") as! MusicView
             musicView.frame = CGRect(x: 0, y: 0, width: 310, height: 80)
@@ -743,8 +751,24 @@ class CardStackTableViewController: UIViewController, UITableViewDelegate, UITab
                     cell!.linkStack.addArrangedSubview(videoView)
 
                 }
-             // Standard link
-            } else {
+            // Soundcloud link
+            } else if (currentObject.content.contains("soundcloud.com")) {
+                var scURL = "https://w.soundcloud.com/player/?url="
+                scURL.append(currentObject.content)
+                soundView.load(url: scURL)
+                if cell!.linkStack.subviews.count < 1 {
+                    cell!.linkStack.addArrangedSubview(soundView)
+                }
+                // Tweet link
+            }  else if (currentObject.content.contains("twitter.com")) {
+            
+                tweetView.loadTweet(url : currentObject.content)
+                if cell!.linkStack.subviews.count < 1 {
+                    cell!.linkStack.addArrangedSubview(tweetView)
+                }
+                // Standard link
+            }
+            else {
                 if cell!.linkStack.subviews.count < 1 {
                     cell!.linkStack.addArrangedSubview(linkEmbed)
                 }
@@ -792,7 +816,6 @@ class CardStackTableViewController: UIViewController, UITableViewDelegate, UITab
             cell?.userImage.addGestureRecognizer(tap)
             
             cell?.groupTitle.text = currentObject.userText
-            cell?.groupLabel?.text = currentObject.userText
             let imageURL = URL(string: currentObject.secondaryContent)
             cell?.userImage.hnk_setImageFromURL(imageURL!)
 
@@ -1021,4 +1044,5 @@ class CardStackTableViewController: UIViewController, UITableViewDelegate, UITab
     func jukeboxDidUpdateMetadata(_ jukebox: Jukebox, forItem: JukeboxItem) {
         //
     }
+ 
 }

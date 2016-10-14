@@ -548,6 +548,8 @@ SWIFT_CLASS("_TtC5Ethos19GroupViewController")
 - (void)jukeboxStateDidChange:(Jukebox * _Nonnull)state;
 - (void)jukeboxDidLoadItem:(Jukebox * _Nonnull)jukebox item:(JukeboxItem * _Nonnull)item;
 - (void)jukeboxDidUpdateMetadata:(Jukebox * _Nonnull)jukebox forItem:(JukeboxItem * _Nonnull)forItem;
+- (void)showLinkWithRec:(UIGestureRecognizer * _Nonnull)rec;
+- (void)openLinkWithUrl:(NSURL * _Nonnull)url;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 @end
@@ -950,11 +952,30 @@ SWIFT_CLASS("_TtC5Ethos26SearchGroupsViewController")
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 @end
 
+@class UIWebView;
+
+SWIFT_CLASS("_TtC5Ethos9SoundView")
+@interface SoundView : UIView
+@property (nonatomic, strong) IBOutlet UIWebView * _Null_unspecified web;
+- (void)loadWithUrl:(NSString * _Nonnull)url;
+- (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+@end
+
 
 SWIFT_CLASS("_TtC5Ethos9TermsView")
 @interface TermsView : UIView
 @property (nonatomic, strong) IBOutlet UITextView * _Null_unspecified title;
 @property (nonatomic, strong) IBOutlet UITextView * _Null_unspecified terms;
+- (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+SWIFT_CLASS("_TtC5Ethos9TweetView")
+@interface TweetView : UIView
+@property (nonatomic, strong) IBOutlet UIWebView * _Null_unspecified web;
+- (void)loadTweetWithUrl:(NSString * _Nonnull)url;
 - (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 @end

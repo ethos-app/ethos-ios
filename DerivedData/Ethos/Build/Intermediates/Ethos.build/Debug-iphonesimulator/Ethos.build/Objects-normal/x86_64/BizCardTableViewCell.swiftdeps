@@ -6,78 +6,78 @@ provides-nominal:
 provides-member:
 - ["C5Ethos20BizCardTableViewCell", ""]
 provides-dynamic-lookup:
-- "setCount"
-- "unlike"
-- "linkStack"
-- "liked"
-- "musicView"
-- "imageCover"
-- "groupTitle"
-- "setSelected"
-- "emojiList"
-- "linkImg"
+- "desc"
 - "cardSetup"
-- "layoutSubviews"
-- "date"
-- "groupLabel"
-- "awakeFromNib"
-- "bottomBar"
-- "cellType"
-- "userImage"
-- "likesCount"
 - "like"
-- "state"
+- "unlike"
 - "backMoji"
-- "options"
-- "name"
-- "cardBack"
+- "awakeFromNib"
 - "react"
+- "state"
+- "likesCount"
+- "layoutSubviews"
+- "userImage"
+- "name"
+- "cellType"
+- "bottomBar"
+- "groupLabel"
+- "linkStack"
+- "groupTitle"
+- "reply"
+- "liked"
+- "options"
+- "showOptions"
+- "cardBack"
+- "linkEmbed"
+- "setSelected"
+- "imageCover"
 - "comment"
 - "img"
-- "linkEmbed"
-- "reply"
-- "showOptions"
-- "desc"
+- "date"
+- "musicView"
+- "emojiList"
+- "setCount"
+- "linkImg"
 depends-top-level:
-- "UITableViewCell"
-- "TernaryPrecedence"
-- "UIStackView"
-- !private "UIColor"
-- "UILabel"
-- "UIImageView"
-- !private "UIEdgeInsets"
-- !private ">"
-- !private "UIImageRenderingMode"
-- "UIGestureRecognizer"
-- !private "!="
-- !private "UIFont"
-- !private "=="
-- "AssignmentPrecedence"
-- "Int"
-- !private "UIViewContentMode"
-- !private "UIControlEvents"
-- !private "+="
-- "UIView"
-- !private "-="
-- "CastingPrecedence"
-- !private "UIGestureRecognizerState"
-- !private "CGAffineTransform"
-- "URLEmbeddedView"
-- "Bool"
-- "BizCardTableViewCell"
-- "UIButton"
-- !private "StringLiteralType"
-- !private "UIControlState"
-- !private "MusicView"
-- !private "BooleanLiteralType"
-- !private "-"
-- !private "CGRect"
-- "EmojiBar"
-- !private "UIImage"
-- !private "CGSize"
 - !private "NSTextAlignment"
-- !private "UIViewAnimationOptions"
+- !private "UIControlState"
+- "BizCardTableViewCell"
+- !private "CGAffineTransform"
+- "UIStackView"
+- "Int"
+- !private "UIGestureRecognizerState"
+- "TernaryPrecedence"
+- !private "-="
+- "UITableViewCell"
+- !private "CGSize"
+- "URLEmbeddedView"
+- "UIGestureRecognizer"
+- "EmojiBar"
+- !private "UIControlEvents"
+- !private "-"
+- "AssignmentPrecedence"
+- !private "CGRect"
+- "CastingPrecedence"
+- !private "=="
+- !private "UIImageRenderingMode"
+- !private "MusicView"
+- !private "UIFont"
 - !private "UnicodeScalarType"
+- !private "!="
+- !private ">"
+- !private "StringLiteralType"
+- !private "UIViewAnimationOptions"
+- !private "+="
+- "UIButton"
+- !private "BooleanLiteralType"
+- !private "UIImage"
+- "UIView"
+- "UILabel"
+- !private "UIColor"
+- "UIImageView"
+- "Bool"
+- !private "UIViewContentMode"
+- !private "UIEdgeInsets"
 depends-member:
 - !private ["Ps16AbsoluteValuable", "Stride"]
 - !private ["Ps9AnyObject", "BizCardTableViewCell"]
@@ -97,6 +97,7 @@ depends-member:
 - !private ["Ps9AnyObject", "UIGestureRecognizerState"]
 - !private ["Ps9AnyObject", "UIImage"]
 - !private ["Ps9AnyObject", "UIImageRenderingMode"]
+- !private ["Ps9AnyObject", "UILabel"]
 - !private ["Ps9AnyObject", "UIView"]
 - !private ["Ps9AnyObject", "UIViewAnimationOptions"]
 - !private ["Ps9AnyObject", "UIViewContentMode"]
@@ -275,6 +276,7 @@ depends-member:
 - !private ["PSo15CALayerDelegate", "UIGestureRecognizerState"]
 - !private ["PSo15CALayerDelegate", "UIImage"]
 - !private ["PSo15CALayerDelegate", "UIImageRenderingMode"]
+- !private ["PSo15CALayerDelegate", "UILabel"]
 - !private ["PSo15CALayerDelegate", "UIView"]
 - !private ["PSo15CALayerDelegate", "UIViewAnimationOptions"]
 - !private ["PSo15CALayerDelegate", "UIViewContentMode"]
@@ -375,6 +377,7 @@ depends-member:
 - !private ["Ps7CVarArg", "UIGestureRecognizerState"]
 - !private ["Ps7CVarArg", "UIImage"]
 - !private ["Ps7CVarArg", "UIImageRenderingMode"]
+- !private ["Ps7CVarArg", "UILabel"]
 - !private ["Ps7CVarArg", "UIView"]
 - !private ["Ps7CVarArg", "UIViewAnimationOptions"]
 - !private ["Ps7CVarArg", "UIViewContentMode"]
@@ -475,6 +478,7 @@ depends-member:
 - !private ["Ps28CustomDebugStringConvertible", "UIGestureRecognizerState"]
 - !private ["Ps28CustomDebugStringConvertible", "UIImage"]
 - !private ["Ps28CustomDebugStringConvertible", "UIImageRenderingMode"]
+- !private ["Ps28CustomDebugStringConvertible", "UILabel"]
 - !private ["Ps28CustomDebugStringConvertible", "UIView"]
 - !private ["Ps28CustomDebugStringConvertible", "UIViewAnimationOptions"]
 - !private ["Ps28CustomDebugStringConvertible", "UIViewContentMode"]
@@ -586,6 +590,7 @@ depends-member:
 - !private ["Ps23CustomStringConvertible", "UIGestureRecognizerState"]
 - !private ["Ps23CustomStringConvertible", "UIImage"]
 - !private ["Ps23CustomStringConvertible", "UIImageRenderingMode"]
+- !private ["Ps23CustomStringConvertible", "UILabel"]
 - !private ["Ps23CustomStringConvertible", "UIView"]
 - !private ["Ps23CustomStringConvertible", "UIViewAnimationOptions"]
 - !private ["Ps23CustomStringConvertible", "UIViewContentMode"]
@@ -698,6 +703,7 @@ depends-member:
 - !private ["Ps9Equatable", "UIGestureRecognizerState"]
 - !private ["Ps9Equatable", "UIImage"]
 - !private ["Ps9Equatable", "UIImageRenderingMode"]
+- !private ["Ps9Equatable", "UILabel"]
 - !private ["Ps9Equatable", "UIView"]
 - !private ["Ps9Equatable", "UIViewAnimationOptions"]
 - !private ["Ps9Equatable", "UIViewContentMode"]
@@ -823,6 +829,7 @@ depends-member:
 - !private ["Ps8Hashable", "UIGestureRecognizerState"]
 - !private ["Ps8Hashable", "UIImage"]
 - !private ["Ps8Hashable", "UIImageRenderingMode"]
+- !private ["Ps8Hashable", "UILabel"]
 - !private ["Ps8Hashable", "UIView"]
 - !private ["Ps8Hashable", "UIViewAnimationOptions"]
 - !private ["Ps8Hashable", "UIViewContentMode"]
@@ -945,6 +952,7 @@ depends-member:
 - !private ["PSo8NSCoding", "UIGestureRecognizerState"]
 - !private ["PSo8NSCoding", "UIImage"]
 - !private ["PSo8NSCoding", "UIImageRenderingMode"]
+- !private ["PSo8NSCoding", "UILabel"]
 - !private ["PSo8NSCoding", "UIView"]
 - !private ["PSo8NSCoding", "UIViewAnimationOptions"]
 - !private ["PSo8NSCoding", "UIViewContentMode"]
@@ -1151,6 +1159,7 @@ depends-member:
 - !private ["PSo16NSObjectProtocol", "UIGestureRecognizerState"]
 - !private ["PSo16NSObjectProtocol", "UIImage"]
 - !private ["PSo16NSObjectProtocol", "UIImageRenderingMode"]
+- !private ["PSo16NSObjectProtocol", "UILabel"]
 - !private ["PSo16NSObjectProtocol", "UIView"]
 - !private ["PSo16NSObjectProtocol", "UIViewAnimationOptions"]
 - !private ["PSo16NSObjectProtocol", "UIViewContentMode"]
@@ -1293,6 +1302,7 @@ depends-member:
 - !private ["PSo29UIAccessibilityIdentification", "UIGestureRecognizerState"]
 - !private ["PSo29UIAccessibilityIdentification", "UIImage"]
 - !private ["PSo29UIAccessibilityIdentification", "UIImageRenderingMode"]
+- !private ["PSo29UIAccessibilityIdentification", "UILabel"]
 - !private ["PSo29UIAccessibilityIdentification", "UIView"]
 - !private ["PSo29UIAccessibilityIdentification", "UIViewAnimationOptions"]
 - !private ["PSo29UIAccessibilityIdentification", "UIViewContentMode"]
@@ -1375,6 +1385,7 @@ depends-member:
 - !private ["PSo12UIAppearance", "UIGestureRecognizerState"]
 - !private ["PSo12UIAppearance", "UIImage"]
 - !private ["PSo12UIAppearance", "UIImageRenderingMode"]
+- !private ["PSo12UIAppearance", "UILabel"]
 - !private ["PSo12UIAppearance", "UIView"]
 - !private ["PSo12UIAppearance", "UIViewAnimationOptions"]
 - !private ["PSo12UIAppearance", "UIViewContentMode"]
@@ -1456,6 +1467,7 @@ depends-member:
 - !private ["PSo21UIAppearanceContainer", "UIGestureRecognizerState"]
 - !private ["PSo21UIAppearanceContainer", "UIImage"]
 - !private ["PSo21UIAppearanceContainer", "UIImageRenderingMode"]
+- !private ["PSo21UIAppearanceContainer", "UILabel"]
 - !private ["PSo21UIAppearanceContainer", "UIView"]
 - !private ["PSo21UIAppearanceContainer", "UIViewAnimationOptions"]
 - !private ["PSo21UIAppearanceContainer", "UIViewContentMode"]
@@ -1544,6 +1556,7 @@ depends-member:
 - !private ["CSo7UIColor", "lightGray"]
 - !private ["CSo7UIColor", "withAlphaComponent"]
 - !private ["PSo30UIContentSizeCategoryAdjusting", "font"]
+- !private ["PSo30UIContentSizeCategoryAdjusting", "init"]
 - !private ["PSo30UIContentSizeCategoryAdjusting", "text"]
 - !private ["PSo30UIContentSizeCategoryAdjusting", "textAlignment"]
 - !private ["CSo9UIControl", "addTarget"]
@@ -1585,6 +1598,7 @@ depends-member:
 - !private ["PSo17UICoordinateSpace", "UIGestureRecognizerState"]
 - !private ["PSo17UICoordinateSpace", "UIImage"]
 - !private ["PSo17UICoordinateSpace", "UIImageRenderingMode"]
+- !private ["PSo17UICoordinateSpace", "UILabel"]
 - !private ["PSo17UICoordinateSpace", "UIView"]
 - !private ["PSo17UICoordinateSpace", "UIViewAnimationOptions"]
 - !private ["PSo17UICoordinateSpace", "UIViewContentMode"]
@@ -1666,6 +1680,7 @@ depends-member:
 - !private ["PSo13UIDynamicItem", "UIGestureRecognizerState"]
 - !private ["PSo13UIDynamicItem", "UIImage"]
 - !private ["PSo13UIDynamicItem", "UIImageRenderingMode"]
+- !private ["PSo13UIDynamicItem", "UILabel"]
 - !private ["PSo13UIDynamicItem", "UIView"]
 - !private ["PSo13UIDynamicItem", "UIViewAnimationOptions"]
 - !private ["PSo13UIDynamicItem", "UIViewContentMode"]
@@ -1749,6 +1764,7 @@ depends-member:
 - !private ["PSo18UIFocusEnvironment", "UIGestureRecognizerState"]
 - !private ["PSo18UIFocusEnvironment", "UIImage"]
 - !private ["PSo18UIFocusEnvironment", "UIImageRenderingMode"]
+- !private ["PSo18UIFocusEnvironment", "UILabel"]
 - !private ["PSo18UIFocusEnvironment", "UIView"]
 - !private ["PSo18UIFocusEnvironment", "UIViewAnimationOptions"]
 - !private ["PSo18UIFocusEnvironment", "UIViewContentMode"]
@@ -1830,6 +1846,7 @@ depends-member:
 - !private ["PSo11UIFocusItem", "UIGestureRecognizerState"]
 - !private ["PSo11UIFocusItem", "UIImage"]
 - !private ["PSo11UIFocusItem", "UIImageRenderingMode"]
+- !private ["PSo11UIFocusItem", "UILabel"]
 - !private ["PSo11UIFocusItem", "UIView"]
 - !private ["PSo11UIFocusItem", "UIViewAnimationOptions"]
 - !private ["PSo11UIFocusItem", "UIViewContentMode"]
@@ -1915,6 +1932,7 @@ depends-member:
 - !private ["PSo27UIGestureRecognizerDelegate", "UIGestureRecognizerState"]
 - !private ["PSo27UIGestureRecognizerDelegate", "UIImage"]
 - !private ["PSo27UIGestureRecognizerDelegate", "UIImageRenderingMode"]
+- !private ["PSo27UIGestureRecognizerDelegate", "UILabel"]
 - !private ["PSo27UIGestureRecognizerDelegate", "UIView"]
 - !private ["PSo27UIGestureRecognizerDelegate", "UIViewAnimationOptions"]
 - !private ["PSo27UIGestureRecognizerDelegate", "UIViewContentMode"]
@@ -1969,6 +1987,7 @@ depends-member:
 - ["CSo11UIImageView", "deinit"]
 - ["CSo7UILabel", "deinit"]
 - !private ["CSo7UILabel", "font"]
+- !private ["CSo7UILabel", "init"]
 - !private ["CSo7UILabel", "text"]
 - !private ["CSo7UILabel", "textAlignment"]
 - !private ["CSo11UIResponder", "BizCardTableViewCell"]
@@ -2075,6 +2094,7 @@ depends-member:
 - !private ["PSo30UIResponderStandardEditActions", "UIGestureRecognizerState"]
 - !private ["PSo30UIResponderStandardEditActions", "UIImage"]
 - !private ["PSo30UIResponderStandardEditActions", "UIImageRenderingMode"]
+- !private ["PSo30UIResponderStandardEditActions", "UILabel"]
 - !private ["PSo30UIResponderStandardEditActions", "UIView"]
 - !private ["PSo30UIResponderStandardEditActions", "UIViewAnimationOptions"]
 - !private ["PSo30UIResponderStandardEditActions", "UIViewContentMode"]
@@ -2223,6 +2243,7 @@ depends-member:
 - !private ["PSo18UITraitEnvironment", "UIGestureRecognizerState"]
 - !private ["PSo18UITraitEnvironment", "UIImage"]
 - !private ["PSo18UITraitEnvironment", "UIImageRenderingMode"]
+- !private ["PSo18UITraitEnvironment", "UILabel"]
 - !private ["PSo18UITraitEnvironment", "UIView"]
 - !private ["PSo18UITraitEnvironment", "UIViewAnimationOptions"]
 - !private ["PSo18UITraitEnvironment", "UIViewContentMode"]
@@ -2404,6 +2425,7 @@ depends-member:
 - !private ["Ps37_DefaultCustomPlaygroundQuickLookable", "UIGestureRecognizerState"]
 - !private ["Ps37_DefaultCustomPlaygroundQuickLookable", "UIImage"]
 - !private ["Ps37_DefaultCustomPlaygroundQuickLookable", "UIImageRenderingMode"]
+- !private ["Ps37_DefaultCustomPlaygroundQuickLookable", "UILabel"]
 - !private ["Ps37_DefaultCustomPlaygroundQuickLookable", "UIView"]
 - !private ["Ps37_DefaultCustomPlaygroundQuickLookable", "UIViewAnimationOptions"]
 - !private ["Ps37_DefaultCustomPlaygroundQuickLookable", "UIViewContentMode"]
@@ -2504,6 +2526,7 @@ depends-member:
 - !private ["Ps9_Hashable", "UIGestureRecognizerState"]
 - !private ["Ps9_Hashable", "UIImage"]
 - !private ["Ps9_Hashable", "UIImageRenderingMode"]
+- !private ["Ps9_Hashable", "UILabel"]
 - !private ["Ps9_Hashable", "UIView"]
 - !private ["Ps9_Hashable", "UIViewAnimationOptions"]
 - !private ["Ps9_Hashable", "UIViewContentMode"]

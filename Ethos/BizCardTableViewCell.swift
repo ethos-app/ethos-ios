@@ -56,10 +56,8 @@ class BizCardTableViewCell: UITableViewCell {
         super.awakeFromNib()
         
         // Initialization code
-        
+ 
         self.backgroundColor =  UIColor.hexStringToUIColor("e9e9e9")
-        
-       
         bottomBar?.backgroundColor = UIColor.hexStringToUIColor("247BA0").withAlphaComponent(0.75)
         bottomBar?.clipsToBounds = true
         cardBack.clipsToBounds = true
@@ -91,8 +89,8 @@ class BizCardTableViewCell: UITableViewCell {
         self.cardBack.layer.borderColor = UIColor.lightGray.cgColor
         self.cardBack.layer.borderWidth = 0.4
         
-        let frame = CGRect(x: 50, y: 15, width: self.frame.width-200, height: 25)
-      
+        
+
        
         emojiList = EmojiBar.loadFromNibNamed(nibNamed: "EmojiBar") as? EmojiBar
         emojiList?.translatesAutoresizingMaskIntoConstraints = true
@@ -117,10 +115,15 @@ class BizCardTableViewCell: UITableViewCell {
         musicView = MusicView.loadFromNibNamed(nibNamed: "MusicView")
         musicView?.frame = CGRect(x: 0, y: 70, width: 310, height: 0)
       //  self.contentView.addSubview(musicView!)
+        
+        let frame = CGRect(x: 50, y: 15, width: self.frame.width-200, height: 25)
+        groupLabel = UILabel(frame: frame)
+        self.addSubview(groupLabel!)
         }
 
     override func layoutSubviews() {
-             reply?.frame = CGRect(x: self.frame.width-55, y: self.frame.height-44, width: 50, height: 50)
+       
+        reply?.frame = CGRect(x: self.frame.width-55, y: self.frame.height-44, width: 50, height: 50)
         emojiList?.frame = CGRect(x: 30, y: 10, width: self.frame.width-200, height: 40)
         self.cardSetup()
         react?.imageView?.contentMode = UIViewContentMode.scaleAspectFit

@@ -1729,7 +1729,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="IUP-s8-2Gs" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Home" image="ic_home.png" id="8zW-vv-RCW"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="Mm8-Ba-x4y">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Mm8-Ba-x4y">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1942,7 +1942,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="OwN-Qh-mBa" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Notifications" image="ic_textsms.png" id="eRB-Xt-48s"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="9oX-5G-EhM">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="9oX-5G-EhM">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -2063,7 +2063,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="lIq-V6-usg" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Groups" image="ic_people.png" id="VnU-Em-aSE"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="BUR-8r-MzR">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="BUR-8r-MzR">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

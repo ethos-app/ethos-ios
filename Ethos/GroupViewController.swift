@@ -16,6 +16,7 @@ import URLEmbeddedView
 import Firebase
 import MBProgressHUD
 import Jukebox
+import SafariServices
 
 class GroupViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextViewDelegate, UIGestureRecognizerDelegate, ImageSeekDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIScrollViewDelegate, UITabBarControllerDelegate, MusicDelegate, JukeboxDelegate {
     
@@ -716,9 +717,24 @@ class GroupViewController: UIViewController, UITableViewDelegate, UITableViewDat
             for subview in cell!.linkStack.arrangedSubviews {
                 subview.removeFromSuperview()
             }
+       
             let linkEmbed = URLEmbeddedView()
+            linkEmbed.frame = CGRect(x: 0, y: 0, width: 310, height: 80)
+            linkEmbed.translatesAutoresizingMaskIntoConstraints = true
+            linkEmbed.textProvider[.description].numberOfLines = 2
+            linkEmbed.tag = indexPath.row
+            let linkTap = UITapGestureRecognizer(target: self, action: #selector(self.showLink(rec:)))
+            linkTap.numberOfTapsRequired = 1
+            linkEmbed.addGestureRecognizer(linkTap)
+            linkEmbed.isUserInteractionEnabled = true
             linkEmbed.loadURL(currentObject.content)
+            let height = NSLayoutConstraint(item: linkEmbed, attribute: NSLayoutAttribute.height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 0, constant: 80)
+            linkEmbed.addConstraint(height)
             
+            // Create SoundCloud View
+            let soundView = SoundView.loadFromNibNamed(nibNamed: "SoundCloud") as! SoundView
+            // Create Tweet View
+            let tweetView = TweetView.loadFromNibNamed(nibNamed: "TweetView") as! TweetView
             // Create Music View
             let musicView = MusicView.loadFromNibNamed(nibNamed: "MusicView") as! MusicView
             musicView.frame = CGRect(x: 0, y: 0, width: 310, height: 80)
@@ -749,14 +765,29 @@ class GroupViewController: UIViewController, UITableViewDelegate, UITableViewDat
                     cell!.linkStack.addArrangedSubview(videoView)
                     
                 }
+                // Soundcloud link
+            } else if (currentObject.content.contains("soundcloud.com")) {
+                var scURL = "https://w.soundcloud.com/player/?url="
+                scURL.append(currentObject.content)
+                soundView.load(url: scURL)
+                if cell!.linkStack.subviews.count < 1 {
+                    cell!.linkStack.addArrangedSubview(soundView)
+                }
+                // Tweet link
+            }  else if (currentObject.content.contains("twitter.com")) {
+                
+                tweetView.loadTweet(url : currentObject.content)
+                if cell!.linkStack.subviews.count < 1 {
+                    cell!.linkStack.addArrangedSubview(tweetView)
+                }
                 // Standard link
-            } else {
+            }
+            else {
                 if cell!.linkStack.subviews.count < 1 {
                     cell!.linkStack.addArrangedSubview(linkEmbed)
                 }
                 
             }
-            
             
         }
         if type == 2 {
@@ -1002,6 +1033,15 @@ class GroupViewController: UIViewController, UITableViewDelegate, UITableViewDat
         //
     }
     
-    
+    func showLink(rec : UIGestureRecognizer) {
+        let index = rec.view!.tag
+        let obj = cardsToShow?.object(at: index) as! PostCard
+        let url = obj.content
+        openLink(url: URL(string: url)!)
+    }
+    func openLink(url : URL) {
+        let webview = SFSafariViewController(url: url, entersReaderIfAvailable: true)
+        self.present(webview, animated: true, completion: nil)
+    }
     
 }

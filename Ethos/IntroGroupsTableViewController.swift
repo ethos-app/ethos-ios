@@ -189,5 +189,7 @@ class IntroGroupsTableViewController: UITableViewController, GroupDelegate {
         join(id : group.groupID)
     }
     
+
+
 }
 

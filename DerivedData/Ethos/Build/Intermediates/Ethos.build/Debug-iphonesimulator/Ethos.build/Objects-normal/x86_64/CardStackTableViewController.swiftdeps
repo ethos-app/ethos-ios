@@ -9,224 +9,228 @@ provides-member:
 - ["C5Ethos28CardStackTableViewController", ""]
 - ["OC5Ethos28CardStackTableViewController8ShowType", ""]
 provides-dynamic-lookup:
-- "viewDidAppear"
-- "nextPosts"
-- "markLaunch"
-- "refreshContent"
-- "showPost"
-- "userStop"
-- "jukeboxDidUpdateMetadata"
-- "startSong"
-- "segment"
-- "getPosts"
-- "selectCards"
-- "viewWillAppear"
-- "showLink"
-- "imagePickerController"
-- "selectNet"
-- "updateFriends"
-- "netButton"
-- "launched"
-- "textViewDidBeginEditing"
-- "imageCancelled"
-- "canOpenURL"
-- "like"
-- "tableView"
-- "tableView"
-- "tableView"
-- "tableView"
-- "id"
-- "cardsButton"
-- "report"
-- "bar"
-- "postFriends"
+- "numberOfSections"
+- "preferredStatusBarStyle"
+- "jukeboxPlaybackProgressDidChange"
+- "jukeboxStateDidChange"
+- "scrollViewDidScroll"
+- "startFirebase"
 - "loadNext"
-- "mute"
-- "expand"
-- "picker"
-- "didReceiveMemoryWarning"
-- "groupWith"
 - "posting"
+- "cardsButton"
+- "openLink"
+- "selectNet"
+- "show"
+- "show"
+- "picker"
+- "cardsToShow"
 - "zoomModalPic"
+- "verifyToken"
+- "delete"
+- "bar"
+- "textView"
+- "viewWillDisappear"
+- "stopSong"
 - "attemptingLoad"
 - "tabBarController"
-- "show"
-- "show"
-- "commentPressed"
-- "post"
-- "jukeboxStateDidChange"
-- "postType"
-- "cardsToShow"
-- "stopSong"
-- "close"
-- "showOptions"
-- "getOptions"
-- "verifyToken"
-- "viewWillDisappear"
-- "startFirebase"
-- "jukebox"
-- "viewDidLoad"
-- "dismissModalImage"
-- "textView"
-- "prefersStatusBarHidden"
-- "uplaodImage"
-- "ethosAuth"
-- "delete"
+- "nextPosts"
+- "stopWritingPost"
+- "viewDidAppear"
+- "jukeboxDidLoadItem"
+- "showImagePicker"
+- "imageCancelled"
 - "share"
-- "toGroup"
-- "updatePosts"
-- "pv"
-- "writingPost"
+- "prefersStatusBarHidden"
+- "segment"
+- "jukeboxDidUpdateMetadata"
+- "netButton"
+- "expand"
+- "showOptions"
+- "selectCards"
+- "close"
+- "id"
+- "report"
+- "groupWith"
+- "postFriends"
+- "mute"
+- "imagePickerController"
+- "like"
+- "postBox"
 - "gestureRecognizer"
 - "block"
-- "preferredStatusBarStyle"
-- "scrollViewDidScroll"
-- "showImagePicker"
-- "jukeboxDidLoadItem"
-- "openLink"
-- "jukeboxPlaybackProgressDidChange"
 - "showingImage"
+- "didReceiveMemoryWarning"
+- "getPosts"
+- "showLink"
+- "startSong"
+- "textViewDidBeginEditing"
+- "updateFriends"
+- "canOpenURL"
+- "updatePosts"
+- "toGroup"
+- "showPost"
+- "getOptions"
+- "viewDidLoad"
+- "refreshContent"
+- "userStop"
+- "dismissModalImage"
+- "commentPressed"
+- "postType"
+- "markLaunch"
+- "viewWillAppear"
+- "writingPost"
+- "post"
 - "gestureRecognizerShouldBegin"
-- "numberOfSections"
-- "postBox"
-- "stopWritingPost"
+- "launched"
+- "jukebox"
+- "pv"
+- "uplaodImage"
+- "tableView"
+- "tableView"
+- "tableView"
+- "tableView"
+- "ethosAuth"
 depends-top-level:
-- !private "BizCardTableViewCell"
-- "UITableViewDelegate"
-- "DKImagePickerController"
-- "UILongPressGestureRecognizer"
-- "UITableViewDataSource"
-- !private "NSIndexPath"
-- !private "OneCardViewController"
-- "UIViewController"
-- !private "DispatchTime"
-- "UIView"
-- "Bool"
-- !private "UIProgressView"
-- !private "NSString"
-- "CGRect"
-- !private "UITableViewCellSeparatorStyle"
-- !private "URLEmbeddedView"
-- !private "UIBlurEffectStyle"
-- !private "print"
-- !private "Float"
-- !private "UIBlurEffect"
-- !private "FBSDKGraphRequest"
-- !private "NSPredicate"
-- !private "||"
-- !private "NSEC_PER_SEC"
-- !private "Alamofire"
-- !private "+="
-- !private "SFSafariViewController"
-- !private "Dictionary"
-- !private "Double"
-- "NSRange"
-- !private "MRProgressOverlayViewMode"
-- !private "UIAlertController"
-- "BarButton"
-- !private "MRProgressOverlayView"
-- !private "Array"
-- !private "UIBarMetrics"
-- "CastingPrecedence"
-- "AssignmentPrecedence"
-- "URL"
-- "=="
-- !private "Void"
-- !private "UIControlState"
-- !private "-"
-- "String"
-- !private "AnyObject"
-- !private "UITableViewRowAnimation"
-- !private "UIScreen"
-- !private "DKAsset"
-- !private "UIAlertActionStyle"
-- !private "%"
-- "NSNotification"
-- "UITableViewCell"
-- "UIGestureRecognizer"
-- !private "??"
+- !private "UITableViewCellSelectionStyle"
+- !private "UIAlertControllerStyle"
+- !private "UIPinchGestureRecognizer"
 - "Int"
+- !private "DateFormatter"
+- !private "UIBarButtonItem"
+- !private "FBSDKAccessToken"
+- "UIImage"
+- !private "UIBarButtonItemStyle"
+- !private "UIControlEvents"
+- !private "NotificationCenter"
+- "UIStatusBarStyle"
+- !private "JSONEncoding"
+- "NSRange"
+- !private "NSData"
+- "PostCard"
+- "UITabBarController"
+- !private "UIAlertAction"
+- !private "TimeZone"
+- !private "UnicodeScalarType"
+- !private "UIProgressView"
+- "Bool"
+- "UIView"
+- !private "NSIndexPath"
+- !private "VideoView"
+- "String"
+- !private "NSEC_PER_SEC"
+- !private "LoginViewController"
+- !private "!"
+- !private "Double"
+- "AssignmentPrecedence"
+- "=="
+- "CastingPrecedence"
+- !private "Int64"
+- !private "NSLayoutAttribute"
+- !private "UIViewContentMode"
+- !private "BizCardTableViewCell"
+- "UIRefreshControl"
+- "NSArray"
+- !private "UIAlertActionStyle"
+- "DKImagePickerController"
+- "StringLiteralType"
+- !private "&&"
+- "BooleanLiteralType"
+- !private "GroupViewController"
+- !private "URLEmbeddedView"
+- "JukeboxItem"
+- !private "NSPredicate"
+- !private "NSURL"
+- !private "SoundView"
+- "UILongPressGestureRecognizer"
+- !private "||"
+- !private "UITableViewAutomaticDimension"
+- !private "%"
+- !private "<"
+- !private "Array"
+- "BarButton"
+- !private "UIBarMetrics"
+- "UIImagePickerController"
+- !private "+="
+- !private "NSString"
+- "UIViewController"
+- "UITableViewDelegate"
+- !private "Alamofire"
+- "UIButton"
+- !private "UITableViewRowAnimation"
+- !private "DispatchTime"
+- "UITableViewDataSource"
 - !private "/"
-- !private ">"
+- "PostBox"
+- !private "print"
+- !private "CharacterSet"
+- !private "UIColor"
+- "NSNotification"
+- "UITableView"
+- !private "UIGestureRecognizerState"
+- "UITextViewDelegate"
+- !private "UIVisualEffectView"
+- !private "NSTextCheckingResult"
+- !private "SFSafariViewController"
+- "ImageSeekDelegate"
+- !private "DKAsset"
 - !private "!="
-- "UILabel"
+- !private "UIBlurEffectStyle"
+- "UIGestureRecognizerDelegate"
+- !private "MRProgressOverlayView"
+- !private "UIBlurEffect"
+- !private "UIImageView"
+- "UINavigationControllerDelegate"
+- !private "NSDataDetector"
 - !private "DKImagePickerControllerAssetType"
+- !private "UIAlertController"
+- "UIImagePickerControllerDelegate"
+- !private "-"
+- "NSMutableArray"
+- !private "UITapGestureRecognizer"
+- !private "Dictionary"
+- !private "*"
+- "URL"
+- !private "UIApplication"
+- "Jukebox"
+- !private "TweetView"
+- !private "??"
+- !private "OneCardViewController"
+- "UIScrollView"
+- !private "Void"
+- "CGRect"
+- !private "FIRInstanceID"
+- !private "+"
+- !private "UserDefaults"
+- "UITableViewCell"
+- !private "Float"
+- !private "NSForegroundColorAttributeName"
+- "UILabel"
+- !private ">"
+- !private "UITableViewCellSeparatorStyle"
+- !private "AnyObject"
+- !private "UIFont"
+- "GroupCard"
 - "UITextView"
 - "IndexPath"
-- "NSArray"
-- !private "*"
+- !private "NSFontAttributeName"
+- !private "FBSDKGraphRequest"
+- !private "NSDictionary"
+- !private "NSLayoutConstraint"
+- "UITabBarControllerDelegate"
 - !private "EthosAPI"
-- "UIScrollView"
-- !private "&&"
-- !private "UITableViewAutomaticDimension"
-- !private "UIAlertControllerStyle"
-- !private "NotificationCenter"
-- !private "LoginViewController"
-- "JukeboxItem"
-- !private "VideoView"
-- !private "UIVisualEffectView"
-- "GroupCard"
-- !private "UIBarButtonItemStyle"
-- !private "UIColor"
-- "BooleanLiteralType"
-- !private "UIImageJPEGRepresentation"
-- "PostCard"
+- "UIScrollViewDelegate"
+- "MusicView"
+- !private "MRProgressOverlayViewMode"
 - "JukeboxDelegate"
 - "MusicDelegate"
-- !private "JSONEncoding"
-- !private "!"
-- !private "FBSDKAccessToken"
-- !private "UIAlertAction"
-- !private "UIImageView"
-- "StringLiteralType"
-- "UIRefreshControl"
-- "MusicView"
-- !private "UIBarButtonItem"
-- !private "UIApplication"
-- !private "UnicodeScalarType"
-- !private "NSDictionary"
-- "ImageSeekDelegate"
-- !private "UITapGestureRecognizer"
-- !private "FIRInstanceID"
-- !private "UITableViewCellSelectionStyle"
-- "UIGestureRecognizerDelegate"
-- !private "DispatchQueue"
-- !private "+"
-- "UITabBarController"
-- !private "CharacterSet"
-- "UITextViewDelegate"
-- !private "UserDefaults"
-- !private "UIGestureRecognizerState"
-- !private "Int64"
-- !private "NSData"
+- !private "UIControlState"
 - "CardStackTableViewController"
-- "UITabBarControllerDelegate"
-- "UIScrollViewDelegate"
-- "PostBox"
-- !private "TimeZone"
-- "UINavigationControllerDelegate"
-- "NSMutableArray"
-- "UIImagePickerControllerDelegate"
-- "UIButton"
-- !private "<"
-- !private "UIPinchGestureRecognizer"
-- "Jukebox"
-- !private "NSForegroundColorAttributeName"
-- !private "UITableViewScrollPosition"
-- !private "GroupViewController"
-- "UITableView"
-- !private "DateFormatter"
-- !private "UIViewContentMode"
-- !private "NSDataDetector"
+- !private "UIImageJPEGRepresentation"
+- !private "UIScreen"
+- !private "DispatchQueue"
+- "UIGestureRecognizer"
 - !private "UIReturnKeyType"
-- "UIImagePickerController"
-- !private "NSTextCheckingResult"
-- !private "NSFontAttributeName"
-- !private "UIControlEvents"
-- "UIStatusBarStyle"
-- "UIImage"
-- !private "NSURL"
-- !private "UIFont"
+- !private "UITableViewScrollPosition"
 depends-member:
 - !private ["Ps16AbsoluteValuable", "Stride"]
 - !private ["Ps16AbsoluteValuable", "init"]
@@ -265,6 +269,8 @@ depends-member:
 - !private ["Ps9AnyObject", "NSEC_PER_SEC"]
 - !private ["Ps9AnyObject", "NSFontAttributeName"]
 - !private ["Ps9AnyObject", "NSForegroundColorAttributeName"]
+- !private ["Ps9AnyObject", "NSLayoutAttribute"]
+- !private ["Ps9AnyObject", "NSLayoutConstraint"]
 - !private ["Ps9AnyObject", "NSMutableArray"]
 - !private ["Ps9AnyObject", "NSNotification"]
 - !private ["Ps9AnyObject", "NSPredicate"]
@@ -277,8 +283,10 @@ depends-member:
 - !private ["Ps9AnyObject", "PostCard"]
 - !private ["Ps9AnyObject", "SFSafariViewController"]
 - !private ["Ps9AnyObject", "ShowType"]
+- !private ["Ps9AnyObject", "SoundView"]
 - !private ["Ps9AnyObject", "String"]
 - !private ["Ps9AnyObject", "TimeZone"]
+- !private ["Ps9AnyObject", "TweetView"]
 - !private ["Ps9AnyObject", "UIAlertAction"]
 - !private ["Ps9AnyObject", "UIAlertActionStyle"]
 - !private ["Ps9AnyObject", "UIAlertController"]
@@ -321,6 +329,7 @@ depends-member:
 - !private ["Ps9AnyObject", "add"]
 - !private ["Ps9AnyObject", "addAction"]
 - !private ["Ps9AnyObject", "addArrangedSubview"]
+- !private ["Ps9AnyObject", "addConstraint"]
 - !private ["Ps9AnyObject", "addGestureRecognizer"]
 - !private ["Ps9AnyObject", "addObserver"]
 - !private ["Ps9AnyObject", "addSubview"]
@@ -328,6 +337,7 @@ depends-member:
 - !private ["Ps9AnyObject", "addTextField"]
 - !private ["Ps9AnyObject", "alpha"]
 - !private ["Ps9AnyObject", "animate"]
+- !private ["Ps9AnyObject", "append"]
 - !private ["Ps9AnyObject", "arrangedSubviews"]
 - !private ["Ps9AnyObject", "assetType"]
 - !private ["Ps9AnyObject", "asyncAfter"]
@@ -441,9 +451,11 @@ depends-member:
 - !private ["Ps9AnyObject", "likeCount"]
 - !private ["Ps9AnyObject", "likesCount"]
 - !private ["Ps9AnyObject", "linkStack"]
+- !private ["Ps9AnyObject", "load"]
 - !private ["Ps9AnyObject", "loadFromNibNamed"]
 - ["Ps9AnyObject", "loadNext"]
 - !private ["Ps9AnyObject", "loadSong"]
+- !private ["Ps9AnyObject", "loadTweet"]
 - !private ["Ps9AnyObject", "loadURL"]
 - !private ["Ps9AnyObject", "loadVideo"]
 - ["Ps9AnyObject", "lookingFrame"]
@@ -586,6 +598,7 @@ depends-member:
 - !private ["Ps9AnyObject", "titleTextAttributes"]
 - ["Ps9AnyObject", "toGroup"]
 - !private ["Ps9AnyObject", "token"]
+- !private ["Ps9AnyObject", "translatesAutoresizingMaskIntoConstraints"]
 - !private ["Ps9AnyObject", "trimmingCharacters"]
 - !private ["Ps9AnyObject", "type"]
 - ["Ps9AnyObject", "updateFriends"]
@@ -683,6 +696,7 @@ depends-member:
 - !private ["CSo7CALayer", "cornerRadius"]
 - ["CSo7CALayer", "deinit"]
 - !private ["PSo15CALayerDelegate", "addArrangedSubview"]
+- !private ["PSo15CALayerDelegate", "addConstraint"]
 - !private ["PSo15CALayerDelegate", "addGestureRecognizer"]
 - !private ["PSo15CALayerDelegate", "addSubview"]
 - !private ["PSo15CALayerDelegate", "addTarget"]
@@ -727,8 +741,10 @@ depends-member:
 - !private ["PSo15CALayerDelegate", "like"]
 - !private ["PSo15CALayerDelegate", "likesCount"]
 - !private ["PSo15CALayerDelegate", "linkStack"]
+- !private ["PSo15CALayerDelegate", "load"]
 - !private ["PSo15CALayerDelegate", "loadFromNibNamed"]
 - !private ["PSo15CALayerDelegate", "loadSong"]
+- !private ["PSo15CALayerDelegate", "loadTweet"]
 - !private ["PSo15CALayerDelegate", "loadURL"]
 - !private ["PSo15CALayerDelegate", "loadVideo"]
 - !private ["PSo15CALayerDelegate", "options"]
@@ -764,6 +780,7 @@ depends-member:
 - !private ["PSo15CALayerDelegate", "textView"]
 - !private ["PSo15CALayerDelegate", "tintColor"]
 - !private ["PSo15CALayerDelegate", "titleTextAttributes"]
+- !private ["PSo15CALayerDelegate", "translatesAutoresizingMaskIntoConstraints"]
 - !private ["PSo15CALayerDelegate", "userImage"]
 - !private ["PSo13CAMediaTiming", "backgroundColor"]
 - !private ["PSo13CAMediaTiming", "borderColor"]
@@ -822,6 +839,8 @@ depends-member:
 - !private ["Ps7CVarArg", "NSEC_PER_SEC"]
 - !private ["Ps7CVarArg", "NSFontAttributeName"]
 - !private ["Ps7CVarArg", "NSForegroundColorAttributeName"]
+- !private ["Ps7CVarArg", "NSLayoutAttribute"]
+- !private ["Ps7CVarArg", "NSLayoutConstraint"]
 - !private ["Ps7CVarArg", "NSMutableArray"]
 - !private ["Ps7CVarArg", "NSNotification"]
 - !private ["Ps7CVarArg", "NSPredicate"]
@@ -834,9 +853,11 @@ depends-member:
 - !private ["Ps7CVarArg", "PostCard"]
 - !private ["Ps7CVarArg", "SFSafariViewController"]
 - !private ["Ps7CVarArg", "ShowType"]
+- !private ["Ps7CVarArg", "SoundView"]
 - !private ["Ps7CVarArg", "Stride"]
 - !private ["Ps7CVarArg", "String"]
 - !private ["Ps7CVarArg", "TimeZone"]
+- !private ["Ps7CVarArg", "TweetView"]
 - !private ["Ps7CVarArg", "UIAlertAction"]
 - !private ["Ps7CVarArg", "UIAlertActionStyle"]
 - !private ["Ps7CVarArg", "UIAlertController"]
@@ -881,6 +902,7 @@ depends-member:
 - !private ["Ps7CVarArg", "add"]
 - !private ["Ps7CVarArg", "addAction"]
 - !private ["Ps7CVarArg", "addArrangedSubview"]
+- !private ["Ps7CVarArg", "addConstraint"]
 - !private ["Ps7CVarArg", "addGestureRecognizer"]
 - !private ["Ps7CVarArg", "addObserver"]
 - !private ["Ps7CVarArg", "addSubview"]
@@ -888,6 +910,7 @@ depends-member:
 - !private ["Ps7CVarArg", "addTextField"]
 - !private ["Ps7CVarArg", "alpha"]
 - !private ["Ps7CVarArg", "animate"]
+- !private ["Ps7CVarArg", "append"]
 - !private ["Ps7CVarArg", "arrangedSubviews"]
 - !private ["Ps7CVarArg", "assetType"]
 - !private ["Ps7CVarArg", "asyncAfter"]
@@ -1002,9 +1025,11 @@ depends-member:
 - !private ["Ps7CVarArg", "likeCount"]
 - !private ["Ps7CVarArg", "likesCount"]
 - !private ["Ps7CVarArg", "linkStack"]
+- !private ["Ps7CVarArg", "load"]
 - !private ["Ps7CVarArg", "loadFromNibNamed"]
 - ["Ps7CVarArg", "loadNext"]
 - !private ["Ps7CVarArg", "loadSong"]
+- !private ["Ps7CVarArg", "loadTweet"]
 - !private ["Ps7CVarArg", "loadURL"]
 - !private ["Ps7CVarArg", "loadVideo"]
 - ["Ps7CVarArg", "lookingFrame"]
@@ -1145,6 +1170,7 @@ depends-member:
 - !private ["Ps7CVarArg", "titleTextAttributes"]
 - ["Ps7CVarArg", "toGroup"]
 - !private ["Ps7CVarArg", "token"]
+- !private ["Ps7CVarArg", "translatesAutoresizingMaskIntoConstraints"]
 - !private ["Ps7CVarArg", "trimmingCharacters"]
 - !private ["Ps7CVarArg", "type"]
 - ["Ps7CVarArg", "updateFriends"]
@@ -1210,6 +1236,8 @@ depends-member:
 - !private ["C5Ethos28CardStackTableViewController", "NSFontAttributeName"]
 - !private ["C5Ethos28CardStackTableViewController", "NSForegroundColorAttributeName"]
 - !private ["C5Ethos28CardStackTableViewController", "NSIndexPath"]
+- !private ["C5Ethos28CardStackTableViewController", "NSLayoutAttribute"]
+- !private ["C5Ethos28CardStackTableViewController", "NSLayoutConstraint"]
 - ["C5Ethos28CardStackTableViewController", "NSMutableArray"]
 - ["C5Ethos28CardStackTableViewController", "NSNotification"]
 - !private ["C5Ethos28CardStackTableViewController", "NSPredicate"]
@@ -1223,8 +1251,10 @@ depends-member:
 - ["C5Ethos28CardStackTableViewController", "PostCard"]
 - !private ["C5Ethos28CardStackTableViewController", "SFSafariViewController"]
 - ["C5Ethos28CardStackTableViewController", "ShowType"]
+- !private ["C5Ethos28CardStackTableViewController", "SoundView"]
 - ["C5Ethos28CardStackTableViewController", "String"]
 - !private ["C5Ethos28CardStackTableViewController", "TimeZone"]
+- !private ["C5Ethos28CardStackTableViewController", "TweetView"]
 - !private ["C5Ethos28CardStackTableViewController", "UIAlertAction"]
 - !private ["C5Ethos28CardStackTableViewController", "UIAlertActionStyle"]
 - !private ["C5Ethos28CardStackTableViewController", "UIAlertController"]
@@ -1410,6 +1440,7 @@ depends-member:
 - !private ["Ps10Collection", "init"]
 - !private ["Ps10Collection", "row"]
 - !private ["Ps10Comparable", "Stride"]
+- !private ["Ps10Comparable", "append"]
 - !private ["Ps10Comparable", "contains"]
 - !private ["Ps10Comparable", "getElapsedInterval"]
 - !private ["Ps10Comparable", "hashValue"]
@@ -1459,6 +1490,8 @@ depends-member:
 - !private ["Ps28CustomDebugStringConvertible", "NSEC_PER_SEC"]
 - !private ["Ps28CustomDebugStringConvertible", "NSFontAttributeName"]
 - !private ["Ps28CustomDebugStringConvertible", "NSForegroundColorAttributeName"]
+- !private ["Ps28CustomDebugStringConvertible", "NSLayoutAttribute"]
+- !private ["Ps28CustomDebugStringConvertible", "NSLayoutConstraint"]
 - !private ["Ps28CustomDebugStringConvertible", "NSMutableArray"]
 - !private ["Ps28CustomDebugStringConvertible", "NSNotification"]
 - !private ["Ps28CustomDebugStringConvertible", "NSPredicate"]
@@ -1471,9 +1504,11 @@ depends-member:
 - !private ["Ps28CustomDebugStringConvertible", "PostCard"]
 - !private ["Ps28CustomDebugStringConvertible", "SFSafariViewController"]
 - !private ["Ps28CustomDebugStringConvertible", "ShowType"]
+- !private ["Ps28CustomDebugStringConvertible", "SoundView"]
 - !private ["Ps28CustomDebugStringConvertible", "Stride"]
 - !private ["Ps28CustomDebugStringConvertible", "String"]
 - !private ["Ps28CustomDebugStringConvertible", "TimeZone"]
+- !private ["Ps28CustomDebugStringConvertible", "TweetView"]
 - !private ["Ps28CustomDebugStringConvertible", "UIAlertAction"]
 - !private ["Ps28CustomDebugStringConvertible", "UIAlertActionStyle"]
 - !private ["Ps28CustomDebugStringConvertible", "UIAlertController"]
@@ -1518,6 +1553,7 @@ depends-member:
 - !private ["Ps28CustomDebugStringConvertible", "add"]
 - !private ["Ps28CustomDebugStringConvertible", "addAction"]
 - !private ["Ps28CustomDebugStringConvertible", "addArrangedSubview"]
+- !private ["Ps28CustomDebugStringConvertible", "addConstraint"]
 - !private ["Ps28CustomDebugStringConvertible", "addGestureRecognizer"]
 - !private ["Ps28CustomDebugStringConvertible", "addObserver"]
 - !private ["Ps28CustomDebugStringConvertible", "addSubview"]
@@ -1525,6 +1561,7 @@ depends-member:
 - !private ["Ps28CustomDebugStringConvertible", "addTextField"]
 - !private ["Ps28CustomDebugStringConvertible", "alpha"]
 - !private ["Ps28CustomDebugStringConvertible", "animate"]
+- !private ["Ps28CustomDebugStringConvertible", "append"]
 - !private ["Ps28CustomDebugStringConvertible", "arrangedSubviews"]
 - !private ["Ps28CustomDebugStringConvertible", "assetType"]
 - !private ["Ps28CustomDebugStringConvertible", "asyncAfter"]
@@ -1641,9 +1678,11 @@ depends-member:
 - !private ["Ps28CustomDebugStringConvertible", "likeCount"]
 - !private ["Ps28CustomDebugStringConvertible", "likesCount"]
 - !private ["Ps28CustomDebugStringConvertible", "linkStack"]
+- !private ["Ps28CustomDebugStringConvertible", "load"]
 - !private ["Ps28CustomDebugStringConvertible", "loadFromNibNamed"]
 - ["Ps28CustomDebugStringConvertible", "loadNext"]
 - !private ["Ps28CustomDebugStringConvertible", "loadSong"]
+- !private ["Ps28CustomDebugStringConvertible", "loadTweet"]
 - !private ["Ps28CustomDebugStringConvertible", "loadURL"]
 - !private ["Ps28CustomDebugStringConvertible", "loadVideo"]
 - ["Ps28CustomDebugStringConvertible", "lookingFrame"]
@@ -1788,6 +1827,7 @@ depends-member:
 - !private ["Ps28CustomDebugStringConvertible", "titleTextAttributes"]
 - ["Ps28CustomDebugStringConvertible", "toGroup"]
 - !private ["Ps28CustomDebugStringConvertible", "token"]
+- !private ["Ps28CustomDebugStringConvertible", "translatesAutoresizingMaskIntoConstraints"]
 - !private ["Ps28CustomDebugStringConvertible", "trimmingCharacters"]
 - !private ["Ps28CustomDebugStringConvertible", "type"]
 - ["Ps28CustomDebugStringConvertible", "updateFriends"]
@@ -1820,6 +1860,7 @@ depends-member:
 - !private ["Ps29CustomPlaygroundQuickLookable", "IndexDistance"]
 - !private ["Ps29CustomPlaygroundQuickLookable", "Stride"]
 - !private ["Ps29CustomPlaygroundQuickLookable", "_getBuiltinLogicValue"]
+- !private ["Ps29CustomPlaygroundQuickLookable", "append"]
 - !private ["Ps29CustomPlaygroundQuickLookable", "contains"]
 - !private ["Ps29CustomPlaygroundQuickLookable", "count"]
 - !private ["Ps29CustomPlaygroundQuickLookable", "getElapsedInterval"]
@@ -1845,6 +1886,7 @@ depends-member:
 - !private ["Ps17CustomReflectable", "_Element"]
 - !private ["Ps17CustomReflectable", "_getBuiltinLogicValue"]
 - !private ["Ps17CustomReflectable", "add"]
+- !private ["Ps17CustomReflectable", "append"]
 - !private ["Ps17CustomReflectable", "base64EncodedString"]
 - !private ["Ps17CustomReflectable", "contains"]
 - !private ["Ps17CustomReflectable", "count"]
@@ -1905,6 +1947,8 @@ depends-member:
 - !private ["Ps23CustomStringConvertible", "NSEC_PER_SEC"]
 - !private ["Ps23CustomStringConvertible", "NSFontAttributeName"]
 - !private ["Ps23CustomStringConvertible", "NSForegroundColorAttributeName"]
+- !private ["Ps23CustomStringConvertible", "NSLayoutAttribute"]
+- !private ["Ps23CustomStringConvertible", "NSLayoutConstraint"]
 - !private ["Ps23CustomStringConvertible", "NSMutableArray"]
 - !private ["Ps23CustomStringConvertible", "NSNotification"]
 - !private ["Ps23CustomStringConvertible", "NSPredicate"]
@@ -1917,9 +1961,11 @@ depends-member:
 - !private ["Ps23CustomStringConvertible", "PostCard"]
 - !private ["Ps23CustomStringConvertible", "SFSafariViewController"]
 - !private ["Ps23CustomStringConvertible", "ShowType"]
+- !private ["Ps23CustomStringConvertible", "SoundView"]
 - !private ["Ps23CustomStringConvertible", "Stride"]
 - !private ["Ps23CustomStringConvertible", "String"]
 - !private ["Ps23CustomStringConvertible", "TimeZone"]
+- !private ["Ps23CustomStringConvertible", "TweetView"]
 - !private ["Ps23CustomStringConvertible", "UIAlertAction"]
 - !private ["Ps23CustomStringConvertible", "UIAlertActionStyle"]
 - !private ["Ps23CustomStringConvertible", "UIAlertController"]
@@ -1965,6 +2011,7 @@ depends-member:
 - !private ["Ps23CustomStringConvertible", "add"]
 - !private ["Ps23CustomStringConvertible", "addAction"]
 - !private ["Ps23CustomStringConvertible", "addArrangedSubview"]
+- !private ["Ps23CustomStringConvertible", "addConstraint"]
 - !private ["Ps23CustomStringConvertible", "addGestureRecognizer"]
 - !private ["Ps23CustomStringConvertible", "addObserver"]
 - !private ["Ps23CustomStringConvertible", "addSubview"]
@@ -1972,6 +2019,7 @@ depends-member:
 - !private ["Ps23CustomStringConvertible", "addTextField"]
 - !private ["Ps23CustomStringConvertible", "alpha"]
 - !private ["Ps23CustomStringConvertible", "animate"]
+- !private ["Ps23CustomStringConvertible", "append"]
 - !private ["Ps23CustomStringConvertible", "arrangedSubviews"]
 - !private ["Ps23CustomStringConvertible", "assetType"]
 - !private ["Ps23CustomStringConvertible", "asyncAfter"]
@@ -2088,9 +2136,11 @@ depends-member:
 - !private ["Ps23CustomStringConvertible", "likeCount"]
 - !private ["Ps23CustomStringConvertible", "likesCount"]
 - !private ["Ps23CustomStringConvertible", "linkStack"]
+- !private ["Ps23CustomStringConvertible", "load"]
 - !private ["Ps23CustomStringConvertible", "loadFromNibNamed"]
 - ["Ps23CustomStringConvertible", "loadNext"]
 - !private ["Ps23CustomStringConvertible", "loadSong"]
+- !private ["Ps23CustomStringConvertible", "loadTweet"]
 - !private ["Ps23CustomStringConvertible", "loadURL"]
 - !private ["Ps23CustomStringConvertible", "loadVideo"]
 - ["Ps23CustomStringConvertible", "lookingFrame"]
@@ -2233,6 +2283,7 @@ depends-member:
 - !private ["Ps23CustomStringConvertible", "titleTextAttributes"]
 - ["Ps23CustomStringConvertible", "toGroup"]
 - !private ["Ps23CustomStringConvertible", "token"]
+- !private ["Ps23CustomStringConvertible", "translatesAutoresizingMaskIntoConstraints"]
 - !private ["Ps23CustomStringConvertible", "trimmingCharacters"]
 - !private ["Ps23CustomStringConvertible", "type"]
 - ["Ps23CustomStringConvertible", "updateFriends"]
@@ -2271,6 +2322,7 @@ depends-member:
 - ["O23DKImagePickerController32DKImagePickerControllerAssetType", "deinit"]
 - !private ["V10Foundation4Data", "base64EncodedString"]
 - ["V10Foundation4Data", "deinit"]
+- !private ["P6Haneke15DataConvertible", "append"]
 - !private ["P6Haneke15DataConvertible", "base64EncodedString"]
 - !private ["P6Haneke15DataConvertible", "contains"]
 - ["P6Haneke15DataConvertible", "init"]
@@ -2280,6 +2332,7 @@ depends-member:
 - !private ["P6Haneke15DataConvertible", "replacingOccurrences"]
 - !private ["P6Haneke15DataConvertible", "trimmingCharacters"]
 - !private ["P6Haneke15DataConvertible", "utf16"]
+- !private ["P6Haneke17DataRepresentable", "append"]
 - !private ["P6Haneke17DataRepresentable", "base64EncodedString"]
 - !private ["P6Haneke17DataRepresentable", "contains"]
 - ["P6Haneke17DataRepresentable", "init"]
@@ -2349,6 +2402,8 @@ depends-member:
 - !private ["Ps9Equatable", "NSEC_PER_SEC"]
 - !private ["Ps9Equatable", "NSFontAttributeName"]
 - !private ["Ps9Equatable", "NSForegroundColorAttributeName"]
+- !private ["Ps9Equatable", "NSLayoutAttribute"]
+- !private ["Ps9Equatable", "NSLayoutConstraint"]
 - !private ["Ps9Equatable", "NSMutableArray"]
 - !private ["Ps9Equatable", "NSNotification"]
 - !private ["Ps9Equatable", "NSPredicate"]
@@ -2362,9 +2417,11 @@ depends-member:
 - !private ["Ps9Equatable", "RawValue"]
 - !private ["Ps9Equatable", "SFSafariViewController"]
 - !private ["Ps9Equatable", "ShowType"]
+- !private ["Ps9Equatable", "SoundView"]
 - !private ["Ps9Equatable", "Stride"]
 - !private ["Ps9Equatable", "String"]
 - !private ["Ps9Equatable", "TimeZone"]
+- !private ["Ps9Equatable", "TweetView"]
 - !private ["Ps9Equatable", "UIAlertAction"]
 - !private ["Ps9Equatable", "UIAlertActionStyle"]
 - !private ["Ps9Equatable", "UIAlertController"]
@@ -2410,6 +2467,7 @@ depends-member:
 - !private ["Ps9Equatable", "add"]
 - !private ["Ps9Equatable", "addAction"]
 - !private ["Ps9Equatable", "addArrangedSubview"]
+- !private ["Ps9Equatable", "addConstraint"]
 - !private ["Ps9Equatable", "addGestureRecognizer"]
 - !private ["Ps9Equatable", "addObserver"]
 - !private ["Ps9Equatable", "addSubview"]
@@ -2420,6 +2478,7 @@ depends-member:
 - !private ["Ps9Equatable", "allPhotos"]
 - !private ["Ps9Equatable", "alpha"]
 - !private ["Ps9Equatable", "animate"]
+- !private ["Ps9Equatable", "append"]
 - !private ["Ps9Equatable", "arrangedSubviews"]
 - !private ["Ps9Equatable", "assetType"]
 - !private ["Ps9Equatable", "asyncAfter"]
@@ -2484,6 +2543,7 @@ depends-member:
 - ["Ps9Equatable", "dismissModalImage"]
 - !private ["Ps9Equatable", "done"]
 - !private ["Ps9Equatable", "endRefreshing"]
+- !private ["Ps9Equatable", "equal"]
 - !private ["Ps9Equatable", "estimatedRowHeight"]
 - ["Ps9Equatable", "ethosAuth"]
 - !private ["Ps9Equatable", "evaluate"]
@@ -2548,9 +2608,11 @@ depends-member:
 - !private ["Ps9Equatable", "lineLength64Characters"]
 - !private ["Ps9Equatable", "link"]
 - !private ["Ps9Equatable", "linkStack"]
+- !private ["Ps9Equatable", "load"]
 - !private ["Ps9Equatable", "loadFromNibNamed"]
 - ["Ps9Equatable", "loadNext"]
 - !private ["Ps9Equatable", "loadSong"]
+- !private ["Ps9Equatable", "loadTweet"]
 - !private ["Ps9Equatable", "loadURL"]
 - !private ["Ps9Equatable", "loadVideo"]
 - ["Ps9Equatable", "lookingFrame"]
@@ -2571,6 +2633,7 @@ depends-member:
 - ["Ps9Equatable", "nextPosts"]
 - !private ["Ps9Equatable", "none"]
 - !private ["Ps9Equatable", "normal"]
+- !private ["Ps9Equatable", "notAnAttribute"]
 - !private ["Ps9Equatable", "now"]
 - ["Ps9Equatable", "numberOfSections"]
 - ["Ps9Equatable", "numberOfSectionsInTableView"]
@@ -2706,6 +2769,7 @@ depends-member:
 - !private ["Ps9Equatable", "token"]
 - !private ["Ps9Equatable", "top"]
 - !private ["Ps9Equatable", "touchUpInside"]
+- !private ["Ps9Equatable", "translatesAutoresizingMaskIntoConstraints"]
 - !private ["Ps9Equatable", "trimmingCharacters"]
 - !private ["Ps9Equatable", "type"]
 - ["Ps9Equatable", "updateFriends"]
@@ -2765,6 +2829,7 @@ depends-member:
 - !private ["Ps30ExpressibleByDictionaryLiteral", "Key"]
 - !private ["Ps30ExpressibleByDictionaryLiteral", "Value"]
 - !private ["Ps30ExpressibleByDictionaryLiteral", "object"]
+- !private ["Ps43ExpressibleByExtendedGraphemeClusterLiteral", "append"]
 - !private ["Ps43ExpressibleByExtendedGraphemeClusterLiteral", "contains"]
 - ["Ps43ExpressibleByExtendedGraphemeClusterLiteral", "init"]
 - !private ["Ps43ExpressibleByExtendedGraphemeClusterLiteral", "isEmpty"]
@@ -2780,6 +2845,7 @@ depends-member:
 - !private ["Ps27ExpressibleByIntegerLiteral", "hashValue"]
 - !private ["Ps27ExpressibleByIntegerLiteral", "init"]
 - ["Ps23ExpressibleByNilLiteral", "some"]
+- !private ["Ps32ExpressibleByStringInterpolation", "append"]
 - !private ["Ps32ExpressibleByStringInterpolation", "contains"]
 - ["Ps32ExpressibleByStringInterpolation", "init"]
 - !private ["Ps32ExpressibleByStringInterpolation", "isEmpty"]
@@ -2788,6 +2854,7 @@ depends-member:
 - !private ["Ps32ExpressibleByStringInterpolation", "replacingOccurrences"]
 - !private ["Ps32ExpressibleByStringInterpolation", "trimmingCharacters"]
 - !private ["Ps32ExpressibleByStringInterpolation", "utf16"]
+- !private ["Ps26ExpressibleByStringLiteral", "append"]
 - !private ["Ps26ExpressibleByStringLiteral", "contains"]
 - ["Ps26ExpressibleByStringLiteral", "init"]
 - !private ["Ps26ExpressibleByStringLiteral", "isEmpty"]
@@ -2797,6 +2864,7 @@ depends-member:
 - !private ["Ps26ExpressibleByStringLiteral", "substring"]
 - !private ["Ps26ExpressibleByStringLiteral", "trimmingCharacters"]
 - !private ["Ps26ExpressibleByStringLiteral", "utf16"]
+- !private ["Ps33ExpressibleByUnicodeScalarLiteral", "append"]
 - !private ["Ps33ExpressibleByUnicodeScalarLiteral", "contains"]
 - ["Ps33ExpressibleByUnicodeScalarLiteral", "init"]
 - !private ["Ps33ExpressibleByUnicodeScalarLiteral", "isEmpty"]
@@ -2881,6 +2949,8 @@ depends-member:
 - !private ["Ps8Hashable", "NSEC_PER_SEC"]
 - !private ["Ps8Hashable", "NSFontAttributeName"]
 - !private ["Ps8Hashable", "NSForegroundColorAttributeName"]
+- !private ["Ps8Hashable", "NSLayoutAttribute"]
+- !private ["Ps8Hashable", "NSLayoutConstraint"]
 - !private ["Ps8Hashable", "NSMutableArray"]
 - !private ["Ps8Hashable", "NSNotification"]
 - !private ["Ps8Hashable", "NSPredicate"]
@@ -2894,9 +2964,11 @@ depends-member:
 - !private ["Ps8Hashable", "RawValue"]
 - !private ["Ps8Hashable", "SFSafariViewController"]
 - !private ["Ps8Hashable", "ShowType"]
+- !private ["Ps8Hashable", "SoundView"]
 - !private ["Ps8Hashable", "Stride"]
 - !private ["Ps8Hashable", "String"]
 - !private ["Ps8Hashable", "TimeZone"]
+- !private ["Ps8Hashable", "TweetView"]
 - !private ["Ps8Hashable", "UIAlertAction"]
 - !private ["Ps8Hashable", "UIAlertActionStyle"]
 - !private ["Ps8Hashable", "UIAlertController"]
@@ -2942,6 +3014,7 @@ depends-member:
 - !private ["Ps8Hashable", "add"]
 - !private ["Ps8Hashable", "addAction"]
 - !private ["Ps8Hashable", "addArrangedSubview"]
+- !private ["Ps8Hashable", "addConstraint"]
 - !private ["Ps8Hashable", "addGestureRecognizer"]
 - !private ["Ps8Hashable", "addObserver"]
 - !private ["Ps8Hashable", "addSubview"]
@@ -2951,6 +3024,7 @@ depends-member:
 - !private ["Ps8Hashable", "allPhotos"]
 - !private ["Ps8Hashable", "alpha"]
 - !private ["Ps8Hashable", "animate"]
+- !private ["Ps8Hashable", "append"]
 - !private ["Ps8Hashable", "arrangedSubviews"]
 - !private ["Ps8Hashable", "assetType"]
 - !private ["Ps8Hashable", "asyncAfter"]
@@ -3015,6 +3089,7 @@ depends-member:
 - ["Ps8Hashable", "dismissModalImage"]
 - !private ["Ps8Hashable", "done"]
 - !private ["Ps8Hashable", "endRefreshing"]
+- !private ["Ps8Hashable", "equal"]
 - !private ["Ps8Hashable", "estimatedRowHeight"]
 - ["Ps8Hashable", "ethosAuth"]
 - !private ["Ps8Hashable", "evaluate"]
@@ -3039,6 +3114,7 @@ depends-member:
 - !private ["Ps8Hashable", "groupType"]
 - ["Ps8Hashable", "groupWith"]
 - ["Ps8Hashable", "hashValue"]
+- !private ["Ps8Hashable", "height"]
 - !private ["Ps8Hashable", "hexStringToUIColor"]
 - !private ["Ps8Hashable", "hnk_setImageFromURL"]
 - ["Ps8Hashable", "id"]
@@ -3076,9 +3152,11 @@ depends-member:
 - !private ["Ps8Hashable", "likeCount"]
 - !private ["Ps8Hashable", "likesCount"]
 - !private ["Ps8Hashable", "linkStack"]
+- !private ["Ps8Hashable", "load"]
 - !private ["Ps8Hashable", "loadFromNibNamed"]
 - ["Ps8Hashable", "loadNext"]
 - !private ["Ps8Hashable", "loadSong"]
+- !private ["Ps8Hashable", "loadTweet"]
 - !private ["Ps8Hashable", "loadURL"]
 - !private ["Ps8Hashable", "loadVideo"]
 - ["Ps8Hashable", "lookingFrame"]
@@ -3098,6 +3176,7 @@ depends-member:
 - ["Ps8Hashable", "netButton"]
 - ["Ps8Hashable", "nextPosts"]
 - !private ["Ps8Hashable", "none"]
+- !private ["Ps8Hashable", "notAnAttribute"]
 - ["Ps8Hashable", "numberOfSections"]
 - ["Ps8Hashable", "numberOfSectionsInTableView"]
 - !private ["Ps8Hashable", "numberOfTapsRequired"]
@@ -3229,6 +3308,7 @@ depends-member:
 - ["Ps8Hashable", "toGroup"]
 - !private ["Ps8Hashable", "token"]
 - !private ["Ps8Hashable", "top"]
+- !private ["Ps8Hashable", "translatesAutoresizingMaskIntoConstraints"]
 - !private ["Ps8Hashable", "trimmingCharacters"]
 - !private ["Ps8Hashable", "type"]
 - ["Ps8Hashable", "updateFriends"]
@@ -3286,6 +3366,8 @@ depends-member:
 - !private ["P5Ethos17ImageSeekDelegate", "NSEC_PER_SEC"]
 - !private ["P5Ethos17ImageSeekDelegate", "NSFontAttributeName"]
 - !private ["P5Ethos17ImageSeekDelegate", "NSForegroundColorAttributeName"]
+- !private ["P5Ethos17ImageSeekDelegate", "NSLayoutAttribute"]
+- !private ["P5Ethos17ImageSeekDelegate", "NSLayoutConstraint"]
 - !private ["P5Ethos17ImageSeekDelegate", "NSMutableArray"]
 - !private ["P5Ethos17ImageSeekDelegate", "NSNotification"]
 - !private ["P5Ethos17ImageSeekDelegate", "NSPredicate"]
@@ -3297,8 +3379,10 @@ depends-member:
 - !private ["P5Ethos17ImageSeekDelegate", "PostCard"]
 - !private ["P5Ethos17ImageSeekDelegate", "SFSafariViewController"]
 - !private ["P5Ethos17ImageSeekDelegate", "ShowType"]
+- !private ["P5Ethos17ImageSeekDelegate", "SoundView"]
 - !private ["P5Ethos17ImageSeekDelegate", "String"]
 - !private ["P5Ethos17ImageSeekDelegate", "TimeZone"]
+- !private ["P5Ethos17ImageSeekDelegate", "TweetView"]
 - !private ["P5Ethos17ImageSeekDelegate", "UIAlertAction"]
 - !private ["P5Ethos17ImageSeekDelegate", "UIAlertActionStyle"]
 - !private ["P5Ethos17ImageSeekDelegate", "UIAlertController"]
@@ -3531,6 +3615,8 @@ depends-member:
 - !private ["P7Jukebox15JukeboxDelegate", "NSEC_PER_SEC"]
 - !private ["P7Jukebox15JukeboxDelegate", "NSFontAttributeName"]
 - !private ["P7Jukebox15JukeboxDelegate", "NSForegroundColorAttributeName"]
+- !private ["P7Jukebox15JukeboxDelegate", "NSLayoutAttribute"]
+- !private ["P7Jukebox15JukeboxDelegate", "NSLayoutConstraint"]
 - !private ["P7Jukebox15JukeboxDelegate", "NSMutableArray"]
 - !private ["P7Jukebox15JukeboxDelegate", "NSNotification"]
 - !private ["P7Jukebox15JukeboxDelegate", "NSPredicate"]
@@ -3542,8 +3628,10 @@ depends-member:
 - !private ["P7Jukebox15JukeboxDelegate", "PostCard"]
 - !private ["P7Jukebox15JukeboxDelegate", "SFSafariViewController"]
 - !private ["P7Jukebox15JukeboxDelegate", "ShowType"]
+- !private ["P7Jukebox15JukeboxDelegate", "SoundView"]
 - !private ["P7Jukebox15JukeboxDelegate", "String"]
 - !private ["P7Jukebox15JukeboxDelegate", "TimeZone"]
+- !private ["P7Jukebox15JukeboxDelegate", "TweetView"]
 - !private ["P7Jukebox15JukeboxDelegate", "UIAlertAction"]
 - !private ["P7Jukebox15JukeboxDelegate", "UIAlertActionStyle"]
 - !private ["P7Jukebox15JukeboxDelegate", "UIAlertController"]
@@ -3703,6 +3791,7 @@ depends-member:
 - !private ["C5Ethos19LoginViewController", "init"]
 - !private ["Ps25LosslessStringConvertible", "Stride"]
 - !private ["Ps25LosslessStringConvertible", "_getBuiltinLogicValue"]
+- !private ["Ps25LosslessStringConvertible", "append"]
 - !private ["Ps25LosslessStringConvertible", "contains"]
 - ["Ps25LosslessStringConvertible", "init"]
 - !private ["Ps25LosslessStringConvertible", "isEmpty"]
@@ -3722,6 +3811,7 @@ depends-member:
 - !private ["VCSo19NSRegularExpression15MatchingOptions", "Element"]
 - ["VCSo19NSRegularExpression15MatchingOptions", "deinit"]
 - !private ["Ps10MirrorPath", "Stride"]
+- !private ["Ps10MirrorPath", "append"]
 - !private ["Ps10MirrorPath", "contains"]
 - !private ["Ps10MirrorPath", "hashValue"]
 - ["Ps10MirrorPath", "init"]
@@ -3762,6 +3852,8 @@ depends-member:
 - !private ["P5Ethos13MusicDelegate", "NSEC_PER_SEC"]
 - !private ["P5Ethos13MusicDelegate", "NSFontAttributeName"]
 - !private ["P5Ethos13MusicDelegate", "NSForegroundColorAttributeName"]
+- !private ["P5Ethos13MusicDelegate", "NSLayoutAttribute"]
+- !private ["P5Ethos13MusicDelegate", "NSLayoutConstraint"]
 - !private ["P5Ethos13MusicDelegate", "NSMutableArray"]
 - !private ["P5Ethos13MusicDelegate", "NSNotification"]
 - !private ["P5Ethos13MusicDelegate", "NSPredicate"]
@@ -3773,8 +3865,10 @@ depends-member:
 - !private ["P5Ethos13MusicDelegate", "PostCard"]
 - !private ["P5Ethos13MusicDelegate", "SFSafariViewController"]
 - !private ["P5Ethos13MusicDelegate", "ShowType"]
+- !private ["P5Ethos13MusicDelegate", "SoundView"]
 - !private ["P5Ethos13MusicDelegate", "String"]
 - !private ["P5Ethos13MusicDelegate", "TimeZone"]
+- !private ["P5Ethos13MusicDelegate", "TweetView"]
 - !private ["P5Ethos13MusicDelegate", "UIAlertAction"]
 - !private ["P5Ethos13MusicDelegate", "UIAlertActionStyle"]
 - !private ["P5Ethos13MusicDelegate", "UIAlertController"]
@@ -3993,6 +4087,8 @@ depends-member:
 - !private ["PSo8NSCoding", "NSEC_PER_SEC"]
 - !private ["PSo8NSCoding", "NSFontAttributeName"]
 - !private ["PSo8NSCoding", "NSForegroundColorAttributeName"]
+- !private ["PSo8NSCoding", "NSLayoutAttribute"]
+- !private ["PSo8NSCoding", "NSLayoutConstraint"]
 - !private ["PSo8NSCoding", "NSMutableArray"]
 - !private ["PSo8NSCoding", "NSNotification"]
 - !private ["PSo8NSCoding", "NSPredicate"]
@@ -4005,8 +4101,10 @@ depends-member:
 - !private ["PSo8NSCoding", "PostCard"]
 - !private ["PSo8NSCoding", "SFSafariViewController"]
 - !private ["PSo8NSCoding", "ShowType"]
+- !private ["PSo8NSCoding", "SoundView"]
 - !private ["PSo8NSCoding", "String"]
 - !private ["PSo8NSCoding", "TimeZone"]
+- !private ["PSo8NSCoding", "TweetView"]
 - !private ["PSo8NSCoding", "UIAlertAction"]
 - !private ["PSo8NSCoding", "UIAlertActionStyle"]
 - !private ["PSo8NSCoding", "UIAlertController"]
@@ -4049,12 +4147,14 @@ depends-member:
 - !private ["PSo8NSCoding", "add"]
 - !private ["PSo8NSCoding", "addAction"]
 - !private ["PSo8NSCoding", "addArrangedSubview"]
+- !private ["PSo8NSCoding", "addConstraint"]
 - !private ["PSo8NSCoding", "addGestureRecognizer"]
 - !private ["PSo8NSCoding", "addSubview"]
 - !private ["PSo8NSCoding", "addTarget"]
 - !private ["PSo8NSCoding", "addTextField"]
 - !private ["PSo8NSCoding", "alpha"]
 - !private ["PSo8NSCoding", "animate"]
+- !private ["PSo8NSCoding", "append"]
 - !private ["PSo8NSCoding", "arrangedSubviews"]
 - !private ["PSo8NSCoding", "assetType"]
 - ["PSo8NSCoding", "attemptingLoad"]
@@ -4143,9 +4243,11 @@ depends-member:
 - ["PSo8NSCoding", "like"]
 - !private ["PSo8NSCoding", "likesCount"]
 - !private ["PSo8NSCoding", "linkStack"]
+- !private ["PSo8NSCoding", "load"]
 - !private ["PSo8NSCoding", "loadFromNibNamed"]
 - ["PSo8NSCoding", "loadNext"]
 - !private ["PSo8NSCoding", "loadSong"]
+- !private ["PSo8NSCoding", "loadTweet"]
 - !private ["PSo8NSCoding", "loadURL"]
 - !private ["PSo8NSCoding", "loadVideo"]
 - ["PSo8NSCoding", "lookingFrame"]
@@ -4271,6 +4373,7 @@ depends-member:
 - !private ["PSo8NSCoding", "tintColor"]
 - !private ["PSo8NSCoding", "titleTextAttributes"]
 - ["PSo8NSCoding", "toGroup"]
+- !private ["PSo8NSCoding", "translatesAutoresizingMaskIntoConstraints"]
 - !private ["PSo8NSCoding", "trimmingCharacters"]
 - ["PSo8NSCoding", "updateFriends"]
 - ["PSo8NSCoding", "updatePosts"]
@@ -4297,6 +4400,7 @@ depends-member:
 - !private ["PSo9NSCopying", "Iterator"]
 - !private ["PSo9NSCopying", "Name"]
 - !private ["PSo9NSCopying", "add"]
+- !private ["PSo9NSCopying", "append"]
 - !private ["PSo9NSCopying", "black"]
 - !private ["PSo9NSCopying", "boldSystemFont"]
 - !private ["PSo9NSCopying", "cgColor"]
@@ -4364,6 +4468,8 @@ depends-member:
 - !private ["PSo26NSExtensionRequestHandling", "NSEC_PER_SEC"]
 - !private ["PSo26NSExtensionRequestHandling", "NSFontAttributeName"]
 - !private ["PSo26NSExtensionRequestHandling", "NSForegroundColorAttributeName"]
+- !private ["PSo26NSExtensionRequestHandling", "NSLayoutAttribute"]
+- !private ["PSo26NSExtensionRequestHandling", "NSLayoutConstraint"]
 - !private ["PSo26NSExtensionRequestHandling", "NSMutableArray"]
 - !private ["PSo26NSExtensionRequestHandling", "NSNotification"]
 - !private ["PSo26NSExtensionRequestHandling", "NSPredicate"]
@@ -4375,8 +4481,10 @@ depends-member:
 - !private ["PSo26NSExtensionRequestHandling", "PostCard"]
 - !private ["PSo26NSExtensionRequestHandling", "SFSafariViewController"]
 - !private ["PSo26NSExtensionRequestHandling", "ShowType"]
+- !private ["PSo26NSExtensionRequestHandling", "SoundView"]
 - !private ["PSo26NSExtensionRequestHandling", "String"]
 - !private ["PSo26NSExtensionRequestHandling", "TimeZone"]
+- !private ["PSo26NSExtensionRequestHandling", "TweetView"]
 - !private ["PSo26NSExtensionRequestHandling", "UIAlertAction"]
 - !private ["PSo26NSExtensionRequestHandling", "UIAlertActionStyle"]
 - !private ["PSo26NSExtensionRequestHandling", "UIAlertController"]
@@ -4560,6 +4668,13 @@ depends-member:
 - !private ["PSo20NSFetchRequestResult", "object"]
 - ["CSo11NSIndexPath", "deinit"]
 - !private ["CSo11NSIndexPath", "row"]
+- ["OSC17NSLayoutAttribute", "deinit"]
+- !private ["OSC17NSLayoutAttribute", "height"]
+- !private ["OSC17NSLayoutAttribute", "notAnAttribute"]
+- ["CSo18NSLayoutConstraint", "deinit"]
+- !private ["CSo18NSLayoutConstraint", "init"]
+- ["OSC16NSLayoutRelation", "deinit"]
+- !private ["OSC16NSLayoutRelation", "equal"]
 - !private ["CSo14NSMutableArray", "add"]
 - !private ["CSo14NSMutableArray", "count"]
 - ["CSo14NSMutableArray", "deinit"]
@@ -4571,6 +4686,7 @@ depends-member:
 - !private ["PSo16NSMutableCopying", "Base64EncodingOptions"]
 - !private ["PSo16NSMutableCopying", "Iterator"]
 - !private ["PSo16NSMutableCopying", "add"]
+- !private ["PSo16NSMutableCopying", "append"]
 - !private ["PSo16NSMutableCopying", "contains"]
 - !private ["PSo16NSMutableCopying", "count"]
 - ["PSo16NSMutableCopying", "init"]
@@ -4631,6 +4747,8 @@ depends-member:
 - !private ["CSo8NSObject", "NSFontAttributeName"]
 - !private ["CSo8NSObject", "NSForegroundColorAttributeName"]
 - !private ["CSo8NSObject", "NSIndexPath"]
+- !private ["CSo8NSObject", "NSLayoutAttribute"]
+- !private ["CSo8NSObject", "NSLayoutConstraint"]
 - ["CSo8NSObject", "NSMutableArray"]
 - ["CSo8NSObject", "NSNotification"]
 - !private ["CSo8NSObject", "NSPredicate"]
@@ -4645,8 +4763,10 @@ depends-member:
 - ["CSo8NSObject", "PostCard"]
 - !private ["CSo8NSObject", "SFSafariViewController"]
 - ["CSo8NSObject", "ShowType"]
+- !private ["CSo8NSObject", "SoundView"]
 - ["CSo8NSObject", "String"]
 - !private ["CSo8NSObject", "TimeZone"]
+- !private ["CSo8NSObject", "TweetView"]
 - !private ["CSo8NSObject", "UIAlertAction"]
 - !private ["CSo8NSObject", "UIAlertActionStyle"]
 - !private ["CSo8NSObject", "UIAlertController"]
@@ -4699,6 +4819,7 @@ depends-member:
 - !private ["CSo8NSObject", "add"]
 - !private ["CSo8NSObject", "addAction"]
 - !private ["CSo8NSObject", "addArrangedSubview"]
+- !private ["CSo8NSObject", "addConstraint"]
 - !private ["CSo8NSObject", "addGestureRecognizer"]
 - !private ["CSo8NSObject", "addObserver"]
 - !private ["CSo8NSObject", "addSubview"]
@@ -4706,6 +4827,7 @@ depends-member:
 - !private ["CSo8NSObject", "addTextField"]
 - !private ["CSo8NSObject", "alpha"]
 - !private ["CSo8NSObject", "animate"]
+- !private ["CSo8NSObject", "append"]
 - !private ["CSo8NSObject", "arrangedSubviews"]
 - !private ["CSo8NSObject", "assetType"]
 - !private ["CSo8NSObject", "asyncAfter"]
@@ -4819,9 +4941,11 @@ depends-member:
 - !private ["CSo8NSObject", "likeCount"]
 - !private ["CSo8NSObject", "likesCount"]
 - !private ["CSo8NSObject", "linkStack"]
+- !private ["CSo8NSObject", "load"]
 - !private ["CSo8NSObject", "loadFromNibNamed"]
 - ["CSo8NSObject", "loadNext"]
 - !private ["CSo8NSObject", "loadSong"]
+- !private ["CSo8NSObject", "loadTweet"]
 - !private ["CSo8NSObject", "loadURL"]
 - !private ["CSo8NSObject", "loadVideo"]
 - ["CSo8NSObject", "lookingFrame"]
@@ -4962,6 +5086,7 @@ depends-member:
 - !private ["CSo8NSObject", "titleTextAttributes"]
 - ["CSo8NSObject", "toGroup"]
 - !private ["CSo8NSObject", "token"]
+- !private ["CSo8NSObject", "translatesAutoresizingMaskIntoConstraints"]
 - !private ["CSo8NSObject", "trimmingCharacters"]
 - !private ["CSo8NSObject", "type"]
 - ["CSo8NSObject", "updateFriends"]
@@ -5020,6 +5145,8 @@ depends-member:
 - !private ["PSo16NSObjectProtocol", "NSEC_PER_SEC"]
 - !private ["PSo16NSObjectProtocol", "NSFontAttributeName"]
 - !private ["PSo16NSObjectProtocol", "NSForegroundColorAttributeName"]
+- !private ["PSo16NSObjectProtocol", "NSLayoutAttribute"]
+- !private ["PSo16NSObjectProtocol", "NSLayoutConstraint"]
 - !private ["PSo16NSObjectProtocol", "NSMutableArray"]
 - !private ["PSo16NSObjectProtocol", "NSNotification"]
 - !private ["PSo16NSObjectProtocol", "NSPredicate"]
@@ -5032,8 +5159,10 @@ depends-member:
 - !private ["PSo16NSObjectProtocol", "PostCard"]
 - !private ["PSo16NSObjectProtocol", "SFSafariViewController"]
 - !private ["PSo16NSObjectProtocol", "ShowType"]
+- !private ["PSo16NSObjectProtocol", "SoundView"]
 - !private ["PSo16NSObjectProtocol", "String"]
 - !private ["PSo16NSObjectProtocol", "TimeZone"]
+- !private ["PSo16NSObjectProtocol", "TweetView"]
 - !private ["PSo16NSObjectProtocol", "UIAlertAction"]
 - !private ["PSo16NSObjectProtocol", "UIAlertActionStyle"]
 - !private ["PSo16NSObjectProtocol", "UIAlertController"]
@@ -5076,6 +5205,7 @@ depends-member:
 - !private ["PSo16NSObjectProtocol", "add"]
 - !private ["PSo16NSObjectProtocol", "addAction"]
 - !private ["PSo16NSObjectProtocol", "addArrangedSubview"]
+- !private ["PSo16NSObjectProtocol", "addConstraint"]
 - !private ["PSo16NSObjectProtocol", "addGestureRecognizer"]
 - !private ["PSo16NSObjectProtocol", "addObserver"]
 - !private ["PSo16NSObjectProtocol", "addSubview"]
@@ -5083,6 +5213,7 @@ depends-member:
 - !private ["PSo16NSObjectProtocol", "addTextField"]
 - !private ["PSo16NSObjectProtocol", "alpha"]
 - !private ["PSo16NSObjectProtocol", "animate"]
+- !private ["PSo16NSObjectProtocol", "append"]
 - !private ["PSo16NSObjectProtocol", "arrangedSubviews"]
 - !private ["PSo16NSObjectProtocol", "assetType"]
 - !private ["PSo16NSObjectProtocol", "asyncAfter"]
@@ -5195,9 +5326,11 @@ depends-member:
 - !private ["PSo16NSObjectProtocol", "likeCount"]
 - !private ["PSo16NSObjectProtocol", "likesCount"]
 - !private ["PSo16NSObjectProtocol", "linkStack"]
+- !private ["PSo16NSObjectProtocol", "load"]
 - !private ["PSo16NSObjectProtocol", "loadFromNibNamed"]
 - ["PSo16NSObjectProtocol", "loadNext"]
 - !private ["PSo16NSObjectProtocol", "loadSong"]
+- !private ["PSo16NSObjectProtocol", "loadTweet"]
 - !private ["PSo16NSObjectProtocol", "loadURL"]
 - !private ["PSo16NSObjectProtocol", "loadVideo"]
 - ["PSo16NSObjectProtocol", "lookingFrame"]
@@ -5338,6 +5471,7 @@ depends-member:
 - !private ["PSo16NSObjectProtocol", "titleTextAttributes"]
 - ["PSo16NSObjectProtocol", "toGroup"]
 - !private ["PSo16NSObjectProtocol", "token"]
+- !private ["PSo16NSObjectProtocol", "translatesAutoresizingMaskIntoConstraints"]
 - !private ["PSo16NSObjectProtocol", "trimmingCharacters"]
 - !private ["PSo16NSObjectProtocol", "type"]
 - ["PSo16NSObjectProtocol", "updateFriends"]
@@ -5373,6 +5507,7 @@ depends-member:
 - !private ["PSo14NSSecureCoding", "Iterator"]
 - !private ["PSo14NSSecureCoding", "add"]
 - !private ["PSo14NSSecureCoding", "alpha"]
+- !private ["PSo14NSSecureCoding", "append"]
 - !private ["PSo14NSSecureCoding", "black"]
 - !private ["PSo14NSSecureCoding", "cgColor"]
 - !private ["PSo14NSSecureCoding", "contains"]
@@ -5400,6 +5535,7 @@ depends-member:
 - !private ["PSo14NSSecureCoding", "utf16"]
 - !private ["PSo14NSSecureCoding", "white"]
 - !private ["PSo14NSSecureCoding", "withAlphaComponent"]
+- !private ["CSo8NSString", "append"]
 - !private ["CSo8NSString", "contains"]
 - ["CSo8NSString", "deinit"]
 - ["CSo8NSString", "init"]
@@ -5509,7 +5645,9 @@ depends-member:
 - !private ["Ps16RawRepresentable", "delete"]
 - !private ["Ps16RawRepresentable", "destructive"]
 - !private ["Ps16RawRepresentable", "done"]
+- !private ["Ps16RawRepresentable", "equal"]
 - !private ["Ps16RawRepresentable", "get"]
+- !private ["Ps16RawRepresentable", "height"]
 - !private ["Ps16RawRepresentable", "indeterminate"]
 - !private ["Ps16RawRepresentable", "init"]
 - !private ["Ps16RawRepresentable", "lightContent"]
@@ -5518,6 +5656,7 @@ depends-member:
 - !private ["Ps16RawRepresentable", "middle"]
 - !private ["Ps16RawRepresentable", "none"]
 - !private ["Ps16RawRepresentable", "normal"]
+- !private ["Ps16RawRepresentable", "notAnAttribute"]
 - !private ["Ps16RawRepresentable", "plain"]
 - !private ["Ps16RawRepresentable", "post"]
 - !private ["Ps16RawRepresentable", "put"]
@@ -5579,9 +5718,13 @@ depends-member:
 - !private ["Ps12SignedNumber", "Stride"]
 - !private ["Ps12SignedNumber", "hashValue"]
 - !private ["Ps12SignedNumber", "init"]
+- ["C5Ethos9SoundView", "deinit"]
+- !private ["C5Ethos9SoundView", "load"]
+- !private ["C5Ethos9SoundView", "loadFromNibNamed"]
 - !private ["Ps10Strideable", "Stride"]
 - !private ["Ps10Strideable", "hashValue"]
 - !private ["Ps10Strideable", "init"]
+- !private ["SS", "append"]
 - !private ["SS", "contains"]
 - ["SS", "deinit"]
 - ["SS", "init"]
@@ -5593,6 +5736,7 @@ depends-member:
 - !private ["SS", "utf16"]
 - ["OC15URLEmbeddedView16AttributeManager5Style", "deinit"]
 - !private ["OC15URLEmbeddedView16AttributeManager5Style", "description"]
+- !private ["Ps16TextOutputStream", "append"]
 - !private ["Ps16TextOutputStream", "contains"]
 - ["Ps16TextOutputStream", "init"]
 - !private ["Ps16TextOutputStream", "isEmpty"]
@@ -5601,6 +5745,7 @@ depends-member:
 - !private ["Ps16TextOutputStream", "replacingOccurrences"]
 - !private ["Ps16TextOutputStream", "trimmingCharacters"]
 - !private ["Ps16TextOutputStream", "utf16"]
+- !private ["Ps20TextOutputStreamable", "append"]
 - !private ["Ps20TextOutputStreamable", "contains"]
 - ["Ps20TextOutputStreamable", "init"]
 - !private ["Ps20TextOutputStreamable", "isEmpty"]
@@ -5610,7 +5755,11 @@ depends-member:
 - !private ["Ps20TextOutputStreamable", "trimmingCharacters"]
 - !private ["Ps20TextOutputStreamable", "utf16"]
 - !private ["V10Foundation8TimeZone", "init"]
+- ["C5Ethos9TweetView", "deinit"]
+- !private ["C5Ethos9TweetView", "loadFromNibNamed"]
+- !private ["C5Ethos9TweetView", "loadTweet"]
 - !private ["PSo29UIAccessibilityIdentification", "addArrangedSubview"]
+- !private ["PSo29UIAccessibilityIdentification", "addConstraint"]
 - !private ["PSo29UIAccessibilityIdentification", "addGestureRecognizer"]
 - !private ["PSo29UIAccessibilityIdentification", "addSubview"]
 - !private ["PSo29UIAccessibilityIdentification", "addTarget"]
@@ -5655,8 +5804,10 @@ depends-member:
 - !private ["PSo29UIAccessibilityIdentification", "like"]
 - !private ["PSo29UIAccessibilityIdentification", "likesCount"]
 - !private ["PSo29UIAccessibilityIdentification", "linkStack"]
+- !private ["PSo29UIAccessibilityIdentification", "load"]
 - !private ["PSo29UIAccessibilityIdentification", "loadFromNibNamed"]
 - !private ["PSo29UIAccessibilityIdentification", "loadSong"]
+- !private ["PSo29UIAccessibilityIdentification", "loadTweet"]
 - !private ["PSo29UIAccessibilityIdentification", "loadURL"]
 - !private ["PSo29UIAccessibilityIdentification", "loadVideo"]
 - !private ["PSo29UIAccessibilityIdentification", "options"]
@@ -5692,6 +5843,7 @@ depends-member:
 - !private ["PSo29UIAccessibilityIdentification", "textView"]
 - !private ["PSo29UIAccessibilityIdentification", "tintColor"]
 - !private ["PSo29UIAccessibilityIdentification", "titleTextAttributes"]
+- !private ["PSo29UIAccessibilityIdentification", "translatesAutoresizingMaskIntoConstraints"]
 - !private ["PSo29UIAccessibilityIdentification", "userImage"]
 - ["CSo13UIAlertAction", "deinit"]
 - !private ["CSo13UIAlertAction", "init"]
@@ -5708,6 +5860,7 @@ depends-member:
 - !private ["OSC22UIAlertControllerStyle", "alert"]
 - ["OSC22UIAlertControllerStyle", "deinit"]
 - !private ["PSo12UIAppearance", "addArrangedSubview"]
+- !private ["PSo12UIAppearance", "addConstraint"]
 - !private ["PSo12UIAppearance", "addGestureRecognizer"]
 - !private ["PSo12UIAppearance", "addSubview"]
 - !private ["PSo12UIAppearance", "addTarget"]
@@ -5752,8 +5905,10 @@ depends-member:
 - !private ["PSo12UIAppearance", "like"]
 - !private ["PSo12UIAppearance", "likesCount"]
 - !private ["PSo12UIAppearance", "linkStack"]
+- !private ["PSo12UIAppearance", "load"]
 - !private ["PSo12UIAppearance", "loadFromNibNamed"]
 - !private ["PSo12UIAppearance", "loadSong"]
+- !private ["PSo12UIAppearance", "loadTweet"]
 - !private ["PSo12UIAppearance", "loadURL"]
 - !private ["PSo12UIAppearance", "loadVideo"]
 - !private ["PSo12UIAppearance", "options"]
@@ -5789,6 +5944,7 @@ depends-member:
 - !private ["PSo12UIAppearance", "textView"]
 - !private ["PSo12UIAppearance", "tintColor"]
 - !private ["PSo12UIAppearance", "titleTextAttributes"]
+- !private ["PSo12UIAppearance", "translatesAutoresizingMaskIntoConstraints"]
 - !private ["PSo12UIAppearance", "userImage"]
 - !private ["PSo21UIAppearanceContainer", "Alamofire"]
 - !private ["PSo21UIAppearanceContainer", "CGRect"]
@@ -5821,6 +5977,8 @@ depends-member:
 - !private ["PSo21UIAppearanceContainer", "NSEC_PER_SEC"]
 - !private ["PSo21UIAppearanceContainer", "NSFontAttributeName"]
 - !private ["PSo21UIAppearanceContainer", "NSForegroundColorAttributeName"]
+- !private ["PSo21UIAppearanceContainer", "NSLayoutAttribute"]
+- !private ["PSo21UIAppearanceContainer", "NSLayoutConstraint"]
 - !private ["PSo21UIAppearanceContainer", "NSMutableArray"]
 - !private ["PSo21UIAppearanceContainer", "NSNotification"]
 - !private ["PSo21UIAppearanceContainer", "NSPredicate"]
@@ -5832,8 +5990,10 @@ depends-member:
 - !private ["PSo21UIAppearanceContainer", "PostCard"]
 - !private ["PSo21UIAppearanceContainer", "SFSafariViewController"]
 - !private ["PSo21UIAppearanceContainer", "ShowType"]
+- !private ["PSo21UIAppearanceContainer", "SoundView"]
 - !private ["PSo21UIAppearanceContainer", "String"]
 - !private ["PSo21UIAppearanceContainer", "TimeZone"]
+- !private ["PSo21UIAppearanceContainer", "TweetView"]
 - !private ["PSo21UIAppearanceContainer", "UIAlertAction"]
 - !private ["PSo21UIAppearanceContainer", "UIAlertActionStyle"]
 - !private ["PSo21UIAppearanceContainer", "UIAlertController"]
@@ -5875,6 +6035,7 @@ depends-member:
 - !private ["PSo21UIAppearanceContainer", "VideoView"]
 - !private ["PSo21UIAppearanceContainer", "addAction"]
 - !private ["PSo21UIAppearanceContainer", "addArrangedSubview"]
+- !private ["PSo21UIAppearanceContainer", "addConstraint"]
 - !private ["PSo21UIAppearanceContainer", "addGestureRecognizer"]
 - !private ["PSo21UIAppearanceContainer", "addSubview"]
 - !private ["PSo21UIAppearanceContainer", "addTarget"]
@@ -5954,9 +6115,11 @@ depends-member:
 - ["PSo21UIAppearanceContainer", "like"]
 - !private ["PSo21UIAppearanceContainer", "likesCount"]
 - !private ["PSo21UIAppearanceContainer", "linkStack"]
+- !private ["PSo21UIAppearanceContainer", "load"]
 - !private ["PSo21UIAppearanceContainer", "loadFromNibNamed"]
 - ["PSo21UIAppearanceContainer", "loadNext"]
 - !private ["PSo21UIAppearanceContainer", "loadSong"]
+- !private ["PSo21UIAppearanceContainer", "loadTweet"]
 - !private ["PSo21UIAppearanceContainer", "loadURL"]
 - !private ["PSo21UIAppearanceContainer", "loadVideo"]
 - ["PSo21UIAppearanceContainer", "lookingFrame"]
@@ -6068,6 +6231,7 @@ depends-member:
 - !private ["PSo21UIAppearanceContainer", "tintColor"]
 - !private ["PSo21UIAppearanceContainer", "titleTextAttributes"]
 - ["PSo21UIAppearanceContainer", "toGroup"]
+- !private ["PSo21UIAppearanceContainer", "translatesAutoresizingMaskIntoConstraints"]
 - ["PSo21UIAppearanceContainer", "updateFriends"]
 - ["PSo21UIAppearanceContainer", "updatePosts"]
 - ["PSo21UIAppearanceContainer", "uplaodImage"]
@@ -6151,6 +6315,8 @@ depends-member:
 - !private ["PSo18UIContentContainer", "NSEC_PER_SEC"]
 - !private ["PSo18UIContentContainer", "NSFontAttributeName"]
 - !private ["PSo18UIContentContainer", "NSForegroundColorAttributeName"]
+- !private ["PSo18UIContentContainer", "NSLayoutAttribute"]
+- !private ["PSo18UIContentContainer", "NSLayoutConstraint"]
 - !private ["PSo18UIContentContainer", "NSMutableArray"]
 - !private ["PSo18UIContentContainer", "NSNotification"]
 - !private ["PSo18UIContentContainer", "NSPredicate"]
@@ -6162,8 +6328,10 @@ depends-member:
 - !private ["PSo18UIContentContainer", "PostCard"]
 - !private ["PSo18UIContentContainer", "SFSafariViewController"]
 - !private ["PSo18UIContentContainer", "ShowType"]
+- !private ["PSo18UIContentContainer", "SoundView"]
 - !private ["PSo18UIContentContainer", "String"]
 - !private ["PSo18UIContentContainer", "TimeZone"]
+- !private ["PSo18UIContentContainer", "TweetView"]
 - !private ["PSo18UIContentContainer", "UIAlertAction"]
 - !private ["PSo18UIContentContainer", "UIAlertActionStyle"]
 - !private ["PSo18UIContentContainer", "UIAlertController"]
@@ -6365,6 +6533,7 @@ depends-member:
 - !private ["VSC14UIControlState", "init"]
 - !private ["VSC14UIControlState", "normal"]
 - !private ["PSo17UICoordinateSpace", "addArrangedSubview"]
+- !private ["PSo17UICoordinateSpace", "addConstraint"]
 - !private ["PSo17UICoordinateSpace", "addGestureRecognizer"]
 - !private ["PSo17UICoordinateSpace", "addSubview"]
 - !private ["PSo17UICoordinateSpace", "addTarget"]
@@ -6409,8 +6578,10 @@ depends-member:
 - !private ["PSo17UICoordinateSpace", "like"]
 - !private ["PSo17UICoordinateSpace", "likesCount"]
 - !private ["PSo17UICoordinateSpace", "linkStack"]
+- !private ["PSo17UICoordinateSpace", "load"]
 - !private ["PSo17UICoordinateSpace", "loadFromNibNamed"]
 - !private ["PSo17UICoordinateSpace", "loadSong"]
+- !private ["PSo17UICoordinateSpace", "loadTweet"]
 - !private ["PSo17UICoordinateSpace", "loadURL"]
 - !private ["PSo17UICoordinateSpace", "loadVideo"]
 - !private ["PSo17UICoordinateSpace", "options"]
@@ -6446,8 +6617,10 @@ depends-member:
 - !private ["PSo17UICoordinateSpace", "textView"]
 - !private ["PSo17UICoordinateSpace", "tintColor"]
 - !private ["PSo17UICoordinateSpace", "titleTextAttributes"]
+- !private ["PSo17UICoordinateSpace", "translatesAutoresizingMaskIntoConstraints"]
 - !private ["PSo17UICoordinateSpace", "userImage"]
 - !private ["PSo13UIDynamicItem", "addArrangedSubview"]
+- !private ["PSo13UIDynamicItem", "addConstraint"]
 - !private ["PSo13UIDynamicItem", "addGestureRecognizer"]
 - !private ["PSo13UIDynamicItem", "addSubview"]
 - !private ["PSo13UIDynamicItem", "addTarget"]
@@ -6492,8 +6665,10 @@ depends-member:
 - !private ["PSo13UIDynamicItem", "like"]
 - !private ["PSo13UIDynamicItem", "likesCount"]
 - !private ["PSo13UIDynamicItem", "linkStack"]
+- !private ["PSo13UIDynamicItem", "load"]
 - !private ["PSo13UIDynamicItem", "loadFromNibNamed"]
 - !private ["PSo13UIDynamicItem", "loadSong"]
+- !private ["PSo13UIDynamicItem", "loadTweet"]
 - !private ["PSo13UIDynamicItem", "loadURL"]
 - !private ["PSo13UIDynamicItem", "loadVideo"]
 - !private ["PSo13UIDynamicItem", "options"]
@@ -6529,6 +6704,7 @@ depends-member:
 - !private ["PSo13UIDynamicItem", "textView"]
 - !private ["PSo13UIDynamicItem", "tintColor"]
 - !private ["PSo13UIDynamicItem", "titleTextAttributes"]
+- !private ["PSo13UIDynamicItem", "translatesAutoresizingMaskIntoConstraints"]
 - !private ["PSo13UIDynamicItem", "userImage"]
 - !private ["PSo18UIFocusEnvironment", "Alamofire"]
 - !private ["PSo18UIFocusEnvironment", "CGRect"]
@@ -6561,6 +6737,8 @@ depends-member:
 - !private ["PSo18UIFocusEnvironment", "NSEC_PER_SEC"]
 - !private ["PSo18UIFocusEnvironment", "NSFontAttributeName"]
 - !private ["PSo18UIFocusEnvironment", "NSForegroundColorAttributeName"]
+- !private ["PSo18UIFocusEnvironment", "NSLayoutAttribute"]
+- !private ["PSo18UIFocusEnvironment", "NSLayoutConstraint"]
 - !private ["PSo18UIFocusEnvironment", "NSMutableArray"]
 - !private ["PSo18UIFocusEnvironment", "NSNotification"]
 - !private ["PSo18UIFocusEnvironment", "NSPredicate"]
@@ -6572,8 +6750,10 @@ depends-member:
 - !private ["PSo18UIFocusEnvironment", "PostCard"]
 - !private ["PSo18UIFocusEnvironment", "SFSafariViewController"]
 - !private ["PSo18UIFocusEnvironment", "ShowType"]
+- !private ["PSo18UIFocusEnvironment", "SoundView"]
 - !private ["PSo18UIFocusEnvironment", "String"]
 - !private ["PSo18UIFocusEnvironment", "TimeZone"]
+- !private ["PSo18UIFocusEnvironment", "TweetView"]
 - !private ["PSo18UIFocusEnvironment", "UIAlertAction"]
 - !private ["PSo18UIFocusEnvironment", "UIAlertActionStyle"]
 - !private ["PSo18UIFocusEnvironment", "UIAlertController"]
@@ -6615,6 +6795,7 @@ depends-member:
 - !private ["PSo18UIFocusEnvironment", "VideoView"]
 - !private ["PSo18UIFocusEnvironment", "addAction"]
 - !private ["PSo18UIFocusEnvironment", "addArrangedSubview"]
+- !private ["PSo18UIFocusEnvironment", "addConstraint"]
 - !private ["PSo18UIFocusEnvironment", "addGestureRecognizer"]
 - !private ["PSo18UIFocusEnvironment", "addSubview"]
 - !private ["PSo18UIFocusEnvironment", "addTarget"]
@@ -6694,9 +6875,11 @@ depends-member:
 - ["PSo18UIFocusEnvironment", "like"]
 - !private ["PSo18UIFocusEnvironment", "likesCount"]
 - !private ["PSo18UIFocusEnvironment", "linkStack"]
+- !private ["PSo18UIFocusEnvironment", "load"]
 - !private ["PSo18UIFocusEnvironment", "loadFromNibNamed"]
 - ["PSo18UIFocusEnvironment", "loadNext"]
 - !private ["PSo18UIFocusEnvironment", "loadSong"]
+- !private ["PSo18UIFocusEnvironment", "loadTweet"]
 - !private ["PSo18UIFocusEnvironment", "loadURL"]
 - !private ["PSo18UIFocusEnvironment", "loadVideo"]
 - ["PSo18UIFocusEnvironment", "lookingFrame"]
@@ -6808,6 +6991,7 @@ depends-member:
 - !private ["PSo18UIFocusEnvironment", "tintColor"]
 - !private ["PSo18UIFocusEnvironment", "titleTextAttributes"]
 - ["PSo18UIFocusEnvironment", "toGroup"]
+- !private ["PSo18UIFocusEnvironment", "translatesAutoresizingMaskIntoConstraints"]
 - ["PSo18UIFocusEnvironment", "updateFriends"]
 - ["PSo18UIFocusEnvironment", "updatePosts"]
 - ["PSo18UIFocusEnvironment", "uplaodImage"]
@@ -6825,6 +7009,7 @@ depends-member:
 - ["PSo18UIFocusEnvironment", "zoomModalPic"]
 - ["PSo18UIFocusEnvironment", ""]
 - !private ["PSo11UIFocusItem", "addArrangedSubview"]
+- !private ["PSo11UIFocusItem", "addConstraint"]
 - !private ["PSo11UIFocusItem", "addGestureRecognizer"]
 - !private ["PSo11UIFocusItem", "addSubview"]
 - !private ["PSo11UIFocusItem", "addTarget"]
@@ -6869,8 +7054,10 @@ depends-member:
 - !private ["PSo11UIFocusItem", "like"]
 - !private ["PSo11UIFocusItem", "likesCount"]
 - !private ["PSo11UIFocusItem", "linkStack"]
+- !private ["PSo11UIFocusItem", "load"]
 - !private ["PSo11UIFocusItem", "loadFromNibNamed"]
 - !private ["PSo11UIFocusItem", "loadSong"]
+- !private ["PSo11UIFocusItem", "loadTweet"]
 - !private ["PSo11UIFocusItem", "loadURL"]
 - !private ["PSo11UIFocusItem", "loadVideo"]
 - !private ["PSo11UIFocusItem", "options"]
@@ -6906,6 +7093,7 @@ depends-member:
 - !private ["PSo11UIFocusItem", "textView"]
 - !private ["PSo11UIFocusItem", "tintColor"]
 - !private ["PSo11UIFocusItem", "titleTextAttributes"]
+- !private ["PSo11UIFocusItem", "translatesAutoresizingMaskIntoConstraints"]
 - !private ["PSo11UIFocusItem", "userImage"]
 - !private ["CSo6UIFont", "boldSystemFont"]
 - ["CSo6UIFont", "deinit"]
@@ -6950,6 +7138,8 @@ depends-member:
 - !private ["PSo27UIGestureRecognizerDelegate", "NSEC_PER_SEC"]
 - !private ["PSo27UIGestureRecognizerDelegate", "NSFontAttributeName"]
 - !private ["PSo27UIGestureRecognizerDelegate", "NSForegroundColorAttributeName"]
+- !private ["PSo27UIGestureRecognizerDelegate", "NSLayoutAttribute"]
+- !private ["PSo27UIGestureRecognizerDelegate", "NSLayoutConstraint"]
 - !private ["PSo27UIGestureRecognizerDelegate", "NSMutableArray"]
 - !private ["PSo27UIGestureRecognizerDelegate", "NSNotification"]
 - !private ["PSo27UIGestureRecognizerDelegate", "NSPredicate"]
@@ -6961,8 +7151,10 @@ depends-member:
 - !private ["PSo27UIGestureRecognizerDelegate", "PostCard"]
 - !private ["PSo27UIGestureRecognizerDelegate", "SFSafariViewController"]
 - !private ["PSo27UIGestureRecognizerDelegate", "ShowType"]
+- !private ["PSo27UIGestureRecognizerDelegate", "SoundView"]
 - !private ["PSo27UIGestureRecognizerDelegate", "String"]
 - !private ["PSo27UIGestureRecognizerDelegate", "TimeZone"]
+- !private ["PSo27UIGestureRecognizerDelegate", "TweetView"]
 - !private ["PSo27UIGestureRecognizerDelegate", "UIAlertAction"]
 - !private ["PSo27UIGestureRecognizerDelegate", "UIAlertActionStyle"]
 - !private ["PSo27UIGestureRecognizerDelegate", "UIAlertController"]
@@ -7163,6 +7355,8 @@ depends-member:
 - !private ["PSo31UIImagePickerControllerDelegate", "NSEC_PER_SEC"]
 - !private ["PSo31UIImagePickerControllerDelegate", "NSFontAttributeName"]
 - !private ["PSo31UIImagePickerControllerDelegate", "NSForegroundColorAttributeName"]
+- !private ["PSo31UIImagePickerControllerDelegate", "NSLayoutAttribute"]
+- !private ["PSo31UIImagePickerControllerDelegate", "NSLayoutConstraint"]
 - !private ["PSo31UIImagePickerControllerDelegate", "NSMutableArray"]
 - !private ["PSo31UIImagePickerControllerDelegate", "NSNotification"]
 - !private ["PSo31UIImagePickerControllerDelegate", "NSPredicate"]
@@ -7174,8 +7368,10 @@ depends-member:
 - !private ["PSo31UIImagePickerControllerDelegate", "PostCard"]
 - !private ["PSo31UIImagePickerControllerDelegate", "SFSafariViewController"]
 - !private ["PSo31UIImagePickerControllerDelegate", "ShowType"]
+- !private ["PSo31UIImagePickerControllerDelegate", "SoundView"]
 - !private ["PSo31UIImagePickerControllerDelegate", "String"]
 - !private ["PSo31UIImagePickerControllerDelegate", "TimeZone"]
+- !private ["PSo31UIImagePickerControllerDelegate", "TweetView"]
 - !private ["PSo31UIImagePickerControllerDelegate", "UIAlertAction"]
 - !private ["PSo31UIImagePickerControllerDelegate", "UIAlertActionStyle"]
 - !private ["PSo31UIImagePickerControllerDelegate", "UIAlertController"]
@@ -7402,6 +7598,8 @@ depends-member:
 - !private ["PSo30UINavigationControllerDelegate", "NSEC_PER_SEC"]
 - !private ["PSo30UINavigationControllerDelegate", "NSFontAttributeName"]
 - !private ["PSo30UINavigationControllerDelegate", "NSForegroundColorAttributeName"]
+- !private ["PSo30UINavigationControllerDelegate", "NSLayoutAttribute"]
+- !private ["PSo30UINavigationControllerDelegate", "NSLayoutConstraint"]
 - !private ["PSo30UINavigationControllerDelegate", "NSMutableArray"]
 - !private ["PSo30UINavigationControllerDelegate", "NSNotification"]
 - !private ["PSo30UINavigationControllerDelegate", "NSPredicate"]
@@ -7413,8 +7611,10 @@ depends-member:
 - !private ["PSo30UINavigationControllerDelegate", "PostCard"]
 - !private ["PSo30UINavigationControllerDelegate", "SFSafariViewController"]
 - !private ["PSo30UINavigationControllerDelegate", "ShowType"]
+- !private ["PSo30UINavigationControllerDelegate", "SoundView"]
 - !private ["PSo30UINavigationControllerDelegate", "String"]
 - !private ["PSo30UINavigationControllerDelegate", "TimeZone"]
+- !private ["PSo30UINavigationControllerDelegate", "TweetView"]
 - !private ["PSo30UINavigationControllerDelegate", "UIAlertAction"]
 - !private ["PSo30UINavigationControllerDelegate", "UIAlertActionStyle"]
 - !private ["PSo30UINavigationControllerDelegate", "UIAlertController"]
@@ -7619,6 +7819,8 @@ depends-member:
 - !private ["CSo11UIResponder", "NSFontAttributeName"]
 - !private ["CSo11UIResponder", "NSForegroundColorAttributeName"]
 - !private ["CSo11UIResponder", "NSIndexPath"]
+- !private ["CSo11UIResponder", "NSLayoutAttribute"]
+- !private ["CSo11UIResponder", "NSLayoutConstraint"]
 - ["CSo11UIResponder", "NSMutableArray"]
 - ["CSo11UIResponder", "NSNotification"]
 - !private ["CSo11UIResponder", "NSPredicate"]
@@ -7632,8 +7834,10 @@ depends-member:
 - ["CSo11UIResponder", "PostCard"]
 - !private ["CSo11UIResponder", "SFSafariViewController"]
 - ["CSo11UIResponder", "ShowType"]
+- !private ["CSo11UIResponder", "SoundView"]
 - ["CSo11UIResponder", "String"]
 - !private ["CSo11UIResponder", "TimeZone"]
+- !private ["CSo11UIResponder", "TweetView"]
 - !private ["CSo11UIResponder", "UIAlertAction"]
 - !private ["CSo11UIResponder", "UIAlertActionStyle"]
 - !private ["CSo11UIResponder", "UIAlertController"]
@@ -7685,6 +7889,7 @@ depends-member:
 - !private ["CSo11UIResponder", "Void"]
 - !private ["CSo11UIResponder", "addAction"]
 - !private ["CSo11UIResponder", "addArrangedSubview"]
+- !private ["CSo11UIResponder", "addConstraint"]
 - !private ["CSo11UIResponder", "addGestureRecognizer"]
 - !private ["CSo11UIResponder", "addSubview"]
 - !private ["CSo11UIResponder", "addTarget"]
@@ -7765,9 +7970,11 @@ depends-member:
 - ["CSo11UIResponder", "like"]
 - !private ["CSo11UIResponder", "likesCount"]
 - !private ["CSo11UIResponder", "linkStack"]
+- !private ["CSo11UIResponder", "load"]
 - !private ["CSo11UIResponder", "loadFromNibNamed"]
 - ["CSo11UIResponder", "loadNext"]
 - !private ["CSo11UIResponder", "loadSong"]
+- !private ["CSo11UIResponder", "loadTweet"]
 - !private ["CSo11UIResponder", "loadURL"]
 - !private ["CSo11UIResponder", "loadVideo"]
 - ["CSo11UIResponder", "lookingFrame"]
@@ -7880,6 +8087,7 @@ depends-member:
 - !private ["CSo11UIResponder", "tintColor"]
 - !private ["CSo11UIResponder", "titleTextAttributes"]
 - ["CSo11UIResponder", "toGroup"]
+- !private ["CSo11UIResponder", "translatesAutoresizingMaskIntoConstraints"]
 - ["CSo11UIResponder", "updateFriends"]
 - ["CSo11UIResponder", "updatePosts"]
 - ["CSo11UIResponder", "uplaodImage"]
@@ -7926,6 +8134,8 @@ depends-member:
 - !private ["PSo30UIResponderStandardEditActions", "NSEC_PER_SEC"]
 - !private ["PSo30UIResponderStandardEditActions", "NSFontAttributeName"]
 - !private ["PSo30UIResponderStandardEditActions", "NSForegroundColorAttributeName"]
+- !private ["PSo30UIResponderStandardEditActions", "NSLayoutAttribute"]
+- !private ["PSo30UIResponderStandardEditActions", "NSLayoutConstraint"]
 - !private ["PSo30UIResponderStandardEditActions", "NSMutableArray"]
 - !private ["PSo30UIResponderStandardEditActions", "NSNotification"]
 - !private ["PSo30UIResponderStandardEditActions", "NSPredicate"]
@@ -7937,8 +8147,10 @@ depends-member:
 - !private ["PSo30UIResponderStandardEditActions", "PostCard"]
 - !private ["PSo30UIResponderStandardEditActions", "SFSafariViewController"]
 - !private ["PSo30UIResponderStandardEditActions", "ShowType"]
+- !private ["PSo30UIResponderStandardEditActions", "SoundView"]
 - !private ["PSo30UIResponderStandardEditActions", "String"]
 - !private ["PSo30UIResponderStandardEditActions", "TimeZone"]
+- !private ["PSo30UIResponderStandardEditActions", "TweetView"]
 - !private ["PSo30UIResponderStandardEditActions", "UIAlertAction"]
 - !private ["PSo30UIResponderStandardEditActions", "UIAlertActionStyle"]
 - !private ["PSo30UIResponderStandardEditActions", "UIAlertController"]
@@ -7980,6 +8192,7 @@ depends-member:
 - !private ["PSo30UIResponderStandardEditActions", "VideoView"]
 - !private ["PSo30UIResponderStandardEditActions", "addAction"]
 - !private ["PSo30UIResponderStandardEditActions", "addArrangedSubview"]
+- !private ["PSo30UIResponderStandardEditActions", "addConstraint"]
 - !private ["PSo30UIResponderStandardEditActions", "addGestureRecognizer"]
 - !private ["PSo30UIResponderStandardEditActions", "addSubview"]
 - !private ["PSo30UIResponderStandardEditActions", "addTarget"]
@@ -8060,9 +8273,11 @@ depends-member:
 - ["PSo30UIResponderStandardEditActions", "like"]
 - !private ["PSo30UIResponderStandardEditActions", "likesCount"]
 - !private ["PSo30UIResponderStandardEditActions", "linkStack"]
+- !private ["PSo30UIResponderStandardEditActions", "load"]
 - !private ["PSo30UIResponderStandardEditActions", "loadFromNibNamed"]
 - ["PSo30UIResponderStandardEditActions", "loadNext"]
 - !private ["PSo30UIResponderStandardEditActions", "loadSong"]
+- !private ["PSo30UIResponderStandardEditActions", "loadTweet"]
 - !private ["PSo30UIResponderStandardEditActions", "loadURL"]
 - !private ["PSo30UIResponderStandardEditActions", "loadVideo"]
 - ["PSo30UIResponderStandardEditActions", "lookingFrame"]
@@ -8175,6 +8390,7 @@ depends-member:
 - !private ["PSo30UIResponderStandardEditActions", "tintColor"]
 - !private ["PSo30UIResponderStandardEditActions", "titleTextAttributes"]
 - ["PSo30UIResponderStandardEditActions", "toGroup"]
+- !private ["PSo30UIResponderStandardEditActions", "translatesAutoresizingMaskIntoConstraints"]
 - ["PSo30UIResponderStandardEditActions", "updateFriends"]
 - ["PSo30UIResponderStandardEditActions", "updatePosts"]
 - ["PSo30UIResponderStandardEditActions", "uplaodImage"]
@@ -8249,6 +8465,8 @@ depends-member:
 - !private ["PSo20UIScrollViewDelegate", "NSEC_PER_SEC"]
 - !private ["PSo20UIScrollViewDelegate", "NSFontAttributeName"]
 - !private ["PSo20UIScrollViewDelegate", "NSForegroundColorAttributeName"]
+- !private ["PSo20UIScrollViewDelegate", "NSLayoutAttribute"]
+- !private ["PSo20UIScrollViewDelegate", "NSLayoutConstraint"]
 - !private ["PSo20UIScrollViewDelegate", "NSMutableArray"]
 - !private ["PSo20UIScrollViewDelegate", "NSNotification"]
 - !private ["PSo20UIScrollViewDelegate", "NSPredicate"]
@@ -8260,8 +8478,10 @@ depends-member:
 - !private ["PSo20UIScrollViewDelegate", "PostCard"]
 - !private ["PSo20UIScrollViewDelegate", "SFSafariViewController"]
 - !private ["PSo20UIScrollViewDelegate", "ShowType"]
+- !private ["PSo20UIScrollViewDelegate", "SoundView"]
 - !private ["PSo20UIScrollViewDelegate", "String"]
 - !private ["PSo20UIScrollViewDelegate", "TimeZone"]
+- !private ["PSo20UIScrollViewDelegate", "TweetView"]
 - !private ["PSo20UIScrollViewDelegate", "UIAlertAction"]
 - !private ["PSo20UIScrollViewDelegate", "UIAlertActionStyle"]
 - !private ["PSo20UIScrollViewDelegate", "UIAlertController"]
@@ -8446,6 +8666,8 @@ depends-member:
 - !private ["PSo16UIStateRestoring", "NSEC_PER_SEC"]
 - !private ["PSo16UIStateRestoring", "NSFontAttributeName"]
 - !private ["PSo16UIStateRestoring", "NSForegroundColorAttributeName"]
+- !private ["PSo16UIStateRestoring", "NSLayoutAttribute"]
+- !private ["PSo16UIStateRestoring", "NSLayoutConstraint"]
 - !private ["PSo16UIStateRestoring", "NSMutableArray"]
 - !private ["PSo16UIStateRestoring", "NSNotification"]
 - !private ["PSo16UIStateRestoring", "NSPredicate"]
@@ -8457,8 +8679,10 @@ depends-member:
 - !private ["PSo16UIStateRestoring", "PostCard"]
 - !private ["PSo16UIStateRestoring", "SFSafariViewController"]
 - !private ["PSo16UIStateRestoring", "ShowType"]
+- !private ["PSo16UIStateRestoring", "SoundView"]
 - !private ["PSo16UIStateRestoring", "String"]
 - !private ["PSo16UIStateRestoring", "TimeZone"]
+- !private ["PSo16UIStateRestoring", "TweetView"]
 - !private ["PSo16UIStateRestoring", "UIAlertAction"]
 - !private ["PSo16UIStateRestoring", "UIAlertActionStyle"]
 - !private ["PSo16UIStateRestoring", "UIAlertController"]
@@ -8668,6 +8892,8 @@ depends-member:
 - !private ["PSo26UITabBarControllerDelegate", "NSEC_PER_SEC"]
 - !private ["PSo26UITabBarControllerDelegate", "NSFontAttributeName"]
 - !private ["PSo26UITabBarControllerDelegate", "NSForegroundColorAttributeName"]
+- !private ["PSo26UITabBarControllerDelegate", "NSLayoutAttribute"]
+- !private ["PSo26UITabBarControllerDelegate", "NSLayoutConstraint"]
 - !private ["PSo26UITabBarControllerDelegate", "NSMutableArray"]
 - !private ["PSo26UITabBarControllerDelegate", "NSNotification"]
 - !private ["PSo26UITabBarControllerDelegate", "NSPredicate"]
@@ -8679,8 +8905,10 @@ depends-member:
 - !private ["PSo26UITabBarControllerDelegate", "PostCard"]
 - !private ["PSo26UITabBarControllerDelegate", "SFSafariViewController"]
 - !private ["PSo26UITabBarControllerDelegate", "ShowType"]
+- !private ["PSo26UITabBarControllerDelegate", "SoundView"]
 - !private ["PSo26UITabBarControllerDelegate", "String"]
 - !private ["PSo26UITabBarControllerDelegate", "TimeZone"]
+- !private ["PSo26UITabBarControllerDelegate", "TweetView"]
 - !private ["PSo26UITabBarControllerDelegate", "UIAlertAction"]
 - !private ["PSo26UITabBarControllerDelegate", "UIAlertActionStyle"]
 - !private ["PSo26UITabBarControllerDelegate", "UIAlertController"]
@@ -8903,6 +9131,8 @@ depends-member:
 - !private ["PSo21UITableViewDataSource", "NSEC_PER_SEC"]
 - !private ["PSo21UITableViewDataSource", "NSFontAttributeName"]
 - !private ["PSo21UITableViewDataSource", "NSForegroundColorAttributeName"]
+- !private ["PSo21UITableViewDataSource", "NSLayoutAttribute"]
+- !private ["PSo21UITableViewDataSource", "NSLayoutConstraint"]
 - !private ["PSo21UITableViewDataSource", "NSMutableArray"]
 - !private ["PSo21UITableViewDataSource", "NSNotification"]
 - !private ["PSo21UITableViewDataSource", "NSPredicate"]
@@ -8914,8 +9144,10 @@ depends-member:
 - !private ["PSo21UITableViewDataSource", "PostCard"]
 - !private ["PSo21UITableViewDataSource", "SFSafariViewController"]
 - !private ["PSo21UITableViewDataSource", "ShowType"]
+- !private ["PSo21UITableViewDataSource", "SoundView"]
 - !private ["PSo21UITableViewDataSource", "String"]
 - !private ["PSo21UITableViewDataSource", "TimeZone"]
+- !private ["PSo21UITableViewDataSource", "TweetView"]
 - !private ["PSo21UITableViewDataSource", "UIAlertAction"]
 - !private ["PSo21UITableViewDataSource", "UIAlertActionStyle"]
 - !private ["PSo21UITableViewDataSource", "UIAlertController"]
@@ -9095,6 +9327,8 @@ depends-member:
 - !private ["PSo19UITableViewDelegate", "NSEC_PER_SEC"]
 - !private ["PSo19UITableViewDelegate", "NSFontAttributeName"]
 - !private ["PSo19UITableViewDelegate", "NSForegroundColorAttributeName"]
+- !private ["PSo19UITableViewDelegate", "NSLayoutAttribute"]
+- !private ["PSo19UITableViewDelegate", "NSLayoutConstraint"]
 - !private ["PSo19UITableViewDelegate", "NSMutableArray"]
 - !private ["PSo19UITableViewDelegate", "NSNotification"]
 - !private ["PSo19UITableViewDelegate", "NSPredicate"]
@@ -9106,8 +9340,10 @@ depends-member:
 - !private ["PSo19UITableViewDelegate", "PostCard"]
 - !private ["PSo19UITableViewDelegate", "SFSafariViewController"]
 - !private ["PSo19UITableViewDelegate", "ShowType"]
+- !private ["PSo19UITableViewDelegate", "SoundView"]
 - !private ["PSo19UITableViewDelegate", "String"]
 - !private ["PSo19UITableViewDelegate", "TimeZone"]
+- !private ["PSo19UITableViewDelegate", "TweetView"]
 - !private ["PSo19UITableViewDelegate", "UIAlertAction"]
 - !private ["PSo19UITableViewDelegate", "UIAlertActionStyle"]
 - !private ["PSo19UITableViewDelegate", "UIAlertController"]
@@ -9319,6 +9555,8 @@ depends-member:
 - !private ["PSo18UITextViewDelegate", "NSEC_PER_SEC"]
 - !private ["PSo18UITextViewDelegate", "NSFontAttributeName"]
 - !private ["PSo18UITextViewDelegate", "NSForegroundColorAttributeName"]
+- !private ["PSo18UITextViewDelegate", "NSLayoutAttribute"]
+- !private ["PSo18UITextViewDelegate", "NSLayoutConstraint"]
 - !private ["PSo18UITextViewDelegate", "NSMutableArray"]
 - !private ["PSo18UITextViewDelegate", "NSNotification"]
 - !private ["PSo18UITextViewDelegate", "NSPredicate"]
@@ -9330,8 +9568,10 @@ depends-member:
 - !private ["PSo18UITextViewDelegate", "PostCard"]
 - !private ["PSo18UITextViewDelegate", "SFSafariViewController"]
 - !private ["PSo18UITextViewDelegate", "ShowType"]
+- !private ["PSo18UITextViewDelegate", "SoundView"]
 - !private ["PSo18UITextViewDelegate", "String"]
 - !private ["PSo18UITextViewDelegate", "TimeZone"]
+- !private ["PSo18UITextViewDelegate", "TweetView"]
 - !private ["PSo18UITextViewDelegate", "UIAlertAction"]
 - !private ["PSo18UITextViewDelegate", "UIAlertActionStyle"]
 - !private ["PSo18UITextViewDelegate", "UIAlertController"]
@@ -9511,6 +9751,8 @@ depends-member:
 - !private ["PSo18UITraitEnvironment", "NSEC_PER_SEC"]
 - !private ["PSo18UITraitEnvironment", "NSFontAttributeName"]
 - !private ["PSo18UITraitEnvironment", "NSForegroundColorAttributeName"]
+- !private ["PSo18UITraitEnvironment", "NSLayoutAttribute"]
+- !private ["PSo18UITraitEnvironment", "NSLayoutConstraint"]
 - !private ["PSo18UITraitEnvironment", "NSMutableArray"]
 - !private ["PSo18UITraitEnvironment", "NSNotification"]
 - !private ["PSo18UITraitEnvironment", "NSPredicate"]
@@ -9522,8 +9764,10 @@ depends-member:
 - !private ["PSo18UITraitEnvironment", "PostCard"]
 - !private ["PSo18UITraitEnvironment", "SFSafariViewController"]
 - !private ["PSo18UITraitEnvironment", "ShowType"]
+- !private ["PSo18UITraitEnvironment", "SoundView"]
 - !private ["PSo18UITraitEnvironment", "String"]
 - !private ["PSo18UITraitEnvironment", "TimeZone"]
+- !private ["PSo18UITraitEnvironment", "TweetView"]
 - !private ["PSo18UITraitEnvironment", "UIAlertAction"]
 - !private ["PSo18UITraitEnvironment", "UIAlertActionStyle"]
 - !private ["PSo18UITraitEnvironment", "UIAlertController"]
@@ -9565,6 +9809,7 @@ depends-member:
 - !private ["PSo18UITraitEnvironment", "VideoView"]
 - !private ["PSo18UITraitEnvironment", "addAction"]
 - !private ["PSo18UITraitEnvironment", "addArrangedSubview"]
+- !private ["PSo18UITraitEnvironment", "addConstraint"]
 - !private ["PSo18UITraitEnvironment", "addGestureRecognizer"]
 - !private ["PSo18UITraitEnvironment", "addSubview"]
 - !private ["PSo18UITraitEnvironment", "addTarget"]
@@ -9644,9 +9889,11 @@ depends-member:
 - ["PSo18UITraitEnvironment", "like"]
 - !private ["PSo18UITraitEnvironment", "likesCount"]
 - !private ["PSo18UITraitEnvironment", "linkStack"]
+- !private ["PSo18UITraitEnvironment", "load"]
 - !private ["PSo18UITraitEnvironment", "loadFromNibNamed"]
 - ["PSo18UITraitEnvironment", "loadNext"]
 - !private ["PSo18UITraitEnvironment", "loadSong"]
+- !private ["PSo18UITraitEnvironment", "loadTweet"]
 - !private ["PSo18UITraitEnvironment", "loadURL"]
 - !private ["PSo18UITraitEnvironment", "loadVideo"]
 - ["PSo18UITraitEnvironment", "lookingFrame"]
@@ -9759,6 +10006,7 @@ depends-member:
 - !private ["PSo18UITraitEnvironment", "tintColor"]
 - !private ["PSo18UITraitEnvironment", "titleTextAttributes"]
 - ["PSo18UITraitEnvironment", "toGroup"]
+- !private ["PSo18UITraitEnvironment", "translatesAutoresizingMaskIntoConstraints"]
 - ["PSo18UITraitEnvironment", "updateFriends"]
 - ["PSo18UITraitEnvironment", "updatePosts"]
 - ["PSo18UITraitEnvironment", "uplaodImage"]
@@ -9776,6 +10024,7 @@ depends-member:
 - ["PSo18UITraitEnvironment", "zoomModalPic"]
 - ["PSo18UITraitEnvironment", ""]
 - !private ["CSo6UIView", "addArrangedSubview"]
+- !private ["CSo6UIView", "addConstraint"]
 - !private ["CSo6UIView", "addGestureRecognizer"]
 - !private ["CSo6UIView", "addSubview"]
 - !private ["CSo6UIView", "addTarget"]
@@ -9821,8 +10070,10 @@ depends-member:
 - !private ["CSo6UIView", "like"]
 - !private ["CSo6UIView", "likesCount"]
 - !private ["CSo6UIView", "linkStack"]
+- !private ["CSo6UIView", "load"]
 - !private ["CSo6UIView", "loadFromNibNamed"]
 - !private ["CSo6UIView", "loadSong"]
+- !private ["CSo6UIView", "loadTweet"]
 - !private ["CSo6UIView", "loadURL"]
 - !private ["CSo6UIView", "loadVideo"]
 - !private ["CSo6UIView", "options"]
@@ -9858,6 +10109,7 @@ depends-member:
 - !private ["CSo6UIView", "textView"]
 - !private ["CSo6UIView", "tintColor"]
 - !private ["CSo6UIView", "titleTextAttributes"]
+- !private ["CSo6UIView", "translatesAutoresizingMaskIntoConstraints"]
 - !private ["CSo6UIView", "userImage"]
 - ["OSC17UIViewContentMode", "deinit"]
 - !private ["OSC17UIViewContentMode", "scaleAspectFill"]
@@ -9903,6 +10155,8 @@ depends-member:
 - !private ["CSo16UIViewController", "NSFontAttributeName"]
 - !private ["CSo16UIViewController", "NSForegroundColorAttributeName"]
 - !private ["CSo16UIViewController", "NSIndexPath"]
+- !private ["CSo16UIViewController", "NSLayoutAttribute"]
+- !private ["CSo16UIViewController", "NSLayoutConstraint"]
 - ["CSo16UIViewController", "NSMutableArray"]
 - ["CSo16UIViewController", "NSNotification"]
 - !private ["CSo16UIViewController", "NSPredicate"]
@@ -9916,8 +10170,10 @@ depends-member:
 - ["CSo16UIViewController", "PostCard"]
 - !private ["CSo16UIViewController", "SFSafariViewController"]
 - ["CSo16UIViewController", "ShowType"]
+- !private ["CSo16UIViewController", "SoundView"]
 - ["CSo16UIViewController", "String"]
 - !private ["CSo16UIViewController", "TimeZone"]
+- !private ["CSo16UIViewController", "TweetView"]
 - !private ["CSo16UIViewController", "UIAlertAction"]
 - !private ["CSo16UIViewController", "UIAlertActionStyle"]
 - !private ["CSo16UIViewController", "UIAlertController"]
@@ -10114,6 +10370,7 @@ depends-member:
 - !private ["Vs5UInt8", "deinit"]
 - ["V10Foundation3URL", "deinit"]
 - !private ["V10Foundation3URL", "init"]
+- !private ["P9Alamofire14URLConvertible", "append"]
 - !private ["P9Alamofire14URLConvertible", "contains"]
 - !private ["P9Alamofire14URLConvertible", "deinit"]
 - ["P9Alamofire14URLConvertible", "init"]
@@ -10123,13 +10380,16 @@ depends-member:
 - !private ["P9Alamofire14URLConvertible", "replacingOccurrences"]
 - !private ["P9Alamofire14URLConvertible", "trimmingCharacters"]
 - !private ["P9Alamofire14URLConvertible", "utf16"]
+- !private ["C15URLEmbeddedView15URLEmbeddedView", "addConstraint"]
 - !private ["C15URLEmbeddedView15URLEmbeddedView", "addGestureRecognizer"]
 - ["C15URLEmbeddedView15URLEmbeddedView", "deinit"]
+- !private ["C15URLEmbeddedView15URLEmbeddedView", "frame"]
 - !private ["C15URLEmbeddedView15URLEmbeddedView", "init"]
 - !private ["C15URLEmbeddedView15URLEmbeddedView", "isUserInteractionEnabled"]
 - !private ["C15URLEmbeddedView15URLEmbeddedView", "loadURL"]
 - !private ["C15URLEmbeddedView15URLEmbeddedView", "tag"]
 - !private ["C15URLEmbeddedView15URLEmbeddedView", "textProvider"]
+- !private ["C15URLEmbeddedView15URLEmbeddedView", "translatesAutoresizingMaskIntoConstraints"]
 - !private ["VSS9UTF16View", "IndexDistance"]
 - !private ["VSS9UTF16View", "count"]
 - ["VSS9UTF16View", "deinit"]
@@ -10152,6 +10412,7 @@ depends-member:
 - !private ["Ps22_CVarArgPassedAsDouble", "Stride"]
 - !private ["Ps22_CVarArgPassedAsDouble", "init"]
 - !private ["Ps37_DefaultCustomPlaygroundQuickLookable", "addArrangedSubview"]
+- !private ["Ps37_DefaultCustomPlaygroundQuickLookable", "addConstraint"]
 - !private ["Ps37_DefaultCustomPlaygroundQuickLookable", "addGestureRecognizer"]
 - !private ["Ps37_DefaultCustomPlaygroundQuickLookable", "addSubview"]
 - !private ["Ps37_DefaultCustomPlaygroundQuickLookable", "addTarget"]
@@ -10196,8 +10457,10 @@ depends-member:
 - !private ["Ps37_DefaultCustomPlaygroundQuickLookable", "like"]
 - !private ["Ps37_DefaultCustomPlaygroundQuickLookable", "likesCount"]
 - !private ["Ps37_DefaultCustomPlaygroundQuickLookable", "linkStack"]
+- !private ["Ps37_DefaultCustomPlaygroundQuickLookable", "load"]
 - !private ["Ps37_DefaultCustomPlaygroundQuickLookable", "loadFromNibNamed"]
 - !private ["Ps37_DefaultCustomPlaygroundQuickLookable", "loadSong"]
+- !private ["Ps37_DefaultCustomPlaygroundQuickLookable", "loadTweet"]
 - !private ["Ps37_DefaultCustomPlaygroundQuickLookable", "loadURL"]
 - !private ["Ps37_DefaultCustomPlaygroundQuickLookable", "loadVideo"]
 - !private ["Ps37_DefaultCustomPlaygroundQuickLookable", "options"]
@@ -10233,6 +10496,7 @@ depends-member:
 - !private ["Ps37_DefaultCustomPlaygroundQuickLookable", "textView"]
 - !private ["Ps37_DefaultCustomPlaygroundQuickLookable", "tintColor"]
 - !private ["Ps37_DefaultCustomPlaygroundQuickLookable", "titleTextAttributes"]
+- !private ["Ps37_DefaultCustomPlaygroundQuickLookable", "translatesAutoresizingMaskIntoConstraints"]
 - !private ["Ps37_DefaultCustomPlaygroundQuickLookable", "userImage"]
 - !private ["Ps24_DestructorSafeContainer", "Element"]
 - !private ["Ps24_DestructorSafeContainer", "IndexDistance"]
@@ -10241,6 +10505,7 @@ depends-member:
 - !private ["Ps24_DestructorSafeContainer", "count"]
 - !private ["Ps24_DestructorSafeContainer", "first"]
 - !private ["Ps35_ExpressibleByBuiltinBooleanLiteral", "_getBuiltinLogicValue"]
+- !private ["Ps51_ExpressibleByBuiltinExtendedGraphemeClusterLiteral", "append"]
 - !private ["Ps51_ExpressibleByBuiltinExtendedGraphemeClusterLiteral", "contains"]
 - ["Ps51_ExpressibleByBuiltinExtendedGraphemeClusterLiteral", "init"]
 - !private ["Ps51_ExpressibleByBuiltinExtendedGraphemeClusterLiteral", "isEmpty"]
@@ -10254,6 +10519,7 @@ depends-member:
 - !private ["Ps35_ExpressibleByBuiltinIntegerLiteral", "Stride"]
 - !private ["Ps35_ExpressibleByBuiltinIntegerLiteral", "hashValue"]
 - !private ["Ps35_ExpressibleByBuiltinIntegerLiteral", "init"]
+- !private ["Ps34_ExpressibleByBuiltinStringLiteral", "append"]
 - !private ["Ps34_ExpressibleByBuiltinStringLiteral", "contains"]
 - ["Ps34_ExpressibleByBuiltinStringLiteral", "init"]
 - !private ["Ps34_ExpressibleByBuiltinStringLiteral", "isEmpty"]
@@ -10262,6 +10528,7 @@ depends-member:
 - !private ["Ps34_ExpressibleByBuiltinStringLiteral", "replacingOccurrences"]
 - !private ["Ps34_ExpressibleByBuiltinStringLiteral", "trimmingCharacters"]
 - !private ["Ps34_ExpressibleByBuiltinStringLiteral", "utf16"]
+- !private ["Ps39_ExpressibleByBuiltinUTF16StringLiteral", "append"]
 - !private ["Ps39_ExpressibleByBuiltinUTF16StringLiteral", "contains"]
 - ["Ps39_ExpressibleByBuiltinUTF16StringLiteral", "init"]
 - !private ["Ps39_ExpressibleByBuiltinUTF16StringLiteral", "isEmpty"]
@@ -10270,6 +10537,7 @@ depends-member:
 - !private ["Ps39_ExpressibleByBuiltinUTF16StringLiteral", "replacingOccurrences"]
 - !private ["Ps39_ExpressibleByBuiltinUTF16StringLiteral", "trimmingCharacters"]
 - !private ["Ps39_ExpressibleByBuiltinUTF16StringLiteral", "utf16"]
+- !private ["Ps41_ExpressibleByBuiltinUnicodeScalarLiteral", "append"]
 - !private ["Ps41_ExpressibleByBuiltinUnicodeScalarLiteral", "contains"]
 - ["Ps41_ExpressibleByBuiltinUnicodeScalarLiteral", "init"]
 - !private ["Ps41_ExpressibleByBuiltinUnicodeScalarLiteral", "isEmpty"]
@@ -10288,6 +10556,7 @@ depends-member:
 - !private ["Ps26_ExpressibleByImageLiteral", "init"]
 - !private ["Ps35_HasCustomAnyHashableRepresentation", "Base64EncodingOptions"]
 - !private ["Ps35_HasCustomAnyHashableRepresentation", "Name"]
+- !private ["Ps35_HasCustomAnyHashableRepresentation", "append"]
 - !private ["Ps35_HasCustomAnyHashableRepresentation", "contains"]
 - ["Ps35_HasCustomAnyHashableRepresentation", "init"]
 - !private ["Ps35_HasCustomAnyHashableRepresentation", "isEmpty"]
@@ -10333,6 +10602,8 @@ depends-member:
 - !private ["Ps9_Hashable", "NSEC_PER_SEC"]
 - !private ["Ps9_Hashable", "NSFontAttributeName"]
 - !private ["Ps9_Hashable", "NSForegroundColorAttributeName"]
+- !private ["Ps9_Hashable", "NSLayoutAttribute"]
+- !private ["Ps9_Hashable", "NSLayoutConstraint"]
 - !private ["Ps9_Hashable", "NSMutableArray"]
 - !private ["Ps9_Hashable", "NSNotification"]
 - !private ["Ps9_Hashable", "NSPredicate"]
@@ -10346,9 +10617,11 @@ depends-member:
 - !private ["Ps9_Hashable", "RawValue"]
 - !private ["Ps9_Hashable", "SFSafariViewController"]
 - !private ["Ps9_Hashable", "ShowType"]
+- !private ["Ps9_Hashable", "SoundView"]
 - !private ["Ps9_Hashable", "Stride"]
 - !private ["Ps9_Hashable", "String"]
 - !private ["Ps9_Hashable", "TimeZone"]
+- !private ["Ps9_Hashable", "TweetView"]
 - !private ["Ps9_Hashable", "UIAlertAction"]
 - !private ["Ps9_Hashable", "UIAlertActionStyle"]
 - !private ["Ps9_Hashable", "UIAlertController"]
@@ -10394,6 +10667,7 @@ depends-member:
 - !private ["Ps9_Hashable", "add"]
 - !private ["Ps9_Hashable", "addAction"]
 - !private ["Ps9_Hashable", "addArrangedSubview"]
+- !private ["Ps9_Hashable", "addConstraint"]
 - !private ["Ps9_Hashable", "addGestureRecognizer"]
 - !private ["Ps9_Hashable", "addObserver"]
 - !private ["Ps9_Hashable", "addSubview"]
@@ -10403,6 +10677,7 @@ depends-member:
 - !private ["Ps9_Hashable", "allPhotos"]
 - !private ["Ps9_Hashable", "alpha"]
 - !private ["Ps9_Hashable", "animate"]
+- !private ["Ps9_Hashable", "append"]
 - !private ["Ps9_Hashable", "arrangedSubviews"]
 - !private ["Ps9_Hashable", "assetType"]
 - !private ["Ps9_Hashable", "asyncAfter"]
@@ -10467,6 +10742,7 @@ depends-member:
 - ["Ps9_Hashable", "dismissModalImage"]
 - !private ["Ps9_Hashable", "done"]
 - !private ["Ps9_Hashable", "endRefreshing"]
+- !private ["Ps9_Hashable", "equal"]
 - !private ["Ps9_Hashable", "estimatedRowHeight"]
 - ["Ps9_Hashable", "ethosAuth"]
 - !private ["Ps9_Hashable", "evaluate"]
@@ -10491,6 +10767,7 @@ depends-member:
 - !private ["Ps9_Hashable", "groupType"]
 - ["Ps9_Hashable", "groupWith"]
 - ["Ps9_Hashable", "hashValue"]
+- !private ["Ps9_Hashable", "height"]
 - !private ["Ps9_Hashable", "hexStringToUIColor"]
 - !private ["Ps9_Hashable", "hnk_setImageFromURL"]
 - ["Ps9_Hashable", "id"]
@@ -10528,9 +10805,11 @@ depends-member:
 - !private ["Ps9_Hashable", "likeCount"]
 - !private ["Ps9_Hashable", "likesCount"]
 - !private ["Ps9_Hashable", "linkStack"]
+- !private ["Ps9_Hashable", "load"]
 - !private ["Ps9_Hashable", "loadFromNibNamed"]
 - ["Ps9_Hashable", "loadNext"]
 - !private ["Ps9_Hashable", "loadSong"]
+- !private ["Ps9_Hashable", "loadTweet"]
 - !private ["Ps9_Hashable", "loadURL"]
 - !private ["Ps9_Hashable", "loadVideo"]
 - ["Ps9_Hashable", "lookingFrame"]
@@ -10550,6 +10829,7 @@ depends-member:
 - ["Ps9_Hashable", "netButton"]
 - ["Ps9_Hashable", "nextPosts"]
 - !private ["Ps9_Hashable", "none"]
+- !private ["Ps9_Hashable", "notAnAttribute"]
 - ["Ps9_Hashable", "numberOfSections"]
 - ["Ps9_Hashable", "numberOfSectionsInTableView"]
 - !private ["Ps9_Hashable", "numberOfTapsRequired"]
@@ -10681,6 +10961,7 @@ depends-member:
 - ["Ps9_Hashable", "toGroup"]
 - !private ["Ps9_Hashable", "token"]
 - !private ["Ps9_Hashable", "top"]
+- !private ["Ps9_Hashable", "translatesAutoresizingMaskIntoConstraints"]
 - !private ["Ps9_Hashable", "trimmingCharacters"]
 - !private ["Ps9_Hashable", "type"]
 - ["Ps9_Hashable", "updateFriends"]
@@ -10728,6 +11009,7 @@ depends-member:
 - !private ["Ps21_ObjectiveCBridgeable", "Value"]
 - !private ["Ps21_ObjectiveCBridgeable", "_Element"]
 - !private ["Ps21_ObjectiveCBridgeable", "_getBuiltinLogicValue"]
+- !private ["Ps21_ObjectiveCBridgeable", "append"]
 - !private ["Ps21_ObjectiveCBridgeable", "base64EncodedString"]
 - !private ["Ps21_ObjectiveCBridgeable", "contains"]
 - !private ["Ps21_ObjectiveCBridgeable", "count"]
@@ -10870,6 +11152,9 @@ depends-nominal:
 - !private "C10Foundation25NSFastEnumerationIterator"
 - !private "PSo20NSFetchRequestResult"
 - "CSo11NSIndexPath"
+- "OSC17NSLayoutAttribute"
+- "CSo18NSLayoutConstraint"
+- "OSC16NSLayoutRelation"
 - "CSo14NSMutableArray"
 - "PSo16NSMutableCopying"
 - "CSo14NSNotification"
@@ -10906,12 +11191,14 @@ depends-nominal:
 - "OC5Ethos28CardStackTableViewController8ShowType"
 - !private "Ps13SignedInteger"
 - !private "Ps12SignedNumber"
+- "C5Ethos9SoundView"
 - !private "Ps10Strideable"
 - "SS"
 - "OC15URLEmbeddedView16AttributeManager5Style"
 - "Ps16TextOutputStream"
 - "Ps20TextOutputStreamable"
 - !private "V10Foundation8TimeZone"
+- "C5Ethos9TweetView"
 - !private "PSo29UIAccessibilityIdentification"
 - "CSo13UIAlertAction"
 - "OSC18UIAlertActionStyle"
